@@ -1,5 +1,8 @@
 ## Dev Tools > Pipeline > 릴리스 노트
 
+### 2022. 01. 25.
+* Pipeline 실행 API가 추가 되었습니다. Document에서 사용방법을 확인할 수 있습니다.
+
 ### 2021. 05. 25.
 * CloudTrail과 연동합니다. Pipeline에서 발생한 이벤트를 CloudTrail에서 확인할 수 있습니다.
 
