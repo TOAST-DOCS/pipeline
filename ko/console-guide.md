@@ -25,9 +25,9 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 
 **환경 설정**에서 **소스 저장소 설정**을 클릭하면 소스 저장소를 관리하는 화면으로 이동합니다. **소스 저장소 추가**를 클릭해서 소스 저장소를 추가할 수 있습니다.
 
-![console-guide-02](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-02.png)
+![console-guide-02](http://static.toastoven.net/prod_pipeline/2022-02-15/console-guide-01.png)
 
-소스 저장소 이름, 소스 저장소 설명, 소스 저장소 URL, 소스 저장소에 접근할 수 있는 사용자 아이디, 소스 저장소에 접근할 수 있는 사용자 아이디의 토큰을 입력한 후 **확인**을 클릭하면 소스 저장소를 추가합니다.
+소스 저장소 유형, 소스 저장소 이름, 소스 저장소 설명, 소스 저장소 URL, 소스 저장소에 접근할 수 있는 사용자 아이디, 소스 저장소에 접근할 수 있는 사용자 아이디의 토큰을 입력한 후 **확인**을 클릭하면 소스 저장소를 추가합니다.
 
 ![console-guide-03](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-03.png)
 
@@ -177,6 +177,21 @@ GitHub 또는 GitHub Enterprise의 Repository에서 웹훅을 설정합니다.
 | Payload URL | https://api-pipeline.cloud.toast.com/webhooks/git/github |
 | Content type | application/json |
 | Secret | 파이프라인 자동 실행 설정의 시크릿에 입력한 값 |
+
+![console-guide-35](http://static.toastoven.net/prod_pipeline/2022-02-15/console-guide-02.png)
+
+GitLab 웹훅을 사용해서 GitLab Repository에 이벤트가 발생하면 파이프라인을 자동으로 실행하게 설정 할 수 있습니다. 자동 실행 유형을 GitLab으로 설정하고 Repository의 조직 혹은 사용자 이름, 프로젝트 이름, 브랜치를 입력하고 **확인**을 클릭합니다. GitLab 시크릿 설정은 추후 지원할 예정입니다.
+
+![console-guide-36](http://static.toastoven.net/prod_pipeline/2022-02-15/console-guide-03.png)
+GitLab Repository에서 웹훅을 설정합니다.
+
+| 항목 | 설정값 |
+|---|---|
+| URL | https://api-pipeline.cloud.toast.com/webhooks/git/gitlab |
+| Trigger | Push events 체크 |
+| Secret | 설정하지않음 |
+| SSL verification | Enable SSL verification 체크 |
+
 
 ![console-guide-25](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-25.png)
 
