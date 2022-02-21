@@ -19,7 +19,7 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 
 #### 소스 저장소
 
-소스 저장소를 추가하면 NHN 빌드 도구를 사용해서 소스 코드를 빌드 할 수 있습니다. GitHub, GitHub Enterprise와 같이 git 명령어를 사용해서 접근할 수 있는 저장소를 추가할 수 있습니다.
+소스 저장소를 추가하면 NHN 빌드 도구를 사용해서 소스 코드를 빌드 할 수 있습니다. GitHub, GitLab, GitHub Enterprise와 같이 git 명령어를 사용해서 접근할 수 있는 저장소를 추가할 수 있습니다.
 
 ![console-guide-01](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-01.png)
 
