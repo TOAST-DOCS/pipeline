@@ -1,233 +1,242 @@
-## Dev Tools > Pipeline > 콘솔 사용 가이드
+## Dev Tools > Pipeline > Console User Guide
 
-콘솔 사용 가이드에서는 Pipeline을 사용하는데 필요한 기본적인 내용을 설명합니다.
-- **환경 설정**
-- **파이프라인 생성**
-- **파이프라인 실행**
-- **파이프라인 관리**
-- **개발 환경 설정**
+This guide explains the basics of using Pipeline.
+- **Set up an environment**
+- **Create a pipeline**
+- **Run a pipeline**
+- **Manage a pipeline**
+- **Set up a development environment**
 
-### 환경 설정
+### Set Up an Environment
 
-Pipeline은 애플리케이션 배포 흐름을 구성할 때 다양한 외부 시스템을 사용합니다. 환경 설정에서 Pipeline이 사용하는 외부 시스템을 추가할 수 있습니다.
+Pipeline uses various external systems to configure the application deployment flow. You can add external systems used by Pipeline in environment settings.
 
-Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
-- 소스 저장소
-- 이미지 저장소
-- 빌드 도구
-- 배포 대상
+External systems that can be added to Pipeline include:
+- Source repository
+- Image registry
+- Build tool
+- Deployment target
 
-#### 소스 저장소
+#### Source Repository
 
-소스 저장소를 추가하면 NHN Cloud 빌드 도구를 사용해서 소스 코드를 빌드 할 수 있습니다. GitHub, GitLab, GitHub Enterprise와 같이 git 명령어를 사용해서 접근할 수 있는 저장소를 추가할 수 있습니다.
+After adding the source repository, you can build the source code using the NHN Cloud build tool. You can add repositories that can be accessed using the git commands, such as GitHub, GitLab, or GitHub Enterprise.
 
 ![console-guide-01](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-01.png)
 
-**환경 설정**에서 **소스 저장소 설정**을 클릭하면 소스 저장소를 관리하는 화면으로 이동합니다. **소스 저장소 추가**를 클릭해서 소스 저장소를 추가할 수 있습니다.
+Click **Source Repository Settings** in **Environment Settings** to go to the screen to manage source repositories. You can add a source repository by clicking **Add Source Repository**.
 
 ![console-guide-02](http://static.toastoven.net/prod_pipeline/2022-02-15/console-guide-01.png)
 
-소스 저장소 유형, 소스 저장소 이름, 소스 저장소 설명, 소스 저장소 URL, 소스 저장소에 접근할 수 있는 사용자 아이디, 소스 저장소에 접근할 수 있는 사용자 아이디의 토큰을 입력한 후 **확인**을 클릭하면 소스 저장소를 추가합니다.
+After entering the source repository information, click **OK**.
 
 ![console-guide-03](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-03.png)
 
-#### 이미지 저장소
+#### Image Registry
 
-이미지 저장소를 추가하면 자격 증명이 필요한 이미지 저장소에 접근할 때 사용할 수 있습니다. NHN Cloud 빌드 도구에서 소스 코드를 빌드 하는 컨테이너를 생성할 때 사용하거나 새로 생성한 컨테이너 이미지를 업로드할 때 사용할 수 있습니다. 그리고 파이프라인 자동 실행 설정에서 자동 실행을 실행시키는 컨테이너 이미지를 설정할 때 사용할 수 있습니다. 이미지 저장소에는 NHN Cloud Container Registry, Docker Hub, 그 밖에 Private Docker Registry를 추가할 수 있습니다.
+If you add an image registry, you can use the information to access an image registry that requires credentials. You can use the image registry when creating a container to build source code in the NHN Cloud build tool, or when uploading a newly created container image. You can also use it to set the container image that executes autorun in your pipeline autorun settings. For image registry, you can add NHN Cloud Container Registry, Docker Hub, or private Docker registry.
 
 ![console-guide-04](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-04.png)
 
-**환경 설정**에서 **이미지 저장소 설정**을 클릭하면 이미지 저장소를 관리하는 화면으로 이동합니다. **이미지 저장소 추가**를 클릭해서 소스 저장소를 추가할 수 있습니다.
+Click **Image Registry Settings** in **Environment Settings** to go to the screen to manage image repositories. You can add a source repository by clicking **Add Image Registry**.
 
 ![console-guide-05](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-05.png)
 
-이미지 저장소 이름, 이미지 저장소 설명, 이미지 저장소 URL, 이미지 저장소에 접근할 수 있는 사용자 아이디, 이미지 저장소에 접근할 수 있는 사용자 아이디의 비밀번호를 입력한 후 **확인**을 클릭하면 소스 저장소를 추가합니다. 이미지 저장소 URL을 입력하지 않으면 Docker Hub로 동작합니다.
+After entering the image registry information, click **OK**. If you don't enter the image registry URL, it works with Docker Hub.
 
 ![console-guide-06](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-06.png)
 
-#### 빌드 도구
+#### Build Tool
 
-빌드 도구를 추가하면 파이프라인에서 빌드 도구에 정의한 다양한 작업을 사용할 수 있습니다. 빌드 도구에는 Jenkins를 추가할 수 있습니다.
+By adding a build tool, your pipeline can use the various actions you define in the build tool. For the build tool, you can add Jenkins.
 
 ![console-guide-07](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-07.png)
 
-**환경 설정**에서 **빌드 도구 설정**을 클릭하면 빌드 도구를 관리하는 화면으로 이동합니다. **빌드 도구 추가**를 클릭해서 빌드 도구를 추가할 수 있습니다.
+Click **Build Tool Settings** in **Environment Settings** to go to the screen to manage the build tool. You can add a build tool by clicking **Add Build Tool**.
 
 ![console-guide-08](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-08.png)
 
-빌드 도구 이름, 빌드 도구 설명, 빌드 도구 URL, 빌드 도구에 접근할 수 있는 사용자 아이디, 이미지 저장소에 접근할 수 있는 사용자 아이디의 토큰을 입력한 후 **확인**을 클릭하면 빌드 도구를 추가합니다.
+After entering the build tool information, click **OK**.
 
 ![console-guide-09](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-09.png)
 
-#### 배포 대상
+#### Deployment Target
 
-배포 대상을 추가하면 파이프라인에서 배포 대상을 관리할 수 있습니다. 배포 대상에 컨테이너 이미지를 배포하거나 실행 중인 컨테이너를 변경할 수 있습니다. 배포 대상에는 NHN Cloud Container, Kubernetes를 추가할 수 있습니다.
+Adding a deployment target allows you to manage the deployment target in your pipeline. You can deploy container images to deployment targets or change the running containers. For deployment targets, you can add NHN Cloud Container and Kubernetes.
 
 ![console-guide-10](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-10.png)
 
-**환경 설정**에서 **배포 대상 설정**을 클릭하면 배포 대상을 관리하는 화면으로 이동합니다. **배포 대상 추가**를 클릭해서 배포 대상을 추가할 수 있습니다.
+Click **Deployment Target Settings** in **Environment Settings** to go to the screen to manage deployment targets. You can add deployment targets by clicking **Add Deployment Target**.
 
 ![console-guide-11](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-11.png)
 
-배포 대상 이름과 배포 대상 설명을 입력하고 Kubeconfig 파일을 선택한 후 **확인**을 클릭하면 배포 대상을 추가합니다.
+Enter the deployment target name and deployment target description, select the Kubeconfig file, and click **OK** to add the deployment target.
 
 ![console-guide-12](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-12.png)
 
-### 파이프라인 생성
 
-Pipeline은 애플리케이션 배포 흐름을 한 개 이상의 스테이지로 구성한 파이프라인으로 저장합니다. 파이프라인 생성에서는 **소스 코드 빌드** -> **컨테이너 이미지 생성** -> **컨테이너 이미지 업로드** -> **컨테이너 이미지 배포** 순서로 동작하는 기본적인 파이프라인을 생성할 수 있습니다.
+#### Pipeline IP
+If the system integrated with Pipeline does not work properly, check the ACL. The IP address used by Pipeline is **211.56.1.0/27**.
+
+| Service | CIDR |
+|---|---|
+| Pipeline | 211.56.1.0/27 |
+
+### Create a Pipeline
+
+Pipeline stores the application deployment flow as a pipeline consisting of one or more stages. In Create Pipeline, you can create a basic pipeline that works in the following order: **Build Source Code** > **Create Container Image** > **Upload Container Image** > **Deploy Container Image**.
 
 ![console-guide-13](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-13.png)
 
-**파이프라인 관리**에서 **파이프라인 생성**을 클릭하면 파이프라인을 생성할 수 있습니다. 파이프라인 생성은 아래와 같은 단계로 진행합니다.
-- 파이프라인 정보 입력
-- 소스 설정
-- 빌드 설정
-- 배포 설정
-- 최종 검토 및 파이프라인 생성
+Click **Create Pipeline** in **Pipeline Management**. Pipeline creation is performed in the following steps.
+- Entering pipeline information
+- Source settings
+- Build Settings
+- Deployment settings
+- Final review and pipeline creation
 
-#### 파이프라인 정보 입력
+#### Entering Pipeline Information
 
-파이프라인 기본 정보를 입력할 수 있습니다.
+Enter basic information of the pipeline.
 
 ![console-guide-14](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-14.png)
 
-파이프라인 이름, 파이프라인 설명을 입력한 후 **다음**을 클릭합니다.
+Enter the pipeline name and pipeline description, and click **Next**.
 
-#### 소스 설정
+#### Source Settings
 
-NHN Cloud 빌드 도구에서 소스 코드를 빌드 할 때 사용하는 소스 저장소를 설정합니다. NHN Cloud 빌드 도구를 사용하지 않거나 NHN Cloud 빌드 도구에서 소스 코드를 빌드 하지 않으면 생략할 수 있습니다.
+Set the source repository used when building the source code in the NHN Cloud build tool. If you do not use the NHN Cloud build tool or do not build the source code in the NHN Cloud build tool, you can skip this step.
 
 ![console-guide-15](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-15.png)
 
-스테이지 이름, 환경 설정에서 등록한 소스 저장소, 소스 코드를 빌드 할 브랜치를 입력한 후 **다음**을 클릭합니다.
+Enter the stage name, the source repository registered in the environment settings, and the branch to build the source code from, and click **Next**.
 
-#### 빌드 설정
+#### Build Settings
 
-빌드 설정에서는 NHN Cloud 빌드 도구를 사용하거나 환경 설정에서 등록한 빌드 도구를 사용할 수 있습니다. 스테이지 이름을 입력하고 **빌드 도구**에서 사용할 빌드 도구를 선택합니다.
+In the build settings, you can use the NHN Cloud build tool or the build tool registered in the environment settings. Enter a stage name and select the build tool to use under **Build Tool**.
 
 ![console-guide-16](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-16.png)
 
-NHN Cloud 빌드 도구를 사용하면 별도의 소프트웨어 설치 없이 소스 저장소에 저장한 애플리케이션 소스 코드를 빌드하고, 빌드 한 애플리케이션으로 컨테이너 이미지를 생성하고, 생성한 컨테이너 이미지를 이미지 저장소에 업로드할 수 있습니다. 빌드 환경 설정에는 소스 설정에서 설정한 소스 코드를 사용해서 애플리케이션을 빌드 하는 방법을 입력합니다. 소스 코드 빌드에 사용할 컨테이너 이미지, 빌드 머신의 성능, 빌드에 사용할 명령어를 입력할 수 있습니다. 빌드 결과 설정에는 빌드 한 애플리케이션으로 컨테이너 이미지를 만드는 방법을 입력합니다. 컨테이너 이미지를 생성할 때 사용할 Dockerfile, 생성한 컨테이너 이미지를 업로드할 이미지 저장소, 업로드할 컨테이너 이미지의 이름과 태그를 입력할 수 있습니다.
+The NHN Cloud build tool allows you to build the application source code stored in the source repository without installing additional software, create a container image with the built application, and upload the created container image to the image registry.
+In **Build Environment Settings**, enter the method of building the application using the source code set in **Source Settings**. You can enter the container image to use for building the source code, the performance of the build machine, and the command to use for the build.
+In **Build Result Settings**, enter how to create a container image with the built application. You can enter the Dockerfile to use when creating the container image, the image registry to upload the created container image to, and the name and tag of the container image to upload.
 
 ![console-guide-17](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-17.png)
 
-환경 설정에서 추가한 빌드 도구를 사용하면 빌드 도구의 빌드 잡을 실행할 수 있습니다. 실행할 빌드 잡을 선택하면 빌드 잡의 파라미터를 추가로 입력할 수 있습니다.
+The build tool added in the environment settings allows you to run the build tool's build job. If you select a build job to run, you can enter additional parameters for the build job.
 
-빌드 설정을 완료한 후 **다음**을 클릭합니다.
+After completing the build settings, click **Next**.
 
-#### 배포 설정
+#### Deployment Settings
 
-배포 설정은 환경 설정에서 추가한 배포 대상에 컨테이너 이미지를 배포하는 방법을 설정합니다.
+In deployment settings, you can set how the container image is deployed to the deployment target added in the environment settings.
 
 ![console-guide-18](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-18.png)
 
-스테이지 이름, 배포 대상, 배포에 사용할 Manifest를 입력한 후 **다음**을 클릭합니다. Manifest를 작성하는 방법은 아래 Kubernetes 문서를 참고하십시오.
+Enter the stage name, deployment target, and Manifest to use for deployment, and click **Next**. See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment) for how to write a Manifest.
 
-**https://kubernetes.io/docs/concepts/workloads/controllers/deployment**
+#### Final Review and Pipeline Creation
 
-#### 최종 검토 및 파이프라인 생성
-
-최종 검토에서는 파이프라인에 설정한 전체 입력 내용을 확인할 수 있습니다.
+In the final review, you can check the full configuration you’ve entered for your pipeline.
 
 ![console-guide-19](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-19.png)
 
-입력한 내용을 확인한 후 **생성**을 클릭하면 파이프라인을 생성합니다.
+After confirming the entered configuration, click **Create**.
 
 ![console-guide-20](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-20.png)
 
-### 파이프라인 실행
+### Run a Pipeline
 
-파이프라인을 실행하는 방법은 수동 실행과 자동 실행이 있습니다.
+There are two ways to run a pipeline: manual run and automatic run.
 
-#### 수동 실행
+#### Manual Run
 
-수동 실행을 사용하면 사용자가 원할 때 파이프라인을 실행할 수 있습니다.
+Manual run allows you to run your pipeline when you want.
 
 ![console-guide-21](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-21.png)
 
-**파이프라인 관리**에서 **▶︎(수동 실행)**를 클릭하면 수동 실행 확인 모달을 표시합니다. **확인**을 클릭하면 파이프라인을 실행합니다.
+In **Pipeline Management**, click ▶︎ (Manual Run). when the dialog box appears, click **OK**.
 
-#### 자동 실행
+#### Autorun
 
-자동 실행을 사용하면 GitHub Repository에 이벤트가 발생하거나 이미지 저장소의 컨테이너 이미지를 갱신하면 파이프라인을 자동으로 실행하게 설정할 수 있습니다.
+Autorun lets you configure your pipeline to run automatically when an event occurs in your GitHub repository or when a container image in your image registry is updated.
 
 ![console-guide-22](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-22.png)
 
-**자동 실행 설정**을 클릭하면 자동 실행 설정 모달을 표시합니다. **추가**를 클릭해서 자동 실행 설정을 추가할 수 있습니다.
+Click **Autorun Settings** and click **Add** in the **Autorun Settings** dialog box.
 
 ![console-guide-23](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-23.png)
 
-GitHub 웹훅을 사용해서 GitHub 또는 GitHub Enterprise의 Repository에 이벤트가 발생하면 파이프라인을 자동으로 실행하게 설정할 수 있습니다. 자동 실행 유형을 GitHub으로 설정하고 Repository의 조직 혹은 사용자 이름, 프로젝트 이름, 브랜치, 시크릿을 입력하고 **확인**을 클릭합니다.
+Using a GitHub webhook, you can configure your pipeline to run automatically when an event occurs in a repository on GitHub or GitHub Enterprise. Set the autorun type to GitHub, enter the repository's organization or user name, project name, branch, and secret, and click **OK**.
 
 ![console-guide-24](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-24.png)
 
-GitHub 또는 GitHub Enterprise의 Repository에서 웹훅을 설정합니다.
+Set up a webhook in your repository on GitHub or GitHub Enterprise.
 
-| 항목 | 설정값 |
+| Item | Setting value |
 |---|---|
 | Payload URL | https://api-pipeline.cloud.toast.com/webhooks/git/github |
 | Content type | application/json |
-| Secret | 파이프라인 자동 실행 설정의 시크릿에 입력한 값 |
+| Secret | The value entered in the secret of the pipeline autorun settings |
 
 ![console-guide-35](http://static.toastoven.net/prod_pipeline/2022-02-15/console-guide-02.png)
 
-GitLab 웹훅을 사용해서 GitLab Repository에 이벤트가 발생하면 파이프라인을 자동으로 실행하게 설정 할 수 있습니다. 자동 실행 유형을 GitLab으로 설정하고 Repository의 조직 혹은 사용자 이름, 프로젝트 이름, 브랜치를 입력하고 **확인**을 클릭합니다. GitLab 시크릿 설정은 추후 지원할 예정입니다.
+Using a GitLab webhook, you can configure your pipeline to run automatically when an event occurs in the GitLab repository. Set the autorun type to GitLab, enter the repository's organization or user name, project name, and branch, and click **OK**. GitLab secret setting will be supported in the future.
 
 ![console-guide-36](http://static.toastoven.net/prod_pipeline/2022-02-15/console-guide-03.png)
-GitLab Repository에서 웹훅을 설정합니다.
+Set up a webhook in the GitLab repository.
 
-| 항목 | 설정값 |
+| Item | Setting value |
 |---|---|
 | URL | https://api-pipeline.cloud.toast.com/webhooks/git/gitlab |
-| Trigger | Push events 체크 |
-| Secret | 설정하지않음 |
-| SSL verification | Enable SSL verification 체크 |
+| Trigger | Select Push events |
+| Secret | Do not set |
+| SSL verification | Select Enable SSL verification |
+
 
 ![console-guide-25](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-25.png)
 
-컨테이너 이미지를 갱신했을 때 파이프라인을 자동으로 실행하려면 자동 실행 유형을 이미지 저장소로 설정합니다. 환경 설정에서 등록한 이미지 저장소를 선택한 후 컨테이너 이미지 목록에서 자동 실행에 사용할 컨테이너 이미지를 선택합니다. 마지막으로 태그를 입력한 후 **확인**을 클릭합니다. 이미지 저장소 자동 실행 설정은 NHN Cloud Container Registry와 Private Docker Registry만 지원합니다. Docker Hub는 향후 지원할 예정입니다.
+If you want the pipeline to run automatically when the container image is updated, set the autorun type to image registry. After selecting the image registry registered in the environment settings, select the container image to use for autorun from the list of container images. Finally, enter a tag and click **OK**. The image registry autorun configuration only supports NHN Cloud Container Registry and private Docker registry. Docker Hub will be supported in the future.
 
 ![console-guide-26](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-26.png)
 
-파이프라인을 새로 만들면 자동 실행 방지를 사용으로 설정합니다. 파이프라인을 자동으로 실행하려면 자동 실행 방지를 미사용으로 변경해야 합니다. 파이프라인을 선택한 후 하단 기본 정보의 자동 실행 방지에서 **변경**을 클릭합니다. 자동 실행 방지 설정 모달에서 **미사용**을 선택한 후 **확인**으 클릭합니다.
+When a new pipeline is created, **Prevent Autorun** is set to **Enable**. If you want the pipeline to run automatically, you must change **Prevent Autorun** to **Disable**. After selecting the pipeline, click **Change** under Prevent Autorun at the bottom of Basic Information. In the Set Autorun Prevention dialog box, select **Disable** and click **OK**.
 
 ![console-guide-27](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-27.png)
 
-실행 중인 파이프라인을 선택한 후 하단 기본 정보의 최근 실행 상태에서 **상세 정보**를 클릭하면 파이프라인 실행 상태에 대한 상세 정보를 확인할 수 있습니다.
+To check the detailed information about the running pipeline, select a running pipeline and click **Details** under Recent Run Status in Basic Information at the bottom.
 
-### 파이프라인 관리
+### Manage a Pipeline
 
-사용자는 파이프라인을 구성하는 스테이지를 추가, 변경, 삭제할 수 있습니다.
+You can add, change, or delete stages that make up the pipeline.
 
 ![console-guide-28](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-28.png)
 
-파이프라인을 선택한 후 하단 **스테이지**를 클릭하면 스테이지 관리 화면을 표시합니다. **스테이지 추가**를 클릭하면 스테이지 추가 모달을 표시합니다.
+After selecting a pipeline, click **Stage** at the bottom to display the screen to manage stages. Click **Add Stage**, and the **Add Stage** dialog box appears.
 
 ![console-guide-29](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-29.png)
 
-스테이지 이름, 스테이지 유형, 스테이지 유형별 입력값, 이전 단계를 설정한 후 **스테이지 추가**를 클릭해서 파이프라인에 스테이지를 추가할 수 있습니다. Pipeline은 애플리케이션 배포 흐름을 구성할 때 사용할 수 있는 다양한 스테이지 유형을 제공합니다.
+After setting the stage name, stage type, input values for each stage type, and previous stage, click **Add Stage** to add a stage to the pipeline. Pipeline provides a number of different stage types that you can use when configuring your application deployment flow.
 
 ![console-guide-30](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-30.png)
 
-이전 스테이지를 선택하는 방식에 따라 스테이지를 병렬로 실행시킬 수 있습니다. 병렬 구성한 스테이지 중 하나가 실패하면 나머지 스테이지는 실행이 취소되고 파이프라인은 실행은 실패합니다.
+Stages can run in parallel depending on how the previous stage is selected. If one of the stages in the parallel configuration fails, execution of the remaining stages is canceled and the pipeline execution fails.
 
-### 개발 환경 설정
+### Set up a Development Environment
 
-개발 환경 설정을 사용하면 Kubernetes 사용법을 모르는 사용자도 Kubernetes에 컨테이너 이미지를 배포할 수 있습니다.
+The development environment settings allows users who do not know how to use Kubernetes to deploy container images on Kubernetes.
 
 ![console-guide-31](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-31.png)
 
-**개발 환경 설정**에서 **개발 환경 생성**을 클릭합니다. 
+Under **Development Environment Settings**, click **Create Development Environment**. 
 
 ![console-guide-32](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-32.png)
 
-개발 환경 이름과 개발 환경 설명을 입력하고 기본 이미지에서 배포할 컨테이너 이미지를 선택합니다. 컨테이너 이미지 접근에 필요한 정보는 이미지 저장소에 설정합니다. 배포 대상은 컨테이너 이미지를 배포할 Kubernetes를 선택합니다. 서비스 포트는 컨테이너가 제공하는 서비스의 포트를 입력합니다. 서비스 포트를 입력하면 컨테이너 서비스에 접근할 수 있는 서비스 IP를 자동으로 할당(Kubernetes가 LoadBalancer 타입의 서비스를 제공할 경우)합니다. 마지막으로 개발 환경 제약 사항을 입력한 후 **생성**을 클릭하면 개발 환경을 생성합니다.
+Enter a development environment name and development environment description, and select the container image to deploy from the basic images. Set the information required to access the container image in the image registry. For the deployment target, select the Kubernetes to deploy the container image to. For the service port, enter the port of the service provided by the container. If you enter a service port, a service IP that can access the container service is automatically assigned (if Kubernetes provides a service of the LoadBalancer type). Finally, after entering the development environment constraints, click **Create** to create the development environment.
 
 ![console-guide-33](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-33.png)
 
-개발 환경을 생성하는 동안 개발 환경 상태를 생성 중으로 표시합니다.
+While the development environment is being created, the **Development Environment Status** is displayed as **Creating**.
 
 ![console-guide-34](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-34.png)
 
-개발 환경 생성을 완료하면 개발 환경 상태를 실행 중으로 변경합니다. 서비스 IP와 서비스 포트를 사용해서 컨테이너 서비스에 접근할 수 있습니다.
+When the development environment creation is complete, the **Development Environment Status** is changed to **Running**. You can access the container service using the service IP and service port.
