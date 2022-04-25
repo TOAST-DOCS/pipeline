@@ -12,11 +12,11 @@
 | Name | Description | Value |
 | ---- | ----------- | ----- |
 | X-NHN-REGION | Region | KR1 |
-| X-NHN-APPKEY | Pipeline 상품의 Appkey | {appkey} |
+| X-NHN-APPKEY | Pipeline 서비스의 Appkey | {appkey} |
 | X-TC-AUTHENTICATION-ID | API 보안 설정 메뉴의 User Access Key ID | {id} |
 | X-TC-AUTHENTICATION-SECRET | API 보안 설정 메뉴의 Secret Access Key | {secret} |
 
-[회원정보] > [API 보안 설정] 에서 생성할 수 있습니다.
+**회원 정보 > API 보안 설정**에서 생성할 수 있습니다.
 
 ### Sample Request For cUrl
 

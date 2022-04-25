@@ -1,43 +1,40 @@
-## Dev Tools > Pipeline > 개요
-Pipeline은 소스 코드 빌드, 컨테이너 이미지 생성, 컨테이너 이미지 배포 등 애플리케이션 배포 흐름을 관리할 수 있는 지속적 배포(Continuous Deployment) 서비스입니다.
+## Dev Tools > Pipeline > Overview
+Pipeline is a continuous deployment service that allows you to manage the application deployment flow, such as building source code, creating container images, and deploying container images.
 
-### 주요 기능
-* NHN Cloud 빌드 도구
-* Jenkins 연동
-* Kubernetes 연동
-* 애플리케이션 배포 흐름 관리
-* 애플리케이션 배포 자동화
+### Main Features
+* NHN Cloud build tool
+* Jenkins integration
+* Kubernetes integration
+* Application deployment flow management
+* Application deployment automation
 
-### 기능 설명
-Pipeline은 사용자가 애플리케이션 배포에 사용할 수 있는 다양한 기능을 제공합니다.
+### Feature Description
+Pipeline provides a number of features that you can use to deploy applications.
 
-#### NHN Cloud 빌드 도구
-Pipeline은 소스 코드 빌드와 컨테이너 이미지 생성에 사용할 수 있는 NHN Cloud 빌드 도구를 제공합니다. NHN Cloud 빌드 도구를 사용하면 별도의 소프트웨어 설치 없이 소스 저장소에 저장한 애플리케이션 소스 코드를 빌드하고, 빌드 한 애플리케이션으로 컨테이너 이미지를 생성하고, 생성한 컨테이너 이미지를 이미지 저장소에 업로드할 수 있습니다.
+#### NHN Cloud Build Tool
+Pipeline provides the NHN Cloud build tool that you can use to build source code and create container images. The NHN Cloud build tool allows you to build the application source code stored in the source repository without installing additional software, create a container image with the built application, and upload the created container image to the image registry.
 
-#### Jenkins 연동
+#### Jenkins Integration
 
-Pipeline에 Jenkins를 연동하면 애플리케이션 배포 흐름에 Jenkins 잡을 등록할 수 있습니다. 사용자가 정의한 다양한 Jenkins 잡을 애플리케이션 배포에 활용할 수 있습니다.
+By integrating Pipeline with Jenkins, you can register Jenkins jobs in your application deployment flow. Various user-defined Jenkins jobs can be used for application deployment.
 
-#### Kubernetes 연동
+#### Kubernetes Integration
 
-Pipeline에 Kubernetes를 연동하면 애플리케이션 배포 흐름에 Kubernetes 작업을 등록할 수 있습니다. 컨테이너 이미지 배포, 파드 복제본 개수 변경, Kubernetes 오브젝트 삭제 등 다양한 기능을 제공합니다.
+By integrating Pipeline with Kubernetes, you can register Kubernetes tasks in your application deployment flow. It provides various features, such as deploying container images, changing the number of Pod replicas, and deleting Kubernetes objects.
 
-#### 애플리케이션 배포 흐름 관리
+#### Application Deployment Flow Management
 
-소스 코드 빌드, 컨테이너 이미지 생성, 컨테이너 이미지 업로드, 컨테이너 이미지 배포 등 애플리케이션 배포에 필요한 여러 단계(스테이지)를 자유롭게 정의하고 파이프라인으로 저장할 수 있습니다. 저장한 파이프라인은 언제든지 다시 실행할 수 있습니다.
+You can define the different stages required for application deployment, such as building source code, creating a container image, uploading a container image, and deploying a container image, and save it as a pipeline. Saved pipelines can be rerun at any time.
 
-#### 애플리케이션 배포 자동화
+#### Application Deployment Automation
 
-파이프라인에 자동 실행을 설정할 수 있습니다. 소스 저장소의 소스 코드를 변경하거나 이미지 저장소의 컨테이너 이미지를 갱신하면 파이프라인을 자동으로 실행합니다.
+You can configure autorun on the pipeline. When you change the source code in the source repository or update the container images in the image registry, the pipeline is run automatically.
 
-### Pipeline IP
-Pipeline과 연동한 시스템이 정상적으로 동작하지 않으면 ACL을 확인하시기 바랍니다. Pipeline이 사용하는 IP는 **211.56.1.0/27**입니다.
-
-### 용어 설명
-| 용어 | 설명 |
+### Glossary
+| Term | Description |
 |---|---|
-| Pipeline | NHN Cloud의 지속적 배포 서비스 |
-| 파이프라인 | 애플리케이션 배포 흐름을 저장하는 개체 |
-| 스테이지 | 파이프라인을 구성하는 각각의 배포 단계 |
-| NHN Cloud 빌드 도구 | Pipeline이 기본 제공하는 빌드 도구 |
+| Pipeline | NHN Cloud's continuous deployment service |
+| pipeline | An object that stores the application deployment flow |
+| stage | Each of the deployment stages that make up the pipeline |
+| NHN Cloud build tool | Pipeline's built-in build tool |
 

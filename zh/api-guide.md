@@ -1,8 +1,8 @@
-## Dev Tools > Pipeline > API 가이드
+## Dev Tools > Pipeline > API Guide
 
-사용자가 HTTP Request를 직접 구성하여 Pipeline을 실행할 수 있는 API를 제공합니다.
+This service provides an API that allows users to directly configure HTTP requests to run Pipeline.
 
-## Pipeline 수동 실행
+## Pipeline Manual Run
 
 | Http Method | POST |
 | ----------- | ---- |
@@ -12,11 +12,11 @@
 | Name | Description | Value |
 | ---- | ----------- | ----- |
 | X-NHN-REGION | Region | KR1 |
-| X-NHN-APPKEY | Pipeline 상품의 Appkey | {appkey} |
-| X-TC-AUTHENTICATION-ID | API 보안 설정 메뉴의 User Access Key ID | {id} |
-| X-TC-AUTHENTICATION-SECRET | API 보안 설정 메뉴의 Secret Access Key | {secret} |
+| X-NHN-APPKEY | Appkey for the Pipeline service | {appkey} |
+| X-TC-AUTHENTICATION-ID | User Access Key ID in API Security Settings menu | {id} |
+| X-TC-AUTHENTICATION-SECRET | Secret Access Key in API Security Settings menu | {secret} |
 
-[회원정보] > [API 보안 설정] 에서 생성할 수 있습니다.
+You can create the information in **Member Profile > API Security Settings**.
 
 ### Sample Request For cUrl
 

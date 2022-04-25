@@ -1,17 +1,17 @@
-## Dev Tools > Pipeline > 릴리스 노트
+## Dev Tools > Pipeline > Release Notes
 
-### 2022.02.22
-* 소스 저장소에 GitLab이 추가되었습니다. Document에서 사용방법을 확인 할 수 있습니다.
+### February 22, 2022
+* Added GitLab to the source repository. You can find how to use it in the [Pipeline User Guide](/Dev%20Tools/Pipeline/zh/console-guide/#_1).
 
-### 2022. 01. 25.
-* Pipeline 실행 API가 추가되었습니다. Document에서 사용방법을 확인할 수 있습니다.
-* 발견된 이슈 (원인 분석 후 개선 예정입니다.)
-    * 개발 환경 생성 시 개발 환경 제약 사항에 값 지정 시 생성이 실패되는 현상이 있습니다.
+### January 25, 2022
+* Added an API to run Pipeline. You can find how to use it in the [Pipeline API guide](/Dev%20Tools/Pipeline/zh/api-guide/#pipeline).
+* Known issues (to be improved after analyzing the cause)
+    * When creating a development environment, if you specify a value for the development environment constraints, the development environment creation fails.
 
-### 2021. 05. 25.
-* CloudTrail과 연동합니다. Pipeline에서 발생한 이벤트를 CloudTrail에서 확인할 수 있습니다.
+### May 25, 2021
+* Added integration with CloudTrail. You can check the events that occurred in Pipeline in CloudTrail.
 
-### 2021. 04. 27.
+### April 27, 2021
 
-#### 신규 서비스 출시
-* 소스 코드 빌드, 컨테이너 이미지 생성, 컨테이너 이미지 배포 등 애플리케이션 배포 흐름을 관리할 수 있는 지속적 배포(Continuous Deployment) 서비스입니다.
+#### Release of a New Service
+* A continuous deployment service that lets you manage the application deployment flow, such as building source code, creating container images, and deploying container images.
