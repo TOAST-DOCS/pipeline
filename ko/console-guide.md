@@ -23,11 +23,11 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 
 ![console-guide-01](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-01.png)
 
-**환경 설정**에서 **소스 저장소 설정**을 클릭하면 소스 저장소를 관리하는 화면으로 이동합니다. **소스 저장소 추가**를 클릭해서 소스 저장소를 추가할 수 있습니다.
+**환경 설정**에서 **소스 저장소 설정**을 클릭하면 소스 저장소를 관리하는 화면으로 이동합니다. **소스 저장소 추가**를 클릭해서 소스 저장소를 추가할 수 있습니다. 
 
-![console-guide-02](http://static.toastoven.net/prod_pipeline/2022-02-15/console-guide-01.png)
+![console-guide-02](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-01.png)
 
-소스 저장소 정보를 입력한 후 **확인**을 클릭합니다.
+소스 저장소 정보를 입력한 후 **소스 저장소 연결 확인**의 **확인**을 클릭합니다. GitLab 소스 저장소의 토큰 발급시 read_user api read_api 권한이 필수로 필요합니다. 연결 확인 후 **확인**을 클릭 합니다.
 
 ![console-guide-03](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-03.png)
 
@@ -39,9 +39,9 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 
 **환경 설정**에서 **이미지 저장소 설정**을 클릭하면 이미지 저장소를 관리하는 화면으로 이동합니다. **이미지 저장소 추가**를 클릭해서 이미지 저장소를 추가할 수 있습니다.
 
-![console-guide-05](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-05.png)
+![console-guide-05](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-02.png)
 
-이미지 저장소 정보를 입력한 후 **확인**을 클릭합니다. 이미지 저장소 URL을 입력하지 않으면 Docker Hub로 동작합니다.
+이미지 저장소 정보를 입력한 후 **이미지 저장소 연결 확인**의 **확인**을 클릭합니다. 연결 확인 후 **확인**을 클릭합니다. 이미지 저장소 URL을 입력하지 않으면 Docker Hub로 동작합니다.
 
 ![console-guide-06](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-06.png)
 
@@ -53,9 +53,9 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 
 **환경 설정**에서 **빌드 도구 설정**을 클릭하면 빌드 도구를 관리하는 화면으로 이동합니다. **빌드 도구 추가**를 클릭해서 빌드 도구를 추가할 수 있습니다.
 
-![console-guide-08](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-08.png)
+![console-guide-08](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-03.png)
 
-빌드 도구 정보를 입력한 후 **확인**을 클릭합니다.
+빌드 도구 정보를 입력한 후 **빌드 도구 연결 확인**의 **확인**을 클릭합니다. 연결 확인 후 **확인**을 클릭합니다.
 
 ![console-guide-09](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-09.png)
 
@@ -67,9 +67,9 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 
 **환경 설정**에서 **배포 대상 설정**을 클릭하면 배포 대상을 관리하는 화면으로 이동합니다. **배포 대상 추가**를 클릭해서 배포 대상을 추가할 수 있습니다.
 
-![console-guide-11](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-11.png)
+![console-guide-11](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-04.png)
 
-배포 대상 이름과 배포 대상 설명을 입력하고 Kubeconfig 파일을 선택한 후 **확인**을 클릭합니다.
+배포 대상 이름과 배포 대상 설명을 입력하고 Kubeconfig 파일을 선택한 후 **배포 대상 연결 확인**의 **확인**을 클릭합니다. 연결 확인 후 **확인**을 클릭합니다.
 
 ![console-guide-12](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-12.png)
 
