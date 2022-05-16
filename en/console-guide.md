@@ -27,7 +27,7 @@ Click **Source Repository Settings** in **Environment Settings** to go to the sc
 
 ![console-guide-02](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-01.png)
 
-Enter the source repository information, and click **OK** in **Check Source Repository Connection**. To obtain a token for a GitLab source repository, `read_user`, `api`, and `read_api` permissions are required. After checking the connection, click **Confirm**.
+Enter the source repository information, and click **Check** in **Source Repository Connection Check**. To obtain a token for a GitLab source repository, `read_user`, `api`, and `read_api` permissions are required. After checking the connection, click **Confirm**.
 
 ![console-guide-03](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-03.png)
 
@@ -41,7 +41,7 @@ Click **Image Registry Settings** in **Environment Settings** to go to the scree
 
 ![console-guide-05](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-02.png)
 
-Enter the image registry information, and click **OK** in **Check Image Registry Connection**. After checking the connection, click **Confirm**. If you don't enter the image registry URL, it works as Docker Hub.
+Enter the image registry information, and click **Check** in **Image Registry Connection Check**. After checking the connection, click **Confirm**. If you don't enter the image registry URL, it works as Docker Hub.
 
 ![console-guide-06](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-06.png)
 
@@ -55,7 +55,7 @@ Click **Build Tool Settings** in **Environment Settings** to go to the screen to
 
 ![console-guide-08](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-03.png)
 
-Enter the build tool information, click **OK** in **Check Build Tool Connection**. After checking the connection, click **Confirm**.
+Enter the build tool information, click **Check** in **Build Tool Connection Check**. After checking the connection, click **Confirm**.
 
 ![console-guide-09](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-09.png)
 
@@ -69,7 +69,7 @@ Click **Deployment Target Settings** in **Environment Settings** to go to the sc
 
 ![console-guide-11](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-04.png)
 
-Enter the deployment target name and deployment target description, select the Kubeconfig file, and click **OK** in **Check Deployment Target Connection**. After checking the connection, click **Confirm**.
+Enter the deployment target name and deployment target description, select the Kubeconfig file, and click **Check** in **Deployment Target Connection Check**. After checking the connection, click **Confirm**.
 
 ![console-guide-12](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-12.png)
 
