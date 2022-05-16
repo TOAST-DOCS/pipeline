@@ -23,11 +23,11 @@ After adding the source repository, you can build the source code using the NHN 
 
 ![console-guide-01](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-01.png)
 
-Click **Source Repository Settings** in **Environment Settings** to go to the screen to manage source repositories. You can add a source repository by clicking **Add Source Repository**.
+Click **Source Repository Settings** in **Environment Settings** to go to the screen to manage source repositories. You can add a source repository by clicking **Add Source Repository**. 
 
-![console-guide-02](http://static.toastoven.net/prod_pipeline/2022-02-15/console-guide-01.png)
+![console-guide-02](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-01.png)
 
-After entering the source repository information, click **OK**.
+Enter the source repository information, and click **OK** in **Check Source Repository Connection**. To obtain a token for a GitLab source repository, `read_user`, `api`, and `read_api` permissions are required. After checking the connection, click **Confirm**.
 
 ![console-guide-03](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-03.png)
 
@@ -39,9 +39,9 @@ If you add an image registry, you can use the information to access an image reg
 
 Click **Image Registry Settings** in **Environment Settings** to go to the screen to manage image repositories. You can add a source repository by clicking **Add Image Registry**.
 
-![console-guide-05](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-05.png)
+![console-guide-05](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-02.png)
 
-After entering the image registry information, click **OK**. If you don't enter the image registry URL, it works with Docker Hub.
+Enter the image registry information, and click **OK** in **Check Image Registry Connection**. After checking the connection, click **Confirm**. If you don't enter the image registry URL, it works as Docker Hub.
 
 ![console-guide-06](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-06.png)
 
@@ -53,9 +53,9 @@ By adding a build tool, your pipeline can use the various actions you define in 
 
 Click **Build Tool Settings** in **Environment Settings** to go to the screen to manage the build tool. You can add a build tool by clicking **Add Build Tool**.
 
-![console-guide-08](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-08.png)
+![console-guide-08](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-03.png)
 
-After entering the build tool information, click **OK**.
+Enter the build tool information, click **OK** in **Check Build Tool Connection**. After checking the connection, click **Confirm**.
 
 ![console-guide-09](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-09.png)
 
@@ -67,9 +67,9 @@ Adding a deployment target allows you to manage the deployment target in your pi
 
 Click **Deployment Target Settings** in **Environment Settings** to go to the screen to manage deployment targets. You can add deployment targets by clicking **Add Deployment Target**.
 
-![console-guide-11](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-11.png)
+![console-guide-11](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-04.png)
 
-Enter the deployment target name and deployment target description, select the Kubeconfig file, and click **OK** to add the deployment target.
+Enter the deployment target name and deployment target description, select the Kubeconfig file, and click **OK** in **Check Deployment Target Connection**. After checking the connection, click **Confirm**.
 
 ![console-guide-12](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-12.png)
 
