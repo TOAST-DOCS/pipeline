@@ -27,7 +27,7 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 
 ![console-guide-02](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-01.png)
 
-소스 저장소 정보를 입력한 후 **소스 저장소 연결 확인**의 **확인**을 클릭합니다. GitLab 소스 저장소의 토큰 발급 시 `read_user`, `api`, `read_api`, 권한이 필수로 필요합니다. 연결 확인 후 **확인**을 클릭 합니다.
+소스 저장소 정보를 입력한 후 **소스 저장소 연결 확인**의 **확인**을 클릭합니다. GitLab 소스 저장소의 토큰 발급 시 `read_user`, `api`, `read_api` 권한이 필수로 필요합니다. 연결 확인 후 **확인**을 클릭합니다.
 
 ![console-guide-03](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-03.png)
 
