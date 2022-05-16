@@ -25,9 +25,9 @@ Pipelineに追加できる外部システムは次のとおりです。
 
 **環境設定**で**ソースリポジトリ設定**をクリックすると、ソースリポジトリを管理する画面に移動します。**ソースリポジトリ追加**をクリックしてソースリポジトリを追加できます。
 
-![console-guide-02](http://static.toastoven.net/prod_pipeline/2022-02-15/console-guide-01.png)
+![console-guide-02](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-01.png)
 
-ソースリポジトリ情報を入力し、**確認**をクリックします。
+ソースリポジトリ情報を入力し、**ソースリポジトリ接続確認**の**確認**をクリックします。GitLabソースリポジトリのトークン発行時に`read_user`、`api`、`read_api`権限が必ず必要です。接続確認後に**確認**をクリックします。
 
 ![console-guide-03](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-03.png)
 
@@ -39,9 +39,9 @@ Pipelineに追加できる外部システムは次のとおりです。
 
 **環境設定**で**イメージストア設定**をクリックすると、イメージストアを管理する画面に移動します。 **イメージストア追加**をクリックしてソースリポジトリを追加できます。
 
-![console-guide-05](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-05.png)
+![console-guide-05](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-02.png)
 
-イメージストア情報を入力し、**確認**をクリックします。イメージストアURLを入力していない場合はDocker Hubとして動作します。
+イメージストア情報を入力し、**イメージストア接続確認**の**確認**をクリックします。接続確認後に**確認**をクリックします。イメージストアURLを入力していない場合はDocker Hubとして動作します。
 
 ![console-guide-06](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-06.png)
 
@@ -53,9 +53,9 @@ Pipelineに追加できる外部システムは次のとおりです。
 
 **環境設定**で**ビルドツール設定**をクリックすると、ビルドツールを管理する画面に移動します。 **ビルドツール追加**をクリックしてビルドツールを追加できます。
 
-![console-guide-08](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-08.png)
+![console-guide-08](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-03.png)
 
-ビルドツール情報を入力し、**確認**をクリックします。
+ビルドツール情報を入力し、**ビルドツール接続確認**の**確認**をクリックします。接続確認後に**確認**をクリックします。
 
 ![console-guide-09](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-09.png)
 
@@ -67,9 +67,9 @@ Pipelineに追加できる外部システムは次のとおりです。
 
 **環境設定**で**配布対象設定**をクリックすると、配布対象を管理する画面に移動します。 **配布対象追加**をクリックして配布対象を追加できます。
 
-![console-guide-11](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-11.png)
+![console-guide-11](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-04.png)
 
-配布対象の名前と説明を入力し、Kubeconfigファイルを選択して**確認**をクリックします。
+配布対象の名前と説明を入力し、Kubeconfigファイルを選択して**配布対象接続確認**の **確認**をクリックします。接続確認後に**確認**をクリックします。
 
 ![console-guide-12](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-12.png)
 
