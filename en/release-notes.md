@@ -1,10 +1,16 @@
 ## Dev Tools > Pipeline > Release Notes
 
+### May 24, 2022
+* Added the connection check feature for the source repository, image registry, build tool, and deployment target. You can see how to use it in the [Pipeline User Guide](/Dev%20Tools/Pipeline/en/console-guide). 
+* Added details to CloudTrail.
+    * Added details for deletion of settings
+    * Added details about pipeline execution
+
 ### February 22, 2022
-* Added GitLab to the source repository. You can find how to use it in the [Pipeline User Guide](/Dev%20Tools/Pipeline/en/console-guide/#_1).
+* Added GitLab to the source repository. You can find how to use it in the [Pipeline User Guide](/Dev%20Tools/Pipeline/en/console-guide/#set-up-an-environment).
 
 ### January 25, 2022
-* Added an API to run Pipeline. You can find how to use it in the [Pipeline API guide](/Dev%20Tools/Pipeline/en/api-guide/#pipeline).
+* Added an API to run Pipeline. You can find how to use it in the [Pipeline API Guide](/Dev%20Tools/Pipeline/en/api-guide/#pipeline).
 * Known issues (to be improved after analyzing the cause)
     * When creating a development environment, if you specify a value for the development environment constraints, the development environment creation fails.
 
