@@ -1,5 +1,11 @@
 ## Dev Tools > Pipeline > リリースノート
 
+### 2022. 05. 24
+* ソースリポジトリ、イメージストア、ビルドツール、配布対象に接続確認機能が追加されました。 [Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ko/console-guide)で使い方を確認できます。 
+* CloudTrailに詳細内容が追加されました。
+  * 設定の削除時に詳細内容を追加。
+  * パイプライン実行関連の詳細内容を追加。
+
 ### 2022. 02. 22
 * ソースリポジトリにGitLabが追加されました。 [Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ja/console-guide/#_1)で使い方を確認できます。
 
