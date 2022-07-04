@@ -1,5 +1,8 @@
 ## Dev Tools > Pipeline > 릴리스 노트
 
+### 2022. 07. 26.
+* 기능 - Webhook 스테이지가 추가되었습니다.
+
 ### 2022. 05. 24.
 * 소스 저장소, 이미지 저장소, 빌드 도구, 배포 대상에 연결 확인 기능이 추가되었습니다. [Pipeline 사용자 가이드](/Dev%20Tools/Pipeline/ko/console-guide)에서 사용 방법을 확인할 수 있습니다. 
 * CloudTrail에 세부 내용이 추가되었습니다.
