@@ -193,6 +193,10 @@ GitLab Repository에서 웹훅을 설정합니다.
 | SSL verification | Enable SSL verification 체크 |
 
 
+![console-guide-37](http://static.toastoven.net/prod_pipeline/2022-07-26/console-guide-01.png)
+GitLab 자동실행 설정시 GitLab의 username과 Full name이 다른경우 자동실행이 동작하지 않을 수 있으니 같은 값으로 설정하여야 합니다.
+
+
 ![console-guide-25](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-25.png)
 
 컨테이너 이미지를 갱신했을 때 파이프라인을 자동으로 실행하려면 자동 실행 유형을 이미지 저장소로 설정합니다. 환경 설정에서 등록한 이미지 저장소를 선택한 후 컨테이너 이미지 목록에서 자동 실행에 사용할 컨테이너 이미지를 선택합니다. 마지막으로 태그를 입력한 후 **확인**을 클릭합니다. 이미지 저장소 자동 실행 설정은 NHN Cloud Container Registry와 Private Docker Registry만 지원합니다. Docker Hub는 향후 지원할 예정입니다.
