@@ -174,7 +174,7 @@ Set up a webhook in your repository on GitHub or GitHub Enterprise.
 
 | Item | Setting value |
 |---|---|
-| Payload URL | https://api-pipeline.cloud.toast.com/webhooks/git/github |
+| Payload URL | https://kr1-pipeline.api.nhncloudservice.com/webhooks/git/github |
 | Content type | application/json |
 | Secret | The value entered in the secret of the pipeline autorun settings |
 
@@ -187,7 +187,7 @@ Set up a webhook in the GitLab repository.
 
 | Item | Setting value |
 |---|---|
-| URL | https://api-pipeline.cloud.toast.com/webhooks/git/gitlab |
+| URL | https://kr1-pipeline.api.nhncloudservice.com/webhooks/git/gitlab |
 | Trigger | Select Push events |
 | Secret | Do not set |
 | SSL verification | Select Enable SSL verification |
