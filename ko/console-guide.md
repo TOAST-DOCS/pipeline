@@ -174,7 +174,7 @@ GitHub 또는 GitHub Enterprise의 Repository에서 웹훅을 설정합니다.
 
 | 항목 | 설정값 |
 |---|---|
-| Payload URL | https://api-pipeline.cloud.toast.com/webhooks/git/github |
+| Payload URL | https://kr1-pipeline.api.nhncloudservice.com/webhooks/git/github |
 | Content type | application/json |
 | Secret | 파이프라인 자동 실행 설정의 시크릿에 입력한 값 |
 
@@ -187,7 +187,7 @@ GitLab Repository에서 웹훅을 설정합니다.
 
 | 항목 | 설정값 |
 |---|---|
-| URL | https://api-pipeline.cloud.toast.com/webhooks/git/gitlab |
+| URL | https://kr1-pipeline.api.nhncloudservice.com/webhooks/git/gitlab |
 | Trigger | Push events 체크 |
 | Secret | 설정하지 않음 |
 | SSL verification | Enable SSL verification 체크 |

@@ -2,6 +2,7 @@
 
 ### 2022. 07. 26.
 * 기능 - Webhook 스테이지가 추가되었습니다.
+* API 엔드포인트의 도메인이 api-pipeline.cloud.toast.com에서 kr1-pipeline.api.nhncloudservice.com로 변경되었습니다.
 
 ### 2022. 05. 24.
 * 소스 저장소, 이미지 저장소, 빌드 도구, 배포 대상에 연결 확인 기능이 추가되었습니다. [Pipeline 사용자 가이드](/Dev%20Tools/Pipeline/ko/console-guide)에서 사용 방법을 확인할 수 있습니다. 
