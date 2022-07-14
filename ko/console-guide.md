@@ -194,7 +194,7 @@ GitLab Repository에서 웹훅을 설정합니다.
 
 
 ![console-guide-37](http://static.toastoven.net/prod_pipeline/2022-07-26/console-guide-01.png)
-GitLab의 사용자 이름으로 자동실행 설정시 GitLab의 사용자 이름과 Full name이 다른경우 자동실행이 동작하지 않을 수 있으니 같은 값으로 설정하여야 합니다.
+GitLab의 사용자 이름으로 자동 실행 설정 시 GitLab의 사용자 이름과 Full name이 다른 경우 자동 실행이 동작하지 않을 수 있으니 같은 값으로 설정해야 합니다.
 
 
 ![console-guide-25](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-25.png)
