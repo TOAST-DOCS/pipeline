@@ -193,6 +193,10 @@ GitLab RepositoryでWebフックを設定します。
 | SSL verification | Enable SSL verificationチェック |
 
 
+![console-guide-37](http://static.toastoven.net/prod_pipeline/2022-07-26/console-guide-01.png)
+GitLabのユーザー名で自動実行を設定したとき、GitLabのユーザー名とFull nameが異なる場合、自動実行が動作しない可能性がありますので、同じ値に設定する必要があります。
+
+
 ![console-guide-25](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-25.png)
 
 コンテナイメージを更新したときにパイプラインを自動的に実行するには、自動実行タイプをイメージストアに設定します。環境設定で登録したイメージストアを選択した後、コンテナイメージリストから自動実行に使用するコンテナイメージを選択します。最後にタグを入力した後、**確認**をクリックします。イメージストア自動実行設定はNHN Cloud Container RegistryとPrivate Docker Registryのみサポートします。 Docker Hubは今後サポートする予定です。
