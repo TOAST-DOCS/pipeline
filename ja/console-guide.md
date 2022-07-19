@@ -174,7 +174,7 @@ GitHubまたはGitHub EnterpriseのRepositoryでWebフックを設定します�
 
 | 項目 | 設定値 |
 |---|---|
-| Payload URL | https://api-pipeline.cloud.toast.com/webhooks/git/github |
+| Payload URL | https://kr1-pipeline.api.nhncloudservice.com/webhooks/git/github |
 | Content type | application/json |
 | Secret | パイプライン自動実行設定のシークレットに入力した値 |
 
@@ -187,10 +187,14 @@ GitLab RepositoryでWebフックを設定します。
 
 | 項目 | 設定値 |
 |---|---|
-| URL | https://api-pipeline.cloud.toast.com/webhooks/git/gitlab |
+| URL | https://kr1-pipeline.api.nhncloudservice.com/webhooks/git/gitlab |
 | Trigger | Push eventsチェック |
 | Secret | 設定しない |
 | SSL verification | Enable SSL verificationチェック |
+
+
+![console-guide-37](http://static.toastoven.net/prod_pipeline/2022-07-26/console-guide-01.png)
+GitLabのユーザー名で自動実行を設定したとき、GitLabのユーザー名とFull nameが異なる場合、自動実行が動作しない可能性がありますので、同じ値に設定する必要があります。
 
 
 ![console-guide-25](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-25.png)

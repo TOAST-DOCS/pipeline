@@ -1,5 +1,9 @@
 ## Dev Tools > Pipeline > リリースノート
 
+### 2022. 07. 26.
+* 機能 - Webhookステージが追加されました。
+* APIエンドポイントのドメインがapi-pipeline.cloud.toast.comからkr1-pipeline.api.nhncloudservice.comに変更されました。
+
 ### 2022. 05. 24
 * ソースリポジトリ、イメージストア、ビルドツール、配布対象に接続確認機能が追加されました。 [Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ko/console-guide)で使い方を確認できます。 
 * CloudTrailに詳細内容が追加されました。
