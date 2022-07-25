@@ -6,7 +6,7 @@
 
 | Http Method | POST |
 | ----------- | ---- |
-| Request URL | https://api-pipeline.cloud.toast.com/api/anchor/v1.0/pipelines/{pipeline-name}/execute |
+| Request URL | https://kr1-pipeline.api.nhncloudservice.com/api/anchor/v1.0/pipelines/{pipeline-name}/execute |
 
 ### Header
 | Name | Description | Value |
@@ -27,5 +27,5 @@ curl -i -X POST \
    -H "X-TC-AUTHENTICATION-ID:{id}" \
    -H "X-TC-AUTHENTICATION-SECRET:{secret}" \
    -H "X-NHN-APPKEY:{appkey}" \
- 'https://api-pipeline.cloud.toast.com/api/anchor/v1.0/pipelines/{pipeline-name}/execute'
+ 'https://kr1-pipeline.api.nhncloudservice.com/api/anchor/v1.0/pipelines/{pipeline-name}/execute'
 ```

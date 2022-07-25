@@ -1,5 +1,9 @@
 ## Dev Tools > Pipeline > Release Notes
 
+### July 26, 2022
+* Added a webhook stage.
+* Changed the API endpoint domain from api-pipeline.cloud.toast.com to kr1-pipeline.api.nhncloudservice.com.
+
 ### May 24, 2022
 * Added the connection check feature for the source repository, image registry, build tool, and deployment target. You can see how to use it in the [Pipeline User Guide](/Dev%20Tools/Pipeline/en/console-guide). 
 * Added details to CloudTrail.

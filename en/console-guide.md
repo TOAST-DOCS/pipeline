@@ -174,7 +174,7 @@ Set up a webhook in your repository on GitHub or GitHub Enterprise.
 
 | Item | Setting value |
 |---|---|
-| Payload URL | https://api-pipeline.cloud.toast.com/webhooks/git/github |
+| Payload URL | https://kr1-pipeline.api.nhncloudservice.com/webhooks/git/github |
 | Content type | application/json |
 | Secret | The value entered in the secret of the pipeline autorun settings |
 
@@ -183,15 +183,19 @@ Set up a webhook in your repository on GitHub or GitHub Enterprise.
 Using a GitLab webhook, you can configure your pipeline to run automatically when an event occurs in the GitLab repository. Set the autorun type to GitLab, enter the repository's organization or user name, project name, and branch, and click **OK**. GitLab secret setting will be supported in the future.
 
 ![console-guide-36](http://static.toastoven.net/prod_pipeline/2022-02-15/console-guide-03.png)
+
 Set up a webhook in the GitLab repository.
 
 | Item | Setting value |
 |---|---|
-| URL | https://api-pipeline.cloud.toast.com/webhooks/git/gitlab |
+| URL | https://kr1-pipeline.api.nhncloudservice.com/webhooks/git/gitlab |
 | Trigger | Select Push events |
 | Secret | Do not set |
 | SSL verification | Select Enable SSL verification |
 
+![console-guide-37](http://static.toastoven.net/prod_pipeline/2022-07-26/console-guide-01.png)
+
+When setting Autorun with username of GitLab, if the username and Full name are different, Autorun may not work, so set them to the same value.
 
 ![console-guide-25](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-25.png)
 
