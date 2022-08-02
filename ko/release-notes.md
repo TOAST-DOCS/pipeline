@@ -1,7 +1,7 @@
 ## Dev Tools > Pipeline > 릴리스 노트
 
 ### 2022. 08. 23.
-* Stage가 없는 Pipeline을 [API](https://docs.toast.com/ko/Dev%20Tools/Pipeline/ko/api-guide/#pipeline)로 실행 시 실패 응답을 주도록 수정하였습니다.
+* 스테이지가 없는 Pipeline을 [API](https://docs.toast.com/ko/Dev%20Tools/Pipeline/ko/api-guide/#pipeline)로 실행 시 실패 응답을 주도록 수정하였습니다.
 
 ### 2022. 07. 26.
 * 기능 - Webhook 스테이지가 추가되었습니다.
