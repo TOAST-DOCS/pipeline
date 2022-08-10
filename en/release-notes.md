@@ -1,5 +1,8 @@
 ## Dev Tools > Pipeline > Release Notes
 
+### August 23, 2022
+* Made modifications so that, when running a pipeline without stages with [API](https://docs.toast.com/en/Dev%20Tools/Pipeline/en/api-guide/#pipeline), a failure response is returned.
+
 ### July 26, 2022
 * Added a webhook stage.
 * Changed the API endpoint domain from api-pipeline.cloud.toast.com to kr1-pipeline.api.nhncloudservice.com.
