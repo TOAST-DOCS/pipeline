@@ -1,5 +1,8 @@
 ## Dev Tools > Pipeline > リリースノート
 
+### 2022. 08. 23.
+* ステージがないPipelineを[API](https://docs.toast.com/ja/Dev%20Tools/Pipeline/ja/api-guide/#pipeline)で実行したとき、失敗レスポンスを返すように修正しました。
+
 ### 2022. 07. 26.
 * 機能 - Webhookステージが追加されました。
 * APIエンドポイントのドメインがapi-pipeline.cloud.toast.comからkr1-pipeline.api.nhncloudservice.comに変更されました。
