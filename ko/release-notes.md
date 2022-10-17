@@ -1,5 +1,8 @@
 ## Dev Tools > Pipeline > 릴리스 노트
 
+### 2022. 10. 25.
+* 배포대상 kubernetes 연결 테스트가 비동기 방식으로 변경되었습니다.
+
 ### 2022. 08. 23.
 * 스테이지가 없는 Pipeline을 [API](https://docs.toast.com/ko/Dev%20Tools/Pipeline/ko/api-guide/#pipeline)로 실행 시 실패 응답을 주도록 수정하였습니다.
 
