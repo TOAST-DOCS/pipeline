@@ -1,5 +1,8 @@
 ## Dev Tools > Pipeline > リリースノート
 
+### 2022. 10. 25.
+* 配布対象kubernetes接続テストが非同期方式に変更されました。
+
 ### 2022. 08. 23.
 * ステージがないPipelineを[API](https://docs.toast.com/ja/Dev%20Tools/Pipeline/ja/api-guide/#pipeline)で実行したとき、失敗レスポンスを返すように修正しました。
 
