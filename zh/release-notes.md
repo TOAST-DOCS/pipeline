@@ -1,5 +1,8 @@
 ## Dev Tools > Pipeline > Release Notes
 
+### October 25, 2022
+* Modified to display a guide message when the kubernetes integration test in deployment target times out.
+
 ### August 23, 2022
 * Made modifications so that, when running a pipeline without stages through the [API](https://docs.toast.com/en/Dev%20Tools/Pipeline/en/api-guide/#pipeline), a failure response is returned.
 
