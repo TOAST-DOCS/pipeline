@@ -1,5 +1,8 @@
 ## Dev Tools > Pipeline > Release Notes
 
+### December 27, 2022
+* Fixed an issue where, when creating a pipeline, you have to select a source repository in the Source Settings step to go to the previous stage.
+
 ### October 25, 2022
 * Modified to display a guide message when the kubernetes integration test in deployment target times out.
 
