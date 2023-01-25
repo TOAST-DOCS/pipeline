@@ -207,7 +207,7 @@ When setting Autorun with username of GitLab, if the username and Full name are 
 ![console-guide-25](http://static.toastoven.net/prod_pipeline/2023-01-13/console-guide-03.png)
 
 If you want the pipeline to run automatically when the container image is updated, set **Image Registry** for **Autorun Type**.
-After selecting the image registry registered in the environment settings, enter **Image Name**. Enter the image name in the form of `registry name/image name` for NHN Cloud container registry.
+After selecting **the image registry** registered in **the environment settings**, enter **Image Name**. Enter the image name in the form of `registry name/image name` for NHN Cloud container registry.
 For Dockerub, enter in the form of `docker hub account/image name`. **Tag** can use JAVA regular expression and is automatically executed when a tag matching the entered tag is pushed.
 If you do not enter a tag, it will be automatically executed when a new tag except latest is pushed.
 When finished, click **Confirm**.
