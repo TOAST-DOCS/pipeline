@@ -41,8 +41,9 @@ You can use the build tools provided by NHN Cloud.
 - Build Result Settings
   - Set the **Dockerfile Path** of the build result, and the **Dockerfile Execution Path**.
   - Select a **Image Registry** and decide on **Image Name**, and the build result is pushed to the selected repository.
+  - If **Use tag format** is selected, the tag format is fixed, and the image is created with dynamically generated tags in the form of `_{BUILD_NUMBER}`.
 
-![stage-guide-05](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-05.png)
+![stage-guide-05](http://static.toastoven.net/prod_pipeline/2023-01-13/stage-guide-01.png)
 
 ### Deployment
 This is a stage to deploy to the Kubernetes environment.
@@ -50,6 +51,7 @@ This is a stage to deploy to the Kubernetes environment.
 #### Deployment - Deploy
 You can select the [deployment target](https://docs.toast.com/en/Dev%20Tools/Pipeline/en/console-guide/#_1) you added in **Deployment Target Settings** in **Environment Settings**. 
 Enter **Stage Name**, **Deployment Target**, and **Manifest** to use for deployment. 
+If the tag format is used in the build stage, when the docker image tag of **Manifest** is entered as `_{BUILD_NUMBER}`, you can deploy as the image with the most recent number among the images built in the tag format.
 See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment ) for how to write **Manifest**.
 
 ![stage-guide-06](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-06.png)
