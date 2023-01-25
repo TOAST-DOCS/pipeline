@@ -41,7 +41,7 @@ You can use the build tools provided by NHN Cloud.
 - Build Result Settings
   - Set the **Dockerfile Path** of the build result, and the **Dockerfile Execution Path**.
   - Select a **Image Registry** and decide on **Image Name**, and the build result is pushed to the selected repository.
-  - If **Use tag format** is selected, the tag format is fixed, and the image is created with dynamically generated tags in the form of `_{BUILD_NUMBER}`.
+  - If **Use Tag Format** is selected, the tag format is fixed, and the image is created with dynamically generated tags in the form of `_{BUILD_NUMBER}`.
 
 ![stage-guide-05](http://static.toastoven.net/prod_pipeline/2023-01-13/stage-guide-01.png)
 
