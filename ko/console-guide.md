@@ -114,11 +114,13 @@ NHN Cloud 빌드 도구에서 소스 코드를 빌드할 때 사용하는 소스
 
 빌드 설정에서는 NHN Cloud 빌드 도구를 사용하거나 환경 설정에서 등록한 빌드 도구를 사용할 수 있습니다. 스테이지 이름을 입력하고 **빌드 도구**에서 사용할 빌드 도구를 선택합니다.
 
-![console-guide-16](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-16.png)
+![console-guide-16](http://static.toastoven.net/prod_pipeline/2023-01-13/console-guide-01.png)
 
 NHN Cloud 빌드 도구를 사용하면 별도의 소프트웨어 설치 없이 소스 저장소에 저장한 애플리케이션 소스 코드를 빌드하고, 빌드한 애플리케이션으로 컨테이너 이미지를 생성하고, 생성한 컨테이너 이미지를 이미지 저장소에 업로드할 수 있습니다.
 **빌드 환경 설정**에는 **소스 설정**에서 설정한 소스 코드를 사용해서 애플리케이션을 빌드하는 방법을 입력합니다. 소스 코드 빌드에 사용할 컨테이너 이미지, 빌드 머신의 성능, 빌드에 사용할 명령어를 입력할 수 있습니다.
 **빌드 결과 설정**에는 빌드한 애플리케이션으로 컨테이너 이미지를 만드는 방법을 입력합니다. 컨테이너 이미지를 생성할 때 사용할 Dockerfile, 생성한 컨테이너 이미지를 업로드할 이미지 저장소, 업로드할 컨테이너 이미지의 이름과 태그를 입력할 수 있습니다.
+**태그 포맷 사용** 체크 박스를 클릭하면 이미지 태그 포맷을 사용할 수 있습니다. 이미지 태그 포맷을 사용하면 생성된 이미지의 태그를 NHN Cloud 빌드 도구에서 부여하는 빌드 번호로 사용하게 됩니다. 생성되는 태그는 `_{BUILD_NUMBER}` 형식이며 BUILD_NUMBER가 빌드 번호 입니다.
+빌드 번호는 빌드마다 증가하는 숫자형 데이터입니다. 이미지 태그 포맷 사용 시에는 태그가 `_{BUILD_NUMBER}` 형태로 고정됩니다.
 
 ![console-guide-17](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-17.png)
 
@@ -133,6 +135,11 @@ NHN Cloud 빌드 도구를 사용하면 별도의 소프트웨어 설치 없이 
 ![console-guide-18](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-18.png)
 
 스테이지 이름, 배포 대상, 배포에 사용할 Manifest를 입력한 후 **다음**을 클릭합니다. Manifest를 작성하는 방법은 [Kubernetes 문서](https://kubernetes.io/docs/concepts/workloads/controllers/deployment )를 참고하십시오.
+
+![console-guide-38](http://static.toastoven.net/prod_pipeline/2023-01-13/console-guide-02.png)
+
+빌드 설정에서 태그 포맷을 사용했다면 도커(Docker) 이미지 입력 부분에 태그를 위와 같이`_{BUILD_NUMBER}`로 입력합니다. 이미지의 태그에 `_{BUILD_NUMBER}`가 입력된 경우 가장 최신의 번호로 입력되어 배포됩니다.
+태그 포맷을 사용하려면 빌드 스테이지 및 NHN Cloud 빌드 도구를 설정해야 합니다.
 
 #### 최종 검토 및 파이프라인 생성
 
@@ -197,9 +204,13 @@ GitLab Repository에서 웹훅을 설정합니다.
 GitLab의 사용자 이름으로 자동 실행 설정 시 GitLab의 사용자 이름과 Full name이 다른 경우 자동 실행이 동작하지 않을 수 있으니 같은 값으로 설정해야 합니다.
 
 
-![console-guide-25](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-25.png)
+![console-guide-25](http://static.toastoven.net/prod_pipeline/2023-01-13/console-guide-03.png)
 
-컨테이너 이미지를 갱신했을 때 파이프라인을 자동으로 실행하려면 자동 실행 유형을 이미지 저장소로 설정합니다. 환경 설정에서 등록한 이미지 저장소를 선택한 후 컨테이너 이미지 목록에서 자동 실행에 사용할 컨테이너 이미지를 선택합니다. 마지막으로 태그를 입력한 후 **확인**을 클릭합니다. 이미지 저장소 자동 실행 설정은 NHN Cloud Container Registry와 Private Docker Registry만 지원합니다. Docker Hub는 향후 지원할 예정입니다.
+컨테이너 이미지를 갱신했을 때 파이프라인을 자동으로 실행하려면 **자동 실행 유형**을 **이미지 저장소**로 설정합니다.
+**이미지 저장소**를 **환경 설정**에서 등록한 항목으로 선택한 뒤 **이미지 이름**을 입력합니다. 이미지 이름은 NHN Cloud Container Registry의 경우 `registry명/이미지이름`의 형태로 입력합니다.
+DockerHub의 경우 `도커허브계정/이미지이름` 형식으로 입력합니다. **태그**는 JAVA 정규 표현식을 사용할 수 있으며 입력한 태그와 매칭되는 태그가 push 되었을 경우 자동 실행됩니다.
+태그를 입력하지 않으면 latest를 제외한 신규 태그가 push될 경우 자동 실행됩니다.
+입력을 마친 후 **확인**을 클릭합니다.
 
 ![console-guide-26](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-26.png)
 

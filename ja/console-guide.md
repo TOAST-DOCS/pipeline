@@ -114,11 +114,13 @@ NHN Cloudビルドツールでソースコードをビルドするときに使�
 
 ビルド設定では、NHN Cloudビルドツールや、環境設定で登録したビルドツールを使用できます。ステージ名を入力し、**ビルドツール**で使用するビルドツールを選択します。
 
-![console-guide-16](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-16.png)
+![console-guide-16](http://static.toastoven.net/prod_pipeline/2023-01-13/console-guide-01.png)
 
 NHN Cloudビルドツールを使用すると、別途ソフトウェアをインストールせずにソースリポジトリに保存したアプリケーションソースコードをビルドし、ビルドしたアプリケーションでコンテナイメージを作成し、作成したコンテナイメージをイメージストアにアップロードできます。
 **ビルド環境設定**には**ソース設定**で設定したソースコードを使用してアプリケーションをビルドする方法を入力します。ソースコードのビルドに使用するコンテナイメージ、ビルドマシンの性能、ビルドに使用するコマンドを入力できます。
 **ビルド結果設定**にはビルドしたアプリケーションでコンテナイメージを作成する方法を入力します。コンテナイメージを作成するときに使用するDockerfile、作成したコンテナイメージをアップロードするイメージストア、アップロードするコンテナイメージの名前とタグを入力できます。
+**タグフォーマット使用**チェックボックスをクリックするとイメージタグフォーマットを使用できます。イメージタグフォーマットを使用すると、作成されたイメージのタグをNHN Cloudビルドツールで付与するビルド番号として使用します。作成されるタグは`_{BUILD_NUMBER}`形式で、BUILD_NUMBERがビルド番号です。
+ビルド番号はビルドごとに増加する数字型のデータです。イメージタグフォーマット使用時にはタグが`_{BUILD_NUMBER}`形式で固定されます。
 
 ![console-guide-17](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-17.png)
 
@@ -133,6 +135,11 @@ NHN Cloudビルドツールを使用すると、別途ソフトウェアをイ�
 ![console-guide-18](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-18.png)
 
 ステージ名、配布対象、配布に使用するManifestを入力し、**次へ**をクリックします。 Manifestを作成する方法は[Kubernetes文書](https://kubernetes.io/docs/concepts/workloads/controllers/deployment )を参照してください。
+
+![console-guide-38](http://static.toastoven.net/prod_pipeline/2023-01-13/console-guide-02.png)
+
+ビルド設定でタグフォーマットを使用した場合、ドッカー(Docker)イメージ入力部分にタグを上記のように`_{BUILD_NUMBER}`に入力します。イメージのタグに`_{BUILD_NUMBER}`が入力されている場合、最新の番号で入力されて配布されます。
+タグフォーマットを使用するにはビルドステージおよびNHN Cloudビルドツールを設定する必要があります。
 
 #### 最終検討とパイプラインの作成
 
@@ -197,9 +204,13 @@ GitLab RepositoryでWebフックを設定します。
 GitLabのユーザー名で自動実行を設定したとき、GitLabのユーザー名とFull nameが異なる場合、自動実行が動作しない可能性がありますので、同じ値に設定する必要があります。
 
 
-![console-guide-25](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-25.png)
+![console-guide-25](http://static.toastoven.net/prod_pipeline/2023-01-13/console-guide-03.png)
 
-コンテナイメージを更新したときにパイプラインを自動的に実行するには、自動実行タイプをイメージストアに設定します。環境設定で登録したイメージストアを選択した後、コンテナイメージリストから自動実行に使用するコンテナイメージを選択します。最後にタグを入力した後、**確認**をクリックします。イメージストア自動実行設定はNHN Cloud Container RegistryとPrivate Docker Registryのみサポートします。 Docker Hubは今後サポートする予定です。
+コンテナイメージを更新したときにパイプラインを自動的に実行するには、**自動実行タイプ**を**イメージストア**に設定します。
+**イメージストア**を**環境設定**で登録した項目に選択したした後、**イメージ名**を入力します。イメージ名はNHN Cloud Container Registryの場合`registry名/イメージ名`の形式で入力します。
+DockerHubの場合、`ドッカーハブアカウント/イメージ名`形式で入力します。**タグ**はJAVA正規表現式を使用でき、入力したタグとマッチするタグがpushされた場合に自動実行されます。
+タグを入力しない場合、latestを除く新規タグがpushされる場合に自動実行されます。
+入力が終わったら**確認**をクリックします。
 
 ![console-guide-26](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-26.png)
 
