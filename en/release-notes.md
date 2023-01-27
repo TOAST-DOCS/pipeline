@@ -4,9 +4,9 @@
 * Added a feature to assign dynamically created tags by using the image tag format in the build stage.
 * Added a feature to deploy with the most recent tag among tags dynamically created using the image tag format in the deployment stage.
 * Changes to how image autorun is executed as follows.
-  * Tag value is excluded from required values from autorun settings.
-  * Changed to automatically run the entered tag and a matched tag with regular expression are pushed.
-  * Changed to automatically run a tag when it is pushed with tags excluding latest as long as the tag is not entered.
+    * Tag value is excluded from required values from autorun settings.
+    * Changed to automatically run the entered tag and a matched tag with regular expression are pushed.
+    * Changed to automatically run a tag when it is pushed with tags excluding latest as long as the tag is not entered.
 
 ### December 27, 2022
 * Fixed an issue where, when creating a pipeline, you have to select a source repository in the Source Settings step to go to the previous stage.
