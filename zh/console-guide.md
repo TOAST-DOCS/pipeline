@@ -25,9 +25,9 @@ After adding the source repository, you can build the source code using the NHN 
 
 Click **Source Repository Settings** in **Environment Settings** to go to the screen to manage source repositories. You can add a source repository by clicking **Add Source Repository**.
 
-![console-guide-02](http://static.toastoven.net/prod_pipeline/2022-02-15/console-guide-01.png)
+![console-guide-02](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-01.png)
 
-After entering the source repository information, click **OK**.
+Enter the source repository information, and click **Check** in **Source Repository Connection Check**. To obtain a token for a GitLab source repository, `read_user`, `api`, and `read_api` permissions are required. After checking the connection, click **Confirm**.
 
 ![console-guide-03](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-03.png)
 
@@ -39,9 +39,9 @@ If you add an image registry, you can use the information to access an image reg
 
 Click **Image Registry Settings** in **Environment Settings** to go to the screen to manage image repositories. You can add a source repository by clicking **Add Image Registry**.
 
-![console-guide-05](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-05.png)
+![console-guide-05](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-02.png)
 
-After entering the image registry information, click **OK**. If you don't enter the image registry URL, it works with Docker Hub.
+Enter the image registry information, and click **Check** in **Image Registry Connection Check**. After checking the connection, click **Confirm**. If you don't enter the image registry URL, it works as Docker Hub.
 
 ![console-guide-06](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-06.png)
 
@@ -53,9 +53,9 @@ By adding a build tool, your pipeline can use the various actions you define in 
 
 Click **Build Tool Settings** in **Environment Settings** to go to the screen to manage the build tool. You can add a build tool by clicking **Add Build Tool**.
 
-![console-guide-08](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-08.png)
+![console-guide-08](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-03.png)
 
-After entering the build tool information, click **OK**.
+Enter the build tool information, click **Check** in **Build Tool Connection Check**. After checking the connection, click **Confirm**.
 
 ![console-guide-09](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-09.png)
 
@@ -67,9 +67,9 @@ Adding a deployment target allows you to manage the deployment target in your pi
 
 Click **Deployment Target Settings** in **Environment Settings** to go to the screen to manage deployment targets. You can add deployment targets by clicking **Add Deployment Target**.
 
-![console-guide-11](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-11.png)
+![console-guide-11](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-04.png)
 
-Enter the deployment target name and deployment target description, select the Kubeconfig file, and click **OK** to add the deployment target.
+Enter the deployment target name and deployment target description, select the Kubeconfig file, and click **Check** in **Deployment Target Connection Check**. After checking the connection, click **Confirm**.
 
 ![console-guide-12](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-12.png)
 
@@ -114,11 +114,13 @@ Enter the stage name, the source repository registered in the environment settin
 
 In the build settings, you can use the NHN Cloud build tool or the build tool registered in the environment settings. Enter a stage name and select the build tool to use under **Build Tool**.
 
-![console-guide-16](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-16.png)
+![console-guide-16](http://static.toastoven.net/prod_pipeline/2023-01-13/console-guide-01.png)
 
 The NHN Cloud build tool allows you to build the application source code stored in the source repository without installing additional software, create a container image with the built application, and upload the created container image to the image registry.
 In **Build Environment Settings**, enter the method of building the application using the source code set in **Source Settings**. You can enter the container image to use for building the source code, the performance of the build machine, and the command to use for the build.
 In **Build Result Settings**, enter how to create a container image with the built application. You can enter the Dockerfile to use when creating the container image, the image registry to upload the created container image to, and the name and tag of the container image to upload.
+When you click the **Use Tag Format** box, you can use the image tag format. If you use the image tag format, the tag of the created image is used as the build number given by the NHN Cloud build tools. The generated tags are of the form `_{BUILD_NUMBER}` and BUILD_NUMBER indicates the build number.
+The build number is numeric data that increments with each build. When using the image tag format, the tag is fixed in the form of `_{BUILD_NUMBER}`.
 
 ![console-guide-17](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-17.png)
 
@@ -133,6 +135,11 @@ In deployment settings, you can set how the container image is deployed to the d
 ![console-guide-18](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-18.png)
 
 Enter the stage name, deployment target, and Manifest to use for deployment, and click **Next**. See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment) for how to write a Manifest.
+
+![console-guide-38](http://static.toastoven.net/prod_pipeline/2023-01-13/console-guide-02.png)
+
+If you used the tag format in the build settings, enter `_{BUILD_NUMBER}` for the tag in the Docker image input area as shown above. When `_{BUILD_NUMBER}` is entered in the image tag, it is deployed with the most recent number.
+To use the tag format, you must set build stage and NHN Cloud build tool.
 
 #### Final Review and Pipeline Creation
 
@@ -183,6 +190,7 @@ Set up a webhook in your repository on GitHub or GitHub Enterprise.
 Using a GitLab webhook, you can configure your pipeline to run automatically when an event occurs in the GitLab repository. Set the autorun type to GitLab, enter the repository's organization or user name, project name, and branch, and click **OK**. GitLab secret setting will be supported in the future.
 
 ![console-guide-36](http://static.toastoven.net/prod_pipeline/2022-02-15/console-guide-03.png)
+
 Set up a webhook in the GitLab repository.
 
 | Item | Setting value |
@@ -192,10 +200,17 @@ Set up a webhook in the GitLab repository.
 | Secret | Do not set |
 | SSL verification | Select Enable SSL verification |
 
+![console-guide-37](http://static.toastoven.net/prod_pipeline/2022-07-26/console-guide-01.png)
 
-![console-guide-25](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-25.png)
+When setting Autorun with username of GitLab, if the username and Full name are different, Autorun may not work, so set them to the same value.
 
-If you want the pipeline to run automatically when the container image is updated, set the autorun type to image registry. After selecting the image registry registered in the environment settings, select the container image to use for autorun from the list of container images. Finally, enter a tag and click **OK**. The image registry autorun configuration only supports NHN Cloud Container Registry and private Docker registry. Docker Hub will be supported in the future.
+![console-guide-25](http://static.toastoven.net/prod_pipeline/2023-01-13/console-guide-03.png)
+
+If you want the pipeline to run automatically when the container image is updated, set **Image Registry** for **Autorun Type**.
+After selecting **the image registry** registered in **the environment settings**, enter **Image Name**. Enter the image name in the form of `registry name/image name` for NHN Cloud container registry.
+For Dockerub, enter in the form of `docker hub account/image name`. **Tag** can use JAVA regular expression and is automatically executed when a tag matching the entered tag is pushed.
+If you do not enter a tag, it will be automatically executed when a new tag except latest is pushed.
+When finished, click **Confirm**.
 
 ![console-guide-26](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-26.png)
 
