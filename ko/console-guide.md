@@ -122,9 +122,36 @@ NHN Cloud 빌드 도구를 사용하면 별도의 소프트웨어 설치 없이 
 **태그 포맷 사용** 체크 박스를 클릭하면 이미지 태그 포맷을 사용할 수 있습니다. 이미지 태그 포맷을 사용하면 생성된 이미지의 태그를 NHN Cloud 빌드 도구에서 부여하는 빌드 번호로 사용하게 됩니다. 생성되는 태그는 `_{BUILD_NUMBER}` 형식이며 BUILD_NUMBER가 빌드 번호 입니다.
 빌드 번호는 빌드마다 증가하는 숫자형 데이터입니다. 이미지 태그 포맷 사용 시에는 태그가 `_{BUILD_NUMBER}` 형태로 고정됩니다.
 
+NHN Cloud 빌드도구에서 **아티팩트** 설정을 사용하여 **시작 조건**과 **종료 조건**을 설정 할 수 있습니다.
+시작 조건으로 설정된 **아티팩트**는 스테이지 시작시에 존재 유무를 확인하여 스테이지의 진행 여부를 결정합니다.
+종료 조건으로 설정된 **아티팩트**는 스테이지의 생산물을 **아티팩트**로 설정합니다.
+
+NHN Cloud 빌드도구에서 설정 가능한 **아티팩트**
+
+| 아티팩트 종류    | 사용 조건  | 경로 혹은 레퍼런스 설정 예시                                                                 |
+|------------|--------|----------------------------------------------------------------------------------|
+| GitHub 파일  | 시작     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}    |
+| GitLab 파일  | 시작     | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path} |
+| Docker 이미지 | 시작, 종료 | {dockerhub-account or image-registry-path}/{image-name}                          |
+| HTTP 파일    | 시작 | 접근 가능한 URL                                                                       |
+
+
 ![console-guide-17](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-17.png)
 
 환경 설정에서 추가한 빌드 도구를 사용하면 빌드 도구의 빌드 잡을 실행할 수 있습니다. 실행할 빌드 잡을 선택하면 빌드 잡의 파라미터를 추가로 입력할 수 있습니다.
+
+**아티팩트** 설정을 사용하여 **시작 조건**과 **종료 조건**을 설정 할 수 있습니다.
+시작 조건으로 설정된 **아티팩트**는 스테이지 시작시에 존재 유무를 확인하여 스테이지의 진행 여부를 결정합니다.
+종료 조건으로 설정된 **아티팩트**는 스테이지의 생산물을 **아티팩트**로 설정합니다.
+
+빌드도구에서 설정 가능한 **아티팩트**
+
+| 아티팩트 종류    | 사용 조건  | 경로 혹은 레퍼런스 설정 예시                                                                 |
+|------------|--------|----------------------------------------------------------------------------------|
+| GitHub 파일  | 시작     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}    |
+| GitLab 파일  | 시작     | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path} |
+| Docker 이미지 | 시작     | {dockerhub-account or image-registry-path}/{image-name}                          |
+| HTTP 파일    | 시작, 종료 | 접근 가능한 URL                                                                       |
 
 빌드 설정을 완료한 후 **다음**을 클릭합니다.
 
@@ -140,6 +167,21 @@ NHN Cloud 빌드 도구를 사용하면 별도의 소프트웨어 설치 없이 
 
 빌드 설정에서 태그 포맷을 사용했다면 도커(Docker) 이미지 입력 부분에 태그를 위와 같이`_{BUILD_NUMBER}`로 입력합니다. 이미지의 태그에 `_{BUILD_NUMBER}`가 입력된 경우 가장 최신의 번호로 입력되어 배포됩니다.
 태그 포맷을 사용하려면 빌드 스테이지 및 NHN Cloud 빌드 도구를 설정해야 합니다.
+
+
+**아티팩트** 설정을 사용하여 **시작 조건**과 **종료 조건**을 설정 할 수 있습니다.
+시작 조건으로 설정된 **아티팩트**는 스테이지 시작시에 존재 유무를 확인하여 스테이지의 진행 여부를 결정합니다.
+종료 조건으로 설정된 **아티팩트**는 스테이지의 생산물을 **아티팩트**로 설정합니다.
+
+배포 설정에서 설정 가능한 **아티팩트**
+
+| 아티팩트 종류    | 사용 조건  | 경로 혹은 레퍼런스 설정 예시                                                                 |
+|------------|--------|----------------------------------------------------------------------------------|
+| GitHub 파일  | 시작     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}    |
+| GitLab 파일  | 시작     | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path} |
+| Docker 이미지 | 시작 | {dockerhub-account or image-registry-path}/{image-name}                          |
+| HTTP 파일    | 시작 | 접근 가능한 URL                                                                       |
+| kubernetes 오브젝트 | 종료 | 오브젝트의 이름                                                                         |
 
 #### 최종 검토 및 파이프라인 생성
 
