@@ -29,6 +29,7 @@
 
 #### 빌드 - Jenkins
 사용자가 직접 구성한 Jenkins를 이용하여 빌드할 수 있습니다. **빌드 도구**는 **환경 설정**의 **빌드 도구 설정**에서 추가한 [빌드 도구](https://docs.toast.com/ko/Dev%20Tools/Pipeline/ko/console-guide/#_1)를 선택할 수 있습니다. **빌드 잡**을 선택하고 **빌드 잡 파라미터**를 입력할 수 있습니다.
+**아티팩트**의 **시작 조건**과 **종료 조건**을 설정할 수 있습니다. **시작 조건**을 설정하여 스테이지 시작 여부를 결정할 수 있습니다. **종료 조건**을 설정하여 스테이지의 생성물을 아티팩트로 설정할 수 있습니다.
 
 ![stage-guide-04](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-04.png)
 
@@ -43,6 +44,10 @@ NHN Cloud에서 제공하는 빌드 도구를 사용할 수 있습니다.
   - **이미지 저장소**를 선택하고, **이미지 이름**을 결정하면 해당 저장소로 결과물을 push합니다.
   - **태그 포맷 사용**을 선택하면 태그 포맷으로 태그가 고정되며, `_{BUILD_NUMBER}` 형식의 동적으로 생성되는 태그로 이미지가 생성됩니다.
 
+- 아티팩트 설정
+  - **시작 조건**을 설정하여 스테이지 시작 여부를 결정할 수 있습니다.
+  - **종료 조건**을 설정하여 스테이지의 생성물을 아티팩트로 설정할 수 있습니다.
+
 ![stage-guide-05](http://static.toastoven.net/prod_pipeline/2023-01-13/stage-guide-01.png)
 
 ### 배포
@@ -53,6 +58,7 @@ Kubernetes 환경에 배포를 하는 스테이지입니다.
 **스테이지 이름**, **배포 대상**, 배포에 사용할 **Manifest**를 입력합니다.
 빌드 스테이지에서 태그 포맷을 사용한 경우 **Manifest**의 도커 이미지 태그 부분을 `_{BUILD_NUMBER}`로 입력하면 태그 포맷으로 빌드된 이미지 중 가장 최근 번호의 이미지로 배포할 수 있습니다.
 **Manifest**를 작성하는 방법은 [Kubernetes 문서](https://kubernetes.io/docs/concepts/workloads/controllers/deployment )를 참고하십시오.
+**아티팩트**의 **시작 조건** 및 **종료 조건**을 설정할 수 있습니다. **시작 조건**을 설정하여 스테이지 시작 여부를 결정할 수 있습니다. **종료 조건**을 설정하여 스테이지의 생성물을 아티팩트로 설정할 수 있습니다.
 
 ![stage-guide-06](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-06.png)
 
