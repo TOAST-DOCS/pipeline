@@ -132,7 +132,7 @@ GitHub 및 GitLab의 경우 브랜치를 입력하지 않으면 master 브랜치
 
 | 아티팩트 종류    | 사용 조건  | 경로 혹은 레퍼런스 설정 예시                                                                 |
 |------------|--------|----------------------------------------------------------------------------------|
-| GitHub 파일  | 시작     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}    |
+| GitHub 파일  | 시작     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path} <br/> GitHub Enterprise 일때의 예시 : https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path}   |
 | GitLab 파일  | 시작     | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path} |
 | Docker 이미지 | 시작, 종료 | {dockerhub-account or image-registry-path}/{image-name}                          |
 | HTTP 파일    | 시작 | 접근 가능한 URL                                                                       |
@@ -152,7 +152,7 @@ GitHub 및 GitLab의 경우 브랜치를 입력하지 않으면 master 브랜치
 
 | 아티팩트 종류    | 사용 조건  | 경로 혹은 레퍼런스 설정 예시                                                                 |
 |------------|--------|----------------------------------------------------------------------------------|
-| GitHub 파일  | 시작     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}    |
+| GitHub 파일  | 시작     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}  <br/> GitHub Enterprise 일때의 예시 : https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path}  |
 | GitLab 파일  | 시작     | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path} |
 | Docker 이미지 | 시작     | {dockerhub-account or image-registry-path}/{image-name}                          |
 | HTTP 파일    | 시작, 종료 | 접근 가능한 URL                                                                       |
@@ -181,13 +181,13 @@ GitHub 및 GitLab의 경우 브랜치를 입력하지 않으면 master 브랜치
 
 GitHub 및 GitLab의 경우 브랜치를 입력하지 않으면 master 브랜치를 기본값으로 사용하게됩니다.
 
-| 아티팩트 종류    | 사용 조건  | 경로 혹은 레퍼런스 설정 예시                                                                 |
-|------------|--------|----------------------------------------------------------------------------------|
-| GitHub 파일  | 시작     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}    |
-| GitLab 파일  | 시작     | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path} |
-| Docker 이미지 | 시작 | {dockerhub-account or image-registry-path}/{image-name}                          |
-| HTTP 파일    | 시작 | 접근 가능한 URL                                                                       |
-| kubernetes 오브젝트 | 종료 | 오브젝트의 이름                                                                         |
+| 아티팩트 종류    | 사용 조건  | 경로 혹은 레퍼런스 설정 예시                                                                                                                                                                                           |
+|------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| GitHub 파일  | 시작     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}   <br/> GitHub Enterprise 일때의 예시 : https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
+| GitLab 파일  | 시작     | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                           |
+| Docker 이미지 | 시작 | {dockerhub-account or image-registry-path}/{image-name}                                                                                                                                                    |
+| HTTP 파일    | 시작 | 접근 가능한 URL                                                                                                                                                                                                 |
+| kubernetes 오브젝트 | 종료 | 오브젝트의 이름                                                                                                                                                                                                   |
 
 #### 최종 검토 및 파이프라인 생성
 
