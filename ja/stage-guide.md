@@ -29,8 +29,10 @@
 
 #### ビルド - Jenkins
 ユーザーが直接構成したJenkinsを利用してビルドできます。**ビルドツール**は**環境設定**の**ビルドツール設定**で追加した[ビルドツール](https://docs.nhncloud.com/ja/Dev%20Tools/Pipeline/ja/console-guide/#_1)を選択できます。**ビルドジョブ**を選択し、**ビルドジョブパラメータ**を入力できます。
+**アーティファクト**の**開始条件**と**終了条件**を設定できます。**開始条件**を設定してステージを開始するかどうかを決定できます。 **終了条件**を設定してステージの作成物をアーティファクトに設定できます。
 
-![stage-guide-04](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-04.png)
+![stage-guide-04](http://static.toastoven.net/prod_pipeline/2023-02-28/stage-guide-01.png)
+![stage-guide-12](http://static.toastoven.net/prod_pipeline/2023-02-28/stage-guide-04.png)
 
 #### ビルド - NHN Cloudビルドツール
 NHN Cloudで提供するビルドツールを使用できます。
@@ -43,7 +45,12 @@ NHN Cloudで提供するビルドツールを使用できます。
   - **イメージストア**を選択し、**イメージ名**を決定したらそのリポジトリに結果物をpushします。
   - **タグフォーマット使用**を選択すると、タグフォーマットでタグが固定され、`_{BUILD_NUMBER}`形式の動的に作成されるタグでイメージが作成されます。
 
-![stage-guide-05](http://static.toastoven.net/prod_pipeline/2023-01-13/stage-guide-01.png)
+'- アーティファクト設定
+  - **開始条件**を設定してステージを開始するかどうかを決定できます。
+  - **終了条件**を設定してステージの作成物をアーティファクトに設定できます。
+
+![stage-guide-05](http://static.toastoven.net/prod_pipeline/2023-02-28/stage-guide-02.png)
+![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-02.png)
 
 ### 配布
 Kubernetes環境に配布を行うステージです。
@@ -53,8 +60,10 @@ Kubernetes環境に配布を行うステージです。
 **ステージ名**、**配布対象**、配布に使用する**Manifest**を入力します。
 ビルドステージでタグフォーマットを使用した場合、**Manifest**のドッカーイメージタグ部分を`_{BUILD_NUMBER}`と入力すると、タグフォーマットでビルドされたイメージのうち最新の番号のイメージで配布できます。
 **Manifest**を作成する方法は[Kubernetes文書](https://kubernetes.io/docs/concepts/workloads/controllers/deployment )を参照してください。
+**アーティファクト**の**開始条件**および**終了条件**を設定できます。**開始条件**を設定してステージを開始するかどうかを決定できます。**終了条件**を設定してステージの作成物をアーティファクトに設定できます。
 
-![stage-guide-06](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-06.png)
+![stage-guide-06](http://static.toastoven.net/prod_pipeline/2023-02-28/stage-guide-03.png)
+![stage-guide-14](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-05.png)
 
 #### 配布 - Patch
 **環境設定**の**配布対象設定**で追加した[配布対象](https://docs.nhncloud.com/ja/Dev%20Tools/Pipeline/ja/console-guide/#_1)を選択できます。
