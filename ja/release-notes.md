@@ -15,7 +15,7 @@
 * 配布対象Kubernetes接続テストの時間が超過した時にも案内メッセージを表示するように修正しました。
 
 ### 2022. 08. 23.
-* ステージがないPipelineを[API](https://docs.toast.com/ja/Dev%20Tools/Pipeline/ja/api-guide/#pipeline)で実行したとき、失敗レスポンスを返すように修正しました。
+* ステージがないPipelineを[API](https://docs.nhncloud.com/ja/Dev%20Tools/Pipeline/ja/api-guide/#pipeline)で実行したとき、失敗レスポンスを返すように修正しました。
 
 ### 2022. 07. 26.
 * 機能 - Webhookステージが追加されました。
