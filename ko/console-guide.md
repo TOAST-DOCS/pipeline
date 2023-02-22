@@ -133,7 +133,7 @@ GitHub 및 GitLab은 브랜치를 입력하지 않을 경우 master 브랜치를
 
 | 아티팩트 종류    | 사용 조건  | 경로 또는 레퍼런스 설정 예시                                                                                                                                                                                        |
 |------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| GitHub 파일  | 시작     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path} <br/> GitHub Enterprise 일때의 예시: https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
+| GitHub 파일  | 시작     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path} <br/> GitHub Enterprise일 때의 예시: https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
 | GitLab 파일  | 시작     | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                        |
 | Docker 이미지 | 시작, 종료 | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                        |
 | HTTP 파일    | 시작 | 접근 가능한 URL                                                                                                                                                                                              |
@@ -154,7 +154,7 @@ GitHub 및 GitLab은 브랜치를 입력하지 않을 경우 master 브랜치를
 
 | 아티팩트 종류    | 사용 조건  | 경로 또는 레퍼런스 설정 예시                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| GitHub 파일  | 시작     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}  <br/> GitHub Enterprise 일때의 예시: https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
+| GitHub 파일  | 시작     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}  <br/> GitHub Enterprise일 때의 예시: https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
 | GitLab 파일  | 시작     | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                         |
 | Docker 이미지 | 시작     | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                         |
 | HTTP 파일    | 시작, 종료 | 접근 가능한 URL                                                                                                                                                                                               |
@@ -185,7 +185,7 @@ GitHub 및 GitLab은 브랜치를 입력하지 않을 경우 master 브랜치를
 
 | 아티팩트 종류    | 사용 조건  | 경로 또는 레퍼런스 설정 예시                                                                                                                                                                                          |
 |------------|--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| GitHub 파일  | 시작     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}   <br/> GitHub Enterprise 일때의 예시: https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
+| GitHub 파일  | 시작     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}   <br/> GitHub Enterprise일 때의 예시: https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
 | GitLab 파일  | 시작     | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                          |
 | Docker 이미지 | 시작 | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                          |
 | HTTP 파일    | 시작 | 접근 가능한 URL                                                                                                                                                                                                |
