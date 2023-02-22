@@ -30,6 +30,19 @@ You can define the different stages required for application deployment, such as
 
 You can configure autorun on the pipeline. When you change the source code in the source repository or update the container images in the image registry, the pipeline is run automatically.
 
+#### Artifact
+
+Artifact is a format for setting external resources such as Docker images and configuration files into the pipeline. You can specify external resources to be used in the pipeline as artifacts and use them as start/end conditions for stages.
+
+#### Artifcat Type
+| Type        | Description               |
+|-----------|-------------------|
+| GitHub file | File in a GitHub repository |
+| GitLab file | File in a GitLab repository |
+| HTTP file   | File accessible with an URL  |
+| Docker image | Image in an image repository |
+|Kubernetes object| Object created in a Kubernetes cluster|
+
 ### Glossary
 | Term | Description |
 |---|---|
