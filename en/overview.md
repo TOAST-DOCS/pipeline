@@ -34,7 +34,7 @@ You can configure autorun on the pipeline. When you change the source code in th
 
 Artifact is a format for setting external resources such as Docker images and configuration files into the pipeline. You can specify external resources to be used in the pipeline as artifacts and use them as start/end conditions for stages.
 
-#### Artifcat Type
+#### Artifact Type
 | Type        | Description               |
 |-----------|-------------------|
 | GitHub file | File in a GitHub repository |

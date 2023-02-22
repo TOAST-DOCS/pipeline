@@ -124,14 +124,14 @@ The build number is numeric data that increments with each build. When using the
 
 ![console-guide-39](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-02.png)
 You can set **Start Condition** and **End Condition** by using the **Artifact** settings from NHN Cloud Build Tool.
-**Artifact** set as a starting condition is checked for existence at the start of the stage to determine whether or not to proceed with the stage.
-An **artifact** set as an end condition sets the production of the stage as an **artifact**.
+An **artifact** set as a starting condition is checked for existence at the start of the stage to determine whether or not to proceed with the stage.
+An **artifact** configured as an end condition sets the production of the stage as an **artifact**.
 
 **Artifacts** that can be set in the NHN Cloud Build Tool
 
 For GitHub and GitLab, if a branch is not entered, the master branch is used as default.
 
-| Artifcat Type    | Use Condition  | Path or Reference Setting Examples                                                                                                                                                                                        |
+| Artifact Type    | Use Condition  | Path or Reference Setting Examples                                                                                                                                                                                        |
 |------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | GitHub file  | Start     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path} <br/> Example for GitHub Enterprise: https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
 | GitLab file  | Start     | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                        |
@@ -145,14 +145,14 @@ The build tool added in the environment settings allows you to run the build too
 
 ![console-guide-40](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-03.png)
 You can set **Start Condition** and **End Condition** by using the **Artifact** settings.
-**Artifact** set as a starting condition is checked for existence at the start of the stage to determine whether or not to proceed with the stage.
-An **artifact** set as an end condition sets the production of the stage as an **artifact**.
+An **artifact** set as a starting condition is checked for existence at the start of the stage to determine whether or not to proceed with the stage.
+An **artifact** configured as an end condition sets the production of the stage as an **artifact**.
 
 **Artifacts** that can be set in Build Tool
 
 For GitHub and GitLab, if a branch is not entered, the master branch is used as default.
 
-| Artifcat Type    | Use Condition  | Path or Reference Setting Examples                                                                                                                                                                                        |
+| Artifact Type    | Use Condition  | Path or Reference Setting Examples                                                                                                                                                                                        |
 |------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | GitHub file  | Start     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}  <br/> Example for GitHub Enterprise: https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
 | GitLab file  | Start     | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                         |
@@ -176,14 +176,14 @@ To use the tag format, you must set build stage and NHN Cloud build tool.
 
 ![console-guide-41](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-05.png)
 You can set **Start Condition** and **End Condition** by using the **Artifact** settings.
-**Artifact** set as a starting condition is checked for existence at the start of the stage to determine whether or not to proceed with the stage.
-An **artifact** set as an end condition sets the production of the stage as an **artifact**.
+An **artifact** set as a starting condition is checked for existence at the start of the stage to determine whether or not to proceed with the stage.
+An **artifact** configured as an end condition sets the production of the stage as an **artifact**.
 
 **Artifacts** that can be set in the deployment settings.
 
 For GitHub and GitLab, if a branch is not entered, the master branch is used as default.
 
-| Artifcat Type    | Use Condition  | Path or Reference Setting Examples                                                                                                                                                                                        |
+| Artifact Type    | Use Condition  | Path or Reference Setting Examples                                                                                                                                                                                        |
 |------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | GitHub file  | Start     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}   <br/> Example for GitHub Enterprise: https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
 | GitLab file  | Start     | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                          |
