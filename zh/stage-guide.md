@@ -29,8 +29,10 @@ This is a stage to build
 
 #### Build - Jenkins
 You can build using Jenkins that you configured yourself. You can select the [build tool](https://docs.nhncloud.com/en/Dev%20Tools/Pipeline/en/console-guide/#_1) you added in **Build Tool Settings** of **Environment Settings**. You can select **Build Job** and enter **Build Job Parameters**.
+You can set **Start Condition** and **End Condition** of the **artifact**. You can decide whether or not to start a stage by setting the **Start Condition**. You can set an **End Condition** to set stage output as an artifact.
 
-![stage-guide-04](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-04.png)
+![stage-guide-04](http://static.toastoven.net/prod_pipeline/2023-02-28/stage-guide-01.png)
+![stage-guide-12](http://static.toastoven.net/prod_pipeline/2023-02-28/stage-guide-04.png)
 
 #### Build - NHN Cloud Build Tool
 You can use the build tools provided by NHN Cloud.
@@ -43,7 +45,12 @@ You can use the build tools provided by NHN Cloud.
   - Select a **Image Registry** and decide on **Image Name**, and the build result is pushed to the selected repository.
   - If **Use Tag Format** is selected, the tag format is fixed, and the image is created with dynamically generated tags in the form of `_{BUILD_NUMBER}`.
 
-![stage-guide-05](http://static.toastoven.net/prod_pipeline/2023-01-13/stage-guide-01.png)
+- Artifact Settings
+  - You can decide whether to start stages by setting **Start Condtion**.
+  - You can set stage output as an artifact by setting **End Condition**.
+
+![stage-guide-05](http://static.toastoven.net/prod_pipeline/2023-02-28/stage-guide-02.png)
+![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-02.png)
 
 ### Deployment
 This is a stage to deploy to the Kubernetes environment.
@@ -53,8 +60,10 @@ You can select the [deployment target](https://docs.nhncloud.com/en/Dev%20Tools/
 Enter **Stage Name**, **Deployment Target**, and **Manifest** to use for deployment.
 If the tag format is used in the build stage, when the docker image tag of **Manifest** is entered as `_{BUILD_NUMBER}`, you can deploy as the image with the most recent number among the images built in the tag format.
 See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment ) for how to write **Manifest**.
+You can set **Start Condition** and **End Condition** of the **artifact**. You can decide whether or not to start a stage by setting the **Start Condition**. You can set an **End Condition** to set stage output as an artifact.
 
-![stage-guide-06](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-06.png)
+![stage-guide-06](http://static.toastoven.net/prod_pipeline/2023-02-28/stage-guide-03.png)
+![stage-guide-14](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-05.png)
 
 #### Deployment - Patch
 You can select the [deployment target](https://docs.nhncloud.com/en/Dev%20Tools/Pipeline/en/console-guide/#_1) you added in **Deployment Target Settings** in **Environment Settings**.
