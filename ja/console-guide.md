@@ -114,7 +114,7 @@ NHN Cloudビルドツールでソースコードをビルドするときに使�
 
 ビルド設定では、NHN Cloudビルドツールや、環境設定で登録したビルドツールを使用できます。ステージ名を入力し、**ビルドツール**で使用するビルドツールを選択します。
 
-![console-guide-16](http://static.toastoven.net/prod_pipeline/2023-01-13/console-guide-01.png)
+![console-guide-16](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-01.png)
 
 NHN Cloudビルドツールを使用すると、別途ソフトウェアをインストールせずにソースリポジトリに保存したアプリケーションソースコードをビルドし、ビルドしたアプリケーションでコンテナイメージを作成し、作成したコンテナイメージをイメージストアにアップロードできます。
 **ビルド環境設定**には**ソース設定**で設定したソースコードを使用してアプリケーションをビルドする方法を入力します。ソースコードのビルドに使用するコンテナイメージ、ビルドマシンの性能、ビルドに使用するコマンドを入力できます。
@@ -122,9 +122,42 @@ NHN Cloudビルドツールを使用すると、別途ソフトウェアをイ�
 **タグフォーマット使用**チェックボックスをクリックするとイメージタグフォーマットを使用できます。イメージタグフォーマットを使用すると、作成されたイメージのタグをNHN Cloudビルドツールで付与するビルド番号として使用します。作成されるタグは`_{BUILD_NUMBER}`形式で、BUILD_NUMBERがビルド番号です。
 ビルド番号はビルドごとに増加する数字型のデータです。イメージタグフォーマット使用時にはタグが`_{BUILD_NUMBER}`形式で固定されます。
 
+![console-guide-39](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-02.png)
+NHN Cloudビルドツールで**アーティファクト**設定を使用して**開始条件**と**終了条件**を設定できます。
+開始条件として設定された**アーティファクト**はステージ開始時に存在有無を確認してステージの進行を決定します。
+終了条件として設定された**アーティファクト**はステージの生産物を**アーティファクト**に設定します。
+
+NHN Cloudビルドツールで設定可能な**アーティファクト**
+
+GitHubおよびGitLabはブランチを入力しない場合、masterブランチをデフォルト値として使用します。
+
+| アーティファクトの種類  | 使用条件 | パスまたはリファレンス設定例                                                                                                                                                                                      |
+|------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| GitHubファイル | 開始    | https://api.github.com/repos/{organization}/{repository}/contents/{file-path} <br/> GitHub Enterpriseの場合の例：https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
+| GitLabファイル | 開始    | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                        |
+| Dockerイメージ | 開始、終了 | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                        |
+| HTTPファイル  | 開始 | アクセス可能なURL                                                                                                                                                                                              |
+
+
 ![console-guide-17](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-17.png)
 
 環境設定で追加したビルドツールを使用すると、ビルドツールのビルドジョブを実行できます。実行するビルドジョブを選択すると、ビルドジョブのパラメータを追加で入力できます。
+
+![console-guide-40](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-03.png)
+**アーティファクト**設定を使用して**開始条件**と**終了条件**を設定できます。
+開始条件として設定された**アーティファクト**はステージ開始時に存在有無を確認してステージの進行を決定します。
+終了条件として設定された**アーティファクト**はステージの生産物を**アーティファクト**に設定します。
+
+ビルドツールで設定可能な**アーティファクト**
+
+GitHubおよびGitLabはブランチを入力しない場合、masterブランチをデフォルト値として使用します。
+
+| アーティファクトの種類  | 使用条件 | パスまたはリファレンス設定例                                                                                                                                                                                       |
+|------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| GitHubファイル | 開始    | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}  <br/> GitHub Enterpriseの場合の例：https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
+| GitLabファイル | 開始    | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                         |
+| Dockerイメージ | 開始    | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                         |
+| HTTPファイル  | 開始、終了 | アクセス可能なURL                                                                                                                                                                                               |
 
 ビルド設定が完了したら**次へ**をクリックします。
 
@@ -132,7 +165,7 @@ NHN Cloudビルドツールを使用すると、別途ソフトウェアをイ�
 
 配布設定は、環境設定で追加した配布対象にコンテナイメージを配布する方法を設定します。
 
-![console-guide-18](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-18.png)
+![console-guide-18](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-04.png)
 
 ステージ名、配布対象、配布に使用するManifestを入力し、**次へ**をクリックします。 Manifestを作成する方法は[Kubernetes文書](https://kubernetes.io/docs/concepts/workloads/controllers/deployment )を参照してください。
 
@@ -140,6 +173,24 @@ NHN Cloudビルドツールを使用すると、別途ソフトウェアをイ�
 
 ビルド設定でタグフォーマットを使用した場合、ドッカー(Docker)イメージ入力部分にタグを上記のように`_{BUILD_NUMBER}`に入力します。イメージのタグに`_{BUILD_NUMBER}`が入力されている場合、最新の番号で入力されて配布されます。
 タグフォーマットを使用するにはビルドステージおよびNHN Cloudビルドツールを設定する必要があります。
+
+![console-guide-41](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-05.png)
+NHN Cloudビルドツールで**アーティファクト**設定を使用して**開始条件**と**終了条件**を設定できます。
+開始条件として設定された**アーティファクト**はステージ開始時に存在有無を確認してステージの進行を決定します。
+終了条件として設定された**アーティファクト**はステージの生産物を**アーティファクト**に設定します。
+入力したマニフェストに**終了条件**と一致するKubernetsオブジェクトがないため、ステージが失敗した場合でも、マニフェストがKubernetesクラスタに適用される可能性があります。
+
+配布設定で設定可能な**アーティファクト**
+
+GitHubおよびGitLabはブランチを入力しない場合、masterブランチをデフォルト値として使用します。
+
+| アーティファクト種類  | 使用条件 | パスまたはリファレンス設定例                                                                                                                                                                                        |
+|------------|--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| GitHubファイル | 開始    | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}   <br/> GitHub Enterpriseの場合の例：https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
+| GitLabファイル | 開始    | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                          |
+| Dockerイメージ | 開始 | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                          |
+| HTTPファイル  | 開始 | アクセス可能なURL                                                                                                                                                                                                |
+| kubernetesオブジェクト | 終了 | オブジェクトの名前                                                                                                                                                                                                |
 
 #### 最終検討とパイプラインの作成
 

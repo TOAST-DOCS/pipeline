@@ -114,7 +114,7 @@ NHN Cloud 빌드 도구에서 소스 코드를 빌드할 때 사용하는 소스
 
 빌드 설정에서는 NHN Cloud 빌드 도구를 사용하거나 환경 설정에서 등록한 빌드 도구를 사용할 수 있습니다. 스테이지 이름을 입력하고 **빌드 도구**에서 사용할 빌드 도구를 선택합니다.
 
-![console-guide-16](http://static.toastoven.net/prod_pipeline/2023-01-13/console-guide-01.png)
+![console-guide-16](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-01.png)
 
 NHN Cloud 빌드 도구를 사용하면 별도의 소프트웨어 설치 없이 소스 저장소에 저장한 애플리케이션 소스 코드를 빌드하고, 빌드한 애플리케이션으로 컨테이너 이미지를 생성하고, 생성한 컨테이너 이미지를 이미지 저장소에 업로드할 수 있습니다.
 **빌드 환경 설정**에는 **소스 설정**에서 설정한 소스 코드를 사용해서 애플리케이션을 빌드하는 방법을 입력합니다. 소스 코드 빌드에 사용할 컨테이너 이미지, 빌드 머신의 성능, 빌드에 사용할 명령어를 입력할 수 있습니다.
@@ -122,9 +122,42 @@ NHN Cloud 빌드 도구를 사용하면 별도의 소프트웨어 설치 없이 
 **태그 포맷 사용** 체크 박스를 클릭하면 이미지 태그 포맷을 사용할 수 있습니다. 이미지 태그 포맷을 사용하면 생성된 이미지의 태그를 NHN Cloud 빌드 도구에서 부여하는 빌드 번호로 사용하게 됩니다. 생성되는 태그는 `_{BUILD_NUMBER}` 형식이며 BUILD_NUMBER가 빌드 번호 입니다.
 빌드 번호는 빌드마다 증가하는 숫자형 데이터입니다. 이미지 태그 포맷 사용 시에는 태그가 `_{BUILD_NUMBER}` 형태로 고정됩니다.
 
+![console-guide-39](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-02.png)
+NHN Cloud 빌드 도구에서 **아티팩트** 설정을 사용하여 **시작 조건**과 **종료 조건**을 설정할 수 있습니다.
+시작 조건으로 설정된 **아티팩트**는 스테이지 시작 시 존재 유무를 확인하여 스테이지의 진행 여부를 결정합니다.
+종료 조건으로 설정된 **아티팩트**는 스테이지의 생산물을 **아티팩트**로 설정합니다.
+
+NHN Cloud 빌드 도구에서 설정 가능한 **아티팩트**
+
+GitHub 및 GitLab은 브랜치를 입력하지 않을 경우 master 브랜치를 기본값으로 사용합니다.
+
+| 아티팩트 종류    | 사용 조건  | 경로 또는 레퍼런스 설정 예시                                                                                                                                                                                        |
+|------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| GitHub 파일  | 시작     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path} <br/> GitHub Enterprise일 때의 예시: https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
+| GitLab 파일  | 시작     | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                        |
+| Docker 이미지 | 시작, 종료 | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                        |
+| HTTP 파일    | 시작 | 접근 가능한 URL                                                                                                                                                                                              |
+
+
 ![console-guide-17](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-17.png)
 
 환경 설정에서 추가한 빌드 도구를 사용하면 빌드 도구의 빌드 잡을 실행할 수 있습니다. 실행할 빌드 잡을 선택하면 빌드 잡의 파라미터를 추가로 입력할 수 있습니다.
+
+![console-guide-40](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-03.png)
+**아티팩트** 설정을 사용하여 **시작 조건**과 **종료 조건**을 설정할 수 있습니다.
+시작 조건으로 설정된 **아티팩트**는 스테이지 시작 시 존재 유무를 확인하여 스테이지의 진행 여부를 결정합니다.
+종료 조건으로 설정된 **아티팩트**는 스테이지의 생산물을 **아티팩트**로 설정합니다.
+
+빌드 도구에서 설정 가능한 **아티팩트**
+
+GitHub 및 GitLab은 브랜치를 입력하지 않을 경우 master 브랜치를 기본값으로 사용합니다.
+
+| 아티팩트 종류    | 사용 조건  | 경로 또는 레퍼런스 설정 예시                                                                                                                                                                                         |
+|------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| GitHub 파일  | 시작     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}  <br/> GitHub Enterprise일 때의 예시: https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
+| GitLab 파일  | 시작     | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                         |
+| Docker 이미지 | 시작     | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                         |
+| HTTP 파일    | 시작, 종료 | 접근 가능한 URL                                                                                                                                                                                               |
 
 빌드 설정을 완료한 후 **다음**을 클릭합니다.
 
@@ -132,7 +165,7 @@ NHN Cloud 빌드 도구를 사용하면 별도의 소프트웨어 설치 없이 
 
 배포 설정은 환경 설정에서 추가한 배포 대상에 컨테이너 이미지를 배포하는 방법을 설정합니다.
 
-![console-guide-18](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-18.png)
+![console-guide-18](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-04.png)
 
 스테이지 이름, 배포 대상, 배포에 사용할 Manifest를 입력한 후 **다음**을 클릭합니다. Manifest를 작성하는 방법은 [Kubernetes 문서](https://kubernetes.io/docs/concepts/workloads/controllers/deployment )를 참고하십시오.
 
@@ -140,6 +173,24 @@ NHN Cloud 빌드 도구를 사용하면 별도의 소프트웨어 설치 없이 
 
 빌드 설정에서 태그 포맷을 사용했다면 도커(Docker) 이미지 입력 부분에 태그를 위와 같이`_{BUILD_NUMBER}`로 입력합니다. 이미지의 태그에 `_{BUILD_NUMBER}`가 입력된 경우 가장 최신의 번호로 입력되어 배포됩니다.
 태그 포맷을 사용하려면 빌드 스테이지 및 NHN Cloud 빌드 도구를 설정해야 합니다.
+
+![console-guide-41](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-05.png)
+**아티팩트** 설정을 사용하여 **시작 조건**과 **종료 조건**을 설정할 수 있습니다.
+시작 조건으로 설정된 **아티팩트**는 스테이지 시작 시 존재 유무를 확인하여 스테이지의 진행 여부를 결정합니다.
+종료 조건으로 설정된 **아티팩트**는 스테이지의 생산물을 **아티팩트**로 설정합니다.
+입력한 manifest에 **종료 조건**과 매칭되는 Kubernets 오브젝트가 없어 스테이지가 실패 하더라도 manifest가 Kubernetes 클러스터에 적용될 수 있습니다.
+
+배포 설정에서 설정 가능한 **아티팩트**
+
+GitHub 및 GitLab은 브랜치를 입력하지 않을 경우 master 브랜치를 기본값으로 사용합니다.
+
+| 아티팩트 종류    | 사용 조건  | 경로 또는 레퍼런스 설정 예시                                                                                                                                                                                          |
+|------------|--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| GitHub 파일  | 시작     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}   <br/> GitHub Enterprise일 때의 예시: https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
+| GitLab 파일  | 시작     | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                          |
+| Docker 이미지 | 시작 | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                          |
+| HTTP 파일    | 시작 | 접근 가능한 URL                                                                                                                                                                                                |
+| kubernetes 오브젝트 | 종료 | 오브젝트의 이름                                                                                                                                                                                                  |
 
 #### 최종 검토 및 파이프라인 생성
 

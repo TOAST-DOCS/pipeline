@@ -114,7 +114,7 @@ Enter the stage name, the source repository registered in the environment settin
 
 In the build settings, you can use the NHN Cloud build tool or the build tool registered in the environment settings. Enter a stage name and select the build tool to use under **Build Tool**.
 
-![console-guide-16](http://static.toastoven.net/prod_pipeline/2023-01-13/console-guide-01.png)
+![console-guide-16](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-01.png)
 
 The NHN Cloud build tool allows you to build the application source code stored in the source repository without installing additional software, create a container image with the built application, and upload the created container image to the image registry.
 In **Build Environment Settings**, enter the method of building the application using the source code set in **Source Settings**. You can enter the container image to use for building the source code, the performance of the build machine, and the command to use for the build.
@@ -122,9 +122,42 @@ In **Build Result Settings**, enter how to create a container image with the bui
 When you click the **Use Tag Format** box, you can use the image tag format. If you use the image tag format, the tag of the created image is used as the build number given by the NHN Cloud build tools. The generated tags are of the form `_{BUILD_NUMBER}` and BUILD_NUMBER indicates the build number.
 The build number is numeric data that increments with each build. When using the image tag format, the tag is fixed in the form of `_{BUILD_NUMBER}`.
 
+![console-guide-39](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-02.png)
+You can set **Start Condition** and **End Condition** by using the **Artifact** settings from NHN Cloud Build Tool.
+An **artifact** set as a starting condition is checked for existence at the start of the stage to determine whether or not to proceed with the stage.
+An **artifact** configured as an end condition sets the production of the stage as an **artifact**.
+
+**Artifacts** that can be set in the NHN Cloud Build Tool
+
+For GitHub and GitLab, if a branch is not entered, the master branch is used as default.
+
+| Artifact Type    | Use Condition  | Path or Reference Setting Examples                                                                                                                                                                                        |
+|------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| GitHub file  | Start     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path} <br/> Example for GitHub Enterprise: https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
+| GitLab file  | Start     | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                        |
+| Docker image | Start, End | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                        |
+| HTTP file    | Start | Accessible URL                                                                      
+|
+
 ![console-guide-17](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-17.png)
 
 The build tool added in the environment settings allows you to run the build tool's build job. If you select a build job to run, you can enter additional parameters for the build job.
+
+![console-guide-40](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-03.png)
+You can set **Start Condition** and **End Condition** by using the **Artifact** settings.
+An **artifact** set as a starting condition is checked for existence at the start of the stage to determine whether or not to proceed with the stage.
+An **artifact** configured as an end condition sets the production of the stage as an **artifact**.
+
+**Artifacts** that can be set in Build Tool
+
+For GitHub and GitLab, if a branch is not entered, the master branch is used as default.
+
+| Artifact Type    | Use Condition  | Path or Reference Setting Examples                                                                                                                                                                                        |
+|------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| GitHub file  | Start     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}  <br/> Example for GitHub Enterprise: https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
+| GitLab file  | Start     | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                         |
+| Docker image | Start     | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                         |
+| HTTP file    | Start, End | Accessible URL                                                                                                                                                                                               |
 
 After completing the build settings, click **Next**.
 
@@ -132,7 +165,7 @@ After completing the build settings, click **Next**.
 
 In deployment settings, you can set how the container image is deployed to the deployment target added in the environment settings.
 
-![console-guide-18](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-18.png)
+![console-guide-18](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-04.png)
 
 Enter the stage name, deployment target, and Manifest to use for deployment, and click **Next**. See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment) for how to write a Manifest.
 
@@ -140,6 +173,24 @@ Enter the stage name, deployment target, and Manifest to use for deployment, and
 
 If you used the tag format in the build settings, enter `_{BUILD_NUMBER}` for the tag in the Docker image input area as shown above. When `_{BUILD_NUMBER}` is entered in the image tag, it is deployed with the most recent number.
 To use the tag format, you must set build stage and NHN Cloud build tool.
+
+![console-guide-41](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-05.png)
+You can set **Start Condition** and **End Condition** by using the **Artifact** settings.
+An **artifact** set as a starting condition is checked for existence at the start of the stage to determine whether or not to proceed with the stage.
+An **artifact** configured as an end condition sets the production of the stage as an **artifact**.
+Even if the stage fails because there are no Kubernetes objects in the entered manifest that match the **End Condition**, the manifest can be applied to the Kubernetes cluster.
+
+**Artifacts** that can be set in the deployment settings.
+
+For GitHub and GitLab, if a branch is not entered, the master branch is used as default.
+
+| Artifact Type    | Use Condition  | Path or Reference Setting Examples                                                                                                                                                                                        |
+|------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| GitHub file  | Start     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}   <br/> Example for GitHub Enterprise: https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
+| GitLab file  | Start     | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                          |
+| Docker image | Start | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                          |
+| HTTP file    | Start | Accessible URL                                                                                                                                                                                                |
+| kubernetes object | End | Object name                                                                                                                                                                                                  |
 
 #### Final Review and Pipeline Creation
 

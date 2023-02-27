@@ -1,5 +1,8 @@
 ## Dev Tools > Pipeline > Release Notes
 
+### February 28, 2023
+* Added an artifact feature that allows you to use external repository resources as start or end condtions for pipeline stages. You can find how to use in [Pipeline User Guide](/Dev%20Tools/Pipeline/ko/console-guide/#_1)
+
 ### January 31, 2023
 * Added a feature to assign dynamically created tags by using the image tag format in the build stage.
 * Added a feature to deploy with the most recent tag among tags dynamically created using the image tag format in the deployment stage.
@@ -15,7 +18,7 @@
 * Modified to display a guide message when the kubernetes integration test in deployment target times out.
 
 ### August 23, 2022
-* Made modifications so that, when running a pipeline without stages through the [API](https://docs.toast.com/en/Dev%20Tools/Pipeline/en/api-guide/#pipeline), a failure response is returned.
+* Made modifications so that, when running a pipeline without stages through the [API](https://docs.nhncloud.com/en/Dev%20Tools/Pipeline/en/api-guide/#pipeline), a failure response is returned.
 
 ### July 26, 2022
 * Added a webhook stage.
