@@ -178,6 +178,7 @@ To use the tag format, you must set build stage and NHN Cloud build tool.
 You can set **Start Condition** and **End Condition** by using the **Artifact** settings.
 An **artifact** set as a starting condition is checked for existence at the start of the stage to determine whether or not to proceed with the stage.
 An **artifact** configured as an end condition sets the production of the stage as an **artifact**.
+Even if the stage fails because there are no Kubernetes objects in the entered manifest that match the **End Condition**, the manifest can be applied to the Kubernetes cluster.
 
 **Artifacts** that can be set in the deployment settings.
 
