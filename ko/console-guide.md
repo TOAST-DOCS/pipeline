@@ -73,6 +73,20 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 
 ![console-guide-12](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-12.png)
 
+#### 차트 저장소
+
+차트 저장소를 추가하면 빌드 - Bake (Manifest) 스테이지를 사용해서 Helm Chart를 빌드할 수 있습니다. [차트 저장소 가이드](https://helm.sh/docs/topics/chart_repository/)에서 차트 저장소의 구성 방법을 확인할 수 있습니다.
+
+![console-guide-35](http://static.toastoven.net/prod_pipeline/2023-03-28/console-guide-35.png)
+
+**환경 설정**에서 **차트 저장소 설정**을 클릭하면 차트 저장소를 관리하는 화면으로 이동합니다. **차트 저장소 추가**를 클릭해서 차트 저장소를 추가할 수 있습니다.
+
+![console-guide-36](http://static.toastoven.net/prod_pipeline/2023-03-28/console-guide-36.png)
+
+차트 저장소 정보를 입력한 후 **차트 저장소 연결 확인**의 **확인**을 클릭합니다. 연결 확인 후 **확인**을 클릭합니다.
+
+![console-guide-37](http://static.toastoven.net/prod_pipeline/2023-03-28/console-guide-37.png)
+
 
 #### Pipeline IP
 Pipeline과 연동한 시스템이 정상적으로 동작하지 않으면 ACL을 확인하시기 바랍니다. Pipeline이 사용하는 IP 주소는 **211.56.1.0/27**입니다.
