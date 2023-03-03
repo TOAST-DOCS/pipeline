@@ -52,6 +52,28 @@ NHN Cloud에서 제공하는 빌드 도구를 사용할 수 있습니다.
 ![stage-guide-05](http://static.toastoven.net/prod_pipeline/2023-02-28/stage-guide-02.png)
 ![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-02.png)
 
+#### 빌드 - Bake (Manifest)
+사용자가 직접 구성한 Helm package file 또는 Chart Repository를 이용하여 빌드할 수 있습니다. 
+- 차트 이름은 Helm 엔진으로 구성한 결과물의 이름을 설정합니다.
+- Namespace는 Helm 엔진으로 구성한 결과물의 namespace를 설정합니다.
+- Template Artifact
+  - 저장소 타입은 **환경 설정**의 [소스 저장소 설정](/Dev%20Tools/Pipeline/ko/console-guide/#_1) 혹은 [차트 저장소 설정](/Dev%20Tools/Pipeline/ko/console-guide/#_1)에서 추가한 저장소를 선택할 수 있습니다.
+  - 저장소 타입을 **GitHub 파일** 혹은 **GitLab 파일**으로 지정한 경우
+    - 경로는 Helm package file의 경로를 입력해야합니다.
+    - 브랜치 이름은 Github 혹은 Gitlab의 브랜치를 입력합니다.
+  - 저장소 타입을 **Helm 차트**로 지정한 경우
+    - 차트 저장소 이름은 [차트 저장소 설정](/Dev%20Tools/Pipeline/ko/console-guide/#_1)에서 설정한 저장소 중 하나를 선택할 수 있습니다.
+    - 차트 이름은 차트 저장소의 구성에서 사용할 수 있는 차트 이름을 선택할 수 있습니다.
+    - 차트 버전은 차트 저장소의 구성에서 사용할 수 있는 차트 버전을 선택할 수 있습니다.
+- Overrides
+  - Template Artifact와 동일한 방식으로 선택할 수 있습니다.
+  - Template Artifact를 기본으로 하여 Overrides에서 지정한 Artifact로 치환하여 빌드 결과물을 생성합니다.
+- Override Key Value
+  - key, value로 이루어진 값을 입력하여 특정 값을 치환하여 빌드 결과물을 생성합니다.
+- Raw Overrides
+  - 해당 옵션을 체크하면 Override 값을 주입할 때, --set-string 대신 --set을 사용합니다. --set을 사용하여 주입된 값은 Helm에 의해 원시 자료형으로 변환됩니다.
+![stage-guide-12](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-12.png)
+
 ### 배포
 Kubernetes 환경에 배포를 하는 스테이지입니다.
 
