@@ -72,8 +72,11 @@ NHN Cloud에서 제공하는 빌드 도구를 사용할 수 있습니다.
   - key, value로 이루어진 값을 입력하여 특정 값을 치환하여 빌드 결과물을 생성합니다.
 - Raw Overrides
   - 해당 옵션을 체크하면 Override 값을 주입할 때, --set-string 대신 --set을 사용합니다. --set을 사용하여 주입된 값은 Helm에 의해 원시 자료형으로 변환됩니다.
+- 아티팩트
+  - **아티팩트**의 **시작 조건**과 **종료 조건**을 설정할 수 있습니다. **시작 조건**을 설정하여 스테이지 시작 여부를 결정할 수 있습니다. **종료 조건**을 설정하여 스테이지의 생성물을 아티팩트로 설정할 수 있습니다.
 
 ![stage-guide-12](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-12.png)
+![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-13.png)
 
 ### 배포
 Kubernetes 환경에 배포를 하는 스테이지입니다.
