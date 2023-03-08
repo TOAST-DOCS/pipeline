@@ -75,7 +75,7 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 
 #### 차트 저장소
 
-차트 저장소를 추가하면 빌드 - Bake (Manifest) 스테이지를 사용해서 Helm Chart를 빌드할 수 있습니다. [차트 저장소 가이드](https://helm.sh/docs/topics/chart_repository/)에서 차트 저장소의 구성 방법을 확인할 수 있습니다.
+차트 저장소를 추가하면 **빌드 - Bake (Manifest)** 스테이지를 사용해서 Helm Chart를 빌드할 수 있습니다. [차트 저장소 가이드](https://helm.sh/docs/topics/chart_repository/)에서 차트 저장소의 구성 방법을 확인할 수 있습니다.
 
 ![console-guide-35](http://static.toastoven.net/prod_pipeline/2023-03-28/console-guide-35.png)
 
