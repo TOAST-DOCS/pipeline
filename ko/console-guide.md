@@ -23,21 +23,23 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 
 ![console-guide-01](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-01.png)
 
-**환경 설정**에서 **소스 저장소 설정**을 클릭하면 소스 저장소를 관리하는 화면으로 이동합니다. **소스 저장소 추가**를 클릭해서 소스 저장소를 추가할 수 있습니다. 
+**환경 설정**에서 **소스 저장소 설정**을 클릭하면 소스 저장소를 관리하는 화면으로 이동합니다. **소스 저장소 추가**를 클릭해서 신규 소스 저장소를 추가할 수 있습니다. 
 
 ![console-guide-02](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-01.png)
 
-소스 저장소 정보를 입력한 후 **소스 저장소 연결 확인**의 **확인**을 클릭합니다. GitLab 소스 저장소의 토큰 발급 시 `read_user`, `api`, `read_api` 권한이 필수로 필요합니다. 연결 확인 후 **확인**을 클릭합니다.
+소스 저장소 정보를 입력한 후 **소스 저장소 연결 확인**의 **확인**을 클릭합니다. 연결 확인 후 **확인**을 클릭합니다.
+- GitHub 소스 저장소의 토큰 발급 시 `repo` 권한이 필수로 필요합니다. 
+- GitLab 소스 저장소의 토큰 발급 시 `read_user`, `api`, `read_api` 권한이 필수로 필요합니다. 
 
 ![console-guide-03](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-03.png)
 
 #### 이미지 저장소
 
-이미지 저장소를 추가하면 자격 증명이 필요한 이미지 저장소에 접근할 때 사용할 수 있습니다. NHN Cloud 빌드 도구에서 소스 코드를 빌드하는 컨테이너를 생성할 때 사용하거나 새로 생성한 컨테이너 이미지를 업로드할 때 사용할 수 있습니다. 그리고 파이프라인 자동 실행 설정에서 자동 실행을 실행시키는 컨테이너 이미지를 설정할 때 사용할 수 있습니다. 이미지 저장소에는 NHN Cloud Container Registry, Docker Hub, 그 밖에 Private Docker Registry를 추가할 수 있습니다.
+이미지 저장소를 추가하면 자격 증명이 필요한 이미지 저장소에 접근할 때 사용할 수 있습니다. NHN Cloud 빌드 도구에서 소스 코드를 빌드하는 컨테이너를 생성할 때 사용하거나 새로 생성한 컨테이너 이미지를 업로드할 때 사용할 수 있습니다. 그리고 파이프라인 자동 실행 설정에서 자동 실행을 실행시키는 컨테이너 이미지를 설정할 때 사용할 수 있습니다. 이미지 저장소에는 NHN Cloud Container Registry, Docker Hub, 그 밖에 사설 이미지 저장소를 추가할 수 있습니다. Docker Hub를 사용하는 경우 이미지 저장소 URL을 생략할 수 있습니다.
 
 ![console-guide-04](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-04.png)
 
-**환경 설정**에서 **이미지 저장소 설정**을 클릭하면 이미지 저장소를 관리하는 화면으로 이동합니다. **이미지 저장소 추가**를 클릭해서 이미지 저장소를 추가할 수 있습니다.
+**환경 설정**에서 **이미지 저장소 설정**을 클릭하면 이미지 저장소를 관리하는 화면으로 이동합니다. **이미지 저장소 추가**를 클릭해서 신규 이미지 저장소를 추가할 수 있습니다.
 
 ![console-guide-05](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-02.png)
 
@@ -47,11 +49,11 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 
 #### 빌드 도구
 
-빌드 도구를 추가하면 파이프라인에서 빌드 도구에 정의한 다양한 작업을 사용할 수 있습니다. 빌드 도구에는 Jenkins를 추가할 수 있습니다.
+빌드 도구를 추가하면 파이프라인에서 빌드 도구에 정의한 다양한 작업을 사용할 수 있습니다. 빌드 도구에는 Jenkins를 추가할 수 있습니다. `NHN Cloud 빌드 도구` 를 사용하는 경우 빌드 도구 추가 작업을 생략할 수 있습니다.
 
 ![console-guide-07](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-07.png)
 
-**환경 설정**에서 **빌드 도구 설정**을 클릭하면 빌드 도구를 관리하는 화면으로 이동합니다. **빌드 도구 추가**를 클릭해서 빌드 도구를 추가할 수 있습니다.
+**환경 설정**에서 **빌드 도구 설정**을 클릭하면 빌드 도구를 관리하는 화면으로 이동합니다. **빌드 도구 추가**를 클릭해서 신규 빌드 도구를 추가할 수 있습니다.
 
 ![console-guide-08](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-03.png)
 
@@ -65,7 +67,7 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 
 ![console-guide-10](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-10.png)
 
-**환경 설정**에서 **배포 대상 설정**을 클릭하면 배포 대상을 관리하는 화면으로 이동합니다. **배포 대상 추가**를 클릭해서 배포 대상을 추가할 수 있습니다.
+**환경 설정**에서 **배포 대상 설정**을 클릭하면 배포 대상을 관리하는 화면으로 이동합니다. **배포 대상 추가**를 클릭해서 신규 배포 대상을 추가할 수 있습니다.
 
 ![console-guide-11](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-04.png)
 
@@ -79,7 +81,7 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 
 ![console-guide-35](http://static.toastoven.net/prod_pipeline/2023-03-28/console-guide-35.png)
 
-**환경 설정**에서 **차트 저장소 설정**을 클릭하면 차트 저장소를 관리하는 화면으로 이동합니다. **차트 저장소 추가**를 클릭해서 차트 저장소를 추가할 수 있습니다.
+**환경 설정**에서 **차트 저장소 설정**을 클릭하면 차트 저장소를 관리하는 화면으로 이동합니다. **차트 저장소 추가**를 클릭해서 신규 차트 저장소를 추가할 수 있습니다.
 
 ![console-guide-36](http://static.toastoven.net/prod_pipeline/2023-03-28/console-guide-36.png)
 
@@ -122,7 +124,7 @@ NHN Cloud 빌드 도구에서 소스 코드를 빌드할 때 사용하는 소스
 
 ![console-guide-15](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-15.png)
 
-스테이지 이름, 환경 설정에서 등록한 소스 저장소, 소스 코드를 빌드할 브랜치를 입력한 후 **다음**을 클릭합니다.
+스테이지 이름, 환경 설정에서 등록한 소스 저장소, 소스 코드를 빌드할 대상 브랜치(git branch)를 입력한 후 **다음**을 클릭합니다.
 
 #### 빌드 설정
 
@@ -141,7 +143,7 @@ NHN Cloud 빌드 도구에서 **아티팩트** 설정을 사용하여 **시작 �
 시작 조건으로 설정된 **아티팩트**는 스테이지 시작 시 존재 유무를 확인하여 스테이지의 진행 여부를 결정합니다.
 종료 조건으로 설정된 **아티팩트**는 스테이지의 생산물을 **아티팩트**로 설정합니다.
 
-NHN Cloud 빌드 도구에서 설정 가능한 **아티팩트**
+#### NHN Cloud 빌드 도구에서 설정 가능한 아티팩트
 
 GitHub 및 GitLab은 브랜치를 입력하지 않을 경우 master 브랜치를 기본값으로 사용합니다.
 
@@ -149,7 +151,7 @@ GitHub 및 GitLab은 브랜치를 입력하지 않을 경우 master 브랜치를
 |------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | GitHub 파일  | 시작     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path} <br/> GitHub Enterprise일 때의 예시: https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
 | GitLab 파일  | 시작     | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                        |
-| Docker 이미지 | 시작, 종료 | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                        |
+| Docker 컨테이너 이미지 | 시작, 종료 | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                        |
 | HTTP 파일    | 시작 | 접근 가능한 URL                                                                                                                                                                                              |
 
 
@@ -162,7 +164,7 @@ GitHub 및 GitLab은 브랜치를 입력하지 않을 경우 master 브랜치를
 시작 조건으로 설정된 **아티팩트**는 스테이지 시작 시 존재 유무를 확인하여 스테이지의 진행 여부를 결정합니다.
 종료 조건으로 설정된 **아티팩트**는 스테이지의 생산물을 **아티팩트**로 설정합니다.
 
-빌드 도구에서 설정 가능한 **아티팩트**
+#### 빌드 도구에서 설정 가능한 아티팩트
 
 GitHub 및 GitLab은 브랜치를 입력하지 않을 경우 master 브랜치를 기본값으로 사용합니다.
 
@@ -170,7 +172,7 @@ GitHub 및 GitLab은 브랜치를 입력하지 않을 경우 master 브랜치를
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | GitHub 파일  | 시작     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}  <br/> GitHub Enterprise일 때의 예시: https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
 | GitLab 파일  | 시작     | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                         |
-| Docker 이미지 | 시작     | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                         |
+| Docker 컨테이너 이미지 | 시작     | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                         |
 | HTTP 파일    | 시작, 종료 | 접근 가능한 URL                                                                                                                                                                                               |
 
 빌드 설정을 완료한 후 **다음**을 클릭합니다.
@@ -181,7 +183,7 @@ GitHub 및 GitLab은 브랜치를 입력하지 않을 경우 master 브랜치를
 
 ![console-guide-18](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-04.png)
 
-스테이지 이름, 배포 대상, 배포에 사용할 Manifest를 입력한 후 **다음**을 클릭합니다. Manifest를 작성하는 방법은 [Kubernetes 문서](https://kubernetes.io/docs/concepts/workloads/controllers/deployment )를 참고하십시오.
+스테이지 이름, 배포 대상, 배포에 사용할 Kubernetes Manifest를 입력한 후 **다음**을 클릭합니다. Manifest를 작성하는 방법은 [Kubernetes 문서](https://kubernetes.io/docs/concepts/workloads/controllers/deployment )를 참고하십시오.
 
 ![console-guide-38](http://static.toastoven.net/prod_pipeline/2023-01-13/console-guide-02.png)
 
@@ -192,9 +194,9 @@ GitHub 및 GitLab은 브랜치를 입력하지 않을 경우 master 브랜치를
 **아티팩트** 설정을 사용하여 **시작 조건**과 **종료 조건**을 설정할 수 있습니다.
 시작 조건으로 설정된 **아티팩트**는 스테이지 시작 시 존재 유무를 확인하여 스테이지의 진행 여부를 결정합니다.
 종료 조건으로 설정된 **아티팩트**는 스테이지의 생산물을 **아티팩트**로 설정합니다.
-입력한 manifest에 **종료 조건**과 매칭되는 Kubernets 오브젝트가 없어 스테이지가 실패 하더라도 manifest가 Kubernetes 클러스터에 적용될 수 있습니다.
+입력한 manifest에 **종료 조건**과 매칭되는 Kubernetes 오브젝트가 없어 스테이지가 실패하더라도 manifest가 Kubernetes 클러스터에 적용될 수 있습니다.
 
-배포 설정에서 설정 가능한 **아티팩트**
+#### 배포 설정에서 설정 가능한 아티팩트
 
 GitHub 및 GitLab은 브랜치를 입력하지 않을 경우 master 브랜치를 기본값으로 사용합니다.
 
@@ -202,7 +204,7 @@ GitHub 및 GitLab은 브랜치를 입력하지 않을 경우 master 브랜치를
 |------------|--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | GitHub 파일  | 시작     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}   <br/> GitHub Enterprise일 때의 예시: https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
 | GitLab 파일  | 시작     | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                          |
-| Docker 이미지 | 시작 | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                          |
+| Docker 컨테이너 이미지 | 시작 | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                          |
 | HTTP 파일    | 시작 | 접근 가능한 URL                                                                                                                                                                                                |
 | kubernetes 오브젝트 | 종료 | 오브젝트의 이름                                                                                                                                                                                                  |
 
@@ -230,7 +232,7 @@ GitHub 및 GitLab은 브랜치를 입력하지 않을 경우 master 브랜치를
 
 #### 자동 실행
 
-자동 실행을 사용하면 GitHub Repository에 이벤트가 발생하거나 이미지 저장소의 컨테이너 이미지를 갱신하면 파이프라인을 자동으로 실행하게 설정할 수 있습니다.
+자동 실행을 사용하면 GitHub 또는 GitLab 저장소에 이벤트가 발생하거나 이미지 저장소의 컨테이너 이미지를 갱신하면 파이프라인을 자동으로 실행하게 설정할 수 있습니다.
 
 ![console-guide-22](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-22.png)
 
@@ -238,11 +240,13 @@ GitHub 및 GitLab은 브랜치를 입력하지 않을 경우 master 브랜치를
 
 ![console-guide-23](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-23.png)
 
-GitHub 웹훅을 사용해서 GitHub 또는 GitHub Enterprise의 Repository에 이벤트가 발생하면 파이프라인을 자동으로 실행하게 설정할 수 있습니다. 자동 실행 유형을 GitHub으로 설정하고 Repository의 조직 혹은 사용자 이름, 프로젝트 이름, 브랜치, 시크릿을 입력하고 **확인**을 클릭합니다.
+#### GitHub 자동 실행 설정
+
+GitHub 웹훅을 사용해서 GitHub 또는 GitHub Enterprise의 저장소에 이벤트가 발생하면 파이프라인을 자동으로 실행하게 설정할 수 있습니다. 자동 실행 유형을 GitHub으로 설정하고 저장소의 조직 혹은 사용자 이름, 프로젝트 이름, 브랜치, 시크릿을 입력하고 **확인**을 클릭합니다.
 
 ![console-guide-24](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-24.png)
 
-GitHub 또는 GitHub Enterprise의 Repository에서 웹훅을 설정합니다.
+#### GitHub 웹훅 설정값
 
 | 항목 | 설정값 |
 |---|---|
@@ -252,10 +256,14 @@ GitHub 또는 GitHub Enterprise의 Repository에서 웹훅을 설정합니다.
 
 ![console-guide-35](http://static.toastoven.net/prod_pipeline/2022-02-15/console-guide-02.png)
 
-GitLab 웹훅을 사용해서 GitLab Repository에 이벤트가 발생하면 파이프라인을 자동으로 실행하게 설정할 수 있습니다. 자동 실행 유형을 GitLab으로 설정하고 Repository의 조직 혹은 사용자 이름, 프로젝트 이름, 브랜치를 입력하고 **확인**을 클릭합니다. GitLab 시크릿 설정은 추후 지원할 예정입니다.
+#### GitLab 자동 실행 설정
+
+GitLab 웹훅을 사용해서 GitLab 저장소에 이벤트가 발생하면 파이프라인을 자동으로 실행하게 설정할 수 있습니다. 자동 실행 유형을 GitLab으로 설정하고 저장소의 조직 혹은 사용자 이름, 프로젝트 이름, 브랜치를 입력하고 **확인**을 클릭합니다. GitLab 시크릿 설정은 추후 지원할 예정입니다.
 
 ![console-guide-36](http://static.toastoven.net/prod_pipeline/2022-02-15/console-guide-03.png)
-GitLab Repository에서 웹훅을 설정합니다.
+
+
+#### GitLab 웹훅 설정값
 
 | 항목 | 설정값 |
 |---|---|
@@ -264,22 +272,25 @@ GitLab Repository에서 웹훅을 설정합니다.
 | Secret | 설정하지 않음 |
 | SSL verification | Enable SSL verification 체크 |
 
+#### GitLab 웹훅 설정 시 주의사항
 
-![console-guide-37](http://static.toastoven.net/prod_pipeline/2022-07-26/console-guide-01.png)
 GitLab의 사용자 이름으로 자동 실행 설정 시 GitLab의 사용자 이름과 Full name이 다른 경우 자동 실행이 동작하지 않을 수 있으니 같은 값으로 설정해야 합니다.
 
+![console-guide-37](http://static.toastoven.net/prod_pipeline/2022-07-26/console-guide-01.png)
+
+#### 이미지 저장소 자동 실행 설정
 
 ![console-guide-25](http://static.toastoven.net/prod_pipeline/2023-01-13/console-guide-03.png)
 
 컨테이너 이미지를 갱신했을 때 파이프라인을 자동으로 실행하려면 **자동 실행 유형**을 **이미지 저장소**로 설정합니다.
 **이미지 저장소**를 **환경 설정**에서 등록한 항목으로 선택한 뒤 **이미지 이름**을 입력합니다. 이미지 이름은 NHN Cloud Container Registry의 경우 `registry명/이미지이름`의 형태로 입력합니다.
-DockerHub의 경우 `도커허브계정/이미지이름` 형식으로 입력합니다. **태그**는 JAVA 정규 표현식을 사용할 수 있으며 입력한 태그와 매칭되는 태그가 push 되었을 경우 자동 실행됩니다.
+Docker Hub의 경우 `Docker Hub 계정/이미지이름` 형식으로 입력합니다. **태그**는 JAVA 정규 표현식을 사용할 수 있으며 입력한 태그와 매칭되는 태그가 push 되었을 경우 자동 실행됩니다.
 태그를 입력하지 않으면 latest를 제외한 신규 태그가 push될 경우 자동 실행됩니다.
 입력을 마친 후 **확인**을 클릭합니다.
 
 ![console-guide-26](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-26.png)
 
-파이프라인을 새로 만들면 **자동 실행 방지**를 **사용**으로 설정합니다. 파이프라인을 자동으로 실행하려면 **자동 실행 방지**를 **미사용**으로 변경해야 합니다. 파이프라인을 선택한 후 하단 기본 정보의 자동 실행 방지에서 **변경**을 클릭합니다. 자동 실행 방지 설정 대화 상자에서 **미사용**을 선택한 후 **확인**을 클릭합니다.
+파이프라인을 새로 만들면 **자동 실행 방지**가 기본적으로 적용됩니다. 파이프라인을 자동으로 실행하려면 **자동 실행 방지**를 **미사용**으로 변경해야 합니다. 파이프라인을 선택한 후 하단 기본 정보의 자동 실행 방지에서 **변경**을 클릭합니다. 자동 실행 방지 설정 대화 상자에서 **미사용**을 선택한 후 **확인**을 클릭합니다.
 
 ![console-guide-27](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-27.png)
 
@@ -311,7 +322,7 @@ DockerHub의 경우 `도커허브계정/이미지이름` 형식으로 입력합�
 
 ![console-guide-32](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-32.png)
 
-개발 환경 이름과 개발 환경 설명을 입력하고 기본 이미지에서 배포할 컨테이너 이미지를 선택합니다. 컨테이너 이미지 접근에 필요한 정보는 이미지 저장소에 설정합니다. 배포 대상은 컨테이너 이미지를 배포할 Kubernetes를 선택합니다. 서비스 포트는 컨테이너가 제공하는 서비스의 포트를 입력합니다. 서비스 포트를 입력하면 컨테이너 서비스에 접근할 수 있는 서비스 IP를 자동으로 할당(Kubernetes가 LoadBalancer 타입의 서비스를 제공할 경우)합니다. 마지막으로 개발 환경 제약 사항을 입력한 후 **생성**을 클릭하면 개발 환경을 생성합니다.
+개발 환경 이름과 개발 환경 설명을 입력하고 기본 이미지에서 배포할 컨테이너 이미지를 선택합니다. 컨테이너 이미지 접근에 필요한 정보는 이미지 저장소에 설정합니다. 배포 대상은 컨테이너 이미지를 배포할 Kubernetes를 선택합니다. 서비스 포트는 컨테이너가 제공하는 서비스의 포트를 입력합니다. 서비스 포트를 입력하면 컨테이너 서비스에 접근할 수 있는 서비스 IP를 자동으로 할당합니다.(Kubernetes가 LoadBalancer 타입의 서비스를 제공할 경우) 마지막으로 개발 환경 제약 사항을 입력한 후 **생성**을 클릭하면 개발 환경을 생성합니다.
 
 ![console-guide-33](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-33.png)
 
