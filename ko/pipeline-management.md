@@ -145,7 +145,7 @@ GitHub 및 GitLab은 브랜치를 입력하지 않을 경우 master 브랜치를
 
 #### GitHub 자동 실행 설정
 
-GitHub 웹훅을 사용해서 GitHub 또는 GitHub Enterprise의 저장소에 이벤트가 발생하면 파이프라인을 자동으로 실행하게 설정할 수 있습니다. 자동 실행 유형을 GitHub으로 설정하고 저장소의 조직 혹은 사용자 이름, 프로젝트 이름, 브랜치, 시크릿을 입력하고 **확인**을 클릭합니다.
+GitHub 웹훅을 사용해서 GitHub 또는 GitHub Enterprise의 저장소에 이벤트가 발생하면 파이프라인을 자동으로 실행하게 설정할 수 있습니다. 자동 실행 유형을 GitHub으로 설정하고 저장소의 조직 또는 사용자 이름, 프로젝트 이름, 브랜치, 시크릿을 입력하고 **확인**을 클릭합니다.
 
 ![console-guide-24](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-24.png)
 
@@ -161,7 +161,7 @@ GitHub 웹훅을 사용해서 GitHub 또는 GitHub Enterprise의 저장소에 �
 
 #### GitLab 자동 실행 설정
 
-GitLab 웹훅을 사용해서 GitLab 저장소에 이벤트가 발생하면 파이프라인을 자동으로 실행하게 설정할 수 있습니다. 자동 실행 유형을 GitLab으로 설정하고 저장소의 조직 혹은 사용자 이름, 프로젝트 이름, 브랜치를 입력하고 **확인**을 클릭합니다. GitLab 시크릿 설정은 추후 지원할 예정입니다.
+GitLab 웹훅을 사용해서 GitLab 저장소에 이벤트가 발생하면 파이프라인을 자동으로 실행하게 설정할 수 있습니다. 자동 실행 유형을 GitLab으로 설정하고 저장소의 조직 또는 사용자 이름, 프로젝트 이름, 브랜치를 입력하고 **확인**을 클릭합니다. GitLab 시크릿 설정은 추후 지원할 예정입니다.
 
 ![console-guide-36](http://static.toastoven.net/prod_pipeline/2022-02-15/console-guide-03.png)
 
@@ -175,9 +175,9 @@ GitLab 웹훅을 사용해서 GitLab 저장소에 이벤트가 발생하면 파�
 | Secret | 설정하지 않음 |
 | SSL verification | Enable SSL verification 체크 |
 
-#### GitLab 웹훅 설정 시 주의사항
+#### GitLab 웹훅 설정 시 주의 사항
 
-GitLab의 사용자 이름으로 자동 실행 설정 시 GitLab의 사용자 이름과 Full name이 다른 경우 자동 실행이 동작하지 않을 수 있으니 같은 값으로 설정해야 합니다.
+GitLab의 사용자 이름으로 자동 실행을 설정할 때 사용자 이름을 GitLab의 사용자 이름과 동일하게 설정해야 합니다. 사용자 이름을 다르게 설정할 경우 자동 실행이 동작하지 않을 수 있습니다.
 
 ![console-guide-37](http://static.toastoven.net/prod_pipeline/2022-07-26/console-guide-01.png)
 
@@ -186,8 +186,8 @@ GitLab의 사용자 이름으로 자동 실행 설정 시 GitLab의 사용자 �
 ![console-guide-25](http://static.toastoven.net/prod_pipeline/2023-01-13/console-guide-03.png)
 
 컨테이너 이미지를 갱신했을 때 파이프라인을 자동으로 실행하려면 **자동 실행 유형**을 **이미지 저장소**로 설정합니다.
-**이미지 저장소**를 **환경 설정**에서 등록한 항목으로 선택한 뒤 **이미지 이름**을 입력합니다. 이미지 이름은 NHN Cloud Container Registry의 경우 `registry명/이미지이름`의 형태로 입력합니다.
-Docker Hub의 경우 `Docker Hub 계정/이미지이름` 형식으로 입력합니다. **태그**는 JAVA 정규 표현식을 사용할 수 있으며 입력한 태그와 매칭되는 태그가 push 되었을 경우 자동 실행됩니다.
+**이미지 저장소**를 **환경 설정**에서 등록한 항목으로 선택한 뒤 **이미지 이름**을 입력합니다. 이미지 이름은 NHN Cloud Container Registry의 경우 `registry명/이미지 이름`의 형태로 입력합니다.
+Docker Hub의 경우 `Docker Hub 계정/이미지 이름` 형식으로 입력합니다. **태그**는 JAVA 정규 표현식을 사용할 수 있으며 입력한 태그와 매칭되는 태그가 push되었을 경우 자동 실행됩니다.
 태그를 입력하지 않으면 latest를 제외한 신규 태그가 push될 경우 자동 실행됩니다.
 입력을 마친 후 **확인**을 클릭합니다.
 

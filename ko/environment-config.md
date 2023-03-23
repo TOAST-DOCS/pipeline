@@ -22,8 +22,8 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 ![console-guide-02](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-01.png)
 
 소스 저장소 정보를 입력한 후 **소스 저장소 연결 확인**의 **확인**을 클릭합니다. 연결 확인 후 **확인**을 클릭합니다.
-- GitHub 소스 저장소의 토큰 발급 시 `repo` 권한이 필수로 필요합니다.
-- GitLab 소스 저장소의 토큰 발급 시 `read_user`, `api`, `read_api` 권한이 필수로 필요합니다.
+- GitHub 소스 저장소의 토큰 발급 시 `repo` 권한이 필요합니다.
+- GitLab 소스 저장소의 토큰 발급 시 `read_user`, `api`, `read_api` 권한이 필요합니다.
 
 ![console-guide-03](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-03.png)
 
@@ -71,7 +71,7 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 
 ### 차트 저장소
 
-차트 저장소를 추가하면 **빌드 - Bake (Manifest)** 스테이지를 사용해서 Helm Chart를 빌드할 수 있습니다. [차트 저장소 가이드](https://helm.sh/docs/topics/chart_repository/)에서 차트 저장소의 구성 방법을 확인할 수 있습니다.
+차트 저장소를 추가하면 **빌드 - Bake (Manifest)** 스테이지를 사용해서 Helm 차트를 빌드할 수 있습니다. [차트 저장소 가이드](https://helm.sh/docs/topics/chart_repository/)에서 차트 저장소의 구성 방법을 확인할 수 있습니다.
 
 ![console-guide-35](http://static.toastoven.net/prod_pipeline/2023-03-28/console-guide-35.png)
 
@@ -85,7 +85,7 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 
 
 ### Pipeline IP
-Pipeline과 연동한 시스템이 정상적으로 동작하지 않으면 ACL을 확인하시기 바랍니다. Pipeline이 사용하는 IP 주소는 **211.56.1.0/27**입니다.
+Pipeline과 연동한 시스템이 정상적으로 동작하지 않으면 ACL을 확인하십시오. Pipeline이 사용하는 IP 주소는 **211.56.1.0/27**입니다.
 
 | 서비스 | CIDR |
 |---|---|
