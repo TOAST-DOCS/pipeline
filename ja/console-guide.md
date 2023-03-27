@@ -23,21 +23,23 @@ Pipelineに追加できる外部システムは次のとおりです。
 
 ![console-guide-01](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-01.png)
 
-**環境設定**で**ソースリポジトリ設定**をクリックすると、ソースリポジトリを管理する画面に移動します。**ソースリポジトリ追加**をクリックしてソースリポジトリを追加できます。
+**環境設定**で**ソースリポジトリ設定**をクリックすると、ソースリポジトリを管理する画面に移動します。**ソースリポジトリ追加**をクリックして新規ソースリポジトリを追加できます。
 
 ![console-guide-02](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-01.png)
 
-ソースリポジトリ情報を入力し、**ソースリポジトリ接続確認**の**確認**をクリックします。GitLabソースリポジトリのトークン発行時に`read_user`、`api`、`read_api`権限が必ず必要です。接続確認後に**確認**をクリックします。
+ソースリポジトリ情報を入力し、**ソースリポジトリ接続確認**の**確認**をクリックします。接続確認後に**確認**をクリックします。
+- GitHubソースリポジトリのトークン発行時、`repo`権限が必要です。 
+- GitLabソースリポジトリのトークン発行時、`read_user`、`api`、`read_api`権限が必要です。 
 
 ![console-guide-03](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-03.png)
 
 #### イメージストア
 
-イメージストアを追加すると、認証情報が必要なイメージストアにアクセスするときに使用できます。 NHN Cloudビルドツールでソースコードをビルドするコンテナを作成するときや、新たに作成したコンテナイメージをアップロードするときに使用できます。そしてパイプライン自動実行設定で自動実行を実行させるコンテナイメージを設定するときに使用できます。イメージストアにはNHN Cloud Container Registry、Docker Hubの他にPrivate Docker Registryを追加できます。
+イメージストアを追加すると、認証情報が必要なイメージストアにアクセスするときに使用できます。 NHN Cloudビルドツールでソースコードをビルドするコンテナを作成するときや、新たに作成したコンテナイメージをアップロードするときに使用できます。そしてパイプライン自動実行設定で自動実行を実行させるコンテナイメージを設定するときに使用できます。イメージストアにはNHN Cloud Container Registry、Docker Hubの他にプライベートイメージストアを追加できます。 Docker Hubを使用する場合はイメージストアURLを省略できます。
 
 ![console-guide-04](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-04.png)
 
-**環境設定**で**イメージストア設定**をクリックすると、イメージストアを管理する画面に移動します。 **イメージストア追加**をクリックしてソースリポジトリを追加できます。
+**環境設定**で**イメージストア設定**をクリックすると、イメージストアを管理する画面に移動します。**イメージストア追加**をクリックして新規ソースリポジトリを追加できます。
 
 ![console-guide-05](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-02.png)
 
@@ -47,11 +49,11 @@ Pipelineに追加できる外部システムは次のとおりです。
 
 #### ビルドツール
 
-ビルドツールを追加すると、パイプラインでビルドツールに定義したさまざまな作業を使用できます。ビルドツールにはJenkinsを追加できます。
+ビルドツールを追加すると、パイプラインでビルドツールに定義したさまざまなジョブを使用できます。ビルドツールにはJenkinsを追加できます。`NHN Cloudビルドツール`を使用する場合はビルドツールの追加作業を省略できます。
 
 ![console-guide-07](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-07.png)
 
-**環境設定**で**ビルドツール設定**をクリックすると、ビルドツールを管理する画面に移動します。 **ビルドツール追加**をクリックしてビルドツールを追加できます。
+**環境設定**で**ビルドツール設定**をクリックすると、ビルドツールを管理する画面に移動します。**ビルドツール追加**をクリックして新規ビルドツールを追加できます。
 
 ![console-guide-08](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-03.png)
 
@@ -65,7 +67,7 @@ Pipelineに追加できる外部システムは次のとおりです。
 
 ![console-guide-10](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-10.png)
 
-**環境設定**で**配布対象設定**をクリックすると、配布対象を管理する画面に移動します。 **配布対象追加**をクリックして配布対象を追加できます。
+**環境設定**で**配布対象設定**をクリックすると、配布対象を管理する画面に移動します。**配布対象追加**をクリックして新規配布対象を追加できます。
 
 ![console-guide-11](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-04.png)
 
@@ -73,9 +75,23 @@ Pipelineに追加できる外部システムは次のとおりです。
 
 ![console-guide-12](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-12.png)
 
+#### チャートリポジトリ
+
+チャートリポジトリを追加すると、**ビルド - Bake (Manifest)**ステージを使用してHelmチャートをビルドできます。[チャートリポジトリガイド](https://helm.sh/docs/topics/chart_repository/)でチャートリポジトリの構成方法を確認できます。
+
+![console-guide-35](http://static.toastoven.net/prod_pipeline/2023-03-28/console-guide-35.png)
+
+**環境設定**で**チャートリポジトリ設定**をクリックすると、チャートリポジトリを管理する画面に移動します。**チャートリポジトリ追加**をクリックして新規チャートリポジトリを追加できます。
+
+![console-guide-36](http://static.toastoven.net/prod_pipeline/2023-03-28/console-guide-36.png)
+
+チャートリポジトリ情報を入力した後、**チャートリポジトリ接続確認**の**確認**をクリックします。接続確認後、**確認**をクリックします。
+
+![console-guide-37](http://static.toastoven.net/prod_pipeline/2023-03-28/console-guide-37.png)
+
 
 #### Pipeline IP
-Pipelineと連動したシステムが正常に動作しない場合はACLを確認してください。Pipelineが使用するIPアドレスは **211.56.1.0/27**です。
+Pipelineと連動したシステムが正常に動作しない場合はACLを確認してください。Pipelineが使用するIPアドレスは**211.56.1.0/27**です。
 
 | サービス | CIDR |
 |---|---|
@@ -108,7 +124,7 @@ NHN Cloudビルドツールでソースコードをビルドするときに使�
 
 ![console-guide-15](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-15.png)
 
-ステージ名、環境設定で登録したソースリポジトリ、ソースコードをビルドするブランチを入力し、 **次へ**をクリックします。
+ステージ名、環境設定で登録したソースリポジトリ、ソースコードをビルドする対象ブランチ(git branch)を入力し、**次へ**をクリックします。
 
 #### ビルド設定
 
@@ -127,7 +143,7 @@ NHN Cloudビルドツールで**アーティファクト**設定を使用して*
 開始条件として設定された**アーティファクト**はステージ開始時に存在有無を確認してステージの進行を決定します。
 終了条件として設定された**アーティファクト**はステージの生産物を**アーティファクト**に設定します。
 
-NHN Cloudビルドツールで設定可能な**アーティファクト**
+#### NHN Cloudビルドツールで設定可能なアーティファクト
 
 GitHubおよびGitLabはブランチを入力しない場合、masterブランチをデフォルト値として使用します。
 
@@ -156,7 +172,7 @@ GitHubおよびGitLabはブランチを入力しない場合、masterブラン�
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | GitHubファイル | 開始    | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}  <br/> GitHub Enterpriseの場合の例：https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
 | GitLabファイル | 開始    | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                         |
-| Dockerイメージ | 開始    | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                         |
+| Dockerコンテナイメージ | 開始  | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                         |
 | HTTPファイル  | 開始、終了 | アクセス可能なURL                                                                                                                                                                                               |
 
 ビルド設定が完了したら**次へ**をクリックします。
@@ -167,7 +183,7 @@ GitHubおよびGitLabはブランチを入力しない場合、masterブラン�
 
 ![console-guide-18](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-04.png)
 
-ステージ名、配布対象、配布に使用するManifestを入力し、**次へ**をクリックします。 Manifestを作成する方法は[Kubernetes文書](https://kubernetes.io/docs/concepts/workloads/controllers/deployment )を参照してください。
+ステージ名、配布対象、配布に使用するKubernetes Manifestを入力し、**次へ**をクリックします。Manifestを作成する方法は[Kubernetes文書](https://kubernetes.io/docs/concepts/workloads/controllers/deployment )を参照してください。
 
 ![console-guide-38](http://static.toastoven.net/prod_pipeline/2023-01-13/console-guide-02.png)
 
@@ -178,9 +194,9 @@ GitHubおよびGitLabはブランチを入力しない場合、masterブラン�
 NHN Cloudビルドツールで**アーティファクト**設定を使用して**開始条件**と**終了条件**を設定できます。
 開始条件として設定された**アーティファクト**はステージ開始時に存在有無を確認してステージの進行を決定します。
 終了条件として設定された**アーティファクト**はステージの生産物を**アーティファクト**に設定します。
-入力したマニフェストに**終了条件**と一致するKubernetsオブジェクトがないため、ステージが失敗した場合でも、マニフェストがKubernetesクラスタに適用される可能性があります。
+入力したマニフェストに**終了条件**と一致するKubernetesオブジェクトがないため、ステージが失敗した場合でも、マニフェストがKubernetesクラスタに適用される可能性があります。
 
-配布設定で設定可能な**アーティファクト**
+#### 配布設定で設定可能なアーティファクト
 
 GitHubおよびGitLabはブランチを入力しない場合、masterブランチをデフォルト値として使用します。
 
@@ -188,7 +204,7 @@ GitHubおよびGitLabはブランチを入力しない場合、masterブラン�
 |------------|--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | GitHubファイル | 開始    | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}   <br/> GitHub Enterpriseの場合の例：https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
 | GitLabファイル | 開始    | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                          |
-| Dockerイメージ | 開始 | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                          |
+| Dockerコンテナイメージ | 開始 | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                          |
 | HTTPファイル  | 開始 | アクセス可能なURL                                                                                                                                                                                                |
 | kubernetesオブジェクト | 終了 | オブジェクトの名前                                                                                                                                                                                                |
 
@@ -216,7 +232,7 @@ GitHubおよびGitLabはブランチを入力しない場合、masterブラン�
 
 #### 自動実行
 
-自動実行を使用すると、GitHub Repositoryにイベントが発生したりイメージストアのコンテナイメージを更新した場合にパイプラインを自動的に実行するように設定できます。
+自動実行を使用すると、GitHubまたはGitLabリポジトリにイベントが発生したりイメージストアのコンテナイメージを更新した場合にパイプラインを自動的に実行するように設定できます。
 
 ![console-guide-22](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-22.png)
 
@@ -224,11 +240,13 @@ GitHubおよびGitLabはブランチを入力しない場合、masterブラン�
 
 ![console-guide-23](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-23.png)
 
-GitHub Webフックを使用して、GitHubまたはGitHub EnterpriseのRepositoryにイベントが発生した場合にパイプラインを自動的に実行するように設定できます。自動実行タイプをGitHubに設定し、Repositoryの組織またはユーザー名、プロジェクト名、ブランチ、シークレットを入力し、**確認**をクリックします。
+#### GitHub自動実行設定
+
+GitHub Webフックを使用してGitHubまたはGitHub Enterpriseのリポジトリにイベントが発生した場合にパイプラインを自動的に実行するように設定できます。自動実行タイプをGitHubに設定し、リポジトリの組織またはユーザー名、プロジェクト名、ブランチ、シークレットを入力し、**確認**をクリックします。
 
 ![console-guide-24](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-24.png)
 
-GitHubまたはGitHub EnterpriseのRepositoryでWebフックを設定します。
+#### GitHub Webフック設定値
 
 | 項目 | 設定値 |
 |---|---|
@@ -238,10 +256,14 @@ GitHubまたはGitHub EnterpriseのRepositoryでWebフックを設定します�
 
 ![console-guide-35](http://static.toastoven.net/prod_pipeline/2022-02-15/console-guide-02.png)
 
-GitLab Webフックを使用して、GitLab Repositoryにイベントが発生した場合にパイプラインを自動的に実行するように設定できます。自動実行タイプをGitLabに設定し、Repositoryの組織またはユーザー名、プロジェクト名、ブランチを入力し、**確認**をクリックします。 GitLabシークレット設定は今後サポートする予定です。
+#### GitLab自動実行設定
+
+GitLab Webフックを使用してGitLaリポジトリにイベントが発生した場合にパイプラインを自動的に実行するように設定できます。自動実行タイプをGitLabに設定し、リポジトリの組織またはユーザー名、プロジェクト名、ブランチを入力し、**確認**をクリックします。GitLabシークレット設定は今後サポートする予定です。
 
 ![console-guide-36](http://static.toastoven.net/prod_pipeline/2022-02-15/console-guide-03.png)
-GitLab RepositoryでWebフックを設定します。
+
+
+#### GitLab Webフック設定値
 
 | 項目 | 設定値 |
 |---|---|
@@ -250,22 +272,25 @@ GitLab RepositoryでWebフックを設定します。
 | Secret | 設定しない |
 | SSL verification | Enable SSL verificationチェック |
 
+#### GitLab Webフック設定時の注意事項
+
+GitLabのユーザー名で自動実行を設定する場合、ユーザー名をGitLabのユーザー名と同じに設定する必要があります。ユーザー名が異なる場合、自動実行が動作しない場合があります。
 
 ![console-guide-37](http://static.toastoven.net/prod_pipeline/2022-07-26/console-guide-01.png)
-GitLabのユーザー名で自動実行を設定したとき、GitLabのユーザー名とFull nameが異なる場合、自動実行が動作しない可能性がありますので、同じ値に設定する必要があります。
 
+#### イメージストア自動実行設定
 
 ![console-guide-25](http://static.toastoven.net/prod_pipeline/2023-01-13/console-guide-03.png)
 
 コンテナイメージを更新したときにパイプラインを自動的に実行するには、**自動実行タイプ**を**イメージストア**に設定します。
 **イメージストア**を**環境設定**で登録した項目に選択したした後、**イメージ名**を入力します。イメージ名はNHN Cloud Container Registryの場合`registry名/イメージ名`の形式で入力します。
-DockerHubの場合、`ドッカーハブアカウント/イメージ名`形式で入力します。**タグ**はJAVA正規表現式を使用でき、入力したタグとマッチするタグがpushされた場合に自動実行されます。
+Docker Hubの場合、`Docker Hubアカウント/イメージ名`の形式で入力します。**タグ**はJAVA正規表現を使用でき、入力したタグとマッチするタグがpushされた場合に自動実行されます。
 タグを入力しない場合、latestを除く新規タグがpushされる場合に自動実行されます。
 入力が終わったら**確認**をクリックします。
 
 ![console-guide-26](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-26.png)
 
-パイプラインを新しく作成したら、**自動実行防止**を **使用**に設定します。パイプラインを自動的に実行するには**自動実行防止**を**未使用**に変更する必要があります。パイプラインを選択した後、下部の基本情報の自動実行防止で**変更**をクリックします。自動実行防止設定ダイアログボックスで**未使用**を選択した後、**確認**をクリックします。
+パイプラインを新しく作成したら、**自動実行防止**が基本的に適用されます。パイプラインを自動的に実行するには**自動実行防止**を**未使用**に変更する必要があります。パイプラインを選択した後、下部の基本情報の自動実行防止で**変更**をクリックします。自動実行防止設定ダイアログボックスで**未使用**を選択した後、**確認**をクリックします。
 
 ![console-guide-27](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-27.png)
 
@@ -297,7 +322,7 @@ DockerHubの場合、`ドッカーハブアカウント/イメージ名`形式�
 
 ![console-guide-32](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-32.png)
 
-開発環境名と開発環境の説明を入力し、基本イメージから配布するコンテナイメージを選択します。コンテナイメージのアクセスに必要な情報はイメージストアに設定します。配布対象はコンテナイメージを配布するKubernetesを選択します。サービスポートはコンテナが提供するサービスのポートを入力します。サービスポートを入力すると、コンテナサービスにアクセスできるサービスIPを自動的に割り当て(KubernetesがLoadBalancerタイプのサービスを提供する場合)ます。最後に開発環境の制約事項を入力して**作成**をクリックすると開発環境を作成します。
+開発環境名と開発環境の説明を入力し、基本イメージから配布するコンテナイメージを選択します。コンテナイメージのアクセスに必要な情報はイメージストアに設定します。配布対象はコンテナイメージを配布するKubernetesを選択します。サービスポートはコンテナが提供するサービスのポートを入力します。サービスポートを入力すると、コンテナサービスにアクセスできるサービスIPを自動的に割り当てます(KubernetesがLoadBalancerタイプのサービスを提供する場合)。最後に開発環境の制約事項を入力して**作成**をクリックすると開発環境を作成します。
 
 ![console-guide-33](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-33.png)
 
