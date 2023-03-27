@@ -3,7 +3,7 @@
 This guide describes the basics of stages in Pipeline. 
 Click **Pipeline Management** > **+Create Pipeline** to create a pipeline. After selecting the pipeline you created, you can add a stage by clicking **+Add Stage** in the **Stage** tab at the bottom.
 
-![stage-guide-01](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-01.png)
+![stage-guide-01](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-01.png)
 
 Stages are divided into the following groups.
 - **Source**
@@ -95,7 +95,7 @@ See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads
 ![stage-guide-06](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-06.png)
 ![stage-guide-15](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-15.png)
 ![stage-guide-16](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-16.png)
-![stage-guide-14](http://static.toastoven.net/prod_pipeline/2023
+![stage-guide-14](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-05.png)
 
 #### Deployment - Patch
 You can select the [deployment target](https://docs.nhncloud.com/en/Dev%20Tools/Pipeline/en/console-guide/#_1) you added in **Deployment Target Settings** in **Environment Settings**.
