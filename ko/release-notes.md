@@ -1,5 +1,10 @@
 ## Dev Tools > Pipeline > 릴리스 노트
 
+### 2023. 03. 28.
+* Helm 차트를 이용하여 배포할 결과물을 만들 수 있는 빌드 - Bake (Manifest) 스테이지가 추가되었습니다. [Pipeline 사용자 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#_2)에서 사용 방법을 확인할 수 있습니다.
+* 빌드 - Bake (Manifest) 스테이지에서 사용할 수 있는 차트 저장소 설정이 추가되었습니다. [Pipeline 사용자 가이드](/Dev%20Tools/Pipeline/ko/console-guide/#_1)에서 사용 방법을 확인할 수 있습니다.
+* 배포 - Deploy 스테이지에서 Manifest를 아티팩트로 선택할 수 있는 기능이 추가되었습니다.
+
 ### 2023. 02. 28.
 * 외부 저장소의 리소스를 파이프라인 스테이지의 시작 또는 종료 조건으로 사용할 수 있는 아티팩트 기능이 추가되었습니다. [Pipeline 사용자 가이드](/Dev%20Tools/Pipeline/ko/console-guide/#_1)에서 사용 방법을 확인할 수 있습니다.
 

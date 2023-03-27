@@ -1,5 +1,10 @@
 ## Dev Tools > Pipeline > リリースノート
 
+### 2023. 03. 28.
+* Helmチャートを利用して配布する結果物を作ることができるビルド - Bake (Manifest)ステージが追加されました。[Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ko/stage-guide/#_2)で使い方を確認できます。
+* ビルド - Bake (Manifest)ステージで使用できるチャートリポジトリ設定が追加されました。[Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ko/console-guide/#_1)で使い方を確認できます。
+* 配布 - DeployステージでManifestをアーティファクトとして選択できる機能が追加されました。
+
 ### 2023. 02. 28.
 * 外部リポジトリのリソースをパイプラインステージの開始または終了条件として使用できるアーティファクト機能が追加されました。 [Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ko/console-guide/#_1)で使い方を確認できます。
 
