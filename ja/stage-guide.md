@@ -3,7 +3,7 @@
 ステージガイドではPipelineのステージについて基本的な内容を説明します。
 **パイプライン管理** > **+パイプライン作成**をクリックしてパイプラインを作成します。作成したパイプラインを選択したら、下部の**ステージ**タブで **+ステージ追加**をクリックしてステージを追加できます。
 
-![stage-guide-01](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-01.png)
+![stage-guide-01](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-01.png)
 
 ステージは以下のグループに分かれています。
 - **ソース**
