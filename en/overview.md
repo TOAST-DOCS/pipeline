@@ -16,11 +16,11 @@ Pipeline provides the NHN Cloud build tool that you can use to build source code
 
 #### Jenkins Integration
 
-By integrating Pipeline with Jenkins, you can register Jenkins jobs in your application deployment flow. Various user-defined Jenkins jobs can be used for application deployment.
+By integrating Pipeline with Jenkins, you can add Jenkins jobs. Various user-defined Jenkins jobs can be used for application deployment.
 
 #### Kubernetes Integration
 
-By integrating Pipeline with Kubernetes, you can register Kubernetes tasks in your application deployment flow. It provides various features, such as deploying container images, changing the number of Pod replicas, and deleting Kubernetes objects.
+By integrating Pipeline with Kubernetes, you can add Kubernetes jobs. It provides various features, such as deploying container images, changing the number of Pod replicas, and deleting Kubernetes objects.
 
 #### Application Deployment Flow Management
 
@@ -32,7 +32,7 @@ You can configure autorun on the pipeline. When you change the source code in th
 
 #### Artifact
 
-Artifact is a format for setting external resources such as Docker images and configuration files into the pipeline. You can specify external resources to be used in the pipeline as artifacts and use them as start/end conditions for stages.
+Artifact is a concept used when handling external resources such as Docker container images and configuration files in pipeline configuration. You can designate external resources to be used in the pipeline as artifacts and use them as stage start/end conditions.
 
 #### Artifact Type
 | Type        | Description               |
