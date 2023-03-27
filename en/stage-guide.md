@@ -52,18 +52,50 @@ You can use the build tools provided by NHN Cloud.
 ![stage-guide-05](http://static.toastoven.net/prod_pipeline/2023-02-28/stage-guide-02.png)
 ![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-02.png)
 
+#### Build - Bake (Manifest)
+You can build using a Helm package file or [Chart Repository](/Dev%20Tools/Pipeline/ko/console-guide/#_1)that users configured themselves. 
+- Set the chart name as the name of the output configured with the Helm engine.
+- Set the namespace as the namespace of the output configured with the Helm engine.
+- Template
+  - For repository type, select a repository that is added in [Source Repository Settings](/Dev%20Tools/Pipeline/ko/console-guide/#_1) or [Chart Repository Settings](/Dev%20Tools/Pipeline/ko/console-guide/#_1) of **Environment Settings**.
+  - When you set a repository type as **GitHub file** or **GitLab file**.
+    - Enter the Helm package file path for the path.
+    - Enter the branch of GitHub or GitLab for the branch name.
+  - When you specify **Helm Chart** for the repository type
+    - For the chart repository name, you can select one of repositories set in[Chart Repository Settings](/Dev%20Tools/Pipeline/ko/console-guide/#_1).
+    - For the chart name, you can choose any chart name available in the chart repository's configuration.
+    - For the chart version, you to select a chart version available in the chart repository's configuration.
+- Override
+  - Repository Information
+    - You can select in the same way as for templates.
+    - Create a build output using the template as default and replacing it with what you specify in the override.
+  - Key / Value
+    - Enter a value consisting of key and value, create a build result by replacing a specific value.
+  - Replace Basic Type
+    - If the option is checked, when adding the override value, --set is used instead of --set--string. 
+- Artifact
+  - You can set the **Start Condition** and **End Condition** of ** Artifact**. You can set a start condition to determine whether to start stages. You can set **End Condition** to set stage products as artifacts.
+
+![stage-guide-12](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-12.png)
+![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-13.png)
+
 ### Deployment
 This is a stage to deploy to the Kubernetes environment.
 
 #### Deployment - Deploy
-You can select the [deployment target](https://docs.nhncloud.com/en/Dev%20Tools/Pipeline/en/console-guide/#_1) you added in **Deployment Target Settings** in **Environment Settings**. 
+- You can select the [deployment target](https://docs.nhncloud.com/en/Dev%20Tools/Pipeline/en/console-guide/#_1) you added in **Deployment Target Settings** in **Environment Settings**. 
 Enter **Stage Name**, **Deployment Target**, and **Manifest** to use for deployment. 
 If the tag format is used in the build stage, when the docker image tag of **Manifest** is entered as `_{BUILD_NUMBER}`, you can deploy as the image with the most recent number among the images built in the tag format.
 See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment ) for how to write **Manifest**.
-You can set **Start Condition** and **End Condition** of the **artifact**. You can decide whether or not to start a stage by setting the **Start Condition**. You can set an **End Condition** to set stage output as an artifact.
+- You can select **Manifest Source** as artifacts. The selected artifact must be created in Manifest format.
+  - You can select an artifact created in the pipeline.
+  - You can select a specific file from the repository as an artifact. 
+- You can set the **Start Condition** and **End Condition** of ** Artifact**. You can set a start condition to determine whether to start stages. You can set **End Condition** to set stage products as artifacts.
 
-![stage-guide-06](http://static.toastoven.net/prod_pipeline/2023-02-28/stage-guide-03.png)
-![stage-guide-14](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-05.png)
+![stage-guide-06](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-06.png)
+![stage-guide-15](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-15.png)
+![stage-guide-16](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-16.png)
+![stage-guide-14](http://static.toastoven.net/prod_pipeline/2023
 
 #### Deployment - Patch
 You can select the [deployment target](https://docs.nhncloud.com/en/Dev%20Tools/Pipeline/en/console-guide/#_1) you added in **Deployment Target Settings** in **Environment Settings**.

@@ -23,21 +23,23 @@ After adding the source repository, you can build the source code using the NHN 
 
 ![console-guide-01](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-01.png)
 
-Click **Source Repository Settings** in **Environment Settings** to go to the screen to manage source repositories. You can add a source repository by clicking **Add Source Repository**. 
+Click **Source Repository Settings** in **Environment Settings** to go to the screen to manage source repositories. You can add a new source repository by clicking **Add Source Repository**. 
 
 ![console-guide-02](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-01.png)
 
-Enter the source repository information, and click **Check** in **Source Repository Connection Check**. To obtain a token for a GitLab source repository, `read_user`, `api`, and `read_api` permissions are required. After checking the connection, click **Confirm**.
+Enter the source repository information. After checking the connection, click **Confirm**.
+- When obtaining a token for a GitLab source repository, `repo` permissions are required.
+- When obtaining a token for a GitLab source repository, `read_user`, `api`, `read_api` permissions are required.
 
 ![console-guide-03](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-03.png)
 
 #### Image Registry
 
-If you add an image registry, you can use the information to access an image registry that requires credentials. You can use the image registry when creating a container to build source code in the NHN Cloud build tool, or when uploading a newly created container image. You can also use it to set the container image that executes autorun in your pipeline autorun settings. For image registry, you can add NHN Cloud Container Registry, Docker Hub, or private Docker registry.
+If you add an image registry, you can use the information to access an image registry that requires credentials. You can use the image registry when creating a container to build source code in the NHN Cloud build tool, or when uploading a newly created container image. You can also use it to set the container image that executes autorun in your pipeline autorun settings. For image registry, you can add NHN Cloud Container Registry, Docker Hub, or private image registries. When using Docker Hub, image repository URLs can be omiited.
 
 ![console-guide-04](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-04.png)
 
-Click **Image Registry Settings** in **Environment Settings** to go to the screen to manage image repositories. You can add a source repository by clicking **Add Image Registry**.
+Click **Image Registry Settings** in **Environment Settings** to go to the screen to manage image repositories. You can add a ne source repository by clicking **Add Image Registry**.
 
 ![console-guide-05](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-02.png)
 
@@ -47,11 +49,11 @@ Enter the image registry information, and click **Check** in **Image Registry Co
 
 #### Build Tool
 
-By adding a build tool, your pipeline can use the various actions you define in the build tool. For the build tool, you can add Jenkins.
+By adding a build tool, your pipeline can use the various actions you define in the build tool. For the build tool, you can add Jenkins. If you use `NHN Cloud Build Tools`, you can skip adding build tools.
 
 ![console-guide-07](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-07.png)
 
-Click **Build Tool Settings** in **Environment Settings** to go to the screen to manage the build tool. You can add a build tool by clicking **Add Build Tool**.
+Click **Build Tool Settings** in **Environment Settings** to go to the screen to manage the build tool. You can add a new build tool by clicking **Add Build Tool**.
 
 ![console-guide-08](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-03.png)
 
@@ -65,7 +67,7 @@ Adding a deployment target allows you to manage the deployment target in your pi
 
 ![console-guide-10](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-10.png)
 
-Click **Deployment Target Settings** in **Environment Settings** to go to the screen to manage deployment targets. You can add deployment targets by clicking **Add Deployment Target**.
+Click **Deployment Target Settings** in **Environment Settings** to go to the screen to manage deployment targets. You can add new deployment targets by clicking **Add Deployment Target**.
 
 ![console-guide-11](http://static.toastoven.net/prod_pipeline/2022-05-24/console-guide-04.png)
 
@@ -73,6 +75,19 @@ Enter the deployment target name and deployment target description, select the K
 
 ![console-guide-12](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-12.png)
 
+#### Chart Repository
+
+If you add a chart repository, you can build Helm chart by using the **Build - Bake (Manifest)** stage. You can find how to configure a chart repository in [Chart Repository Guide](https://helm.sh/docs/topics/chart_repository/).
+
+![console-guide-35](http://static.toastoven.net/prod_pipeline/2023-03-28/console-guide-35.png)
+
+Click **Chart Repository Settings** in **Environment Settings** to go to the screen to manage source repositories. You can add a source repository by clicking **Add Chart Repository**.
+
+![console-guide-36](http://static.toastoven.net/prod_pipeline/2023-03-28/console-guide-36.png)
+
+Enter the chart repository information, click **Check** in **Chart Repository Connection Check**. After checking the connection, click **Confirm**.
+
+![console-guide-37](http://static.toastoven.net/prod_pipeline/2023-03-28/console-guide-37.png)
 
 #### Pipeline IP
 If the system integrated with Pipeline does not work properly, check the ACL. The IP address used by Pipeline is **211.56.1.0/27**.
@@ -127,7 +142,7 @@ You can set **Start Condition** and **End Condition** by using the **Artifact** 
 An **artifact** set as a starting condition is checked for existence at the start of the stage to determine whether or not to proceed with the stage.
 An **artifact** configured as an end condition sets the production of the stage as an **artifact**.
 
-**Artifacts** that can be set in the NHN Cloud Build Tool
+#### Artifacts that can be set in NHN Cloud Build Tools
 
 For GitHub and GitLab, if a branch is not entered, the master branch is used as default.
 
@@ -135,7 +150,7 @@ For GitHub and GitLab, if a branch is not entered, the master branch is used as 
 |------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | GitHub file  | Start     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path} <br/> Example for GitHub Enterprise: https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
 | GitLab file  | Start     | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                        |
-| Docker image | Start, End | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                        |
+| Docker container image | Start, End | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                        |
 | HTTP file    | Start | Accessible URL                                                                      
 |
 
@@ -148,7 +163,7 @@ You can set **Start Condition** and **End Condition** by using the **Artifact** 
 An **artifact** set as a starting condition is checked for existence at the start of the stage to determine whether or not to proceed with the stage.
 An **artifact** configured as an end condition sets the production of the stage as an **artifact**.
 
-**Artifacts** that can be set in Build Tool
+#### **Artifacts** that can be set in Build Tool
 
 For GitHub and GitLab, if a branch is not entered, the master branch is used as default.
 
@@ -156,7 +171,7 @@ For GitHub and GitLab, if a branch is not entered, the master branch is used as 
 |------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | GitHub file  | Start     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}  <br/> Example for GitHub Enterprise: https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
 | GitLab file  | Start     | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                         |
-| Docker image | Start     | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                         |
+| Docker container image | Start     | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                         |
 | HTTP file    | Start, End | Accessible URL                                                                                                                                                                                               |
 
 After completing the build settings, click **Next**.
@@ -167,7 +182,7 @@ In deployment settings, you can set how the container image is deployed to the d
 
 ![console-guide-18](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-04.png)
 
-Enter the stage name, deployment target, and Manifest to use for deployment, and click **Next**. See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment) for how to write a Manifest.
+Enter the stage name, deployment target, and Kubernetes Manifest to use for deployment, and click **Next**. See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment) for how to write a Manifest.
 
 ![console-guide-38](http://static.toastoven.net/prod_pipeline/2023-01-13/console-guide-02.png)
 
@@ -180,7 +195,7 @@ An **artifact** set as a starting condition is checked for existence at the star
 An **artifact** configured as an end condition sets the production of the stage as an **artifact**.
 Even if the stage fails because there are no Kubernetes objects in the entered manifest that match the **End Condition**, the manifest can be applied to the Kubernetes cluster.
 
-**Artifacts** that can be set in the deployment settings.
+#### **Artifacts** that can be set in the deployment settings.
 
 For GitHub and GitLab, if a branch is not entered, the master branch is used as default.
 
@@ -188,7 +203,7 @@ For GitHub and GitLab, if a branch is not entered, the master branch is used as 
 |------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | GitHub file  | Start     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}   <br/> Example for GitHub Enterprise: https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
 | GitLab file  | Start     | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                          |
-| Docker image | Start | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                          |
+| Docker container image | Start | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                          |
 | HTTP file    | Start | Accessible URL                                                                                                                                                                                                |
 | kubernetes object | End | Object name                                                                                                                                                                                                  |
 
@@ -216,7 +231,7 @@ In **Pipeline Management**, click ▶︎ (Manual Run). when the dialog box appea
 
 #### Autorun
 
-Autorun lets you configure your pipeline to run automatically when an event occurs in your GitHub repository or when a container image in your image registry is updated.
+Autorun lets you configure your pipeline to run automatically when an event occurs in your GitHub  or GitLab repository or when a container image in your image registry is updated.
 
 ![console-guide-22](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-22.png)
 
@@ -224,11 +239,13 @@ Click **Autorun Settings** and click **Add** in the **Autorun Settings** dialog 
 
 ![console-guide-23](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-23.png)
 
+### GitHub Autorun Settings
+
 Using a GitHub webhook, you can configure your pipeline to run automatically when an event occurs in a repository on GitHub or GitHub Enterprise. Set the autorun type to GitHub, enter the repository's organization or user name, project name, branch, and secret, and click **OK**.
 
 ![console-guide-24](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-24.png)
 
-Set up a webhook in your repository on GitHub or GitHub Enterprise.
+#### GitHub Webhook Settinig Values
 
 | Item | Setting value |
 |---|---|
@@ -251,21 +268,25 @@ Set up a webhook in the GitLab repository.
 | Secret | Do not set |
 | SSL verification | Select Enable SSL verification |
 
+#### Precautions for GitLab Webhook settings
+
+When setting autorun with GitLab's user name, make sure to set the user name to be the same as GitLab's user name. If the user name is set differently, autorun may not work.
+
 ![console-guide-37](http://static.toastoven.net/prod_pipeline/2022-07-26/console-guide-01.png)
 
-When setting Autorun with username of GitLab, if the username and Full name are different, Autorun may not work, so set them to the same value.
+#### Image Repository Autorun Setting
 
 ![console-guide-25](http://static.toastoven.net/prod_pipeline/2023-01-13/console-guide-03.png)
 
 If you want the pipeline to run automatically when the container image is updated, set **Image Registry** for **Autorun Type**.
 After selecting **the image registry** registered in **the environment settings**, enter **Image Name**. Enter the image name in the form of `registry name/image name` for NHN Cloud container registry.
-For Dockerub, enter in the form of `docker hub account/image name`. **Tag** can use JAVA regular expression and is automatically executed when a tag matching the entered tag is pushed.
+For Docker Hub, enter in the form of `docker hub account/image name`. **Tag** can use JAVA regular expression and is automatically executed when a tag matching the entered tag is pushed.
 If you do not enter a tag, it will be automatically executed when a new tag except latest is pushed.
 When finished, click **Confirm**.
 
 ![console-guide-26](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-26.png)
 
-When a new pipeline is created, **Prevent Autorun** is set to **Enable**. If you want the pipeline to run automatically, you must change **Prevent Autorun** to **Disable**. After selecting the pipeline, click **Change** under Prevent Autorun at the bottom of Basic Information. In the Set Autorun Prevention dialog box, select **Disable** and click **OK**.
+When a new pipeline is created, **Prevent Autorun** is set as default. If you want the pipeline to run automatically, you must change **Prevent Autorun** to **Disable**. After selecting the pipeline, click **Change** under Prevent Autorun at the bottom of Basic Information. In the Set Autorun Prevention dialog box, select **Disable** and click **OK**.
 
 ![console-guide-27](http://static.toastoven.net/prod_pipeline/2021-04-27/console-guide-27.png)
 
