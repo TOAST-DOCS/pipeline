@@ -52,17 +52,49 @@ NHN Cloudで提供するビルドツールを使用できます。
 ![stage-guide-05](http://static.toastoven.net/prod_pipeline/2023-02-28/stage-guide-02.png)
 ![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-02.png)
 
+#### ビルド - Bake (Manifest)
+ユーザーが直接構成したHelm package fileまたは[チャートリポジトリ](/Dev%20Tools/Pipeline/ko/console-guide/#_1)を利用してビルドできます。 
+'- チャート名はHelmエンジンで構成した結果物の名前を設定します。
+'- NamespaceはHelmエンジで構成した結果物のNamespaceを設定します。
+'- テンプレート
+  - リポジトリタイプは**環境設定**の[ソースリポジトリ設定](/Dev%20Tools/Pipeline/ko/console-guide/#_1)または[チャートリポジトリ設定](/Dev%20Tools/Pipeline/ko/console-guide/#_1)で追加したリポジトリを選択できます。
+  - リポジトリタイプを**GitHubファイル**または**GitLabファイル**に指定した場合
+    - パスはHelm package fileのパスを入力する必要があります。
+    - ブランチ名はGithubまたはGitlabのブランチを入力します。
+  - リポジトリタイプを**Helmチャート**と指定した場合
+    - チャートリポジトリの名前は[チャートリポジトリ設定](/Dev%20Tools/Pipeline/ko/console-guide/#_1)で設定したリポジトリの中から1つを選択できます。
+    - チャート名はチャートリポジトリの構成で使用できるチャート名を選択できます。
+    - チャートバージョンはチャートリポジトリの構成で使用できるチャートバージョンを選択できます。
+'- オーバーライド
+  - リポジトリ情報
+    - テンプレートと同じ方式で選択できます。
+    - テンプレートを基本にしてオーバーライドで指定した内容に置き換えてビルド結果物を作成します。
+  - キー(Key) / 値(Value)
+    - key、valueで構成された値を入力して特定値を置換してビルド結果物を作成します。
+  - 基本タイプ置換
+    - このオプションをチェックすると、オーバーライド値を注入する時、--set-stringの代わりに--setを使用します。--setを使用して注入された値はHelmによって基本データ型に変換されます。
+'- アーティファクト
+  - **アーティファクト**の**開始条件**と**終了条件**を設定できます。**開始条件**を設定してステージを開始するかどうかを決定できます。**終了条件**を設定してステージの作成物をアーティファクトに設定できます。
+
+![stage-guide-12](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-12.png)
+![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-13.png)
+
 ### 配布
 Kubernetes環境に配布を行うステージです。
 
 #### 配布 - Deploy
-**環境設定**の**配布対象設定**で追加した[配布対象](https://docs.nhncloud.com/ja/Dev%20Tools/Pipeline/ja/console-guide/#_1)を選択できます。
+'- **環境設定**の**配布対象設定**で追加した[配布対象](https://docs.nhncloud.com/ja/Dev%20Tools/Pipeline/ja/console-guide/#_1)を選択できます。
 **ステージ名**、**配布対象**、配布に使用する**Manifest**を入力します。
 ビルドステージでタグフォーマットを使用した場合、**Manifest**のドッカーイメージタグ部分を`_{BUILD_NUMBER}`と入力すると、タグフォーマットでビルドされたイメージのうち最新の番号のイメージで配布できます。
 **Manifest**を作成する方法は[Kubernetes文書](https://kubernetes.io/docs/concepts/workloads/controllers/deployment )を参照してください。
-**アーティファクト**の**開始条件**および**終了条件**を設定できます。**開始条件**を設定してステージを開始するかどうかを決定できます。**終了条件**を設定してステージの作成物をアーティファクトに設定できます。
+- **Manifestソース**をアーティファクトとして選択できます。選択したアーティファクトはManifest形式で作成する必要があります。
+  - パイプラインで作成したアーティファクトを選択できます。
+  - リポジトリから特定ファイルをアーティファクトとして選択できます。 
+- **アーティファクト**の**開始条件**および**終了条件**を設定できます。**開始条件**を設定してステージを開始するかどうかを決定できます。**終了条件**を設定してステージの作成物をアーティファクトに設定できます。
 
-![stage-guide-06](http://static.toastoven.net/prod_pipeline/2023-02-28/stage-guide-03.png)
+![stage-guide-06](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-06.png)
+![stage-guide-15](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-15.png)
+![stage-guide-16](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-16.png)
 ![stage-guide-14](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-05.png)
 
 #### 配布 - Patch
