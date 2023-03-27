@@ -3,7 +3,7 @@
 스테이지 가이드에서는 Pipeline의 스테이지에 대해 기본적인 내용을 설명합니다.
 **파이프라인 관리** > **+파이프라인 생성**을 클릭해 파이프라인을 생성합니다. 생성한 파이프라인을 선택한 뒤 하단의 **스테이지** 탭에서 **+스테이지 추가**를 클릭해 스테이지를 추가할 수 있습니다.
 
-![stage-guide-01](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-01.png)
+![stage-guide-01](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-01.png)
 
 스테이지는 아래의 그룹으로 구분됩니다.
 - **소스**
