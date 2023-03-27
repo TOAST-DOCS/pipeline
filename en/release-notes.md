@@ -1,5 +1,10 @@
 ## Dev Tools > Pipeline > Release Notes
 
+### March 28, 2023
+* Added the Build - Bake (Manifest) stage that can create results for deployment using Helm charts. For more details, see [Pipeline User Guide](/Dev%20Tools/Pipeline/ko/stage-guide/#_2).
+* Added the chart repository settings available in the Build - Bake (Manifest) stage. For more details, see [Pipeline User Guide](/Dev%20Tools/Pipeline/ko/console-guide/#_1).
+* Added a feature to select Manifest as artifacts in the Deployment - Deploy stage.
+
 ### February 28, 2023
 * Added an artifact feature that allows you to use external repository resources as start or end condtions for pipeline stages. You can find how to use in [Pipeline User Guide](/Dev%20Tools/Pipeline/ko/console-guide/#_1)
 
