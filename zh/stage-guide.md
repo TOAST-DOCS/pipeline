@@ -15,12 +15,12 @@ Stages are divided into the following groups.
 This is a stage that gets the source code to build.
 
 #### Source - GitHub
-You can select the [source repository](https://docs.nhncloud.com/en/Dev%20Tools/Pipeline/en/console-guide/#_1) that you added in **Source Repository Settings** of **Environment Settings**.
+You can select the [source repository](/Dev%20Tools/Pipeline/zh/environment-config/#_2) that you added in **Source Repository Settings** of **Environment Settings**.
 
 ![stage-guide-02](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-02.png)
 
 #### Source - GitLab
-You can select the [source repository](https://docs.nhncloud.com/en/Dev%20Tools/Pipeline/en/console-guide/#_1) that you added in **Source Repository Settings** of **Environment Settings**.
+You can select the [source repository](/Dev%20Tools/Pipeline/zh/environment-config/#_2) that you added in **Source Repository Settings** of **Environment Settings**.
 
 ![stage-guide-03](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-03.png)
 
@@ -28,7 +28,7 @@ You can select the [source repository](https://docs.nhncloud.com/en/Dev%20Tools/
 This is a stage to build
 
 #### Build - Jenkins
-You can build using Jenkins that you configured yourself. You can select the [build tool](https://docs.nhncloud.com/en/Dev%20Tools/Pipeline/en/console-guide/#_1) you added in **Build Tool Settings** of **Environment Settings**. You can select **Build Job** and enter **Build Job Parameters**.
+You can build using Jenkins that you configured yourself. You can select the [build tool](/Dev%20Tools/Pipeline/zh/environment-config/#_4) you added in **Build Tool Settings** of **Environment Settings**. You can select **Build Job** and enter **Build Job Parameters**.
 You can set **Start Condition** and **End Condition** of the **artifact**. You can decide whether or not to start a stage by setting the **Start Condition**. You can set an **End Condition** to set stage output as an artifact.
 
 ![stage-guide-04](http://static.toastoven.net/prod_pipeline/2023-02-28/stage-guide-01.png)
@@ -37,7 +37,7 @@ You can set **Start Condition** and **End Condition** of the **artifact**. You c
 #### Build - NHN Cloud Build Tool
 You can use the build tools provided by NHN Cloud.
 - Build Environment Settings
-  - You can select the [image registry](https://docs.nhncloud.com/en/Dev%20Tools/Pipeline/en/console-guide/#_1) you added in the **Image Registry Settings** in **Environment Settings**.
+  - You can select the [image registry](/Dev%20Tools/Pipeline/zh/environment-config/#_3) you added in the **Image Registry Settings** in **Environment Settings**.
   - Select the **Image Name** of the environment to build, set the **Build Tool Performance**, **Build Time Limit (minutes),** and **Build Command**.
 
 - Build Result Settings
@@ -53,16 +53,16 @@ You can use the build tools provided by NHN Cloud.
 ![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-02.png)
 
 #### Build - Bake (Manifest)
-You can build using a Helm package file or [Chart Repository](/Dev%20Tools/Pipeline/ko/console-guide/#_1)that users configured themselves.
+You can build using a Helm package file or [Chart Repository](/Dev%20Tools/Pipeline/zh/environment-config/#_6)that users configured themselves.
 - Set the chart name as the name of the output configured with the Helm engine.
 - Set the namespace as the namespace of the output configured with the Helm engine.
 - Template
-  - For repository type, select a repository that is added in [Source Repository Settings](/Dev%20Tools/Pipeline/ko/console-guide/#_1) or [Chart Repository Settings](/Dev%20Tools/Pipeline/ko/console-guide/#_1) of **Environment Settings**.
+  - For repository type, select a repository that is added in [Source Repository Settings](/Dev%20Tools/Pipeline/zh/environment-config/#_2) or [Chart Repository Settings](/Dev%20Tools/Pipeline/zh/environment-config/#_6) of **Environment Settings**.
   - When you set a repository type as **GitHub file** or **GitLab file**.
     - Enter the Helm package file path for the path.
     - Enter the branch of GitHub or GitLab for the branch name.
   - When you specify **Helm Chart** for the repository type
-    - For the chart repository name, you can select one of repositories set in[Chart Repository Settings](/Dev%20Tools/Pipeline/ko/console-guide/#_1).
+    - For the chart repository name, you can select one of repositories set in[Chart Repository Settings](/Dev%20Tools/Pipeline/zh/environment-config/#_6).
     - For the chart name, you can choose any chart name available in the chart repository's configuration.
     - For the chart version, you to select a chart version available in the chart repository's configuration.
 - Override
@@ -83,7 +83,7 @@ You can build using a Helm package file or [Chart Repository](/Dev%20Tools/Pipel
 This is a stage to deploy to the Kubernetes environment.
 
 #### Deployment - Deploy
-- You can select the [deployment target](https://docs.nhncloud.com/en/Dev%20Tools/Pipeline/en/console-guide/#_1) you added in **Deployment Target Settings** in **Environment Settings**.
+- You can select the [deployment target](/Dev%20Tools/Pipeline/zh/environment-config/#_5) you added in **Deployment Target Settings** in **Environment Settings**.
   Enter **Stage Name**, **Deployment Target**, and **Manifest** to use for deployment.
   If the tag format is used in the build stage, when the docker image tag of **Manifest** is entered as `_{BUILD_NUMBER}`, you can deploy as the image with the most recent number among the images built in the tag format.
   See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment ) for how to write **Manifest**.
@@ -98,26 +98,26 @@ This is a stage to deploy to the Kubernetes environment.
 ![stage-guide-14](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-05.png)
 
 #### Deployment - Patch
-You can select the [deployment target](https://docs.nhncloud.com/en/Dev%20Tools/Pipeline/en/console-guide/#_1) you added in **Deployment Target Settings** in **Environment Settings**.
+You can select the [deployment target](/Dev%20Tools/Pipeline/zh/environment-config/#_5) you added in **Deployment Target Settings** in **Environment Settings**.
 Enter **Namespace**, **Resource Type**, **Resource Name**, and **Manifest** to use for deployment.You can modify the information of an existing resource with Patch.
 See the [Kubernetes documentation](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#patching-resources) for how to write **Manifest**.
 
 ![stage-guide-07](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-07.png)
 
 #### Deployment - Scale
-You can select the [deployment target](https://docs.nhncloud.com/en/Dev%20Tools/Pipeline/en/console-guide/#_1) you added in **Deployment Target Settings** in **Environment Settings**.
+You can select the [deployment target](/Dev%20Tools/Pipeline/zh/environment-config/#_5) you added in **Deployment Target Settings** in **Environment Settings**.
 Enter **Namespace**, **Resource Type**, **Resource Name**, and **Replicas**. Replicas can be modified with Scale.
 
 ![stage-guide-08](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-08.png)
 
 #### Deployment - Rollout Undo
-You can select the [deployment target](https://docs.nhncloud.com/en/Dev%20Tools/Pipeline/en/console-guide/#_1) you added in **Deployment Target Settings** in **Environment Settings**.
+You can select the [deployment target](/Dev%20Tools/Pipeline/zh/environment-config/#_5) you added in **Deployment Target Settings** in **Environment Settings**.
 Enter **Namespace**, **Resource Type**, **Resource Name**, **Revision Back**. You can roll back to the specified Revision.
 
 ![stage-guide-09](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-09.png)
 
 #### Deployment - Delete
-You can select the [deployment target](https://docs.nhncloud.com/en/Dev%20Tools/Pipeline/en/console-guide/#_1) you added in **Deployment Target Settings** in **Environment Settings**.
+You can select the [deployment target](/Dev%20Tools/Pipeline/zh/environment-config/#_5) you added in **Deployment Target Settings** in **Environment Settings**.
 Enter **Namespace**, **Resource Type**, and **Resource Name**. You can delete the resource.
 
 ![stage-guide-10](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-10.png)
