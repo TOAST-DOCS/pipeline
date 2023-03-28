@@ -1,12 +1,12 @@
 ## Dev Tools > Pipeline > リリースノート
 
 ### 2023. 03. 28.
-* Helmチャートを利用して配布する結果物を作ることができるビルド - Bake (Manifest)ステージが追加されました。[Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ko/stage-guide/#_2)で使い方を確認できます。
-* ビルド - Bake (Manifest)ステージで使用できるチャートリポジトリ設定が追加されました。[Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ko/console-guide/#_1)で使い方を確認できます。
+* Helmチャートを利用して配布する結果物を作ることができるビルド - Bake (Manifest)ステージが追加されました。[Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ja/stage-guide/#_2)で使い方を確認できます。
+* ビルド - Bake (Manifest)ステージで使用できるチャートリポジトリ設定が追加されました。[Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ja/environment-config/#_6)で使い方を確認できます。
 * 配布 - DeployステージでManifestをアーティファクトとして選択できる機能が追加されました。
 
 ### 2023. 02. 28.
-* 外部リポジトリのリソースをパイプラインステージの開始または終了条件として使用できるアーティファクト機能が追加されました。 [Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ko/console-guide/#_1)で使い方を確認できます。
+* 外部リポジトリのリソースをパイプラインステージの開始または終了条件として使用できるアーティファクト機能が追加されました。 [Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ja/pipeline-management/#_1)で使い方を確認できます。
 
 ### 2023. 01. 31.
 * ビルドステージでイメージタグフォーマットを使用して動的に作成されるタグを付与できる機能が追加されました。
@@ -23,20 +23,20 @@
 * 配布対象Kubernetes接続テストの時間が超過した時にも案内メッセージを表示するように修正しました。
 
 ### 2022. 08. 23.
-* ステージがないPipelineを[API](https://docs.nhncloud.com/ja/Dev%20Tools/Pipeline/ja/api-guide/#pipeline)で実行したとき、失敗レスポンスを返すように修正しました。
+* ステージがないPipelineを[API](/Dev%20Tools/Pipeline/ja/api-guide/#pipeline)で実行したとき、失敗レスポンスを返すように修正しました。
 
 ### 2022. 07. 26.
 * 機能 - Webhookステージが追加されました。
 * APIエンドポイントのドメインがapi-pipeline.cloud.toast.comからkr1-pipeline.api.nhncloudservice.comに変更されました。
 
 ### 2022. 05. 24
-* ソースリポジトリ、イメージストア、ビルドツール、配布対象に接続確認機能が追加されました。 [Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ko/console-guide)で使い方を確認できます。 
+* ソースリポジトリ、イメージストア、ビルドツール、配布対象に接続確認機能が追加されました。 [Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ja/environment-config)で使い方を確認できます。 
 * CloudTrailに詳細内容が追加されました。
     * 設定の削除時に詳細内容を追加。
     * パイプライン実行関連の詳細内容を追加。
 
 ### 2022. 02. 22
-* ソースリポジトリにGitLabが追加されました。 [Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ja/console-guide/#_1)で使い方を確認できます。
+* ソースリポジトリにGitLabが追加されました。 [Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ja/environment-config/#_2)で使い方を確認できます。
 
 ### 2022. 01. 25.
 * Pipeline実行APIが追加されました。 [Pipeline APIガイド](/Dev%20Tools/Pipeline/ja/api-guide/#pipeline)で使い方を確認できます。
