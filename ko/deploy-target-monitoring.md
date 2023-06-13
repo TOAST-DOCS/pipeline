@@ -4,13 +4,13 @@
 
 Pipeline으로 배포하여 생성된 결과물들을 **배포 대상 모니터링** 메뉴에서 확인 할 수 있습니다.
 
-![deploy-target-monitoring-guide-01.png](..%2Fimages%2F2023-06-27%2Fdeploy-target-monitoring-guide-01.png)
-
 ## 배포 대상
 
 **배포 대상 모니터링**에서 **배포 대상**은 Pipeline으로 Kubernetes에 배포한 워크로드를 확인 할 수 있는 페이지 입니다.
+![deploy-target-monitoring-guide-01.png](..%2Fimages%2F2023-06-27%2Fdeploy-target-monitoring-guide-01.png)
+배포한 워크로드의 모든 목록과 워크로드 이름 및 해당 워크로드에 속한 파드의 수와 상태가 노출됩니다.
 검색어 입력 후 검색 버튼 클릭시 입력한 문자열로 배포 대상을 검색합니다.
-배포 대상 테이블에서 배포 대상을 클릭하면 네임스페이스 선택 페이지로 이동합니다.
+배포 대상 테이블에서 **배포 대상 이름**을 클릭하면 선택한 배포 대상에 속한 워크로드들을 확인 할 수 있는 페이지로 이동합니다.
 
 ![deploy-target-monitoring-guide-02.png](..%2Fimages%2F2023-06-27%2Fdeploy-target-monitoring-guide-02.png)
 선택한 배포 대상 클러스터의 네임스페이스 중 Pipeline으로 배포한 워크로드들의 네임스페이스가 노출됩니다.
