@@ -242,7 +242,7 @@ Docker Hub의 경우 `Docker Hub 계정/이미지 이름` 형식으로 입력합
 
 ![pipeline-guide-31](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-31.png)
 
-사용자가 선택에 따라 설정해놓은 스테이지 설정대로 실행되고 실행 이력은 5초마다 갱신됩니다.
+사용자가 선택에 따라 스테이지 설정대로 실행되고 실행 이력은 5초마다 갱신됩니다.
 
 ![pipeline-guide-32](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-32.png)
 
