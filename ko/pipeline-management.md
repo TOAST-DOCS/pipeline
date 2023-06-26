@@ -6,7 +6,7 @@ Pipeline은 애플리케이션 배포 흐름을 한 개 이상의 스테이지�
 
 ![pipeline-guide-01](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-01.png)
 
-**파이프라인 관리**에서 **파이프라인 생리성**을 클릭합니다. 파이프라인 생성은 아래와 같은 단계로 진행합니다.
+**파이프라인 관리**에서 **파이프라인 생성**을 클릭합니다. 파이프라인 생성은 아래와 같은 단계로 진행합니다.
 - 파이프라인 정보 입력
 - 소스 설정
 - 빌드 설정
@@ -143,6 +143,12 @@ GitHub 및 GitLab은 브랜치를 입력하지 않을 경우 master 브랜치를
 
 ![pipeline-guide-15](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-15.png)
 
+#### 실행 이력
+
+파이프라인을 수동 실행, 자동 실행할 경우 실행 이력 탭에 실행 이력을 확인할 수 있습니다.
+
+![pipeline-guide-26](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-26.png)
+
 #### GitHub 자동 실행 설정
 
 GitHub 웹훅을 사용해서 GitHub 또는 GitHub Enterprise의 저장소에 이벤트가 발생하면 파이프라인을 자동으로 실행하게 설정할 수 있습니다. 자동 실행 유형을 GitHub으로 설정하고 저장소의 조직 또는 사용자 이름, 프로젝트 이름, 브랜치, 시크릿을 입력하고 **확인**을 클릭합니다.
@@ -215,3 +221,29 @@ Docker Hub의 경우 `Docker Hub 계정/이미지 이름` 형식으로 입력합
 
 이전 스테이지를 선택하는 방식에 따라 스테이지를 병렬로 실행할 수 있습니다. 병렬 구성한 스테이지 중 하나가 실패하면 나머지 스테이지는 실행이 취소되고 파이프라인 실행은 실패합니다.
 
+#### 실행 이력과 작업
+
+**실행 이력**에서 실행 이력의 확인과 Judgement 스테이지의 실행 설정 선택, 스테이지 실행 중지/스테이지 실행에 대한 결정을 합니다.
+
+![pipeline-guide-26](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-26.png)
+
+**실행 이력**에서 현재 실행 중인 파이프라인 이력을 선택하면 다음과 같이 실행 중인 스테이지 정보들이 보입니다.
+
+![pipeline-guide-27](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-27.png)
+
+
+실행 중인 파이프라인 스테이지 중 Judgement 스테이지가 선택 대기 중 일 경우 **관리** 버튼이 보이고, 그 버튼을 누르면 다음과 같은 팝업이 뜨고 스테이지 추가, 변경 시 입력하였던 **설명**, **실행 설정**값과 **스테이지 실행 중지/스테이지 실행**을 선택할 수 있습니다.
+
+![pipeline-guide-28](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-28.png)
+![pipeline-guide-29](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-29.png)
+![pipeline-guide-30](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-30.png)
+
+만약 실행 설정값을 입력하지 않았다면 실행 설정 선택 없이 **스테이지 실행 중지/스테이지 실행**만을 선택합니다.
+
+![pipeline-guide-31](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-31.png)
+
+사용자의 선택에 따라 스테이지 설정대로 실행되며 실행 이력은 5초마다 갱신됩니다.
+
+![pipeline-guide-32](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-32.png)
+
+**스테이지 실행 중지**를 선택할 경우 해당 브랜치에 대한 실행이 중지되며 실행 중인 스테이지를 취소할 경우 선택한 파이프라인 실행 전체가 취소됩니다.
