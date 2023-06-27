@@ -130,3 +130,18 @@ Kubernetes環境に配布を行うステージです。
 Webhookのレスポンス値が**Fail Fast HTTPステータスコード**に入力した値の1つである場合は、すぐにそのそのステージを終了します。
 
 ![stage-guide-11](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-11.png)
+
+#### 機能 - Judgement(実行管理)
+必要に応じて実行管理ステージの**説明**、**実行設定**の値を入力できます。
+
+![stage-guide-12](http://static.toastoven.net/prod_pipeline/2023-06-15/stage-guide-12.png)
+
+**実行設定**の有無に関係なく、次のステージに対する**実行管理(実行、実行停止**)ができ、**実行設定**を追加して次のステージの実行を選択する場合、次に説明するステージであるPrecondition(実行条件)に設定値を渡して分岐処理を行うことができます。
+
+![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-06-15/stage-guide-13.png)
+
+#### 機能 - Precondition(実行条件)
+前の段階で設定されたJudgment(実行管理)ステージで渡された値を**実行条件**によって後のステージの実行を決定します。
+Judgment(実行管理)ステージで渡された設定値と**実行条件の条件値**に対して**実行条件一致/実行条件不一致**の中から選択して以降のステージの実行を決定します。
+
+![stage-guide-14](http://static.toastoven.net/prod_pipeline/2023-06-15/stage-guide-14.png)
