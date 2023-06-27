@@ -143,6 +143,12 @@ GitHubおよびGitLabはブランチを入力しない場合、masterブラン�
 
 ![pipeline-guide-15](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-15.png)
 
+#### 実行履歴
+
+パイプラインを手動実行、自動実行する場合、実行履歴タブで実行履歴を確認できます。
+
+![pipeline-guide-26](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-26.png)
+
 #### GitHub自動実行設定
 
 GitHub Webフックを使用してGitHubまたはGitHub Enterpriseのリポジトリにイベントが発生した場合にパイプラインを自動的に実行するように設定できます。自動実行タイプをGitHubに設定し、リポジトリの組織またはユーザー名、プロジェクト名、ブランチ、シークレットを入力し、**確認**をクリックします。
@@ -215,3 +221,29 @@ Docker Hubの場合、`Docker Hubアカウント/イメージ名`の形式で入
 
 以前のステージを選択する方式に基づいてステージを並列に実行できます。並列構成したステージのうち1つが失敗すると、残りのステージは実行がキャンセルされ、パイプラインの実行は失敗します。
 
+#### 実行履歴と作業
+
+実行履歴で実行履歴の確認とJudgmentステージの実行設定選択、ステージ実行停止/ステージ実行の決定を行います。
+
+![pipeline-guide-26](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-26.png)
+
+実行履歴で現在実行中のパイプライン履歴を選択すると、次のように実行中のステージ情報が表示されます。
+
+![pipeline-guide-27](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-27.png)
+
+
+実行中のパイプラインステージのうちJudgmentステージが選択待機中の場合、**管理**ボタンが表示され、そのボタンを押すと次のようなポップアップが表示され、ステージ追加、変更時に入力した**説明**、**実行設定**の値と**ステージ実行停止/ステージ実行**を選択できます。
+
+![pipeline-guide-28](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-28.png)
+![pipeline-guide-29](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-29.png)
+![pipeline-guide-30](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-30.png)
+
+実行設定値を入力しなかった場合、実行設定選択せずに**ステージ実行停止/ステージ実行**だけを選択します。
+
+![pipeline-guide-31](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-31.png)
+
+ユーザーが選択したステージの設定通りに実行され、実行履歴は5秒ごとに更新されます。
+
+![pipeline-guide-32](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-32.png)
+
+ステージの実行停止を選択すると、該当ブランチの実行が停止され、実行中のステージのキャンセルは選択したパイプラインの実行全体がキャンセルされます。
