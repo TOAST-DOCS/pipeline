@@ -142,6 +142,13 @@ Click **Autorun Settings** and click **Add** in the **Autorun Settings** dialog 
 
 ![pipeline-guide-15](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-15.png)
 
+
+#### Run History
+
+You can identify the pipeline run history on the run history tab after autorun or manual run.
+
+![pipeline-guide-26](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-26.png)
+
 ### GitHub Autorun Settings
 
 Using a GitHub webhook, you can configure your pipeline to run automatically when an event occurs in a repository on GitHub or GitHub Enterprise. Set the autorun type to GitHub, enter the repository's organization or user name, project name, branch, and secret, and click **OK**.
@@ -212,3 +219,30 @@ After setting the stage name, stage type, input values for each stage type, and 
 ![pipeline-guide-25](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-25.png)
 
 Stages can run in parallel depending on how the previous stage is selected. If one of the stages in the parallel configuration fails, execution of the remaining stages is canceled and the pipeline execution fails.
+
+#### Run History and Work
+
+View the run history in **Run History** and select the run settings for the Judgment stage, and decide whether to stop stage running or run stage.
+
+![pipeline-guide-26](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-26.png)
+
+If you select the history of a running pipeline from **Run History**, you can see the information on the running stage as shown below.
+
+![pipeline-guide-27](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-27.png)
+
+
+If the Judgment stage is waiting to run, click the**Manage** button to open the following popup where you can select **Description**, and **Run Settings** values, and **Stop Running Stage/Run Stage**.
+
+![pipeline-guide-28](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-28.png)
+![pipeline-guide-29](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-29.png)
+![pipeline-guide-30](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-30.png)
+
+If you haven't entered any run settings, select **Stop Running Stage/Run Stage** only without selecting run settings.
+
+![pipeline-guide-31](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-31.png)
+
+Runs according to the stage settings, and the run history is updated every 5 seconds.
+
+![pipeline-guide-32](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-32.png)
+
+ If you select **Stop Running Stage**, running stops for that branch, and if you cancel a running stage, the entire selected pipeline running is canceled.
