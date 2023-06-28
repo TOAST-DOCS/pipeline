@@ -1,7 +1,7 @@
 ## Dev Tools > Pipeline > Release Notes
 
 ### June 27, 2023
-* Deployment - Added the Deploy Target Management feature that allows you to check the output deployed to the Deploy stage. For more information, see [Pipeline User Guide](/Dev%20Tools/Pipeline/en/deploy-target-monitoring)Pipeline User Guide[](/Dev%20Tools/Pipeline/ko/deploy-target-monitoring).
+* Deployment - Added the Deploy Target Management feature that allows you to check the output deployed to the Deploy stage. For more information, see [Pipeline User Guide](/Dev%20Tools/Pipeline/en/deploy-target-monitoring).
     * Kubernetes workloads and services can be found in Deploy Target Management.
 * Added the [Feature - Judgement (Run Management)] and [Feature - Precondition (Run Condition)] stages that allow for pipeline branch processing. For more information, see [Pipeline Stage Guide](/Dev%20Tools/Pipeline/en/stage-guide/#-judgement) and [Pipeline User Guide](/Dev%20Tools/Pipeline/en/pipeline-management/#_15).
 
