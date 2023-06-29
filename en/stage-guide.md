@@ -130,3 +130,34 @@ Enter the HTTP method and URL in **URL**. You can add **Request Header** and **R
 If the response value of the webhook is one of the values entered in **Fail Fast HTTP Status Code**, close the stage immediately.
 
 ![stage-guide-11](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-11.png)
+
+#### Feature - Judgement (Run Management)
+You can fill in **Description** and **Run Settings** for the Judgement stage when necessary.
+
+![stage-guide-12](http://static.toastoven.net/prod_pipeline/2023-06-15/stage-guide-12.png)
+
+You can \*\*Manage Run (run, stop running) for the next stage with or without the **Run Settings**.
+If you add **Run Settings** and select run for the next stage, you can pass the settings to Precondition(Run Condition), the stage to be described, for branching processing.
+
+![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-06-15/stage-guide-13.png)
+
+#### Feature - Precondition (Run Condition)
+Decide whether to run subsequent stages based on the **Run Condition** of the values passed from the Judgment stage set as the previous stage.
+Decide whether run subsequent stages by selecting either **Condition Matched or Condition Unmatched** for values from **Run Condition** and setting values passed from the Judgement (Run Management).
+
+![stage-guide-14](http://static.toastoven.net/prod_pipeline/2023-06-15/stage-guide-14.png)
+#### Feature - Judgement (Run Management)
+You can fill in **Description** and **Run Settings** for the Judgement stage when necessary.
+
+![stage-guide-12](http://static.toastoven.net/prod_pipeline/2023-06-15/stage-guide-12.png)
+
+You can \*\*Manage Run (run, stop running) for the next stage with or without the **Run Settings**.
+If you add **Run Settings** and select run for the next stage, you can pass the settings to Precondition(Run Condition), the stage to be described, for branching processing.
+
+![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-06-15/stage-guide-13.png)
+
+#### Feature - Precondition (Run Condition)
+Decide whether to run subsequent stages based on the **Run Condition** of the values passed from the Judgment stage set as the previous stage.
+Decide whether run subsequent stages by selecting either **Condition Matched or Condition Unmatched** for values from **Run Condition** and setting values passed from the Judgement (Run Management).
+
+![stage-guide-14](http://static.toastoven.net/prod_pipeline/2023-06-15/stage-guide-14.png)
