@@ -223,7 +223,7 @@ Docker Hubの場合、`Docker Hubアカウント/イメージ名`の形式で入
 
 #### 実行履歴と作業
 
-実行履歴で実行履歴の確認とJudgmentステージの実行設定選択、ステージ実行停止/ステージ実行の決定を行います。
+実行履歴で実行履歴の確認とJudgementステージの実行設定選択、ステージ実行停止/ステージ実行の決定を行います。
 
 ![pipeline-guide-26](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-26.png)
 
@@ -232,7 +232,7 @@ Docker Hubの場合、`Docker Hubアカウント/イメージ名`の形式で入
 ![pipeline-guide-27](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-27.png)
 
 
-実行中のパイプラインステージのうちJudgmentステージが選択待機中の場合、**管理**ボタンが表示され、そのボタンを押すと次のようなポップアップが表示され、ステージ追加、変更時に入力した**説明**、**実行設定**の値と**ステージ実行停止/ステージ実行**を選択できます。
+実行中のパイプラインステージのうちJudgementステージが選択待機中の場合、**管理**ボタンが表示され、そのボタンを押すと次のようなポップアップが表示され、ステージ追加、変更時に入力した**説明**、**実行設定**の値と**ステージ実行停止/ステージ実行**を選択できます。
 
 ![pipeline-guide-28](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-28.png)
 ![pipeline-guide-29](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-29.png)

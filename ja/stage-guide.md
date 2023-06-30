@@ -141,7 +141,7 @@ Webhookのレスポンス値が**Fail Fast HTTPステータスコード**に入�
 ![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-06-15/stage-guide-13.png)
 
 #### 機能 - Precondition(実行条件)
-前の段階で設定されたJudgment(実行管理)ステージで渡された値を**実行条件**によって後のステージの実行を決定します。
-Judgment(実行管理)ステージで渡された設定値と**実行条件の条件値**に対して**実行条件一致/実行条件不一致**の中から選択して以降のステージの実行を決定します。
+前の段階で設定されたJudgement(実行管理)ステージで渡された値を**実行条件**によって後のステージの実行を決定します。
+Judgement(実行管理)ステージで渡された設定値と**実行条件の条件値**に対して**実行条件一致/実行条件不一致**の中から選択して以降のステージの実行を決定します。
 
 ![stage-guide-14](http://static.toastoven.net/prod_pipeline/2023-06-15/stage-guide-14.png)

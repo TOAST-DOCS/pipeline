@@ -222,7 +222,7 @@ Stages can run in parallel depending on how the previous stage is selected. If o
 
 #### Run History and Work
 
-View the run history in **Run History** and select the run settings for the Judgment stage, and decide whether to stop stage running or run stage.
+View the run history in **Run History** and select the run settings for the Judgement stage, and decide whether to stop stage running or run stage.
 
 ![pipeline-guide-26](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-26.png)
 
@@ -231,7 +231,7 @@ If you select the history of a running pipeline from **Run History**, you can se
 ![pipeline-guide-27](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-27.png)
 
 
-If the Judgment stage is waiting to run, click the**Manage** button to open the following popup where you can select **Description**, and **Run Settings** values, and **Stop Running Stage/Run Stage**.
+If the Judgement stage is waiting to run, click the**Manage** button to open the following popup where you can select **Description**, and **Run Settings** values, and **Stop Running Stage/Run Stage**.
 
 ![pipeline-guide-28](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-28.png)
 ![pipeline-guide-29](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-29.png)
