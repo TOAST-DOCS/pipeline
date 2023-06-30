@@ -1,6 +1,6 @@
 ## Dev Tools > Pipeline > Stage Guide
 
-This guide describes the basics of stages in Pipeline.
+This guide describes the basics of stages in Pipeline. 
 Click **Pipeline Management** > **+Create Pipeline** to create a pipeline. After selecting the pipeline you created, you can add a stage by clicking **+Add Stage** in the **Stage** tab at the bottom.
 
 ![stage-guide-01](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-01.png)
@@ -39,7 +39,7 @@ You can use the build tools provided by NHN Cloud.
 - Build Environment Settings
   - You can select the [image registry](/Dev%20Tools/Pipeline/zh/environment-config/#_3) you added in the **Image Registry Settings** in **Environment Settings**.
   - Select the **Image Name** of the environment to build, set the **Build Tool Performance**, **Build Time Limit (minutes),** and **Build Command**.
-
+  
 - Build Result Settings
   - Set the **Dockerfile Path** of the build result, and the **Dockerfile Execution Path**.
   - Select a **Image Registry** and decide on **Image Name**, and the build result is pushed to the selected repository.
@@ -48,12 +48,12 @@ You can use the build tools provided by NHN Cloud.
 - Artifact Settings
   - You can decide whether to start stages by setting **Start Condtion**.
   - You can set stage output as an artifact by setting **End Condition**.
-
+  
 ![stage-guide-05](http://static.toastoven.net/prod_pipeline/2023-02-28/stage-guide-02.png)
 ![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-02.png)
 
 #### Build - Bake (Manifest)
-You can build using a Helm package file or [Chart Repository](/Dev%20Tools/Pipeline/zh/environment-config/#_6)that users configured themselves.
+You can build using a Helm package file or [Chart Repository](/Dev%20Tools/Pipeline/zh/environment-config/#_6)that users configured themselves. 
 - Set the chart name as the name of the output configured with the Helm engine.
 - Set the namespace as the namespace of the output configured with the Helm engine.
 - Template
@@ -72,7 +72,7 @@ You can build using a Helm package file or [Chart Repository](/Dev%20Tools/Pipel
   - Key / Value
     - Enter a value consisting of key and value, create a build result by replacing a specific value.
   - Replace Basic Type
-    - If the option is checked, when adding the override value, --set is used instead of --set--string.
+    - If the option is checked, when adding the override value, --set is used instead of --set--string. 
 - Artifact
   - You can set the **Start Condition** and **End Condition** of ** Artifact**. You can set a start condition to determine whether to start stages. You can set **End Condition** to set stage products as artifacts.
 
@@ -83,13 +83,13 @@ You can build using a Helm package file or [Chart Repository](/Dev%20Tools/Pipel
 This is a stage to deploy to the Kubernetes environment.
 
 #### Deployment - Deploy
-- You can select the [deployment target](/Dev%20Tools/Pipeline/zh/environment-config/#_5) you added in **Deployment Target Settings** in **Environment Settings**.
-  Enter **Stage Name**, **Deployment Target**, and **Manifest** to use for deployment.
-  If the tag format is used in the build stage, when the docker image tag of **Manifest** is entered as `_{BUILD_NUMBER}`, you can deploy as the image with the most recent number among the images built in the tag format.
-  See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment ) for how to write **Manifest**.
+- You can select the [deployment target](/Dev%20Tools/Pipeline/zh/environment-config/#_5) you added in **Deployment Target Settings** in **Environment Settings**. 
+Enter **Stage Name**, **Deployment Target**, and **Manifest** to use for deployment. 
+If the tag format is used in the build stage, when the docker image tag of **Manifest** is entered as `_{BUILD_NUMBER}`, you can deploy as the image with the most recent number among the images built in the tag format.
+See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment ) for how to write **Manifest**.
 - You can select **Manifest Source** as artifacts. The selected artifact must be created in Manifest format.
   - You can select an artifact created in the pipeline.
-  - You can select a specific file from the repository as an artifact.
+  - You can select a specific file from the repository as an artifact. 
 - You can set the **Start Condition** and **End Condition** of ** Artifact**. You can set a start condition to determine whether to start stages. You can set **End Condition** to set stage products as artifacts.
 
 ![stage-guide-06](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-06.png)
@@ -99,25 +99,25 @@ This is a stage to deploy to the Kubernetes environment.
 
 #### Deployment - Patch
 You can select the [deployment target](/Dev%20Tools/Pipeline/zh/environment-config/#_5) you added in **Deployment Target Settings** in **Environment Settings**.
-Enter **Namespace**, **Resource Type**, **Resource Name**, and **Manifest** to use for deployment.You can modify the information of an existing resource with Patch.
+Enter **Namespace**, **Resource Type**, **Resource Name**, and **Manifest** to use for deployment.You can modify the information of an existing resource with Patch. 
 See the [Kubernetes documentation](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#patching-resources) for how to write **Manifest**.
 
 ![stage-guide-07](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-07.png)
 
 #### Deployment - Scale
-You can select the [deployment target](/Dev%20Tools/Pipeline/zh/environment-config/#_5) you added in **Deployment Target Settings** in **Environment Settings**.
+You can select the [deployment target](/Dev%20Tools/Pipeline/zh/environment-config/#_5) you added in **Deployment Target Settings** in **Environment Settings**. 
 Enter **Namespace**, **Resource Type**, **Resource Name**, and **Replicas**. Replicas can be modified with Scale.
 
 ![stage-guide-08](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-08.png)
 
 #### Deployment - Rollout Undo
-You can select the [deployment target](/Dev%20Tools/Pipeline/zh/environment-config/#_5) you added in **Deployment Target Settings** in **Environment Settings**.
+You can select the [deployment target](/Dev%20Tools/Pipeline/zh/environment-config/#_5) you added in **Deployment Target Settings** in **Environment Settings**. 
 Enter **Namespace**, **Resource Type**, **Resource Name**, **Revision Back**. You can roll back to the specified Revision.
 
 ![stage-guide-09](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-09.png)
 
 #### Deployment - Delete
-You can select the [deployment target](/Dev%20Tools/Pipeline/zh/environment-config/#_5) you added in **Deployment Target Settings** in **Environment Settings**.
+You can select the [deployment target](/Dev%20Tools/Pipeline/zh/environment-config/#_5) you added in **Deployment Target Settings** in **Environment Settings**. 
 Enter **Namespace**, **Resource Type**, and **Resource Name**. You can delete the resource.
 
 ![stage-guide-10](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-10.png)
@@ -126,7 +126,23 @@ Enter **Namespace**, **Resource Type**, and **Resource Name**. You can delete th
 This is a stage to provide additional features.
 
 #### Feature - Webhook
-Enter the HTTP method and URL in **URL**. You can add **Request Header** and **Request Data** as needed.
+Enter the HTTP method and URL in **URL**. You can add **Request Header** and **Request Data** as needed. 
 If the response value of the webhook is one of the values entered in **Fail Fast HTTP Status Code**, close the stage immediately.
 
 ![stage-guide-11](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-11.png)
+
+#### Feature - Judgement (Run Management)
+You can fill in **Description** and **Run Settings** for the Judgement stage when necessary.
+
+![stage-guide-12](http://static.toastoven.net/prod_pipeline/2023-06-15/stage-guide-12.png)
+
+You can **Manage Run (run, stop running)** for the next stage with or without the **Run Settings**.
+If you add **Run Settings** and select run for the next stage, you can pass the settings to Precondition(Run Condition), the stage to be described, for branching processing.
+
+![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-06-15/stage-guide-13.png)
+
+#### Feature - Precondition (Run Condition)
+Decide whether to run subsequent stages based on the **Run Condition** of the values passed from the Judgement stage set as the previous stage.
+Decide whether run subsequent stages by selecting either **Condition Matched or Condition Unmatched** for values from **Run Condition** and setting values passed from the Judgement (Run Management).
+
+![stage-guide-14](http://static.toastoven.net/prod_pipeline/2023-06-15/stage-guide-14.png)
