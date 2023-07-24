@@ -1,12 +1,17 @@
 ## Dev Tools > Pipeline > Release Notes
 
+### June 27, 2023
+* Deployment - Added the Deploy Target Management feature that allows you to check the output deployed to the Deploy stage. For more information, see [Pipeline User Guide](/Dev%20Tools/Pipeline/en/deploy-target-monitoring).
+    * Kubernetes workloads and services can be found in Deploy Target Management.
+* Added the [Feature - Judgement (Run Management)] and [Feature - Precondition (Run Condition)] stages that allow for pipeline branch processing. For more information, see [Pipeline Stage Guide](/Dev%20Tools/Pipeline/en/stage-guide/#feature-judgement-run-management) and [Pipeline User Guide](/Dev%20Tools/Pipeline/en/pipeline-management/#run-history-and-work).
+
 ### March 28, 2023
-* Added the Build - Bake (Manifest) stage that can create results for deployment using Helm charts. For more details, see [Pipeline User Guide](/Dev%20Tools/Pipeline/en/stage-guide/#_2).
-* Added the chart repository settings available in the Build - Bake (Manifest) stage. For more details, see [Pipeline User Guide](/Dev%20Tools/Pipeline/en/environment-config/#_6).
+* Added the Build - Bake (Manifest) stage that can create results for deployment using Helm charts. For more details, see [Pipeline User Guide](/Dev%20Tools/Pipeline/en/stage-guide/#build-bake-manifest).
+* Added the chart repository settings available in the Build - Bake (Manifest) stage. For more details, see [Pipeline User Guide](/Dev%20Tools/Pipeline/en/environment-config/#chart-repository).
 * Added a feature to select Manifest as artifacts in the Deployment - Deploy stage.
 
 ### February 28, 2023
-* Added an artifact feature that allows you to use external repository resources as start or end condtions for pipeline stages. You can find how to use in [Pipeline User Guide](/Dev%20Tools/Pipeline/en/pipeline-management/#_1)
+* Added an artifact feature that allows you to use external repository resources as start or end condtions for pipeline stages. You can find how to use in [Pipeline User Guide](/Dev%20Tools/Pipeline/en/pipeline-management/#create-a-pipeline)
 
 ### January 31, 2023
 * Added a feature to assign dynamically created tags by using the image tag format in the build stage.
@@ -36,7 +41,7 @@
     * Added details about pipeline execution
 
 ### February 22, 2022
-* Added GitLab to the source repository. You can find how to use it in the [Pipeline User Guide](/Dev%20Tools/Pipeline/en/environment-config/#_2).
+* Added GitLab to the source repository. You can find how to use it in the [Pipeline User Guide](/Dev%20Tools/Pipeline/en/environment-config/#source-repository).
 
 ### January 25, 2022
 * Added an API to run Pipeline. You can find how to use it in the [Pipeline API Guide](/Dev%20Tools/Pipeline/en/api-guide/#pipeline).

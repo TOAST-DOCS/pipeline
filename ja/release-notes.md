@@ -1,5 +1,10 @@
 ## Dev Tools > Pipeline > リリースノート
 
+### 2023. 06. 27.
+* 配布 - Deployステージで配布した結果物を確認できる配布ターゲットモニタリング機能が追加されました。[Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ja/deploy-target-monitoring)で使用方法を確認できます。
+    *配布対象モニタリングでは、Kubernetesのワークロードやサービスを確認できます。
+* Pipeline分岐処理ができる機能 - Judgement(実行管理)、機能 - Precondition(実行条件)ステージが追加されました。[Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/#_4)でステージの説明を[Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ja/pipeline-management/#_14)で使用方法を確認できます。
+
 ### 2023. 03. 28.
 * Helmチャートを利用して配布する結果物を作ることができるビルド - Bake (Manifest)ステージが追加されました。[Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ja/stage-guide/#_2)で使い方を確認できます。
 * ビルド - Bake (Manifest)ステージで使用できるチャートリポジトリ設定が追加されました。[Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ja/environment-config/#_6)で使い方を確認できます。

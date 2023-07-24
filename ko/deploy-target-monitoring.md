@@ -1,4 +1,4 @@
-## Dev Tools > Pipeline > 콘솔 사용 가이드 > 배포 대상 모니터
+## Dev Tools > Pipeline > 콘솔 사용 가이드 > 배포 대상 모니터링
 
 ### 배포 대상 모니터링
 
