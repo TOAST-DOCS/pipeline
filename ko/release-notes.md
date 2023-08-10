@@ -2,8 +2,7 @@
 
 ### 2023. 08. 29.
 * 다른 파이프라인 전체를 실행할 수 있는 **기능 - 타 파이프라인 실행** 스테이지가 추가되었습니다. [Pipeline 사용자 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#_4)에서 사용 방법을 확인할 수 있습니다.
-* 개발 환경 설정 기능이 Pipeline 서비스에서 제거되었으며, 해당 기능은 AI EasyMaker 서비스의 [노트북] 에서 사용이 가능합니다. 
-  * 자세한 사용 방법은 [AI EasyMaker 사용자 가이드](https://docs.nhncloud.com/ko/Machine%20Learning/AI%20EasyMaker/ko/console-guide/#_2)에서 확인할 수 있습니다.
+* Pipeline 서비스에서 제공하던 개발 환경 기능은 더이상 제공되지 않습니다. 개발 환경 기능은 AI EasyMaker 서비스의 노트북으로 이용할 수 있습니다. 자세한 내용은 [AI EasyMaker 사용자 가이드](https://docs.nhncloud.com/ko/Machine%20Learning/AI%20EasyMaker/ko/console-guide/#_2)에서 확인할 수 있습니다.
 
 ### 2023. 06. 27.
 * 배포 - Deploy 스테이지에서 배포한 결과물을 확인할 수 있는 배포 대상 모니터링 기능이 추가되었습니다. [Pipeline 사용자 가이드](/Dev%20Tools/Pipeline/ko/deploy-target-monitoring)에서 사용 방법을 확인할 수 있습니다.
