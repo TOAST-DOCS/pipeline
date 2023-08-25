@@ -1,5 +1,11 @@
 ## Dev Tools > Pipeline > Release Notes
 
+### August 29, 2023
+* Added the **Feature - Run the Pipeline** stage to run entire other pipelines. See [](/Dev%20Tools/Pipeline/ko/stage-guide/#_4)Pipeline User Guide[](/Dev%20Tools/Pipeline/ko/stage-guide/#_4).
+* The development environment feature provided by the Pipeline service is no longer provided. The development environment feature is available as a notebook of AI EasyMaker service. More details can be found in the [](https://docs.nhncloud.com/ko/Machine%20Learning/AI%20EasyMaker/ko/console-guide/#_2)AI EasyMaker User Guide[](https://docs.nhncloud.com/ko/Machine%20Learning/AI%20EasyMaker/ko/console-guide/#_2).
+* Renamed **Deployment Target Monitoring** to **Deployment Target Management**.
+* Added the feature to manage workloads deployed to clusters via Pipeline and check the workload history to the **Deployment Target Management**.
+
 ### June 27, 2023
 * Deployment - Added the Deploy Target Management feature that allows you to check the output deployed to the Deploy stage. For more information, see [Pipeline User Guide](/Dev%20Tools/Pipeline/en/deploy-target-monitoring).
     * Kubernetes workloads and services can be found in Deploy Target Management.
