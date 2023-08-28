@@ -147,3 +147,12 @@ Webhook의 응답값이 **Fail Fast HTTP 상태 코드**에 입력한 값 중 �
 Judgement(실행 관리) 스테이지에서 전달받은 설정값과 **실행 조건**의 조건 값에 대해 **실행 조건 일치/실행 조건 불일치** 중 선택하여 이후 스테이지의 실행을 결정합니다.
 
 ![stage-guide-14](http://static.toastoven.net/prod_pipeline/2023-06-15/stage-guide-14.png)
+
+#### 기능 - 타 파이프라인 실행
+스테이지에서 다른 파이프라인 전체를 실행할 수 있습니다.
+실행하고자 하는 **파이프라인 이름**을 선택합니다.
+![stage-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-08-29/stage-guide-15.png)
+
+**실행 조건**을 선택 해제하면 선택한 파이프라인의 실행 상태를 기다리지 않고, 다음 스테이지가 실행됩니다.
+
+![stage-guide-16](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-08-29/stage-guide-16.png)
