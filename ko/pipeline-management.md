@@ -2,7 +2,7 @@
 
 ### 파이프라인 생성
 
-Pipeline은 애플리케이션 배포 흐름을 한 개 이상의 스테이지로 구성한 파이프라인으로 저장합니다. 파이프라인 생성에서는 **소스 코드 빌드** > **컨테이너 이미지 생성** > **컨테이너 이미지 업로드** > **컨테이너 이미지 배포** 순서로 동작하는 기본적인 파이프라인을 생성할 수 있습니다. 그리고 파이프라인 JSON 파일을 업로드 해서 동일한 파이프라인을 생성할 수 있습니다.
+Pipeline은 애플리케이션 배포 흐름을 한 개 이상의 스테이지로 구성한 파이프라인으로 저장합니다. 파이프라인 생성에서는 **소스 코드 빌드** > **컨테이너 이미지 생성** > **컨테이너 이미지 업로드** > **컨테이너 이미지 배포** 순서로 동작하는 기본적인 파이프라인을 생성할 수 있으며 파이프라인 템플릿 파일을 업로드해서 파이프라인을 생성할 수 있습니다.
 
 ![pipeline-guide-01](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-01.png)
 
@@ -21,11 +21,11 @@ Pipeline은 애플리케이션 배포 흐름을 한 개 이상의 스테이지�
 
 파이프라인 이름, 파이프라인 설명을 입력한 후 **다음**을 클릭합니다.
 
-파이프라인 JSON 파일을 가지고 파이프라인 생성을 할 수 있습니다.
+그리고 파이프라인 템플릿 파일로 파이프라인 생성할 수 있습니다. (파이프라인 템플릿 파일은 JSON파일을 사용합니다.)
 
 ![pipeline-guide-34](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-09-26/pipeline-guide-34.png)
 
-파이프라인 이름, 파이프라인 설명을 입력하고 Pipeline JSON 파일을 업로드한 후 **다음**을 클릭합니다.
+파이프라인 이름, 파이프라인 설명을 입력하고 파이프라인 템플릿 파일을 업로드한 후 **다음**을 클릭합니다.
 
 #### 소스 설정
 
@@ -123,7 +123,7 @@ GitHub 및 GitLab은 브랜치를 입력하지 않을 경우 master 브랜치를
 
 ![pipeline-guide-11](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-11.png)
 
-만약, 템플릿 파일 업로드를 통해서 만들었다면, 화면에 노출되어 있는 파일 이름을 확인할 수 있습니다.
+만약, 파이프라인 템플릿 파일로 생성했을 경우 업로드한 파일 이름을 확인할 수 있습니다.
 
 ![pipeline-guide-35](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-09-26/pipeline-guide-35.png)
 
@@ -232,20 +232,21 @@ Docker Hub의 경우 `Docker Hub 계정/이미지 이름` 형식으로 입력합
 이전 스테이지를 선택하는 방식에 따라 스테이지를 병렬로 실행할 수 있습니다. 병렬 구성한 스테이지 중 하나가 실패하면 나머지 스테이지는 실행이 취소되고 파이프라인 실행은 실패합니다.
 
 #### 파이프라인 JSON 수정 및 다운로드
-사용자는 파이프라인 설정을 JSON 파일을 통해서도 변경할 수 있습니다. 
+JSON 수정을 통해서도 파이프라인 변경할 수 있습니다. 
 
 ![pipeline-guide-36](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-09-26/pipeline-guide-36.png)
 
-파이프라인의 정보를 JSON 내용으로 보고 싶은 경우 **JSON 보기**를 클릭하여 확인 가능합니다.
+**JSON 보기**를 클릭하여 JSON 형식으로 파이프라인을 확인할 수 있습니다.
 
 ![pipeline-guide-37](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-09-26/pipeline-guide-37.png)
 
-**파이프라인 템플릿 다운로드**를 클릭하여 현재 노출되어 있는 JSON 내용을 파일로 저장할 수 있습니다.
-**편집**을 클릭하여 화면 내에서 직접 JSON을 수정하는 것이 가능합니다.
+**파이프라인 템플릿 다운로드**를 클릭하여 JSON 파일로 저장할 수 있습니다.
+
+**편집**을 클릭하여 화면에서 JSON을 직접 수정할 수 있습니다.
 
 ![pipeline-guide-38](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-09-26/pipeline-guide-38.png)
 
-수정 후 **확인**을 클릭하게 되면 변경이되며 입력 값이 잘못된 경우 오류 메시지를 노출하게 됩니다.
+수정 후 **확인**을 클릭하면 수정된 내용이 파이프라인에 반영됩니다. 단, 입력 값이 잘못된 경우 오류 메시지를 노출하게 됩니다.
 
 #### 실행 이력과 작업
 
