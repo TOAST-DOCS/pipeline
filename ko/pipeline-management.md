@@ -2,7 +2,7 @@
 
 ### 파이프라인 생성
 
-Pipeline은 애플리케이션 배포 흐름을 한 개 이상의 스테이지로 구성한 파이프라인으로 저장합니다. 파이프라인 생성에서는 **소스 코드 빌드** > **컨테이너 이미지 생성** > **컨테이너 이미지 업로드** > **컨테이너 이미지 배포** 순서로 동작하는 기본적인 파이프라인을 생성할 수 있으며 파이프라인 템플릿 파일을 업로드해서 파이프라인을 생성할 수 있습니다.
+Pipeline은 애플리케이션 배포 흐름을 한 개 이상의 스테이지로 구성한 파이프라인으로 저장합니다. 파이프라인 생성에서는 **소스 코드 빌드** > **컨테이너 이미지 생성** > **컨테이너 이미지 업로드** > **컨테이너 이미지 배포** 순서로 동작하는 기본적인 파이프라인을 생성할 수 있으며 파이프라인 템플릿 파일을 업로드하여 파이프라인을 생성할 수도 있습니다.
 
 ![pipeline-guide-01](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-01.png)
 
@@ -21,7 +21,7 @@ Pipeline은 애플리케이션 배포 흐름을 한 개 이상의 스테이지�
 
 파이프라인 이름, 파이프라인 설명을 입력한 후 **다음**을 클릭합니다.
 
-그리고 파이프라인 템플릿 파일로 파이프라인 생성할 수 있습니다. (파이프라인 템플릿 파일은 JSON파일을 사용합니다.)
+추가로 파이프라인 템플릿 파일로 파이프라인을 생성할 수도 있습니다(파이프라인 템플릿 파일은 JSON 파일을 사용합니다.).
 
 ![pipeline-guide-34](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-09-26/pipeline-guide-34.png)
 
@@ -156,8 +156,8 @@ GitHub 및 GitLab은 브랜치를 입력하지 않을 경우 master 브랜치를
 #### GitHub 자동 실행 설정
 
 GitHub 웹훅을 사용해서 GitHub 또는 GitHub Enterprise의 저장소에 이벤트가 발생하면 파이프라인을 자동으로 실행하게 설정할 수 있습니다. 자동 실행 유형을 GitHub으로 설정하고 저장소의 조직 또는 사용자 이름, 프로젝트 이름, 브랜치, 시크릿을 입력하고 **확인**을 클릭합니다.
-태그로 자동실행 설정을 하기 위해서는 **브랜치 또는 태그** 항목에 'refs/tags/태그명'과 같이 태그명을 입력합니다. '태그명'부분에는 JAVA 정규표현식을 사용할 수 있습니다.
-태그로 자동실행 설정후 NHN Cloud 빌드 도구 사용시 설정된 태그로 빌드를 수행합니다. 빌드 - Jenkins 스테이지에서 태그로 빌드를 수행하고 싶을 땐 다음과 같이 설정이 필요합니다.
+태그로 자동 실행 설정을 하기 위해서는 **브랜치 또는 태그** 항목에 'refs/tags/태그명'과 같이 태그명을 입력합니다. '태그명' 부분에는 JAVA 정규 표현식을 사용할 수 있습니다.
+태그로 자동 실행 설정후 NHN Cloud 빌드 도구 사용시 설정된 태그로 빌드를 수행합니다. 빌드 - Jenkins 스테이지에서 태그로 빌드를 수행하고 싶을 땐 다음과 같이 설정이 필요합니다.
 
 Jenkins에서 다음과 같이 파라미터를 설정합니다.
 ![pipeline-guide-39.png](http://static.toastoven.net/prod_pipeline/2023-09-26/pipeline-guide-39.png)
@@ -175,7 +175,7 @@ Pipeline의 빌드도구 설정에서 **빌드 잡 파라미터**에 다음과 �
 | Payload URL | https://kr1-pipeline.api.nhncloudservice.com/webhooks/git/github |
 | Content type | application/json |
 | Secret | 파이프라인 자동 실행 설정의 시크릿에 입력한 값 |
-| event | push event, create event(태그 사용시) |
+| event | push event, create event(태그 사용 시) |
 
 ![pipeline-guide-17](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-17.png)
 
@@ -221,7 +221,7 @@ Docker Hub의 경우 `Docker Hub 계정/이미지 이름` 형식으로 입력합
 
 #### 실행 이력
 
-파이프라인을 수동 실행, 자동 실행할 경우 실행 이력 탭에 실행 이력을 확인할 수 있습니다.
+파이프라인을 수동 실행, 자동 실행할 경우 실행 이력 탭에서 실행 이력을 확인할 수 있습니다.
 
 ![pipeline-guide-26](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-26.png)
 
@@ -242,7 +242,7 @@ Docker Hub의 경우 `Docker Hub 계정/이미지 이름` 형식으로 입력합
 이전 스테이지를 선택하는 방식에 따라 스테이지를 병렬로 실행할 수 있습니다. 병렬 구성한 스테이지 중 하나가 실패하면 나머지 스테이지는 실행이 취소되고 파이프라인 실행은 실패합니다.
 
 #### 파이프라인 JSON 수정 및 다운로드
-JSON 수정을 통해서도 파이프라인 변경할 수 있습니다. 
+JSON 수정을 통해 파이프라인을 변경할 수 있습니다. 
 
 ![pipeline-guide-36](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-09-26/pipeline-guide-36.png)
 
@@ -252,11 +252,11 @@ JSON 수정을 통해서도 파이프라인 변경할 수 있습니다.
 
 **파이프라인 템플릿 다운로드**를 클릭하여 JSON 파일로 저장할 수 있습니다.
 
-**편집**을 클릭하여 화면에서 JSON을 직접 수정할 수 있습니다.
+**편집**을 클릭하여 화면에서 JSON 파일을 직접 수정할 수 있습니다.
 
 ![pipeline-guide-38](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-09-26/pipeline-guide-38.png)
 
-수정 후 **확인**을 클릭하면 수정된 내용이 파이프라인에 반영됩니다. 단, 입력 값이 잘못된 경우 오류 메시지를 노출하게 됩니다.
+수정 후 **확인**을 클릭하면 수정된 내용이 파이프라인에 반영됩니다. 단, 입력 값이 잘못된 경우 오류 메시지를 노출합니다.
 
 #### 실행 이력과 작업
 
