@@ -151,16 +151,24 @@ GitHub 및 GitLab은 브랜치를 입력하지 않을 경우 master 브랜치를
 
 **자동 실행 설정**을 클릭한 뒤 **자동 실행 설정** 대화 상자에서 **추가**를 클릭합니다.
 
-![pipeline-guide-15](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-15.png)
+![pipeline-guide-15](http://static.toastoven.net/prod_pipeline/2023-09-26/pipeline-guide-15.png)
 
 #### GitHub 자동 실행 설정
 
 GitHub 웹훅을 사용해서 GitHub 또는 GitHub Enterprise의 저장소에 이벤트가 발생하면 파이프라인을 자동으로 실행하게 설정할 수 있습니다. 자동 실행 유형을 GitHub으로 설정하고 저장소의 조직 또는 사용자 이름, 프로젝트 이름, 브랜치, 시크릿을 입력하고 **확인**을 클릭합니다.
-태그로 자동실행 설정을 하기 위해서는 **브랜치 또는 태그** 항목에 'refs/tags/태그명' 형식으로 태그명을 입력합니다. '태그명'부분에는 JAVA 정규표현식을 사용할 수 있습니다.  
+태그로 자동실행 설정을 하기 위해서는 **브랜치 또는 태그** 항목에 'refs/tags/태그명'과 같이 태그명을 입력합니다. '태그명'부분에는 JAVA 정규표현식을 사용할 수 있습니다.
+태그로 자동실행 설정후 NHN Cloud 빌드 도구 사용시 설정된 태그로 빌드를 수행합니다. 빌드 - Jenkins 스테이지에서 태그로 빌드를 수행하고 싶을 땐 다음과 같이 설정이 필요합니다.
+
+Jenkins에서 다음과 같이 파라미터를 설정합니다.
+![pipeline-guide-39.png](http://static.toastoven.net/prod_pipeline/2023-09-26/pipeline-guide-39.png)
+![pipeline-guide-40.png](http://static.toastoven.net/prod_pipeline/2023-09-26/pipeline-guide-40.png)
+Pipeline의 빌드도구 설정에서 **빌드 잡 파라미터**에 다음과 같이 입력합니다.
+![pipeline-guide-41.png](http://static.toastoven.net/prod_pipeline/2023-09-26/pipeline-guide-41.png)
+
+#### GitHub 웹훅 설정값
 
 ![pipeline-guide-16](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-16.png)
 
-#### GitHub 웹훅 설정값
 
 | 항목 | 설정값 |
 |---|---|
@@ -175,10 +183,10 @@ GitHub 웹훅을 사용해서 GitHub 또는 GitHub Enterprise의 저장소에 �
 
 GitLab 웹훅을 사용해서 GitLab 저장소에 이벤트가 발생하면 파이프라인을 자동으로 실행하게 설정할 수 있습니다. 자동 실행 유형을 GitLab으로 설정하고 저장소의 조직 또는 사용자 이름, 프로젝트 이름, 브랜치를 입력하고 **확인**을 클릭합니다. GitLab 시크릿 설정은 추후 지원할 예정입니다.
 
+#### GitLab 웹훅 설정값
+
 ![pipeline-guide-18](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-18.png)
 
-
-#### GitLab 웹훅 설정값
 
 | 항목 | 설정값 |
 |---|---|
