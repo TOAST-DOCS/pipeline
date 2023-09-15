@@ -153,15 +153,10 @@ GitHub 및 GitLab은 브랜치를 입력하지 않을 경우 master 브랜치를
 
 ![pipeline-guide-15](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-15.png)
 
-#### 실행 이력
-
-파이프라인을 수동 실행, 자동 실행할 경우 실행 이력 탭에 실행 이력을 확인할 수 있습니다.
-
-![pipeline-guide-26](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-26.png)
-
 #### GitHub 자동 실행 설정
 
 GitHub 웹훅을 사용해서 GitHub 또는 GitHub Enterprise의 저장소에 이벤트가 발생하면 파이프라인을 자동으로 실행하게 설정할 수 있습니다. 자동 실행 유형을 GitHub으로 설정하고 저장소의 조직 또는 사용자 이름, 프로젝트 이름, 브랜치, 시크릿을 입력하고 **확인**을 클릭합니다.
+태그로 자동실행 설정을 하기 위해서는 **브랜치 또는 태그** 항목에 'refs/tags/태그명' 형식으로 태그명을 입력합니다. '태그명'부분에는 JAVA 정규표현식을 사용할 수 있습니다.  
 
 ![pipeline-guide-16](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-16.png)
 
@@ -172,6 +167,7 @@ GitHub 웹훅을 사용해서 GitHub 또는 GitHub Enterprise의 저장소에 �
 | Payload URL | https://kr1-pipeline.api.nhncloudservice.com/webhooks/git/github |
 | Content type | application/json |
 | Secret | 파이프라인 자동 실행 설정의 시크릿에 입력한 값 |
+| event | push event, create event(태그 사용시) |
 
 ![pipeline-guide-17](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-17.png)
 
@@ -214,6 +210,12 @@ Docker Hub의 경우 `Docker Hub 계정/이미지 이름` 형식으로 입력합
 ![pipeline-guide-22](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-22.png)
 
 실행 중인 파이프라인의 상세 정보를 확인하려면 실행 중인 파이프라인을 선택한 후 하단 기본 정보의 최근 실행 상태에서 **상세 정보**를 클릭합니다.
+
+#### 실행 이력
+
+파이프라인을 수동 실행, 자동 실행할 경우 실행 이력 탭에 실행 이력을 확인할 수 있습니다.
+
+![pipeline-guide-26](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-26.png)
 
 ### 파이프라인 관리
 
