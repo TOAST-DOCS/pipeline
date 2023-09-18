@@ -1,5 +1,11 @@
 ## Dev Tools > Pipeline > 릴리스 노트
 
+### 2023. 09. 26.
+* 파이프라인 템플릿 기능이 추가되었습니다. [Pipeline 사용자 가이드](/Dev%20Tools/Pipeline/ko/pipeline-management/#_1)에서 사용 방법을 확인할 수 있습니다.
+    * 파이프라인 생성 시 템플릿 파일(JSON 형식)을 업로드하여 생성할 수 있습니다.
+    * **JSON 보기** > **파이프라인 템플릿 다운로드**로 파이프라인 템플릿 파일을 다운로드할 수 있습니다.
+* Github 자동 실행 설정의 **브랜치 혹은 태그** 항목에서 태그를 사용할 수 있게되었습니다. 태그로 자동 실행 시 태그를 사용하여 빌드를 수행합니다.
+
 ### 2023. 08. 29.
 * 다른 파이프라인 전체를 실행할 수 있는 **기능 - 타 파이프라인 실행** 스테이지가 추가되었습니다. [Pipeline 사용자 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#_4)에서 사용 방법을 확인할 수 있습니다.
 * Pipeline 서비스에서 제공하던 개발 환경 기능은 더 이상 제공되지 않습니다. 개발 환경 기능은 AI EasyMaker 서비스의 노트북으로 이용할 수 있습니다. 자세한 내용은 [AI EasyMaker 사용자 가이드](https://docs.nhncloud.com/ko/Machine%20Learning/AI%20EasyMaker/ko/console-guide/#_2)에서 확인할 수 있습니다.
