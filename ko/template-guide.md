@@ -9,10 +9,10 @@
 ![template-guide-01](http://static.toastoven.net/prod_pipeline/2023-09-26/template-guide-01.png)
 
 #### 2. 템플릿 파일로 파이프라인 생성
-##### 2.1 파이프라인 관리에서 파이프라인 생성을 클릭합니다. 다운로드한 JSON 파일을 업로드합니다. 업로드 후 다음을 클릭하게 되면 바로 최종 검토 단계로 넘어가게 됩니다.
+2.1 **파이프라인 관리**에서 **파이프라인 생성**을 클릭합니다. 다운로드한 JSON 파일을 업로드합니다. 업로드 후 **다음**을 클릭하게 되면 바로 **최종 검토** 단계로 넘어가게 됩니다.
 ![template-guide-02](http://static.toastoven.net/prod_pipeline/2023-09-26/template-guide-02.png)
 
 
-##### 2.2 최종 검토 단계에서 등록된 파일명 확인이 가능하며 생성을 클릭하면 파이프라인이 생성됩니다.
+2.2 **최종 검토** 단계에서 등록된 파일명 확인이 가능하며 **생성**을 클릭하면 파이프라인이 생성됩니다.
 ![template-guide-03](http://static.toastoven.net/prod_pipeline/2023-09-26/template-guide-03.png)
 ![template-guide-04](http://static.toastoven.net/prod_pipeline/2023-09-26/template-guide-04.png)
