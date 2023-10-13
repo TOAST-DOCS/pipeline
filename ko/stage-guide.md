@@ -158,7 +158,7 @@ Judgement(실행 관리) 스테이지에서 전달받은 설정값과 **실행 �
 ![stage-guide-16](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-08-29/stage-guide-16.png)
 
 #### 기능 - 승인 관리
-스테이지의 **실행 관리(실행, 실행 중지)**를 승인권자가 관리할 수 있습니다.
+**기능 - 승인 관리** 스테이지 이후의 스테이지들에 대한 **실행 관리(실행, 실행 중지)**를 승인권자가 관리할 수 있습니다.
 
 ![stage-guide-17](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-10-31/stage-guide-17.png)
 
