@@ -1,5 +1,8 @@
 ## Dev Tools > Pipeline > 릴리스 노트
 
+### 2023. 10. 31.
+* 승인 없이 이후 스테이지를 실행하지 못하도록 관리하는 **기능 - 승인 관리** 스테이지가 추가되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#-)에서 자세한 설명을 확인할 수 있습니다.
+
 ### 2023. 09. 26.
 * 파이프라인 템플릿 기능이 추가되었습니다. [Pipeline 사용자 가이드](/Dev%20Tools/Pipeline/ko/pipeline-management/#_1)에서 사용 방법을 확인할 수 있습니다.
     * 파이프라인 생성 시 템플릿 파일(JSON 형식)을 업로드하여 생성할 수 있습니다.
