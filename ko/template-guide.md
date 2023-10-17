@@ -24,9 +24,11 @@
 Bake Stage 사용에 대한 샘플 시나리오 템플릿의 경우 기능 변경이 필요하여 추후 제공 될 예정입니다.
 
 ### 1. 소스 - 빌드 - 배포 단계의 기본적인 시나리오
-{파일 링크}
+[템플릿 파일 다운로드](http://static.toastoven.net/prod_pipeline/template/template-scenario-01.json)
 
 Github에서 소스코드를 가져와 NHN Build 도구를 통해 빌드 후 대상 서버에 Manifest 정보로 배포하는 시나리오입니다.
+
+![template-guide-08.png](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-08.png)
 
 등록되어 있는 JSON 파일을 다운로드 후 중괄호로 표시된 데이터에 대한 정보의 입력이 필요합니다.
 
@@ -46,7 +48,7 @@ Github에서 소스코드를 가져와 NHN Build 도구를 통해 빌드 후 대
 
 `"sourceRepo": "{소스 저장소 설정에 저장된 소스 저장소 이름}"` 이라고 입력값을 요구하고 있으며 **환경 설정** 내 소스 저장소 설정에 등록한 정보 중 사용할 소스 저장소 이름을 확인 후 `"sourceRepo": "github-pipeline"` 과 같이 수정이 필요합니다.
 
-![template-guide-05](../images/2023-10-31/template-guide-05.png)
+![template-guide-05](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-05.png)
 
 **이미지 저장소 설정**, **배포 대상 설정** 도 동일하게 설정된 이름을 확인 후 수정이 필요합니다.
 
@@ -149,9 +151,13 @@ yaml 파일을 json 형태로 변경이 필요합니다.(스테이지 변경을 
 이후 시나리오도 해당 시나리오를 바탕으로 작성되어 있습니다.
 
 ### 2. 파이프라인 완료 알림 추가된 시나리오
-{파일 링크}
+[템플릿 파일 다운로드](http://static.toastoven.net/prod_pipeline/template/template-scenario-02.json)
 
-배포 후 Webhook을 통해 알림을 받을 수 있습니다. Webhook을 받을 URL과 Payload, Method에 해당하는 데이터를 입력 후 사용 가능합니다. UI에서 수정하는게 편하다?
+배포 후 Webhook을 통해 알림을 받는 시나리오입니다. Webhook을 받을 URL과 Payload, Method에 해당하는 데이터를 입력 후 사용 가능합니다.
+
+![template-guide-09.png](..%2Fimages%2F2023-10-31%2Ftemplate-guide-09.png)
+
+[Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#_4)에서 Webhook 스테이지 상세 가이드는 확인 가능합니다.
 ``` json
 {
     "type": "webhook",
@@ -161,20 +167,21 @@ yaml 파일을 json 형태로 변경이 필요합니다.(스테이지 변경을 
         "3"
     ],
     "url": "{Webhook 보낼 URL}",
-    "payload": {},
-    "customHeaders": {},
+    "payload": null, // http request body
+    "customHeaders": {}, // http request header
     "failFastStatusCodes": [
-        {}
+        500  // 403,500,503
     ],
-    "method": "{}"
+    "method": "{}" // GET, POST, PUT, DELETE, PATCH, HEAD
 }
 ```
 
 ### 3. Github(GitLab, 이미지 저장소) 이벤트 발생 시 Pipeline 자동 실행 시나리오
-{파일 링크}
+[템플릿 파일 다운로드](http://static.toastoven.net/prod_pipeline/template/template-scenario-03.json)
 
-Trigger 기능으로 Github(GitLab, 이미지 저장소)에서 발생하는 이벤트로 파이프라인을 실행 가능 합니다.
-
+템플릿의 Trigger 영역을 설정하면 Github(GitLab, 이미지 저장소) 자동 실행 설정을 할 수 있습니다.
+[콘솔사용가이드](/Dev%20Tools/Pipeline/ko/pipeline-management/#_9)의 자동실행 부분에 입력값에 대한 추가 가이드가 있습니다.
+![template-guide-08.png](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-08.png)
 ``` json
 "triggers": [
     {
@@ -189,24 +196,133 @@ Trigger 기능으로 Github(GitLab, 이미지 저장소)에서 발생하는 이�
 ```
 
 ### 4. 하나의 파이프라인으로 개발환경, 리얼환경을 구분해서 배포하는 시나리오
-{파일 링크}
+[템플릿 파일 다운로드](http://static.toastoven.net/prod_pipeline/template/template-scenario-04.json)
 
 하나의 파이프라인으로 사용자의 선택으로 분기처리를 하여 배포할 수 있습니다.
 해당 시나리오에서는 개발환경, 리얼환경 같이 구분되어 있는 환경에 배포하는 경우로 작성되었습니다.
-
+![template-guide-10.png](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-10.png)
 예시로 작성된 파이프라인처럼 `develop`, `real` 선택하여 각 환경에 배포를 따로 진행 할 수 있습니다.
 다른 값으로 변경하여 사용 가능하며 이때 뒤에 있는 Precondition Stage의 값도 동일하게 수정이 필요합니다.
 
-### 5. 리얼환경에 배포 전 승인 절차를 추가하여 배포하는 시나리오
-{파일 링크}
+[Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#_4)에서 Judgement(실행 관리), Precondition(실행 조건) 스테이지 상세 가이드는 확인 가능합니다.
 
+```json
+[
+  {
+    "type": "manualJudgment",
+    "name": "judgement",
+    "refId": "4",
+    "requisiteStageRefIds": [
+      "2"
+    ],
+    "failPipeline": false,
+    "completeOtherBranchesThenFail": false,
+    "continuePipeline": false,
+    "instructions": "개발환경, 리얼환경 분기 처리",
+    "judgmentInputs": [
+      {
+        "value": "develop" // preconditions와 같은 값이어야합니다.
+      },
+      {
+        "value": "real" // preconditions와 같은 값이어야합니다.
+      }
+    ],
+    "notifications": []
+  },
+  {
+    "type": "checkPreconditions",
+    "name": "precondition-develop",
+    "refId": "5",
+    "requisiteStageRefIds": [
+      "4"
+    ],
+    "preconditions": [
+      {
+        "failPipeline": false,
+        "type": "expression",
+        "context": {
+          "equals": true,
+          "targetExecutionValue": "develop", // 원하는 임의의 값으로 변경가능합니다.
+          "expression": null,
+          "failureMessage": null
+        }
+      }
+    ]
+  },
+  {
+    "type": "checkPreconditions",
+    "name": "precondition-real",
+    "refId": "6",
+    "requisiteStageRefIds": [
+      "4"
+    ],
+    "preconditions": [
+      {
+        "failPipeline": false,
+        "type": "expression",
+        "context": {
+          "equals": true,
+          "targetExecutionValue": "real", // 원하는 임의의 값으로 변경가능합니다.
+          "expression": null,
+          "failureMessage": null
+        }
+      }
+    ]
+  },
+]
+```
+
+### 5. 리얼환경에 배포 전 승인 절차를 추가하여 배포하는 시나리오
+[템플릿 파일 다운로드](http://static.toastoven.net/prod_pipeline/template/template-scenario-05.json)
+![template-guide-11.png](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-11.png)
 4번 시나리오에서 리얼환경에 배포하기 전 승인 단계를 추가하여 승인 후 배포가 되도록 구성할 수 있습니다.
 
+[Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#_4)에서 승인관리 스테이지 상세 가이드는 확인 가능합니다.
+
+```json
+{
+    "type": "manualJudgment",
+    "name": "approve",
+    "refId": "8",
+    "requisiteStageRefIds": [
+        "6"
+    ],
+    "instructions": "승인 관리 스테이지입니다.",
+    "judgmentInputs": [],
+    "approval": true
+}
+```
+
 ### 6. 다수의 파이프라인으로 개발환경, 리얼환경을 구분해서 배포하는 시나리오
-{파일 링크}
+[템플릿 파일 다운로드](http://static.toastoven.net/prod_pipeline/template/template-scenario-06.json)
 
 파이프라인을 환경별로 분리되어 구성되어 있을때 파이프라인 자체를 선택해서 배포 가능합니다.
+![template-guide-12.png](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-12.png)
+```json
+[
+  {
+    "type": "pipeline",
+    "name": "execute-pipeline",
+    "refId": "4",
+    "requisiteStageRefIds": [
+      "2"
+    ],
+    "pipeline": "{실행하고자하는 파이프라인 ID}",
+    "waitForCompletion": true
+  },
+  {
+    "type": "pipeline",
+    "name": "execute-pipeline",
+    "refId": "5",
+    "requisiteStageRefIds": [
+      "3"
+    ],
+    "pipeline": "{실행하고자하는 파이프라인 ID}",
+    "waitForCompletion": true
+  }
+]
+```
 
 파이프라인 아이디는 **파이프라인 버전 > JSON 보기**를 클릭하여 확인 가능합니다.
-![template-guide-06](../images/2023-10-31/template-guide-06.png)
-![template-guide-07](../images/2023-10-31/template-guide-07.png)
+![template-guide-06](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-06.png)
+![template-guide-07](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-07.png)
