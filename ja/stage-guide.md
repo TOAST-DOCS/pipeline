@@ -154,3 +154,14 @@ Judgement(実行管理)ステージで渡された設定値と**実行条件の�
 **実行条件**を選択解除すると、選択したパイプラインの実行状態を待たずに、次のステージが実行されます。
 
 ![stage-guide-16](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-08-29/stage-guide-16.png)
+
+#### 機能 - 承認管理
+**機能 - 承認管理**ステージ以降のステージに対する**実行管理(実行、実行停止)**を承認権者が管理できます。
+
+![stage-guide-17](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-10-31/stage-guide-17.png)
+
+ステージにリクエスト内容に対して作成でき、承認管理ステージの**実行管理(実行、実行停止)**は、プロジェクトロールで**Pipeline APPROVAL ADMIN**ロールを持つユーザーのみ行うことができます。
+
+**Pipeline APPROVAL ADMIN**ロールは、プロジェクトのメンバー管理、ロールグループ管理で付与できます。
+
+![stage-guide-18](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-10-31/stage-guide-18.png)
