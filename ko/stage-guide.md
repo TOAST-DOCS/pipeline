@@ -162,7 +162,7 @@ Judgement(실행 관리) 스테이지에서 전달받은 설정값과 **실행 �
 
 ![stage-guide-17](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-10-31/stage-guide-17.png)
 
-스테이지에 요청 내용에 대해 작성할 수 있으며, 승인 관리 스테이지의 **실행 관리(실행, 실행 중지)**는 프로젝트 역할에서 **Pipeline APPROVAL ADMIN** 역할을 가진 사용자만 할 수 있습니다.
+스테이지에 요청 내용에 대해 작성할 수 있으며, 승인 관리 스테이지의 **실행 관리(실행, 실행 중지)** 기능은 해당 프로젝트의 **Pipeline APPROVAL ADMIN** 역할을 가진 사용자만 할 수 있습니다.
 
 **Pipeline APPROVAL ADMIN** 역할은 프로젝트의 멤버 관리, 역할 그룹 관리에서 부여할 수 있습니다.
 
