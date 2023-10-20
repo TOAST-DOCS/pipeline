@@ -156,3 +156,14 @@ Select a **pipeline name** to run.
 If you uncheck **Run Condition**, the next stage runs without waiting for the execution status of the selected pipeline.
 
 ![stage-guide-16](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-08-29/stage-guide-16.png)
+
+#### Feature - Approval Management
+Approvers can manage **Run Management (run, stop running)** for stages after **Feature - Approval Management**.
+
+![stage-guide-17](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-10-31/stage-guide-17.png)
+
+You can write requests in stages, and only uswers with the **Pipeline APPROVAL ADMIN** role can perform the **Run Management (run, stop running)** feature from the approval management stage. 
+
+The **Pipeline APPROVAL ADMIN** role can be granted from the project's Member Management, Role Group Management.
+
+![stage-guide-18](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-10-31/stage-guide-18.png)
