@@ -1,5 +1,8 @@
 ## Dev Tools > Pipeline > Release Notes
 
+### October 31, 2023
+* Added the **Feature - Approval Management** stage to ensure subsequent stages do not urn without approval. For more information, see [Pipeline Stage Guide](/Dev%20Tools/Pipeline/en/stage-guide/#-).
+
 ### September 26, 2023
 * Added the pipeline template feature. For how to use the feature, see [Pipeline User Guide](/Dev%20Tools/Pipeline/ko/pipeline-management/#_1).
     * Create a pipeline by uploading template files(JSON format).
