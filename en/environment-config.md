@@ -85,9 +85,8 @@ Enter the chart repository information, click **Check** in **Chart Repository Co
 
 
 ### Pipeline IP
-If the system integrated with Pipeline does not work properly, check the ACL. The IP address used by Pipeline is **211.56.1.0/27** for Korea (Pangyo) region and **114.110.140.16/27** for Korea (Gwangju) region.
+If the system integrated with Pipeline does not work properly, check the ACL. The IP address used by Pipeline is **211.56.1.0/27**.
 
 | Service | CIDR |
 |---|---|
-| Pipeline - Korea (Pangyo) region | 211.56.1.0/27 |
-| Pipeline - Korea (Gwangju) region | 114.110.140.16/27 |
+| Pipeline | 211.56.1.0/27 |
