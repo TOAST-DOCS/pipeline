@@ -146,3 +146,24 @@ Decide whether to run subsequent stages based on the **Run Condition** of the va
 Decide whether run subsequent stages by selecting either **Condition Matched or Condition Unmatched** for values from **Run Condition** and setting values passed from the Judgement (Run Management).
 
 ![stage-guide-14](http://static.toastoven.net/prod_pipeline/2023-06-15/stage-guide-14.png)
+
+#### Feature - Run the Pipeline
+Run entire other pipelines.
+Select a **pipeline name** to run.
+
+![stage-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-08-29/stage-guide-15.png)
+
+If you uncheck **Run Condition**, the next stage runs without waiting for the execution status of the selected pipeline.
+
+![stage-guide-16](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-08-29/stage-guide-16.png)
+
+#### Feature - Approval Management
+Approvers can manage **Run Management (run, stop running)** for stages after **Feature - Approval Management**.
+
+![stage-guide-17](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-10-31/stage-guide-17.png)
+
+You can write requests in stages, and only users with the **Pipeline APPROVAL ADMIN** role can perform the **Run Management (run, stop running)** feature from the approval management stage. 
+
+The **Pipeline APPROVAL ADMIN** role can be granted from the project's Member Management, Role Group Management.
+
+![stage-guide-18](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-10-31/stage-guide-18.png)
