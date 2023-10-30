@@ -7,6 +7,7 @@ Pipeline is a continuous deployment service that allows you to manage the applic
 * Kubernetes integration
 * Application deployment flow management
 * Application deployment automation
+* Approval Feature
 
 ### Feature Description
 Pipeline provides a number of features that you can use to deploy applications.
@@ -29,6 +30,10 @@ You can define the different stages required for application deployment, such as
 #### Application Deployment Automation
 
 You can configure autorun on the pipeline. When you change the source code in the source repository or update the container images in the image registry, the pipeline is run automatically.
+
+#### Approval Feature
+
+By using approval management stages in a pipeline, ensure that subsequent stages don't run without approval from an approver.
 
 #### Artifact
 

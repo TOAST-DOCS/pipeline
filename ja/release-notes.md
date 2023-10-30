@@ -1,5 +1,9 @@
 ## Dev Tools > Pipeline > リリースノート
 
+### 2023. 10. 31.
+* 承認なしで以降のステージを実行できないように管理する**機能 - 承認管理**ステージが追加されました。[Pipelineステージガイド](/Dev%20Tools/Pipeline/ko/stage-guide/#-)で詳細を確認できます。
+* パイプラインテンプレートガイド内にサンプルシナリオが追加されました。[Pipelineテンプレートガイド](/Dev%20Tools/Pipeline/ko/pipeline-management/#_2)から使用方法およびテンプレートファイルをダウンロードできます。
+
 ### 2023. 09. 26.
 * パイプラインテンプレート機能が追加されました。[Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ko/pipeline-management/#_1)で使い方を確認できます。
     * パイプライン作成時にテンプレートファイル(JSON形式)をアップロードして作成できます。
