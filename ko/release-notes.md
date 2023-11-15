@@ -1,5 +1,8 @@
 ## Dev Tools > Pipeline > 릴리스 노트
 
+### 2023. 11. 28
+* NHN Cloud Deploy 서비스를 실행할 수 있는 **기능 - NHN Cloud Deploy Service** 스테이지가 추가되었습니다. [Pipeline 스테이지 가이드]()에서 사용 방법을 확인할 수 있습니다.
+
 ### 2023. 10. 31.
 * 승인 없이 이후 스테이지를 실행하지 못하도록 관리하는 **기능 - 승인 관리** 스테이지가 추가되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#-)에서 자세한 설명을 확인할 수 있습니다.
 * 파이프라인 템플릿 가이드 내 샘플 시나리오가 추가되었습니다. [Pipeline 템플릿 가이드](/Dev%20Tools/Pipeline/ko/template-guide/#_2)에서 사용 방법 및 템플릿 파일을 다운로드할 수 있습니다.
