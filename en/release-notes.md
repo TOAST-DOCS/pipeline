@@ -1,5 +1,8 @@
 ## Dev Tools > Pipeline > Release Notes
 
+### November 28, 2023
+* Added the **Feature - NHN Cloud Deploy Service** stage to run depoyment scenarios for NHN Cloud Deploy. For more information, see [Pipeline Stage Guide](/Dev%20Tools/Pipeline/en/stage-guide/#-).
+
 ### October 31, 2023
 * Added the **Feature - Approval Management** stage that prevents subsequent stages from running without approval. For more information, see [Pipeline Stage Guide](/Dev%20Tools/Pipeline/en/stage-guide/#-).
 * Added sample scenarios in the Pipeline Template Guide. You can download how-to and template files from [Pipeline Template Guide](/Dev%20Tools/Pipeline/en/pipeline-management/#_2).
