@@ -1,5 +1,8 @@
 ## Dev Tools > Pipeline > リリースノート
 
+### 2023. 11. 28
+* NHN Cloud Deployの配布シナリオを実行できる**機能 - NHN Cloud Deploy Service**ステージが追加されました。 [Pipelineステージガイド]()で使い方を確認できます。
+
 ### 2023. 10. 31.
 * 承認なしで以降のステージを実行できないように管理する**機能 - 承認管理**ステージが追加されました。[Pipelineステージガイド](/Dev%20Tools/Pipeline/ko/stage-guide/#-)で詳細を確認できます。
 * パイプラインテンプレートガイド内にサンプルシナリオが追加されました。[Pipelineテンプレートガイド](/Dev%20Tools/Pipeline/ko/pipeline-management/#_2)から使用方法およびテンプレートファイルをダウンロードできます。
