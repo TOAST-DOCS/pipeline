@@ -83,6 +83,38 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 
 ![env-config-guide-15](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-15.png)
 
+### NHN Cloud 보안 설정
+
+#### User Access Key ID, Secret Access Key 생성
+
+콘솔 우측 상단의 ID 영역을 클릭하면 다음과 같은 **API 보안 설정** 메뉴를 확인할 수 있습니다.
+
+![env-config-guide-16](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-16.png)
+
+**API보안 설정**에서 **User Access Key ID** 생성을 클릭하여, NHN Cloud 보안 설정등록 시 입력해야 하는 **User Access Key ID**와 **Secret Access Key**를 생성할 수 있습니다.
+
+![env-config-guide-17](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-17.png)
+
+![env-config-guide-18](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-18.png)
+
+**User Access Key ID**, **Secret Access Key**를 생성하면 아래와 같이 **비밀 키 발급 완료** 화면이 표시됩니다. 비밀 키는 해당 팝업 화면에서 한번만 알려주므로 이 값을 잘 기록하여 사용합니다.
+
+![env-config-guide-19](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-19.png)
+
+보안 설정 등록 시 필요한 **User Access Key ID**는 비밀 키 발급 완료 팝업을 닫으면 확인할 수 있습니다.
+
+#### NHN Cloud 보안 설정 등록
+NHN Cloud 보안 설정을 추가하면, **기능 - NHN Cloud Deploy 서비스** 스테이지를 사용해서, NHN Cloud Deploy 서비스를 통해 배포를 할 수 있습니다.
+
+![env-config-guide-20](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-20.png)
+
+환경 설정에서 NHN Cloud 보안 설정을 클릭하면 NHN Cloud 보안 설정을 관리하는 화면으로 이동합니다. 보안 설정 추가를 클릭해서 신규 보안 설정을 추가할 수 있습니다.
+
+![env-config-guide-21](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-21.png)
+
+NHN Cloud 보안 설정 정보를 입력한 후, **API 정상 호출 확인**의 **확인**을 클릭합니다. 연결 확인 후 **확인**을 클릭합니다.
+
+![env-config-guide-22](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-22.png)
 
 ### Pipeline IP
 파이프라인과 연동한 시스템이 정상적으로 동작하지 않으면 ACL을 확인하십시오. 파이프라인이 사용하는 IP 주소는 **211.56.1.0/27**입니다.
@@ -90,3 +122,4 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 | 서비스 | CIDR |
 |---|---|
 | Pipeline | 211.56.1.0/27 |
+
