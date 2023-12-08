@@ -151,9 +151,9 @@ GitHub 및 GitLab은 브랜치를 입력하지 않을 경우 master 브랜치를
 
 **자동 실행 설정**을 클릭한 뒤 **자동 실행 설정** 대화 상자에서 **추가**를 클릭합니다.
 
-![pipeline-guide-15](http://static.toastoven.net/prod_pipeline/2023-09-26/pipeline-guide-15.png)
 
 #### GitHub 자동 실행 설정
+![pipeline-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-09-26/pipeline-guide-15.png)
 
 GitHub 웹훅을 사용해서 GitHub 또는 GitHub Enterprise의 저장소에 이벤트가 발생하면 파이프라인을 자동으로 실행하게 설정할 수 있습니다. 자동 실행 유형을 GitHub으로 설정하고 저장소의 조직 또는 사용자 이름, 프로젝트 이름, 브랜치, 시크릿을 입력하고 **확인**을 클릭합니다.
 태그로 자동 실행 설정을 하기 위해서는 **브랜치 또는 태그** 항목에 'refs/tags/태그명'과 같이 태그명을 입력합니다. '태그명' 부분에는 JAVA 정규 표현식을 사용할 수 있습니다.
@@ -177,7 +177,6 @@ Pipeline의 빌드도구 설정에서 **빌드 잡 파라미터**에 다음과 �
 | Secret | 파이프라인 자동 실행 설정의 시크릿에 입력한 값 |
 | event | push event, create event(태그 사용 시) |
 
-![pipeline-guide-17](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-17.png)
 
 **특정 파일**이 **Push**되었을 때만 자동 실행이 되도록 설정할 수 있습니다. (최대 5개)
 
@@ -187,6 +186,8 @@ Pipeline의 빌드도구 설정에서 **빌드 잡 파라미터**에 다음과 �
 파일 경로에는, 선택한 소스 저장소에서 파일이 포함된 경로를 설정합니다.
 
 #### GitLab 자동 실행 설정
+
+![pipeline-guide-17](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-03-28/pipeline-guide-17.png)
 
 GitLab 웹훅을 사용해서 GitLab 저장소에 이벤트가 발생하면 파이프라인을 자동으로 실행하게 설정할 수 있습니다. 자동 실행 유형을 GitLab으로 설정하고 저장소의 조직 또는 사용자 이름, 프로젝트 이름, 브랜치를 입력하고 **확인**을 클릭합니다. GitLab 시크릿 설정은 추후 지원할 예정입니다.
 
