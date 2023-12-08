@@ -91,7 +91,7 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 
 ![env-config-guide-16](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-16.png)
 
-**API보안 설정**에서 **User Access Key ID** 생성을 클릭하여, NHN Cloud 보안 설정등록 시 입력해야 하는 **User Access Key ID**와 **Secret Access Key**를 생성할 수 있습니다.
+**API보안 설정**에서 **User Access Key ID** 생성을 클릭하여, NHN Cloud 보안 설정 등록 시 입력해야 하는 **User Access Key ID**와 **Secret Access Key**를 생성할 수 있습니다.
 
 ![env-config-guide-17](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-17.png)
 
