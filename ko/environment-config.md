@@ -91,7 +91,7 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 
 ![env-config-guide-16](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-16.png)
 
-**API보안 설정**에서 **User Access Key ID** 생성을 클릭하여, NHN Cloud 보안 설정 등록 시 입력해야 하는 **User Access Key ID**와 **Secret Access Key**를 생성할 수 있습니다.
+**API 보안 설정**에서 **User Access Key ID** 생성을 클릭하여 NHN Cloud 보안 설정 등록 시 입력해야 하는 **User Access Key ID**와 **Secret Access Key**를 생성할 수 있습니다.
 
 ![env-config-guide-17](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-17.png)
 
@@ -104,11 +104,11 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 보안 설정 등록 시 필요한 **User Access Key ID**는 비밀 키 발급 완료 팝업을 닫으면 확인할 수 있습니다.
 
 #### NHN Cloud 보안 설정 등록
-NHN Cloud 보안 설정을 추가하면, **기능 - NHN Cloud Deploy 서비스** 스테이지를 사용해서, NHN Cloud Deploy 서비스를 통해 배포를 할 수 있습니다.
+NHN Cloud 보안 설정을 추가하면 **기능 - NHN Cloud Deploy 서비스** 스테이지를 사용해 NHN Cloud Deploy 서비스를 통해 배포할 수 있습니다.
 
 ![env-config-guide-20](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-20.png)
 
-환경 설정에서 NHN Cloud 보안 설정을 클릭하면 NHN Cloud 보안 설정을 관리하는 화면으로 이동합니다. 보안 설정 추가를 클릭해서 신규 보안 설정을 추가할 수 있습니다.
+**환경 설정** > **NHN Cloud 보안 설정** 화면에서 **+보안 설정 추가**를 클릭해 신규 보안 설정을 추가할 수 있습니다.
 
 ![env-config-guide-21](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-21.png)
 
