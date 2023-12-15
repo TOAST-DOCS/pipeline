@@ -152,9 +152,9 @@ GitHubおよびGitLabはブランチを入力しない場合、masterブラン�
 
 **自動実行設定**をクリックし、**自動実行設定**ダイアログボックスで**追加**をクリックします。
 
-![pipeline-guide-15](http://static.toastoven.net/prod_pipeline/2023-09-26/pipeline-guide-15.png)
 
 #### GitHub自動実行設定
+![pipeline-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-09-26/pipeline-guide-15.png)
 
 GitHub Webフックを使用してGitHubまたはGitHub Enterpriseのリポジトリにイベントが発生した場合にパイプラインを自動的に実行するように設定できます。自動実行タイプをGitHubに設定し、リポジトリの組織またはユーザー名、プロジェクト名、ブランチ、シークレットを入力し、**確認**をクリックします。
 タグで自動実行を設定するには、**ブランチまたはタグ**項目に「refs/tags/タグ名」のようにタグ名を入力します。「タグ名」部分にはJAVA正規表現を使用できます。
@@ -178,9 +178,17 @@ Pipelineのビルドツール設定で**ビルドジョブパラメータ**に�
 | Secret | パイプライン自動実行設定のシークレットに入力した値 |
 | event | push event、create event(タグ使用時) |
 
-![pipeline-guide-17](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-17.png)
+
+**特定ファイル**が**Push**された場合のみ自動実行されるように設定できます。(最大5個)
+
+![pipeline-guide-33](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/pipeline-guide-33.png)
+
+**ソースリポジトリ名**は環境設定で登録したソースリポジトリを選択します。
+**ファイルパス**は選択したソースリポジトリからファイルが含まれるパスを入力します。
 
 #### GitLab自動実行設定
+
+![pipeline-guide-17](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-03-28/pipeline-guide-17.png)
 
 GitLab Webフックを使用してGitLaリポジトリにイベントが発生した場合にパイプラインを自動的に実行するように設定できます。自動実行タイプをGitLabに設定し、リポジトリの組織またはユーザー名、プロジェクト名、ブランチを入力し、**確認**をクリックします。GitLabシークレット設定は今後サポートする予定です。
 
