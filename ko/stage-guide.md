@@ -167,3 +167,30 @@ Judgement(실행 관리) 스테이지에서 전달받은 설정값과 **실행 �
 **Pipeline APPROVAL ADMIN** 역할은 프로젝트의 멤버 관리, 역할 그룹 관리에서 부여할 수 있습니다.
 
 ![stage-guide-18](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-10-31/stage-guide-18.png)
+
+#### 기능 - NHN Cloud Deploy 서비스 배포 실행
+스테이지에서 NHN Cloud Deploy 서비스를 사용하여 배포를 실행할 수 있습니다.
+- 배포를 실행하려는 아티팩트의 **Command Type**이 **SSH**인 경우 해당 **NHN Cloud Deploy 서비스 배포 실행** 기능을 지원하지 않으며, **Cloud Agenet**인 경우에만 지원합니다. 관련된 내용은 [Deploy 사용 가이드](https://docs.nhncloud.com/ko/Dev%20Tools/Deploy/ko/console-guide/#_8)를 참고하십시오.
+
+![stage-guide-19](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/stage-guide-19.png)
+
+**환경 설정** > **NHN Cloud 보안 설정**에서 추가한 보안 설정을 선택하고, **AppKey**에는 NHN Cloud Deploy 서비스를 사용할 Appkey를 입력합니다.
+
+정보를 입력한 뒤 **검색**을 클릭하면 입력한 보안 설정과 Appkey에 맞는 NHN Cloud Deploy의 배포 관련 정보를 가져옵니다.
+
+이후 NHN Cloud Deploy 서비스를 통해 배포할 **아티팩트**, **서버그룹**, **시나리오**를 선택할 수 있습니다.
+
+
+**배포 제한 시간**에는 해당 스테이지의 실행 완료 대기 시간을 지정합니다. (최소 1분, 최대 600분)
+
+![stage-guide-20](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/stage-guide-20.png)
+
+**배포 상세 설정**에서는 배포할 대상에 대한 조건을 추가할 수 있습니다.
+
+**서버 선택**에서 배포할 서버를 선택할 수 있습니다. **전체 서버**를 선택하면 전체 서버를 대상으로 배포를 진행하며, **서버 선택**을 클릭하면 배포할 서버를 선택할 수 있습니다.
+
+**동시 서버 실행 수**에서 NHN Cloud Deploy 서비스가 동시에 몇 개의 서버를 실행할 지 선택할 수 있습니다. (기본값 1, 최대 서버 개수)
+
+**배포 노트**에는 배포 실행 정보를 입력할 수 있습니다.
+
+자세한 설명은 [Deploy 사용 가이드](https://docs.nhncloud.com/ko/Dev%20Tools/Deploy/ko/reference/#_1)를 참고하십시오.

@@ -165,3 +165,30 @@ Judgement(実行管理)ステージで渡された設定値と**実行条件の�
 **Pipeline APPROVAL ADMIN**ロールは、プロジェクトのメンバー管理、ロールグループ管理で付与できます。
 
 ![stage-guide-18](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-10-31/stage-guide-18.png)
+
+#### 機能 - NHN Cloud Deployサービス配布実行
+ステージでNHN Cloud Deployサービスを使用して配布を実行できます。
+- 配布を実行するアーティファクトの**Command Type**が**SSH**である場合、**NHN Cloud Deployサービス配布実行**機能をサポートしておらず、**Cloud Agenet**である場合にのみサポートします。関連する内容については[Deploy使用ガイド](https://docs.nhncloud.com/ko/Dev%20Tools/Deploy/ko/console-guide/#_8)を参照してください。
+
+![stage-guide-19](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/stage-guide-19.png)
+
+**環境設定** > **NHN Cloudセキュリティ設定**で追加したセキュリティ設定を選択し、**AppKey**にはNHN Cloud Deployサービスを使用するAppkeyを入力します。
+
+情報を入力し**検索**をクリックすると、入力したセキュリティ設定とAppkeyに合うNHN Cloud Deployの配布関連情報が表示されます。
+
+その後、NHN Cloud Deployサービスを通じて配布する**アーティファクト**、**サーバーグループ**、**シナリオ**を選択できます。
+
+
+**配布制限時間**には該当ステージの実行完了待機時間を指定します。(最短1分、最長600分)
+
+![stage-guide-20](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/stage-guide-20.png)
+
+**配布詳細設定**では、配布する対象に条件を追加できます。
+
+**サーバー選択**で配布するサーバーを選択できます。**全体サーバー**を選択すると、全体サーバーを対象に配布を実行でき、**サーバー選択**をクリックすると、配布するサーバーを選択できます。
+
+**同時サーバー実行数**でNHN Cloud Deployサービスが同時にいくつのサーバーを実行するか選択できます。(デフォルト値は1、最大サーバー数)
+
+**配布ノート**には配布実行情報を入力できます。
+
+詳しい説明については[Deploy使用ガイド](https://docs.nhncloud.com/ko/Dev%20Tools/Deploy/ko/reference/#_1)を参照してください。

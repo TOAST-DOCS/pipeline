@@ -1,5 +1,9 @@
 ## Dev Tools > Pipeline > リリースノート
 
+### 2023. 12. 19.
+* NHN Cloud Deployの配布シナリオを実行できる **機能 - NHN Cloud Deploy Service** ステージが追加されました。[Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/#-)で使い方を確認できます。
+* Github自動実行設定に**アーティファクト**項目が追加されました。 特定のファイルをアーティファクトとして設定し、Git push eventが発生すると、そのファイルが含まれているかどうかによってパイプラインを実行します。
+
 ### 2023. 10. 31.
 * 承認なしで以降のステージを実行できないように管理する**機能 - 承認管理**ステージが追加されました。[Pipelineステージガイド](/Dev%20Tools/Pipeline/ko/stage-guide/#-)で詳細を確認できます。
 * パイプラインテンプレートガイド内にサンプルシナリオが追加されました。[Pipelineテンプレートガイド](/Dev%20Tools/Pipeline/ko/pipeline-management/#_2)から使用方法およびテンプレートファイルをダウンロードできます。

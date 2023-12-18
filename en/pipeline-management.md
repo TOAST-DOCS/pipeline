@@ -151,9 +151,9 @@ Autorun lets you configure your pipeline to run automatically when an event occu
 
 Click **Autorun Settings** and click **Add** in the **Autorun Settings** dialog box.
 
-![pipeline-guide-15](http://static.toastoven.net/prod_pipeline/2023-09-26/pipeline-guide-15.png)
 
 ### GitHub Autorun Settings
+![pipeline-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-09-26/pipeline-guide-15.png)
 
 Using a GitHub webhook, you can configure your pipeline to run automatically when an event occurs in a repository on GitHub or GitHub Enterprise. Set the autorun type to GitHub, enter the repository's organization or user name, project name, branch, and secret, and click **OK**.
 To set autorun by tag, enter the tag name in the **Branch or Tag** item, such as 'refs/tags/tagname'. You can use a JAVA regular expression for the 'tagname' part.
@@ -177,9 +177,17 @@ Enter as follows in **Build Job Parameter** from Set Build Tool.
 | Secret | The value entered in the secret of the pipeline autorun settings |
 | event | push event, create event(When using tags) |
 
-![pipeline-guide-17](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-17.png)
+
+You can set it to autorun only when **specific files** are **pushed**. (up to 5)
+
+![pipeline-guide-33](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/pipeline-guide-33.png)
+
+For **Source Repository Name**, select the source repository you registered in Preferences.
+For **File Path**, enter the path containing the file in the selected source repository.
 
 #### GitLab Autorun Settings
+
+![pipeline-guide-17](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-03-28/pipeline-guide-17.png)
 
 Using a GitLab webhook, you can configure your pipeline to run automatically when an event occurs in the GitLab repository. Set the autorun type to GitLab, enter the repository's organization or user name, project name, and branch, and click **OK**. GitLab secret setting will be supported in the future.
 
