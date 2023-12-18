@@ -1,5 +1,9 @@
 ## Dev Tools > Pipeline > Release Notes
 
+### December 19, 2023
+* The **Feature - NHN Cloud Deploy Service** stage has been added to run deployment scenarios of NHN Cloud Deploy. For how to use it, see [Pipeline Stage Guide](/Dev%20Tools/Pipeline/en/stage-guide/#-).
+* Added **Artifact** to the GitHub Autorun settings. Set a specific file as an artifact to run a pipeline when a Git push event occurs, based on the inclusion or exclusion of that file.
+
 ### October 31, 2023
 * Added the **Feature - Approval Management** stage that prevents subsequent stages from running without approval. For more information, see [Pipeline Stage Guide](/Dev%20Tools/Pipeline/en/stage-guide/#-).
 * Added sample scenarios in the Pipeline Template Guide. You can download how-to and template files from [Pipeline Template Guide](/Dev%20Tools/Pipeline/en/pipeline-management/#_2).

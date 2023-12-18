@@ -82,6 +82,38 @@ Pipelineに追加できる外部システムは次のとおりです。
 
 ![env-config-guide-15](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-15.png)
 
+### NHN Cloudセキュリティ設定
+
+#### User Access Key ID, Secret Access Key作成
+
+コンソール右上のID領域をクリックすると、次のような**APIセキュリティ設定**メニューを確認できます。
+
+![env-config-guide-16](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-16.png)
+
+**APIセキュリティ設定**で**User Access Key ID**作成をクリックして、NHN Cloudセキュリティ設定を登録する際に入力が必要な**User Access Key ID**と**Secret Access Key**を作成できます。
+
+![env-config-guide-17](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-17.png)
+
+![env-config-guide-18](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-18.png)
+
+**User Access Key ID**、**Secret Access Key**を作成すると、次のような**秘密鍵発行完了**画面が表示されます。秘密鍵はポップアップ画面で1度しか表示されないため、忘れないよう記録して使用します。
+
+![env-config-guide-19](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-19.png)
+
+セキュリティ設定を登録する際に必要な**User Access Key ID**は、秘密鍵発行完了ポップアップを閉じると確認できます。
+
+#### NHN Cloudセキュリティ設定登録
+NHN Cloudセキュリティ設定を追加すると**機能 - NHN Cloud Deployサービス**ステージを使用し、NHN Cloud Deployサービスを通じて配布できます。
+
+![env-config-guide-20](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-20.png)
+
+**環境設定** > **NHN Cloudセキュリティ設定**画面で**+セキュリティ設定追加**をクリックして新規セキュリティ設定を追加できます。
+
+![env-config-guide-21](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-21.png)
+
+NHN Cloudセキュリティ設定情報を入力し、**API正常呼び出し確認**の**確認**をクリックします。接続確認後**確認**をクリックします。
+
+![env-config-guide-22](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-22.png)
 
 ### Pipeline IP
 Pipelineと連動したシステムが正常に動作しない場合はACLを確認してください。Pipelineが使用するIPアドレスは**211.56.1.0/27**です。
