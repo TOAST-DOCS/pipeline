@@ -170,7 +170,7 @@ The **Pipeline APPROVAL ADMIN** role can be granted from the project's Member Ma
 
 #### Feature - Run NHN Cloud Deploy Service Deployment
 You can run the deployment using the NHN Cloud Deploy service on the stage.
-- If the **command type**of the artifact you want to run the deployment on is **SSH**, the **Run NHN Cloud Deploy Service Deployment** is not supported, only **Cloud Agenet** is supported. For more information, refer to the [Deploy User Guide](https://docs.nhncloud.com/en/Dev%20Tools/Deploy/en/console-guide/#_8).
+- If the **command type**of the artifact you want to run the deployment on is **SSH**, the **Run NHN Cloud Deploy Service Deployment** is not supported, only **Cloud Agent** is supported. For more information, refer to the [Deploy User Guide](https://docs.nhncloud.com/en/Dev%20Tools/Deploy/en/console-guide/#_8).
 
 ![stage-guide-19](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/stage-guide-19.png)
 
