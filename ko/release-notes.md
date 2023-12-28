@@ -1,5 +1,8 @@
 ## Dev Tools > Pipeline > 릴리스 노트
 
+### 2024. 01. 23.
+*  NHN Container Service(NCS)의 템플릿과 워크로드를 생성할 수 있는 **배포 - NCS** 스테이지가 추가되었습니다.
+
 ### 2023. 12. 19.
 * NHN Cloud Deploy의 배포 시나리오를 실행할 수 있는 **기능 - NHN Cloud Deploy Service** 스테이지가 추가되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#-)에서 사용 방법을 확인할 수 있습니다.
 * Github 자동 실행 설정에 **아티팩트** 항목이 추가되었습니다. 특정 파일을 아티팩트로 설정하여 Git push event가 발생하면 해당 파일의 포함 유무에 따라 파이프라인을 실행시킵니다.
