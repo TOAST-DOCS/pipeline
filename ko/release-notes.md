@@ -2,6 +2,8 @@
 
 ### 2024. 01. 23.
 *  NHN Container Service(NCS)의 템플릿과 워크로드를 생성할 수 있는 **배포 - NCS** 스테이지가 추가되었습니다.
+* NHN Cloud Deploy Service 스테이지에서, 시나리오 선택 시 **시나리오 확인** 버튼이 추가 되었습니다.
+    * **시나리오 확인** 버튼을 통하여, 해당하는 시나리오의 태스크정보들을 확인할 수 있습니다.
 
 ### 2023. 12. 19.
 * NHN Cloud Deploy의 배포 시나리오를 실행할 수 있는 **기능 - NHN Cloud Deploy Service** 스테이지가 추가되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#-)에서 사용 방법을 확인할 수 있습니다.
