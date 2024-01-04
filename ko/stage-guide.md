@@ -136,7 +136,7 @@ NCS 템플릿과 워크로드를 생성할 수 있는 스테이지 입니다.
 **컨테이너 설정**에서는 하나 이상의 컨테이너를 **추가**해야하며 자세한 설명은 [NCS가이드](/Container/NCS/ko/user-guide)를 참고하십시오.  
 **워크로드 설정**의 자세한 설명은 [NCS 가이드](/Container/NCS/ko/user-guide)를 참고하십시오.
 
-![stage-guide-21.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-01-23/stage-guide-21.png)
+![stage-guide-21.png](https://static.toastoven.net/prod_pipeline/2024-01-23/stage-guide-21.png)
 ### 기능
 추가 기능을 제공하는 스테이지입니다.
 
