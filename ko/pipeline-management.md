@@ -88,19 +88,13 @@ GitHub 및 GitLab은 브랜치를 입력하지 않을 경우 master 브랜치를
 
 #### 배포 설정
 
-배포 설정은 환경 설정에서 추가한 배포 대상에 컨테이너 이미지를 배포하는 방법을 설정합니다.<br>
-**Manifest 소스**는 text / artifact 로 선택이 가능합니다.<br>
-설정방법은 다음과 같습니다.
+배포 설정은 환경 설정에서 추가한 배포 대상에 컨테이너 이미지를 배포하는 방법을 설정합니다.
 
-![pipeline-guide-08](http://static.toastoven.net/prod_pipeline/2024-01-23/pipeline-guide-08.png)
+![pipeline-guide-08](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-08.png)
 
-text를 선택할 경우 : 스테이지 이름, 배포 대상, 배포에 사용할 Kubernetes Manifest를 입력한 후 **다음**을 클릭합니다. Manifest를 작성하는 방법은 [Kubernetes 문서](https://kubernetes.io/docs/concepts/workloads/controllers/deployment )를 참고하십시오.
+스테이지 이름, 배포 대상, 배포에 사용할 Kubernetes Manifest를 입력한 후 **다음**을 클릭합니다. Manifest를 작성하는 방법은 [Kubernetes 문서](https://kubernetes.io/docs/concepts/workloads/controllers/deployment )를 참고하십시오.
 
-![pipeline-guide-09-01](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-09.png)
-
-artifact를 선택할 경우 : 아티팩트 정의에 있는 저장소 타입, 소스 저장소, 경로, 브렌치 이름을 입력한 후 **다음**을 클릭합니다. 
-
-![pipeline-guide-09-02](https://static.toastoven.net/prod_pipeline/2024-01-23/pipeline-guide-09-02.png )
+![pipeline-guide-09](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-09.png)
 
 빌드 설정에서 태그 포맷을 사용했다면 도커(Docker) 이미지 입력 부분에 태그를 위와 같이`_{BUILD_NUMBER}`로 입력합니다. 이미지의 태그에 `_{BUILD_NUMBER}`가 입력된 경우 가장 최신의 번호로 입력되어 배포됩니다.
 태그 포맷을 사용하려면 빌드 스테이지 및 NHN Cloud 빌드 도구를 설정해야 합니다.
