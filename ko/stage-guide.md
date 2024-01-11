@@ -124,16 +124,16 @@ Kubernetes 환경에 배포를 하는 스테이지입니다.
 ![stage-guide-10](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-10.png)
 
 #### 배포 - NCS
-NCS 템플릿과 워크로드를 생성할 수 있는 스테이지 입니다.  
+NCS 템플릿과 워크로드를 생성할 수 있는 스테이지입니다.  
 **NCS Appkey**에는 NCS 상품의 appkey를 입력합니다.  
-**NCS 실행 멤버**는 현재 스테이지 편집중인 멤버로 설정되며, 설정된 멤버는 NCS를 이용할 수 있는 권한이 필요합니다.  
+**NCS 실행 멤버**는 현재 스테이지 편집 중인 멤버로 설정되며, 설정된 멤버는 NCS를 이용할 수 있는 권한이 필요합니다.  
 **네트워크**는 **Subnet**의 목록이 표시되며 반드시 하나를 선택해야 합니다.  
 **이미지 URL**은 이미지 레지스트리 주소와 이미지명 및 태그를 입력합니다.
  - 예시   
 `example-kr1-registry.container.nhncloud.com/registry/ubuntu:18.04`
 
 이미지의 태그에 `_{BUILD_NUMBER}`로 입력하면 태그 포맷으로 빌드된 이미지 중 가장 최근 번호의 이미지로 배포할 수 있습니다.  
-**컨테이너 설정**에서는 하나 이상의 컨테이너를 **추가**해야하며 자세한 설명은 [NCS가이드](/Container/NCS/ko/user-guide)를 참고하십시오.  
+**컨테이너 설정**에서는 하나 이상의 컨테이너를 **추가**해야 하며 자세한 설명은 [NCS가이드](/Container/NCS/ko/user-guide)를 참고하십시오.  
 **워크로드 설정**의 자세한 설명은 [NCS 가이드](/Container/NCS/ko/user-guide)를 참고하십시오.
 
 ![stage-guide-21.png](https://static.toastoven.net/prod_pipeline/2024-01-23/stage-guide-21.png)
