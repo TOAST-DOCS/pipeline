@@ -1,13 +1,17 @@
 ## Dev Tools > Pipeline > Release Notes
 
+### December 19, 2023
+* The **Feature - NHN Cloud Deploy Service** stage has been added to run deployment scenarios of NHN Cloud Deploy. For how to use it, see [Pipeline Stage Guide](/Dev%20Tools/Pipeline/zh/stage-guide/#-).
+* Added **Artifact** to the GitHub Autorun settings. Set a specific file as an artifact to run a pipeline when a Git push event occurs, based on the inclusion or exclusion of that file.
+
 ### October 31, 2023
 * Added the **Feature - Approval Management** stage that prevents subsequent stages from running without approval. For more information, see [Pipeline Stage Guide](/Dev%20Tools/Pipeline/zh/stage-guide/#-).
 * Added sample scenarios in the Pipeline Template Guide. You can download how-to and template files from [Pipeline Template Guide](/Dev%20Tools/Pipeline/zh/pipeline-management/#_2).
 
 ### September 26, 2023
 * Added the pipeline template feature. For how to use the feature, see [Pipeline User Guide](/Dev%20Tools/Pipeline/ko/pipeline-management/#_1).
-  * Create a pipeline by uploading template files(JSON format).
-  * Download pipeline template files from **View JSON** > **Download Pipeline Template**.
+    * Create a pipeline by uploading template files(JSON format).
+    * Download pipeline template files from **View JSON** > **Download Pipeline Template**.
 * You can use tags in **Branch or Tag** from Github Autorun Settings. Use tags to perform builds on autorun with tags.
 
 ### August 29, 2023
@@ -18,7 +22,7 @@
 
 ### June 27, 2023
 * Deployment - Added the Deploy Target Management feature that allows you to check the output deployed to the Deploy stage. For more information, see [Pipeline User Guide](/Dev%20Tools/Pipeline/zh/deploy-target-monitoring).
-  * Kubernetes workloads and services can be found in Deploy Target Management.
+    * Kubernetes workloads and services can be found in Deploy Target Management.
 * Added the [Feature - Judgement (Run Management)] and [Feature - Precondition (Run Condition)] stages that allow for pipeline branch processing. For more information, see [Pipeline Stage Guide](/Dev%20Tools/Pipeline/zh/stage-guide/#feature-judgement-run-management) and [Pipeline User Guide](/Dev%20Tools/Pipeline/zh/pipeline-management/#run-history-and-work).
 
 ### March 28, 2023
@@ -33,9 +37,9 @@
 * Added a feature to assign dynamically created tags by using the image tag format in the build stage.
 * Added a feature to deploy with the most recent tag among tags dynamically created using the image tag format in the deployment stage.
 * Changes to how image autorun is executed as follows.
-  * Tag value is excluded from required values from autorun settings.
-  * Changed to automatically run the entered tag and a matched tag with regular expression are pushed.
-  * Changed to automatically run a tag when it is pushed with tags excluding latest as long as the tag is not entered.
+    * Tag value is excluded from required values from autorun settings.
+    * Changed to automatically run the entered tag and a matched tag with regular expression are pushed.
+    * Changed to automatically run a tag when it is pushed with tags excluding latest as long as the tag is not entered.
 
 ### December 27, 2022
 * Fixed an issue where, when creating a pipeline, you have to select a source repository in the Source Settings step to go to the previous stage.
@@ -51,10 +55,10 @@
 * Changed the API endpoint domain from api-pipeline.cloud.toast.com to kr1-pipeline.api.nhncloudservice.com.
 
 ### May 24, 2022
-* Added the connection check feature for the source repository, image registry, build tool, and deployment target. You can see how to use it in the [Pipeline User Guide](/Dev%20Tools/Pipeline/zh/environment-config).
+* Added the connection check feature for the source repository, image registry, build tool, and deployment target. You can see how to use it in the [Pipeline User Guide](/Dev%20Tools/Pipeline/zh/environment-config). 
 * Added details to CloudTrail.
-  * Added details for deletion of settings
-  * Added details about pipeline execution
+    * Added details for deletion of settings
+    * Added details about pipeline execution
 
 ### February 22, 2022
 * Added GitLab to the source repository. You can find how to use it in the [Pipeline User Guide](/Dev%20Tools/Pipeline/zh/environment-config/#source-repository).
@@ -62,7 +66,7 @@
 ### January 25, 2022
 * Added an API to run Pipeline. You can find how to use it in the [Pipeline API Guide](/Dev%20Tools/Pipeline/zh/api-guide/#pipeline).
 * Known issues (to be improved after analyzing the cause)
-  * When creating a development environment, if you specify a value for the development environment constraints, the development environment creation fails.
+    * When creating a development environment, if you specify a value for the development environment constraints, the development environment creation fails.
 
 ### May 25, 2021
 * Added integration with CloudTrail. You can check the events that occurred in Pipeline in CloudTrail.

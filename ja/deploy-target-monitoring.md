@@ -1,4 +1,4 @@
-## Dev Tools > Pipeline > コンソール使用ガイド > 配布対象管理
+## Dev Tools > Pipeline > コンソール使用ガイド > Deployment Target Management
 
 ### 配布対象管理
 

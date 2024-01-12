@@ -1,4 +1,4 @@
-## Dev Tools > Pipeline > Console User Guide > Env Configuration
+## Dev Tools > Pipeline > Console User Guide > Environment Configuration
 
 ### Set Up an Environment
 
