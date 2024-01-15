@@ -122,6 +122,20 @@ Kubernetes環境に配布を行うステージです。
 
 ![stage-guide-10](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-10.png)
 
+#### 配布 - NCS
+NCSテンプレートとワークロードを作成できるステージです。 
+**NCS Appkey**にはNCS商品のappkeyを入力します。 
+**NCS実行メンバー**は現在ステージ編集中のメンバーに設定され、設定されたメンバーはNCSを利用できる権限が必要です。 
+**ネットワーク**は**Subnet**のリストが表示され、必ず一つを選択する必要があります。 
+**イメージURL**はイメージレジストリアドレスとイメージ名およびタグを入力します。
+ - 例  
+`example-kr1-registry.container.nhncloud.com/registry/ubuntu:18.04`
+
+イメージのタグに`_{BUILD_NUMBER}`と入力すると、タグフォーマットでビルドされたイメージの中で最も新しい番号のイメージで配布できます。  
+**コンテナ設定**では一つ以上のコンテナを**追加**する必要があり、詳しい説明は[NCSガイド](/Container/NCS/ko/user-guide)を参考してください。  
+**ワークロード設定**の詳しい説明は[NCSガイド](/Container/NCS/ko/user-guide)を参照してください。
+
+![stage-guide-21.png](https://static.toastoven.net/prod_pipeline/2024-01-23/stage-guide-21.png)
 ### 機能
 追加機能を提供するステージです。
 
