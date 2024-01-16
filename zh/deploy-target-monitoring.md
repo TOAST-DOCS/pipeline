@@ -1,8 +1,5 @@
 ## Dev Tools > Pipeline > Console User Guide > Deployment Target Management
 
-<!-- omit in toc -->
-### Deployment Target Management
-
 You can identify output created by deploying with Pipeline in the **Deployment Target Management** menu.
 
 ## Deployment Target
