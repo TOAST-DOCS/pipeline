@@ -132,8 +132,8 @@ NCSテンプレートとワークロードを作成できるステージです�
 `example-kr1-registry.container.nhncloud.com/registry/ubuntu:18.04`
 
 イメージのタグに`_{BUILD_NUMBER}`と入力すると、タグフォーマットでビルドされたイメージの中で最も新しい番号のイメージで配布できます。  
-**コンテナ設定**では一つ以上のコンテナを**追加**する必要があり、詳しい説明は[NCSガイド](/Container/NCS/ko/user-guide)を参考してください。  
-**ワークロード設定**の詳しい説明は[NCSガイド](/Container/NCS/ko/user-guide)を参照してください。
+**コンテナ設定**では一つ以上のコンテナを**追加**する必要があり、詳しい説明は[NCSガイド](/Container/NCS/ja/user-guide)を参考してください。  
+**ワークロード設定**の詳しい説明は[NCSガイド](/Container/NCS/ja/user-guide)を参照してください。
 
 ![stage-guide-21.png](https://static.toastoven.net/prod_pipeline/2024-01-23/stage-guide-21.png)
 ### 機能
