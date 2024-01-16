@@ -9,14 +9,14 @@
 * Added sample scenarios in the Pipeline Template Guide. You can download how-to and template files from [Pipeline Template Guide](/Dev%20Tools/Pipeline/zh/pipeline-management/#_2).
 
 ### September 26, 2023
-* Added the pipeline template feature. For how to use the feature, see [Pipeline User Guide](/Dev%20Tools/Pipeline/ko/pipeline-management/#_1).
+* Added the pipeline template feature. For how to use the feature, see [Pipeline User Guide](/Dev%20Tools/Pipeline/zh/pipeline-management/#_1).
     * Create a pipeline by uploading template files(JSON format).
     * Download pipeline template files from **View JSON** > **Download Pipeline Template**.
 * You can use tags in **Branch or Tag** from Github Autorun Settings. Use tags to perform builds on autorun with tags.
 
 ### August 29, 2023
-* Added the **Feature - Run the Pipeline** stage to run entire other pipelines. See [](/Dev%20Tools/Pipeline/ko/stage-guide/#_4)Pipeline User Guide[](/Dev%20Tools/Pipeline/ko/stage-guide/#_4).
-* The development environment feature provided by the Pipeline service is no longer provided. The development environment feature is available as a notebook of AI EasyMaker service. More details can be found in the [](https://docs.nhncloud.com/ko/Machine%20Learning/AI%20EasyMaker/ko/console-guide/#_2)AI EasyMaker User Guide[](https://docs.nhncloud.com/ko/Machine%20Learning/AI%20EasyMaker/ko/console-guide/#_2).
+* Added the **Feature - Run the Pipeline** stage to run entire other pipelines. See [Pipeline User Guide](/Dev%20Tools/Pipeline/zh/stage-guide/#_4).
+* The development environment feature provided by the Pipeline service is no longer provided. The development environment feature is available as a notebook of AI EasyMaker service. More details can be found in the [AI EasyMaker User Guide](https://docs.nhncloud.com/zh/Machine%20Learning/AI%20EasyMaker/zh/console-guide/#_2).
 * Renamed **Deployment Target Monitoring** to **Deployment Target Management**.
 * Added the feature to manage workloads deployed to clusters via Pipeline and check the workload history to the **Deployment Target Management**.
 
