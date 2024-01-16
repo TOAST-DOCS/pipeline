@@ -151,6 +151,7 @@ Autorun lets you configure your pipeline to run automatically when an event occu
 
 Click **Autorun Settings** and click **Add** in the **Autorun Settings** dialog box.
 
+
 ### GitHub Autorun Settings
 ![pipeline-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-09-26/pipeline-guide-15.png)
 
@@ -290,4 +291,4 @@ Runs according to the stage settings, and the run history is updated every 5 sec
 
 ![pipeline-guide-32](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-32.png)
 
-If you select **Stop Running Stage**, running stops for that branch, and if you cancel a running stage, the entire selected pipeline running is canceled.
+ If you select **Stop Running Stage**, running stops for that branch, and if you cancel a running stage, the entire selected pipeline running is canceled.
