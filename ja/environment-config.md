@@ -1,4 +1,4 @@
-## Dev Tools > Pipeline > コンソール使用ガイド > Env Configuration
+## Dev Tools > Pipeline > コンソール使用ガイド > Environment Configuration
 
 ### 環境設定
 

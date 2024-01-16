@@ -52,7 +52,7 @@ The guide is based on Github during the source stage. A detailed guide to the st
 The **image storage settings** and **deployment target settings also**need to be modified after name resolution.
 
 #### Build Stage
-The guide is based on the NHN Cloud build tool during the build stage. You can find detailed guides for the stages in the [Pipeline Stage Guide](/Dev%20Tools/Pipeline/ko/stage-guide/#_2).
+The guide is based on the NHN Cloud build tool during the build stage. You can find detailed guides for the stages in the [Pipeline Stage Guide](/Dev%20Tools/Pipeline/zh/stage-guide/#_2).
 
 ``` json
 {
@@ -79,7 +79,7 @@ The guide is based on the NHN Cloud build tool during the build stage. You can f
 ```
 
 #### Deploy Stage
-The Deploy stage is guided by the Deploy stage. You can find a detailed guide to the stages in the [Pipeline stage guide](/Dev%20Tools/Pipeline/ko/stage-guide/#_3).
+The Deploy stage is guided by the Deploy stage. You can find a detailed guide to the stages in the [Pipeline stage guide](/Dev%20Tools/Pipeline/zh/stage-guide/#_3).
 
 ``` json
 {
@@ -179,7 +179,7 @@ You can find a detailed guide to the Webhook stage in the [Pipeline stage guide]
 [Download the template file](http://static.toastoven.net/prod_pipeline/template/template-scenario-03.json)
 
 You can set up Github (GitLab, image repository) autoruns by setting up the Trigger area of the template.
-There is additional guidance on inputs in the Autorun section of the[Pipeline console user guide](/Dev%20Tools/Pipeline/ko/pipeline-management/#_9).
+There is additional guidance on inputs in the Autorun section of the[Pipeline console user guide](/Dev%20Tools/Pipeline/zh/pipeline-management/#_9).
 ![template-guide-08.png](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-08.png)
 ``` json
 "triggers": [
@@ -202,7 +202,7 @@ This scenario can be utilized when deploying to separate environments, such as d
 ![template-guide-10.png](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-10.png)As shown in the pipeline written in the example, you can select `develop`, `real`to deploy to the environment of your choice.
 You can change it to any other value, and the value of the Precondition Stage behind it will need to be modified equally.
 
-You can find detailed guides for the Judgment and Precondition stages in the [Pipeline stage guides](/Dev%20Tools/Pipeline/ko/stage-guide/#_4).
+You can find detailed guides for the Judgment and Precondition stages in the [Pipeline stage guides](/Dev%20Tools/Pipeline/zh/stage-guide/#_4).
 
 ```json
 [
@@ -275,7 +275,7 @@ You can find detailed guides for the Judgment and Precondition stages in the [Pi
 ![template-guide-11.png](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-11.png)
 In scenario #4, you can add an approval stage before deploying to a real environment, configuring it to be deployed after approval.
 
-You can find a detailed guide to the approval management stage in the [Pipeline stage guide](/Dev%20Tools/Pipeline/ko/stage-guide/#_4).
+You can find a detailed guide to the approval management stage in the [Pipeline stage guide](/Dev%20Tools/Pipeline/zh/stage-guide/#_4).
 
 ```json
 {

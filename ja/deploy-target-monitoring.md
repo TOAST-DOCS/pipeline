@@ -1,6 +1,4 @@
-## Dev Tools > Pipeline > コンソール使用ガイド > 配布対象管理
-
-### 配布対象管理
+## Dev Tools > Pipeline > コンソール使用ガイド > Deployment Target Management
 
 Pipelineで配布して作成された結果物を**配布対象管理**メニューで確認できます。
 
