@@ -182,7 +182,7 @@ Judgement(実行管理)ステージで渡された設定値と**実行条件の�
 
 #### 機能 - NHN Cloud Deployサービス配布実行
 ステージでNHN Cloud Deployサービスを使用して配布を実行できます。
-- 配布を実行するアーティファクトの**Command Type**が**SSH**である場合、**NHN Cloud Deployサービス配布実行**機能をサポートしておらず、**Cloud Agent**である場合にのみサポートします。関連する内容については[Deploy使用ガイド](https://docs.nhncloud.com/ko/Dev%20Tools/Deploy/ko/console-guide/#_8)を参照してください。
+- 配布を実行するアーティファクトの**Command Type**が**SSH**である場合、**NHN Cloud Deployサービス配布実行**機能をサポートしておらず、**Cloud Agent**である場合にのみサポートします。関連する内容については[Deploy使用ガイド](https://docs.nhncloud.com/ja/Dev%20Tools/Deploy/ja/console-guide/#_8)を参照してください。
 
 ![stage-guide-19](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/stage-guide-19.png)
 
@@ -205,4 +205,4 @@ Judgement(実行管理)ステージで渡された設定値と**実行条件の�
 
 **配布ノート**には配布実行情報を入力できます。
 
-詳しい説明については[Deploy使用ガイド](https://docs.nhncloud.com/ko/Dev%20Tools/Deploy/ko/reference/#_1)を参照してください。
+詳しい説明については[Deploy使用ガイド](https://docs.nhncloud.com/ja/Dev%20Tools/Deploy/ja/reference/#_1)を参照してください。
