@@ -122,20 +122,6 @@ Enter **Namespace**, **Resource Type**, and **Resource Name**. You can delete th
 
 ![stage-guide-10](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-10.png)
 
-#### Deployment - NCS
-This is a stage to create NCS templates and workloads.  
-**For NCS Appkey**, enter the appkey for your NCS product.  
-The **NCS execute member** is set to the member currently editing the stage, and the set member needs permission to use NCS.  
-**Network**displays a list of **subnets**, and you must select one.  
-**For Image URL**, enter the image registry address and the image name and tags.
- - Example   
-`example-kr1-registry.container.nhncloud.com/registry/ubuntu:18.04`
-
-Enter `_{BUILD_NUMBER}`in the image's tag to deploy as the most recent numbered image built in the tag format.  
-In the **Container settings**, you must **add** one or more containers, see the [NCS guide](/Container/NCS/en/user-guide)for a detailed explanation.
-For a detailed description of **Workload Settings**, see the [NCS guide](/Container/NCS/en/user-guide).
-
-![stage-guide-21.png](https://static.toastoven.net/prod_pipeline/2024-01-23/stage-guide-21.png)
 ### Feature
 This is a stage to provide additional features.
 
