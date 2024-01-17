@@ -94,11 +94,11 @@ GitHub 및 GitLab은 브랜치를 입력하지 않을 경우 master 브랜치를
 
 ![pipeline-guide-08](http://static.toastoven.net/prod_pipeline/2024-01-23/pipeline-guide-08.png)
 
-text를 선택할 경우: 스테이지 이름, 배포 대상, 배포에 사용할 Kubernetes Manifest를 입력한 후 **다음**을 클릭합니다. Manifest를 작성하는 방법은 [Kubernetes 문서](https://kubernetes.io/docs/concepts/workloads/controllers/deployment )를 참고하십시오.
+"text"를 선택할 경우: 스테이지 이름, 배포 대상, 배포에 사용할 Kubernetes Manifest를 입력한 후 **다음**을 클릭합니다. Manifest를 작성하는 방법은 [Kubernetes 문서](https://kubernetes.io/docs/concepts/workloads/controllers/deployment )를 참고하십시오.
 
 ![pipeline-guide-09-01](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-09.png)
 
-artifact를 선택할 경우: 아티팩트 정의에 있는 저장소 타입, 소스 저장소, 경로, 브랜치 이름을 입력한 후 **다음**을 클릭합니다.
+"artifact"를 선택할 경우: "아티팩트 정의"에 있는 저장소 타입, 소스 저장소, 경로, 브랜치 이름을 입력한 후 **다음**을 클릭합니다.
 
 ![pipeline-guide-09-02](https://static.toastoven.net/prod_pipeline/2024-01-23/pipeline-guide-09-02.png)
 
