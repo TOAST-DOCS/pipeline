@@ -1,5 +1,11 @@
 ## Dev Tools > Pipeline > Release Notes
 
+### January 23, 2024.
+*  Added **Deployment - NCS** stage to create templates and workloads for NHN Container Service (NCS).
+* Added the Confirm Scenario button when selecting a scenario in the NHN Cloud Deploy Service stage.
+    * Click **Confirm Scenario**to view task information for that scenario.
+* Added the **Deployment History Management** page, where you can view the history of pipeline runs and deployment target tasks. You can see how to use it in the [Deployment History Management Guide](/Dev%20Tools/Pipeline/zh/deploy-history-management).
+
 ### December 19, 2023
 * The **Feature - NHN Cloud Deploy Service** stage has been added to run deployment scenarios of NHN Cloud Deploy. For how to use it, see [Pipeline Stage Guide](/Dev%20Tools/Pipeline/zh/stage-guide/#-).
 * Added **Artifact** to the GitHub Autorun settings. Set a specific file as an artifact to run a pipeline when a Git push event occurs, based on the inclusion or exclusion of that file.
