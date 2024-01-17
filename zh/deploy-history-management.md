@@ -27,4 +27,4 @@ View results filtered by **deployment target name** and **status**.
 Download the results of your query by clicking **Download Excel**.
 ![deploy-history-management-7](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-01-23/deploy-history-management-7.png)
 
-Detailed descriptions of the fields can be found on the [Deployment Target Management](/Dev%20Tools/Pipeline/ko/deploy-target-monitoring/) page.
+Detailed descriptions of the fields can be found on the [Deployment Target Management](/Dev%20Tools/Pipeline/zh/deploy-target-monitoring/) page.
