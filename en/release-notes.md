@@ -22,7 +22,7 @@
 
 ### August 29, 2023
 * Added the **Feature - Run the Pipeline** stage to run entire other pipelines. See [Pipeline User Guide](/Dev%20Tools/Pipeline/en/stage-guide/#_4).
-* The development environment feature provided by the Pipeline service is no longer provided. The development environment feature is available as a notebook of AI EasyMaker service. More details can be found in the [AI EasyMaker User Guide](https://docs.nhncloud.com/en/Machine%20Learning/AI%20EasyMaker/en/console-guide/#_2).
+* The development environment feature provided by the Pipeline service is no longer provided. The development environment feature is available as a notebook of AI EasyMaker service. More details can be found in the [AI EasyMaker User Guide](/Machine%20Learning/AI%20EasyMaker/en/console-guide/#_2).
 * Renamed **Deployment Target Monitoring** to **Deployment Target Management**.
 * Added the feature to manage workloads deployed to clusters via Pipeline and check the workload history to the **Deployment Target Management**.
 

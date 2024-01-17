@@ -22,7 +22,7 @@
 
 ### 2023. 08. 29.
 * 他のパイプライン全体を実行できる**機能 - 他パイプライン実行**ステージが追加されました。[Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ja/stage-guide/#_4)で使用方法を確認できます。
-* Pipelineサービスで提供していた開発環境機能は提供されません。開発環境機能はAI EasyMakerサービスのノートパソコンで利用できます。詳細は[AI EasyMakerユーザーガイド](https://docs.nhncloud.com/ja/Machine%20Learning/AI%20EasyMaker/ja/console-guide/#_2)で確認できます。
+* Pipelineサービスで提供していた開発環境機能は提供されません。開発環境機能はAI EasyMakerサービスのノートパソコンで利用できます。詳細は[AI EasyMakerユーザーガイド](/Machine%20Learning/AI%20EasyMaker/ja/console-guide/#_2)で確認できます。
 * **配布対象モニタリング**の名称が**配布対象管理**に変更されます。
 * **配布対象管理**にPipelineを通じてクラスタに配布されたワークロードを管理し、履歴を確認できる機能が追加されました。
 

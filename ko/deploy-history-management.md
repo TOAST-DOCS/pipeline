@@ -27,4 +27,4 @@ Pipeline 실행 이력과 배포 대상 작업 이력을 **배포 이력 관리*
 **엑셀 다운로드**를 클릭해 조회한 결과를 다운로드할 수 있습니다.
 ![deploy-history-management-7](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-01-23/deploy-history-management-7.png)
 
-필드에 대한 자세한 설명은 [배포 대상 관리](https://docs.nhncloud.com/ko/Dev%20Tools/Pipeline/ko/deploy-target-monitoring/) 페이지에서 확인 가능합니다.
+필드에 대한 자세한 설명은 [배포 대상 관리](/Dev%20Tools/Pipeline/ko/deploy-target-monitoring/) 페이지에서 확인 가능합니다.
