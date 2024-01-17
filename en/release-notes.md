@@ -1,7 +1,6 @@
 ## Dev Tools > Pipeline > Release Notes
 
 ### January 23, 2024.
-*  Added **Deployment - NCS** stage to create templates and workloads for NHN Container Service (NCS).
 * Added the Confirm Scenario button when selecting a scenario in the NHN Cloud Deploy Service stage.
     * Click **Confirm Scenario**to view task information for that scenario.
 * Added the **Deployment History Management** page, where you can view the history of pipeline runs and deployment target tasks. You can see how to use it in the [Deployment History Management Guide](/Dev%20Tools/Pipeline/en/deploy-history-management).

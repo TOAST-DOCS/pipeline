@@ -1,7 +1,6 @@
 ## Dev Tools > Pipeline > リリースノート
 
 ### 2024. 01. 23.
-*  NHN Container Service(NCS)のテンプレートとワークロードを作成できる**配布 - NCS** ステージが追加されました。
 * NHN Cloud Deploy Serviceステージでシナリオ選択時にシナリオ確認ボタンが追加されました。
     * **シナリオ確認**をクリックすると、該当シナリオのタスク情報を確認できます。
 * Pipeline実行履歴と配布対象作業履歴を確認できる**配布履歴管理**ページが追加されました。[配布履歴管理ガイド](/Dev%20Tools/Pipeline/ja/deploy-history-management)で使い方を確認できます。
