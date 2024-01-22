@@ -94,11 +94,11 @@ Below is how to set.
 
 ![pipeline-guide-08](http://static.toastoven.net/prod_pipeline/2024-01-23/pipeline-guide-08.png)
 
-When text is selected: Enter the stage name, deployment target, and Kubernetes Manifest to use for deployment, and click **Next**. See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment) for how to write a Manifest.
+When "text" is selected: Enter the stage name, deployment target, and Kubernetes Manifest to use for deployment, and click **Next**. See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment) for how to write a Manifest.
 
 ![pipeline-guide-09-01](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-09.png)
 
-When artifact is selected: Enter a repository type, source repository, path, and branch name in Artifact Definition and click **Next**.
+When "artifact" is selected: Enter a repository type, source repository, path, and branch name in "Artifact Definition" and click **Next**.
 
 ![pipeline-guide-09-02](https://static.toastoven.net/prod_pipeline/2024-01-23/pipeline-guide-09-02.png)
 
