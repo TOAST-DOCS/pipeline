@@ -1,5 +1,10 @@
 ## Dev Tools > Pipeline > Release Notes
 
+### January 23, 2024.
+* Added the Confirm Scenario button when selecting a scenario in the NHN Cloud Deploy Service stage.
+    * Click **Confirm Scenario**to view task information for that scenario.
+* Added the **Deployment History Management** page, where you can view the history of pipeline runs and deployment target tasks. You can see how to use it in the [Deployment History Management Guide](/Dev%20Tools/Pipeline/en/deploy-history-management).
+
 ### December 19, 2023
 * The **Feature - NHN Cloud Deploy Service** stage has been added to run deployment scenarios of NHN Cloud Deploy. For how to use it, see [Pipeline Stage Guide](/Dev%20Tools/Pipeline/en/stage-guide/#-).
 * Added **Artifact** to the GitHub Autorun settings. Set a specific file as an artifact to run a pipeline when a Git push event occurs, based on the inclusion or exclusion of that file.
@@ -16,7 +21,7 @@
 
 ### August 29, 2023
 * Added the **Feature - Run the Pipeline** stage to run entire other pipelines. See [Pipeline User Guide](/Dev%20Tools/Pipeline/en/stage-guide/#_4).
-* The development environment feature provided by the Pipeline service is no longer provided. The development environment feature is available as a notebook of AI EasyMaker service. More details can be found in the [AI EasyMaker User Guide](https://docs.nhncloud.com/en/Machine%20Learning/AI%20EasyMaker/en/console-guide/#_2).
+* The development environment feature provided by the Pipeline service is no longer provided. The development environment feature is available as a notebook of AI EasyMaker service. More details can be found in the [AI EasyMaker User Guide](/Machine%20Learning/AI%20EasyMaker/en/console-guide/#_2).
 * Renamed **Deployment Target Monitoring** to **Deployment Target Management**.
 * Added the feature to manage workloads deployed to clusters via Pipeline and check the workload history to the **Deployment Target Management**.
 

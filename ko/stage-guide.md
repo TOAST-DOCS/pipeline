@@ -123,20 +123,6 @@ Kubernetes 환경에 배포를 하는 스테이지입니다.
 
 ![stage-guide-10](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-10.png)
 
-#### 배포 - NCS
-NCS 템플릿과 워크로드를 생성할 수 있는 스테이지입니다.  
-**NCS Appkey**에는 NCS 상품의 appkey를 입력합니다.  
-**NCS 실행 멤버**는 현재 스테이지 편집 중인 멤버로 설정되며, 설정된 멤버는 NCS를 이용할 수 있는 권한이 필요합니다.  
-**네트워크**는 **Subnet**의 목록이 표시되며 반드시 하나를 선택해야 합니다.  
-**이미지 URL**은 이미지 레지스트리 주소와 이미지명 및 태그를 입력합니다.
- - 예시   
-`example-kr1-registry.container.nhncloud.com/registry/ubuntu:18.04`
-
-이미지의 태그에 `_{BUILD_NUMBER}`로 입력하면 태그 포맷으로 빌드된 이미지 중 가장 최근 번호의 이미지로 배포할 수 있습니다.  
-**컨테이너 설정**에서는 하나 이상의 컨테이너를 **추가**해야 하며 자세한 설명은 [NCS가이드](/Container/NCS/ko/user-guide)를 참고하십시오.  
-**워크로드 설정**의 자세한 설명은 [NCS 가이드](/Container/NCS/ko/user-guide)를 참고하십시오.
-
-![stage-guide-21.png](https://static.toastoven.net/prod_pipeline/2024-01-23/stage-guide-21.png)
 ### 기능
 추가 기능을 제공하는 스테이지입니다.
 
@@ -184,7 +170,7 @@ Judgement(실행 관리) 스테이지에서 전달받은 설정값과 **실행 �
 
 #### 기능 - NHN Cloud Deploy 서비스 배포 실행
 스테이지에서 NHN Cloud Deploy 서비스를 사용하여 배포를 실행할 수 있습니다.
-- 배포를 실행하려는 아티팩트의 **Command Type**이 **SSH**인 경우 해당 **NHN Cloud Deploy 서비스 배포 실행** 기능을 지원하지 않으며, **Cloud Agent**인 경우에만 지원합니다. 관련된 내용은 [Deploy 사용 가이드](https://docs.nhncloud.com/ko/Dev%20Tools/Deploy/ko/console-guide/#_8)를 참고하십시오.
+- 배포를 실행하려는 아티팩트의 **Command Type**이 **SSH**인 경우 해당 **NHN Cloud Deploy 서비스 배포 실행** 기능을 지원하지 않으며, **Cloud Agent**인 경우에만 지원합니다. 관련된 내용은 [Deploy 사용 가이드](/Dev%20Tools/Deploy/ko/console-guide/#_8)를 참고하십시오.
 
 ![stage-guide-19](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/stage-guide-19.png)
 
@@ -207,4 +193,4 @@ Judgement(실행 관리) 스테이지에서 전달받은 설정값과 **실행 �
 
 **배포 노트**에는 배포 실행 정보를 입력할 수 있습니다.
 
-자세한 설명은 [Deploy 사용 가이드](https://docs.nhncloud.com/ko/Dev%20Tools/Deploy/ko/reference/#_1)를 참고하십시오.
+자세한 설명은 [Deploy 사용 가이드](/Dev%20Tools/Deploy/ko/reference/#_1)를 참고하십시오.

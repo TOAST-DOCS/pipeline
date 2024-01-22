@@ -85,15 +85,22 @@ For GitHub and GitLab, if a branch is not entered, the master branch is used as 
 
 After completing the build settings, click **Next**.
 
+
 #### Deployment Settings
 
-In deployment settings, you can set how the container image is deployed to the deployment target added in the environment settings.
+You can set how the container image is deployed to the deployment target added in the environment settings.<br>
+Select **text** or **artifact** for the **Manifest Source**.<br>
+Below is how to set.
 
-![pipeline-guide-08](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-08.png)
+![pipeline-guide-08](http://static.toastoven.net/prod_pipeline/2024-01-23/pipeline-guide-08.png)
 
-Enter the stage name, deployment target, and Kubernetes Manifest to use for deployment, and click **Next**. See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment) for how to write a Manifest.
+When "text" is selected: Enter the stage name, deployment target, and Kubernetes Manifest to use for deployment, and click **Next**. See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment) for how to write a Manifest.
 
-![pipeline-guide-09](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-09.png)
+![pipeline-guide-09-01](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-09.png)
+
+When "artifact" is selected: Enter a repository type, source repository, path, and branch name in "Artifact Definition" and click **Next**.
+
+![pipeline-guide-09-02](https://static.toastoven.net/prod_pipeline/2024-01-23/pipeline-guide-09-02.png)
 
 If you used the tag format in the build settings, enter `_{BUILD_NUMBER}` for the tag in the Docker image input area as shown above. When `_{BUILD_NUMBER}` is entered in the image tag, it is deployed with the most recent number.
 To use the tag format, you must set build stage and NHN Cloud build tool.

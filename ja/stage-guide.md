@@ -122,20 +122,6 @@ Kubernetes環境に配布を行うステージです。
 
 ![stage-guide-10](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-10.png)
 
-#### 配布 - NCS
-NCSテンプレートとワークロードを作成できるステージです。 
-**NCS Appkey**にはNCS商品のappkeyを入力します。 
-**NCS実行メンバー**は現在ステージ編集中のメンバーに設定され、設定されたメンバーはNCSを利用できる権限が必要です。 
-**ネットワーク**は**Subnet**のリストが表示され、必ず一つを選択する必要があります。 
-**イメージURL**はイメージレジストリアドレスとイメージ名およびタグを入力します。
- - 例  
-`example-kr1-registry.container.nhncloud.com/registry/ubuntu:18.04`
-
-イメージのタグに`_{BUILD_NUMBER}`と入力すると、タグフォーマットでビルドされたイメージの中で最も新しい番号のイメージで配布できます。  
-**コンテナ設定**では一つ以上のコンテナを**追加**する必要があり、詳しい説明は[NCSガイド](/Container/NCS/ja/user-guide)を参考してください。  
-**ワークロード設定**の詳しい説明は[NCSガイド](/Container/NCS/ja/user-guide)を参照してください。
-
-![stage-guide-21.png](https://static.toastoven.net/prod_pipeline/2024-01-23/stage-guide-21.png)
 ### 機能
 追加機能を提供するステージです。
 
@@ -182,7 +168,7 @@ Judgement(実行管理)ステージで渡された設定値と**実行条件の�
 
 #### 機能 - NHN Cloud Deployサービス配布実行
 ステージでNHN Cloud Deployサービスを使用して配布を実行できます。
-- 配布を実行するアーティファクトの**Command Type**が**SSH**である場合、**NHN Cloud Deployサービス配布実行**機能をサポートしておらず、**Cloud Agent**である場合にのみサポートします。関連する内容については[Deploy使用ガイド](https://docs.nhncloud.com/ja/Dev%20Tools/Deploy/ja/console-guide/#_8)を参照してください。
+- 配布を実行するアーティファクトの**Command Type**が**SSH**である場合、**NHN Cloud Deployサービス配布実行**機能をサポートしておらず、**Cloud Agent**である場合にのみサポートします。関連する内容については[Deploy使用ガイド](/Dev%20Tools/Deploy/ja/console-guide/#_8)を参照してください。
 
 ![stage-guide-19](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/stage-guide-19.png)
 
@@ -205,4 +191,4 @@ Judgement(実行管理)ステージで渡された設定値と**実行条件の�
 
 **配布ノート**には配布実行情報を入力できます。
 
-詳しい説明については[Deploy使用ガイド](https://docs.nhncloud.com/ja/Dev%20Tools/Deploy/ja/reference/#_1)を参照してください。
+詳しい説明については[Deploy使用ガイド](/Dev%20Tools/Deploy/ja/reference/#_1)を参照してください。
