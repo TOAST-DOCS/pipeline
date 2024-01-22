@@ -94,11 +94,11 @@ GitHubおよびGitLabはブランチを入力しない場合、masterブラン�
 
 ![pipeline-guide-08](http://static.toastoven.net/prod_pipeline/2024-01-23/pipeline-guide-08.png)
 
-textを選択する場合：ステージ名、配布対象、配布に使用するKubernetes Manifestを入力し、**次へ**をクリックします。Manifestを作成する方法は[Kubernetes文書](https://kubernetes.io/docs/concepts/workloads/controllers/deployment )を参照してください。
+"text"を選択する場合：ステージ名、配布対象、配布に使用するKubernetes Manifestを入力し、**次へ**をクリックします。Manifestを作成する方法は[Kubernetes文書](https://kubernetes.io/docs/concepts/workloads/controllers/deployment )を参照してください。
 
 ![pipeline-guide-09-01](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-09.png)
 
-artifactを選択する場合：アーティファクト定義にあるリポジトリタイプ、ソースリポジトリ、パス、ブランチ名を入力し、**次へ**をクリックします。
+"artifact"を選択する場合："アーティファクト定義"にあるリポジトリタイプ、ソースリポジトリ、パス、ブランチ名を入力し、**次へ**をクリックします。
 
 ![pipeline-guide-09-02](https://static.toastoven.net/prod_pipeline/2024-01-23/pipeline-guide-09-02.png)
 
