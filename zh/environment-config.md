@@ -1,4 +1,4 @@
-## Dev Tools > Pipeline > Console User Guide > Env Configuration
+## Dev Tools > Pipeline > Console User Guide > Environment Configuration
 
 ### Set Up an Environment
 
@@ -83,6 +83,38 @@ Enter the chart repository information, click **Check** in **Chart Repository Co
 
 ![env-config-guide-15](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-15.png)
 
+### NHN Cloud Security Settings
+
+#### Create User Access Key ID, Secret Access Key
+
+Click the ID area in the upper-right corner of the console to see the **API Security Settings** menu as follows.
+
+![env-config-guide-16](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-16.png)
+
+Click Create **User Access Key ID** **in API Security Settings**to create a **User Access Key ID and** **Secret Access Key**that you need to enter when registering for NHN Cloud security settings.
+
+![env-config-guide-17](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-17.png)
+
+![env-config-guide-18](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-18.png)
+
+After creating **User Access Key ID** and **Secret Access Key**, the **Secret key successfully issued** screen is displayed as shown below. The secret key is only given to you once in that popup screen, so make sure to keep a good record of this value.
+
+![env-config-guide-19](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-19.png)
+
+**The User Access Key ID**, which is required to register security settings, can be found by closing the secret key successfully issued popup.
+
+#### Register NHN Cloud Security Settings
+Once you add the NHN Cloud security settings, you can deploy through the NHN Cloud Deploy service using the **Features - NHN Cloud Deploy service** stage.
+
+![env-config-guide-20](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-20.png)
+
+You can add a new security setting by clicking **+Add security setting**on the **Environment Settings** > **NHN Cloud Security Settings** screen.
+
+![env-config-guide-21](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-21.png)
+
+Enter the NHN Cloud security settings information, click **Confirm** in **Check API Calls**. After checking the connection, click **Confirm**.
+
+![env-config-guide-22](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-22.png)
 
 ### Pipeline IP
 If the system integrated with Pipeline does not work properly, check the ACL. The IP address used by Pipeline is **211.56.1.0/27**.

@@ -1,12 +1,10 @@
-## Dev Tools > Pipeline > Console User Guide > Deploy Target Management
+## Dev Tools > Pipeline > Console User Guide > Deployment Target Management
 
-### Deploy Target Management
-
-You can identify output created by deploying with Pipeline in the **Deploy Target Management** menu.
+You can identify output created by deploying with Pipeline in the **Deployment Target Management** menu.
 
 ## Deployment Target
 
-Go to **Deploy Target Management > Deployment Target** to identify workloads deployed to Kubernetes by using Pipeline.
+Go to **Deployment Target Management > Deployment Target** to identify workloads deployed to Kubernetes by using Pipeline.
 ![deploy-target-monitoring-guide-01.png](http://static.toastoven.net/prod_pipeline/2023-06-27/deploy-target-monitoring-guide-01.png)
 You can find all workloads deployed, workload names, pod count, and status.
 Enter a search term and click the search button, search for deployment targets with the entered string starts.
@@ -35,7 +33,7 @@ Pod status in the left dot
 Select a pod to view the console log and the information of the connected service.
 For the pod associated with the service, the load balancer icon appears on the right. Select the load balancer icon to go to the **Network** tab.
 
-To see the workloads associated with the service in **Deploy Target Management**, you need to add the 'traffic.spinnaker.io/load-balancers' annotation to the manifest rather than specifying a selector.
+To see the workloads associated with the service in **Deployment Target Management**, you need to add the 'traffic.spinnaker.io/load-balancers' annotation to the manifest rather than specifying a selector.
 
 ![deploy-target-monitoring-guide-08.png](http://static.toastoven.net/prod_pipeline/2023-06-27/deploy-target-monitoring-guide-08.png)
 
@@ -64,7 +62,7 @@ Management Task Types
 
 ## Network
 
-You can identify a service deployed to Kubernetes by using Pipeline in **Deploy Target Management > Network**.
+You can identify a service deployed to Kubernetes by using Pipeline in **Deployment Target Management > Network**.
 
 ![deploy-target-monitoring-guide-05.png]( http://static.toastoven.net/prod_pipeline/2023-06-27/deploy-target-monitoring-guide-05.png)
 You can see all the services you've deployed, along with the number and status of pods connected to them.

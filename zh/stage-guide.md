@@ -167,3 +167,30 @@ You can write requests in stages, and only users with the **Pipeline APPROVAL AD
 The **Pipeline APPROVAL ADMIN** role can be granted from the project's Member Management, Role Group Management.
 
 ![stage-guide-18](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-10-31/stage-guide-18.png)
+
+#### Feature - Run NHN Cloud Deploy Service Deployment
+You can run the deployment using the NHN Cloud Deploy service on the stage.
+- If the **command type**of the artifact you want to run the deployment on is **SSH**, the **Run NHN Cloud Deploy Service Deployment** is not supported, only **Cloud Agent** is supported. For more information, refer to the [Deploy User Guide](/Dev%20Tools/Deploy/zh/console-guide/#_8).
+
+![stage-guide-19](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/stage-guide-19.png)
+
+In **Environment Settings** > **NHN Cloud Security Settings**, select the security settings you added, and in **AppKey**, enter the appkey that will use the NHN Cloud Deploy service.
+
+After entering the information, click **Search**to get deployment-related information from NHN Cloud Deploy that matches your security settings and Appkey.
+
+You can then select **artifacts**, **server groups**, and **scenarios**to deploy through the NHN Cloud Deploy service.
+
+
+For **Deployment restriction time**, specify how long the stage will wait to complete execution (minimum 1 minute, maximum 600 minutes).
+
+![stage-guide-20](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/stage-guide-20.png)
+
+For **Deployment Settings Details**, you can add conditions for what you want to deploy to.
+
+In **Select Server**, you can choose which server to deploy to. If you select **All Servers**, the deployment will target all servers, and if you click **Select Server**, you can choose which servers to deploy to.
+
+In **Number of concurrent server executions**, you can select how many servers the NHN Cloud Deploy service will run at the same time. (Default 1, maximum number of servers)
+
+In **Deployment Note**, you can enter deployment execution information.
+
+For more information, see the [Deploy User Guide](/Dev%20Tools/Deploy/zh/reference/#_1).

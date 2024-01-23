@@ -1,22 +1,27 @@
 ## Dev Tools > Pipeline > リリースノート
 
+### 2024. 01. 23.
+* NHN Cloud Deploy Serviceステージでシナリオ選択時にシナリオ確認ボタンが追加されました。
+    * **シナリオ確認**をクリックすると、該当シナリオのタスク情報を確認できます。
+* Pipeline実行履歴と配布対象作業履歴を確認できる**配布履歴管理**ページが追加されました。[配布履歴管理ガイド](/Dev%20Tools/Pipeline/ja/deploy-history-management)で使い方を確認できます。
+
 ### 2023. 12. 19.
 * NHN Cloud Deployの配布シナリオを実行できる **機能 - NHN Cloud Deploy Service** ステージが追加されました。[Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/#-)で使い方を確認できます。
 * Github自動実行設定に**アーティファクト**項目が追加されました。 特定のファイルをアーティファクトとして設定し、Git push eventが発生すると、そのファイルが含まれているかどうかによってパイプラインを実行します。
 
 ### 2023. 10. 31.
-* 承認なしで以降のステージを実行できないように管理する**機能 - 承認管理**ステージが追加されました。[Pipelineステージガイド](/Dev%20Tools/Pipeline/ko/stage-guide/#-)で詳細を確認できます。
-* パイプラインテンプレートガイド内にサンプルシナリオが追加されました。[Pipelineテンプレートガイド](/Dev%20Tools/Pipeline/ko/pipeline-management/#_2)から使用方法およびテンプレートファイルをダウンロードできます。
+* 承認なしで以降のステージを実行できないように管理する**機能 - 承認管理**ステージが追加されました。[Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/#-)で詳細を確認できます。
+* パイプラインテンプレートガイド内にサンプルシナリオが追加されました。[Pipelineテンプレートガイド](/Dev%20Tools/Pipeline/ja/pipeline-management/#_2)から使用方法およびテンプレートファイルをダウンロードできます。
 
 ### 2023. 09. 26.
-* パイプラインテンプレート機能が追加されました。[Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ko/pipeline-management/#_1)で使い方を確認できます。
+* パイプラインテンプレート機能が追加されました。[Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ja/pipeline-management/#_1)で使い方を確認できます。
     * パイプライン作成時にテンプレートファイル(JSON形式)をアップロードして作成できます。
     * **JSON表示**>**パイプラインテンプレートをダウンロード**でパイプラインテンプレートファイルをダウンロードできます。
 * Github自動実行設定の**ブランチまたはタグ**項目でタグを使用できるようになりました。タグで自動実行するとタグを使用してビルドを実行します。
 
 ### 2023. 08. 29.
 * 他のパイプライン全体を実行できる**機能 - 他パイプライン実行**ステージが追加されました。[Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ja/stage-guide/#_4)で使用方法を確認できます。
-* Pipelineサービスで提供していた開発環境機能は提供されません。開発環境機能はAI EasyMakerサービスのノートパソコンで利用できます。詳細は[AI EasyMakerユーザーガイド](https://docs.nhncloud.com/ko/Machine%20Learning/AI%20EasyMaker/ko/console-guide/#_2)で確認できます。
+* Pipelineサービスで提供していた開発環境機能は提供されません。開発環境機能はAI EasyMakerサービスのノートパソコンで利用できます。詳細は[AI EasyMakerユーザーガイド](/Machine%20Learning/AI%20EasyMaker/ja/console-guide/#_2)で確認できます。
 * **配布対象モニタリング**の名称が**配布対象管理**に変更されます。
 * **配布対象管理**にPipelineを通じてクラスタに配布されたワークロードを管理し、履歴を確認できる機能が追加されました。
 

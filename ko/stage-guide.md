@@ -170,7 +170,7 @@ Judgement(실행 관리) 스테이지에서 전달받은 설정값과 **실행 �
 
 #### 기능 - NHN Cloud Deploy 서비스 배포 실행
 스테이지에서 NHN Cloud Deploy 서비스를 사용하여 배포를 실행할 수 있습니다.
-- 배포를 실행하려는 아티팩트의 **Command Type**이 **SSH**인 경우 해당 **NHN Cloud Deploy 서비스 배포 실행** 기능을 지원하지 않으며, **Cloud Agent**인 경우에만 지원합니다. 관련된 내용은 [Deploy 사용 가이드](https://docs.nhncloud.com/ko/Dev%20Tools/Deploy/ko/console-guide/#_8)를 참고하십시오.
+- 배포를 실행하려는 아티팩트의 **Command Type**이 **SSH**인 경우 해당 **NHN Cloud Deploy 서비스 배포 실행** 기능을 지원하지 않으며, **Cloud Agent**인 경우에만 지원합니다. 관련된 내용은 [Deploy 사용 가이드](/Dev%20Tools/Deploy/ko/console-guide/#_8)를 참고하십시오.
 
 ![stage-guide-19](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/stage-guide-19.png)
 
@@ -193,4 +193,4 @@ Judgement(실행 관리) 스테이지에서 전달받은 설정값과 **실행 �
 
 **배포 노트**에는 배포 실행 정보를 입력할 수 있습니다.
 
-자세한 설명은 [Deploy 사용 가이드](https://docs.nhncloud.com/ko/Dev%20Tools/Deploy/ko/reference/#_1)를 참고하십시오.
+자세한 설명은 [Deploy 사용 가이드](/Dev%20Tools/Deploy/ko/reference/#_1)를 참고하십시오.
