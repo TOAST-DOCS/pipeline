@@ -39,13 +39,22 @@ NHN Cloud 빌드 도구에서 소스 코드를 빌드할 때 사용하는 소스
 
 빌드 설정에서는 NHN Cloud 빌드 도구를 사용하거나 환경 설정에서 등록한 빌드 도구를 사용할 수 있습니다. 스테이지 이름을 입력하고 **빌드 도구**에서 사용할 빌드 도구를 선택합니다.
 
-![pipeline-guide-04](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-04.png)
+![pipeline-guide-04.png](http://static.toastoven.net/prod_pipeline/2024-02-27/pipeline-guide-04.png)
 
-NHN Cloud 빌드 도구를 사용하면 별도의 소프트웨어 설치 없이 소스 저장소에 저장한 애플리케이션 소스 코드를 빌드하고, 빌드한 애플리케이션으로 컨테이너 이미지를 생성하고, 생성한 컨테이너 이미지를 이미지 저장소에 업로드할 수 있습니다.
-**빌드 환경 설정**에는 **소스 설정**에서 설정한 소스 코드를 사용해서 애플리케이션을 빌드하는 방법을 입력합니다. 소스 코드 빌드에 사용할 컨테이너 이미지, 빌드 머신의 성능, 빌드에 사용할 명령어를 입력할 수 있습니다.
-**빌드 결과 설정**에는 빌드한 애플리케이션으로 컨테이너 이미지를 만드는 방법을 입력합니다. 컨테이너 이미지를 생성할 때 사용할 Dockerfile, 생성한 컨테이너 이미지를 업로드할 이미지 저장소, 업로드할 컨테이너 이미지의 이름과 태그를 입력할 수 있습니다.
-**태그 포맷 사용** 체크 박스를 클릭하면 이미지 태그 포맷을 사용할 수 있습니다. 이미지 태그 포맷을 사용하면 생성된 이미지의 태그를 NHN Cloud 빌드 도구에서 부여하는 빌드 번호로 사용하게 됩니다. 생성되는 태그는 `_{BUILD_NUMBER}` 형식이며 BUILD_NUMBER가 빌드 번호 입니다.
-빌드 번호는 빌드마다 증가하는 숫자형 데이터입니다. 이미지 태그 포맷 사용 시에는 태그가 `_{BUILD_NUMBER}` 형태로 고정됩니다.
+NHN Cloud 빌드 도구를 사용하면 별도의 소프트웨어 설치 없이 소스 저장소에 저장한 애플리케이션 소스 코드를 빌드하고, 
+빌드한 애플리케이션으로 컨테이너 이미지를 생성하고, 생성한 컨테이너 이미지를 이미지 저장소에 업로드할 수 있습니다.
+
+**빌드 환경 설정**에는 빌드 머신의 성능, 빌드 시간 제한을 입력할 수 있습니다.  
+**소스 빌드 설정**에서 설정한 소스 코드를 사용해서 애플리케이션을 빌드하는 방법을 입력합니다. 
+소스 코드 빌드에 사용할 컨테이너 이미지, 빌드에 사용할 명령어를 입력합니다.  
+**도커 이미지 빌드 설정**에는 빌드한 애플리케이션으로 컨테이너 이미지를 만드는 방법을 입력합니다. 
+컨테이너 이미지를 생성할 때 사용할 Dockerfile, 생성한 컨테이너 이미지를 업로드할 이미지 저장소, 업로드할 컨테이너 이미지의 이름과 태그를 입력할 수 있습니다.  
+**태그**에는 이미지 태그 포맷을 사용할 수 있습니다. 태그 포맷을 사용하면 태그 포맷부분만 치환하여 동적으로 태그를 부여하여 이미지를 이미지 저장소에 업로드합니다.  
+치환되는 형태와 동일한 형태로 태그를 입력할시 태그포맷 사용이 원활하지 않을 수 있습니다.
+
+|이미지 태그 포맷 | 치환되는 형태 | 설명                                |
+| ----------- | ---------- |-----------------------------------|
+|{BUILD_DATE_TIME}| yyyy-MM-dd_HH_mm_ss| 연-월-일_시_분_초의 형태로 빌드 실행 시각으로 치환됩니다 |
 
 ![pipeline-guide-05](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-05.png)
 NHN Cloud 빌드 도구에서 **아티팩트** 설정을 사용하여 **시작 조건**과 **종료 조건**을 설정할 수 있습니다.
@@ -92,25 +101,23 @@ GitHub 및 GitLab은 브랜치를 입력하지 않을 경우 master 브랜치를
 **Manifest 소스**는 **text** 또는 **artifact**로 선택할 수 있습니다<br>
 설정 방법은 다음과 같습니다.
 
-![pipeline-guide-08](http://static.toastoven.net/prod_pipeline/2024-01-23/pipeline-guide-08.png)
-
 "text"를 선택할 경우: 스테이지 이름, 배포 대상, 배포에 사용할 Kubernetes Manifest를 입력한 후 **다음**을 클릭합니다. Manifest를 작성하는 방법은 [Kubernetes 문서](https://kubernetes.io/docs/concepts/workloads/controllers/deployment )를 참고하십시오.
 
-![pipeline-guide-09-01](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-09.png)
+![pipeline-guide-08.png](http://static.toastoven.net/prod_pipeline/2024-02-27/pipeline-guide-08.png)
 
-"artifact"를 선택할 경우: "아티팩트 정의"에 있는 저장소 타입, 소스 저장소, 경로, 브랜치 이름을 입력한 후 **다음**을 클릭합니다.
+"외부입력"을 선택할 경우: "아티팩트 정의"에 있는 저장소 타입, 소스 저장소, 경로, 브랜치 이름을 입력한 후 **다음**을 클릭합니다.
 
-![pipeline-guide-09-02](https://static.toastoven.net/prod_pipeline/2024-01-23/pipeline-guide-09-02.png)
+![pipeline-guide-09-01.png](http://static.toastoven.net/prod_pipeline/2024-02-27/pipeline-guide-09-01.png)
 
-빌드 설정에서 태그 포맷을 사용했다면 도커(Docker) 이미지 입력 부분에 태그를 위와 같이`_{BUILD_NUMBER}`로 입력합니다. 이미지의 태그에 `_{BUILD_NUMBER}`가 입력된 경우 가장 최신의 번호로 입력되어 배포됩니다.
-태그 포맷을 사용하려면 빌드 스테이지 및 NHN Cloud 빌드 도구를 설정해야 합니다.
+**빌드 설정**에서 사용한 태그 포맷을 Manifest에 사용할 수 있습니다.  
+Manifest 컨테이너 설정의 이미지 태그에 태그 포맷을 입력하면 가장 최근 빌드된 이미지로 배포할 수 있습니다. 
+![pipeline-guide-09-02.png](http://static.toastoven.net/prod_pipeline/2024-02-27/pipeline-guide-09-02.png)
 
-![pipeline-guide-10](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-10.png)
 **아티팩트** 설정을 사용하여 **시작 조건**과 **종료 조건**을 설정할 수 있습니다.
 시작 조건으로 설정된 **아티팩트**는 스테이지 시작 시 존재 유무를 확인하여 스테이지의 진행 여부를 결정합니다.
 종료 조건으로 설정된 **아티팩트**는 스테이지의 생산물을 **아티팩트**로 설정합니다.
 입력한 manifest에 **종료 조건**과 매칭되는 Kubernetes 오브젝트가 없어 스테이지가 실패하더라도 manifest가 Kubernetes 클러스터에 적용될 수 있습니다.
-
+![pipeline-guide-10](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-10.png)
 #### 배포 설정에서 설정 가능한 아티팩트
 
 GitHub 및 GitLab은 브랜치를 입력하지 않을 경우 master 브랜치를 기본값으로 사용합니다.
@@ -127,7 +134,7 @@ GitHub 및 GitLab은 브랜치를 입력하지 않을 경우 master 브랜치를
 
 최종 검토에서는 파이프라인에 설정한 전체 입력 내용을 확인할 수 있습니다.
 
-![pipeline-guide-11](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-11.png)
+![pipeline-guide-11.png](http://static.toastoven.net/prod_pipeline/2024-02-27/pipeline-guide-11.png)
 
 만약, 파이프라인 템플릿 파일로 생성했을 경우 업로드한 파일 이름을 확인할 수 있습니다.
 
