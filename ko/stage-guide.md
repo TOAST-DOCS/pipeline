@@ -52,6 +52,32 @@ NHN Cloud에서 제공하는 빌드 도구를 사용할 수 있습니다.
 ![stage-guide-05](http://static.toastoven.net/prod_pipeline/2023-02-28/stage-guide-02.png)
 ![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-02.png)
 
+#### 빌드 - NHN Cloud 빌드 도구 v2
+NHN Cloud에서 제공하는 빌드 도구를 사용할 수 있습니다.
+- 빌드 환경 설정
+  - 빌드 도구의 성능과 제한시간을 설정할 수 있습니다.
+- 소스 빌드 설정
+  - **환경 설정**의 **이미지 저장소 설정**에서 추가한 [이미지 저장소](/Dev%20Tools/Pipeline/ko/environment-config/#_3)를 선택할 수 있습니다.
+  - 빌드할 환경의 **이미지 이름** 및 **태그**를 입력하고, **빌드 명령어**를 설정합니다.
+
+- 도커 이미지 빌드 설정
+  - **Dockerfile 경로**는 Dockefile이 존재하는 경로를 입력합니다.
+  - **Dockerfile 실행 경로**는 Dockerfile을 빌드할 경로를 입력합니다.
+  - **이미지 저장소**를 선택하고, **이미지 이름**을 결정하면 해당 저장소로 결과물을 push합니다.
+  - **태그**에는 이미지의 태그를 입력합니다. 태그 포맷을 포함하여 입력하면 입력한 태그 포맷 부분이 동적으로 치환됩니다.
+
+- 아티팩트 설정
+  - **시작 조건**을 설정하여 스테이지 시작 여부를 결정할 수 있습니다.
+  - **종료 조건**을 설정하여 스테이지의 생성물을 아티팩트로 설정할 수 있습니다.
+
+
+|이미지 태그 포맷 | 치환되는 형태 | 설명                                 |
+| ----------- | ---------- |------------------------------------|
+|{BUILD_DATE_TIME}| yyyy-MM-dd_HH_mm_ss| 연-월-일_시_분_초의 형태로 빌드 실행 시각으로 치환됩니다. |
+
+![stage-guide-21.png](..%2Fimages%2F2024-02-27%2Fstage-guide-21.png)
+![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-02.png)
+
 #### 빌드 - Bake (Manifest)
 사용자가 직접 구성한 Helm package file 또는 [차트 저장소](/Dev%20Tools/Pipeline/ko/environment-config/#_6)를 이용하여 빌드할 수 있습니다. 
 - 차트 이름은 Helm 엔진으로 구성한 결과물의 이름을 설정합니다.
