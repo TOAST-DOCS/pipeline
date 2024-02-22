@@ -75,7 +75,7 @@ NHN Cloud에서 제공하는 빌드 도구를 사용할 수 있습니다.
 | ----------- | ---------- |------------------------------------|
 |{BUILD_DATE_TIME}| yyyy-MM-dd_HH_mm_ss| 연-월-일_시_분_초의 형태로 빌드 실행 시각으로 치환됩니다. |
 
-![stage-guide-21.png](..%2Fimages%2F2024-02-27%2Fstage-guide-21.png)
+![stage-guide-21.png](http://static.toastoven.net/prod_pipeline/2024-02-27/stage-guide-21.png)
 ![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-02.png)
 
 #### 빌드 - Bake (Manifest)
