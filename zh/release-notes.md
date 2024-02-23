@@ -1,5 +1,14 @@
 ## Dev Tools > Pipeline > Release Notes
 
+### February 27, 2024
+#### [Console]
+##### Added Features
+* Added FCM Service Account Credential Authentication
+  * On June 20, 2024, the FCM Legacy API will be terminated. As a result, you must use the FCM HTTP (V1) API to send FCM messages, and API authentication requires **Service Account Credential**instead of a **Server Key**.
+    * <a href="https://firebase.google.com/docs/cloud-messaging/migrate-v1" target="_blank">Go to the FCM Migration Guide</a>
+    * Go to <a href="https://docs.nhncloud.com/ko/Notification/Push/ko/console-guide/#_1">Console Guide</a>
+  * After you enroll for **Service Account Credential**, FCM messages are sent via the FCM HTTP V1 API. To continue sending with FCM after June 20, 2024, you must register **Service Account Credential** in the console.
+
 ### January 23, 2024.
 * Added the Confirm Scenario button when selecting a scenario in the NHN Cloud Deploy Service stage.
     * Click **Confirm Scenario**to view task information for that scenario.
