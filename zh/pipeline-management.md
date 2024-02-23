@@ -39,13 +39,22 @@ Enter the stage name, the source repository registered in the environment settin
 
 In the build settings, you can use the NHN Cloud build tool or the build tool registered in the environment settings. Enter a stage name and select the build tool to use under **Build Tool**.
 
-![pipeline-guide-04](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-04.png)
+![pipeline-guide-04.png](http://static.toastoven.net/prod_pipeline/2024-02-27/pipeline-guide-04.png)
 
-The NHN Cloud build tool allows you to build the application source code stored in the source repository without installing additional software, create a container image with the built application, and upload the created container image to the image registry.
-In **Build Environment Settings**, enter the method of building the application using the source code set in **Source Settings**. You can enter the container image to use for building the source code, the performance of the build machine, and the command to use for the build.
-In **Build Result Settings**, enter how to create a container image with the built application. You can enter the Dockerfile to use when creating the container image, the image registry to upload the created container image to, and the name and tag of the container image to upload.
-When you click the **Use Tag Format** box, you can use the image tag format. If you use the image tag format, the tag of the created image is used as the build number given by the NHN Cloud build tools. The generated tags are of the form `_{BUILD_NUMBER}` and BUILD_NUMBER indicates the build number.
-The build number is numeric data that increments with each build. When using the image tag format, the tag is fixed in the form of `_{BUILD_NUMBER}`.
+The NHN Cloud build tool allows you to build the application source code stored in the source repository without installing additional software, create a container image with the built application,
+and upload the created container image to the image registry.
+
+**In Build Environment Settings**, you can enter the performance of the build machine and build time limits.  
+Enter how to build applications using the source code that you set up in **Source Build Settings**.
+Enter the container image to use to build the source code, and the command to use to build it.  
+In the **Docker Image Build Settings**, enter how you want to create a container image from the application you built.
+You can enter the Dockerfile to use when creating the container image, the image repository to upload the created container image to, and the name and tags for the container image to upload.  
+You can use the image tag format in **Tag**. With the tag format, the image is dynamically tagged by replacing only the tag format portion and uploaded to the image registry.  
+If you enter a tag in the same form as the substituted form, the tag formatting may not work well.
+
+|Image Tag Format | Substituted Format | Description                                 |
+| ----------- | ---------- |------------------------------------|
+|{BUILD_DATE_TIME}| yyyy-MM-dd_HH_mm_ss| This is replaced by the build execution time in the form of year-month-day-hour-minute-second. |
 
 ![pipeline-guide-05](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-05.png)
 You can set **Start Condition** and **End Condition** by using the **Artifact** settings from NHN Cloud Build Tool.
@@ -85,15 +94,24 @@ For GitHub and GitLab, if a branch is not entered, the master branch is used as 
 
 After completing the build settings, click **Next**.
 
+
 #### Deployment Settings
 
-In deployment settings, you can set how the container image is deployed to the deployment target added in the environment settings.
+You can set how the container image is deployed to the deployment target added in the environment settings.<br>
+Select **text** or **artifact** for the **Manifest Source**.<br>
+Below is how to set.
 
-![pipeline-guide-08](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-08.png)
+When "text" is selected: Enter the stage name, deployment target, and Kubernetes Manifest to use for deployment, and click **Next**. See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment) for how to write a Manifest.
 
-Enter the stage name, deployment target, and Kubernetes Manifest to use for deployment, and click **Next**. See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment) for how to write a Manifest.
+![pipeline-guide-08.png](http://static.toastoven.net/prod_pipeline/2024-02-27/pipeline-guide-08.png)
 
-![pipeline-guide-09](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-09.png)
+If you select "External input": Enter the repository type, source repository, path, and branch name from "Define artifact", then click **Next**.
+
+![pipeline-guide-09-01.png](http://static.toastoven.net/prod_pipeline/2024-02-27/pipeline-guide-09-01.png)
+
+You can use the tag format you used **in your build settings**in your manifest.  
+You can enter a tag format in Image tags in the Manifest container settings to deploy with the most recently built image.
+![pipeline-guide-09-02.png](http://static.toastoven.net/prod_pipeline/2024-02-27/pipeline-guide-09-02.png)
 
 If you used the tag format in the build settings, enter `_{BUILD_NUMBER}` for the tag in the Docker image input area as shown above. When `_{BUILD_NUMBER}` is entered in the image tag, it is deployed with the most recent number.
 To use the tag format, you must set build stage and NHN Cloud build tool.
@@ -120,7 +138,7 @@ For GitHub and GitLab, if a branch is not entered, the master branch is used as 
 
 In the final review, you can check the full configuration you’ve entered for your pipeline.
 
-![pipeline-guide-11](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-11.png)
+![pipeline-guide-11.png](http://static.toastoven.net/prod_pipeline/2024-02-27/pipeline-guide-11.png)
 
 
 If a pipeline is created with a pipeline template file, you can check the uploaded file name.
@@ -291,4 +309,4 @@ Runs according to the stage settings, and the run history is updated every 5 sec
 
 ![pipeline-guide-32](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-32.png)
 
- If you select **Stop Running Stage**, running stops for that branch, and if you cancel a running stage, the entire selected pipeline running is canceled.
+If you select **Stop Running Stage**, running stops for that branch, and if you cancel a running stage, the entire selected pipeline running is canceled.
