@@ -119,6 +119,6 @@ Enter the NHN Cloud security settings information, click **Confirm** in **Check 
 ### Pipeline IP
 If the system integrated with Pipeline does not work properly, check the ACL. The IP address used by Pipeline is **211.56.1.0/27**.
 
-| Service | CIDR |
-|---|---|
-| Pipeline | 211.56.1.0/27 |
+| Service | CIDR         |
+|---|-----------------|
+| Pipeline | 211.56.1.0/27<br/>101.79.92.0/24 |
