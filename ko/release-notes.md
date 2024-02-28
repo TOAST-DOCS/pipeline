@@ -3,9 +3,9 @@
 ### 2024. 02. 27.
 * 신규 빌드 스테이지 NHN Cloud 빌드 도구 v2가 추가됩니다. 
     * 성능 개선 및 태그 포맷이 변경되었습니다. 
-       * AS-IS : `_{BUILD_NUMBER}`
-       * TO-BE : `{BUILD_DATE_TIME}`
-    * 기존 빌드 도구는 fade-out 예정으로 더 이상 신규 생성이 되지 않습니다.
+       * AS-IS: `_{BUILD_NUMBER}`
+       * TO-BE: `{BUILD_DATE_TIME}`
+    * 기존 빌드 도구는 Fade-out 예정으로 더 이상 신규 생성이 되지 않습니다.
 
 ### 2024. 01. 23.
 * NHN Cloud Deploy Service 스테이지에서 시나리오 선택 시 시나리오 확인 버튼이 추가되었습니다.
