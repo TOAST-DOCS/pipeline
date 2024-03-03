@@ -52,6 +52,32 @@ NHN Cloudで提供するビルドツールを使用できます。
 ![stage-guide-05](http://static.toastoven.net/prod_pipeline/2023-02-28/stage-guide-02.png)
 ![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-02.png)
 
+#### ビルド - NHN Cloudビルドツールv2
+NHN Cloudで提供するビルドツールを使用できます。
+- ビルド環境設定
+  - ビルドツールの性能と制限時間を設定できます。
+- ソースビルド設定
+  - **環境設定**の**イメージストア設定**で追加した[イメージストア](/Dev%20Tools/Pipeline/ko/environment-config/#_3)を選択できます。
+  - ビルドする環境の**イメージ名**及び**タグ**を入力し、**ビルドコマンド**を設定します。
+
+- ドッカーイメージビルド設定
+  - **Dockerfileパス**はDockefileが存在するパスを入力します。
+  - **Dockerfile実行パス**はDockerfileをビルドするパスを入力します。
+  - **イメージストア**を選択し、**イメージ名**を決定したら、そこに結果物をpushします。
+  - **タグ**にはイメージのタグを入力します。タグフォーマットを含めて入力すると、入力したタグフォーマット部分が動的に置換されます。
+
+- アーティファクト設定
+  - **開始条件**を設定してステージを開始するかどうかを決定できます。
+  - **終了条件**を設定してステージの作成物をアーティファクトとして設定できます。
+
+
+|イメージタグフォーマット | 置換される形式 | 説明                                |
+| ----------- | ---------- |------------------------------------|
+|{BUILD_DATE_TIME}| yyyy-MM-dd_HH_mm_ss|  年-月-日-日-時-分-秒の形式でビルド実行時刻に置換されます。 |
+
+![stage-guide-21.png](http://static.toastoven.net/prod_pipeline/2024-02-27/stage-guide-21.png)
+![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-02.png)
+
 #### ビルド - Bake (Manifest)
 ユーザーが直接構成したHelm package fileまたは[チャートリポジトリ](/Dev%20Tools/Pipeline/ja/environment-config/#_6)を利用してビルドできます。 
 '- チャート名はHelmエンジンで構成した結果物の名前を設定します。
