@@ -1,5 +1,8 @@
 ## Dev Tools > Pipeline > Release Notes
 
+### March 26, 2024
+* Added **Deployment - NCS**, a new deployment stage. See [Pipeline Stage Guide](/Dev%20Tools/Pipeline/ko/stage-guide/#-).
+
 ### February 27, 2024
 #### [Console]
 ##### Added Features
