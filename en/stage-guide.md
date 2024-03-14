@@ -122,6 +122,14 @@ Enter **Namespace**, **Resource Type**, and **Resource Name**. You can delete th
 
 ![stage-guide-10](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-10.png)
 
+#### Deployment - NCS
+A stage that can replace NCS workload templates.  
+If you enter **NCS Appkey**, you can view **NCS Role**, template list, and workload list.  
+You can select a template to change from the list.  
+You can select a workload for which the template is changed from the list.
+
+![stage-guide-22.png](http://static.toastoven.net/prod_pipeline/2024-03-26/stage-guide-22.png)
+
 ### Feature
 This is a stage to provide additional features.
 
