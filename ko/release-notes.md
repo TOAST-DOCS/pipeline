@@ -1,7 +1,7 @@
 ## Dev Tools > Pipeline > 릴리스 노트
 
 ### 2024. 03. 26.
-* 신규 배포 스테이지 **배포 - NCS**가 추가됩니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#-)에서 사용 방법을 확인할 수 있습니다.
+* 신규 배포 스테이지 **배포 - NHN Container Service**가 추가됩니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#-)에서 사용 방법을 확인할 수 있습니다.
 
 ### 2024. 02. 27.
 * 조직/프로젝트 대시보드 > 알림 관리에서 수신 메일 주소명을 설정할 수 있도록 기능이 추가되었습니다.

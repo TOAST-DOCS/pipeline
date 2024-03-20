@@ -172,7 +172,7 @@ Judgement(実行管理)ステージで渡された設定値と**実行条件の�
 
 ![stage-guide-14](http://static.toastoven.net/prod_pipeline/2023-06-15/stage-guide-14.png)
 
-#### 配布 - NCS
+#### 配布 - NHN Container Service
 NCSワークロードのテンプレートを交換できるステージです。 
 **NCSアプリケーションキー**を入力すると、**NCSロール**、テンプレートリスト、ワークロードリストが照会されます。  
 変更するテンプレートをリストから選択できます。  
