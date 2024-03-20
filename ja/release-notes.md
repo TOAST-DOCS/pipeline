@@ -1,7 +1,7 @@
 ## Dev Tools > Pipeline > リリースノート
 
 ### 2024. 03. 26.
-* 新規配布ステージ **配布 - NCS**が追加されます。 [Pipelineステージガイド](/Dev%20Tools/Pipeline/ko/stage-guide/#-)で使い方を確認できます。
+* 新規配布ステージ **配布 - NHN Container Service**が追加されます。 [Pipelineステージガイド](/Dev%20Tools/Pipeline/ko/stage-guide/#-)で使い方を確認できます。
 
 ### 2024. 02. 27.
 * 組織/プロジェクトダッシュボード > 通知管理で、受信メールのアドレス名を設定できる機能が追加されました。

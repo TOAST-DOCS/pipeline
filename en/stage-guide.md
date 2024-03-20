@@ -148,7 +148,7 @@ Enter **Namespace**, **Resource Type**, and **Resource Name**. You can delete th
 
 ![stage-guide-10](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-10.png)
 
-#### Deployment - NCS
+#### Deployment - NHN Container Service
 A stage that can replace NCS workload templates.  
 If you enter **NCS Appkey**, you can view **NCS Role**, template list, and workload list.  
 You can select a template to change from the list.  
