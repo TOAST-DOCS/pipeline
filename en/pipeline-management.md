@@ -48,7 +48,9 @@ and upload the created container image to the image registry.
 Enter how to build applications using the source code that you set up in **Source Build Settings**.
 Enter the container image to use to build the source code, and the command to use to build it.  
 In the **Docker Image Build Settings**, enter how you want to create a container image from the application you built.
-You can enter the Dockerfile to use when creating the container image, the image repository to upload the created container image to, and the name and tags for the container image to upload.  
+You can enter the path to the Dockerfile to use when creating the container image, the path to run the Dockerfile, the image repository to upload the created container image to, and the name and tags for the container image to upload.
+For the **dockerfile path**,  enter the path where the dockerfile exists in the source repository set up in the **Source Build Settings**.
+For the **dockerfile execution path**, enter the path to use for building the Dockerfile.
 You can use the image tag format in **Tag**. With the tag format, the image is dynamically tagged by replacing only the tag format portion and uploaded to the image registry.  
 If you enter a tag in the same form as the substituted form, the tag formatting may not work well.
 

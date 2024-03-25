@@ -1,6 +1,6 @@
 ## Dev Tools > Pipeline > Stage Guide
 
-This guide describes the basics of stages in Pipeline. 
+This guide describes the basics of stages in Pipeline.
 Click **Pipeline Management** > **+Create Pipeline** to create a pipeline. After selecting the pipeline you created, you can add a stage by clicking **+Add Stage** in the **Stage** tab at the bottom.
 
 ![stage-guide-01](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-01.png)
@@ -15,12 +15,12 @@ Stages are divided into the following groups.
 This is a stage that gets the source code to build.
 
 #### Source - GitHub
-You can select the [source repository](/Dev%20Tools/Pipeline/zh/environment-config/#source-repository) that you added in **Source Repository Settings** of **Environment Settings**.
+You can select the [source repository](/Dev%20Tools/Pipeline/en/environment-config/#source-repository) that you added in **Source Repository Settings** of **Environment Settings**.
 
 ![stage-guide-02](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-02.png)
 
 #### Source - GitLab
-You can select the [source repository](/Dev%20Tools/Pipeline/zh/environment-config/#source-repository) that you added in **Source Repository Settings** of **Environment Settings**.
+You can select the [source repository](/Dev%20Tools/Pipeline/en/environment-config/#source-repository) that you added in **Source Repository Settings** of **Environment Settings**.
 
 ![stage-guide-03](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-03.png)
 
@@ -28,7 +28,7 @@ You can select the [source repository](/Dev%20Tools/Pipeline/zh/environment-conf
 This is a stage to build
 
 #### Build - Jenkins
-You can build using Jenkins that you configured yourself. You can select the [build tool](/Dev%20Tools/Pipeline/zh/environment-config/#build-tool) you added in **Build Tool Settings** of **Environment Settings**. You can select **Build Job** and enter **Build Job Parameters**.
+You can build using Jenkins that you configured yourself. You can select the [build tool](/Dev%20Tools/Pipeline/en/environment-config/#build-tool) you added in **Build Tool Settings** of **Environment Settings**. You can select **Build Job** and enter **Build Job Parameters**.
 You can set **Start Condition** and **End Condition** of the **artifact**. You can decide whether or not to start a stage by setting the **Start Condition**. You can set an **End Condition** to set stage output as an artifact.
 
 ![stage-guide-04](http://static.toastoven.net/prod_pipeline/2023-02-28/stage-guide-01.png)
@@ -37,9 +37,9 @@ You can set **Start Condition** and **End Condition** of the **artifact**. You c
 #### Build - NHN Cloud Build Tool
 You can use the build tools provided by NHN Cloud.
 - Build Environment Settings
-  - You can select the [image registry](/Dev%20Tools/Pipeline/zh/environment-config/#image-registry) you added in the **Image Registry Settings** in **Environment Settings**.
+  - You can select the [image registry](/Dev%20Tools/Pipeline/en/environment-config/#image-registry) you added in the **Image Registry Settings** in **Environment Settings**.
   - Select the **Image Name** of the environment to build, set the **Build Tool Performance**, **Build Time Limit (minutes),** and **Build Command**.
-  
+
 - Build Result Settings
   - Set the **Dockerfile Path** of the build result, and the **Dockerfile Execution Path**.
   - Select a **Image Registry** and decide on **Image Name**, and the build result is pushed to the selected repository.
@@ -48,21 +48,47 @@ You can use the build tools provided by NHN Cloud.
 - Artifact Settings
   - You can decide whether to start stages by setting **Start Condtion**.
   - You can set stage output as an artifact by setting **End Condition**.
-  
+
 ![stage-guide-05](http://static.toastoven.net/prod_pipeline/2023-02-28/stage-guide-02.png)
 ![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-02.png)
 
+#### Build - NHN Cloud Build Tool v2
+You can use the build tools provided by NHN Cloud.
+- Build Environment Settings
+  - You can set the performance and timeout of the build tools.
+- Source Build Settings
+  - You can select the [image registry](/Dev%20Tools/Pipeline/en/environment-config/#_3) you added in the **Image Registry Settings** in **Environment Settings**.
+  - Enter the **image name** and **tag**for the environment you want to build, and set the **build command**.
+
+- Docker Image Build Settings
+  - For **Dockerfile path**, enter the path where the dockefile exists.
+  - For **Dockerfile execution path**, enter the path to use for building the Dockerfile.
+  - Select a **Image Registry** and decide on **Image Name**, and the build result is pushed to the selected repository.
+  - **In Tags**, enter tags for the image. If you include the tag format, the tag format area entered will be dynamically replaced.
+
+- Artifact Settings
+  - Set **Start Condition** to determine whether to start stages.
+  - Set **End Condition** to set stage products as artifacts.
+
+
+|Image tag format | Replaced format | Description                                 |
+| ----------- | ---------- |------------------------------------|
+|{BUILD_DATE_TIME}| yyyy-MM-dd_HH_mm_ss| This is replaced by the build execution time in the form of year-month-day-hour-minute-second. |
+
+![stage-guide-21.png](http://static.toastoven.net/prod_pipeline/2024-02-27/stage-guide-21.png)
+![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-02.png)
+
 #### Build - Bake (Manifest)
-You can build using a Helm package file or [Chart Repository](/Dev%20Tools/Pipeline/zh/environment-config/#chart-repository)that users configured themselves. 
+You can build using a Helm package file or [Chart Repository](/Dev%20Tools/Pipeline/en/environment-config/#chart-repository)that users configured themselves.
 - Set the chart name as the name of the output configured with the Helm engine.
 - Set the namespace as the namespace of the output configured with the Helm engine.
 - Template
-  - For repository type, select a repository that is added in [Source Repository Settings](/Dev%20Tools/Pipeline/zh/environment-config/#source-repository) or [Chart Repository Settings](/Dev%20Tools/Pipeline/zh/environment-config/#chart-repository) of **Environment Settings**.
+  - For repository type, select a repository that is added in [Source Repository Settings](/Dev%20Tools/Pipeline/en/environment-config/#source-repository) or [Chart Repository Settings](/Dev%20Tools/Pipeline/en/environment-config/#chart-repository) of **Environment Settings**.
   - When you set a repository type as **GitHub file** or **GitLab file**.
     - Enter the Helm package file path for the path.
     - Enter the branch of GitHub or GitLab for the branch name.
   - When you specify **Helm Chart** for the repository type
-    - For the chart repository name, you can select one of repositories set in[Chart Repository Settings](/Dev%20Tools/Pipeline/zh/environment-config/#chart-repository).
+    - For the chart repository name, you can select one of repositories set in[Chart Repository Settings](/Dev%20Tools/Pipeline/en/environment-config/#chart-repository).
     - For the chart name, you can choose any chart name available in the chart repository's configuration.
     - For the chart version, you to select a chart version available in the chart repository's configuration.
 - Override
@@ -72,7 +98,7 @@ You can build using a Helm package file or [Chart Repository](/Dev%20Tools/Pipel
   - Key / Value
     - Enter a value consisting of key and value, create a build result by replacing a specific value.
   - Replace Basic Type
-    - If the option is checked, when adding the override value, --set is used instead of --set--string. 
+    - If the option is checked, when adding the override value, --set is used instead of --set--string.
 - Artifact
   - You can set the **Start Condition** and **End Condition** of ** Artifact**. You can set a start condition to determine whether to start stages. You can set **End Condition** to set stage products as artifacts.
 
@@ -83,13 +109,13 @@ You can build using a Helm package file or [Chart Repository](/Dev%20Tools/Pipel
 This is a stage to deploy to the Kubernetes environment.
 
 #### Deployment - Deploy
-- You can select the [deployment target](/Dev%20Tools/Pipeline/zh/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**. 
-Enter **Stage Name**, **Deployment Target**, and **Manifest** to use for deployment. 
-If the tag format is used in the build stage, when the docker image tag of **Manifest** is entered as `_{BUILD_NUMBER}`, you can deploy as the image with the most recent number among the images built in the tag format.
-See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment ) for how to write **Manifest**.
+- You can select the [deployment target](/Dev%20Tools/Pipeline/en/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**.
+  Enter **Stage Name**, **Deployment Target**, and **Manifest** to use for deployment.
+  If the tag format is used in the build stage, when the docker image tag of **Manifest** is entered as `_{BUILD_NUMBER}`, you can deploy as the image with the most recent number among the images built in the tag format.
+  See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment ) for how to write **Manifest**.
 - You can select **Manifest Source** as artifacts. The selected artifact must be created in Manifest format.
   - You can select an artifact created in the pipeline.
-  - You can select a specific file from the repository as an artifact. 
+  - You can select a specific file from the repository as an artifact.
 - You can set the **Start Condition** and **End Condition** of ** Artifact**. You can set a start condition to determine whether to start stages. You can set **End Condition** to set stage products as artifacts.
 
 ![stage-guide-06](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-06.png)
@@ -98,35 +124,43 @@ See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads
 ![stage-guide-14](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-05.png)
 
 #### Deployment - Patch
-You can select the [deployment target](/Dev%20Tools/Pipeline/zh/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**.
-Enter **Namespace**, **Resource Type**, **Resource Name**, and **Manifest** to use for deployment.You can modify the information of an existing resource with Patch. 
+You can select the [deployment target](/Dev%20Tools/Pipeline/en/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**.
+Enter **Namespace**, **Resource Type**, **Resource Name**, and **Manifest** to use for deployment.You can modify the information of an existing resource with Patch.
 See the [Kubernetes documentation](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#patching-resources) for how to write **Manifest**.
 
 ![stage-guide-07](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-07.png)
 
 #### Deployment - Scale
-You can select the [deployment target](/Dev%20Tools/Pipeline/zh/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**. 
+You can select the [deployment target](/Dev%20Tools/Pipeline/en/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**.
 Enter **Namespace**, **Resource Type**, **Resource Name**, and **Replicas**. Replicas can be modified with Scale.
 
 ![stage-guide-08](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-08.png)
 
 #### Deployment - Rollout Undo
-You can select the [deployment target](/Dev%20Tools/Pipeline/zh/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**. 
+You can select the [deployment target](/Dev%20Tools/Pipeline/en/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**.
 Enter **Namespace**, **Resource Type**, **Resource Name**, **Revision Back**. You can roll back to the specified Revision.
 
 ![stage-guide-09](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-09.png)
 
 #### Deployment - Delete
-You can select the [deployment target](/Dev%20Tools/Pipeline/zh/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**. 
+You can select the [deployment target](/Dev%20Tools/Pipeline/en/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**.
 Enter **Namespace**, **Resource Type**, and **Resource Name**. You can delete the resource.
 
 ![stage-guide-10](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-10.png)
+
+#### Deployment - NHN Container Service
+A stage that can replace NCS workload templates.  
+If you enter **NCS Appkey**, you can view **NCS Role**, template list, and workload list.  
+You can select a template to change from the list.  
+You can select a workload for which the template is changed from the list.
+
+![stage-guide-22.png](http://static.toastoven.net/prod_pipeline/2024-03-26/stage-guide-22.png)
 
 ### Feature
 This is a stage to provide additional features.
 
 #### Feature - Webhook
-Enter the HTTP method and URL in **URL**. You can add **Request Header** and **Request Data** as needed. 
+Enter the HTTP method and URL in **URL**. You can add **Request Header** and **Request Data** as needed.
 If the response value of the webhook is one of the values entered in **Fail Fast HTTP Status Code**, close the stage immediately.
 
 ![stage-guide-11](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-11.png)
@@ -162,7 +196,7 @@ Approvers can manage **Run Management (run, stop running)** for stages after **F
 
 ![stage-guide-17](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-10-31/stage-guide-17.png)
 
-You can write requests in stages, and only users with the **Pipeline APPROVAL ADMIN** role can perform the **Run Management (run, stop running)** feature from the approval management stage. 
+You can write requests in stages, and only users with the **Pipeline APPROVAL ADMIN** role can perform the **Run Management (run, stop running)** feature from the approval management stage.
 
 The **Pipeline APPROVAL ADMIN** role can be granted from the project's Member Management, Role Group Management.
 
@@ -170,7 +204,7 @@ The **Pipeline APPROVAL ADMIN** role can be granted from the project's Member Ma
 
 #### Feature - Run NHN Cloud Deploy Service Deployment
 You can run the deployment using the NHN Cloud Deploy service on the stage.
-- If the **command type**of the artifact you want to run the deployment on is **SSH**, the **Run NHN Cloud Deploy Service Deployment** is not supported, only **Cloud Agent** is supported. For more information, refer to the [Deploy User Guide](/Dev%20Tools/Deploy/zh/console-guide/#_8).
+- If the **command type**of the artifact you want to run the deployment on is **SSH**, the **Run NHN Cloud Deploy Service Deployment** is not supported, only **Cloud Agent** is supported. For more information, refer to the [Deploy User Guide](/Dev%20Tools/Deploy/en/console-guide/#_8).
 
 ![stage-guide-19](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/stage-guide-19.png)
 
@@ -193,4 +227,4 @@ In **Number of concurrent server executions**, you can select how many servers t
 
 In **Deployment Note**, you can enter deployment execution information.
 
-For more information, see the [Deploy User Guide](/Dev%20Tools/Deploy/zh/reference/#_1).
+For more information, see the [Deploy User Guide](/Dev%20Tools/Deploy/en/reference/#_1).

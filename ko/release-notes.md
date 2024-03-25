@@ -1,11 +1,15 @@
 ## Dev Tools > Pipeline > 릴리스 노트
 
+### 2024. 03. 26.
+* 신규 배포 스테이지 **배포 - NHN Container Service**가 추가됩니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#-)에서 사용 방법을 확인할 수 있습니다.
+
 ### 2024. 02. 27.
+* 조직/프로젝트 대시보드 > 알림 관리에서 수신 메일 주소명을 설정할 수 있도록 기능이 추가되었습니다.
 * 신규 빌드 스테이지 NHN Cloud 빌드 도구 v2가 추가됩니다. 
     * 성능 개선 및 태그 포맷이 변경되었습니다. 
-       * AS-IS : `_{BUILD_NUMBER}`
-       * TO-BE : `{BUILD_DATE_TIME}`
-    * 기존 빌드 도구는 fade-out 예정으로 더 이상 신규 생성이 되지 않습니다.
+       * AS-IS: `_{BUILD_NUMBER}`
+       * TO-BE: `{BUILD_DATE_TIME}`
+    * 기존 빌드 도구는 Fade-out 예정으로 더 이상 신규 생성이 되지 않습니다.
 
 ### 2024. 01. 23.
 * NHN Cloud Deploy Service 스테이지에서 시나리오 선택 시 시나리오 확인 버튼이 추가되었습니다.

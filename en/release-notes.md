@@ -1,15 +1,17 @@
 ## Dev Tools > Pipeline > Release Notes
 
+### March 26, 2024
+* Added **Deployment - NHN Container Service**, a new deployment stage. See [Pipeline Stage Guide](/Dev%20Tools/Pipeline/ko/stage-guide/#-).
+
 ### February 27, 2024
-#### [Console]
-##### Added Features
-* Added FCM Service Account Credential Authentication
-    * On June 20, 2024, the FCM Legacy API will be terminated. As a result, you must use the FCM HTTP (V1) API to send FCM messages, and API authentication requires **Service Account Credential**instead of a **Server Key**.
-        * <a href="https://firebase.google.com/docs/cloud-messaging/migrate-v1" target="_blank">Go to the FCM Migration Guide</a>
-        * Go to <a href="https://docs.nhncloud.com/ko/Notification/Push/ko/console-guide/#_1">Console Guide</a>
-    * After you enroll for **Service Account Credential**, FCM messages are sent via the FCM HTTP V1 API. To continue sending with FCM after June 20, 2024, you must register **Service Account Credential** in the console.
+* Added a new build stage, NHN Cloud Build Tool v2.
+    * Improved performance and changed tag formats.
+        * AS-IS: _{BUILD_NUMBER}
+        * TO-BE: {BUILD_DATE_TIME}
+    * Existing build tools will be faded out no longer be created.
 
 ### January 23, 2024.
+* Added the feature to set email recipient address in Organization/Project Dashboard > Manage Notifications.
 * Added the Confirm Scenario button when selecting a scenario in the NHN Cloud Deploy Service stage.
     * Click **Confirm Scenario**to view task information for that scenario.
 * Added the **Deployment History Management** page, where you can view the history of pipeline runs and deployment target tasks. You can see how to use it in the [Deployment History Management Guide](/Dev%20Tools/Pipeline/en/deploy-history-management).
