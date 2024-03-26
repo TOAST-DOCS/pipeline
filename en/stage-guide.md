@@ -52,6 +52,32 @@ You can use the build tools provided by NHN Cloud.
 ![stage-guide-05](http://static.toastoven.net/prod_pipeline/2023-02-28/stage-guide-02.png)
 ![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-02.png)
 
+#### Build - NHN Cloud Build Tool v2
+You can use the build tools provided by NHN Cloud.
+- Build Environment Settings
+  - You can set the performance and timeout of the build tools.
+- Source Build Settings
+  - You can select the [image registry](/Dev%20Tools/Pipeline/en/environment-config/#_3) you added in the **Image Registry Settings** in **Environment Settings**.
+  - Enter the **image name** and **tag**for the environment you want to build, and set the **build command**.
+
+- Docker Image Build Settings
+  - For **Dockerfile path**, enter the path where the dockefile exists.
+  - For **Dockerfile execution path**, enter the path to use for building the Dockerfile.
+  - Select a **Image Registry** and decide on **Image Name**, and the build result is pushed to the selected repository.
+  - **In Tags**, enter tags for the image. If you include the tag format, the tag format area entered will be dynamically replaced.
+
+- Artifact Settings
+  - Set **Start Condition** to determine whether to start stages.
+  - Set **End Condition** to set stage products as artifacts.
+
+
+|Image tag format | Replaced format | Description                                 |
+| ----------- | ---------- |------------------------------------|
+|{BUILD_DATE_TIME}| yyyy-MM-dd_HH_mm_ss| This is replaced by the build execution time in the form of year-month-day-hour-minute-second. |
+
+![stage-guide-21.png](http://static.toastoven.net/prod_pipeline/2024-02-27/stage-guide-21.png)
+![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-02.png)
+
 #### Build - Bake (Manifest)
 You can build using a Helm package file or [Chart Repository](/Dev%20Tools/Pipeline/en/environment-config/#chart-repository)that users configured themselves. 
 - Set the chart name as the name of the output configured with the Helm engine.
@@ -121,6 +147,14 @@ You can select the [deployment target](/Dev%20Tools/Pipeline/en/environment-conf
 Enter **Namespace**, **Resource Type**, and **Resource Name**. You can delete the resource.
 
 ![stage-guide-10](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-10.png)
+
+#### Deployment - NHN Container Service
+A stage that can replace NCS workload templates.  
+If you enter **NCS Appkey**, you can view **NCS Role**, template list, and workload list.  
+You can select a template to change from the list.  
+You can select a workload for which the template is changed from the list.
+
+![stage-guide-22.png](http://static.toastoven.net/prod_pipeline/2024-03-26/stage-guide-22.png)
 
 ### Feature
 This is a stage to provide additional features.
