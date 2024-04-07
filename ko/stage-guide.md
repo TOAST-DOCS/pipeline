@@ -157,6 +157,23 @@ NCS 워크로드의 템플릿을 교체할 수 있는 스테이지입니다.
 
 ![stage-guide-22.png](http://static.toastoven.net/prod_pipeline/2024-03-26/stage-guide-22.png)
 
+#### 배포 - Disable
+- **환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](/Dev%20Tools/Pipeline/ko/environment-config/#_5)을 선택할 수 있습니다.
+- **Namespace**, **리소스 유형**, **선택 방법**, **리소스 이름**을 입력합니다. 해당 리소스를 비활성화 시킬 수 있습니다.
+  - 비활성화 : 리소스를 삭제하지는 않지만, 더 이상 해당 리소스에 트래픽을 보내지 않도록 설정합니다.
+- **동적인 방법으로 선택** 시 **클러스터**와 **선택 전략**을 입력합니다.
+  - 클러스터
+    - replicaSet의 경우 Pipeline 내부적으로 버전을 지정하여 배포를 하게 되는데, 동적인 방법을 선택하면 특정 버전을 선택하는 것이 아니라 선택 전략에 따라 대상을 선택합니다.
+  - 선택 전략
+    - Newest : 해당 스테이지가 시작됐을 때, 가장 최근에 배포된 리소스를 선택합니다.
+    - Second Newest : 해당 스테이지가 시작됐을 때, 두 번째로 최근에 배포된 리소스를 선택합니다.
+    - Oldest : 해당 스테이지가 시작됐을 때, 가장 오래된 리소스를 선택합니다.
+    - Largest : 해당 스테이지가 시작됐을 때, 클러스터에서 Pod수가 가장 많은 리소스를 선택합니다.
+    - Smallest : 해당 스테이지가 시작됐을 때, 클러스터에서 Pod수가 가장 적은 리소스를 선택합니다.
+
+![stage-guide-23.png](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-23.png)
+![stage-guide-24.png](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-24.png)
+
 ### 기능
 추가 기능을 제공하는 스테이지입니다.
 
