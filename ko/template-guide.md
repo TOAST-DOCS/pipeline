@@ -326,3 +326,36 @@ YAML 파일을 JSON 형태로 변경이 필요합니다(스테이지 변경을 �
 파이프라인 ID는 **파이프라인 버전 > JSON 보기**를 클릭하여 확인 가능합니다.
 ![template-guide-06](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-06.png)
 ![template-guide-07](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-07.png)
+
+### 7. Blue/Green 배포
+[템플릿 파일 다운로드](http://static.toastoven.net/prod_pipeline/template/template-scenario-07.json)
+
+![deploy-strategy-guide-03.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-03.png)
+
+Blue/Green 배포를 위한 파이프라인을 구성할 수 있습니다. Blue/Green 배포는 [배포 전략 가이드](/Dev%20Tools/Pipeline/ko/deploy-strategy-guide/)에서 자세한 내용을 확인할 수 있습니다.
+```json
+{
+    "type": "disableManifest",
+    "name": "disable old app",
+    "refId": "2",
+    "requisiteStageRefIds": [
+        "1"
+    ],
+    "deployTarget": "{[환경 설정] 배포 대상 설정에 저장된 배포 대상 이름}",  //환경 설정에 등록한 배포 대상 이름 입력이 필요합니다(예. deploy-pipeline).
+    "namespace": "{namespace 이름}",
+    "mode": "dynamic",
+    "kind": "replicaSet",
+    "cluster": "replicaSet {1번 스테이지에서 생성한 ReplicaSet 이름}",
+    "criteria": "Second Newest"
+}
+```
+
+[Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#_3)에서 **배포 - Disable 스테이지** 상세 가이드를 확인할 수 있습니다.
+
+---
+
+Blue/Green 배포를 위해서 Pipeline을 통해 Service를 먼저 생성해야합니다.
+
+[템플릿 파일 다운로드](http://static.toastoven.net/prod_pipeline/template/template-scenario-07-2.json)
+
+![deploy-strategy-guide-01.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-01.png)
