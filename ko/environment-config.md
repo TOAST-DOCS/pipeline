@@ -77,7 +77,7 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 
 **환경 설정**에서 **차트 저장소 설정**을 클릭하면 차트 저장소를 관리하는 화면으로 이동합니다. **차트 저장소 추가**를 클릭해서 신규 차트 저장소를 추가할 수 있습니다.
 
-![env-config-guide-14](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-14.png)
+![env-config-guide-14](http://static.toastoven.net/prod_pipeline/2024-04-23/env-config-guide-14.png)
 
 차트 저장소 정보를 입력한 후 **차트 저장소 연결 확인**의 **확인**을 클릭합니다. 연결 확인 후 **확인**을 클릭합니다.
 
