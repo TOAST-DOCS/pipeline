@@ -1,7 +1,11 @@
 ## Dev Tools > Pipeline > Release Notes
 
+### April 23, 2024
+* Added the chart repository URL type to Chart Repository Settings.
+    * Made modifications so that the public type is available for chart repository, in addition to the private type.
+
 ### March 26, 2024
-* Added **Deployment - NHN Container Service**, a new deployment stage. See [Pipeline Stage Guide](/Dev%20Tools/Pipeline/ko/stage-guide/#-).
+* Added **Deployment - NHN Container Service**, a new deployment stage. See [Pipeline Stage Guide](/Dev%20Tools/Pipeline/en/stage-guide/#-).
 
 ### February 27, 2024
 * Added a new build stage, NHN Cloud Build Tool v2.
