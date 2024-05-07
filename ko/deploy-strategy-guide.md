@@ -14,6 +14,10 @@ Deployment Object를 수정하면 롤아웃이 실행되기 때문에 Service Ob
   - `traffic.spinnaker.io/load-balancers` : Service Object를 지정합니다. Pipeline이 Service의 Selector에 맞게 Pod의 레이블을 수정하여 애플리케이션으로 트래픽 전달이 가능해집니다. 지정할 Service Object는 Pipeline을 통해 생성된 것이어야 합니다.
 
 ### Blue/Green 파이프라인 구성 방법
+
+Blue/Green 배포를 할 수 있는 파이프라인을 구성하는 방법은 아래와 같습니다.
+[Pipeline 템플릿 가이드](/Dev%20Tools/Pipeline/ko/template-guide/)를 참고하여 파이프라인을 구성할 수 있습니다.
+
 #### 1. Service 생성
 
 **배포 - Deploy 스테이지**를 추가하여 Pipeline을 이용하여 Service를 생성합니다. 일반적으로 애플리케이션 배포 시 Service를 수정하지는 않으므로 애플리케이션 배포 파이프라인과 다른 파이프라인을 생성하여 Service만 미리 생성합니다.
@@ -74,6 +78,55 @@ Deployment Object를 수정하면 롤아웃이 실행되기 때문에 Service Ob
 - 배포 - Disable 스테이지
   - 배포 후 구버전 애플리케이션을 선택합니다. **배포 - Disable 스테이지**는 리소스를 삭제하지는 않고, 더 이상 해당 리소스에 트래픽을 보내지 않도록 설정합니다.
     리소스를 삭제하고 싶으면 **배포 - Delete 스테이지**를 활용하십시오.
-    ![deploy-strategy-guide-05.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-05.png)
+  - 선택 전략
+    - Newest : 해당 스테이지가 시작됐을 때, 가장 최근에 배포된 리소스를 선택합니다.
+    - Second Newest : 해당 스테이지가 시작됐을 때, 두 번째로 최근에 배포된 리소스를 선택합니다.
+    - Oldest : 해당 스테이지가 시작됐을 때, 가장 오래된 리소스를 선택합니다.
+    - Largest : 해당 스테이지가 시작됐을 때, 클러스터에서 Pod수가 가장 많은 리소스를 선택합니다.
+    - Smallest : 해당 스테이지가 시작됐을 때, 클러스터에서 Pod수가 가장 적은 리소스를 선택합니다.
+      
+![deploy-strategy-guide-05.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-05.png)
+
+## Canary 배포
+Canary 배포는 새로운 버전의 애플리케이션을 일부 사용자에게 노출시키는 배포 전략입니다. Canary 배포를 사용하면 새로운 버전의 애플리케이션을 일부 사용자에게 노출시켜 문제가 발생할 경우 전체 사용자에게 영향을 미치는 것을 방지할 수 있습니다.
+Pipeline에서 Canary 배포를 할 때, Prometheus의 Query를 활용하여 신규 버전의 배포에 대해 점수를 매깁니다. 
+이 점수에 따라 스테이지가 실패 혹은 성공하며, 파이프라인을 구성하여 후속 처리를 진행할 수 있습니다.
+
+(Canary 배포를 위해 필요한 것들 설명 하는 그림 추가)
+
+### Canary 배포를 위한 사전 준비
+Pipeline에서 Canary 배포를 사용하기 위해서 [Prometheus](https://prometheus.io/)가 필요합니다. 
+애플리케이션 구축 후 배포 상태를 확인할 수 있는 메트릭을 Prometheus에 수집하도록 설정해야 합니다.
+또한 Pipeline에서 해당 Prometheus로 접근할 수 있어야 합니다. Prometheus 구축 후 원하는 메트릭에 대한 정보를 확인할 수 있는지 PromQL을 통해 확인하십시오.
+
+### Canary 배포 파이프라인 구성 방법
+
+Canary 배포를 할 수 있는 파이프라인을 구성하는 방법은 아래와 같습니다.
+[Pipeline 템플릿 가이드](/Dev%20Tools/Pipeline/ko/template-guide/)를 참고하여 파이프라인을 구성할 수 있습니다.
+
+#### 1. 지표 저장소 추가
+[Pipeline > 카나리 배포 관리 > 지표 저장소 설정 > 지표 저장소 추가](/Dev%20Tools/Pipeline/ko/canary-management/)를 통해 Prometheus를 추가합니다.
+
+해당 Prometheus는 배포된 애플리케이션과 새로 배포될 애플리케이션의 지표를 수집할 수 있어야 합니다.
+
+![deploy-strategy-guide-06.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-06.png)
+
+#### 2. 카나리 설정 추가
+[Pipeline > 카나리 배포 관리 > 카나리 설정 > 카나리 설정 추가](/Dev%20Tools/Pipeline/ko/canary-management/)를 통해 카나리 설정을 추가합니다.
+
+Prometheus Query를 등록하여 카나리 배포를 구성할 수 있습니다.
+
+![deploy-strategy-guide-07.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-07.png)
+
+#### 3. 애플리케이션 배포 파이프라인 구성
+
+![deploy-strategy-guide-08.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-08.png)
+
+- **배포 - Deploy 스테이지** -> **기능 - Canary Analysis 스테이지** -> **기능 - Precondition(스테이지 상태 조건) 스테이지** -> **배포 - Scale 스테이지** 순서로 파이프라인을 구성합니다. 
+- **배포 - Deploy 스테이지**에서는 구 버전과 신규 버전의 애플리케이션을 배포합니다. 구 버전 애플리케이션은 Canary 점수 계산 시 Baseline으로 활용하고, 신규 버전 애플리케이션은 Baseline을 기준으로 증가 혹은 감소에 의해 점수를 계산합니다.
+- **기능 - Precondition(스테이지 상태 조건) 스테이지**에서는 **기능 - Canary Analysis 스테이지** 가 실패 혹은 성공함에 따라 후속 처리를 진행할 수 있도록 파이프라인을 구성합니다.
+- **배포 - Scale 스테이지**에서는 Canary Analysis가 성공했을 때, 구 버전의 애플리케이션을 노출하지 않도록 replicas를 0으로 설정합니다. Canary Analysis가 실패했을 때(이상 징후 발생), 신규 버전의 애플리케이션을 노출하지 않도록 replicas를 0으로 설정합니다.
+
+후속 처리를 세부적으로 조정하기 위해서는 Istio등을 활용하여 트래픽을 조정할 수 있습니다.
 
 
