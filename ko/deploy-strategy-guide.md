@@ -88,16 +88,19 @@ Blue/Green 배포를 할 수 있는 파이프라인을 구성하는 방법은 �
 ![deploy-strategy-guide-05.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-05.png)
 
 ## Canary 배포
-Canary 배포는 새로운 버전의 애플리케이션을 일부 사용자에게 노출시키는 배포 전략입니다. Canary 배포를 사용하면 새로운 버전의 애플리케이션을 일부 사용자에게 노출시켜 문제가 발생할 경우 전체 사용자에게 영향을 미치는 것을 방지할 수 있습니다.
-Pipeline에서 Canary 배포를 할 때, Prometheus의 Query를 활용하여 신규 버전의 배포에 대해 점수를 매깁니다. 
-이 점수에 따라 스테이지가 실패 혹은 성공하며, 파이프라인을 구성하여 후속 처리를 진행할 수 있습니다.
+Canary 배포는 새로운 애플리케이션 버전을 한정된 일부 사용자에게 먼저 노출시키는 전략으로, 잠재적인 문제가 발생할 경우 전체 사용자에게 영향을 최소화할 수 있습니다. 
 
-(Canary 배포를 위해 필요한 것들 설명 하는 그림 추가)
+Pipeline에서 Canary 배포를 수행할 때, Prometheus 쿼리를 활용하여 새로운 버전의 배포에 대한 평가 점수를 매길 수 있습니다.
+이 점수에 따라 각 스테이지는 성공 또는 실패로 분류되며, 이후의 Pipeline 처리가 이루어집니다.
+
+### Canary 배포 구성도
+![deploy-strategy-guide-09.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-09.png)
 
 ### Canary 배포를 위한 사전 준비
-Pipeline에서 Canary 배포를 사용하기 위해서 [Prometheus](https://prometheus.io/)가 필요합니다. 
-애플리케이션 구축 후 배포 상태를 확인할 수 있는 메트릭을 Prometheus에 수집하도록 설정해야 합니다.
-또한 Pipeline에서 해당 Prometheus로 접근할 수 있어야 합니다. Prometheus 구축 후 원하는 메트릭에 대한 정보를 확인할 수 있는지 PromQL을 통해 확인하십시오.
+1. Pipeline에서 Canary 배포를 사용하기 위해서 [Prometheus](https://prometheus.io/)가 필요합니다. 
+애플리케이션 구축 후 애플리케이션 상태를 확인할 수 있는 메트릭을 Prometheus에 수집하도록 설정해야 합니다.
+
+2. Pipeline에서 해당 Prometheus로 접근할 수 있어야 합니다. Prometheus 구축 후 원하는 메트릭에 대한 정보를 확인할 수 있는지 PromQL을 통해 확인하십시오.
 
 ### Canary 배포 파이프라인 구성 방법
 
