@@ -326,3 +326,96 @@ YAML 파일을 JSON 형태로 변경이 필요합니다(스테이지 변경을 �
 파이프라인 ID는 **파이프라인 버전 > JSON 보기**를 클릭하여 확인 가능합니다.
 ![template-guide-06](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-06.png)
 ![template-guide-07](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-07.png)
+
+### 7. Blue/Green 배포
+[템플릿 파일 다운로드](http://static.toastoven.net/prod_pipeline/template/template-scenario-07.json)
+
+![deploy-strategy-guide-03.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-03.png)
+
+Blue/Green 배포를 위한 파이프라인을 구성할 수 있습니다. Blue/Green 배포는 [배포 전략 가이드](/Dev%20Tools/Pipeline/ko/deploy-strategy-guide/)에서 자세한 내용을 확인할 수 있습니다.
+```json
+{
+    "type": "disableManifest",
+    "name": "disable old app",
+    "refId": "2",
+    "requisiteStageRefIds": [
+        "1"
+    ],
+    "deployTarget": "{[환경 설정] 배포 대상 설정에 저장된 배포 대상 이름}",  //환경 설정에 등록한 배포 대상 이름 입력이 필요합니다(예. deploy-pipeline).
+    "namespace": "{namespace 이름}",
+    "mode": "dynamic",
+    "kind": "replicaSet",
+    "cluster": "replicaSet {1번 스테이지에서 생성한 ReplicaSet 이름}",
+    "criteria": "Second Newest"
+}
+```
+
+[Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#_3)에서 **배포 - Disable 스테이지** 상세 가이드를 확인할 수 있습니다.
+
+---
+
+Blue/Green 배포를 위해서 Pipeline을 통해 Service를 먼저 생성해야합니다.
+
+[템플릿 파일 다운로드](http://static.toastoven.net/prod_pipeline/template/template-scenario-07-2.json)
+
+![deploy-strategy-guide-01.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-01.png)
+
+### 8. Blue/Green 배포 (서비스 모니터링 추가)
+[템플릿 파일 다운로드](http://static.toastoven.net/prod_pipeline/template/template-scenario-08.json)
+
+![deploy-strategy-guide-10.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-10.png)
+
+Blue/Green 배포를 위한 파이프라인을 구성할 수 있습니다. Blue/Green 배포는 [배포 전략 가이드](/Dev%20Tools/Pipeline/ko/deploy-strategy-guide/)에서 자세한 내용을 확인할 수 있습니다.
+
+7번의 시나리오와 거의 동일하며 서비스 모니터링을 위한 **기능 - Webhook 스테이지**가 추가되었습니다.
+```json
+{
+    "type": "webhook",
+    "name": "Monitoring Application",
+    "refId": "3",
+    "requisiteStageRefIds": [
+    "1"
+    ],
+    "ifStageFailType": "IGNORE_THE_FAILURE",
+    "url": "{Service의 상태를 확인할 수 있는 URL}", // 서비스의 상태를 확인할 수 있는 URL을 추가합니다.
+    "payload": null,
+    "customHeaders": {},
+    "failFastStatusCodes": [
+    500
+    ],
+    "method": "GET"
+}
+```
+
+### 9. Canary 배포
+[템플릿 파일 다운로드](http://static.toastoven.net/prod_pipeline/template/template-scenario-09.json)
+
+![deploy-strategy-guide-08.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-08.png)
+
+Canary 배포를 위한 파이프라인을 구성할 수 있습니다. Canary 배포는 [배포 전략 가이드](/Dev%20Tools/Pipeline/ko/deploy-strategy-guide/)에서 자세한 내용을 확인할 수 있습니다.
+```json
+{
+    "type": "kayentaCanary",
+    "name": "Canary Analysis",
+    "refId": "3",
+    "requisiteStageRefIds": [
+    "2"
+    ],
+    "ifStageFailType": "IGNORE_THE_FAILURE", // 실패 시 후처리를 위해 해당 값으로 설정합니다.
+    "baselineAnalysisOffsetInMins": "{카나리 분석 시작점으로부터 기준 데이터 수집까지의 오프셋}",
+    "canaryAnalysisIntervalMins": "{카나리 점수가 생성되는 빈도}",
+    "canaryConfigName": "{카나리 설정에 저장된 카나리 설정 이름}",
+    "metricStoreName": "{지표 저장소 설정에 저장된 지표 저장소 이름}",
+    "controlLocation": "{PromQL의 ${location}에 매핑되는 값, baseline}",
+    "controlScope": "{PromQL의 ${scope}에 매핑되는 값, baseline}",
+    "experimentLocation": "PromQL의 ${location}에 매핑되는 값, 신규 버전",
+    "experimentScope": "{PromQL의 ${scope}에 매핑되는 값, 신규 버전}",
+    "step": "{메트릭 시계열의 간격(숫자)}",
+    "marginal": "{marginal 값}",
+    "pass": "{pass 값}",
+    "startTimeIso": null,
+    "endTimeIso": null,
+    "beginCanaryAnalysisAfterMins": "{첫 번째 카나리 분석이 시작되기까지의 지연 시간}",
+    "lifetimeMinutes": "{수집과 분석을 수행할 총 시간(숫자)}"
+}
+```

@@ -125,17 +125,37 @@ Kubernetes 환경에 배포를 하는 스테이지입니다.
 ![stage-guide-14](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-05.png)
 
 #### 배포 - Patch
-**환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](/Dev%20Tools/Pipeline/ko/environment-config/#_5)을 선택할 수 있습니다.
-**Namespace**, **리소스 유형**, **리소스 이름**, 배포에 사용할 **Manifest**를 입력합니다. Patch로 기존 리소스의 정보를 수정할 수 있습니다.
-**Manifest**를 작성하는 방법은 [Kubernetes 문서](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#patching-resources)를 참고하십시오.
+- **환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](/Dev%20Tools/Pipeline/ko/environment-config/#_5)을 선택할 수 있습니다.
+- **Namespace**, **리소스 유형**, **선택 방법**, **리소스 이름**, 배포에 사용할 **Manifest**를 입력합니다. Patch로 기존 리소스의 정보를 수정할 수 있습니다.
+- **Manifest**를 작성하는 방법은 [Kubernetes 문서](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#patching-resources)를 참고하십시오.
+- **동적인 방법으로 선택** 시 **클러스터**와 **선택 전략**을 입력합니다.
+- 클러스터
+  - replicaSet의 경우 Pipeline 내부적으로 버전을 지정하여 배포를 하게 되는데, 동적인 방법을 선택하면 특정 버전을 선택하는 것이 아니라 선택 전략에 따라 대상을 선택합니다.
+- 선택 전략
+  - Newest : 해당 스테이지가 시작됐을 때, 가장 최근에 배포된 리소스를 선택합니다.
+  - Second Newest : 해당 스테이지가 시작됐을 때, 두 번째로 최근에 배포된 리소스를 선택합니다.
+  - Oldest : 해당 스테이지가 시작됐을 때, 가장 오래된 리소스를 선택합니다.
+  - Largest : 해당 스테이지가 시작됐을 때, 클러스터에서 Pod수가 가장 많은 리소스를 선택합니다.
+  - Smallest : 해당 스테이지가 시작됐을 때, 클러스터에서 Pod수가 가장 적은 리소스를 선택합니다.
 
-![stage-guide-07](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-07.png)
+![stage-guide-07](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-07.png)
+![stage-guide-07-2](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-07-2.png)
 
 #### 배포 - Scale
-**환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](/Dev%20Tools/Pipeline/ko/environment-config/#_5)을 선택할 수 있습니다.
-**Namespace**, **리소스 유형**, **리소스 이름**, **Replicas**를 입력합니다. Scale로 Replicas를 수정할 수 있습니다.
+- **환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](/Dev%20Tools/Pipeline/ko/environment-config/#_5)을 선택할 수 있습니다.
+- **Namespace**, **리소스 유형**, **선택 방법**, **리소스 이름**, **Replicas**를 입력합니다. Scale로 Replicas를 수정할 수 있습니다.
+- **동적인 방법으로 선택** 시 **클러스터**와 **선택 전략**을 입력합니다.
+- 클러스터
+  - replicaSet의 경우 Pipeline 내부적으로 버전을 지정하여 배포를 하게 되는데, 동적인 방법을 선택하면 특정 버전을 선택하는 것이 아니라 선택 전략에 따라 대상을 선택합니다.
+- 선택 전략
+  - Newest : 해당 스테이지가 시작됐을 때, 가장 최근에 배포된 리소스를 선택합니다.
+  - Second Newest : 해당 스테이지가 시작됐을 때, 두 번째로 최근에 배포된 리소스를 선택합니다.
+  - Oldest : 해당 스테이지가 시작됐을 때, 가장 오래된 리소스를 선택합니다.
+  - Largest : 해당 스테이지가 시작됐을 때, 클러스터에서 Pod수가 가장 많은 리소스를 선택합니다.
+  - Smallest : 해당 스테이지가 시작됐을 때, 클러스터에서 Pod수가 가장 적은 리소스를 선택합니다.
 
-![stage-guide-08](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-08.png)
+![stage-guide-08](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-08.png)
+![stage-guide-08-2](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-08-2.png)
 
 #### 배포 - Rollout undo
 **환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](/Dev%20Tools/Pipeline/ko/environment-config/#_5)을 선택할 수 있습니다.
@@ -144,10 +164,54 @@ Kubernetes 환경에 배포를 하는 스테이지입니다.
 ![stage-guide-09](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-09.png)
 
 #### 배포 - Delete
-**환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](/Dev%20Tools/Pipeline/ko/environment-config/#_5)을 선택할 수 있습니다.
-**Namespace**, **리소스 유형**, **리소스 이름**을 입력합니다. 해당 리소스를 삭제할 수 있습니다.
+- **환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](/Dev%20Tools/Pipeline/ko/environment-config/#_5)을 선택할 수 있습니다.
+- **Namespace**, **리소스 유형**, **선택 방법**, **리소스 이름**을 입력합니다. 해당 리소스를 삭제할 수 있습니다.
+- **동적인 방법으로 선택** 시 **클러스터**와 **선택 전략**을 입력합니다.
+- 클러스터
+  - replicaSet의 경우 Pipeline 내부적으로 버전을 지정하여 배포를 하게 되는데, 동적인 방법을 선택하면 특정 버전을 선택하는 것이 아니라 선택 전략에 따라 대상을 선택합니다.
+- 선택 전략
+  - Newest : 해당 스테이지가 시작됐을 때, 가장 최근에 배포된 리소스를 선택합니다.
+  - Second Newest : 해당 스테이지가 시작됐을 때, 두 번째로 최근에 배포된 리소스를 선택합니다.
+  - Oldest : 해당 스테이지가 시작됐을 때, 가장 오래된 리소스를 선택합니다.
+  - Largest : 해당 스테이지가 시작됐을 때, 클러스터에서 Pod수가 가장 많은 리소스를 선택합니다.
+  - Smallest : 해당 스테이지가 시작됐을 때, 클러스터에서 Pod수가 가장 적은 리소스를 선택합니다.
 
-![stage-guide-10](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-10.png)
+![stage-guide-10](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-10.png)
+![stage-guide-10-2](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-10-2.png)
+
+#### 배포 - Disable
+- **환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](/Dev%20Tools/Pipeline/ko/environment-config/#_5)을 선택할 수 있습니다.
+- **Namespace**, **리소스 유형**, **선택 방법**, **리소스 이름**을 입력합니다. 해당 리소스를 비활성화 시킬 수 있습니다.
+  - 비활성화 : 리소스를 삭제하지는 않지만, 더 이상 해당 리소스에 트래픽을 보내지 않도록 설정합니다.
+- **동적인 방법으로 선택** 시 **클러스터**와 **선택 전략**을 입력합니다.
+  - 클러스터
+    - replicaSet의 경우 Pipeline 내부적으로 버전을 지정하여 배포를 하게 되는데, 동적인 방법을 선택하면 특정 버전을 선택하는 것이 아니라 선택 전략에 따라 대상을 선택합니다.
+  - 선택 전략
+    - Newest : 해당 스테이지가 시작됐을 때, 가장 최근에 배포된 리소스를 선택합니다.
+    - Second Newest : 해당 스테이지가 시작됐을 때, 두 번째로 최근에 배포된 리소스를 선택합니다.
+    - Oldest : 해당 스테이지가 시작됐을 때, 가장 오래된 리소스를 선택합니다.
+    - Largest : 해당 스테이지가 시작됐을 때, 클러스터에서 Pod수가 가장 많은 리소스를 선택합니다.
+    - Smallest : 해당 스테이지가 시작됐을 때, 클러스터에서 Pod수가 가장 적은 리소스를 선택합니다.
+
+![stage-guide-23.png](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-23.png)
+![stage-guide-24.png](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-24.png)
+
+#### 배포 - Enable
+- **환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](/Dev%20Tools/Pipeline/ko/environment-config/#_5)을 선택할 수 있습니다.
+- **Namespace**, **리소스 유형**, **선택 방법**, **리소스 이름**을 입력합니다. 해당 리소스를 활성화 시킬 수 있습니다.
+  - 활성화 : 해당 리소스를 Pipeline에서 관리하며, 리소스에 트래픽을 보내도록 설정합니다.
+- **동적인 방법으로 선택** 시 **클러스터**와 **선택 전략**을 입력합니다.
+  - 클러스터
+    - replicaSet의 경우 Pipeline 내부적으로 버전을 지정하여 배포를 하게 되는데, 동적인 방법을 선택하면 특정 버전을 선택하는 것이 아니라 선택 전략에 따라 대상을 선택합니다.
+  - 선택 전략
+    - Newest : 해당 스테이지가 시작됐을 때, 가장 최근에 배포된 리소스를 선택합니다.
+    - Second Newest : 해당 스테이지가 시작됐을 때, 두 번째로 최근에 배포된 리소스를 선택합니다.
+    - Oldest : 해당 스테이지가 시작됐을 때, 가장 오래된 리소스를 선택합니다.
+    - Largest : 해당 스테이지가 시작됐을 때, 클러스터에서 Pod수가 가장 많은 리소스를 선택합니다.
+    - Smallest : 해당 스테이지가 시작됐을 때, 클러스터에서 Pod수가 가장 적은 리소스를 선택합니다.
+
+![stage-guide-25.png](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-25.png)
+![stage-guide-26.png](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-26.png)
 
 #### 배포 - NHN Container Service
 NCS 워크로드의 템플릿을 교체할 수 있는 스테이지입니다.  
@@ -156,6 +220,7 @@ NCS 워크로드의 템플릿을 교체할 수 있는 스테이지입니다.
 템플릿을 변경할 워크로드를 리스트에서 선택할 수 있습니다.
 
 ![stage-guide-22.png](http://static.toastoven.net/prod_pipeline/2024-03-26/stage-guide-22.png)
+
 
 ### 기능
 추가 기능을 제공하는 스테이지입니다.
@@ -181,6 +246,12 @@ Webhook의 응답값이 **Fail Fast HTTP 상태 코드**에 입력한 값 중 �
 Judgement(실행 관리) 스테이지에서 전달받은 설정값과 **실행 조건**의 조건 값에 대해 **실행 조건 일치/실행 조건 불일치** 중 선택하여 이후 스테이지의 실행을 결정합니다.
 
 ![stage-guide-14](http://static.toastoven.net/prod_pipeline/2023-06-15/stage-guide-14.png)
+
+#### 기능 - Precondition(스테이지 상태 조건)
+이전 단계의 스테이지 이름과 실행 결과를 선택하여 조건을 설정할 수 있습니다.
+지정한 모든 조건이 충족되어야 다음 스테이지가 실행됩니다.
+
+![stage-guide-28](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-28.png)
 
 #### 기능 - 타 파이프라인 실행
 스테이지에서 다른 파이프라인 전체를 실행할 수 있습니다.
@@ -228,3 +299,59 @@ Judgement(실행 관리) 스테이지에서 전달받은 설정값과 **실행 �
 **배포 노트**에는 배포 실행 정보를 입력할 수 있습니다.
 
 자세한 설명은 [Deploy 사용 가이드](/Dev%20Tools/Deploy/ko/reference/#_1)를 참고하십시오.
+
+#### 기능 - Canary Analysis
+Canary 배포를 수행할 때 사용하는 스테이지입니다. 해당 스테이지는 입력한 정보에 따라 Prometheus로 Query를 수행하고 Canary 점수를 계산합니다.
+해당 점수에 따라 이 스테이지의 결과를 결정합니다. 이 점수는 100점 만점이며 점수가 낮을수록 이상 징후가 있다는 것을 의미합니다.
+
+점수가 낮은 경우 스테이지가 실패로 끝나게 되고, 점수가 높으면 **분석 총 시간**만큼 진행한 후 성공으로 끝나게 됩니다.
+
+해당 스테이지의 결과에 따라 후속 처리를 할 수 있도록 추가 스테이지를 구성해야할 수 있습니다.
+
+자세한 설명은 [배포 전략 가이드](/Dev%20Tools/Pipeline/ko/deploy-strategy/)를 참고하십시오.
+
+![stage-guide-29](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-29.png)
+
+**지표 저장소 설정**에는 **카나리 배포 관리** > **비표 저장소 설정**에서 생성한 설정을 선택합니다.
+
+**카니리 설정**에는 **카나리 배포 관리** > **카나리 설정**에서 생성한 설정을 선택합니다.
+
+**분석 총 시간**은 **기능 - Canary Analysis** 스테이지가 동작하는 총 시간을 설정합니다.
+
+**Delay**는 첫 번째 카나리 분석이 시작되기까지의 지연시간입니다.
+
+**Interval**은 카나리 분석을 수행하는 간격입니다.
+
+**Step**은 메트릭 시계열의 간격을 나타냅니다.
+
+**Baseline Offset**은 카나리 분석 시작점으로부터 기준 데이터 수집까지의 오프셋입니다.
+
+![stage-guide-30](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-30.png)
+
+**Baseline**은 메트릭 카나리 설정에서 지정한 템플릿의 ${scope}에 적용되는 값이며, 분석을 위한 Baseline으로 사용됩니다.
+
+**Baseline Location**은 메트릭 카나리 설정에서 지정한 템플릿의 ${location}에 적용되는 값이며, 분석을 위한 Baseline으로 사용됩니다.
+
+**Canary**는 메트릭 카나리 설정에서 지정한 템플릿의 ${scope}에 적용되는 값이며, 신규 버전의 분석으로 사용됩니다.
+
+**Canary Location**은 메트릭 카나리 설정에서 지정한 템플릿의 ${location}에 적용되는 값이며, 신규 버전의 분석으로 사용됩니다.
+
+**Marginal**은 해당 값보다 카나리 점수가 낮으면 즉시 종료되며, 이 값보다 크면 종료되지 않습니다.
+
+**Pass**는 Pipeline에 있는 모든 **기능 - Canary Analysis**스테이지가 실행된 후, 이 값보다 카나리 점수가 높으면 즉시 Pass로 종료됩니다.
+
+### 스테이지 공통 기능
+#### 스테이지 실패 시
+
+스테이지가 실패했을 때 파이프라인 실행에 관련된 설정을 선택할 수 있습니다.
+
+![stage-guide-27](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-05-28/stage-guide-27.png)
+
+- 전체 파이프라인 종료
+  - 해당 스테이지가 실패하면 전체 파이프라인이 종료됩니다. 
+- 해당 브랜치만 종료
+  - 해당 스테이지가 속하는 브랜치만 종료되며 다른 브랜치의 파이프라인은 계속 진행됩니다. 
+- 해당 브랜치가 종료되고, 다른 브랜치 종료 시 실패
+  - 해당 스테이지가 속하는 브랜치만 종료되며 다른 브랜치의 파이프라인은 계속 진행됩니다. 하지만 해당 파이프라인의 결과는 실패로 남습니다.
+- 실패를 무시하고 진행
+  - 해당 스테이지가 실패해도 다음 스테이지가 진행됩니다.
