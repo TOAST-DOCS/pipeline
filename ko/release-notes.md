@@ -17,6 +17,9 @@
 * Blue/Green 배포와 Canary 배포를 사용할 수 있습니다. [배포 전략 가이드](/Dev%20Tools/Pipeline/ko/deploy-strategy-guide/)에서 사용 방법을 확인할 수 있습니다.
 * Canary 배포와 관련된 설정을 할 수 있는 **카나리 배포 관리** 페이지가 추가되었습니다. [카나리 배포 관리 가이드](/Dev%20Tools/Pipeline/ko/canary-management)에서 사용 방법을 확인할 수 있습니다.
 
+### 2024. 04. 23.
+* 차트 저장소 설정에 차트 저장소 URL 유형이 추가되었습니다.
+  * 프라이빗 유형뿐만 아니라 퍼블릭 유형 차트 저장소도 사용할 수 있도록 변경되었습니다. 
 
 ### 2024. 03. 26.
 * 신규 배포 스테이지 **배포 - NHN Container Service**가 추가됩니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#-)에서 사용 방법을 확인할 수 있습니다.

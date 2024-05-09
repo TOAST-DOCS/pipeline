@@ -77,7 +77,7 @@ If you add a chart repository, you can build Helm chart by using the **Build - B
 
 Click **Chart Repository Settings** in **Environment Settings** to go to the screen to manage source repositories. You can add a source repository by clicking **Add Chart Repository**.
 
-![env-config-guide-14](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-14.png)
+![env-config-guide-14](http://static.toastoven.net/prod_pipeline/2024-04-23/env-config-guide-14.png)
 
 Enter the chart repository information, click **Check** in **Chart Repository Connection Check**. After checking the connection, click **Confirm**.
 

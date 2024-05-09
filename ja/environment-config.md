@@ -76,7 +76,7 @@ Pipelineに追加できる外部システムは次のとおりです。
 
 **環境設定**で**チャートリポジトリ設定**をクリックすると、チャートリポジトリを管理する画面に移動します。**チャートリポジトリ追加**をクリックして新規チャートリポジトリを追加できます。
 
-![env-config-guide-14](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-14.png)
+![env-config-guide-14](http://static.toastoven.net/prod_pipeline/2024-04-23/env-config-guide-14.png)
 
 チャートリポジトリ情報を入力した後、**チャートリポジトリ接続確認**の**確認**をクリックします。接続確認後、**確認**をクリックします。
 
