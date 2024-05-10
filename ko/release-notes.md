@@ -4,7 +4,6 @@
 * 신규 스테이지들이 추가됩니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#-)에서 사용 방법을 확인할 수 있습니다.
   * **배포 - Disable**
   * **배포 - Enable**
-  * **기능 - Canary Analysis**
   * **기능 - Precondition(스테이지 상태 조건)**
 * 리소스 선택을 동적인 방법으로 선택할 수 있는 기능이 추가됩니다.
   * 적용 스테이지 목록
@@ -14,8 +13,7 @@
     * **배포 - Patch**
     * **배포 - Scale**
 * 모든 스테이지에 **스테이지 실패 시** 기능이 추가됩니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#-)에서 사용 방법을 확인할 수 있습니다.
-* Blue/Green 배포와 Canary 배포를 사용할 수 있습니다. [배포 전략 가이드](/Dev%20Tools/Pipeline/ko/deploy-strategy-guide/)에서 사용 방법을 확인할 수 있습니다.
-* Canary 배포와 관련된 설정을 할 수 있는 **카나리 배포 관리** 페이지가 추가되었습니다. [카나리 배포 관리 가이드](/Dev%20Tools/Pipeline/ko/canary-management)에서 사용 방법을 확인할 수 있습니다.
+* Blue/Green 배포를 사용할 수 있습니다. [배포 전략 가이드](/Dev%20Tools/Pipeline/ko/deploy-strategy-guide/)에서 사용 방법을 확인할 수 있습니다.
 
 ### 2024. 04. 23.
 * 차트 저장소 설정에 차트 저장소 URL 유형이 추가되었습니다.

@@ -386,36 +386,3 @@ Blue/Green 배포를 위한 파이프라인을 구성할 수 있습니다. Blue/
     "method": "GET"
 }
 ```
-
-### 9. Canary 배포
-[템플릿 파일 다운로드](http://static.toastoven.net/prod_pipeline/template/template-scenario-09.json)
-
-![deploy-strategy-guide-08.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-08.png)
-
-Canary 배포를 위한 파이프라인을 구성할 수 있습니다. Canary 배포는 [배포 전략 가이드](/Dev%20Tools/Pipeline/ko/deploy-strategy-guide/)에서 자세한 내용을 확인할 수 있습니다.
-```json
-{
-    "type": "kayentaCanary",
-    "name": "Canary Analysis",
-    "refId": "3",
-    "requisiteStageRefIds": [
-    "2"
-    ],
-    "ifStageFailType": "IGNORE_THE_FAILURE", // 실패 시 후처리를 위해 해당 값으로 설정합니다.
-    "baselineAnalysisOffsetInMins": "{카나리 분석 시작점으로부터 기준 데이터 수집까지의 오프셋}",
-    "canaryAnalysisIntervalMins": "{카나리 점수가 생성되는 빈도}",
-    "canaryConfigName": "{카나리 설정에 저장된 카나리 설정 이름}",
-    "metricStoreName": "{지표 저장소 설정에 저장된 지표 저장소 이름}",
-    "controlLocation": "{PromQL의 ${location}에 매핑되는 값, baseline}",
-    "controlScope": "{PromQL의 ${scope}에 매핑되는 값, baseline}",
-    "experimentLocation": "PromQL의 ${location}에 매핑되는 값, 신규 버전",
-    "experimentScope": "{PromQL의 ${scope}에 매핑되는 값, 신규 버전}",
-    "step": "{메트릭 시계열의 간격(숫자)}",
-    "marginal": "{marginal 값}",
-    "pass": "{pass 값}",
-    "startTimeIso": null,
-    "endTimeIso": null,
-    "beginCanaryAnalysisAfterMins": "{첫 번째 카나리 분석이 시작되기까지의 지연 시간}",
-    "lifetimeMinutes": "{수집과 분석을 수행할 총 시간(숫자)}"
-}
-```
