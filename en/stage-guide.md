@@ -6,6 +6,7 @@ Click **Pipeline Management** > **+Create Pipeline** to create a pipeline. After
 ![stage-guide-01](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-01.png)
 
 Stages are divided into the following groups.
+
 - **Source**
 - **Build**
 - **Deployment**
@@ -36,39 +37,41 @@ You can set **Start Condition** and **End Condition** of the **artifact**. You c
 
 #### Build - NHN Cloud Build Tool
 You can use the build tools provided by NHN Cloud.
+
 - Build Environment Settings
-  - You can select the [image registry](/Dev%20Tools/Pipeline/en/environment-config/#image-registry) you added in the **Image Registry Settings** in **Environment Settings**.
-  - Select the **Image Name** of the environment to build, set the **Build Tool Performance**, **Build Time Limit (minutes),** and **Build Command**.
+    - You can select the [image registry](/Dev%20Tools/Pipeline/en/environment-config/#image-registry) you added in the **Image Registry Settings** in **Environment Settings**.
+    - Select the **Image Name** of the environment to build, set the **Build Tool Performance**, **Build Time Limit (minutes),** and **Build Command**.
   
 - Build Result Settings
-  - Set the **Dockerfile Path** of the build result, and the **Dockerfile Execution Path**.
-  - Select a **Image Registry** and decide on **Image Name**, and the build result is pushed to the selected repository.
-  - If **Use Tag Format** is selected, the tag format is fixed, and the image is created with dynamically generated tags in the form of `_{BUILD_NUMBER}`.
+    - Set the **Dockerfile Path** of the build result, and the **Dockerfile Execution Path**.
+    - Select a **Image Registry** and decide on **Image Name**, and the build result is pushed to the selected repository.
+    - If **Use Tag Format** is selected, the tag format is fixed, and the image is created with dynamically generated tags in the form of `_{BUILD_NUMBER}`.
 
 - Artifact Settings
-  - You can decide whether to start stages by setting **Start Condtion**.
-  - You can set stage output as an artifact by setting **End Condition**.
+    - You can decide whether to start stages by setting **Start Condtion**.
+    - You can set stage output as an artifact by setting **End Condition**.
   
 ![stage-guide-05](http://static.toastoven.net/prod_pipeline/2023-02-28/stage-guide-02.png)
 ![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-02.png)
 
 #### Build - NHN Cloud Build Tool v2
 You can use the build tools provided by NHN Cloud.
+
 - Build Environment Settings
-  - You can set the performance and timeout of the build tools.
+    - You can set the performance and timeout of the build tools.
 - Source Build Settings
-  - You can select the [image registry](/Dev%20Tools/Pipeline/en/environment-config/#_3) you added in the **Image Registry Settings** in **Environment Settings**.
-  - Enter the **image name** and **tag**for the environment you want to build, and set the **build command**.
+    - You can select the [image registry](/Dev%20Tools/Pipeline/en/environment-config/#_3) you added in the **Image Registry Settings** in **Environment Settings**.
+    - Enter the **image name** and **tag**for the environment you want to build, and set the **build command**.
 
 - Docker Image Build Settings
-  - For **Dockerfile path**, enter the path where the dockefile exists.
-  - For **Dockerfile execution path**, enter the path to use for building the Dockerfile.
-  - Select a **Image Registry** and decide on **Image Name**, and the build result is pushed to the selected repository.
-  - **In Tags**, enter tags for the image. If you include the tag format, the tag format area entered will be dynamically replaced.
+    - For **Dockerfile path**, enter the path where the dockefile exists.
+    - For **Dockerfile execution path**, enter the path to use for building the Dockerfile.
+    - Select a **Image Registry** and decide on **Image Name**, and the build result is pushed to the selected repository.
+    - **In Tags**, enter tags for the image. If you include the tag format, the tag format area entered will be dynamically replaced.
 
 - Artifact Settings
-  - Set **Start Condition** to determine whether to start stages.
-  - Set **End Condition** to set stage products as artifacts.
+    - Set **Start Condition** to determine whether to start stages.
+    - Set **End Condition** to set stage products as artifacts.
 
 
 |Image tag format | Replaced format | Description                                 |
@@ -79,28 +82,29 @@ You can use the build tools provided by NHN Cloud.
 ![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-02.png)
 
 #### Build - Bake (Manifest)
-You can build using a Helm package file or [Chart Repository](/Dev%20Tools/Pipeline/en/environment-config/#chart-repository)that users configured themselves. 
+You can build using a Helm package file or [Chart Repository](/Dev%20Tools/Pipeline/en/environment-config/#chart-repository)that users configured themselves.
+
 - Set the chart name as the name of the output configured with the Helm engine.
 - Set the namespace as the namespace of the output configured with the Helm engine.
 - Template
-  - For repository type, select a repository that is added in [Source Repository Settings](/Dev%20Tools/Pipeline/en/environment-config/#source-repository) or [Chart Repository Settings](/Dev%20Tools/Pipeline/en/environment-config/#chart-repository) of **Environment Settings**.
-  - When you set a repository type as **GitHub file** or **GitLab file**.
-    - Enter the Helm package file path for the path.
-    - Enter the branch of GitHub or GitLab for the branch name.
-  - When you specify **Helm Chart** for the repository type
-    - For the chart repository name, you can select one of repositories set in[Chart Repository Settings](/Dev%20Tools/Pipeline/en/environment-config/#chart-repository).
-    - For the chart name, you can choose any chart name available in the chart repository's configuration.
-    - For the chart version, you to select a chart version available in the chart repository's configuration.
+    - For repository type, select a repository that is added in [Source Repository Settings](/Dev%20Tools/Pipeline/en/environment-config/#source-repository) or [Chart Repository Settings](/Dev%20Tools/Pipeline/en/environment-config/#chart-repository) of **Environment Settings**.
+    - When you set a repository type as **GitHub file** or **GitLab file**.
+        - Enter the Helm package file path for the path.
+        - Enter the branch of GitHub or GitLab for the branch name.
+    - When you specify **Helm Chart** for the repository type
+        - For the chart repository name, you can select one of repositories set in[Chart Repository Settings](/Dev%20Tools/Pipeline/en/environment-config/#chart-repository).
+        - For the chart name, you can choose any chart name available in the chart repository's configuration.
+        - For the chart version, you to select a chart version available in the chart repository's configuration.
 - Override
-  - Repository Information
-    - You can select in the same way as for templates.
-    - Create a build output using the template as default and replacing it with what you specify in the override.
-  - Key / Value
-    - Enter a value consisting of key and value, create a build result by replacing a specific value.
-  - Replace Basic Type
-    - If the option is checked, when adding the override value, --set is used instead of --set--string. 
+    - Repository Information
+        - You can select in the same way as for templates.
+        - Create a build output using the template as default and replacing it with what you specify in the override.
+    - Key / Value
+        - Enter a value consisting of key and value, create a build result by replacing a specific value.
+    - Replace Basic Type
+        - If the option is checked, when adding the override value, --set is used instead of --set--string. 
 - Artifact
-  - You can set the **Start Condition** and **End Condition** of ** Artifact**. You can set a start condition to determine whether to start stages. You can set **End Condition** to set stage products as artifacts.
+    - You can set the **Start Condition** and **End Condition** of ** Artifact**. You can set a start condition to determine whether to start stages. You can set **End Condition** to set stage products as artifacts.
 
 ![stage-guide-12](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-12.png)
 ![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-13.png)
@@ -109,13 +113,14 @@ You can build using a Helm package file or [Chart Repository](/Dev%20Tools/Pipel
 This is a stage to deploy to the Kubernetes environment.
 
 #### Deployment - Deploy
+
 - You can select the [deployment target](/Dev%20Tools/Pipeline/en/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**. 
 Enter **Stage Name**, **Deployment Target**, and **Manifest** to use for deployment. 
 If the tag format is used in the build stage, when the docker image tag of **Manifest** is entered as `_{BUILD_NUMBER}`, you can deploy as the image with the most recent number among the images built in the tag format.
 See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment ) for how to write **Manifest**.
 - You can select **Manifest Source** as artifacts. The selected artifact must be created in Manifest format.
-  - You can select an artifact created in the pipeline.
-  - You can select a specific file from the repository as an artifact. 
+    - You can select an artifact created in the pipeline.
+    - You can select a specific file from the repository as an artifact. 
 - You can set the **Start Condition** and **End Condition** of ** Artifact**. You can set a start condition to determine whether to start stages. You can set **End Condition** to set stage products as artifacts.
 
 ![stage-guide-06](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-06.png)
@@ -204,6 +209,7 @@ The **Pipeline APPROVAL ADMIN** role can be granted from the project's Member Ma
 
 #### Feature - Run NHN Cloud Deploy Service Deployment
 You can run the deployment using the NHN Cloud Deploy service on the stage.
+
 - If the **command type**of the artifact you want to run the deployment on is **SSH**, the **Run NHN Cloud Deploy Service Deployment** is not supported, only **Cloud Agent** is supported. For more information, refer to the [Deploy User Guide](/Dev%20Tools/Deploy/en/console-guide/#_8).
 
 ![stage-guide-19](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/stage-guide-19.png)
