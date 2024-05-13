@@ -25,20 +25,22 @@ Blue/Green 배포를 할 수 있는 파이프라인을 구성하는 방법은 �
 
 - 배포 - Deploy 스테이지
   - Service의 manifest의 예는 아래와 같습니다. metadata, spec 등은 환경에 맞게 수정하여 사용할 수 있습니다.
-    ```yaml
-    apiVersion: v1
-    kind: Service
-    metadata:
-      name: my-service
-      namespace: blue-green
-    spec:
-      selector:
-        frontedBy: my-service
-      ports:
-      - protocol: TCP
-        port: 80
-    ```
-    ![deploy-strategy-guide-02.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-02.png)
+
+``` yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+  namespace: blue-green
+spec:
+  selector:
+    frontedBy: my-service
+  ports:
+  - protocol: TCP
+    port: 80
+```
+
+![deploy-strategy-guide-02.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-02.png)
 
 #### 2. 애플리케이션 배포 파이프라인 구성
 
@@ -49,32 +51,34 @@ Blue/Green 배포를 할 수 있는 파이프라인을 구성하는 방법은 �
   - ReplicaSet의 manifest의 예는 아래와 같습니다. annotations의 `strategy.spinnaker.io/max-version-history`는 2 이상의 값을 지정해 줘야 하고, `traffic.spinnaker.io/load-balancers`는 위 과정에서 생성한 Service 이름을 지정합니다.
 
     그 외의 metadata, spec 등은 환경에 맞게 수정하여 사용할 수 있습니다.
-    ```yaml
-    apiVersion: apps/v1
-    kind: ReplicaSet
+
+```yaml
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  annotations:
+    strategy.spinnaker.io/max-version-history: "2"
+    traffic.spinnaker.io/load-balancers: '["service my-service"]'
+  labels:
+    app: myapp
+  name: myapp-frontend
+  namespace: blue-green
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: myapp
+  template:
     metadata:
-      annotations:
-        strategy.spinnaker.io/max-version-history: "2"
-        traffic.spinnaker.io/load-balancers: '["service my-service"]'
       labels:
         app: myapp
-      name: myapp-frontend
-      namespace: blue-green
     spec:
-      replicas: 4
-      selector:
-        matchLabels:
-          app: myapp
-      template:
-        metadata:
-          labels:
-            app: myapp
-        spec:
-          containers:
-          - image: nginx:stable-alpine3.17-slim
-            name: frontend
-    ```
-    ![deploy-strategy-guide-04.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-04.png)
+      containers:
+      - image: nginx:stable-alpine3.17-slim
+        name: frontend
+```
+    
+![deploy-strategy-guide-04.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-04.png)
 - 배포 - Disable 스테이지
   - 배포 후 구버전 애플리케이션을 선택합니다. **배포 - Disable 스테이지**는 리소스를 삭제하지는 않고, 더 이상 해당 리소스에 트래픽을 보내지 않도록 설정합니다.
     리소스를 삭제하고 싶으면 **배포 - Delete 스테이지**를 활용하십시오.
