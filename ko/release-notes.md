@@ -1,18 +1,18 @@
 ## Dev Tools > Pipeline > 릴리스 노트
 
 ### 2024. 05. 28.
-* 신규 스테이지들이 추가됩니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#-)에서 사용 방법을 확인할 수 있습니다.
+* 신규 스테이지들이 추가되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#-)에서 사용 방법을 확인할 수 있습니다.
     * **배포 - Disable**
     * **배포 - Enable**
     * **기능 - Precondition(스테이지 상태 조건)**
-* 리소스 선택을 동적인 방법으로 선택할 수 있는 기능이 추가됩니다.
+* 리소스 선택을 동적인 방법으로 선택할 수 있는 기능이 추가되었습니다.
     * 적용 스테이지 목록
         * **배포 - Delete**
         * **배포 - Disable**
         * **배포 - Enable**
         * **배포 - Patch**
         * **배포 - Scale**
-* 모든 스테이지에 **스테이지 실패 시** 기능이 추가됩니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#-)에서 사용 방법을 확인할 수 있습니다.
+* 모든 스테이지에 **스테이지 실패 시** 기능이 추가되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#-)에서 사용 방법을 확인할 수 있습니다.
 * Blue/Green 배포를 사용할 수 있습니다. [배포 전략 가이드](/Dev%20Tools/Pipeline/ko/deploy-strategy-guide/)에서 사용 방법을 확인할 수 있습니다.
 
 ### 2024. 04. 23.
@@ -20,7 +20,7 @@
   * 프라이빗 유형뿐만 아니라 퍼블릭 유형 차트 저장소도 사용할 수 있도록 변경되었습니다. 
 
 ### 2024. 03. 26.
-* 신규 배포 스테이지 **배포 - NHN Container Service**가 추가됩니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#-)에서 사용 방법을 확인할 수 있습니다.
+* 신규 배포 스테이지 **배포 - NHN Container Service**가 추가되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#-)에서 사용 방법을 확인할 수 있습니다.
 
 ### 2024. 02. 27.
 * 조직/프로젝트 대시보드 > 알림 관리에서 수신 메일 주소명을 설정할 수 있도록 기능이 추가되었습니다.
