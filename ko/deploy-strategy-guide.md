@@ -4,6 +4,8 @@
 
 ## Blue/Green 배포
 
+![deploy-strategy-guide-11.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-11.png)
+
 Blue/Green 배포는 두 개의 동일한 환경을 생성하는 배포 전략입니다. 하나의 환경(Blue)은 현재의 애플리케이션 버전을 실행하고, 다른 하나의 환경(Green)은 새로운 애플리케이션 버전을 실행합니다.
 Blue/Green 배포 전략을 사용하면 응용 프로그램 가용성을 높이고 배포 실패 시 롤백 프로세스를 단순화하여 배포 위험을 줄일 수 있습니다. Green 환경에서 테스트가 완료되면 애플리케이션 트래픽이 Green 환경으로 이동되고, Blue 환경은 폐기됩니다.
 
