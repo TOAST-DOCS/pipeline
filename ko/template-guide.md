@@ -42,7 +42,7 @@ Github에서 소스코드를 가져와 NHN Cloud 빌드 도구로 빌드 후 대
     "refId": "1",
     "requisiteStageRefIds": [],
     "sourceRepo": "{[환경 설정] 소스 저장소 설정에 저장된 소스 저장소 이름}",   //환경 설정에 등록한 소스 저장소 이름 입력이 필요합니다. 
-    "branch": "{배포 대상 브랜치}"  //배포 대상 소스 브랜치에 해당하는 값 입력이 필요합니다(예. main).
+    "branch": "{배포 대상 브랜치}"  //배포 대상 소스 브랜치에 해당하는 값 입력이 필요합니다(예: main).
 },
 ```
 
@@ -63,15 +63,15 @@ Github에서 소스코드를 가져와 NHN Cloud 빌드 도구로 빌드 후 대
     "requisiteStageRefIds": [
         "1"
     ],
-    "buildImageRegistry": "{[환경 설정] 이미지 저장소 설정에 저장된 이미지 저장소 이름}",    //환경 설정에 등록한 이미지 저장소 이름 입력이 필요합니다(예. buildImageRegistry-pipeline).
-    "buildImageName": "{이미지 이름}",  //이미지 이름 입력이 필요합니다(예. maven).
-    "buildImageTag": "{이미지 태그}",   //이미지 태그 정보가 필요합니다(예. 1.0.0).
-    "buildCommand": "{빌드 명령어}",    //빌드 명령어가 필요합니다(예. mvn package).
-    "dockerfilePath": "{Dockerfile 경로}",  //Dockerfile의 경로 입력이 필요합니다(예. Dockerfile).
+    "buildImageRegistry": "{[환경 설정] 이미지 저장소 설정에 저장된 이미지 저장소 이름}",    //환경 설정에 등록한 이미지 저장소 이름 입력이 필요합니다(예: buildImageRegistry-pipeline).
+    "buildImageName": "{이미지 이름}",  //이미지 이름 입력이 필요합니다(예: maven).
+    "buildImageTag": "{이미지 태그}",   //이미지 태그 정보가 필요합니다(예: 1.0.0).
+    "buildCommand": "{빌드 명령어}",    //빌드 명령어가 필요합니다(예: mvn package).
+    "dockerfilePath": "{Dockerfile 경로}",  //Dockerfile의 경로 입력이 필요합니다(예: Dockerfile).
     "buildWorkDir": "",   //선택항목으로 Dockerfile의 실행 경로를 입력합니다.
-    "pushImageRegistry": "{[환경 설정] 빌드 결과가 업로드 될 이미지 저장소 설정에 저장된 이미지 저장소 이름}",  //환경 설정에 등록한 이미지 저장소 이름 입력이 필요합니다(예. pushImageRegistry-pipeline).
-    "pushImageName": "{빌드 결과 이미지 이름}", //빌드 결과에 대한 이미지 이름 입력이 필요합니다(예. result-image).
-    "pushImageTag": "{빌드 결과 이미지 태그}",  //빌드 결과 이미지의 태그가 필요합니다(예. latest).
+    "pushImageRegistry": "{[환경 설정] 빌드 결과가 업로드 될 이미지 저장소 설정에 저장된 이미지 저장소 이름}",  //환경 설정에 등록한 이미지 저장소 이름 입력이 필요합니다(예: pushImageRegistry-pipeline).
+    "pushImageName": "{빌드 결과 이미지 이름}", //빌드 결과에 대한 이미지 이름 입력이 필요합니다(예: result-image).
+    "pushImageTag": "{빌드 결과 이미지 태그}",  //빌드 결과 이미지의 태그가 필요합니다(예: latest).
     "buildFlavorName": "c2m4",  //기본값이 c2m4이며, c4m8 성능으로도 제공됩니다.
     "buildTimeout": 30, //기본값이 30분입니다. 1부터 600까지 입력할 수 있습니다.
     "startArtifacts": null,
@@ -90,7 +90,7 @@ Github에서 소스코드를 가져와 NHN Cloud 빌드 도구로 빌드 후 대
     "requisiteStageRefIds": [
         "2"
     ],
-    "deployTarget": "{[환경 설정] 배포 대상 설정에 저장된 배포 대상 이름}",  //환경 설정에 등록한 배포 대상 이름 입력이 필요합니다(예. deploy-pipeline).
+    "deployTarget": "{[환경 설정] 배포 대상 설정에 저장된 배포 대상 이름}",  //환경 설정에 등록한 배포 대상 이름 입력이 필요합니다(예: deploy-pipeline).
     "manifests": [
         // Deployment Manifest 정보 입력이 필요합니다.
         // 아래 예시를 참고하여 작성 후 등록하여 사용 가능합니다.
@@ -341,7 +341,7 @@ Blue/Green 배포를 위한 파이프라인을 구성할 수 있습니다. Blue/
     "requisiteStageRefIds": [
         "1"
     ],
-    "deployTarget": "{[환경 설정] 배포 대상 설정에 저장된 배포 대상 이름}",  //환경 설정에 등록한 배포 대상 이름 입력이 필요합니다(예. deploy-pipeline).
+    "deployTarget": "{[환경 설정] 배포 대상 설정에 저장된 배포 대상 이름}",  //환경 설정에 등록한 배포 대상 이름 입력이 필요합니다(예: deploy-pipeline).
     "namespace": "{namespace 이름}",
     "mode": "dynamic",
     "kind": "replicaSet",
@@ -354,13 +354,13 @@ Blue/Green 배포를 위한 파이프라인을 구성할 수 있습니다. Blue/
 
 ---
 
-Blue/Green 배포를 위해서 Pipeline을 통해 Service를 먼저 생성해야합니다.
+Blue/Green 배포를 위해서 Pipeline을 통해 Service를 먼저 생성해야 합니다.
 
 [템플릿 파일 다운로드](http://static.toastoven.net/prod_pipeline/template/template-scenario-07-2.json)
 
 ![deploy-strategy-guide-01.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-01.png)
 
-### 8. Blue/Green 배포 (서비스 모니터링 추가)
+### 8. Blue/Green 배포(서비스 모니터링 추가)
 [템플릿 파일 다운로드](http://static.toastoven.net/prod_pipeline/template/template-scenario-08.json)
 
 ![deploy-strategy-guide-10.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-10.png)
