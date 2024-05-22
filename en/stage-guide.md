@@ -123,23 +123,44 @@ See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads
     - You can select a specific file from the repository as an artifact. 
 - You can set the **Start Condition** and **End Condition** of ** Artifact**. You can set a start condition to determine whether to start stages. You can set **End Condition** to set stage products as artifacts.
 
+
 ![stage-guide-06](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-06.png)
 ![stage-guide-15](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-15.png)
 ![stage-guide-16](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-16.png)
 ![stage-guide-14](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-05.png)
 
 #### Deployment - Patch
-You can select the [deployment target](/Dev%20Tools/Pipeline/en/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**.
-Enter **Namespace**, **Resource Type**, **Resource Name**, and **Manifest** to use for deployment.You can modify the information of an existing resource with Patch. 
-See the [Kubernetes documentation](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#patching-resources) for how to write **Manifest**.
+- You can select the [deployment target\](/Dev%20Tools/Pipeline/en/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**.
+- Enter **Namespace**, **Resource Type**, **Resource Name**, and **Manifest** to use for deployment.You can modify the information of an existing resource with Patch. 
+- See the [Kubernetes documentation\](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#patching-resources) for how to write **Manifest**.
+- If you set the selection method to **Select by dynamic method**, enter a **cluster** and **selection strategy**.
+- Cluster
+    - For replicaSets, Pipeline internally versions and deploys them, and when you select a **Select by dynamic method**, it selects targets based on a selection strategy rather than selecting a specific version.
+- Selection Strategy
+    - Newest: Select the most recently deployed resource when the stage started.
+    - Second Newest: Select the second most recently deployed resource when the stage started.
+    - Oldest: Select the oldest resource when this stage started.
+    - Largest: Select the resource with the largest number of Pods in the cluster when that stage started.
+    - Smallest: Select the resource with the smallest number of Pods in the cluster when that stage is started.
 
-![stage-guide-07](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-07.png)
+![stage-guide-07](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-07.png)
+![stage-guide-07-2](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-07-2.png)
 
 #### Deployment - Scale
-You can select the [deployment target](/Dev%20Tools/Pipeline/en/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**. 
-Enter **Namespace**, **Resource Type**, **Resource Name**, and **Replicas**. Replicas can be modified with Scale.
+- You can select the [deployment target\](/Dev%20Tools/Pipeline/en/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**.
+- Enter **Namespace**, **Resource Type**, Resource Name, and Replicas. Replicas can be modified with Scale.
+- If you set the selection method to **Select by dynamic method**, enter a **cluster** and **selection strategy**.
+- Cluster
+    - For replicaSets, Pipeline internally versions and deploys them, and when you select a **Select by dynamic method**, it selects targets based on a selection strategy rather than selecting a specific version.
+- Selection Strategy
+    - Newest: Select the most recently deployed resource when the stage started.
+    - Second Newest: Select the second most recently deployed resource when the stage started.
+    - Oldest: Select the oldest resource when this stage started.
+    - Largest: Select the resource with the largest number of Pods in the cluster when that stage started.
+    - Smallest: Select the resource with the smallest number of Pods in the cluster when that stage is started.
 
-![stage-guide-08](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-08.png)
+![stage-guide-08](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-08.png)
+![stage-guide-08-2](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-08-2.png)
 
 #### Deployment - Rollout Undo
 You can select the [deployment target](/Dev%20Tools/Pipeline/en/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**. 
@@ -148,16 +169,60 @@ Enter **Namespace**, **Resource Type**, **Resource Name**, **Revision Back**. Yo
 ![stage-guide-09](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-09.png)
 
 #### Deployment - Delete
-You can select the [deployment target](/Dev%20Tools/Pipeline/en/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**. 
-Enter **Namespace**, **Resource Type**, and **Resource Name**. You can delete the resource.
+- You can select the [deployment target\](/Dev%20Tools/Pipeline/en/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**.
+- Enter the **Namespace**, **resource type**, **selection method**, and **resource name**. You can delete the resource.
+- If you set the selection method to **Select by dynamic method**, enter a **cluster** and **selection strategy**.
+- Cluster
+    - For replicaSets, Pipeline internally versions and deploys them, and when you select a **Select by dynamic method**, it selects targets based on a selection strategy rather than selecting a specific version.
+- Selection Strategy
+    - Newest: Select the most recently deployed resource when the stage started.
+    - Second Newest: Select the second most recently deployed resource when the stage started.
+    - Oldest: Select the oldest resource when this stage started.
+    - Largest: Select the resource with the largest number of Pods in the cluster when that stage started.
+    - Smallest: Select the resource with the smallest number of Pods in the cluster when that stage is started.
 
-![stage-guide-10](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-10.png)
+![stage-guide-10](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-10.png)
+![stage-guide-10-2](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-10-2.png)
+
+#### Deployment - Disable
+- You can select the [deployment target\](/Dev%20Tools/Pipeline/en/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**.
+- Enter the **Namespace**, **resource type**, **selection method**, and **resource name**. You can disable the resource.
+    - Disable: Doesn't delete the resource, but no longer sends traffic to it.
+- If you set the selection method to **Select by dynamic method**, enter a **cluster** and **selection strategy**.
+    - Cluster
+        - For replicaSets, Pipeline internally versions and deploys them, and when you select a **Select by dynamic method**, it selects targets based on a selection strategy rather than selecting a specific version.
+    - Selection Strategy
+        - Newest: Select the most recently deployed resource when the stage started.
+        - Second Newest: Select the second most recently deployed resource when the stage started.
+        - Oldest: Select the oldest resource when this stage started.
+        - Largest: Select the resource with the largest number of Pods in the cluster when that stage started.
+        - Smallest: Select the resource with the smallest number of Pods in the cluster when that stage is started.
+
+![stage-guide-23.png](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-23.png)
+![stage-guide-24.png](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-24.png)
+
+#### Deployment - Enable
+- You can select the [deployment target\](/Dev%20Tools/Pipeline/en/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**.
+- Enter the **Namespace**, **resource type**, **selection method**, and **resource name**. You can enable the resource.
+    - Enabled: The resource is managed by Pipeline and is enabled to send traffic to the resource.
+- If you set the selection method to **Select by dynamic method**, enter a **cluster** and **selection strategy**.
+    - Cluster
+        - For replicaSets, Pipeline internally versions and deploys them, and when you select a **Select by dynamic method**, it selects targets based on a selection strategy rather than selecting a specific version.
+    - Selection Strategy
+        - Newest: Select the most recently deployed resource when the stage started.
+        - Second Newest: Select the second most recently deployed resource when the stage started.
+        - Oldest: Select the oldest resource when this stage started.
+        - Largest: Select the resource with the largest number of Pods in the cluster when that stage started.
+        - Smallest: Select the resource with the smallest number of Pods in the cluster when that stage is started.
+
+![stage-guide-25.png](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-25.png)
+![stage-guide-26.png](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-26.png)
 
 #### Deployment - NHN Container Service
-A stage that can replace NCS workload templates.  
-If you enter **NCS Appkey**, you can view **NCS Role**, template list, and workload list.  
-You can select a template to change from the list.  
-You can select a workload for which the template is changed from the list.
+The stage where you can replace the template of an NCS workload.  
+Entering the **NCS app key** retrieves a list of **NCS roles**, templates, and workloads.  
+You can select the template you want to change from the list.  
+You can select a workload from the list for which you want to change the template.
 
 ![stage-guide-22.png](http://static.toastoven.net/prod_pipeline/2024-03-26/stage-guide-22.png)
 
@@ -186,10 +251,21 @@ Decide whether run subsequent stages by selecting either **Condition Matched or 
 
 ![stage-guide-14](http://static.toastoven.net/prod_pipeline/2023-06-15/stage-guide-14.png)
 
+#### Features - Precondition (Stage Status Condition)
+You can set conditions by selecting the stage name and execution result of the previous stage.
+The next stage runs only if all the conditions you specify are met.
+
+![stage-guide-28](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-28.png)
+
 #### Feature - Run the Pipeline
 Run entire other pipelines.
 Select a **pipeline name** to run.
 
+![stage-guide-28](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-28.png)
+
+#### Feature - Run Other Pipelines
+You can run entire other pipelines on a stage.
+Select the **pipeline name** you want to run.
 ![stage-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-08-29/stage-guide-15.png)
 
 If you uncheck **Run Condition**, the next stage runs without waiting for the execution status of the selected pipeline.
@@ -234,3 +310,19 @@ In **Number of concurrent server executions**, you can select how many servers t
 In **Deployment Note**, you can enter deployment execution information.
 
 For more information, see the [Deploy User Guide](/Dev%20Tools/Deploy/en/reference/#_1).
+
+### Stage Common Features
+#### On stage failure
+
+You can select settings related to pipeline execution when a stage fails.
+
+![stage-guide-27](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-05-28/stage-guide-27.png)
+
+- Terminate Entire Pipeline
+    - If that stage fails, the entire pipeline terminates. 
+- Terminate only that branch
+    - Only the branch that the stage belongs to is terminated, and the pipeline on the other branches continues. 
+- The branch is terminated, and other branches fail on termination
+    - Only the branch that the stage belongs to is terminated, and pipelines on other branches continue. However, the result of that pipeline will remain a failure.
+- Ignore the failure and proceed
+    - If that stage fails, the next stage proceeds.

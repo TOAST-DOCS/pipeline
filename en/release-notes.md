@@ -1,5 +1,20 @@
 ## Dev Tools > Pipeline > Release Notes
 
+### May 28, 2024
+* Added new stages. You can learn how to use them in the [Pipeline Stage Guide](/Dev%20Tools/Pipeline/en/stage-guide/#-).
+    * **Deployment - Disable**
+    * **Deployment - Enable**
+    * **Features - Precondition (Stage Status Condition)**
+* Added the feature to dynamically select resource selection.
+    * Applied Stages
+        * **Deployment - Delete**
+        * **Deployment - Disable**
+        * **Deployment - Enable**
+        * **Deployment - Patch**
+        * **Deployment - Scale**
+* Added the **stage failure feature** to all stages. You can see how to use it in the [Pipeline Stage Guide](/Dev%20Tools/Pipeline/ko/stage-guide/#-).
+* You can use a blue/green deployment. You can learn how to use them in the [Deployment Strategy Guide](/Dev%20Tools/Pipeline/ko/deploy-strategy-guide/).
+
 ### April 23, 2024
 * Added the chart repository URL type to Chart Repository Settings.
     * Made modifications so that the public type is available for chart repository, in addition to the private type.
