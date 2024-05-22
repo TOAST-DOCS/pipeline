@@ -324,3 +324,63 @@ When pipelines are organized separately by environment, the pipeline itself can 
 The pipeline ID can be found by clicking **Pipeline Version > View JSON**.
 ![template-guide-06](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-06.png)
 ![template-guide-07](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-07.png)
+
+### 7. Deploy Blue/Green
+[Download the template file](http://static.toastoven.net/prod_pipeline/template/template-scenario-07.json)
+
+![deploy-strategy-guide-03.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-03.png)
+
+You can configure a pipeline for Blue/Green deployments. You can learn more about Blue/Green deployments in the [Deployment strategy guide](/Dev%20Tools/Pipeline/ko/deploy-strategy-guide/).
+```json
+{
+    "type": "disableManifest",
+    "name": "disable old app",
+    "refId": "2",
+    "requisiteStageRefIds": [
+        "1"
+    ],
+    "deployTarget": "{deploy target name stored in [preferences] deploy target settings}", //requires a deploy target name registered in preferences (e.g. deploy-pipeline).
+    "namespace": "{namespace name}",
+    "mode": "dynamic",
+    "kind": "replicaSet",
+    "cluster": "replicaSet {Name of ReplicaSet created in stage 1}",
+    "criteria": "Second Newest"
+}
+```
+
+You can find a detailed guide to the **Deploy - Disable stage** in the [Pipeline Stage Guide](/Dev%20Tools/Pipeline/ko/stage-guide/#_3).
+
+---
+
+For a Blue/Green deployment, you must first create a Service through Pipeline.
+
+[Download the template file](http://static.toastoven.net/prod_pipeline/template/template-scenario-07-2.json)
+
+![deploy-strategy-guide-01.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-01.png)
+
+### 8. Blue/Green deployment (service monitoring added)
+[Download the template file](http://static.toastoven.net/prod_pipeline/template/template-scenario-08.json)
+
+![deploy-strategy-guide-10.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-10.png)
+
+You can configure a pipeline for Blue/Green deployments. You can learn more about Blue/Green deployments in the [Deployment strategy guide](/Dev%20Tools/Pipeline/ko/deploy-strategy-guide/).
+
+Almost the same as the scenario in #7, with the addition of a **Webhook stage**for service monitoring.
+```json
+{
+    "type": "webhook",
+    "name": "Monitoring Application",
+    "refId": "3",
+    "requisiteStageRefIds": [
+    "1"
+    ],
+    "ifStageFailType": "IGNORE_THE_FAILURE",
+    "url": "{URL where you can check the status of the service}", // Add a URL where you can check the status of the service.
+    "payload": null,
+    "customHeaders": {},
+    "failFastStatusCodes": [].
+    500
+    ],
+    "method": "GET"
+}
+```
