@@ -14,8 +14,8 @@ You can use a Blue/Green deployment strategy to reduce deployment risk by increa
 - Pipeline uses labels to manage traffic, and you need to modify the labels of running resources.
 Since modifying the Deployment Object triggers the rollout, the only way to do a Blue/Green deployment without modifying the Service Object is to use **ReplicaSets**.
 - When Pipeline deploys ReplicaSets, it deploys new ReplicaSets with the `-vNNN` suffix. You must also include `strategy.` `spinnaker`. `io/max-version-history`, `traffic.spinnaker.io/load-balancers`among the annotations in the ReplicaSets.
-  - `strategy.spinnaker.io/max-version-history`: Specifies the maximum number of ReplicaSets that Pipeline maintains. You must give a value of 2 or higher to enable blue/green deployments.
-  - `traffic.spinnaker.io/load-balancers`: Specify the Service Object. Pipeline will modify the Pod's label to match the Service's Selector, enabling traffic to be delivered to your application. The Service Object you specify must have been created through Pipeline.
+    - `strategy.spinnaker.io/max-version-history`: Specifies the maximum number of ReplicaSets that Pipeline maintains. You must give a value of 2 or higher to enable blue/green deployments.
+    - `traffic.spinnaker.io/load-balancers`: Specify the Service Object. Pipeline will modify the Pod's label to match the Service's Selector, enabling traffic to be delivered to your application. The Service Object you specify must have been created through Pipeline.
 
 ### How to configure a Blue/Green Pipeline
 

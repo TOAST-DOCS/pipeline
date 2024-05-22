@@ -14,8 +14,8 @@ Blue/Green 배포 전략을 사용하면 응용 프로그램 가용성을 높이
 - Pipeline은 레이블을 사용해서 트래픽을 관리하며 실행 중인 리소스의 레이블을 수정해야 합니다.
 Deployment Object를 수정하면 롤아웃이 실행되기 때문에 Service Object를 수정하지 않고 Blue/Green 배포를 수행할 수 있는 방법은 **ReplicaSets**을 사용하는 것입니다.
 - Pipeline은 ReplicaSets을 배포할 때 `-vNNN` 접미사가 있는 새로운 ReplicaSets을 배포합니다. 또한 ReplicaSets의 annotations 중 `strategy.spinnaker.io/max-version-history`, `traffic.spinnaker.io/load-balancers`를 반드시 포함해야 합니다.
-  - `strategy.spinnaker.io/max-version-history`: Pipeline이 유지하는 ReplicaSets의 최대 개수를 지정합니다. 2 이상의 값을 줘야 Blue/Green 배포가 가능합니다.
-  - `traffic.spinnaker.io/load-balancers`: Service Object를 지정합니다. Pipeline이 Service의 Selector에 맞게 Pod의 레이블을 수정하여 애플리케이션으로 트래픽 전달이 가능해집니다. 지정할 Service Object는 Pipeline을 통해 생성된 것이어야 합니다.
+    - `strategy.spinnaker.io/max-version-history`: Pipeline이 유지하는 ReplicaSets의 최대 개수를 지정합니다. 2 이상의 값을 줘야 Blue/Green 배포가 가능합니다.
+    - `traffic.spinnaker.io/load-balancers`: Service Object를 지정합니다. Pipeline이 Service의 Selector에 맞게 Pod의 레이블을 수정하여 애플리케이션으로 트래픽 전달이 가능해집니다. 지정할 Service Object는 Pipeline을 통해 생성된 것이어야 합니다.
 
 ### Blue/Green 파이프라인 구성 방법
 
