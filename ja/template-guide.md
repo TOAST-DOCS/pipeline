@@ -41,8 +41,8 @@ Githubからソースコードを取得してNHN Cloudビルドツールでビ�
     "name": "source",
     "refId": "1",
     "requisiteStageRefIds": [],
-    "sourceRepo": "{[環境設定]ソースリポジトリ設定に保存されたソースリポジトリ名}",   //環境設定に登録したソースリポジトリ名の入力が必要です。 
-    "branch": "{配布対象ブランチ}"  //配布対象ソースブランチに該当する値の入力が必要です。(例.main)
+    "sourceRepo": "{[環境設定]ソースリポジトリ設定に保存されたソースリポジトリ名}",   
+    "branch": "{配布対象ブランチ}"  
 },
 ```
 
@@ -63,17 +63,17 @@ Githubからソースコードを取得してNHN Cloudビルドツールでビ�
     "requisiteStageRefIds": [
         "1"
     ],
-    "buildImageRegistry": "{[環境設定]イメージストア設定に保存されたイメージストア名}",    //環境設定に登録したイメージストア名の入力が必要です。(例.buildImageRegistry-pipeline)
-    "buildImageName": "{イメージ名}",  //イメージ名の入力が必要です。(例.maven)
-    "buildImageTag": "{イメージタグ}",   //イメージタグ情報が必要です。(例.1.0.0)
-    "buildCommand": "{ビルドコマンド}",    //ビルドコマンドが必要です。(例.mvn package)
-    "dockerfilePath": "{Dockerfileパス}",  //Dockerfileのパス入力が必要です。(例.Dockerfile)
-    "buildWorkDir": "",   //選択項目でDockerfileの実行パスを入力します。
-    "pushImageRegistry": "{[環境設定]ビルド結果がアップロードされるイメージストア設定に保存されたイメージストア名}",  //環境設定に登録したイメージストア名の入力が必要です。(例.pushImageRegistry-pipeline)
-    "pushImageName": "{ビルド結果イメージ名}", //ビルド結果に対するイメージ名の入力が必要です。(例.result-image)
-    "pushImageTag": "{ビルド結果イメージタグ}",  //ビルド結果のイメージタグが必要です。(例.latest)
-    "buildFlavorName": "c2m4",  //デフォルト値がc2m4であり、c4m8性能でも提供されます。
-    "buildTimeout": 30, //デフォルト値は30分です。1から600まで入力できます。
+    "buildImageRegistry": "{[環境設定]イメージストア設定に保存されたイメージストア名}",    
+    "buildImageName": "{イメージ名}",  
+    "buildImageTag": "{イメージタグ}",   
+    "buildCommand": "{ビルドコマンド}",    
+    "dockerfilePath": "{Dockerfileパス}",  
+    "buildWorkDir": "",   
+    "pushImageRegistry": "{[環境設定]ビルド結果がアップロードされるイメージストア設定に保存されたイメージストア名}",  
+    "pushImageName": "{ビルド結果イメージ名}", 
+    "pushImageTag": "{ビルド結果イメージタグ}",  
+    "buildFlavorName": "c2m4",  
+    "buildTimeout": 30, 
     "startArtifacts": null,
     "expectedArtifacts": null
 },
@@ -90,10 +90,10 @@ Githubからソースコードを取得してNHN Cloudビルドツールでビ�
     "requisiteStageRefIds": [
         "2"
     ],
-    "deployTarget": "{[環境設定]配布対象設定に保存された配布対象名}",  //環境設定に登録した配布対象名の入力が必要です。(例.deploy-pipeline)
+    "deployTarget": "{[環境設定]配布対象設定に保存された配布対象名}",  
     "manifests": [
-        // Deployment Manifest情報の入力が必要です。
-        // 以下の例を参考にして作成後、登録して使用できます。
+
+
         {
             "apiVersion": "apps/v1",
             "kind": "Deployment",
@@ -326,3 +326,63 @@ triggers: [
 パイプラインIDは**パイプラインバージョン > JSON表示**をクリックして確認できます。
 ![template-guide-06](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-06.png)
 ![template-guide-07](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-07.png)
+
+### 7. Blue/Green配布
+[テンプレートファイルダウンロード](http://static.toastoven.net/prod_pipeline/template/template-scenario-07.json)
+
+![deploy-strategy-guide-03.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-03.png)
+
+Blue/Green配布のためのパイプラインを構成できます。Blue/Green配布は[配布戦略ガイド](/Dev%20Tools/Pipeline/ja/deploy-strategy-guide/)で詳細を確認できます。
+```json
+{
+    "type": "disableManifest",
+    "name": "disable old app",
+    "refId": "2",
+    "requisiteStageRefIds": [
+        "1"
+    ],
+    "deployTarget": "{[環境設定]配布対象設定に保存された配布対象名}", //環境設定に登録した配布対象名を入力する必要があります(例：deploy-pipeline)。
+    "namespace": "{namespace名}",
+    "mode": "dynamic",
+    "kind": "replicaSet",
+    "cluster": "replicaSet {1番ステージで作成したReplicaSetの名前}",
+    "criteria": "Second Newest"
+}
+```
+
+[Pipelineステージガイド](/Dev%20Tools/Pipeline/ko/stage-guide/#_3)で**配布 - Disableステージ**詳細ガイドを確認できます。
+
+---
+
+Blue/Green配布のため、PipelineでServiceを先に作成する必要があります。
+
+[テンプレートファイルダウンロード](http://static.toastoven.net/prod_pipeline/template/template-scenario-07-2.json)
+
+![deploy-strategy-guide-01.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-01.png)
+
+### 8. Blue/Green配布(サービスモニタリング追加)
+[テンプレートファイルダウンロード](http://static.toastoven.net/prod_pipeline/template/template-scenario-08.json)
+
+![deploy-strategy-guide-10.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-10.png)
+
+Blue/Green配布のためのパイプラインを構成できます。Blue/Green配布は[配布戦略ガイド](/Dev%20Tools/Pipeline/ja/deploy-strategy-guide/)で詳細を確認できます。
+
+7番のシナリオとほぼ同じで、サービスモニタリングのための**機能 - Webhookステージ**が追加されました。
+```json
+{
+    "type": "webhook",
+    "name": "Monitoring Application",
+    "refId": "3",
+    "requisiteStageRefIds": [
+    "1"
+    ],
+    "ifStageFailType": "IGNORE_THE_FAILURE",
+    "url": "{Serviceの状態を確認できるURL}", // サービスの状態を確認できるURLを追加します。
+    "payload": null,
+    "customHeaders": {},
+    "failFastStatusCodes": [
+500
+    ],
+    "method": "GET"
+}
+```

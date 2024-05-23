@@ -1,11 +1,26 @@
 ## Dev Tools > Pipeline > リリースノート
 
+### 2024. 05. 28.
+* 新規ステージが追加されました。 [Pipelineステージガイド](/Dev%20Tools/Pipeline/ko/stage-guide/#-)で使い方を確認できます。
+    * **配布 - Disable**
+    * **配布 - Enable**
+    * **機能 - Precondition(ステージ状態条件)**
+* リソース選択を動的な方法で選択できる機能が追加されました。
+    * 適用ステージリスト
+        * **配布 - Delete**
+        * **配布 - Disable**
+        * **配布 - Enable**
+        * **配布 - Patch**
+        * **配布 - Scale**
+* 全てのステージに**ステージ失敗時**機能が追加されました。 [Pipelineステージガイド](/Dev%20Tools/Pipeline/ko/stage-guide/#-)で使い方を確認できます。
+* Blue/Green配布を使用できます。 [配布戦略ガイド](/Dev%20Tools/Pipeline/ko/deploy-strategy-guide/)で使い方を確認できます。
+
 ### 2024. 04. 23.
 * チャートリポジトリの設定にチャートリポジトリのURLタイプが追加されました。
   * プライベートタイプだけでなく、パブリックタイプのチャートリポジトリも使用できるように変更されました。
 
 ### 2024. 03. 26.
-* 新規配布ステージ **配布 - NHN Container Service**が追加されます。 [Pipelineステージガイド](/Dev%20Tools/Pipeline/ko/stage-guide/#-)で使い方を確認できます。
+* 新規配布ステージ **配布 - NHN Container Service**が追加されました。 [Pipelineステージガイド](/Dev%20Tools/Pipeline/ko/stage-guide/#-)で使い方を確認できます。
 
 ### 2024. 02. 27.
 * 組織/プロジェクトダッシュボード > 通知管理で、受信メールのアドレス名を設定できる機能が追加されました。
