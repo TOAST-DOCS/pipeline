@@ -12,8 +12,8 @@
         * **Deployment - Enable**
         * **Deployment - Patch**
         * **Deployment - Scale**
-* Added the **stage failure feature** to all stages. You can see how to use it in the [Pipeline Stage Guide](/Dev%20Tools/Pipeline/ko/stage-guide/#-).
-* You can use a blue/green deployment. You can learn how to use them in the [Deployment Strategy Guide](/Dev%20Tools/Pipeline/ko/deploy-strategy-guide/).
+* Added the **stage failure feature** to all stages. You can see how to use it in the [Pipeline Stage Guide](/Dev%20Tools/Pipeline/en/stage-guide/#-).
+* You can use a blue/green deployment. You can learn how to use them in the [Deployment Strategy Guide](/Dev%20Tools/Pipeline/en/deploy-strategy-guide/).
 
 ### April 23, 2024
 * Added the chart repository URL type to Chart Repository Settings.
