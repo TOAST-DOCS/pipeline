@@ -129,17 +129,37 @@ Kubernetes環境に配布を行うステージです。
 ![stage-guide-14](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-05.png)
 
 #### 配布 - Patch
-**環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
-**Namespace**、**リソースタイプ**、**リソース名**、配布に使用する**Manifest**を入力します。 Patchで既存リソースの情報を修正できます。
-**Manifest**を作成する方法は[Kubernetes文書](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#patching-resources)を参照してください。
+- **環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
+- **Namespace**, **リソースタイプ**、**選択方法**、**リソース名**、配布に使用する**Manifest**を入力します。 Patchで既存リソースの情報を修正できます。
+- **Manifest**を作成する方法は[Kubernetes文書](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#patching-resources)を参考してください。
+- **選択方法**を**動的な方法で選択**に設定する場合、**クラスタ**と**選択戦略**を入力します。
+- クラスタ
+    - replicaSetの場合、Pipeline内部でバージョンを指定して配布し、**動的な方法で選択**を選択すると、特定のバージョンを選択するのではなく、選択戦略によって対象を選択します。
+- 選択戦略
+    - Newest:当該ステージが開始された時、最も最近に配布されたリソースを選択します。
+    - Second Newest:当該ステージが開始された時、2番目に最近配布されたリソースを選択します。
+    - Oldest:当該ステージが開始された時、最も古いリソースを選択します。
+    - Largest:当該ステージが開始された時、クラスタでPod数が一番多いリソースを選択します。
+    - Smallest:当該ステージが開始された時、クラスタでPod数が一番少ないリソースを選択します。
 
-![stage-guide-07](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-07.png)
+![stage-guide-07](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-07.png)
+![stage-guide-07-2](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-07-2.png)
 
 #### 配布 - Scale
-**環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
-**Namespace**、**リソースタイプ**、**リソース名**、**Replicas**を入力します。 ScaleでReplicasを修正できます。
+- **環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
+- **Namespace**, **リソースタイプ**、**選択方法**、**リソース名**、**Replicas**を入力します。 ScaleでReplicasを修正できます。
+- **選択方法**を**動的な方法で選択**に設定する場合、**クラスタ**と**選択戦略**を入力します。
+'- クラスタ
+    - replicaSetの場合、Pipeline内部でバージョンを指定して配布し、**動的な方法で選択**を選択すると、特定のバージョンを選択するのではなく、選択戦略によって対象を選択します。
+'- 選択戦略
+    - Newest:当該ステージが開始された時、最も最近に配布されたリソースを選択します。
+    - Second Newest:当該ステージが開始された時、2番目に最近配布されたリソースを選択します。
+    - Oldest:当該ステージが開始された時、最も古いリソースを選択します。
+    - Largest:当該ステージが開始された時、クラスタでPod数が一番多いリソースを選択します。
+    - Smallest:当該ステージが開始された時、クラスタでPod数が一番少ないリソースを選択します。
 
-![stage-guide-08](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-08.png)
+![stage-guide-08](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-08.png)
+![stage-guide-08-2](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-08-2.png)
 
 #### 配布 - Rollout undo
 **環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
@@ -148,8 +168,54 @@ Kubernetes環境に配布を行うステージです。
 ![stage-guide-09](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-09.png)
 
 #### 配布 - Delete
-**環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
-**Namespace**、**リソースタイプ**、**リソース名**を入力します。そのリソースを削除できます。
+- **環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
+- **Namespace**, **リソースタイプ**、**選択方法**、***リソース名**を入力します。そのリソースを削除できます。
+- **選択方法**を**動的な方法で選択**に設定する場合、**クラスタ**と**選択戦略**を入力します。
+- クラスタ
+    - replicaSetの場合、Pipeline内部でバージョンを指定して配布し、**動的な方法で選択**を選択すると、特定のバージョンを選択するのではなく、選択戦略によって対象を選択します。
+- 選択戦略
+    - Newest:当該ステージが開始された時、最も最近に配布されたリソースを選択します。
+    - Second Newest:当該ステージが開始された時、2番目に最近配布されたリソースを選択します。
+    - Oldest:当該ステージが開始された時、最も古いリソースを選択します。
+    - Largest:当該ステージが開始された時、クラスタでPod数が一番多いリソースを選択します。
+    - Smallest:当該ステージが開始された時、クラスタでPod数が一番少ないリソースを選択します。
+
+![stage-guide-10](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-10.png)
+![stage-guide-10-2](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-10-2.png)
+
+#### 配布 - Disable
+- **環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
+- **Namespace**、**リソースタイプ**、**選択方法**、**リソース名**を入力します。該当リソースを無効にできます。
+    - 無効化:リソースを削除するわけではありませんが、そのリソースにトラフィックを送信しないように設定します。
+- **選択方法**を**動的な方法で選択**に設定する場合、**クラスタ**と**選択戦略**を入力します。
+    - クラスタ
+        - replicaSetの場合、Pipeline内部でバージョンを指定して配布し、**動的な方法で選択**を選択すると、特定のバージョンを選択するのではなく、選択戦略によって対象を選択します。
+    - 選択戦略
+        - Newest:当該ステージが開始された時、最も最近に配布されたリソースを選択します。
+        - Second Newest:当該ステージが開始された時、2番目に最近配布されたリソースを選択します。
+        - Oldest:当該ステージが開始された時、最も古いリソースを選択します。
+        - Largest:当該ステージが開始された時、クラスタでPod数が一番多いリソースを選択します。
+        - Smallest:当該ステージが開始された時、クラスタでPod数が一番少ないリソースを選択します。
+
+![stage-guide-23.png](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-23.png)
+![stage-guide-24.png](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-24.png)
+
+#### 配布 - Enable
+- **環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
+- **Namespace**、**リソースタイプ**、**選択方法**、**リソース名**を入力します。該当リソースを有効にできます。
+    - 有効化:当該リソースをPipelineで管理し、リソースにトラフィックを送るように設定します。
+- **選択方法**を**動的な方法で選択**に設定する場合、**クラスタ**と**選択戦略**を入力します。
+    - クラスタ
+        - replicaSetの場合、Pipeline内部でバージョンを指定して配布し、**動的な方法で選択**を選択すると、特定のバージョンを選択するのではなく、選択戦略によって対象を選択します。
+    - 選択戦略
+        - Newest:当該ステージが開始された時、最も最近に配布されたリソースを選択します。
+        - Second Newest:当該ステージが開始された時、2番目に最近配布されたリソースを選択します。
+        - Oldest:当該ステージが開始された時、最も古いリソースを選択します。
+        - Largest:当該ステージが開始された時、クラスタでPod数が一番多いリソースを選択します。
+        - Smallest:当該ステージが開始された時、クラスタでPod数が一番少ないリソースを選択します。
+
+![stage-guide-25.png](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-25.png)
+![stage-guide-26.png](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-26.png)
 
 ![stage-guide-10](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-10.png)
 
@@ -184,6 +250,12 @@ NCSワークロードのテンプレートを交換できるステージです�
 テンプレートを変更するワークロードをリストから選択できます。
 
 ![stage-guide-22.png](http://static.toastoven.net/prod_pipeline/stage-guide-22.png)
+
+#### 機能 - Precondition(ステージ状態条件)
+以前段階のステージ名と実行結果を選択して条件を設定できます。
+指定したすべての条件が満たされると次のステージが実行されます。
+
+![stage-guide-28](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-28.png)
 
 #### 機能 - 他のパイプラインの実行
 ステージで他のパイプライン全体を実行できます。
@@ -231,3 +303,19 @@ NCSワークロードのテンプレートを交換できるステージです�
 **配布ノート**には配布実行情報を入力できます。
 
 詳しい説明については[Deploy使用ガイド](/Dev%20Tools/Deploy/ja/reference/#_1)を参照してください。
+
+### ステージ共通機能
+#### ステージ失敗時
+
+ステージが失敗した時のパイプライン実行に関する設定を選択できます。
+
+![stage-guide-27](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-05-28/stage-guide-27.png)
+
+- 全てのパイプライン終了
+    - 該当ステージが失敗すると、パイプライン全体が終了します。
+- 該当ブランチのみ終了
+    - 該当ステージが属するブランチだけ終了し、他のブランチのパイプラインは続行されます。
+- 該当ブランチが終了し、他のブランチの終了時に失敗
+    - そのステージが属するブランチだけが終了し、他のブランチのパイプラインは続行されます。しかし、そのパイプラインの結果は失敗として残ります。
+- 失敗を無視して進行
+    - 該当ステージが失敗しても、次のステージが進行します。
