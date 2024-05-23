@@ -330,7 +330,7 @@ The pipeline ID can be found by clicking **Pipeline Version > View JSON**.
 
 ![deploy-strategy-guide-03.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-03.png)
 
-You can configure a pipeline for Blue/Green deployments. You can learn more about Blue/Green deployments in the [Deployment strategy guide](/Dev%20Tools/Pipeline/ko/deploy-strategy-guide/).
+You can configure a pipeline for Blue/Green deployments. You can learn more about Blue/Green deployments in the [Deployment strategy guide](/Dev%20Tools/Pipeline/en/deploy-strategy-guide/).
 ```json
 {
     "type": "disableManifest",
@@ -348,7 +348,7 @@ You can configure a pipeline for Blue/Green deployments. You can learn more abou
 }
 ```
 
-You can find a detailed guide to the **Deploy - Disable stage** in the [Pipeline Stage Guide](/Dev%20Tools/Pipeline/ko/stage-guide/#_3).
+You can find a detailed guide to the **Deploy - Disable stage** in the [Pipeline Stage Guide](/Dev%20Tools/Pipeline/en/stage-guide/#_3).
 
 ---
 
@@ -363,7 +363,7 @@ For a Blue/Green deployment, you must first create a Service through Pipeline.
 
 ![deploy-strategy-guide-10.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-10.png)
 
-You can configure a pipeline for Blue/Green deployments. You can learn more about Blue/Green deployments in the [Deployment strategy guide](/Dev%20Tools/Pipeline/ko/deploy-strategy-guide/).
+You can configure a pipeline for Blue/Green deployments. You can learn more about Blue/Green deployments in the [Deployment strategy guide](/Dev%20Tools/Pipeline/en/deploy-strategy-guide/).
 
 Almost the same as the scenario in #7, with the addition of a **Webhook stage**for service monitoring.
 ```json

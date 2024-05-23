@@ -20,7 +20,7 @@ Deployment Objectを修正するとロールアウトが実行されるため、
 ### Blue/Greenパイプラインの構成方法
 
 Blue/Green配布ができるパイプラインを構成する方法は次のとおりです。
-[Pipelineテンプレートガイド](/Dev%20Tools/Pipeline/ko/template-guide/)を参考してパイプラインを構成できます。
+[Pipelineテンプレートガイド](/Dev%20Tools/Pipeline/ja/template-guide/)を参考してパイプラインを構成できます。
 
 #### 1. Service作成
 

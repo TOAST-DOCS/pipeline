@@ -19,7 +19,7 @@
 ## サンプルシナリオテンプレートでパイプラインを作成
 シナリオごとにサンプルテンプレートファイルを提供して、簡単にパイプラインを作成できます。
 
-希望するシナリオにあるJSONファイルをダウンロードすると、中括弧(`{}`)で要求するデータ全体を入力して使用できます。特に`[環境設定]`の接頭辞が付くデータの場合、**Pipeline > 環境設定**にあるデータを使用するため、データが登録されている必要があります。[Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ko/environment-config/#_1)で登録方法を確認できます。
+希望するシナリオにあるJSONファイルをダウンロードすると、中括弧(`{}`)で要求するデータ全体を入力して使用できます。特に`[環境設定]`の接頭辞が付くデータの場合、**Pipeline > 環境設定**にあるデータを使用するため、データが登録されている必要があります。[Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ja/environment-config/#_1)で登録方法を確認できます。
 
 Bake Stageの使用に関するサンプルシナリオテンプレートは、機能変更が必要であり、後日提供される予定です。
 
@@ -33,7 +33,7 @@ Githubからソースコードを取得してNHN Cloudビルドツールでビ�
 登録されているJSONファイルをダウンロード後、中括弧で表示されたデータに対する情報を入力する必要があります。
 
 #### ソースステージ
-ソースステージのうちGithubを基準にガイドが作成されました。[Pipelineステージガイド](/Dev%20Tools/Pipeline/ko/stage-guide/#_1)でステージの詳細ガイドが確認できます。
+ソースステージのうちGithubを基準にガイドが作成されました。[Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/#_1)でステージの詳細ガイドが確認できます。
 
 ``` json
 {
@@ -53,7 +53,7 @@ Githubからソースコードを取得してNHN Cloudビルドツールでビ�
 **イメージストア設定**、**配布対象設定**と同じように設定された名前の確認後、修正が必要です。
 
 #### ビルドステージ
-ビルドステージのうちNHN Cloudビルドツールを基準にガイドが作成されました。[Pipelineステージガイド](/Dev%20Tools/Pipeline/ko/stage-guide/#_2)でステージの詳細ガイドが確認できます。
+ビルドステージのうちNHN Cloudビルドツールを基準にガイドが作成されました。[Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/#_2)でステージの詳細ガイドが確認できます。
 
 ``` json
 {
@@ -80,7 +80,7 @@ Githubからソースコードを取得してNHN Cloudビルドツールでビ�
 ```
 
 #### 配布ステージ
-配布ステージはDeployステージでガイドが作成されました。[Pipelineステージガイド](/Dev%20Tools/Pipeline/ko/stage-guide/#_3)でステージの詳細ガイドが確認できます。
+配布ステージはDeployステージでガイドが作成されました。[Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/#_3)でステージの詳細ガイドが確認できます。
 
 ``` json
 {
@@ -157,7 +157,7 @@ YAMLファイルをJSON形式に変更する必要があります(ステージ�
 
 ![template-guide-09.png](..%2Fimages%2F2023-10-31%2Ftemplate-guide-09.png)
 
-[Pipelineステージガイド](/Dev%20Tools/Pipeline/ko/stage-guide/#_4)でWebhookステージの詳細ガイドが確認できます。
+[Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/#_4)でWebhookステージの詳細ガイドが確認できます。
 ``` json
 {
     "type": "webhook",
@@ -180,7 +180,7 @@ YAMLファイルをJSON形式に変更する必要があります(ステージ�
 [Pipelineコンソール使用ガイド](http://static.toastoven.net/prod_pipeline/template/template-scenario-03.json)
 
 テンプレートのTrigger領域を設定すると、Github(GitLab、イメージストア)自動実行設定ができます。
-[コンソール使用ガイド](/Dev%20Tools/Pipeline/ko/pipeline-management/#_9)の自動実行部分に入力値に関する追加ガイドがあります。
+[コンソール使用ガイド](/Dev%20Tools/Pipeline/ja/pipeline-management/#_9)の自動実行部分に入力値に関する追加ガイドがあります。
 ![template-guide-08.png](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-08.png)
 ``` json
 triggers: [
@@ -204,7 +204,7 @@ triggers: [
 例で作成されたパイプラインのように `develop`, `real` を選択して好きな環境に配布できます。
 異なる値に変更して使用でき、この時、後ろにあるPrecondition Stageの値も同様に修正する必要があります。
 
-[Pipelineステージガイド](/Dev%20Tools/Pipeline/ko/stage-guide/#_4)でJudgement(実行管理)、Precondition(実行条件)ステージの詳細ガイドが確認できます。
+[Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/#_4)でJudgement(実行管理)、Precondition(実行条件)ステージの詳細ガイドが確認できます。
 
 ```json
 [
@@ -277,7 +277,7 @@ triggers: [
 ![template-guide-11.png](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-11.png)
 4番シナリオでリアル環境に配布する前に承認段階を追加し、承認後に配布されるように構成できます。
 
-[Pipelineステージガイド](/Dev%20Tools/Pipeline/ko/stage-guide/#_4)で承認管理ステージの詳細ガイドが確認できます。
+[Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/#_4)で承認管理ステージの詳細ガイドが確認できます。
 
 ```json
 {
@@ -350,7 +350,7 @@ Blue/Green配布のためのパイプラインを構成できます。Blue/Green
 }
 ```
 
-[Pipelineステージガイド](/Dev%20Tools/Pipeline/ko/stage-guide/#_3)で**配布 - Disableステージ**詳細ガイドを確認できます。
+[Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/#_3)で**配布 - Disableステージ**詳細ガイドを確認できます。
 
 ---
 
