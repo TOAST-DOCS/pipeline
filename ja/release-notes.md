@@ -1,7 +1,7 @@
 ## Dev Tools > Pipeline > リリースノート
 
 ### 2024. 05. 28.
-* 新規ステージが追加されました。 [Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/#-)で使い方を確認できます。
+* 新規ステージが追加されました。 [Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/)で使い方を確認できます。
     * **配布 - Disable**
     * **配布 - Enable**
     * **機能 - Precondition(ステージ状態条件)**
@@ -12,7 +12,7 @@
         * **配布 - Enable**
         * **配布 - Patch**
         * **配布 - Scale**
-* 全てのステージに**ステージ失敗時**機能が追加されました。 [Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/#-)で使い方を確認できます。
+* 全てのステージに**ステージ失敗時**機能が追加されました。 [Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/)で使い方を確認できます。
 * Blue/Green配布を使用できます。 [配布戦略ガイド](/Dev%20Tools/Pipeline/ja/deploy-strategy-guide/)で使い方を確認できます。
 
 ### 2024. 04. 23.
@@ -20,7 +20,7 @@
   * プライベートタイプだけでなく、パブリックタイプのチャートリポジトリも使用できるように変更されました。
 
 ### 2024. 03. 26.
-* 新規配布ステージ **配布 - NHN Container Service**が追加されました。 [Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/#-)で使い方を確認できます。
+* 新規配布ステージ **配布 - NHN Container Service**が追加されました。 [Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/)で使い方を確認できます。
 
 ### 2024. 02. 27.
 * 組織/プロジェクトダッシュボード > 通知管理で、受信メールのアドレス名を設定できる機能が追加されました。
@@ -36,11 +36,11 @@
 * Pipeline実行履歴と配布対象作業履歴を確認できる**配布履歴管理**ページが追加されました。[配布履歴管理ガイド](/Dev%20Tools/Pipeline/ja/deploy-history-management)で使い方を確認できます。
 
 ### 2023. 12. 19.
-* NHN Cloud Deployの配布シナリオを実行できる **機能 - NHN Cloud Deploy Service** ステージが追加されました。[Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/#-)で使い方を確認できます。
+* NHN Cloud Deployの配布シナリオを実行できる **機能 - NHN Cloud Deploy Service** ステージが追加されました。[Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/)で使い方を確認できます。
 * Github自動実行設定に**アーティファクト**項目が追加されました。 特定のファイルをアーティファクトとして設定し、Git push eventが発生すると、そのファイルが含まれているかどうかによってパイプラインを実行します。
 
 ### 2023. 10. 31.
-* 承認なしで以降のステージを実行できないように管理する**機能 - 承認管理**ステージが追加されました。[Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/#-)で詳細を確認できます。
+* 承認なしで以降のステージを実行できないように管理する**機能 - 承認管理**ステージが追加されました。[Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/)で詳細を確認できます。
 * パイプラインテンプレートガイド内にサンプルシナリオが追加されました。[Pipelineテンプレートガイド](/Dev%20Tools/Pipeline/ja/pipeline-management/#_2)から使用方法およびテンプレートファイルをダウンロードできます。
 
 ### 2023. 09. 26.
