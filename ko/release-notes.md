@@ -1,7 +1,7 @@
 ## Dev Tools > Pipeline > 릴리스 노트
 
 ### 2024. 05. 28.
-* 신규 스테이지들이 추가되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#-)에서 사용 방법을 확인할 수 있습니다.
+* 신규 스테이지들이 추가되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/)에서 사용 방법을 확인할 수 있습니다.
     * **배포 - Disable**
     * **배포 - Enable**
     * **기능 - Precondition(스테이지 상태 조건)**
@@ -12,7 +12,7 @@
         * **배포 - Enable**
         * **배포 - Patch**
         * **배포 - Scale**
-* 모든 스테이지에 **스테이지 실패 시** 기능이 추가되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#-)에서 사용 방법을 확인할 수 있습니다.
+* 모든 스테이지에 **스테이지 실패 시** 기능이 추가되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/)에서 사용 방법을 확인할 수 있습니다.
 * Blue/Green 배포를 사용할 수 있습니다. [배포 전략 가이드](/Dev%20Tools/Pipeline/ko/deploy-strategy-guide/)에서 사용 방법을 확인할 수 있습니다.
 
 ### 2024. 04. 23.
@@ -20,7 +20,7 @@
   * 프라이빗 유형뿐만 아니라 퍼블릭 유형 차트 저장소도 사용할 수 있도록 변경되었습니다. 
 
 ### 2024. 03. 26.
-* 신규 배포 스테이지 **배포 - NHN Container Service**가 추가되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#-)에서 사용 방법을 확인할 수 있습니다.
+* 신규 배포 스테이지 **배포 - NHN Container Service**가 추가되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/)에서 사용 방법을 확인할 수 있습니다.
 
 ### 2024. 02. 27.
 * 조직/프로젝트 대시보드 > 알림 관리에서 수신 메일 주소명을 설정할 수 있도록 기능이 추가되었습니다.
@@ -36,11 +36,11 @@
 * Pipeline 실행 이력과 배포 대상 작업 이력을 확인할 수 있는 **배포 이력 관리** 페이지가 추가되었습니다. [배포 이력 관리 가이드](/Dev%20Tools/Pipeline/ko/deploy-history-management)에서 사용 방법을 확인할 수 있습니다.
 
 ### 2023. 12. 19.
-* NHN Cloud Deploy의 배포 시나리오를 실행할 수 있는 **기능 - NHN Cloud Deploy Service** 스테이지가 추가되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#-)에서 사용 방법을 확인할 수 있습니다.
+* NHN Cloud Deploy의 배포 시나리오를 실행할 수 있는 **기능 - NHN Cloud Deploy Service** 스테이지가 추가되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/)에서 사용 방법을 확인할 수 있습니다.
 * Github 자동 실행 설정에 **아티팩트** 항목이 추가되었습니다. 특정 파일을 아티팩트로 설정하여 Git push event가 발생하면 해당 파일의 포함 유무에 따라 파이프라인을 실행시킵니다.
 
 ### 2023. 10. 31.
-* 승인 없이 이후 스테이지를 실행하지 못하도록 관리하는 **기능 - 승인 관리** 스테이지가 추가되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#-)에서 자세한 설명을 확인할 수 있습니다.
+* 승인 없이 이후 스테이지를 실행하지 못하도록 관리하는 **기능 - 승인 관리** 스테이지가 추가되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/)에서 자세한 설명을 확인할 수 있습니다.
 * 파이프라인 템플릿 가이드 내 샘플 시나리오가 추가되었습니다. [Pipeline 템플릿 가이드](/Dev%20Tools/Pipeline/ko/template-guide/#_2)에서 사용 방법 및 템플릿 파일을 다운로드할 수 있습니다.
 
 ### 2023. 09. 26.
