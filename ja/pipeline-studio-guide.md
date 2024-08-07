@@ -7,7 +7,7 @@
 ### 파이프라인 관리
 ![pipeline-studio-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/pipeline-studio-guide-01.png)
 
-파이프라인 스튜디오 상단에는 파이프라인의 **이름,설명,마지막 수정일,생성자**의 기본 정보가 노출됩니다.
+파이프라인 스튜디오 상단에는 파이프라인의 **이름, 설명, 마지막 수정일, 생성자**의 기본 정보가 노출됩니다.
 
 파이프라인 스튜디오 패널에는 해당 파이프라인을 구성하는 **스테이지**들을 확인할 수 있습니다.
 
@@ -19,7 +19,7 @@
 
 ![pipeline-studio-guide-03](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/pipeline-studio-guide-03.png)
 
-**수동 실행** 버튼을 클릭하여 해당 파이프라인을 실행할 수 있으며, **실행 중지** 버튼을 클릭하여 실행중인 파이프라인을 중지할 수 있습니다.
+**수동 실행** 버튼을 클릭하여 해당 파이프라인을 실행할 수 있으며, **실행 중지** 버튼을 클릭하여 실행 중인 파이프라인을 중지할 수 있습니다.
 
 ![pipeline-studio-guide-04](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/pipeline-studio-guide-04.png)
 
@@ -29,7 +29,7 @@
 
 **파이프라인 버전**을 클릭하여 JSON 형식으로 파이프라인을 확인할 수 있습니다.
 
-좌측 상단 **파이프라인 수정일이 표시되어진** 버튼을 통해 파이프라인 수정일별로 확인할 수 있습니다.
+좌측 상단 **파이프라인 수정일이 표시된** 버튼을 통해 파이프라인 수정일별로 확인할 수 있습니다.
 
 우측 상단 **파이프라인 템플릿 다운로드** 버튼을 클릭하여 JSON 파일로 저장할 수 있습니다.
 
@@ -57,7 +57,7 @@
 ### 편집 모드
 ![pipeline-studio-guide-08](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/pipeline-studio-guide-08.png)
 
-우측 상단 **편집 모드** 버튼을 클릭하여 편집모드로 진입할 수 있습니다. 편집 모드에서는 스테이지의 **추가,변경,삭제 및 위치 변경**을 진행할 수 있습니다.
+우측 상단 **편집 모드** 버튼을 클릭하여 편집모드로 진입할 수 있습니다. 편집 모드에서는 스테이지의 **추가, 변경, 삭제 및 위치 변경**을 진행할 수 있습니다.
 
 ### 스테이지 추가
 ![pipeline-studio-guide-09](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/pipeline-studio-guide-09.png)
