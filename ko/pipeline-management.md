@@ -57,8 +57,6 @@ Pipeline은 애플리케이션 배포 흐름을 한 개 이상의 스테이지�
 
 추가하고자 하는 스테이지의 실행 순서를 정하기 위해, 이 전 실행할 스테이지와 추가하고자 하는 스테이지를 연결합니다.
 
-스테이지를 연결하는 방식에 따라 스테이지를 병렬로 실행할 수 있습니다. 병렬 구성한 스테이지 중 하나가 실패하면 나머지 스테이지는 실행이 취소되고 파이프라인 실행은 실패합니다.
-
 ![pipeline-studio-guide-12](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-6.png)
 
 우측 상단 **파이프라인 저장** 버튼을 클릭하여, 스테이지 추가를 완료할 수 있습니다.
@@ -211,6 +209,12 @@ Docker Hub의 경우 `Docker Hub 계정/이미지 이름` 형식으로 입력합
 ![pipeline-guide-25](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-25.png)
 
 이전 스테이지를 선택하는 방식에 따라 스테이지를 병렬로 실행할 수 있습니다. 병렬 구성한 스테이지 중 하나가 실패하면 나머지 스테이지는 실행이 취소되고 파이프라인 실행은 실패합니다.
+
+#### 최근 실행 정보 확인
+
+파이프라인의 최근 실행에 대한 각 스테이지 별 기본 정보와 실행 상태를 확인하려면 **최근 실행 정보** 를 클릭하여 확인할 수 있습니다.
+
+![pipeline-studio-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-16.png)
 
 #### 파이프라인 JSON 수정 및 다운로드
 JSON 수정을 통해 파이프라인을 변경할 수 있습니다. 
