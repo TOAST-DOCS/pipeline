@@ -1,5 +1,8 @@
 ## Dev Tools > Pipeline > 릴리스 노트
 
+### 2024. 08. 27.
+* **파이프라인 관리** 메뉴의 UI 디자인이 변경되었습니다. [파이프라인 관리 가이드](/Dev%20Tools/Pipeline/ko/pipeline-management/)에서 사용 방법을 확인할 수 있습니다.
+
 ### 2024. 05. 28.
 * 신규 스테이지들이 추가되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/)에서 사용 방법을 확인할 수 있습니다.
     * **배포 - Disable**
