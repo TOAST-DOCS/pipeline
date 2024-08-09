@@ -41,7 +41,7 @@ Pipeline은 애플리케이션 배포 흐름을 한 개 이상의 스테이지�
 ### 스테이지 추가
 ![pipeline-studio-guide-09](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-3.png)
 
-**편집 모드**를 활성화 하면 좌측에 애플리케이션 배포 흐름을 구성할 때 사용할 수 있는 다양한 스테이지로 구성된 소스,빌드,배포,기능 4개의 그룹이 노출됩니다.
+**편집 모드**를 활성화 하면 좌측에 애플리케이션 배포 흐름을 구성할 때 사용할 수 있는 소스,빌드,배포,기능 4개의 스테이지 그룹이 노출됩니다.
 
 4개의 그룹에서 추가하고자 하는 스테이지를 선택하여 **드래그앤드랍**을 통해 화면에 가져다 놓을 수 있습니다.
 
