@@ -3,7 +3,7 @@
 ### 파이프라인 생성
 
 Pipeline은 애플리케이션 배포 흐름을 한 개 이상의 스테이지로 구성한 파이프라인으로 저장합니다. 
-파이프라인 생성에서는 **소스 코드 빌드** > **컨테이너 이미지 생성** > **컨테이너 이미지 업로드** > **컨테이너 이미지 배포** 순서로 동작하는 기본적인 파이프라인을 생성할 수 있으며 파이프라인 템플릿 파일을 업로드하여 파이프라인을 생성할 수도 있습니다.
+파이프라인 생성에서는 기본적인 파이프라인을 생성할 수 있으며 파이프라인 템플릿 파일을 업로드하여 파이프라인을 생성할 수도 있습니다.
 ![pipeline-management-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-01.png)
 
 
@@ -85,7 +85,7 @@ Pipeline은 애플리케이션 배포 흐름을 한 개 이상의 스테이지�
 
 수동 실행을 사용하면 사용자가 원할 때 파이프라인을 실행할 수 있습니다.
 
-![pipeline-guide-13](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-13.png)
+![pipeline-management-guide-12](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-12.png)
 
 **파이프라인 관리**에서 ▶︎(수동 실행)를 클릭하고 대화 상자가 나타나면 **확인**을 클릭합니다.
 
@@ -111,7 +111,10 @@ GitHub 웹훅을 사용해서 GitHub 또는 GitHub Enterprise의 저장소에 �
 Jenkins에서 다음과 같이 파라미터를 설정합니다.
 ![pipeline-guide-39.png](http://static.toastoven.net/prod_pipeline/2023-09-26/pipeline-guide-39.png)
 ![pipeline-guide-40.png](http://static.toastoven.net/prod_pipeline/2023-09-26/pipeline-guide-40.png)
+
+
 Pipeline의 빌드도구 설정에서 **빌드 잡 파라미터**에 다음과 같이 입력합니다.
+
 ![management-guide-10](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-10.png)
 
 #### GitHub 웹훅 설정값
@@ -130,7 +133,7 @@ Pipeline의 빌드도구 설정에서 **빌드 잡 파라미터**에 다음과 �
 
 **특정 파일**이 **Push**되었을 때만 자동 실행이 되도록 설정할 수 있습니다. (최대 5개)
 
-![pipeline-guide-33](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/pipeline-guide-33.png)
+![management-guide-13](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-13.png)
 
 **소스 저장소 이름**은 환경 설정에서 등록한 소스 저장소를 선택합니다.
 **파일 경로**는 선택한 소스 저장소에서 파일이 포함된 경로를 입력합니다.
