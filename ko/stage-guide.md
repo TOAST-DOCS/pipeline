@@ -197,13 +197,13 @@ NCS 워크로드의 템플릿을 교체할 수 있는 스테이지입니다.
         - Largest: 해당 스테이지가 시작됐을 때 클러스터에서 Pod 수가 가장 많은 리소스를 선택합니다.
         - Smallest: 해당 스테이지가 시작됐을 때 클러스터에서 Pod 수가 가장 적은 리소스를 선택합니다.
 
-![stage-guide-14](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-14_new.png)
+![stage-guide-14](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-14.png)
 
 ### 기능
 추가 기능을 제공하는 스테이지입니다.
 
 #### 기능 - 승인 관리
-**기능 - 승인 관리** 스테이지 이후의 스테이지들에 대한 **실행 관리(실행, 실행 중지)**를 승인권자가 관리할 수 있습니다.
+**기능 - 승인 관리** 스테이지 이후의 스테이지들에 대한 **실행 관리(실행, 실행 중지)** 를 승인권자가 관리할 수 있습니다.
 
 스테이지에 요청 내용에 대해 작성할 수 있으며, 승인 관리 스테이지의 **실행 관리(실행, 실행 중지)** 기능은 해당 프로젝트의 **Pipeline APPROVAL ADMIN** 역할을 가진 사용자만 할 수 있습니다.
 
@@ -216,7 +216,7 @@ NCS 워크로드의 템플릿을 교체할 수 있는 스테이지입니다.
 #### 기능 - Judgement(실행 관리)
 필요에 따라 실행 관리 스테이지에 대한 **설명**, **실행 설정**값을 입력할 수 있습니다.
 
-**실행 설정**의 유무와 상관없이 다음 스테이지에 대한 **실행 관리(실행, 실행 중지)**를 할 수 있습니다.
+**실행 설정**의 유무와 상관없이 다음 스테이지에 대한 **실행 관리(실행, 실행 중지)** 를 할 수 있습니다.
 **실행 설정**을 추가하여 다음 스테이지의 실행을 선택할 경우 다음에 설명할 스테이지인 Precondition(실행 조건)에 설정값을 전달하여 분기 처리를 할 수 있습니다.
 
 ![stage-guide-16](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-16_new.png)
