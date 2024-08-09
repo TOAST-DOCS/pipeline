@@ -1,11 +1,12 @@
 ## Dev Tools > Pipeline > 콘솔 사용 가이드 > 파이프라인 관리
 
+파이프라인은 한 개 이상의 스테이지로 구성된 애플리케이션 배포 흐름을 정의합니다.
+
 ### 파이프라인 생성
 
-Pipeline은 애플리케이션 배포 흐름을 한 개 이상의 스테이지로 구성한 파이프라인으로 저장합니다. 
-파이프라인 생성에서는 기본적인 파이프라인을 생성할 수 있으며 파이프라인 템플릿 파일을 업로드하여 파이프라인을 생성할 수도 있습니다.
-![pipeline-management-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-01.png)
+**파이프라인 생성**을 클릭하여 파이프라인을 생성할 수 있으며, 파이프라인 템플릿 파일을 업로드하여 파이프라인을 생성할 수도 있습니다.
 
+![pipeline-management-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-01.png)
 
 **파이프라인 관리**에서 **파이프라인 생성**을 클릭합니다.
 
@@ -21,7 +22,7 @@ Pipeline은 애플리케이션 배포 흐름을 한 개 이상의 스테이지�
 
 ![pipeline-management-guide-03](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-03.png)
 
-파이프라인 이름, 파이프라인 설명을 입력하고 파이프라인 템플릿 파일을 업로드한 후 **확인**을 클릭합니다.
+파이프라인 템플릿 파일을 업로드한 후 **확인**을 클릭합니다.
 
 ### 파이프라인 스튜디오
 
@@ -87,7 +88,7 @@ Pipeline은 애플리케이션 배포 흐름을 한 개 이상의 스테이지�
 
 ![pipeline-management-guide-12](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-12.png)
 
-**파이프라인 관리**에서 ▶︎(수동 실행)를 클릭하고 대화 상자가 나타나면 **확인**을 클릭합니다.
+**파이프라인 관리**에서 ▶︎(실행)를 클릭하고 대화 상자가 나타나면 **확인**을 클릭합니다.
 
 #### 자동 실행
 
@@ -105,7 +106,9 @@ Pipeline은 애플리케이션 배포 흐름을 한 개 이상의 스테이지�
 
 
 GitHub 웹훅을 사용해서 GitHub 또는 GitHub Enterprise의 저장소에 이벤트가 발생하면 파이프라인을 자동으로 실행하게 설정할 수 있습니다. 자동 실행 유형을 GitHub으로 설정하고 저장소의 조직 또는 사용자 이름, 프로젝트 이름, 브랜치, 시크릿을 입력하고 **확인**을 클릭합니다.
+
 태그로 자동 실행 설정을 하기 위해서는 **브랜치 또는 태그** 항목에 'refs/tags/태그명'과 같이 태그명을 입력합니다. '태그명' 부분에는 JAVA 정규 표현식을 사용할 수 있습니다.
+
 태그로 자동 실행 설정후 NHN Cloud 빌드 도구 사용시 설정된 태그로 빌드를 수행합니다. 빌드 - Jenkins 스테이지에서 태그로 빌드를 수행하고 싶을 땐 다음과 같이 설정이 필요합니다.
 
 Jenkins에서 다음과 같이 파라미터를 설정합니다.
@@ -119,8 +122,7 @@ Pipeline의 빌드도구 설정에서 **빌드 잡 파라미터**에 다음과 �
 
 #### GitHub 웹훅 설정값
 
-![management-guide-06](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-06.png)
-
+![pipeline-guide-16](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-16.png)
 
 
 | 항목 | 설정값 |

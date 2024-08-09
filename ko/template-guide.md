@@ -6,10 +6,12 @@
 
 ### 1. 기존 파이프라인 JSON 파일 다운로드
 기존 파이프라인을 선택 후 **파이프라인 스튜디오** > **JSON 보기** > **파이프라인 템플릿 다운로드**를 통해 JSON 파일을 다운로드할 수 있습니다.
+
 ![template-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-01.png)
 
 ### 2. 템플릿 파일로 파이프라인 생성
 2.1 **파이프라인 관리**에서 **파이프라인 생성**을 클릭합니다. 다운로드한 JSON 파일을 업로드합니다. 업로드 후 **확인**을 클릭하게 JSON파일 설정과 동일한 파이프라인을 생성합니다.
+
 ![template-guide-02](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-02.png)
 
 ## 샘플 시나리오 템플릿으로 파이프라인 생성
