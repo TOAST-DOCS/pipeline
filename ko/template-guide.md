@@ -5,16 +5,14 @@
 기존에 구성되어 있는 파이프라인에서 JSON 파일을 다운로드한 후 동일한 형태의 신규 파이프라인을 생성하는 방법입니다.
 
 ### 1. 기존 파이프라인 JSON 파일 다운로드
-기존 파이프라인을 선택하여 기본 정보의 **JSON 보기** > **파이프라인 템플릿 다운로드**를 통해 JSON 파일을 다운로드할 수 있습니다.
-![template-guide-01](http://static.toastoven.net/prod_pipeline/2023-09-26/template-guide-01.png)
+기존 파이프라인을 선택 후 **파이프라인 스튜디오** > **JSON 보기** > **파이프라인 템플릿 다운로드**를 통해 JSON 파일을 다운로드할 수 있습니다.
+
+![template-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-01.png)
 
 ### 2. 템플릿 파일로 파이프라인 생성
-2.1 **파이프라인 관리**에서 **파이프라인 생성**을 클릭합니다. 다운로드한 JSON 파일을 업로드합니다. 업로드 후 **다음**을 클릭하게 되면 바로 **최종 검토** 단계로 넘어가게 됩니다.
-![template-guide-02](http://static.toastoven.net/prod_pipeline/2023-09-26/template-guide-02.png)
+2.1 **파이프라인 관리**에서 **파이프라인 생성**을 클릭합니다. 다운로드한 JSON 파일을 업로드합니다. 업로드 후 **확인**을 클릭하게 JSON파일 설정과 동일한 파이프라인을 생성합니다.
 
-2.2 **최종 검토** 단계에서 등록된 파일명 확인이 가능하며 **생성**을 클릭하면 파이프라인이 생성됩니다.
-![template-guide-03](http://static.toastoven.net/prod_pipeline/2023-09-26/template-guide-03.png)
-![template-guide-04](http://static.toastoven.net/prod_pipeline/2023-09-26/template-guide-04.png)
+![template-guide-02](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-02.png)
 
 ## 샘플 시나리오 템플릿으로 파이프라인 생성
 시나리오마다 샘플 템플릿 파일을 제공하여 손쉽게 파이프라인을 생성할 수 있습니다.
@@ -28,7 +26,7 @@ Bake Stage 사용에 대한 샘플 시나리오 템플릿의 경우 기능 변�
 
 Github에서 소스코드를 가져와 NHN Cloud 빌드 도구로 빌드 후 대상 서버에 Manifest 정보로 배포하는 시나리오입니다.
 
-![template-guide-08.png](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-08.png)
+![template-guide-03](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-03.png)
 
 등록되어 있는 JSON 파일을 다운로드 후 중괄호로 표시된 데이터에 대한 정보 입력이 필요합니다.
 
@@ -48,7 +46,7 @@ Github에서 소스코드를 가져와 NHN Cloud 빌드 도구로 빌드 후 대
 
 `"sourceRepo": "{소스 저장소 설정에 저장된 소스 저장소 이름}"`으로 입력값을 요구하고 있으며 **환경 설정** 내 소스 저장소 설정에 등록한 정보 중 사용할 소스 저장소 이름을 확인 후 `"sourceRepo": "github-pipeline"`과 같이 수정이 필요합니다.
 
-![template-guide-05](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-05.png)
+![template-guide-04](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-04.png)
 
 **이미지 저장소 설정**, **배포 대상 설정**도 동일하게 설정된 이름 확인 후 수정이 필요합니다.
 
@@ -155,7 +153,7 @@ YAML 파일을 JSON 형태로 변경이 필요합니다(스테이지 변경을 �
 
 배포 후 Webhook을 통해 알림을 받는 시나리오입니다. Webhook을 받을 URL과 Payload, Method에 해당하는 데이터를 입력 후 사용 가능합니다.
 
-![template-guide-09.png](..%2Fimages%2F2023-10-31%2Ftemplate-guide-09.png)
+![template-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-05.png)
 
 [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#_4)에서 Webhook 스테이지 상세 가이드는 확인 가능합니다.
 ``` json
@@ -181,7 +179,9 @@ YAML 파일을 JSON 형태로 변경이 필요합니다(스테이지 변경을 �
 
 템플릿의 Trigger 영역을 설정하면 Github(GitLab, 이미지 저장소) 자동 실행 설정을 할 수 있습니다.
 [Pipeline 콘솔 사용 가이드](/Dev%20Tools/Pipeline/ko/pipeline-management/#_9)의 자동 실행 부분에 입력값에 대한 추가 가이드가 있습니다.
-![template-guide-08.png](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-08.png)
+
+![template-guide-03](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-03.png)
+
 ``` json
 "triggers": [
     {
@@ -200,7 +200,10 @@ YAML 파일을 JSON 형태로 변경이 필요합니다(스테이지 변경을 �
 
 하나의 파이프라인으로 사용자의 선택에 따라 분기처리를 하도록 배포할 수 있습니다.
 해당 시나리오는 개발 환경, 리얼 환경같이 구분되어 있는 환경에 배포하는 경우 활용할 수 있습니다.
-![template-guide-10.png](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-10.png)
+
+![template-guide-06](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-06.png)
+
+
 예시로 작성된 파이프라인처럼 `develop`, `real`을 선택하여 원하는 환경에 배포를 진행할 수 있습니다.
 다른 값으로 변경하여 사용 가능하며 이때 뒤에 있는 Precondition Stage의 값도 동일하게 수정이 필요합니다.
 
@@ -274,7 +277,9 @@ YAML 파일을 JSON 형태로 변경이 필요합니다(스테이지 변경을 �
 
 ### 5. 리얼 환경에 배포 전 승인 절차를 추가하여 배포하는 시나리오
 [템플릿 파일 다운로드](http://static.toastoven.net/prod_pipeline/template/template-scenario-05.json)
-![template-guide-11.png](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-11.png)
+
+![template-guide-07](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-07.png)
+
 4번 시나리오에서 리얼 환경에 배포하기 전 승인 단계를 추가하여 승인 후 배포가 되도록 구성할 수 있습니다.
 
 [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#_4)에서 승인 관리 스테이지 상세 가이드는 확인 가능합니다.
@@ -297,7 +302,7 @@ YAML 파일을 JSON 형태로 변경이 필요합니다(스테이지 변경을 �
 [템플릿 파일 다운로드](http://static.toastoven.net/prod_pipeline/template/template-scenario-06.json)
 
 파이프라인이 환경별로 분리되어 구성되어 있을 때 파이프라인 자체를 선택해서 배포 가능합니다.
-![template-guide-12.png](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-12.png)
+![template-guide-08](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-08.png)
 ```json
 [
   {
@@ -323,14 +328,14 @@ YAML 파일을 JSON 형태로 변경이 필요합니다(스테이지 변경을 �
 ]
 ```
 
-파이프라인 ID는 **파이프라인 버전 > JSON 보기**를 클릭하여 확인 가능합니다.
-![template-guide-06](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-06.png)
-![template-guide-07](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-07.png)
+파이프라인 ID는 **파이프라인 스튜디오 > 파이프라인 버전 > JSON 보기**를 클릭하여 확인 가능합니다.
+![template-guide-09](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-09.png)
+![template-guide-10](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-10.png)
 
 ### 7. Blue/Green 배포
 [템플릿 파일 다운로드](http://static.toastoven.net/prod_pipeline/template/template-scenario-07.json)
 
-![deploy-strategy-guide-03.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-03.png)
+![template-guide-11](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-11.png)
 
 Blue/Green 배포를 위한 파이프라인을 구성할 수 있습니다. Blue/Green 배포는 [배포 전략 가이드](/Dev%20Tools/Pipeline/ko/deploy-strategy-guide/)에서 자세한 내용을 확인할 수 있습니다.
 ```json
@@ -358,12 +363,12 @@ Blue/Green 배포를 위해서 Pipeline을 통해 Service를 먼저 생성해야
 
 [템플릿 파일 다운로드](http://static.toastoven.net/prod_pipeline/template/template-scenario-07-2.json)
 
-![deploy-strategy-guide-01.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-01.png)
+![template-guide-12](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-12.png)
 
 ### 8. Blue/Green 배포(서비스 모니터링 추가)
 [템플릿 파일 다운로드](http://static.toastoven.net/prod_pipeline/template/template-scenario-08.json)
 
-![deploy-strategy-guide-10.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-10.png)
+![template-guide-13](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-13.png)
 
 Blue/Green 배포를 위한 파이프라인을 구성할 수 있습니다. Blue/Green 배포는 [배포 전략 가이드](/Dev%20Tools/Pipeline/ko/deploy-strategy-guide/)에서 자세한 내용을 확인할 수 있습니다.
 
