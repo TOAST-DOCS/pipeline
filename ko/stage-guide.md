@@ -197,7 +197,7 @@ NCS 워크로드의 템플릿을 교체할 수 있는 스테이지입니다.
         - Largest: 해당 스테이지가 시작됐을 때 클러스터에서 Pod 수가 가장 많은 리소스를 선택합니다.
         - Smallest: 해당 스테이지가 시작됐을 때 클러스터에서 Pod 수가 가장 적은 리소스를 선택합니다.
 
-![stage-guide-14](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-14.png)
+![stage-guide-14](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-14_new.png)
 
 ### 기능
 추가 기능을 제공하는 스테이지입니다.
