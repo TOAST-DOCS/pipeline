@@ -2,7 +2,7 @@
 
 파이프라인은 한 개 이상의 스테이지로 구성된 애플리케이션 배포 흐름을 정의합니다.
 
-### 파이프라인 생성
+### 파이프라인 구성
 
 **파이프라인 생성**을 클릭하여 파이프라인을 생성할 수 있으며, 파이프라인 템플릿 파일을 업로드하여 파이프라인을 생성할 수도 있습니다.
 
@@ -24,7 +24,7 @@
 
 파이프라인 템플릿 파일을 업로드한 후 **확인**을 클릭합니다.
 
-### 파이프라인 스튜디오
+#### 파이프라인 스튜디오
 
 파이프라인 스튜디오에서는 사용자가 **파이프라인**의 기본 정보 관리 및 **파이프라인을 구성하는 스테이지**의 추가, 변경, 삭제 등 관리를 할 수 있는 페이지입니다.
 
@@ -34,12 +34,12 @@
 
 파이프라인 스튜디오 패널에는 해당 파이프라인을 구성하는 **스테이지**들을 확인할 수 있습니다.
 
-### 편집 모드
+#### 편집 모드
 ![pipeline-studio-guide-08](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-2.png)
 
 우측 상단 **편집 모드** 버튼을 클릭하여 편집모드로 진입할 수 있습니다. 편집 모드에서는 스테이지의 **추가, 변경, 삭제 및 위치 변경**을 진행할 수 있습니다.
 
-### 스테이지 추가
+#### 스테이지 추가
 ![pipeline-studio-guide-09](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-3.png)
 
 **편집 모드**를 활성화 하면 좌측에 애플리케이션 배포 흐름을 구성할 때 사용할 수 있는 소스,빌드,배포,기능 4개의 스테이지 그룹이 노출됩니다.
@@ -58,7 +58,7 @@
 
 우측 상단 **파이프라인 저장** 버튼을 클릭하여, 스테이지 추가를 완료할 수 있습니다.
 
-### 스테이지 편집
+#### 스테이지 편집
 ![pipeline-studio-guide-13](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-7.png)
 
 **편집 모드**를 활성화 한 후, 편집하고자 하는 스테이지를 클릭하여 스테이지 편집을 진행할 수 있습니다.
@@ -67,7 +67,7 @@
 
 편집을 완료한 후, 우측 상단 **파이프라인 저장** 버튼을 클릭하여, 스테이지 편집을 완료할 수 있습니다.
 
-### 스테이지 삭제
+#### 스테이지 삭제
 ![pipeline-studio-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-10.png)
 
 ![pipeline-studio-guide-16](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-11.png)
