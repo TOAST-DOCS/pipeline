@@ -176,7 +176,7 @@ Docker Hub의 경우 `Docker Hub 계정/이미지 이름` 형식으로 입력합
 
 ![management-guide-09](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-09.png)
 
-파이프라인을 새로 만들면 **자동 실행**가 기본적으로 **미사용**으로 적용됩니다. 파이프라인을 자동으로 실행하려면 **자동 실행**를 **사용**으로 변경해야 합니다. 
+파이프라인을 새로 만들면 **자동 실행**이 기본적으로 **미사용**으로 적용됩니다. 파이프라인을 자동으로 실행하려면 **자동 실행**를 **사용**으로 변경해야 합니다. 
 
 ### 파이프라인 관리
 
