@@ -5,12 +5,12 @@
 기존에 구성되어 있는 파이프라인에서 JSON 파일을 다운로드한 후 동일한 형태의 신규 파이프라인을 생성하는 방법입니다.
 
 ### 1. 기존 파이프라인 JSON 파일 다운로드
-기존 파이프라인을 선택 후 **파이프라인 스튜디오** > **JSON 보기** > **파이프라인 템플릿 다운로드**를 통해 JSON 파일을 다운로드할 수 있습니다.
+기존 파이프라인을 선택한 뒤 **파이프라인 스튜디오** > **JSON 보기** > **파이프라인 템플릿 다운로드**를 클릭해 JSON 파일을 다운로드할 수 있습니다.
 
 ![template-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-01.png)
 
 ### 2. 템플릿 파일로 파이프라인 생성
-2.1 **파이프라인 관리**에서 **파이프라인 생성**을 클릭합니다. 다운로드한 JSON 파일을 업로드합니다. 업로드 후 **확인**을 클릭하게 JSON파일 설정과 동일한 파이프라인을 생성합니다.
+2.1 **파이프라인 관리**에서 **파이프라인 생성**을 클릭합니다. 다운로드한 JSON 파일을 업로드한 뒤 **확인**을 클릭하면 JSON 파일의 설정과 동일한 파이프라인을 생성합니다.
 
 ![template-guide-02](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-02.png)
 
@@ -198,7 +198,7 @@ YAML 파일을 JSON 형태로 변경이 필요합니다(스테이지 변경을 �
 ### 4. 하나의 파이프라인으로 개발 환경, 리얼 환경을 구분해서 배포하는 시나리오
 [템플릿 파일 다운로드](http://static.toastoven.net/prod_pipeline/template/template-scenario-04.json)
 
-하나의 파이프라인으로 사용자의 선택에 따라 분기처리를 하도록 배포할 수 있습니다.
+하나의 파이프라인으로 사용자의 선택에 따라 분기 처리하도록 배포할 수 있습니다.
 해당 시나리오는 개발 환경, 리얼 환경같이 구분되어 있는 환경에 배포하는 경우 활용할 수 있습니다.
 
 ![template-guide-06](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-06.png)

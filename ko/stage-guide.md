@@ -2,10 +2,10 @@
 
 스테이지 가이드에서는 Pipeline의 스테이지에 대해 기본적인 내용을 설명합니다.
 
-스테이지 추가는 파이프라인 스튜디오 화면으로 진입한 뒤 우측 상단의 **편집모드** 토글 버튼을 클릭하여 편집 모드를 활성화 한 이후 
-왼쪽의 스테이지 추가 패널에서 **+트리 메뉴**를 클릭해 노출된 스테이지들을 드래그앤드랍 방식으로 추가할 수 있습니다.
+스테이지는 파이프라인 스튜디오 화면에서 우측 상단의 **편집 모드** 토글을 클릭하여 편집 모드를 활성화한 뒤 
+왼쪽의 **스테이지 추가** 패널에서 트리 메뉴를 클릭해 노출된 스테이지들을 드래그 앤 드롭으로 추가할 수 있습니다.
 
-스테이지의 상세 정보 조회 및 편집은 해당 스테이지를 클릭 후 우측 패널에서 확인이 가능합니다.
+오른쪽의 **스테이지 설정** 패널에서 스테이지의 상세 정보를 조회하거나 편집할 수 있습니다.
 
 ![stage-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-01_new.png)
 
@@ -47,7 +47,7 @@
     - 저장소 타입은 **환경 설정**의 [소스 저장소 설정](/Dev%20Tools/Pipeline/ko/environment-config/#_2) 또는 [차트 저장소 설정](/Dev%20Tools/Pipeline/ko/environment-config/#_6)에서 추가한 저장소를 선택할 수 있습니다.
     - 저장소 타입을 **GitHub 파일** 또는 **GitLab 파일**으로 지정한 경우
         - 경로는 Helm package file의 경로를 입력해야 합니다.
-        - 브랜치 이름은 Github 또는 Gitlab의 브랜치를 입력합니다.
+        - 브랜치 이름은 GitHub 또는 GitLab의 브랜치를 입력합니다.
     - 저장소 타입을 **Helm 차트**로 지정한 경우
         - 차트 저장소 이름은 [차트 저장소 설정](/Dev%20Tools/Pipeline/ko/environment-config/#_6)에서 설정한 저장소 중 하나를 선택할 수 있습니다.
         - 차트 이름은 차트 저장소의 구성에서 사용할 수 있는 차트 이름을 선택할 수 있습니다.
@@ -203,7 +203,7 @@ NCS 워크로드의 템플릿을 교체할 수 있는 스테이지입니다.
 추가 기능을 제공하는 스테이지입니다.
 
 #### 기능 - 승인 관리
-**기능 - 승인 관리** 스테이지 이후의 스테이지들에 대한 **실행 관리(실행, 실행 중지)** 를 승인권자가 관리할 수 있습니다.
+**기능 - 승인 관리** 스테이지 이후의 스테이지들에 대한 **실행 관리(실행, 실행 중지)**를 승인권자가 관리할 수 있습니다.
 
 스테이지에 요청 내용에 대해 작성할 수 있으며, 승인 관리 스테이지의 **실행 관리(실행, 실행 중지)** 기능은 해당 프로젝트의 **Pipeline APPROVAL ADMIN** 역할을 가진 사용자만 할 수 있습니다.
 
@@ -216,7 +216,7 @@ NCS 워크로드의 템플릿을 교체할 수 있는 스테이지입니다.
 #### 기능 - Judgement(실행 관리)
 필요에 따라 실행 관리 스테이지에 대한 **설명**, **실행 설정**값을 입력할 수 있습니다.
 
-**실행 설정**의 유무와 상관없이 다음 스테이지에 대한 **실행 관리(실행, 실행 중지)** 를 할 수 있습니다.
+**실행 설정**의 유무와 상관없이 다음 스테이지에 대한 **실행 관리(실행, 실행 중지)**를 할 수 있습니다.
 **실행 설정**을 추가하여 다음 스테이지의 실행을 선택할 경우 다음에 설명할 스테이지인 Precondition(실행 조건)에 설정값을 전달하여 분기 처리를 할 수 있습니다.
 
 ![stage-guide-16](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-16_new.png)
@@ -234,7 +234,7 @@ Judgement(실행 관리) 스테이지에서 전달받은 설정값과 **실행 �
 ![stage-guide-18](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-18_new.png)
 
 #### 기능 - Webhook
-**URL**에 HTTP 메소드와 URL을 입력합니다. 필요에 따라 **요청 헤더**와 **요청 데이터**를 추가할 수 있습니다.
+**URL**에 HTTP 메서드와 URL을 입력합니다. 필요에 따라 **요청 헤더**와 **요청 데이터**를 추가할 수 있습니다.
 Webhook의 응답값이 **Fail Fast HTTP 상태 코드**에 입력한 값 중 하나라면 그 즉시 해당 스테이지를 종료합니다.
 
 ![stage-guide-19](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-19_new.png)
@@ -255,7 +255,7 @@ Webhook의 응답값이 **Fail Fast HTTP 상태 코드**에 입력한 값 중 �
 
 정보를 입력한 뒤 **확인**을 클릭하면 입력한 보안 설정과 Appkey에 맞는 NHN Cloud Deploy의 배포 관련 정보를 가져옵니다.
 
-이후 NHN Cloud Deploy 서비스를 통해 배포할 **아티팩트**, **서버그룹**, **시나리오**를 선택할 수 있습니다.
+이후 NHN Cloud Deploy 서비스를 통해 배포할 **아티팩트**, **서버 그룹**, **시나리오**를 선택할 수 있습니다.
 
 
 **배포 제한 시간**에는 해당 스테이지의 실행 완료 대기 시간을 지정합니다. (최소 1분, 최대 600분)
