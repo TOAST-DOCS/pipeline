@@ -6,7 +6,7 @@
 
 #### 파이프라인 생성
 
-**파이프라인 생성**을 클릭하여 파이프라인을 생성할 수 있으며, 파이프라인 템플릿 파일을 업로드하여 파이프라인을 생성할 수도 있습니다.
+**+ 파이프라인 생성**을 클릭하여 파이프라인을 생성할 수 있으며, 파이프라인 템플릿 파일을 업로드하여 파이프라인을 생성할 수도 있습니다.
 ![pipeline-management-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-01.png)
 
 
