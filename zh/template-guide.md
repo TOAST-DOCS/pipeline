@@ -195,7 +195,7 @@ There is additional guidance on inputs in the Autorun section of the[Pipeline co
 ```
 
 ### 4. Scenario for deploying separate development and live environments with one pipeline
-[Download the template file](http://static.toastoven.net/prod_pipeline/template/template-scenario-04.json)
+[Download the template file](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-04-v2.json)
 
 One pipeline can be deployed to branch out based on your preferences.
 This scenario can be utilized when deploying to separate environments, such as development and real.
@@ -271,7 +271,7 @@ You can find detailed guides for the Judgment and Precondition stages in the [Pi
 ```
 
 ### 5. Scenario for adding a pre-deployment approval process to your real environment.
-[Download Template Files](http://static.toastoven.net/prod_pipeline/template/template-scenario-05.json)
+[Download Template Files](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-05-v2.json)
 ![template-guide-11.png](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-11.png)
 In scenario #4, you can add an approval stage before deploying to a real environment, configuring it to be deployed after approval.
 

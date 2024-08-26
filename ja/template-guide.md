@@ -196,7 +196,7 @@ triggers: [
 ```
 
 ### 4. 1つのパイプラインで開発環境とリアル環境を分けて配布するシナリオ
-[テンプレートファイルダウンロード](http://static.toastoven.net/prod_pipeline/template/template-scenario-04.json)
+[テンプレートファイルダウンロード](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-04-v2.json)
 
 1つのパイプラインでユーザーの選択に応じて分岐処理を行うように配布できます。
 このシナリオは開発環境、リアル環境のように区分された環境に配布する場合に活用できます。
@@ -273,7 +273,7 @@ triggers: [
 ```
 
 ### 5. リアル環境への配布前に承認手続きを追加して配布するシナリオ
-[テンプレートファイルダウンロード](http://static.toastoven.net/prod_pipeline/template/template-scenario-05.json)
+[テンプレートファイルダウンロード](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-05-v2.json)
 ![template-guide-11.png](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-11.png)
 4番シナリオでリアル環境に配布する前に承認段階を追加し、承認後に配布されるように構成できます。
 
