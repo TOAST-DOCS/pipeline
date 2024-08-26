@@ -10,11 +10,11 @@
 ![pipeline-management-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-01.png)
 
 
-1. **파이프라인 관리**에서 **+ 파이프라인 생성**을 클릭합니다.
+**파이프라인 관리**에서 **+ 파이프라인 생성**을 클릭합니다.
 
 ![pipeline-management-guide-02](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-02.png)
 
-2. **파이프라인 생성** 모달 창에서 **파이프라인 이름**과 **파이프라인 설명**을 입력한 뒤 **확인**을 클릭합니다.
+**파이프라인 생성** 모달 창에서 **파이프라인 이름**과 **파이프라인 설명**을 입력한 뒤 **확인**을 클릭합니다.
 
 또는 파이프라인 템플릿 파일로 파이프라인을 생성할 수도 있습니다(파이프라인 템플릿은 JSON 파일을 사용합니다).
 
