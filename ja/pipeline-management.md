@@ -1,4 +1,4 @@
-## Dev Tools > Pipeline > コンソール使用ガイド > パイプライン管理
+## Dev Tools > Pipeline > コンソール使用ガイド > Pipeline Management
 
 パイプラインは、1つ以上のステージで構成されたアプリケーション配布フローを定義します。
 
