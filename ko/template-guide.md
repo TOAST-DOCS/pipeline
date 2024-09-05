@@ -196,7 +196,7 @@ YAML 파일을 JSON 형태로 변경이 필요합니다(스테이지 변경을 �
 ```
 
 ### 4. 하나의 파이프라인으로 개발 환경, 리얼 환경을 구분해서 배포하는 시나리오
-[템플릿 파일 다운로드](http://static.toastoven.net/prod_pipeline/template/template-scenario-04.json)
+[템플릿 파일 다운로드](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-04-v2.json)
 
 하나의 파이프라인으로 사용자의 선택에 따라 분기 처리하도록 배포할 수 있습니다.
 해당 시나리오는 개발 환경, 리얼 환경같이 구분되어 있는 환경에 배포하는 경우 활용할 수 있습니다.
@@ -276,7 +276,7 @@ YAML 파일을 JSON 형태로 변경이 필요합니다(스테이지 변경을 �
 ```
 
 ### 5. 리얼 환경에 배포 전 승인 절차를 추가하여 배포하는 시나리오
-[템플릿 파일 다운로드](http://static.toastoven.net/prod_pipeline/template/template-scenario-05.json)
+[템플릿 파일 다운로드](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-05-v2.json)
 
 ![template-guide-07](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-07.png)
 
