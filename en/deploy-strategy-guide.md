@@ -26,7 +26,7 @@ You can configure a pipeline by referring to the[Pipeline template guide](/Dev%2
 
 Deploy **-**Add a **Deploy stage**and use the Pipeline to create the Service. Since you typically don't modify the Service when deploying an application, create a different pipeline than the application deployment pipeline to pre-create just the Service.
 
-![deploy-strategy-guide-01.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-01.png)
+![deploy-strategy-guide-01.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/deploy-strategy-guide/deploy-strategy-guide-01.png)
 
 - Deploy - Deploy stage
     - An example of a service manifest is shown below. You can modify the metadata, spec, etc. to suit your environment.
@@ -45,12 +45,12 @@ spec:
     port: 80
 ```
 
-![deploy-strategy-guide-02.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-02.png)
+![deploy-strategy-guide-02.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/deploy-strategy-guide/deploy-strategy-guide-02.png)
 
 #### 2. Configure the Application Deployment Pipeline
 
 Organize your pipeline in the following order: **Deploy - Deploy stage** **> Deploy - Disable Stage**. Configure the **Deploy - Deploy Stage** to deploy a new version of the application and the **Deploy - Disable stage** to select an older version of the application.
-![deploy-strategy-guide-03.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-03.png)
+![deploy-strategy-guide-03.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/deploy-strategy-guide/deploy-strategy-guide-03.png)
 
 - Deploy - Deploy stage
     - An example ReplicaSet manifest is shown below, where `strategy.` `spinnaker`. `io/max-version-history`in the annotations must have a value of 2 or greater, and `traffic.spinnaker.io/load-balancers`specifies the name of the Service created above.
@@ -83,7 +83,7 @@ spec:
         name: frontend
 ```
     
-![deploy-strategy-guide-04.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-04.png)
+![deploy-strategy-guide-04.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/deploy-strategy-guide/deploy-strategy-guide-04.png)
 
 - Deployment - Disable Stage
     - Select an obsolete application after deployment. The Deploy **\- Disable stage** doesn't delete the resource, it just **disables** it so that traffic is no longer sent to it.
@@ -95,5 +95,5 @@ If you want to delete the resource, utilize the Deploy **\- Delete stage**.
         - Largest: Select the resource with the largest number of Pods in the cluster when that stage started.
         - Smallest: Select the resource with the smallest number of Pods in the cluster when that stage is started.
       
-![deploy-strategy-guide-05.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-05.png)
+![deploy-strategy-guide-05.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/deploy-strategy-guide/deploy-strategy-guide-05.png)
 
