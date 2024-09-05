@@ -20,12 +20,12 @@ Stages are divided into the following groups.
 This is a stage that gets the source code to build.
 
 #### Source - GitHub
-You can select [a source repository](/Dev%20Tools/Pipeline/ko/environment-config/#_2) that you added in **Source Repository Settings** of **Environment Settings**. 
+You can select [a source repository](/Dev%20Tools/Pipeline/en/environment-config/#_2) that you added in **Source Repository Settings** of **Environment Settings**. 
 
 ![stage-guide-02](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-02_new.png)
 
 #### Source - GitLab
-You can select [a source repository](/Dev%20Tools/Pipeline/ko/environment-config/#_2) that you added in **Source Repository Settings** of **Environment Settings**.
+You can select [a source repository](/Dev%20Tools/Pipeline/en/environment-config/#_2) that you added in **Source Repository Settings** of **Environment Settings**.
 
 ![stage-guide-03](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-03_new.png)
 
@@ -33,23 +33,23 @@ You can select [a source repository](/Dev%20Tools/Pipeline/ko/environment-config
 This is a stage to build
 
 #### Build - Jenkins
-You can build using Jenkins with your own configuration. You can select [Build Tool](/Dev%20Tools/Pipeline/ko/environment-config/#_4) you added in the **Build Tool Settings** in **Preferences**. You can select a **build job**.
+You can build using Jenkins with your own configuration. You can select [Build Tool](/Dev%20Tools/Pipeline/en/environment-config/#_4) you added in the **Build Tool Settings** in **Preferences**. You can select a **build job**.
 You can set the **start condition** and **end condition****for the artifact**. You can set the **start condition** to determine whether the stage starts. You can set an **end condition** to set the stage's output as an artifact.
 
 ![stage-guide-04](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-04_new.png)
 
 #### Build - Bake (Manifest)
-You can build using a Helm package file or [Chart Repository](/Dev%20Tools/Pipeline/ko/environment-config/#_6)that users configured themselves.
+You can build using a Helm package file or [Chart Repository](/Dev%20Tools/Pipeline/en/environment-config/#_6)that users configured themselves.
 
 - Set the chart name as the name of the output configured with the Helm engine.
 - Set the namespace as the namespace of the output configured with the Helm engine.
 - Template
-    - For repository type, select a repository that is added in [Source Repository Settings](/Dev%20Tools/Pipeline/ko/environment-config/#_2) or [Chart Repository Settings](/Dev%20Tools/Pipeline/ko/environment-config/#_6) of **Environment Settings**.
+    - For repository type, select a repository that is added in [Source Repository Settings](/Dev%20Tools/Pipeline/en/environment-config/#_2) or [Chart Repository Settings](/Dev%20Tools/Pipeline/en/environment-config/#_6) of **Environment Settings**.
     - When you set a repository type as **GitHub file** or **GitLab file**.
         - Enter the Helm package file path for the path.
         - Enter the branch of GitHub or GitLab for the branch name.
     - When you specify **Helm Chart** for the repository type
-        - For the chart repository name, you can select one of repositories set in [Chart Repository Settings](/Dev%20Tools/Pipeline/ko/environment-config/#_6).
+        - For the chart repository name, you can select one of repositories set in [Chart Repository Settings](/Dev%20Tools/Pipeline/en/environment-config/#_6).
         - For the chart name, you can choose any chart name available in the chart repository's configuration.
         - For the chart version, you to select a chart version available in the chart repository's configuration.
 - Override
@@ -71,7 +71,7 @@ You can use the build tools provided by NHN Cloud.
 - Build Environment Settings
     - You can set the performance and timeout of the build tools.
 - Source Build Settings
-    - You can select the [image registry](/Dev%20Tools/Pipeline/ko/environment-config/#_3) you added in the **Image Registry Settings** in **Environment Settings**.
+    - You can select the [image registry](/Dev%20Tools/Pipeline/en/environment-config/#_3) you added in the **Image Registry Settings** in **Environment Settings**.
       - Enter the **image name** and **tag**for the environment you want to build, and set the **build command**.
 
 - Docker Image Build Settings
@@ -95,7 +95,7 @@ You can use the build tools provided by NHN Cloud.
 This is a stage to deploy to the Kubernetes environment.
 
 #### Deployment - Deploy
-- You can select the [deployment target](/Dev%20Tools/Pipeline/ko/environment-config/#_5) you added in **Deployment Target Settings** in **Environment Settings**. 
+- You can select the [deployment target](/Dev%20Tools/Pipeline/en/environment-config/#_5) you added in **Deployment Target Settings** in **Environment Settings**. 
 Enter **Namespace**, **Resource Type**, **Resource Name**, and **Manifest** to use for deployment. 
 If the tag format is used in the build stage, entering the Docker image tag part of **Manifest** as `_{BUILD_NUMBER}` allows you to deploy to the image with the most recent number among the images built in the tag format.
 For more details on **Manifest**, see [Kubernetes documents](https://kubernetes.io/docs/concepts/workloads/controllers/deployment ).
@@ -138,7 +138,7 @@ For more details on **Manifest**, see [Kubernetes documents](https://kubernetes.
 ![stage-guide-09](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-09_new.png)
 
 #### Deployment - Rollout Undo
-You can select the [deployment target](/Dev%20Tools/Pipeline/ko/environment-config/#_5) you added in **Deployment Target Settings** in **Environment Settings**. Enter **Namespace**, **Resource Type**, **Resource Name**, **Revision Back**. You can roll back to the specified Revision.
+You can select the [deployment target](/Dev%20Tools/Pipeline/en/environment-config/#_5) you added in **Deployment Target Settings** in **Environment Settings**. Enter **Namespace**, **Resource Type**, **Resource Name**, **Revision Back**. You can roll back to the specified Revision.
 
 ![stage-guide-10](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-10_new.png)
 
@@ -247,7 +247,7 @@ If you uncheck the **execution condition**, the next stage runs without waiting 
 
 #### Feature - Run NHN Cloud Deploy Service Deployment
 You can run the deployment using the NHN Cloud Deploy service on the stage.
-- If the **command type**of the artifact you want to run the deployment on is **SSH**, the **Run NHN Cloud Deploy Service Deployment** is not supported, only **Cloud Agenet** is supported. For more information, refer to the [Deploy User Guide](/Dev%20Tools/Deploy/ko/console-guide/#_8).
+- If the **command type**of the artifact you want to run the deployment on is **SSH**, the **Run NHN Cloud Deploy Service Deployment** is not supported, only **Cloud Agenet** is supported. For more information, refer to the [Deploy User Guide](/Dev%20Tools/Deploy/en/console-guide/#_8).
 
 In **Environment Settings** > **NHN Cloud Security Settings**, select the security settings you added, and in **AppKey**, enter the appkey that will use the NHN Cloud Deploy service.
 
@@ -266,7 +266,7 @@ In **Number of concurrent server executions**, you can select how many servers t
 
 In **Deployment Note**, you can enter deployment execution information.
 
-For more information, see the [Deploy User Guide](/Dev%20Tools/Deploy/ko/reference/#_1).
+For more information, see the [Deploy User Guide](/Dev%20Tools/Deploy/en/reference/#_1).
 
 ![stage-guide-21](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-21_new.png)
 
