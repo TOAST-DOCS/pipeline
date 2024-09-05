@@ -1,5 +1,8 @@
 ## Dev Tools > Pipeline > Release Notes
 
+### August 27, 2024
+* Changed the UI design of the **Pipeline Management** menu. See [Pipeline Management](/Dev%20Tools/Pipeline/en/pipeline-management/) for how to use.
+
 ### May 28, 2024
 * Added new stages. You can learn how to use them in the [Pipeline Stage Guide](/Dev%20Tools/Pipeline/en/stage-guide/).
     * **Deployment - Disable**
@@ -109,4 +112,4 @@
 ### April 27, 2021
 
 #### Release of a New Service
-* A continuous deployment service that lets you manage the application deployment flow, such as building source code, creating container images, and deploying container images.
+* A continuous deployment (CD) service that lets you manage the application deployment flow, such as building source code, creating container images, and deploying container images.
