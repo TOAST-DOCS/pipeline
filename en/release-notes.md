@@ -1,6 +1,6 @@
 ## Dev Tools > Pipeline > Release Notes
 
-### August 27, 2024
+### September 10, 2024
 * Changed the UI design of the **Pipeline Management** menu. See [Pipeline Management](/Dev%20Tools/Pipeline/en/pipeline-management/) for how to use.
 
 ### May 28, 2024
