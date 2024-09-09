@@ -5,15 +5,14 @@ This document explains how to create a pipeline using a template file.
 Download a JSON file from an existing pipeline to create a new pipeline of the same type.
 
 ### 1. Download existing pipeline JSON file
-You can download the JSON file by selecting an existing pipeline and going to **View JSON** in Basic Information > **Download Pipeline Template**.![](http://static.toastoven.net/prod_pipeline/2023-09-26/template-guide-01.png)template-guide-01![](http://static.toastoven.net/prod_pipeline/2023-09-26/template-guide-01.png)
+You can download the JSON file by selecting an existing pipeline and clicking **Pipeline Studio** > **View JSON** > **Download Pipeline Template**.
+
+![template-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-01.png)
 
 ### 2. Create a pipeline with a template file
-2.1 In **Pipeline Management**, click **Create Pipeline**. Upload the downloaded JSON file. If you click **Next** after uploading, you will immediately proceed to the **Final Review** step.
-![](http://static.toastoven.net/prod_pipeline/2023-09-26/template-guide-02.png)template-guide-02![](http://static.toastoven.net/prod_pipeline/2023-09-26/template-guide-02.png)
+2.1 In **Pipeline management**, click **Create Pipeline**. Upload the downloaded JSON file and click **Confirm** to create a pipeline with the same settings as the JSON file.
 
-2.2 At the **Final Review** stage, you can check the registered file name and click **Create** to create the pipeline.
-![](http://static.toastoven.net/prod_pipeline/2023-09-26/template-guide-03.png)template-guide-03![](http://static.toastoven.net/prod_pipeline/2023-09-26/template-guide-03.png)
-![](http://static.toastoven.net/prod_pipeline/2023-09-26/template-guide-04.png)template-guide-04![](http://static.toastoven.net/prod_pipeline/2023-09-26/template-guide-04.png)
+![template-guide-02](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-02.png)
 
 ## Create a pipeline with a sample scenario template
 Use sample template files for each scenario to create pipelines easily.
@@ -27,7 +26,7 @@ Sample scenario templates for using Bake Stage will be available at a later date
 
 This is a scenario where you get the source code from Github, build it with the NHN Cloud build tool, and deploy it as manifest information to the target server.
 
-![template-guide-08.png](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-08.png)
+![template-guide-03](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-03.png)
 
 After downloading the registered JSON file, you'll need to enter information about the data indicated by curly braces.
 
@@ -47,7 +46,7 @@ The guide is based on Github during the source stage. A detailed guide to the st
 
 `"sourceRepo": "{Source repository name stored in the source repository settings}`", check the source repository name to use among the information registered in the source repository settings in the **env configuration**, and modify it like `"sourceRepo": "github-pipeline`".
 
-![template-guide-05](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-05.png)
+![template-guide-04](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-04.png)
 
 The **image storage settings** and **deployment target settings also**need to be modified after name resolution.
 
@@ -154,7 +153,7 @@ The following scenarios are also based on that scenario.
 
 This is a scenario to receive notifications via webhook after deployment. Enter the data corresponding to the URL, Payload, and Method to receive the webhook.
 
-![template-guide-09.png](..%2Fimages%2F2023-10-31%2Ftemplate-guide-09.png)
+![template-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-05.png)
 
 You can find a detailed guide to the Webhook stage in the [Pipeline stage guide](/Dev%20Tools/Pipeline/en/stage-guide/#_4).
 ``` json
@@ -180,7 +179,9 @@ You can find a detailed guide to the Webhook stage in the [Pipeline stage guide]
 
 You can set up Github (GitLab, image repository) autoruns by setting up the Trigger area of the template.
 There is additional guidance on inputs in the Autorun section of the[Pipeline console user guide](/Dev%20Tools/Pipeline/en/pipeline-management/#_9).
-![template-guide-08.png](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-08.png)
+
+![template-guide-03](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-03.png)
+
 ``` json
 "triggers": [
     {
@@ -195,11 +196,15 @@ There is additional guidance on inputs in the Autorun section of the[Pipeline co
 ```
 
 ### 4. Scenario for deploying separate development and live environments with one pipeline
-[Download the template file](http://static.toastoven.net/prod_pipeline/template/template-scenario-04.json)
+[Download the template file](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-04-v2.json)
 
 One pipeline can be deployed to branch out based on your preferences.
 This scenario can be utilized when deploying to separate environments, such as development and real.
-![template-guide-10.png](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-10.png)As shown in the pipeline written in the example, you can select `develop`, `real`to deploy to the environment of your choice.
+
+![template-guide-06](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-06.png)
+
+
+As shown in the pipeline written in the example, you can select `develop`, `real`to deploy to the environment of your choice.
 You can change it to any other value, and the value of the Precondition Stage behind it will need to be modified equally.
 
 You can find detailed guides for the Judgment and Precondition stages in the [Pipeline stage guides](/Dev%20Tools/Pipeline/en/stage-guide/#_4).
@@ -271,8 +276,10 @@ You can find detailed guides for the Judgment and Precondition stages in the [Pi
 ```
 
 ### 5. Scenario for adding a pre-deployment approval process to your real environment.
-[Download Template Files](http://static.toastoven.net/prod_pipeline/template/template-scenario-05.json)
-![template-guide-11.png](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-11.png)
+[Download the template file](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-05-v2.json)
+
+![template-guide-07](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-07.png)
+
 In scenario #4, you can add an approval stage before deploying to a real environment, configuring it to be deployed after approval.
 
 You can find a detailed guide to the approval management stage in the [Pipeline stage guide](/Dev%20Tools/Pipeline/en/stage-guide/#_4).
@@ -295,7 +302,7 @@ You can find a detailed guide to the approval management stage in the [Pipeline 
 [Download the template file](http://static.toastoven.net/prod_pipeline/template/template-scenario-06.json)
 
 When pipelines are organized separately by environment, the pipeline itself can be selected and deployed.
-![template-guide-12.png](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-12.png)
+![template-guide-08](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-08.png)
 ```json
 [
   {
@@ -321,14 +328,14 @@ When pipelines are organized separately by environment, the pipeline itself can 
 ]
 ```
 
-The pipeline ID can be found by clicking **Pipeline Version > View JSON**.
-![template-guide-06](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-06.png)
-![template-guide-07](http://static.toastoven.net/prod_pipeline/2023-10-31/template-guide-07.png)
+The pipeline ID can be found by clicking **Pipeline Studio > Pipeline Version > View JSON**.
+![template-guide-09](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-09.png)
+![template-guide-10](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-10.png)
 
 ### 7. Deploy Blue/Green
 [Download the template file](http://static.toastoven.net/prod_pipeline/template/template-scenario-07.json)
 
-![deploy-strategy-guide-03.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-03.png)
+![template-guide-11](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-11.png)
 
 You can configure a pipeline for Blue/Green deployments. You can learn more about Blue/Green deployments in the [Deployment strategy guide](/Dev%20Tools/Pipeline/en/deploy-strategy-guide/).
 ```json
@@ -356,12 +363,14 @@ For a Blue/Green deployment, you must first create a Service through Pipeline.
 
 [Download the template file](http://static.toastoven.net/prod_pipeline/template/template-scenario-07-2.json)
 
-![deploy-strategy-guide-01.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-01.png)
+![template-guide-12](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-12.png)
+
 
 ### 8. Blue/Green deployment (service monitoring added)
 [Download the template file](http://static.toastoven.net/prod_pipeline/template/template-scenario-08.json)
 
-![deploy-strategy-guide-10.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-10.png)
+![template-guide-13](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-13.png)
+
 
 You can configure a pipeline for Blue/Green deployments. You can learn more about Blue/Green deployments in the [Deployment strategy guide](/Dev%20Tools/Pipeline/en/deploy-strategy-guide/).
 
