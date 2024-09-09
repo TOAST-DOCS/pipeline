@@ -1,207 +1,311 @@
 ## Dev Tools > Pipeline > コンソール使用ガイド > Pipeline Management
 
-パイプラインは、1つ以上のステージで構成されたアプリケーション配布フローを定義します。
-
 ### パイプラインの作成
 
-**パイプラインの作成**をクリックしてパイプラインを作成することができ、パイプラインテンプレートファイルをアップロードしてパイプラインを作成することもできます。
-![pipeline-management-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-01.png)
+Pipelineはアプリケーション配布フローを1つ以上のステージで構成したパイプラインとして保存します。パイプライン作成では**ソースコードのビルド** > **コンテナイメージの作成** > **コンテナイメージのアップロード**、**コンテナイメージの配布**の順序で動作する基本的なパイプラインを作成でき、パイプラインテンプレートファイルをアップロードしてパイプラインを作成することも可能です。
+
+![pipeline-guide-01](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-01.png)
+
+**パイプライン管理**で**パイプライン作成**をクリックします。パイプラインの作成は、次の手順で進めます。
+- パイプライン情報の入力
+- ソース設定
+- ビルド設定
+- 配布設定
+- 最終検討およびパイプラインの作成
+
+#### パイプライン情報の入力
+
+パイプラインの基本情報を入力します。
+
+![pipeline-guide-33](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-09-26/pipeline-guide-33.png)
+
+パイプライン名、パイプラインの説明を入力し、 **次へ**をクリックします。
+
+追加でパイプラインテンプレートファイルでパイプラインを作成することも可能です(パイプラインテンプレートファイルはJSONファイルを使用します)。
+
+![pipeline-guide-34](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-09-26/pipeline-guide-34.png)
+
+パイプライン名、パイプラインの説明を入力し、パイプラインテンプレートファイルをアップロードして**次へ**をクリックします。
+
+#### ソース設定
+
+NHN Cloudビルドツールでソースコードをビルドするときに使用するソースリポジトリを設定します。 NHN Cloudビルドツールを使用しない場合や、NHN Cloudビルドツールでソースコードをビルドしない場合は省略できます。
+
+![pipeline-guide-03](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-03.png)
+
+ステージ名、環境設定で登録したソースリポジトリ、ソースコードをビルドする対象ブランチ(git branch)を入力し、**次へ**をクリックします。
+
+#### ビルド設定
+
+ビルド設定では、NHN Cloudビルドツールや、環境設定で登録したビルドツールを使用できます。ステージ名を入力し、**ビルドツール**で使用するビルドツールを選択します。
+
+![pipeline-guide-04.png](http://static.toastoven.net/prod_pipeline/2024-02-27/pipeline-guide-04.png)
+
+ビルド番号はビルドごとに増加する数値型データです。イメージタグフォーマットを使用する場合はタグが`_{BUILD_NUMBER}`形式で固定されます。
+NHN Cloudビルドツールを使用すると、別途のソフトウェアインストールなしで、ソースリポジトリに保存したアプリケーションのソースコードをビルドして、 
+ビルドしたアプリケーションでコンテナイメージを作成し、作成したコンテナイメージをイメージリポジトリにアップロードできます。
+
+**ビルド環境設定**にはビルドマシンの性能、ビルド時間制限を入力できます。  
+**ソースビルド設定**で設定したソースコードを使用してアプリケーションをビルドする方法を入力します。
+ソースコードビルドに使うコンテナイメージ、ビルドに使うコマンドを入力します。 
+**ドッカーイメージビルド設定**にはビルドしたアプリケーションでコンテナイメージを作る方法を入力します。
+コンテナイメージを作成する時に使うDockerfileパス、Dockerfile実行パス、作成したコンテナイメージをアップロードするイメージストア、アップロードするコンテナイメージの名前とタグを入力できます。  
+**Dockerfileパス**には**ソースビルド設定**で設定したソースリポジトリからDockerfileが存在するパスを入力します。  
+**Dockerfile実行パス**にはDockerfileビルドに使用するパスを入力します。  
+**タグ**にはイメージタグフォーマットを使用できます。タグフォーマットを使用すると、タグフォーマット部分だけ置換して動的にタグを付与してイメージをイメージストアにアップロードします。  
+置換される形式と同じ形式でタグを入力すると、タグフォーマットの使用がスムーズにできない場合があります。
+
+|イメージタグフォーマット | 置換される形式 | 説明                                |
+| ----------- | ---------- |------------------------------------|
+|{BUILD_DATE_TIME}| yyyy-MM-dd_HH_mm_ss| 年-月-日_時_分_秒の形でビルド実行時刻に置換されます。 |
+
+![pipeline-guide-05](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-05.png)
+NHN Cloudビルドツールで**アーティファクト**設定を使用して**開始条件**と**終了条件**を設定できます。
+開始条件として設定された**アーティファクト**はステージ開始時に存在有無を確認してステージの進行を決定します。
+終了条件として設定された**アーティファクト**はステージの生産物を**アーティファクト**に設定します。
+
+#### NHN Cloudビルドツールで設定可能なアーティファクト
+
+GitHubおよびGitLabはブランチを入力しない場合、masterブランチをデフォルト値として使用します。
+
+| アーティファクトの種類  | 使用条件 | パスまたはリファレンス設定例                                                                                                                                                                                      |
+|------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| GitHubファイル | 開始    | https://api.github.com/repos/{organization}/{repository}/contents/{file-path} <br/> GitHub Enterpriseの場合の例：https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
+| GitLabファイル | 開始    | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                        |
+| Dockerイメージ | 開始、終了 | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                        |
+| HTTPファイル  | 開始 | アクセス可能なURL                                                                                                                                                                                              |
 
 
-1. **パイプライン管理**で**+パイプライン作成**をクリックします。
+![pipeline-guide-06](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-06.png)
 
-![pipeline-management-guide-02](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-02.png)
+環境設定で追加したビルドツールを使用すると、ビルドツールのビルドジョブを実行できます。実行するビルドジョブを選択すると、ビルドジョブのパラメータを追加で入力できます。
 
-2. **パイプライン作成**モーダルウィンドウで**パイプライン名**と**パイプラインの説明**を入力し、**確認**をクリックします。
+![pipeline-guide-07](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-07.png)
+**アーティファクト**設定を使用して**開始条件**と**終了条件**を設定できます。
+開始条件として設定された**アーティファクト**はステージ開始時に存在有無を確認してステージの進行を決定します。
+終了条件として設定された**アーティファクト**はステージの生産物を**アーティファクト**に設定します。
 
-または、パイプラインテンプレートファイルでパイプラインを作成することもできます(パイプラインテンプレートはJSONファイルを使用します)。
+#### ビルドツールで設定可能なアーティファクト
 
-![pipeline-management-guide-03](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-03.png)
+GitHubおよびGitLabはブランチを入力しない場合、masterブランチをデフォルト値として使用します。
 
-パイプラインテンプレートファイルをアップロードした後、**確認**をクリックします。
+| アーティファクトの種類  | 使用条件 | パスまたはリファレンス設定例                                                                                                                                                                                       |
+|------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| GitHubファイル | 開始    | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}  <br/> GitHub Enterpriseの場合の例：https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
+| GitLabファイル | 開始    | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                         |
+| Dockerコンテナイメージ | 開始  | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                         |
+| HTTPファイル  | 開始、終了 | アクセス可能なURL                                                                                                                                                                                               |
 
-### パイプラインスタジオ
+ビルド設定が完了したら**次へ**をクリックします。
 
-パイプラインスタジオは、ユーザーがパイプラインの基本情報を管理したり、パイプラインを構成するステージを追加、変更、削除することができるページです。
+#### 配布設定
 
-![pipeline-studio-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-1.png)
+環境設定で追加した配布対象にコンテナイメージを配布する方法を設定します。<br>
+**Manifestソース**は**text**または**artifact**を選択できます。<br>
+設定方法は次のとおりです。
 
-パイプラインスタジオの上部には、パイプラインの名前、説明、最終修正日、コンストラクタの基本情報が表示されます。
+"text"を選択する場合：ステージ名、配布対象、配布に使用するKubernetes Manifestを入力し、**次へ**をクリックします。Manifestを作成する方法は[Kubernetes文書](https://kubernetes.io/docs/concepts/workloads/controllers/deployment )を参照してください。
 
-パイプラインスタジオパネルでは、そのパイプラインを構成するステージを確認できます。
+![pipeline-guide-08.png](http://static.toastoven.net/prod_pipeline/2024-02-27/pipeline-guide-08.png)
 
-### 編集モード
-![pipeline-studio-guide-08](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-2.png)
+"外部入力"を選択する場合："アーティファクト定義"にあるリポジトリタイプ、ソースリポジトリ、パス、ブランチ名を入力し、**次へ**をクリックします。
 
-右上の**編集モード**トグルをクリックして編集モードに入ることができます。編集モードでは、ステージの追加、変更、削除、位置変更を行うことができます。
+![pipeline-guide-09-01.png](http://static.toastoven.net/prod_pipeline/2024-02-27/pipeline-guide-09-01.png)
 
-### ステージの追加
-![pipeline-studio-guide-09](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-3.png)
+**ビルド設定**で使用したタグフォーマットをManifestに使用できます。 
+Manifestコンテナ設定のイメージタグにタグフォーマットを入力すると、最新のビルドされたイメージで配布できます。
+![pipeline-guide-09-02.png](http://static.toastoven.net/prod_pipeline/2024-02-27/pipeline-guide-09-02.png)
 
-**編集モード**を有効にすると、左側にアプリケーション配布フローを構成する際に使用できる様々なステージで構成された**ソース**、**ビルド**、**配布**、**機能**のグループが表示されます。
+NHN Cloudビルドツールで**アーティファクト**設定を使用して**開始条件**と**終了条件**を設定できます。
+開始条件として設定された**アーティファクト**はステージ開始時に存在有無を確認してステージの進行を決定します。
+終了条件として設定された**アーティファクト**はステージの生産物を**アーティファクト**に設定します。
+入力したマニフェストに**終了条件**と一致するKubernetesオブジェクトがないため、ステージが失敗した場合でも、マニフェストがKubernetesクラスタに適用される可能性があります。
+![pipeline-guide-10](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-10.png)
+#### 配布設定で設定可能なアーティファクト
 
-4つのグループから追加するステージを選択し、ドラッグ＆ドロップで画面に追加できます。
+GitHubおよびGitLabはブランチを入力しない場合、masterブランチをデフォルト値として使用します。
 
-![pipeline-studio-guide-10](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-4.png)
+| アーティファクト種類  | 使用条件 | パスまたはリファレンス設定例                                                                                                                                                                                        |
+|------------|--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| GitHubファイル | 開始    | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}   <br/> GitHub Enterpriseの場合の例：https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
+| GitLabファイル | 開始    | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                          |
+| Dockerコンテナイメージ | 開始 | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                          |
+| HTTPファイル  | 開始 | アクセス可能なURL                                                                                                                                                                                                |
+| kubernetesオブジェクト | 終了 | オブジェクトの名前                                                                                                                                                                                                |
 
-ステージが追加されたら、そのステージを選択して必要な情報を入力します。
+#### 最終検討とパイプラインの作成
 
-![pipeline-studio-guide-11](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-5.png)
+最終検討ではパイプラインに設定した全ての入力内容を確認できます。
 
-以前に実行するステージと追加するステージを接続して実行順序を設定します。
+![pipeline-guide-11.png](http://static.toastoven.net/prod_pipeline/2024-02-27/pipeline-guide-11.png)
 
-![pipeline-studio-guide-12](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-6.png)
+パイプラインテンプレートファイルで作成した場合は、アップロードしたファイル名を確認できます。
 
-右上の**パイプライン保存**をクリックしてステージの追加を完了できます。
+![pipeline-guide-35](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-09-26/pipeline-guide-35.png)
 
-### ステージの編集
-![pipeline-studio-guide-13](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-7.png)
 
-**編集モード**を有効にした後、編集したいステージをクリックしてステージを編集できます。
+入力した内容を確認し、**作成**をクリックします。
 
-![pipeline-studio-guide-14](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-9.png)
-
-編集を完了した後、右上の**パイプラインを保存**をクリックしてステージの編集を完了できます。
-
-### ステージの削除
-![pipeline-studio-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-10.png)
-
-![pipeline-studio-guide-16](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-11.png)
-
-**編集モード**を有効にした後、削除したいステージの右上の**X**をクリックしてステージを削除できます。
-
-![pipeline-studio-guide-17](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-12.png)
-
-削除後、右上の**パイプライン保存**をクリックしてステージの削除を完了できます。
+![pipeline-guide-12](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-12.png)
 
 ### パイプラインの実行
 
-パイプラインは手動または自動で実行できます。
+パイプラインを実行する方法には手動実行と自動実行があります。
 
 #### 手動実行
 
-手動実行を使用すると、ユーザーが好きな時にパイプラインを実行できます。
+手動実行を使用した場合、ユーザーが望むときにパイプラインを実行できます。
 
-![pipeline-management-guide-12](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-12.png)
+![pipeline-guide-13](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-13.png)
 
-**パイプライン管理**で**▶︎実行**をクリックし、**パイプライン実行**モーダルウィンドウが表示されたら内容を確認し、**確認**をクリックします。
+**パイプライン管理**で▶(手動実行)をクリックし、ダイアログボックスが表示されたら**確認**をクリックします。
 
 #### 自動実行
 
-自動実行を使うと、GitHubまたはGitLabリポジトリにイベントが発生したり、イメージストアのコンテナイメージを更新すると、パイプラインを自動で実行するように設定できます。
+自動実行を使用すると、GitHubまたはGitLabリポジトリにイベントが発生したりイメージストアのコンテナイメージを更新した場合にパイプラインを自動的に実行するように設定できます。
 
-![management-guide-04](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-04.png)
-![management-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-05.png)
+![pipeline-guide-14](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-14.png)
 
-**自動実行設定**をクリックした後、**自動実行設定**モーダルウィンドウで**追加**をクリックします。
-
-
-* GitHub自動実行設定
-![management-guide-06](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-06.png)
+**自動実行設定**をクリックし、**自動実行設定**ダイアログボックスで**追加**をクリックします。
 
 
+#### GitHub自動実行設定
+![pipeline-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-09-26/pipeline-guide-15.png)
 
-GitHub Webフックを使用してGitHubまたはGitHub Enterpriseのリポジトリにイベントが発生すると、パイプラインを自動で実行するように設定できます。**自動実行タイプ**を **GitHub**に設定し、リポジトリの**組織名またはユーザー名**、**プロジェクト名**、**ブランチまたはタグ**、**シークレット**を入力して**確認**をクリックします。
-
-タグで自動実行を設定するには、**ブランチまたはタグ**項目に`refs/tags/タグ名`のようにタグ名を入力します。`タグ名`部分にはJAVA正規表現を使用できます。
-
-タグで自動実行を設定した後、NHN Cloudビルドツール使用時に設定されたタグでビルドを実行します。ビルド - Jenkinsステージでタグでビルドを実行するためには次のように設定する必要があります。
+GitHub Webフックを使用してGitHubまたはGitHub Enterpriseのリポジトリにイベントが発生した場合にパイプラインを自動的に実行するように設定できます。自動実行タイプをGitHubに設定し、リポジトリの組織またはユーザー名、プロジェクト名、ブランチ、シークレットを入力し、**確認**をクリックします。
+タグで自動実行を設定するには、**ブランチまたはタグ**項目に「refs/tags/タグ名」のようにタグ名を入力します。「タグ名」部分にはJAVA正規表現を使用できます。
+タグで自動実行を設定したらNHN Cloudビルドツールを使用する際に設定されたタグでビルドを実行します。ビルド-Jenkinsステージでタグでビルドを実行したい場合は、次のような設定が必要です。
 
 Jenkinsで次のようにパラメータを設定します。
 ![pipeline-guide-39.png](http://static.toastoven.net/prod_pipeline/2023-09-26/pipeline-guide-39.png)
 ![pipeline-guide-40.png](http://static.toastoven.net/prod_pipeline/2023-09-26/pipeline-guide-40.png)
-
-
 Pipelineのビルドツール設定で**ビルドジョブパラメータ**に次のように入力します。
+![pipeline-guide-41.png](http://static.toastoven.net/prod_pipeline/2023-09-26/pipeline-guide-41.png)
 
-![management-guide-10](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-10.png)
-
-* GitHub Webフック設定値
+#### GitHub Webフック設定値
 
 ![pipeline-guide-16](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-16.png)
 
 
 | 項目 | 設定値 |
 |---|---|
-| Payload URL | https://kr1-pipeline.api.gov-nhncloudservice.com/webhooks/git/github |
+| Payload URL | https://kr1-pipeline.api.nhncloudservice.com/webhooks/git/github |
 | Content type | application/json |
 | Secret | パイプライン自動実行設定のシークレットに入力した値 |
-| event | push event, create event(タグを使用する場合) |
+| event | push event、create event(タグ使用時) |
 
-特定のファイルがPushされた時だけ自動実行するように設定できます(最大5つまで)。
 
-![management-guide-13](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-13.png)
+**特定ファイル**が**Push**された場合のみ自動実行されるように設定できます。(最大5個)
+
+![pipeline-guide-33](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/pipeline-guide-33.png)
 
 **ソースリポジトリ名**は環境設定で登録したソースリポジトリを選択します。
-**GitHubファイルパス**は、選択したソースリポジトリのファイルを含むパスを入力します。
+**ファイルパス**は選択したソースリポジトリからファイルが含まれるパスを入力します。
 
-* GitLab自動実行設定
+#### GitLab自動実行設定
 
-![management-guide-07](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-07.png)
+![pipeline-guide-17](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-03-28/pipeline-guide-17.png)
 
-GitLab Webフックを使用して、GitLabリポジトリにイベントが発生するとパイプラインを自動で実行するように設定できます。**自動実行タイプ**を**GitLab**に設定し、リポジトリの**組織名またはユーザー名**、**プロジェクト名**、**ブランチまたはタグ**を入力して**確認**をクリックします。GitLabシークレット設定は後日サポートする予定です。
+GitLab Webフックを使用してGitLaリポジトリにイベントが発生した場合にパイプラインを自動的に実行するように設定できます。自動実行タイプをGitLabに設定し、リポジトリの組織またはユーザー名、プロジェクト名、ブランチを入力し、**確認**をクリックします。GitLabシークレット設定は今後サポートする予定です。
 
-* GitLab Webフック設定値
+#### GitLab Webフック設定値
 
 ![pipeline-guide-18](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-18.png)
 
 
 | 項目 | 設定値 |
 |---|---|
-| URL | https://kr1-pipeline.api.gov-nhncloudservice.com/webhooks/git/gitlab |
+| URL | https://kr1-pipeline.api.nhncloudservice.com/webhooks/git/gitlab |
 | Trigger | Push eventsチェック |
 | Secret | 設定しない |
 | SSL verification | Enable SSL verificationチェック |
 
-* GitLab Webフック設定時の注意事項
+#### GitLab Webフック設定時の注意事項
 
-GitLabのユーザー名で自動実行を設定する場合、ユーザー名をGitLabのユーザー名と同じに設定する必要があります。ユーザー名が違う場合、自動実行が動作しない場合があります。
+GitLabのユーザー名で自動実行を設定する場合、ユーザー名をGitLabのユーザー名と同じに設定する必要があります。ユーザー名が異なる場合、自動実行が動作しない場合があります。
 
 ![pipeline-guide-19](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-19.png)
 
-* イメージストア自動実行設定
+#### イメージストア自動実行設定
 
-![management-guide-08](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-08.png)
+![pipeline-guide-20](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-20.png)
 
-コンテナイメージを更新した時、パイプラインを自動で実行するには、**自動実行タイプ**を **イメージストア**に設定します。
-**イメージリポジトリ**を**環境設定**で登録した項目として選択し、**イメージ名**を入力します。イメージ名はNHN Cloud Container Registryの場合`registry名/イメージ名`の形で入力します。
-Docker Hubの場合`Docker Hubアカウント/イメージ名`の形式で入力します。 **タグ**はJAVA正規表現を使用することができ、入力したタグとマッチングするタグがpushされた場合、自動実行されます。
-タグを入力しない場合、latestを除く新規タグがpushされた場合、自動実行されます。
+コンテナイメージを更新したときにパイプラインを自動的に実行するには、**自動実行タイプ**を**イメージストア**に設定します。
+**イメージストア**を**環境設定**で登録した項目に選択したした後、**イメージ名**を入力します。イメージ名はNHN Cloud Container Registryの場合`registry名/イメージ名`の形式で入力します。
+Docker Hubの場合、`Docker Hubアカウント/イメージ名`の形式で入力します。**タグ**はJAVA正規表現を使用でき、入力したタグとマッチするタグがpushされた場合に自動実行されます。
+タグを入力しない場合、latestを除く新規タグがpushされる場合に自動実行されます。
 入力が終わったら**確認**をクリックします。
 
-![management-guide-09](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-09.png)
+![pipeline-guide-21](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-21.png)
 
-パイプラインを新規作成すると、**自動実行**のトグルスイッチがオフの状態で適用されます。パイプラインを自動で実行するには、**自動実行**のトグルスイッチをクリックして有効にする必要があります。
+パイプラインを新しく作成したら、**自動実行防止**が基本的に適用されます。パイプラインを自動的に実行するには**自動実行防止**を**未使用**に変更する必要があります。パイプラインを選択した後、下部の基本情報の自動実行防止で**変更**をクリックします。自動実行防止設定ダイアログボックスで**未使用**を選択した後、**確認**をクリックします。
+
+![pipeline-guide-22](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-22.png)
+
+実行中のパイプラインの詳細情報を確認するには、実行中のパイプラインを選択した後、下部の基本情報の最近の実行状態で**詳細情報**をクリックします。
+
+#### 実行履歴
+
+パイプラインを手動実行、自動実行した場合は、実行履歴タブで実行履歴を確認できます。
+
+![pipeline-guide-26](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-26.png)
 
 ### パイプライン管理
 
-ユーザーはパイプラインの基本情報を修正できます。
-![pipeline-studio-guide-02](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-13.png)
+ユーザーはパイプラインを構成するステージを追加、変更、削除できます。
 
-パイプライン名の横にある修正アイコンをクリックして、パイプラインの名前と説明を修正できます。
+![pipeline-guide-23](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-23.png)
 
-情報を修正した後、**確認**をクリックして修正を完了できます。
+パイプラインを選択した後、下部の**ステージ**をクリックすると、ステージ管理画面が表示されます。**ステージ追加**をクリックすると**ステージ追加**ダイアログボックスが表示されます。
 
-![pipeline-studio-guide-03](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-14.png)
+![pipeline-guide-24](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-24.png)
 
-**▶手動実行**をクリックして該当パイプラインを実行することができ、**■実行停止**をクリックして実行中のパイプラインを停止できます。
+ステージ名、ステージタイプ、ステージタイプ別の入力値、以前の段階を設定した後、**ステージ追加**をクリックしてパイプラインにステージを追加できます。 Pipelineはアプリケーション配布フローを構成するときに使用できるさまざまなステージタイプを提供します。
+
+![pipeline-guide-25](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-25.png)
+
+以前のステージを選択する方式に基づいてステージを並列に実行できます。並列構成したステージのうち1つが失敗すると、残りのステージは実行がキャンセルされ、パイプラインの実行は失敗します。
+
+#### パイプラインJSON修正およびダウンロード
+JSON修正によりパイプラインを変更できます。 
+
+![pipeline-guide-36](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-09-26/pipeline-guide-36.png)
+
+**JSONを表示**をクリックして、JSON形式でパイプラインを確認できます。
+
+![pipeline-guide-37](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-09-26/pipeline-guide-37.png)
+
+**パイプラインテンプレートのダウンロード**をクリックして、JSONファイルで保存できます。
+
+**編集**をクリックして、画面でJSONファイルを直接修正できます。
+
+![pipeline-guide-38](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-09-26/pipeline-guide-38.png)
+
+修正後**確認**をクリックすると、修正された内容がパイプラインに反映されます。ただし、入力値が誤っている場合、エラーメッセージが表示されます。
+
+#### 実行履歴と作業
+
+実行履歴で実行履歴の確認とJudgementステージの実行設定選択、ステージ実行停止/ステージ実行の決定を行います。
+
+![pipeline-guide-26](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-26.png)
+
+実行履歴で現在実行中のパイプライン履歴を選択すると、次のように実行中のステージ情報が表示されます。
+
+![pipeline-guide-27](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-27.png)
 
 
-#### 最近の実行情報を確認
+実行中のパイプラインステージのうちJudgementステージが選択待機中の場合、**管理**ボタンが表示され、そのボタンを押すと次のようなポップアップが表示され、ステージ追加、変更時に入力した**説明**、**実行設定**の値と**ステージ実行停止/ステージ実行**を選択できます。
 
-パイプラインの最近の実行に関する各ステージの基本情報と実行状態を確認するには、**最近の実行情報**をクリックします。
+![pipeline-guide-28](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-28.png)
+![pipeline-guide-29](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-29.png)
+![pipeline-guide-30](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-30.png)
 
-![pipeline-studio-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-16.png)
+実行設定値を入力しなかった場合、実行設定選択せずに**ステージ実行停止/ステージ実行**だけを選択します。
 
-#### パイプラインJSONの修正及びダウンロード
-JSONを修正してパイプラインを変更できます。
+![pipeline-guide-31](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-31.png)
 
-![pipeline-studio-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-15.png)
+ユーザーが選択したステージの設定通りに実行され、実行履歴は5秒ごとに更新されます。
 
-**パイプラインバージョン**をクリックしてJSON形式でパイプラインを確認できます。
+![pipeline-guide-32](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-32.png)
 
-左上のパイプライン修正日が表示されたドロップダウンボタンをクリックして修正日別に確認できます。
-
-右上の**パイプラインテンプレートのダウンロード**をクリックしてJSONファイルとして保存できます。
-
-**編集**をクリックすると、画面上でJSONファイルを直接修正できます。
+ステージの実行停止を選択すると、該当ブランチの実行が停止され、実行中のステージのキャンセルは選択したパイプラインの実行全体がキャンセルされます。
