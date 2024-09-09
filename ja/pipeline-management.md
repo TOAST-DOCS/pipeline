@@ -4,6 +4,8 @@
 
 ### パイプラインの構成
 
+#### パイプラインの作成
+
 **パイプラインの作成**をクリックしてパイプラインを作成することができ、パイプラインテンプレートファイルをアップロードしてパイプラインを作成することもできます。
 ![pipeline-management-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-01.png)
 
@@ -20,7 +22,7 @@
 
 パイプラインテンプレートファイルをアップロードした後、**確認**をクリックします。
 
-### パイプラインスタジオ
+#### パイプラインスタジオ
 
 パイプラインスタジオは、ユーザーがパイプラインの基本情報を管理したり、パイプラインを構成するステージを追加、変更、削除することができるページです。
 
@@ -30,12 +32,12 @@
 
 パイプラインスタジオパネルでは、そのパイプラインを構成するステージを確認できます。
 
-### 編集モード
+#### 編集モード
 ![pipeline-studio-guide-08](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-2.png)
 
 右上の**編集モード**トグルをクリックして編集モードに入ることができます。編集モードでは、ステージの追加、変更、削除、位置変更を行うことができます。
 
-### ステージの追加
+#### ステージの追加
 ![pipeline-studio-guide-09](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-3.png)
 
 **編集モード**を有効にすると、左側にアプリケーション配布フローを構成する際に使用できる様々なステージで構成された**ソース**、**ビルド**、**配布**、**機能**のグループが表示されます。
@@ -54,7 +56,7 @@
 
 右上の**パイプライン保存**をクリックしてステージの追加を完了できます。
 
-### ステージの編集
+#### ステージの編集
 ![pipeline-studio-guide-13](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-7.png)
 
 **編集モード**を有効にした後、編集したいステージをクリックしてステージを編集できます。
@@ -63,7 +65,7 @@
 
 編集を完了した後、右上の**パイプラインを保存**をクリックしてステージの編集を完了できます。
 
-### ステージの削除
+#### ステージの削除
 ![pipeline-studio-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-10.png)
 
 ![pipeline-studio-guide-16](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-11.png)
