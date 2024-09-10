@@ -1,169 +1,234 @@
 ## Dev Tools > Pipeline > Console User Guide > Pipeline Management
 
-A pipeline defines an application deployment flow consisting of one or more stages.
+### Create a Pipeline
 
-### Configure a pipeline
+Pipeline stores the application deployment flow as a pipeline consisting of one or more stages. In Create Pipeline, you can create a basic pipeline that works in the following order: **Build Source Code** > **Create Container Image** > **Upload Container Image** > **Deploy Container Image** and create a pipeline by uploading pipeline template files.
 
-#### Create a pipeline
+![pipeline-guide-01](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-01.png)
 
-You can create a pipeline by clicking **\+ Create Pipeline**, or you can create a pipeline by uploading a pipeline template file.
-![pipeline-management-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-01.png)
+Click **Create Pipeline** in **Pipeline Management**. Pipeline creation is performed in the following steps.
+- Entering pipeline information
+- Source settings
+- Build Settings
+- Deployment settings
+- Final review and pipeline creation
+
+#### Entering Pipeline Information
+
+Enter basic information of the pipeline.
+
+![pipeline-guide-33](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-09-26/pipeline-guide-33.png)
+
+Enter the pipeline name and pipeline description, and click **Next**.
+
+Additionally, you can create a pipeline with pipeline template files (JSON is used for pipeline template files).
+
+![pipeline-guide-34](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-09-26/pipeline-guide-34.png)
+
+Enter a pipeline name and description and upload a pipeline template file to click **Next**.
+
+#### Source Settings
+
+Set the source repository used when building the source code in the NHN Cloud build tool. If you do not use the NHN Cloud build tool or do not build the source code in the NHN Cloud build tool, you can skip this step.
+
+![pipeline-guide-03](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-03.png)
+
+Enter the stage name, the source repository registered in the environment settings, and the branch to build the source code from, and click **Next**.
+
+#### Build Settings
+
+In the build settings, you can use the NHN Cloud build tool or the build tool registered in the environment settings. Enter a stage name and select the build tool to use under **Build Tool**.
+
+![pipeline-guide-04.png](http://static.toastoven.net/prod_pipeline/2024-02-27/pipeline-guide-04.png)
+
+The NHN Cloud build tool allows you to build the application source code stored in the source repository without installing additional software, create a container image with the built application,
+and upload the created container image to the image registry.
+
+**In Build Environment Settings**, you can enter the performance of the build machine and build time limits.  
+Enter how to build applications using the source code that you set up in **Source Build Settings**.
+Enter the container image to use to build the source code, and the command to use to build it.  
+In the **Docker Image Build Settings**, enter how you want to create a container image from the application you built.
+You can enter the Dockerfile to use when creating the container image, the image repository to upload the created container image to, and the name and tags for the container image to upload.  
+You can use the image tag format in **Tag**. With the tag format, the image is dynamically tagged by replacing only the tag format portion and uploaded to the image registry.  
+If you enter a tag in the same form as the substituted form, the tag formatting may not work well.
+
+|Image Tag Format | Substituted Format | Description                                 |
+| ----------- | ---------- |------------------------------------|
+|{BUILD_DATE_TIME}| yyyy-MM-dd_HH_mm_ss| This is replaced by the build execution time in the form of year-month-day-hour-minute-second. |
+
+![pipeline-guide-05](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-05.png)
+You can set **Start Condition** and **End Condition** by using the **Artifact** settings from NHN Cloud Build Tool.
+An **artifact** set as a starting condition is checked for existence at the start of the stage to determine whether or not to proceed with the stage.
+An **artifact** configured as an end condition sets the production of the stage as an **artifact**.
+
+#### Artifacts that can be set in NHN Cloud Build Tools
+
+For GitHub and GitLab, if a branch is not entered, the master branch is used as default.
+
+| Artifact Type    | Use Condition  | Path or Reference Setting Examples                                                                                                                                                                                       |
+|------------|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| GitHub file  | Start     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path} <br/> Example for GitHub Enterprise: https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
+| GitLab file  | Start     | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                       |
+| Docker container image | Start, End | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                       |
+| HTTP file    | Start | Accessible URL                                                                   |
+
+![pipeline-guide-06](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-06.png)
+
+The build tool added in the environment settings allows you to run the build tool's build job. If you select a build job to run, you can enter additional parameters for the build job.
+
+![pipeline-guide-07](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-07.png)
+You can set **Start Condition** and **End Condition** by using the **Artifact** settings.
+An **artifact** set as a starting condition is checked for existence at the start of the stage to determine whether or not to proceed with the stage.
+An **artifact** configured as an end condition sets the production of the stage as an **artifact**.
+
+#### **Artifacts** that can be set in Build Tool
+
+For GitHub and GitLab, if a branch is not entered, the master branch is used as default.
+
+| Artifact Type    | Use Condition  | Path or Reference Setting Examples                                                                                                                                                                                        |
+|------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| GitHub file  | Start     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}  <br/> Example for GitHub Enterprise: https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
+| GitLab file  | Start     | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                         |
+| Docker container image | Start     | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                         |
+| HTTP file    | Start, End | Accessible URL                                                                                                                                                                                               |
+
+After completing the build settings, click **Next**.
 
 
-In **Pipeline Management**, click **\+ Create Pipeline**.
+#### Deployment Settings
 
-![pipeline-management-guide-02](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-02.png)
+You can set how the container image is deployed to the deployment target added in the environment settings.<br>
+Select **text** or **artifact** for the **Manifest Source**.<br>
+Below is how to set.
 
-In the **Create Pipeline** modal window, enter **a pipeline name** and **pipeline description **, then click **Confirm**.
+When "text" is selected: Enter the stage name, deployment target, and Kubernetes Manifest to use for deployment, and click **Next**. See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment) for how to write a Manifest.
 
-Alternatively, you can create a pipeline with a pipeline template file (pipeline templates use JSON files).
+![pipeline-guide-08.png](http://static.toastoven.net/prod_pipeline/2024-02-27/pipeline-guide-08.png)
 
-![pipeline-management-guide-03](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-03.png)
+If you select "External input": Enter the repository type, source repository, path, and branch name from "Define artifact", then click **Next**.
 
-After you upload the pipeline template file, click **Confirm**.
+![pipeline-guide-09-01.png](http://static.toastoven.net/prod_pipeline/2024-02-27/pipeline-guide-09-01.png)
 
-#### Pipeline Studio
+You can use the tag format you used **in your build settings**in your manifest.  
+You can enter a tag format in Image tags in the Manifest container settings to deploy with the most recently built image.
+![pipeline-guide-09-02.png](http://static.toastoven.net/prod_pipeline/2024-02-27/pipeline-guide-09-02.png)
 
-Pipeline Studio is the page where users can manage basic information about their pipelines, or add, change, or delete the stages that make up a pipeline.
+If you used the tag format in the build settings, enter `_{BUILD_NUMBER}` for the tag in the Docker image input area as shown above. When `_{BUILD_NUMBER}` is entered in the image tag, it is deployed with the most recent number.
+To use the tag format, you must set build stage and NHN Cloud build tool.
 
-![pipeline-studio-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-1.png)
+![pipeline-guide-10](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-10.png)
+You can set **Start Condition** and **End Condition** by using the **Artifact** settings.
+An **artifact** set as a starting condition is checked for existence at the start of the stage to determine whether or not to proceed with the stage.
+An **artifact** configured as an end condition sets the production of the stage as an **artifact**.
+Even if the stage fails because there are no Kubernetes objects in the entered manifest that match the **End Condition**, the manifest can be applied to the Kubernetes cluster.
 
-At the top of Pipeline Studio, you'll see basic information about the pipeline: its name, description, last modified date, and creator.
+#### **Artifacts** that can be set in the deployment settings.
 
-In the Pipeline Studio panel, you can see the stages that make up that pipeline.
+For GitHub and GitLab, if a branch is not entered, the master branch is used as default.
 
-#### Edit mode
-![pipeline-studio-guide-08](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-2.png)
+| Artifact Type    | Use Condition  | Path or Reference Setting Examples                                                                                                                                                                                        |
+|------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| GitHub file  | Start     | https://api.github.com/repos/{organization}/{repository}/contents/{file-path}   <br/> Example for GitHub Enterprise: https://github.mydomain.com/api/v3/repos/{organization}/{repository}/contents/{file-path} |
+| GitLab file  | Start     | https://gitlab.com/api/v4/projects/{project-number}/repository/files/{file-path}                                                                                                                          |
+| Docker container image | Start | {domain}/{dockerhub-account or image-registry-path}/{image-name}                                                                                                                                          |
+| HTTP file    | Start | Accessible URL                                                                                                                                                                                                |
+| kubernetes object | End | Object name                                                                                                                                                                                                  |
 
-You can enter edit mode by clicking the **edit mode** toggle in the top right corner. In the edit mode, you can add, change, delete, and reposition stages.
+#### Final Review and Pipeline Creation
 
-#### Add a stage
-![pipeline-studio-guide-09](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-3.png)
+In the final review, you can check the full configuration you’ve entered for your pipeline.
 
-When you enable **Edit Mode**, the left side exposes the **Source**, **Build**, **Deploy**, and **Feature** groups, which are organized into different stages that you can use to organize your application deployment flow.
+![pipeline-guide-11.png](http://static.toastoven.net/prod_pipeline/2024-02-27/pipeline-guide-11.png)
 
-You can select the stages you want to add from the four groups and drag and drop them onto the screen.
 
-![pipeline-studio-guide-10](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-4.png)
+If a pipeline is created with a pipeline template file, you can check the uploaded file name.
 
-When a stage is added, select it to enter the required information.
+![pipeline-guide-35](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-09-26/pipeline-guide-35.png)
 
-![pipeline-studio-guide-11](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-5.png)
+After confirming the entered configuration, click **Create**.
 
-Set the order of execution by concatenating the stages to run before and the stages to add.
+![pipeline-guide-12](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-12.png)
 
-![pipeline-studio-guide-12](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-6.png)
+### Run a Pipeline
 
-You can click **Save pipeline**in the top right corner to finish adding stages.
+There are two ways to run a pipeline: manual run and automatic run.
 
-#### Editing Stages
-![pipeline-studio-guide-13](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-7.png)
-
-You can edit a stage by enabling **edit mode**and then clicking the stage you want to edit.
-
-![pipeline-studio-guide-14](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-9.png)
-
-After you've finished editing, you can click **Save Pipeline** in the top right corner to finalize your stage edits.
-
-#### Delete a stage
-![pipeline-studio-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-10.png)
-
-![pipeline-studio-guide-16](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-11.png)
-
-You can delete a stage by activating **edit mode**and clicking **X** at the top right on the stage you want to delete.
-
-![pipeline-studio-guide-17](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-12.png)
-
-After deleting, you can click **Save Pipeline** in the upper right corner to finalize the stage deletion.
-
-### Run a pipeline
-
-Pipelines can be run manually or automatically.
-
-#### Manual run
+#### Manual Run
 
 Manual run allows you to run your pipeline when you want.
 
-![pipeline-management-guide-12](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-12.png)
+![pipeline-guide-13](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-13.png)
 
-In **Pipeline Management**, click **▶ Run︎**, and when the **Run Pipeline** modal window appears, check out the contents and click **Confirm**.
+In **Pipeline Management**, click ▶︎ (Manual Run). when the dialog box appears, click **OK**.
 
 #### Autorun
 
-Autorun lets you configure your pipeline to run automatically when an event occurs in your GitHub or GitLab repository or when a container image in your image registry is updated.
+Autorun lets you configure your pipeline to run automatically when an event occurs in your GitHub  or GitLab repository or when a container image in your image registry is updated.
 
-![management-guide-04](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-04.png)
-![management-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-05.png)
+![pipeline-guide-14](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-14.png)
 
-Click **Autorun Settings**, and then click **Add** in the **Autorun Settings** modal pane.
-
-
-* Setting up GitHub autoruns
-![management-guide-06](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-06.png)
+Click **Autorun Settings** and click **Add** in the **Autorun Settings** dialog box.
 
 
+### GitHub Autorun Settings
+![pipeline-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-09-26/pipeline-guide-15.png)
 
-You can use the GitHub webhook to set up a pipeline to run automatically when an event occurs in a repository on GitHub or GitHub Enterprise. Set the **autorun type** to **GitHub**, enter the repository's **organization name or username**, **project name**, **branch or tag**, and **secret**, and click OK.
+Using a GitHub webhook, you can configure your pipeline to run automatically when an event occurs in a repository on GitHub or GitHub Enterprise. Set the autorun type to GitHub, enter the repository's organization or user name, project name, branch, and secret, and click **OK**.
+To set autorun by tag, enter the tag name in the **Branch or Tag** item, such as 'refs/tags/tagname'. You can use a JAVA regular expression for the 'tagname' part.
+After setting up autorun with tags, run the build with the tags set when using NHN Cloud build tool. If you want to run a build with tags in the Build - Jenkins stage, you need to configure the following settings.
 
-To set up an autorun with a tag, enter the tag name in the **branch or tag** entry, such as `refs/tags/tagname`. You can use a JAVA regular expression for the `tag name` part.
-
-After setting up autorun with tags, builds are performed with the tags set when using the NHN Cloud build tool. To perform builds with tags in the Build - Jenkins stage, you need to set the following settings.
-
-Set the parameters in Jenkins as follows.
+Set parameters as follows in Jenkins.
 ![pipeline-guide-39.png](http://static.toastoven.net/prod_pipeline/2023-09-26/pipeline-guide-39.png)
 ![pipeline-guide-40.png](http://static.toastoven.net/prod_pipeline/2023-09-26/pipeline-guide-40.png)
+Enter as follows in **Build Job Parameter** from Set Build Tool.
+![pipeline-guide-41.png](http://static.toastoven.net/prod_pipeline/2023-09-26/pipeline-guide-41.png)
 
-
-In Pipeline's build tool settings, in the **Build Job Parameter**, enter the following
-
-![management-guide-10](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-10.png)
-
-* GitHub Webhook Settinig Values
+#### GitHub Webhook Settinig Values
 
 ![pipeline-guide-16](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-16.png)
 
 
 | Item | Setting value |
 |---|---|
-| Payload URL | https://kr1-pipeline.api.gov-nhncloudservice.com/webhooks/git/github |
+| Payload URL | https://kr1-pipeline.api.nhncloudservice.com/webhooks/git/github |
 | Content type | application/json |
 | Secret | The value entered in the secret of the pipeline autorun settings |
 | event | push event, create event(When using tags) |
 
-You can set certain files to autorun only when they are pushed (up to 5).
 
-![management-guide-13](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-13.png)
+You can set it to autorun only when **specific files** are **pushed**. (up to 5)
 
-**Source repository name**selects the source repository you registered with in Preferences.
-**GitHub file path is** the path that contains the file in the selected source repository.
+![pipeline-guide-33](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/pipeline-guide-33.png)
 
-* GitLab Autorun Settings
+For **Source Repository Name**, select the source repository you registered in Preferences.
+For **File Path**, enter the path containing the file in the selected source repository.
 
-![management-guide-07](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-07.png)
+#### GitLab Autorun Settings
 
-You can use the GitLab webhook to set up a pipeline to run automatically when an event occurs in your GitLab repository. Set the **autorun type** to **GitLab**, enter the repository's **organization or username**, **project name**, **branch, or tag**, and click **Confirm**. Support for setting GitLab secrets is coming in the future.
+![pipeline-guide-17](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-03-28/pipeline-guide-17.png)
 
-* Set up a webhook in the GitLab repository.
+Using a GitLab webhook, you can configure your pipeline to run automatically when an event occurs in the GitLab repository. Set the autorun type to GitLab, enter the repository's organization or user name, project name, and branch, and click **OK**. GitLab secret setting will be supported in the future.
+
+#### Set up a webhook in the GitLab repository.
 
 ![pipeline-guide-18](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-18.png)
 
-
 | Item | Setting value |
 |---|---|
-| URL | https://kr1-pipeline.api.gov-nhncloudservice.com/webhooks/git/gitlab |
+| URL | https://kr1-pipeline.api.nhncloudservice.com/webhooks/git/gitlab |
 | Trigger | Select Push events |
 | Secret | Do not set |
 | SSL verification | Select Enable SSL verification |
 
-* Precautions for GitLab Webhook settings
+#### Precautions for GitLab Webhook settings
 
 When setting autorun with GitLab's user name, make sure to set the user name to be the same as GitLab's user name. If the user name is set differently, autorun may not work.
 
 ![pipeline-guide-19](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-19.png)
 
-* Image Repository Autorun Setting
+#### Image Repository Autorun Setting
 
-![management-guide-08](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-08.png)
+![pipeline-guide-20](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-20.png)
 
 If you want the pipeline to run automatically when the container image is updated, set **Image Registry** for **Autorun Type**.
 After selecting **the image registry** registered in **the environment settings**, enter **Image Name**. Enter the image name in the form of `registry name/image name` for NHN Cloud container registry.
@@ -171,39 +236,77 @@ For Docker Hub, enter in the form of `docker hub account/image name`. **Tag** ca
 If you do not enter a tag, it will be automatically executed when a new tag except latest is pushed.
 When finished, click **Confirm**.
 
-![management-guide-09](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-management-guide/management-guide-09.png)
+![pipeline-guide-21](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-21.png)
 
-When you create a new pipeline, the toggle switch for **autorun** is off. To run the pipeline automatically, you must click the **Auto-run** toggle switch to enable it. 
+When a new pipeline is created, **Prevent Autorun** is set as default. If you want the pipeline to run automatically, you must change **Prevent Autorun** to **Disable**. After selecting the pipeline, click **Change** under Prevent Autorun at the bottom of Basic Information. In the Set Autorun Prevention dialog box, select **Disable** and click **OK**.
 
-### Manage a pipeline
+![pipeline-guide-22](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-22.png)
 
-Users can modify basic information in the pipeline.
-![pipeline-studio-guide-02](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-13.png)
+To check the detailed information about the running pipeline, select a running pipeline and click **Details** under Recent Run Status in Basic Information at the bottom.
 
-You can edit the name and description of a pipeline by clicking the edit icon next to the pipeline name.
+#### Run History
 
-After you edit the information, you can click **Confirm** to finalize your edits.
+If you run your pipeline manually or automatically, you can view the run history on the Run History tab.
 
-![pipeline-studio-guide-03](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-14.png)
+![pipeline-guide-26](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-26.png)
 
-You can click **▶ Manual Run** to run the pipeline, or **■ Stop Running** to stop a pipeline that is running.
+### Manage a Pipeline
 
+You can add, change, or delete stages that make up the pipeline.
 
-#### View recent execution information
+![pipeline-guide-23](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-23.png)
 
-To view basic information about the pipeline's most recent run and the status of the run for each stage, click **Recent Run Details**.
+After selecting a pipeline, click **Stage** at the bottom to display the screen to manage stages. Click **Add Stage**, and the **Add Stage** dialog box appears.
 
-![pipeline-studio-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-16.png)
+![pipeline-guide-24](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-24.png)
+
+After setting the stage name, stage type, input values for each stage type, and previous stage, click **Add Stage** to add a stage to the pipeline. Pipeline provides a number of different stage types that you can use when configuring your application deployment flow.
+
+![pipeline-guide-25](http://static.toastoven.net/prod_pipeline/2023-03-28/pipeline-guide-25.png)
+
+Stages can run in parallel depending on how the previous stage is selected. If one of the stages in the parallel configuration fails, execution of the remaining stages is canceled and the pipeline execution fails.
 
 #### Modify and Download Pipeline JSON
-You can modify the JSON to change the pipeline. 
+Change a pipeline by modifying JSON.
 
-![pipeline-studio-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-15.png)
+![pipeline-guide-36](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-09-26/pipeline-guide-36.png)
 
-You can view the pipeline in JSON format by clicking **Pipeline Version**.
+Click **View JSON** to check a pipeline in the JSON format.
 
-You can view by modification date by clicking the drop-down button in the top left that shows the pipeline modification date.
+![pipeline-guide-37](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-09-26/pipeline-guide-37.png)
 
-You can save it as a JSON file by clicking **Download Pipeline Template**in the top right corner.
+Click **Download Pipeline Template** to save as JSON files.
 
-You can click **Edit** to modify the JSON file directly on the screen.
+Click **Edit** to directly modify JSON files from the screen.
+
+![pipeline-guide-38](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-09-26/pipeline-guide-38.png)
+
+If you click **OK** after making a change, the change is applied in the pipeline. However, if the input value is invalid, an error message will be exposed.
+
+
+#### Run History and Work
+
+View the run history in **Run History** and select the run settings for the Judgement stage, and decide whether to stop stage running or run stage.
+
+![pipeline-guide-26](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-26.png)
+
+If you select the history of a running pipeline from **Run History**, you can see the information on the running stage as shown below.
+
+![pipeline-guide-27](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-27.png)
+
+
+If the Judgement stage is waiting to run, click the**Manage** button to open the following popup where you can select **Description**, and **Run Settings** values, and **Stop Running Stage/Run Stage**.
+
+![pipeline-guide-28](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-28.png)
+![pipeline-guide-29](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-29.png)
+![pipeline-guide-30](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-30.png)
+
+If you haven't entered any run settings, select **Stop Running Stage/Run Stage** only without selecting run settings.
+
+![pipeline-guide-31](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-31.png)
+
+Runs according to the stage settings, and the run history is updated every 5 seconds.
+
+![pipeline-guide-32](http://static.toastoven.net/prod_pipeline/2023-06-20/pipeline-guide-32.png)
+
+If you select **Stop Running Stage**, running stops for that branch, and if you cancel a running stage, the entire selected pipeline running is canceled.

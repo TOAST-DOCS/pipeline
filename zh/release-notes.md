@@ -1,27 +1,5 @@
 ## Dev Tools > Pipeline > Release Notes
 
-### September 10, 2024
-* Changed the UI design of the **Pipeline Management** menu. See [Pipeline Management](/Dev%20Tools/Pipeline/en/pipeline-management/) for how to use.
-
-### May 28, 2024
-* Added new stages. You can learn how to use them in the [Pipeline Stage Guide](/Dev%20Tools/Pipeline/en/stage-guide/).
-    * **Deployment - Disable**
-    * **Deployment - Enable**
-    * **Features - Precondition (Stage Status Condition)**
-* Added the feature to dynamically select resource selection.
-    * Applied Stages
-        * **Deployment - Delete**
-        * **Deployment - Disable**
-        * **Deployment - Enable**
-        * **Deployment - Patch**
-        * **Deployment - Scale**
-* Added the **stage failure feature** to all stages. You can see how to use it in the [Pipeline Stage Guide](/Dev%20Tools/Pipeline/en/stage-guide/).
-* You can use a blue/green deployment. You can learn how to use them in the [Deployment Strategy Guide](/Dev%20Tools/Pipeline/en/deploy-strategy-guide/).
-
-### April 23, 2024
-* Added the chart repository URL type to Chart Repository Settings.
-    * Made modifications so that the public type is available for chart repository, in addition to the private type.
-
 ### March 26, 2024
 * Added **Deployment - NHN Container Service**, a new deployment stage. See [Pipeline Stage Guide](/Dev%20Tools/Pipeline/zh/stage-guide/).
 
