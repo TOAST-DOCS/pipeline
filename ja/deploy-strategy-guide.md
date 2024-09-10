@@ -26,7 +26,7 @@ Blue/Green配布ができるパイプラインを構成する方法は次のと�
 
 **配布 - Deployステージ**を追加し、Pipelineを利用してServiceを作成します。一般的にアプリケーションを配布する時、Serviceを修正することはないので、アプリケーション配布パイプラインとは違うパイプラインを作成してServiceだけあらかじめ作成します。
 
-![deploy-strategy-guide-01.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-01.png)
+![deploy-strategy-guide-01.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/deploy-strategy-guide/deploy-strategy-guide-01.png)
 
 - 配布 - Deployステージ
     - Service manifestの例は次のとおりです。 metadata, specなどは環境に合わせて修正して使用できます。
@@ -45,12 +45,12 @@ spec:
     port: 80
 ```
 
-![deploy-strategy-guide-02.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-02.png)
+![deploy-strategy-guide-02.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/deploy-strategy-guide/deploy-strategy-guide-02.png)
 
 #### 2. アプリケーション配布パイプライン構成
 
 **配布 - Deployステージ** > **配布 - Disableステージ** 順序でパイプラインを構成します。 **配布 - Deployステージ**では新しいバージョンのアプリケーションを配布し、**配布 - Disableステージ**では旧バージョンのアプリケーションを選択できるように構成します。
-![deploy-strategy-guide-03.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-03.png)
+![deploy-strategy-guide-03.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/deploy-strategy-guide/deploy-strategy-guide-03.png)
 
 - 配布 - Deployステージ
     - ReplicaSet manifestの例は次のとおりです。 annotationsの`strategy.spinnaker.io/max-version-history`は2以上の値を指定する必要があり、`traffic.spinnaker.io/load-balancers`は上記の過程で作成したService名を指定します。
@@ -83,7 +83,7 @@ spec:
         name: frontend
 ```
 
-![deploy-strategy-guide-04.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-04.png)
+![deploy-strategy-guide-04.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/deploy-strategy-guide/deploy-strategy-guide-04.png)
 
 - 配布 - Disableステージ
     - 配布後、古いバージョンのアプリケーションを選択します。**配布 - Disableステージ**はリソースを削除するのではなく、そのリソースにトラフィックを送らないように設定します。
@@ -95,4 +95,4 @@ spec:
         - Largest:当該ステージが開始された時、クラスタでPod数が一番多いリソースを選択します。
         - Smallest:当該ステージが開始された時、クラスタでPod数が一番少ないリソースを選択します。
 
-![deploy-strategy-guide-05.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-05.png)
+![deploy-strategy-guide-05.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/deploy-strategy-guide/deploy-strategy-guide-05.png)

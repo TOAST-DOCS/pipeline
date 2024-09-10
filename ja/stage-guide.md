@@ -1,9 +1,13 @@
 ## Dev Tools > Pipeline > ステージガイド
 
 ステージガイドではPipelineのステージについて基本的な内容を説明します。
-**パイプライン管理** > **+パイプライン作成**をクリックしてパイプラインを作成します。作成したパイプラインを選択したら、下部の**ステージ**タブで **+ステージ追加**をクリックしてステージを追加できます。
 
-![stage-guide-01](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-01.png)
+ステージは、パイプラインスタジオ画面で右上の**編集モード**のトグルをクリックして編集モードを有効にした後 
+左側の**ステージの追加**パネルでツリーメニューをクリックして、表示されたステージをドラッグ＆ドロップで追加できます。
+
+右側の**ステージ設定**パネルでステージの詳細情報を照会したり、編集できます。
+
+![stage-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-01_new.png)
 
 ステージは以下のグループに分かれています。
 
@@ -18,41 +22,49 @@
 #### ソース - GitHub
 **ソースリポジトリ**は**環境設定**の**ソースリポジトリ設定**で追加した[ソースリポジトリ](/Dev%20Tools/Pipeline/ja/environment-config/#_2)を選択できます。**ブランチ**にはビルドする対象のソースブランチを入力します。
 
-![stage-guide-02](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-02.png)
+![stage-guide-02](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-02_new.png)
 
 #### ソース - GitLab
 **ソースリポジトリ**は**環境設定**の**ソースリポジトリ設定**で追加した[ソースリポジトリ](/Dev%20Tools/Pipeline/ja/environment-config/#_2)を選択できます。**ブランチ**にはビルドする対象のソースブランチを入力します。
 
-![stage-guide-03](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-03.png)
+![stage-guide-03](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-03_new.png)
 
 ### ビルド
 ビルドを行うステージです。
 
 #### ビルド - Jenkins
-ユーザーが直接構成したJenkinsを利用してビルドできます。**ビルドツール**は**環境設定**の**ビルドツール設定**で追加した[ビルドツール](/Dev%20Tools/Pipeline/ja/environment-config/#_4)を選択できます。**ビルドジョブ**を選択し、**ビルドジョブパラメータ**を入力できます。
+ユーザーが直接構成したJenkinsを利用してビルドできます。**ビルドツール**は**環境設定**の**ビルドツール設定**で追加した[ビルドツール](/Dev%20Tools/Pipeline/ja/environment-config/#_4)を選択できます。**ビルドジョブ**を選択できます。
 **アーティファクト**の**開始条件**と**終了条件**を設定できます。**開始条件**を設定してステージを開始するかどうかを決定できます。 **終了条件**を設定してステージの作成物をアーティファクトに設定できます。
 
-![stage-guide-04](http://static.toastoven.net/prod_pipeline/2023-02-28/stage-guide-01.png)
-![stage-guide-12](http://static.toastoven.net/prod_pipeline/2023-02-28/stage-guide-04.png)
+![stage-guide-04](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-04_new.png)
 
-#### ビルド - NHN Cloudビルドツール
-NHN Cloudで提供するビルドツールを使用できます。
 
-- ビルド環境設定
-    - **環境設定**の**イメージストア設定**で追加した[イメージストア](/Dev%20Tools/Pipeline/ja/environment-config/#_3)を選択できます。
-    - ビルドする環境の**イメージ名**を選択し、**ビルドツール性能**と**ビルド時間制限(分)**、**ビルドコマンド**を設定します。
-  
-- ビルド結果設定
-    - ビルド結果物の**Dockerfileパス**を設定し、**Dockerfile実行パス**を設定します。
-    - **イメージストア**を選択し、**イメージ名**を決定したらそのリポジトリに結果物をpushします。
-    - **タグフォーマット使用**を選択すると、タグフォーマットでタグが固定され、`_{BUILD_NUMBER}`形式の動的に作成されるタグでイメージが作成されます。
+#### ビルド - Bake (Manifest)
+ユーザーが直接構成したHelm package fileまたは[チャートリポジトリ](/Dev%20Tools/Pipeline/ja/environment-config/#_6)を使ってビルドできます。
 
-- アーティファクト設定
-    - **開始条件**を設定してステージを開始するかどうかを決定できます。
-    - **終了条件**を設定してステージの作成物をアーティファクトに設定できます。
+- チャート名はHelmエンジンで構成した結果物の名前を設定します。
+- NamespaceはHelmエンジンで構成した成果物のNamespaceを設定します。
+- テンプレート
+    - リポジトリタイプは**環境設定**の[ソースリポジトリ設定](/Dev%20Tools/Pipeline/ja/environment-config/#_2)または[チャートリポジトリ設定](/Dev%20Tools/Pipeline/ja/environment-config/#_6)で追加したリポジトリを選択できます。
+    - リポジトリタイプを**GitHubファイル**または**GitLabファイル**に指定した場合
+        - パスはHelm package fileのパスを入力する必要があります。
+        - ブランチ名はGitHubまたはGitLabのブランチを入力します。
+    - リポジトリタイプを **Helmチャート**と指定した場合
+        - チャートリポジトリの名前は[チャートリポジトリの設定](/Dev%20Tools/Pipeline/ja/environment-config/#_6)で設定したリポジトリのいずれかを選択できます。
+        - チャート名は、チャートリポジトリの構成で使用可能なチャート名を選択できます。
+        - チャートバージョンは、チャートリポジトリの構成で使用可能なチャートのバージョンを選択できます。
+- オーバーライド
+    - リポジトリ情報
+        - テンプレートと同じ方式で選択できます。
+        - テンプレートを基本として、オーバーライドで指定した内容に置き換えてビルド結果物を作成します。
+    - キー(Key) / 値(Value)
+        - key,valueで構成された値を入力して特定の値を置換してビルド結果物を作成します。
+    - 基本タイプ置換
+        -このオプションをチェックすると、オーバーライド値を注入する時、--set-stringの代わりに--setを使用します。 --setを使用して注入された値はHelmによって基本データ型に変換されます。
+- アーティファクト
+    - **アーティファクト**の**開始条件**と **終了条件**を設定できます。 **開始条件**を設定してステージを開始するかどうかを決定できます。 **終了条件**を設定してステージの作成物をアーティファクトに設定できます。
 
-![stage-guide-05](http://static.toastoven.net/prod_pipeline/2023-02-28/stage-guide-02.png)
-![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-02.png)
+![stage-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-05_new.png)
 
 #### ビルド - NHN Cloudビルドツールv2
 NHN Cloudで提供するビルドツールを使用できます。
@@ -78,36 +90,7 @@ NHN Cloudで提供するビルドツールを使用できます。
 | ----------- | ---------- |------------------------------------|
 |{BUILD_DATE_TIME}| yyyy-MM-dd_HH_mm_ss|  年-月-日-日-時-分-秒の形式でビルド実行時刻に置換されます。 |
 
-![stage-guide-21.png](http://static.toastoven.net/prod_pipeline/2024-02-27/stage-guide-21.png)
-![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-02.png)
-
-#### ビルド - Bake (Manifest)
-ユーザーが直接構成したHelm package fileまたは[チャートリポジトリ](/Dev%20Tools/Pipeline/ja/environment-config/#_6)を利用してビルドできます。 
-
-- チャート名はHelmエンジンで構成した結果物の名前を設定します。
-- NamespaceはHelmエンジで構成した結果物のNamespaceを設定します。
-- テンプレート
-    - リポジトリタイプは**環境設定**の[ソースリポジトリ設定](/Dev%20Tools/Pipeline/ja/environment-config/#_2)または[チャートリポジトリ設定](/Dev%20Tools/Pipeline/ja/environment-config/#_6)で追加したリポジトリを選択できます。
-    - リポジトリタイプを**GitHubファイル**または**GitLabファイル**に指定した場合
-        - パスはHelm package fileのパスを入力する必要があります。
-        - ブランチ名はGithubまたはGitlabのブランチを入力します。
-    - リポジトリタイプを**Helmチャート**と指定した場合
-        - チャートリポジトリの名前は[チャートリポジトリ設定](/Dev%20Tools/Pipeline/ja/environment-config/#_6)で設定したリポジトリの中から1つを選択できます。
-        - チャート名はチャートリポジトリの構成で使用できるチャート名を選択できます。
-        - チャートバージョンはチャートリポジトリの構成で使用できるチャートバージョンを選択できます。
-- オーバーライド
-    - リポジトリ情報
-        - テンプレートと同じ方式で選択できます。
-        - テンプレートを基本にしてオーバーライドで指定した内容に置き換えてビルド結果物を作成します。
-    - キー(Key) / 値(Value)
-        - key、valueで構成された値を入力して特定値を置換してビルド結果物を作成します。
-    - 基本タイプ置換
-        - このオプションをチェックすると、オーバーライド値を注入する時、--set-stringの代わりに--setを使用します。--setを使用して注入された値はHelmによって基本データ型に変換されます。
-- アーティファクト
-    - **アーティファクト**の**開始条件**と**終了条件**を設定できます。**開始条件**を設定してステージを開始するかどうかを決定できます。**終了条件**を設定してステージの作成物をアーティファクトに設定できます。
-
-![stage-guide-12](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-12.png)
-![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-13.png)
+![stage-guide-06](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-06_new.png)
 
 ### 配布
 Kubernetes環境に配布を行うステージです。
@@ -123,10 +106,7 @@ Kubernetes環境に配布を行うステージです。
     - リポジトリから特定ファイルをアーティファクトとして選択できます。 
 - **アーティファクト**の**開始条件**および**終了条件**を設定できます。**開始条件**を設定してステージを開始するかどうかを決定できます。**終了条件**を設定してステージの作成物をアーティファクトに設定できます。
 
-![stage-guide-06](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-06.png)
-![stage-guide-15](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-15.png)
-![stage-guide-16](http://static.toastoven.net/prod_pipeline/2023-03-28/stage-guide-16.png)
-![stage-guide-14](http://static.toastoven.net/prod_pipeline/2023-02-28/console-guide-05.png)
+![stage-guide-07](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-07_new.png)
 
 #### 配布 - Patch
 - **環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
@@ -142,8 +122,7 @@ Kubernetes環境に配布を行うステージです。
     - Largest:当該ステージが開始された時、クラスタでPod数が一番多いリソースを選択します。
     - Smallest:当該ステージが開始された時、クラスタでPod数が一番少ないリソースを選択します。
 
-![stage-guide-07](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-07.png)
-![stage-guide-07-2](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-07-2.png)
+![stage-guide-08](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-08_new.png)
 
 #### 配布 - Scale
 - **環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
@@ -158,14 +137,13 @@ Kubernetes環境に配布を行うステージです。
     - Largest:当該ステージが開始された時、クラスタでPod数が一番多いリソースを選択します。
     - Smallest:当該ステージが開始された時、クラスタでPod数が一番少ないリソースを選択します。
 
-![stage-guide-08](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-08.png)
-![stage-guide-08-2](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-08-2.png)
+![stage-guide-09](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-09_new.png)
 
 #### 配布 - Rollout undo
 **環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
 **Namespace**、**リソースタイプ**、**リソース名**、**Revision Back**を入力します。指定したRevisionにロールバックできます。
 
-![stage-guide-09](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-09.png)
+![stage-guide-10](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-10_new.png)
 
 #### 配布 - Delete
 - **環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
@@ -180,30 +158,21 @@ Kubernetes環境に配布を行うステージです。
     - Largest:当該ステージが開始された時、クラスタでPod数が一番多いリソースを選択します。
     - Smallest:当該ステージが開始された時、クラスタでPod数が一番少ないリソースを選択します。
 
-![stage-guide-10](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-10.png)
-![stage-guide-10-2](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-10-2.png)
+![stage-guide-11](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-11_new.png)
 
-#### 配布 - Disable
-- **環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
-- **Namespace**、**リソースタイプ**、**選択方法**、**リソース名**を入力します。該当リソースを無効にできます。
-    - 無効化:リソースを削除するわけではありませんが、そのリソースにトラフィックを送信しないように設定します。
-- **選択方法**を**動的な方法で選択**に設定する場合、**クラスタ**と**選択戦略**を入力します。
-    - クラスタ
-        - replicaSetの場合、Pipeline内部でバージョンを指定して配布し、**動的な方法で選択**を選択すると、特定のバージョンを選択するのではなく、選択戦略によって対象を選択します。
-    - 選択戦略
-        - Newest:当該ステージが開始された時、最も最近に配布されたリソースを選択します。
-        - Second Newest:当該ステージが開始された時、2番目に最近配布されたリソースを選択します。
-        - Oldest:当該ステージが開始された時、最も古いリソースを選択します。
-        - Largest:当該ステージが開始された時、クラスタでPod数が一番多いリソースを選択します。
-        - Smallest:当該ステージが開始された時、クラスタでPod数が一番少ないリソースを選択します。
+#### 配布 - NHN Container Service
+NCSワークロードのテンプレートを交換できるステージです。 
+**NCSアプリキー**を入力すると、**NCSロール**、テンプレートリスト、ワークロードのリストが表示されます。 
+変更するテンプレートをリストから選択できます。 
+テンプレートを変更するワークロードをリストから選択できます。
 
-![stage-guide-23.png](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-23.png)
-![stage-guide-24.png](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-24.png)
+![stage-guide-12](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-12_new.png)
+
 
 #### 配布 - Enable
 - **環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
 - **Namespace**、**リソースタイプ**、**選択方法**、**リソース名**を入力します。該当リソースを有効にできます。
-    - 有効化:当該リソースをPipelineで管理し、リソースにトラフィックを送るように設定します。
+    - 有効化：該当リソースをPipelineで管理し、リソースにトラフィックを送るように設定します。
 - **選択方法**を**動的な方法で選択**に設定する場合、**クラスタ**と**選択戦略**を入力します。
     - クラスタ
         - replicaSetの場合、Pipeline内部でバージョンを指定して配布し、**動的な方法で選択**を選択すると、特定のバージョンを選択するのではなく、選択戦略によって対象を選択します。
@@ -214,86 +183,84 @@ Kubernetes環境に配布を行うステージです。
         - Largest:当該ステージが開始された時、クラスタでPod数が一番多いリソースを選択します。
         - Smallest:当該ステージが開始された時、クラスタでPod数が一番少ないリソースを選択します。
 
-![stage-guide-25.png](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-25.png)
-![stage-guide-26.png](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-26.png)
+![stage-guide-13](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-13_new.png)
 
-![stage-guide-10](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-10.png)
+#### 配布 - Disable
+- **環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
+- **Namespace**、**リソースタイプ**、**選択方法**、**リソース名**を入力します。該当リソースを無効にできます。
+    - 無効化：リソースを削除するわけではありませんが、そのリソースにトラフィックを送らないように設定します。
+- **選択方法**を**動的な方法で選択**に設定する場合、**クラスタ**と**選択戦略**を入力します。
+    - クラスタ
+        - replicaSetの場合、Pipeline内部でバージョンを指定して配布し、**動的な方法で選択**を選択すると、特定のバージョンを選択するのではなく、選択戦略によって対象を選択します。
+    - 選択戦略
+        - Newest:当該ステージが開始された時、最も最近に配布されたリソースを選択します。
+        - Second Newest:当該ステージが開始された時、2番目に最近配布されたリソースを選択します。
+        - Oldest:当該ステージが開始された時、最も古いリソースを選択します。
+        - Largest:当該ステージが開始された時、クラスタでPod数が一番多いリソースを選択します。
+        - Smallest:当該ステージが開始された時、クラスタでPod数が一番少ないリソースを選択します。
+
+![stage-guide-14](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-14_new.png)
 
 ### 機能
 追加機能を提供するステージです。
 
-#### 機能 - Webhook
-**URL**にHTTPメソッドとURLを入力します。必要に応じて**リクエストヘッダ**と**リクエストデータ**を追加できます。
-Webhookのレスポンス値が**Fail Fast HTTPステータスコード**に入力した値の1つである場合は、すぐにそのそのステージを終了します。
+#### 機能 - 承認管理
+**機能 - 承認管理** ステージ以降のステージに対する**実行管理(実行、実行停止)**を承認権者が管理できます。
 
-![stage-guide-11](http://static.toastoven.net/prod_pipeline/2022-08-23/stage-guide-11.png)
+ステージにリクエスト内容について作成することができ、承認管理ステージの**実行管理(実行、実行停止)**機能は該当プロジェクトの **Pipeline APPROVAL ADMIN**ロールを持つユーザーだけが行うことができます。
+
+![stage-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-15_new.png)
+
+**Pipeline APPROVAL ADMIN**ロールは、プロジェクトのメンバー管理、役割グループ管理で付与できます。
+
+![stage-guide-18](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-10-31/stage-guide-18.png)
+
 
 #### 機能 - Judgement(実行管理)
 必要に応じて実行管理ステージの**説明**、**実行設定**の値を入力できます。
 
-![stage-guide-12](http://static.toastoven.net/prod_pipeline/2023-06-15/stage-guide-12.png)
-
 **実行設定**の有無に関係なく、次のステージに対する**実行管理(実行、実行停止**)ができ、**実行設定**を追加して次のステージの実行を選択する場合、次に説明するステージであるPrecondition(実行条件)に設定値を渡して分岐処理を行うことができます。
 
-![stage-guide-13](http://static.toastoven.net/prod_pipeline/2023-06-15/stage-guide-13.png)
+![stage-guide-16](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-16_new.png)
+
+#### 機能 - Precondition(ステージ状態条件)
+前のステージのステージ名と実行結果を選択して条件を設定できます。
+指定した全ての条件が満たされなければ、次のステージが実行されます。
+
+![stage-guide-17](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-17_new.png)
 
 #### 機能 - Precondition(実行条件)
 前の段階で設定されたJudgement(実行管理)ステージで渡された値を**実行条件**によって後のステージの実行を決定します。
 Judgement(実行管理)ステージで渡された設定値と**実行条件の条件値**に対して**実行条件一致/実行条件不一致**の中から選択して以降のステージの実行を決定します。
 
-![stage-guide-14](http://static.toastoven.net/prod_pipeline/2023-06-15/stage-guide-14.png)
+![stage-guide-18](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-18_new.png)
 
-#### 配布 - NHN Container Service
-NCSワークロードのテンプレートを交換できるステージです。 
-**NCSアプリケーションキー**を入力すると、**NCSロール**、テンプレートリスト、ワークロードリストが照会されます。  
-変更するテンプレートをリストから選択できます。  
-テンプレートを変更するワークロードをリストから選択できます。
+#### 機能 - Webフック
+**URL**にHTTPメソッドとURLを入力します。必要に応じて**リクエストヘッダ** **リクエストデータ**を追加できます。
+Webフックのレスポンス値が**Fail Fast HTTPステータスコード**に入力した値のいずれかであれば、すぐに該当ステージを終了します。
 
-![stage-guide-22.png](http://static.toastoven.net/prod_pipeline/stage-guide-22.png)
-
-#### 機能 - Precondition(ステージ状態条件)
-以前段階のステージ名と実行結果を選択して条件を設定できます。
-指定したすべての条件が満たされると次のステージが実行されます。
-
-![stage-guide-28](http://static.toastoven.net/prod_pipeline/2024-05-28/stage-guide-28.png)
+![stage-guide-19](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-19_new.png)
 
 #### 機能 - 他のパイプラインの実行
 ステージで他のパイプライン全体を実行できます。
 実行したい**パイプライン名**を選択します。
-![stage-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-08-29/stage-guide-15.png)
 
-**実行条件**を選択解除すると、選択したパイプラインの実行状態を待たずに、次のステージが実行されます。
+もし**実行条件**を選択解除した場合、選択したパイプラインの実行状態を待たずに、次のステージが実行されます。
 
-![stage-guide-16](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-08-29/stage-guide-16.png)
-
-#### 機能 - 承認管理
-**機能 - 承認管理**ステージ以降のステージに対する**実行管理(実行、実行停止)**を承認権者が管理できます。
-
-![stage-guide-17](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-10-31/stage-guide-17.png)
-
-ステージにリクエスト内容に対して作成でき、承認管理ステージの**実行管理(実行、実行停止)**は、プロジェクトロールで**Pipeline APPROVAL ADMIN**ロールを持つユーザーのみ行うことができます。
-
-**Pipeline APPROVAL ADMIN**ロールは、プロジェクトのメンバー管理、ロールグループ管理で付与できます。
-
-![stage-guide-18](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-10-31/stage-guide-18.png)
+![stage-guide-20](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-20_new.png)
 
 #### 機能 - NHN Cloud Deployサービス配布実行
 ステージでNHN Cloud Deployサービスを使用して配布を実行できます。
 - 配布を実行するアーティファクトの**Command Type**が**SSH**である場合、**NHN Cloud Deployサービス配布実行**機能をサポートしておらず、**Cloud Agent**である場合にのみサポートします。関連する内容については[Deploy使用ガイド](/Dev%20Tools/Deploy/ja/console-guide/#_8)を参照してください。
 
-![stage-guide-19](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/stage-guide-19.png)
-
 **環境設定** > **NHN Cloudセキュリティ設定**で追加したセキュリティ設定を選択し、**AppKey**にはNHN Cloud Deployサービスを使用するAppkeyを入力します。
 
-情報を入力し**検索**をクリックすると、入力したセキュリティ設定とAppkeyに合うNHN Cloud Deployの配布関連情報が表示されます。
+情報を入力して**確認**をクリックすると、入力したセキュリティ設定とAppkeyに合うNHN Cloud Deployの配布関連情報が表示されます。
 
 その後、NHN Cloud Deployサービスを通じて配布する**アーティファクト**、**サーバーグループ**、**シナリオ**を選択できます。
 
 
 **配布制限時間**には該当ステージの実行完了待機時間を指定します。(最短1分、最長600分)
-
-![stage-guide-20](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/stage-guide-20.png)
-
 **配布詳細設定**では、配布する対象に条件を追加できます。
 
 **サーバー選択**で配布するサーバーを選択できます。**全体サーバー**を選択すると、全体サーバーを対象に配布を実行でき、**サーバー選択**をクリックすると、配布するサーバーを選択できます。
@@ -304,12 +271,13 @@ NCSワークロードのテンプレートを交換できるステージです�
 
 詳しい説明については[Deploy使用ガイド](/Dev%20Tools/Deploy/ja/reference/#_1)を参照してください。
 
+![stage-guide-21](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-21_new.png)
+
 ### ステージ共通機能
 #### ステージ失敗時
 
 ステージが失敗した時のパイプライン実行に関する設定を選択できます。
 
-![stage-guide-27](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-05-28/stage-guide-27.png)
 
 - 全てのパイプライン終了
     - 該当ステージが失敗すると、パイプライン全体が終了します。
@@ -319,3 +287,5 @@ NCSワークロードのテンプレートを交換できるステージです�
     - そのステージが属するブランチだけが終了し、他のブランチのパイプラインは続行されます。しかし、そのパイプラインの結果は失敗として残ります。
 - 失敗を無視して進行
     - 該当ステージが失敗しても、次のステージが進行します。
+
+![stage-guide-27](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-05-28/stage-guide-27.png)
