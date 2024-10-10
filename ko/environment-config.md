@@ -15,7 +15,7 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 
 소스 저장소를 추가하면 NHN Cloud 빌드 도구를 사용해서 소스 코드를 빌드할 수 있습니다. GitHub, GitLab, GitHub Enterprise와 같이 git 명령어를 사용해서 접근할 수 있는 저장소를 추가할 수 있습니다.
 
-![env-config-guide-01](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-01.png)
+![env-config-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-10-29/env-config-guide-02.png)
 
 **환경 설정**에서 **소스 저장소 설정**을 클릭하면 소스 저장소를 관리하는 화면으로 이동합니다. **소스 저장소 추가**를 클릭해서 신규 소스 저장소를 추가할 수 있습니다.
 
