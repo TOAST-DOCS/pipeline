@@ -19,7 +19,7 @@ After adding the source repository, you can build the source code using the NHN 
 
 Click **Source Repository Settings** in **Environment Settings** to go to the screen to manage source repositories. You can add a new source repository by clicking **Add Source Repository**.
 
-![env-config-guide-02](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-02.png)
+![env-config-guide-02](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-10-29/env-config-guide-02.png)
 
 Enter the source repository information. After checking the connection, click **Confirm**.
 - When obtaining a token for a GitLab source repository, `repo` permissions are required.

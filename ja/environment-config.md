@@ -18,7 +18,7 @@ Pipelineに追加できる外部システムは次のとおりです。
 
 **環境設定**で**ソースリポジトリ設定**をクリックすると、ソースリポジトリを管理する画面に移動します。**ソースリポジトリ追加**をクリックして新規ソースリポジトリを追加できます。
 
-![env-config-guide-02](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-02.png)
+![env-config-guide-02](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-10-29/env-config-guide-02.png)
 
 ソースリポジトリ情報を入力し、**ソースリポジトリ接続確認**の**確認**をクリックします。接続確認後に**確認**をクリックします。
 - GitHubソースリポジトリのトークン発行時、`repo`権限が必要です。
