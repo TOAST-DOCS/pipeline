@@ -64,7 +64,7 @@
 - アーティファクト
     - **アーティファクト**の**開始条件**と **終了条件**を設定できます。 **開始条件**を設定してステージを開始するかどうかを決定できます。 **終了条件**を設定してステージの作成物をアーティファクトに設定できます。
 
-![stage-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-05_new.png)
+![stage-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-10-29/stage-guide-05-1.png)
 
 #### ビルド - NHN Cloudビルドツールv2
 NHN Cloudで提供するビルドツールを使用できます。
