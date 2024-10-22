@@ -2,7 +2,7 @@
 
 ### October 29, 2024
 * Added the source repository URL type to the source repository settings.
-  * Changed to allow the use of public type for source repositories as well as private type.
+    * Changed to allow the use of public type for source repositories as well as private type.
 
 ### September 10, 2024
 * Changed the UI design of the **Pipeline Management** menu. See [Pipeline Management](/Dev%20Tools/Pipeline/en/pipeline-management/) for how to use.
