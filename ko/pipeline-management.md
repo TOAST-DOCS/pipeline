@@ -125,7 +125,7 @@ Pipeline의 빌드 도구 설정에서 **빌드 잡 파라미터**에 다음과 
 
 | 항목 | 설정값 |
 |---|---|
-| Payload URL | https://kr1-pipeline.api.gov-nhncloudservice.com/webhooks/git/github |
+| Payload URL | https://kr1-pipeline.api-nhncloudservice.com/webhooks/git/github |
 | Content type | application/json |
 | Secret | 파이프라인 자동 실행 설정의 시크릿에 입력한 값 |
 | event | push event, create event(태그 사용 시) |
@@ -150,7 +150,7 @@ GitLab 웹훅을 사용해서 GitLab 저장소에 이벤트가 발생하면 파�
 
 | 항목 | 설정값 |
 |---|---|
-| URL | https://kr1-pipeline.api.gov-nhncloudservice.com/webhooks/git/gitlab |
+| URL | https://kr1-pipeline.api.nhncloudservice.com/webhooks/git/gitlab |
 | Trigger | Push events 체크 |
 | Secret | 설정하지 않음 |
 | SSL verification | Enable SSL verification 체크 |
