@@ -125,7 +125,7 @@ Pipelineのビルドツール設定で**ビルドジョブパラメータ**に�
 
 | 項目 | 設定値 |
 |---|---|
-| Payload URL | https://kr1-pipeline.api.gov-nhncloudservice.com/webhooks/git/github |
+| Payload URL | https://kr1-pipeline.api.nhncloudservice.com/webhooks/git/github |
 | Content type | application/json |
 | Secret | パイプライン自動実行設定のシークレットに入力した値 |
 | event | push event, create event(タグを使用する場合) |
@@ -150,7 +150,7 @@ GitLab Webフックを使用して、GitLabリポジトリにイベントが発�
 
 | 項目 | 設定値 |
 |---|---|
-| URL | https://kr1-pipeline.api.gov-nhncloudservice.com/webhooks/git/gitlab |
+| URL | https://kr1-pipeline.api.nhncloudservice.com/webhooks/git/gitlab |
 | Trigger | Push eventsチェック |
 | Secret | 設定しない |
 | SSL verification | Enable SSL verificationチェック |
