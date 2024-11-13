@@ -1,5 +1,12 @@
 ## Dev Tools > Pipeline > Release Notes
 
+### November 26, 2024
+* Improve **Build - Bake (Manifest)** stage
+    * Added a feature to check results.
+    * Improved the UI of the Override subconfiguration in the stage contents.
+* Added messages to help you determine the cause when a deployment stage fails.
+* Added the feature to see change differences when rolling back from **Manage Deployment Target**.
+
 ### October 29, 2024
 * Added the source repository URL type to the source repository settings.
     * Changed to allow the use of public type for source repositories as well as private type.
