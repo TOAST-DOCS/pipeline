@@ -5,7 +5,7 @@
     * Added a feature to check results.
     * Improved the UI of the Override subconfiguration in the stage contents.
 * Added messages to help you determine the cause when a deployment stage fails.
-* Added the feature to see change differences when rolling back from **Manage Deployment Target**.
+* Added the feature to see change differences when rolling back from **Deployment Target Management**.
 
 ### October 29, 2024
 * Added the source repository URL type to the source repository settings.
