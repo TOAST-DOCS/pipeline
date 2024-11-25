@@ -125,7 +125,7 @@ In Pipeline's build tool settings, in the **Build Job Parameter**, enter the fol
 
 | Item | Setting value |
 |---|---|
-| Payload URL | https://kr1-pipeline.api-nhncloudservice.com/webhooks/git/github |
+| Payload URL | https://kr1-pipeline.api.nhncloudservice.com/webhooks/git/github |
 | Content type | application/json |
 | Secret | The value entered in the secret of the pipeline autorun settings |
 | event | push event, create event(When using tags) |
