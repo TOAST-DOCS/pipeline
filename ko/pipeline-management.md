@@ -207,3 +207,14 @@ JSON을 수정해 파이프라인을 변경할 수 있습니다.
 우측 상단 **파이프라인 템플릿 다운로드**를 클릭해 JSON 파일로 저장할 수 있습니다.
 
 **편집**을 클릭해 화면에서 JSON 파일을 직접 수정할 수 있습니다.
+
+#### 파이프라인 알림
+파이프라인 시작, 실패, 완료에 대한 Email, SMS 알림을 관리하는 기능입니다.
+
+![pipeline-management-guide-13](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-03-25/pipeline-management-guide-13.png)
+
+**파이프라인 알림**을 클릭하여 알림 설정을 할 수 있습니다.
+
+**프로젝트 설정** > **알림 관리**에서 알림 수신자 관리가 가능합니다.
+
+알림 수신 대상 및 알림 방법(Email, SMS)에 대한 설정은 [알림 관리 가이드](https://docs.nhncloud.com/ko/nhncloud/ko/console-guide/#_33)를 참고하십시오.
