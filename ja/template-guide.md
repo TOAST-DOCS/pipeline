@@ -55,11 +55,11 @@ Githubからソースコードを取得してNHN Cloudビルドツールでビ�
 **イメージストア設定**、**配布対象設定**と同じように設定された名前の確認後、修正が必要です。
 
 #### ビルドステージ
-ビルドステージのうちNHN Cloudビルドツールを基準にガイドが作成されました。[Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/#_2)でステージの詳細ガイドが確認できます。
+ビルドステージのうちNHN Cloudビルドツールv2を基準にガイドが作成されました。[Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/#_2)でステージの詳細ガイドが確認できます。
 
 ``` json
 {
-    "type": "imageBuild",
+    "type": "tektonImageBuild",
     "name": "build",
     "refId": "2",
     "requisiteStageRefIds": [
