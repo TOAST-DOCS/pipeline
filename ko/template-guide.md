@@ -391,3 +391,26 @@ Blue/Green 배포를 위한 파이프라인을 구성할 수 있습니다. Blue/
     "method": "GET"
 }
 ```
+
+
+### 9. 파이프라인 알림 기능 
+[템플릿 파일 다운로드](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-09-1.json)
+
+파이프라인 알림 기능을 추가하여 파이프라인 실행 결과를 알림으로 받을 수 있습니다.
+
+![template-guide-14](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-03-25/template-guide-14.png)
+```json
+{
+    "notifications": [
+        {
+            "level": "pipeline",      // level은 pipeline으로 설정합니다.
+            "type": "nhnPipeline",    // type은 nhnPipeline으로 설정합니다.
+            "when": [                 // 알림 받을 이벤트 유형을 설정합니다.
+                "pipeline.starting",  // 파이프라인 시작
+                "pipeline.complete",  // 파이프라인 완료
+                "pipeline.failed"     // 파이프라인 실패
+            ]
+        }
+    ]
+}
+```
