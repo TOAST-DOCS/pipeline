@@ -195,8 +195,7 @@ Docker Hub의 경우 `Docker Hub 계정/이미지 이름` 형식으로 입력합
 
 ![pipeline-studio-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-16.png)
 
-#### 파이프라인 JSON 수정 및 다운로드
-JSON을 수정해 파이프라인을 변경할 수 있습니다. 
+#### 파이프라인 JSON 다운로드
 
 ![pipeline-studio-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-15.png)
 
@@ -211,8 +210,8 @@ JSON을 수정해 파이프라인을 변경할 수 있습니다.
 
 ![pipeline-management-guide-13](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-03-25/pipeline-management-guide-13.png)
 
-**파이프라인 알림**을 클릭하여 알림 설정을 할 수 있습니다.
+**파이프라인 알림**을 클릭하여 알림을 설정할 수 있습니다.
 
 **프로젝트 설정** > **알림 관리**에서 알림 수신자 관리가 가능합니다.
 
-알림 수신 대상 및 알림 방법(Email, SMS)에 대한 설정은 [알림 관리 가이드](https://docs.nhncloud.com/ko/nhncloud/ko/console-guide/#_33)를 참고하십시오.
+알림 수신 대상 및 알림 방법(Email, SMS)에 대한 설정은 [알림 관리 가이드](https://docs.nhncloud.com/ko/nhncloud/ko/console-guide/#_33)를 참고하세요.
