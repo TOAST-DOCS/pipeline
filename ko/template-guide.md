@@ -7,7 +7,7 @@
 ### 1. 기존 파이프라인 JSON 파일 다운로드
 기존 파이프라인을 선택한 뒤 **파이프라인 스튜디오** > **JSON 보기** > **파이프라인 템플릿 다운로드**를 클릭해 JSON 파일을 다운로드할 수 있습니다.
 
-![template-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-01.png)
+![template-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-03-25/template-guide-16.png)
 
 ### 2. 템플릿 파일로 파이프라인 생성
 2.1 **파이프라인 관리**에서 **파이프라인 생성**을 클릭합니다. 다운로드한 JSON 파일을 업로드한 뒤 **확인**을 클릭하면 JSON 파일의 설정과 동일한 파이프라인을 생성합니다.
@@ -330,7 +330,7 @@ YAML 파일을 JSON 형태로 변경이 필요합니다(스테이지 변경을 �
 
 파이프라인 ID는 **파이프라인 스튜디오 > 파이프라인 버전 > JSON 보기**를 클릭하여 확인 가능합니다.
 ![template-guide-09](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-09.png)
-![template-guide-10](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-10.png)
+![template-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-03-25/template-guide-15.png)
 
 ### 7. Blue/Green 배포
 [템플릿 파일 다운로드](http://static.toastoven.net/prod_pipeline/template/template-scenario-07.json)

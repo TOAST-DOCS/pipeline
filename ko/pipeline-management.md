@@ -197,7 +197,7 @@ Docker Hub의 경우 `Docker Hub 계정/이미지 이름` 형식으로 입력합
 
 #### 파이프라인 JSON 다운로드
 
-![pipeline-studio-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-15.png)
+![pipeline-studio-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-03-25/guide-17.png)
 
 **파이프라인 버전**을 클릭하여 JSON 형식으로 파이프라인을 확인할 수 있습니다.
 
