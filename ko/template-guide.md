@@ -51,7 +51,7 @@ Github에서 소스코드를 가져와 NHN Cloud 빌드 도구로 빌드 후 대
 **이미지 저장소 설정**, **배포 대상 설정**도 동일하게 설정된 이름 확인 후 수정이 필요합니다.
 
 #### 빌드 스테이지
-빌드 스테이지 중 NHN Cloud 빌드 도구 v2를 기준으로 가이드가 작성되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#_2)에서 스테이지 상세 가이드는 확인 가능합니다.
+빌드 스테이지 중 NHN Cloud 빌드 도구 v2를 기준으로 가이드가 작성되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#_2)에서 스테이지 상세 가이드를 확인할 수 있습니다.
 
 ``` json
 {
