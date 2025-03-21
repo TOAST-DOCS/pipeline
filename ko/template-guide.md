@@ -7,7 +7,7 @@
 ### 1. 기존 파이프라인 JSON 파일 다운로드
 기존 파이프라인을 선택한 뒤 **파이프라인 스튜디오** > **JSON 보기** > **파이프라인 템플릿 다운로드**를 클릭해 JSON 파일을 다운로드할 수 있습니다.
 
-![template-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-01.png)
+![template-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-03-25/template-guide-16.png)
 
 ### 2. 템플릿 파일로 파이프라인 생성
 2.1 **파이프라인 관리**에서 **파이프라인 생성**을 클릭합니다. 다운로드한 JSON 파일을 업로드한 뒤 **확인**을 클릭하면 JSON 파일의 설정과 동일한 파이프라인을 생성합니다.
@@ -22,7 +22,7 @@
 Bake Stage 사용에 대한 샘플 시나리오 템플릿의 경우 기능 변경이 필요하여 추후 제공될 예정입니다.
 
 ### 1. 소스 - 빌드 - 배포 단계의 기본적인 시나리오
-[템플릿 파일 다운로드](http://static.toastoven.net/prod_pipeline/template/template-scenario-01.json)
+[템플릿 파일 다운로드](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-01.json)
 
 Github에서 소스코드를 가져와 NHN Cloud 빌드 도구로 빌드 후 대상 서버에 Manifest 정보로 배포하는 시나리오입니다.
 
@@ -51,11 +51,11 @@ Github에서 소스코드를 가져와 NHN Cloud 빌드 도구로 빌드 후 대
 **이미지 저장소 설정**, **배포 대상 설정**도 동일하게 설정된 이름 확인 후 수정이 필요합니다.
 
 #### 빌드 스테이지
-빌드 스테이지 중 NHN Cloud 빌드 도구를 기준으로 가이드가 작성되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#_2)에서 스테이지 상세 가이드는 확인 가능합니다.
+빌드 스테이지 중 NHN Cloud 빌드 도구 v2를 기준으로 가이드가 작성되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#_2)에서 스테이지 상세 가이드를 확인할 수 있습니다.
 
 ``` json
 {
-    "type": "imageBuild",
+    "type": "tektonImageBuild",
     "name": "build",
     "refId": "2",
     "requisiteStageRefIds": [
@@ -149,7 +149,7 @@ YAML 파일을 JSON 형태로 변경이 필요합니다(스테이지 변경을 �
 이후 시나리오도 해당 시나리오를 바탕으로 작성되어 있습니다.
 
 ### 2. 파이프라인 완료 알림 추가된 시나리오
-[템플릿 파일 다운로드](http://static.toastoven.net/prod_pipeline/template/template-scenario-02.json)
+[템플릿 파일 다운로드](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-02.json)
 
 배포 후 Webhook을 통해 알림을 받는 시나리오입니다. Webhook을 받을 URL과 Payload, Method에 해당하는 데이터를 입력 후 사용 가능합니다.
 
@@ -175,7 +175,7 @@ YAML 파일을 JSON 형태로 변경이 필요합니다(스테이지 변경을 �
 ```
 
 ### 3. Github(GitLab, 이미지 저장소) 이벤트 발생 시 파이프라인 자동 실행 시나리오
-[템플릿 파일 다운로드](http://static.toastoven.net/prod_pipeline/template/template-scenario-03.json)
+[템플릿 파일 다운로드](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-03.json)
 
 템플릿의 Trigger 영역을 설정하면 Github(GitLab, 이미지 저장소) 자동 실행 설정을 할 수 있습니다.
 [Pipeline 콘솔 사용 가이드](/Dev%20Tools/Pipeline/ko/pipeline-management/#_9)의 자동 실행 부분에 입력값에 대한 추가 가이드가 있습니다.
@@ -330,7 +330,7 @@ YAML 파일을 JSON 형태로 변경이 필요합니다(스테이지 변경을 �
 
 파이프라인 ID는 **파이프라인 스튜디오 > 파이프라인 버전 > JSON 보기**를 클릭하여 확인 가능합니다.
 ![template-guide-09](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-09.png)
-![template-guide-10](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-10.png)
+![template-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-03-25/template-guide-15.png)
 
 ### 7. Blue/Green 배포
 [템플릿 파일 다운로드](http://static.toastoven.net/prod_pipeline/template/template-scenario-07.json)
@@ -389,5 +389,28 @@ Blue/Green 배포를 위한 파이프라인을 구성할 수 있습니다. Blue/
     500
     ],
     "method": "GET"
+}
+```
+
+
+### 9. 파이프라인 알림 기능 
+[템플릿 파일 다운로드](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-09-1.json)
+
+파이프라인 알림 기능을 추가하여 파이프라인 실행 결과를 알림으로 받을 수 있습니다.
+
+![template-guide-14](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-03-25/template-guide-14.png)
+```json
+{
+    "notifications": [
+        {
+            "level": "pipeline",      // level은 pipeline으로 설정합니다.
+            "type": "nhnPipeline",    // type은 nhnPipeline으로 설정합니다.
+            "when": [                 // 알림 받을 이벤트 유형을 설정합니다.
+                "pipeline.starting",  // 파이프라인 시작
+                "pipeline.complete",  // 파이프라인 완료
+                "pipeline.failed"     // 파이프라인 실패
+            ]
+        }
+    ]
 }
 ```
