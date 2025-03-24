@@ -3,7 +3,7 @@
 ### March 25, 2025
 * **Pipeline Notifications** feature has been added.
     * You can receive Email and SMS notifications when a pipeline starts, completes, or fails.
-    * See the [Pipeline Notification Guide](/Dev%20Tools/Pipeline/ko/pipeline-management/#_13) for usage instructions.
+    * See the Pipeline Notification Guide for usage instructions.
 * **Pipeline Version** has been modified so that pipelines can no longer be edited in JSON format.
 * **Build - NHN Cloud Build Tool** stage is being faded out.
 
