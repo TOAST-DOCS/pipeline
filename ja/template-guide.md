@@ -7,7 +7,7 @@
 ### 1. 既存のパイプラインJSONファイルをダウンロード
 既存のパイプラインを選択した後、**パイプラインスタジオ** > **JSONの表示** > **パイプラインテンプレートのダウンロード**をクリックしてJSONファイルをダウンロードできます。
 
-![template-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-01.png)
+![template-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-03-25/template-guide-16.png)
 
 ### 2. テンプレートファイルでパイプラインを作成
 2.1 **パイプライン管理**で**パイプライン作成**をクリックします。ダウンロードしたJSONファイルをアップロードします。アップロード後、**次へ**をクリックすると、すぐに**最終検討**段階に進みます。
@@ -334,7 +334,7 @@ triggers: [
 
 パイプラインIDは**パイプラインスタジオ > パイプラインバージョン > JSON表示**をクリックして確認できます。
 ![template-guide-09](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-09.png)
-![template-guide-10](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-10.png)
+![template-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-03-25/template-guide-15.png)
 
 ### 7. Blue/Green配布
 [テンプレートファイルダウンロード](http://static.toastoven.net/prod_pipeline/template/template-scenario-07.json)
@@ -393,5 +393,28 @@ Blue/Green配布のためのパイプラインを構成できます。Blue/Green
 500
     ],
     "method": "GET"
+}
+```
+
+
+### 9. パイプライン通知機能 
+[テンプレートファイルダウンロード](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-09-1.json)
+
+パイプライン通知機能を追加してパイプライン実行結果を通知で受け取ることができます。
+
+![template-guide-14](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-03-25/template-guide-14.png)
+```json
+{
+    "notifications": [
+        {
+            "level": "pipeline",      // levelはpipelineに設定します。
+            "type": "nhnPipeline",    // typeはnhnPipelineに設定します。
+            "when": [                 // 通知するイベントタイプを設定します。
+                "pipeline.starting",  // パイプライン開始
+                "pipeline.complete",  // パイプライン完了
+                "pipeline.failed"     // パイプライン失敗
+            ]
+        }
+    ]
 }
 ```
