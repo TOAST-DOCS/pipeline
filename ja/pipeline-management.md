@@ -214,4 +214,4 @@ Docker Hubの場合`Docker Hubアカウント/イメージ名`の形式で入力
 
 **プロジェクト設定** > **通知管理**で通知受信者の管理が可能です。
 
-通知受信対象及び通知方法(Email, SMS)の設定は[通知管理ガイド](https://docs.nhncloud.com/ko/nhncloud/ko/console-guide/#_33)を参照してください。
+通知受信対象及び通知方法(Email, SMS)の設定は[通知管理ガイド](https://docs.nhncloud.com/ja/nhncloud/ja/console-guide/#_31)を参照してください。
