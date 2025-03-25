@@ -1,5 +1,12 @@
 ## Dev Tools > Pipeline > Release Notes
 
+### March 25, 2025
+* **Pipeline Notifications** feature has been added.
+    * You can receive Email and SMS notifications when a pipeline starts, completes, or fails.
+    * See the Pipeline Notification Guide for usage instructions.
+* **Pipeline Version** has been modified so that pipelines can no longer be edited in JSON format.
+* **Build - NHN Cloud Build Tool** stage is being faded out.
+
 ### November 26, 2024
 * Improve **Build - Bake (Manifest)** stage
     * Added a feature to check results.

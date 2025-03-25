@@ -51,11 +51,11 @@ The guide is based on Github during the source stage. A detailed guide to the st
 The **image storage settings** and **deployment target settings also**need to be modified after name resolution.
 
 #### Build Stage
-The guide is based on the NHN Cloud build tool during the build stage. You can find detailed guides for the stages in the [Pipeline Stage Guide](/Dev%20Tools/Pipeline/en/stage-guide/#_2).
+The guide is based on the NHN Cloud build tool v2 during the build stage. You can find detailed guides for the stages in the [Pipeline Stage Guide](/Dev%20Tools/Pipeline/en/stage-guide/#_2).
 
 ``` json
 {
-    "type": "imageBuild",
+    "type": "tektonImageBuild",
     "name": "build",
     "refId": "2",
     "requisiteStageRefIds": [
