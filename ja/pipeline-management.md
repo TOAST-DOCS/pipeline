@@ -195,10 +195,9 @@ Docker Hubの場合`Docker Hubアカウント/イメージ名`の形式で入力
 
 ![pipeline-studio-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-16.png)
 
-#### パイプラインJSONの修正及びダウンロード
-JSONを修正してパイプラインを変更できます。
+#### パイプラインJSONダウンロード
 
-![pipeline-studio-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-15.png)
+![pipeline-studio-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-03-25/guide-17.png)
 
 **パイプラインバージョン**をクリックしてJSON形式でパイプラインを確認できます。
 
@@ -206,4 +205,13 @@ JSONを修正してパイプラインを変更できます。
 
 右上の**パイプラインテンプレートのダウンロード**をクリックしてJSONファイルとして保存できます。
 
-**編集**をクリックすると、画面上でJSONファイルを直接修正できます。
+#### パイプライン通知
+パイプラインの開始、完了、失敗に対するEmail、SMS通知を管理する機能です。
+
+![pipeline-management-guide-13](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-03-25/pipeline-management-guide-13.png)
+
+**パイプライン通知**をクリックして通知を設定できます。
+
+**プロジェクト設定** > **通知管理**で通知受信者の管理が可能です。
+
+通知受信対象及び通知方法(Email, SMS)の設定は[通知管理ガイド](https://docs.nhncloud.com/ko/nhncloud/ko/console-guide/#_33)を参照してください。
