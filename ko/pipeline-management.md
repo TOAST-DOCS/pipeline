@@ -217,7 +217,7 @@ Docker Hub의 경우 `Docker Hub 계정/이미지 이름` 형식으로 입력합
 알림 수신 대상 및 알림 방법(Email, SMS)에 대한 설정은 [알림 관리 가이드](https://docs.nhncloud.com/ko/nhncloud/ko/console-guide/#_33)를 참고하세요.
 
 #### 파이프라인 실행 이력
-파이프라인 스튜디오에서 **실행 이력** 버튼을 클릭하면 최근 10개의 이력을 확인할 수 있습니다.
+파이프라인 스튜디오에서 **실행 이력**을 클릭하면 최근 10개의 이력을 확인할 수 있습니다.
 ![pipeline-management-guide-14](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-04-15/pipeline-management-guide-14.png)
 
 ![pipeline-management-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-04-15/pipeline-management-guide-15.png)
