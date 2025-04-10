@@ -215,3 +215,15 @@ Docker Hubの場合`Docker Hubアカウント/イメージ名`の形式で入力
 **プロジェクト設定** > **通知管理**で通知受信者の管理が可能です。
 
 通知受信対象及び通知方法(Email, SMS)の設定は[通知管理ガイド](https://docs.nhncloud.com/ja/nhncloud/ja/console-guide/#_31)を参照してください。
+
+#### パイプライン実行履歴
+パイプラインスタジオで**実行履歴**をクリックすると、最近10個の履歴を確認できます。
+![pipeline-management-guide-14](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-04-15/pipeline-management-guide-14.png)
+
+![pipeline-management-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-04-15/pipeline-management-guide-15.png)
+
+実行履歴モーダルウィンドウの左側の領域で確認する実行履歴を選択すると、右側の領域に各ステージの詳細情報が表示されます。
+
+**状態**列でパイプラインの実行状態を確認することができ、**キャンセル**をクリックしてパイプラインの実行をキャンセルできます。
+
+**機能 - 承認管理**、**機能 - Judgement(実行管理)**などのステージは**管理**をクリックしてパイプラインの実行管理ができます。

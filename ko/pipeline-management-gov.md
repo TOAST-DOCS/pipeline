@@ -214,3 +214,15 @@ Docker Hub의 경우 `Docker Hub 계정/이미지 이름` 형식으로 입력합
 **프로젝트 설정** > **알림 관리**에서 알림 수신자 관리가 가능합니다.
 
 알림 수신 대상 및 알림 방법(Email, SMS)에 대한 설정은 [알림 관리 가이드](https://docs.gov-nhncloud.com/ko/nhncloud/ko/console-guide-gov/#_34)를 참고하세요.
+
+#### 파이프라인 실행 이력
+파이프라인 스튜디오에서 **실행 이력**을 클릭하면 최근 10개의 이력을 확인할 수 있습니다.
+![pipeline-management-guide-14](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-04-15/pipeline-management-guide-14.png)
+
+![pipeline-management-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-04-15/pipeline-management-guide-15.png)
+
+실행 이력 모달 창의 좌측 영역에서 확인할 실행 이력을 선택하면 우측 영역에 각 스테이지의 상세 정보가 표시됩니다.
+
+**상태** 열에서 파이프라인의 실행 상태를 확인할 수 있으며, **취소**를 클릭해 파이프라인 실행을 취소할 수 있습니다.
+
+**기능 - 승인 관리**, **기능 - Judgement(실행 관리)** 등의 스테이지는 **관리**를 클릭하여 파이프라인의 실행 관리를 할 수 있습니다.
