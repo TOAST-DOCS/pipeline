@@ -7,7 +7,7 @@ Download a JSON file from an existing pipeline to create a new pipeline of the s
 ### 1. Download existing pipeline JSON file
 You can download the JSON file by selecting an existing pipeline and clicking **Pipeline Studio** > **View JSON** > **Download Pipeline Template**.
 
-![template-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-01.png)
+![template-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-03-25/template-guide-16.png)
 
 ### 2. Create a pipeline with a template file
 2.1 In **Pipeline management**, click **Create Pipeline**. Upload the downloaded JSON file and click **Confirm** to create a pipeline with the same settings as the JSON file.
@@ -22,7 +22,7 @@ You can use it by downloading the JSON file for the scenario you want, and then 
 Sample scenario templates for using Bake Stage will be available at a later date due to feature changes.
 
 ### 1. Basic scenario for the source - build - deploy
-[Download the template file](http://static.toastoven.net/prod_pipeline/template/template-scenario-01.json)
+[Download the template file](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-01.json)
 
 This is a scenario where you get the source code from Github, build it with the NHN Cloud build tool, and deploy it as manifest information to the target server.
 
@@ -149,7 +149,7 @@ The YAML file needs to be changed to JSON format (It is recommended  to work in 
 The following scenarios are also based on that scenario.
 
 ### 2. Scenario for adding pipeline completion notification
-[Download the template file](http://static.toastoven.net/prod_pipeline/template/template-scenario-02.json)
+[Download the template file](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-02.json)
 
 This is a scenario to receive notifications via webhook after deployment. Enter the data corresponding to the URL, Payload, and Method to receive the webhook.
 
@@ -175,7 +175,7 @@ You can find a detailed guide to the Webhook stage in the [Pipeline stage guide]
 ```
 
 ### 3. Scenario for auto-running a pipeline when a Github (GitLab, image repository) event occurs
-[Download the template file](http://static.toastoven.net/prod_pipeline/template/template-scenario-03.json)
+[Download the template file](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-03.json)
 
 You can set up Github (GitLab, image repository) autoruns by setting up the Trigger area of the template.
 There is additional guidance on inputs in the Autorun section of the[Pipeline console user guide](/Dev%20Tools/Pipeline/en/pipeline-management/#_9).
@@ -330,7 +330,7 @@ When pipelines are organized separately by environment, the pipeline itself can 
 
 The pipeline ID can be found by clicking **Pipeline Studio > Pipeline Version > View JSON**.
 ![template-guide-09](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-09.png)
-![template-guide-10](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-10.png)
+![template-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-03-25/template-guide-15.png)
 
 ### 7. Deploy Blue/Green
 [Download the template file](http://static.toastoven.net/prod_pipeline/template/template-scenario-07.json)
@@ -391,5 +391,28 @@ Almost the same as the scenario in #7, with the addition of a **Webhook stage**f
     500
     ],
     "method": "GET"
+}
+```
+
+
+### 9. Pipeline Notification Feature 
+[Download the template file](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-09-1.json)
+
+You can receive notifications of pipeline execution results by adding the pipeline notification feature.
+
+![template-guide-14](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-03-25/template-guide-14.png)
+```json
+{
+    "notifications": [
+        {
+            "level": "pipeline",      // Set level to pipeline.
+            "type": "nhnPipeline",    // Set type to nhnPipeline.
+            "when": [                 // Set up the event type for receiving notifications.
+                "pipeline.starting",  // Pipeline start
+                "pipeline.complete",  // Pipeline completed
+                "pipeline.failed"     // Pipeline failed
+            ]
+        }
+    ]
 }
 ```
