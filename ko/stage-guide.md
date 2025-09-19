@@ -315,7 +315,7 @@ ${myImage}
 소스 코드를 대상으로 취약점 분석을 수행하는 스테이지입니다.
 
 - 소스 저장소
-  - **환경 설정**의 **소스 저장소 설정**에서 추가한 [소스 저장소](/Dev%20Tools/Pipeline/ko/environment-config/#_2)를 선택할 수 있습니다.
+    - **환경 설정**의 **소스 저장소 설정**에서 추가한 [소스 저장소](/Dev%20Tools/Pipeline/ko/environment-config/#_2)를 선택할 수 있습니다.
 - **브랜치**를 선택하여 분석할 소스 코드를 지정합니다.
 
 ![stage-guide-25](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-25.png)
