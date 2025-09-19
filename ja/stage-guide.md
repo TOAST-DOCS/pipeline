@@ -301,7 +301,7 @@ ${myImage}
 イメージを対象に脆弱性分析を実行するステージです。
 
 - イメージリポジトリ
-    - **環境設定**の**イメージリポジトリ設定**で追加した[イメージリポジトリ](/Dev%20Tools/Pipeline/ko/environment-config/#_3)を選択できます。
+    - **環境設定**の**イメージリポジトリ設定**で追加した[イメージリポジトリ](/Dev%20Tools/Pipeline/ja/environment-config/#_3)を選択できます。
 - **イメージ名**と**タグ**を入力し、分析するイメージを指定します。
 
 ![stage-guide-23](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-23.png)
@@ -315,7 +315,7 @@ ${myImage}
 ソースコードを対象に脆弱性分析を実行するステージです。
 
 - ソースリポジトリ
-  - **環境設定**の**ソースリポジトリ設定**で追加した[ソースリポジトリ](/Dev%20Tools/Pipeline/ko/environment-config/#_2)を選択できます。
+    - **環境設定**の**ソースリポジトリ設定**で追加した[ソースリポジトリ](/Dev%20Tools/Pipeline/ja/environment-config/#_2)を選択できます。
 - **ブランチ**を選択し、分析するソースコードを指定します。
 
 ![stage-guide-25](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-25.png)
