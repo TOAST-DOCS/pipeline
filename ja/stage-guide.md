@@ -273,6 +273,57 @@ Webフックのレスポンス値が**Fail Fast HTTPステータスコード**�
 
 ![stage-guide-21](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-21_new.png)
 
+### 機能 - ユーザー変数を提供
+パイプライン内で、後続のステージで再利用する変数を定義します。このステージで作成した変数は、接続されている全ての後続ステージで使用でき、最大5つまで作成できます。
+
+**変数の使用方法**
+
+- パイプライン式として参照します。
+- (例) 変数名が`myImage`の場合：
+
+```
+${myImage}
+```
+> 実際に使用する際は、変数名をステージで指定した値に書き換えてください。(例: `${buildTag}`, `${buildImage}`)
+**変数のタイプ別の説明と例**
+
+| 変数タイプ                | 説明                                                                                                                        | 変数の値例                                                                                                                                                                                       |
+|-----------------------|----------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 自動実行時のイメージ情報 | パイプラインが**イメージリポジトリ**タイプとして自動実行された際に、イメージ情報を利用できます。<br/>デフォルト値を設定し、自動実行（イメージリポジトリタイプ）で開始されなかった場合に使用する代替値を設定できます。 | フルイメージ名: `dd530b18-kr1-registry.container.nhncloud.com/pipeline-test/image-name:tag`<br/>イメージ名: `dd530b18-kr1-registry.container.nhncloud.com/pipeline-test/image-name`<br/>イメージタグ: `tag` |
+| Judgement(実行管理)の選択値 | 接続された**機能 - Judgement(実行管理)**ステージで選択した値を、変数として作成します。                            | `Judgement(実行管理)`ステージの`選択値`                                                                                                                                                                | 
+| 生成タイプの日付文字列            | **機能 - ユーザー変数を提供**ステージが実行された時点を基準に、日付文字列を生成します。<br/>日付フォーマットは、`java.text.SimpleDateFormat`の規則に従います。                    | フォーマット: `yyyyMMddHHmmss` -> 変数値: `20250903113846`<br/>フォーマット: `yyyy-MM-dd HH:mm:ss Z` -> 変数値: `2025-09-04 16:58:44 +0900`                                                                            |
+| ランダムUUID           | 8-4-4-4-12のハイフン表記（計36文字）の標準文字列を持つバージョン4（UUID v4）を生成します。                                                                | `550e8400-e29b-41d4-a716-446655440000`                                                                                                                                                       |
+| ユーザー入力値             | 直接入力した値を、変数として使用できます。                                                                                                  | `入力値`                                                                                                                                                                                       |
+
+![stage-guide-22](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-22.png)
+
+### 機能 - イメージの脆弱性分析
+イメージを対象に脆弱性分析を実行するステージです。
+
+- イメージリポジトリ
+    - **環境設定**の**イメージリポジトリ設定**で追加した[イメージリポジトリ](/Dev%20Tools/Pipeline/ko/environment-config/#_3)を選択できます。
+- **イメージ名**と**タグ**を入力し、分析するイメージを指定します。
+
+![stage-guide-23](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-23.png)
+
+イメージの脆弱性分析の結果はステージの実行結果で確認でき、脆弱性が発見された場合は、分析結果に詳細情報が表示されます。
+
+![stage-guide-24](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-24.png)
+
+### 機能 - ソースコードの脆弱性分析
+
+ソースコードを対象に脆弱性分析を実行するステージです。
+
+- ソースリポジトリ
+  - **環境設定**の**ソースリポジトリ設定**で追加した[ソースリポジトリ](/Dev%20Tools/Pipeline/ko/environment-config/#_2)を選択できます。
+- **ブランチ**を選択し、分析するソースコードを指定します。
+
+![stage-guide-25](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-25.png)
+
+ソースコードの脆弱性分析の結果はステージの実行結果で確認でき、脆弱性が発見された場合は、分析結果に詳細情報が表示されます。
+
+![stage-guide-26](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-26.png)
+
 ## ステージ共通機能
 ### ステージ失敗時
 
