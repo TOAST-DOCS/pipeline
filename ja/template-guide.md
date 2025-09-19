@@ -418,3 +418,25 @@ Blue/Green配布のためのパイプラインを構成できます。Blue/Green
     ]
 }
 ```
+
+### 10. イメージの脆弱性分析後にデプロイを行うシナリオ
+
+[テンプレートファイルのダウンロード](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-10.json)
+
+![template-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/template-guide-15.png)
+
+イメージを対象に脆弱性分析を行った後、デプロイを行うシナリオです。
+イメージリポジトリタイプとして自動実行された際のイメージ情報を、変数として使用できます。
+
+変数の作成・使用方法は、[機能 - ユーザー変数を提供 ガイド](/Dev%20Tools/Pipeline/ko/stage-guide/#-_2)で確認できます。
+
+### 11. ソースコードの脆弱性分析後にイメージをビルドするシナリオ
+
+[テンプレートファイルのダウンロード](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-11.json)
+
+![template-guide-16](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/template-guide-16.png)
+
+Githubからソースコードを取得して脆弱性分析を行った後、NHN Cloudのビルドツールでビルドを行うシナリオです。
+ビルド対象のブランチと、ビルド結果のイメージタグを、変数として指定して使用できます。
+
+変数の作成・使用方法は、[機能 - ユーザー変数を提供 ガイド](/Dev%20Tools/Pipeline/ko/stage-guide/#-_2)で確認できます。
