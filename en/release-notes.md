@@ -3,6 +3,12 @@
 ### June 24, 2025
 * **Build - NHN Cloud Build Tool** stage is being faded out.
 
+### April 15, 2025
+* Added **Run History** feature to Pipeline Studio
+    * You can see the 10 most recent runs.
+    * See the Pipeline Run History Guide for how to use.
+* Changed to allow additional registration of image repositories required for image builds in NHN Cloud Build Tool v2.
+
 ### March 25, 2025
 * **Pipeline Notifications** feature has been added.
     * You can receive Email and SMS notifications when a pipeline starts, completes, or fails.

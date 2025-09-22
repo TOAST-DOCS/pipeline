@@ -394,7 +394,6 @@ Almost the same as the scenario in #7, with the addition of a **Webhook stage**f
 }
 ```
 
-
 ### 9. Pipeline Notification Feature 
 [Download the template file](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-09-1.json)
 
