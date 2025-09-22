@@ -205,16 +205,16 @@ You can view by modification date by clicking the drop-down button in the top le
 
 You can save it as a JSON file by clicking **Download Pipeline Template**in the top right corner.
 
-#### Pipeline Notifications
-Users can manage Email, SMS notifications about pipeline start, failure, and completion.
+#### Pipeline Notification
+A feature to manage email and SMS notifications for pipeline start, completion, and failure.
 
 ![pipeline-management-guide-13](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-03-25/pipeline-management-guide-13.png)
 
-You can set up notifications by clicking **Pipeline Notifications**.
+You can set up the notification by clicking **Pipeline Notification**.
 
-You can manage notification recipients in **Project** > **Manage Notifications**.
+You can manage recipients for notifications from **Project Setting** > **Notification Management**.
 
-See the [Manage Notifications Guide](https://docs.nhncloud.com/en/nhncloud/en/console-guide/#manage-notifications) for settings on the recipients and notification method (Email, SMS).
+For setting up for notification recipients and how to notify (Email, SMS), refer to [Notification Management Guide](https://docs.nhncloud.com/ko/nhncloud/ko/console-guide/#_33).
 
 ### Pipeline Run History
 If you click on **Run History** in Pipeline Studio, you can view the last 10 runs.
