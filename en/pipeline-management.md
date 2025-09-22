@@ -195,10 +195,9 @@ To view basic information about the pipeline's most recent run and the status of
 
 ![pipeline-studio-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-16.png)
 
-#### Modify and Download Pipeline JSON
-You can modify the JSON to change the pipeline. 
+#### Download Pipeline JSON
 
-![pipeline-studio-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-15.png)
+![pipeline-studio-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-03-25/guide-17.png)
 
 You can view the pipeline in JSON format by clicking **Pipeline Version**.
 
@@ -206,4 +205,25 @@ You can view by modification date by clicking the drop-down button in the top le
 
 You can save it as a JSON file by clicking **Download Pipeline Template**in the top right corner.
 
-You can click **Edit** to modify the JSON file directly on the screen.
+#### Pipeline Notifications
+Users can manage Email, SMS notifications about pipeline start, failure, and completion.
+
+![pipeline-management-guide-13](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-03-25/pipeline-management-guide-13.png)
+
+You can set up notifications by clicking **Pipeline Notifications**.
+
+You can manage notification recipients in **Project** > **Manage Notifications**.
+
+See the [Manage Notifications Guide](https://docs.nhncloud.com/en/nhncloud/en/console-guide/#manage-notifications) for settings on the recipients and notification method (Email, SMS).
+
+### Pipeline Run History
+If you click on **Run History** in Pipeline Studio, you can view the last 10 runs.
+![pipeline-management-guide-14](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-04-15/pipeline-management-guide-14.png)
+
+![pipeline-management-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-04-15/pipeline-management-guide-15.png)
+
+Select the run history you want to view in the left pane of the Run History modal window, and the right pane displays the details of each stage.
+
+You can check the running status of the pipeline in the **Status** column and cancel it by clicking **Cancel**.
+
+You can manage the running of the pipeline by clicking **Management** for stages such as **Features - Approval Management** and **Feature - Judgement (Run Management)**.
