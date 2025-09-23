@@ -414,3 +414,25 @@ Blue/Green 배포를 위한 파이프라인을 구성할 수 있습니다. Blue/
     ]
 }
 ```
+
+### 10. 이미지 취약점 분석 후 배포를 진행하는 시나리오
+
+[템플릿 파일 다운로드](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-10.json)
+
+![template-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/template-guide-15.png)
+
+이미지를 대상으로 취약점 분석 후 배포를 진행하는 시나리오입니다.
+이미지 저장소 유형으로 자동 실행되었을 때의 이미지 정보를 변수로 사용할 수 있습니다.
+
+변수를 생성하고 사용하는 방법은 [기능 - 사용자 변수 제공 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#-_2)에서 확인할 수 있습니다.
+
+### 11. 소스 코드 취약점 분석 후 이미지를 빌드하는 시나리오
+
+[템플릿 파일 다운로드](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-11.json)
+
+![template-guide-16](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/template-guide-16.png)
+
+Github에서 소스코드를 가져와 취약점 분석 후 NHN Cloud 빌드 도구로 빌드를 진행하는 시나리오입니다.
+빌드할 대상 브랜치와 빌드 결과 이미지 태그를 변수로 지정하여 사용할 수 있습니다.
+
+변수를 생성하고 사용하는 방법은 [기능 - 사용자 변수 제공 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#-_2)에서 확인할 수 있습니다.
