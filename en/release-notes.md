@@ -1,5 +1,15 @@
 ## Dev Tools > Pipeline > Release Notes
 
+### September 23, 2025
+* Added new stages. For how to use, see [Pipeline Stage Guide](/Dev%20Tools/Pipeline/ko/stage-guide/).
+    * **Features - Provide user variables**
+    * **Features - Analyze image vulnerability**
+    * **Features - Analyze source code vulnerability**
+* Improved UIs related to wating for Pipeline execution.
+    * When a pipeline is in pending execution status, it is displayed with the pending execution badge.
+    * **Features - Approval management** When a stage is running, it is displayed with the pending execution badge.
+    * **Features - Judgement (execution management)** When a stage is running, it is displayed with the pending selection badge.
+
 ### June 24, 2025
 * **Build - NHN Cloud Build Tool** stage is being faded out.
 
