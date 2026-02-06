@@ -1,14 +1,28 @@
 ## Dev Tools > Pipeline > API Guide
 
-This service provides an API that allows users to directly configure HTTP requests to run Pipeline.
+## Pipeline API 공통 정보
+
+### API 엔드포인트
+
+| 리전 | 엔드포인트                                        |
+| --- |----------------------------------------------|
+| KR1 | https://kr1-pipeline.api.nhncloudservice.com |
+
+### 인증 및 권한
+User Access Key is required to use the Pipeline API. A User Access Key is an authentication key issued based on an NHN Cloud or IAM account. It is used in conjunction with a Secret Access Key to authenticate API requests.
+
+User Access Keys and Secret Access Keys can be issued in the console's API Security Setting. For more information on issuing and using User Access Key, please refer to the [User Access Key](docs.nhncloud.com/en/nhncloud/en/public-api/user-access-key).
 
 ## Pipeline Manual Run
+```text
+POST /api/anchor/v1.0/pipelines/{pipeline-name}/execute
+X-NHN-REGION: {Region}
+X-NHN-APPKEY: {appkey}
+X-TC-AUTHENTICATION-ID: {id}
+X-TC-AUTHENTICATION-SECRET: {secret}
+```
 
-| Http Method | POST |
-| ----------- | ---- |
-| Request URL | https://kr1-pipeline.api.nhncloudservice.com/api/anchor/v1.0/pipelines/{pipeline-name}/execute |
-
-### Header
+### Request Header
 | Name | Description | Value |
 | ---- | ----------- | ----- |
 | X-NHN-REGION | Region | KR1 |
@@ -16,7 +30,29 @@ This service provides an API that allows users to directly configure HTTP reques
 | X-TC-AUTHENTICATION-ID | User Access Key ID in API Security Settings menu | {id} |
 | X-TC-AUTHENTICATION-SECRET | Secret Access Key in API Security Settings menu | {secret} |
 
-You can create the information in **Member Profile > API Security Settings**.
+### Request Body
+```text
+없음
+```
+
+### Response Body
+```json
+{
+  "header":{
+    "resultCode":0,
+    "resultMessage":"success",
+    "isSuccessful":true
+  },
+  "paging":null,
+  "body": {
+    "appkey":"appkey",
+    "region":"KR1",
+    "pipelineName":"pipeline",
+    "reason":null,
+    "lastExecutionId":"executionId"
+  }
+}
+```
 
 ### Sample Request For cUrl
 
