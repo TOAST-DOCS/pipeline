@@ -1,14 +1,14 @@
 ## Dev Tools > Pipeline > APIガイド
 
-## Pipeline API 공통 정보
+## Pipeline API共通情報
 
-### API 엔드포인트
+### APIエンドポイント
 
-| 리전 | 엔드포인트                                        |
+| リージョン | エンドポイント                                       |
 | --- |----------------------------------------------|
 | KR1 | https://kr1-pipeline.api.nhncloudservice.com |
 
-### 인증 및 권한
+### 認証及び権限
 Pipeline APIを使用するには、User Access Keyが必要です。User Access Keyは、NHN CloudアカウントまたはIAMアカウントに基づいて発行される認証キーであり、Secret Access Keyと共に使用してAPIリクエストに対する認証手段として利用されます。
 
 User Access KeyとSecret Access Keyは、コンソールのAPIセキュリティ設定で発行できます。User Access Keyの発行及び使用に関する詳細は、[User Access Key](docs.nhncloud.com/ja/nhncloud/ja/public-api/user-access-key)を参照してください。
@@ -33,7 +33,7 @@ X-TC-AUTHENTICATION-SECRET: {secret}
 
 ### Request Body
 ```text
-없음
+なし
 ```
 
 ### Response Body
