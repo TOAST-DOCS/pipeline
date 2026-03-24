@@ -1,6 +1,6 @@
-## Dev Tools > Pipeline > API 가이드
+## Dev Tools > Pipeline > API 가이드 > API v1.0 가이드
 
-## Pipeline API 공통 정보
+## Pipeline API v1.0 공통 정보
 
 ### API 엔드포인트
 
