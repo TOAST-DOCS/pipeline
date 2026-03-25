@@ -117,8 +117,9 @@ Enter the NHN Cloud security settings information, click **Confirm** in **Check 
 ![env-config-guide-22](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-22.png)
 
 ### Pipeline IP
-If the system integrated with Pipeline does not work properly, check the ACL. The IP address used by Pipeline is **211.56.1.0/27**.
+If the system integrated with Pipeline does not work properly, check the ACL.
 
-| Service | CIDR         |
-|---|-----------------|
-| Pipeline | 211.56.1.0/27<br/>101.79.92.0/24 |
+| Region   | CIDR         |
+|----------|-----------------|
+| Korea (Pangyo) region | 101.79.92.0/24 |
+| Korea (Gwangju) Region | 114.110.138.0/24 |

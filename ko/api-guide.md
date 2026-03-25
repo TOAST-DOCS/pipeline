@@ -4,9 +4,10 @@
 
 ### API 엔드포인트
 
-| 리전 | 엔드포인트                                        |
-| --- |----------------------------------------------|
-| KR1 | https://kr1-pipeline.api.nhncloudservice.com |
+| 리전        | 엔드포인트                                        |
+|-----------|----------------------------------------------|
+| 한국(판교) 리전 | https://kr1-pipeline.api.nhncloudservice.com |
+| 한국(광주) 리전 | https://kr3-pipeline.api.nhncloudservice.com |
 
 ### 인증 및 권한
 Pipeline API를 사용하려면 User Access Key가 필요합니다. User Access Key는 NHN Cloud 계정 또는 IAM 계정을 기반으로 발급되는 인증 키로, Secret Access Key와 함께 사용하여 API 요청에 대한 인증 수단으로 활용됩니다.
@@ -23,11 +24,11 @@ X-TC-AUTHENTICATION-SECRET: {secret}
 ```
 
 ### Request Header
-| Name | Description | Value |
-| ---- | ----------- | ----- |
-| X-NHN-REGION | Region | KR1 |
+| Name | Description | Value    |
+| ---- | ----------- |----------|
+| X-NHN-REGION | Region | KR1, KR3 |
 | X-NHN-APPKEY | Pipeline 서비스의 Appkey | {appkey} |
-| X-TC-AUTHENTICATION-ID | API 보안 설정 메뉴의 User Access Key ID | {id} |
+| X-TC-AUTHENTICATION-ID | API 보안 설정 메뉴의 User Access Key ID | {id}     |
 | X-TC-AUTHENTICATION-SECRET | API 보안 설정 메뉴의 Secret Access Key | {secret} |
 
 ### Request Body
