@@ -394,22 +394,22 @@ Almost the same as the scenario in #7, with the addition of a **Webhook stage**f
 }
 ```
 
-### 9. Pipeline Notifications
+### 9. Pipeline Notification Feature 
 [Download the template file](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-09-1.json)
 
-You can add pipeline notifications to receive notifications of pipeline execution results.
+You can receive notifications of pipeline execution results by adding the pipeline notification feature.
 
 ![template-guide-14](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-03-25/template-guide-14.png)
 ```json
 {
     "notifications": [
         {
-            "level": "pipeline",      // level is set to pipeline.
-            "type": "nhnPipeline",    // type is set to nhnPipeline.
-            "when": [                 // Set the event types to be notified.
-                "pipeline.starting",  // Pipeline Started
-                "pipeline.complete",  // Pipeline Completed
-                "pipeline.failed"     // Pipeline Failed
+            "level": "pipeline",      // Set level to pipeline.
+            "type": "nhnPipeline",    // Set type to nhnPipeline.
+            "when": [                 // Set up the event type for receiving notifications.
+                "pipeline.starting",  // Pipeline start
+                "pipeline.complete",  // Pipeline completed
+                "pipeline.failed"     // Pipeline failed
             ]
         }
     ]
