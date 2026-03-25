@@ -117,9 +117,10 @@ NHN Cloud 보안 설정 정보를 입력한 후, **API 정상 호출 확인**의
 ![env-config-guide-22](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-22.png)
 
 ### Pipeline IP
-파이프라인과 연동한 시스템이 정상적으로 동작하지 않으면 ACL을 확인하십시오. 파이프라인이 사용하는 IP 주소는 **211.56.1.0/27**입니다.
+파이프라인과 연동한 시스템이 정상적으로 동작하지 않으면 ACL을 확인하십시오.
 
-| 서비스 | CIDR            |
-|---|-----------------|
-| Pipeline | 211.56.1.0/27<br/>101.79.92.0/24 |
+| 리전        | CIDR              |
+|-----------|-------------------|
+| 한국(판교) 리전 | 101.79.92.0/24    |
+| 한국(광주) 리전 | 114.110.138.0/24  |
 
