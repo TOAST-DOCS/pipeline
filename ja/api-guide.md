@@ -1,22 +1,60 @@
 ## Dev Tools > Pipeline > APIガイド
 
-ユーザーがHTTP Requestを直接構成してPipelineを実行できるAPIを提供します。
+## Pipeline API共通情報
+
+### APIエンドポイント
+
+| リージョン | エンドポイント                                       |
+| --- |----------------------------------------------|
+| 韓国(パンギョ)リージョン | https://kr1-pipeline.api.nhncloudservice.com |
+| 韓国(クァンジュ)リージョン | https://kr3-pipeline.api.nhncloudservice.com |
+
+### 認証及び権限
+Pipeline APIを使用するには、User Access Keyが必要です。User Access Keyは、NHN CloudアカウントまたはIAMアカウントに基づいて発行される認証キーであり、Secret Access Keyと共に使用してAPIリクエストに対する認証手段として利用されます。
+
+User Access KeyとSecret Access Keyは、コンソールのAPIセキュリティ設定で発行できます。User Access Keyの発行及び使用に関する詳細は、[User Access Key](docs.nhncloud.com/ja/nhncloud/ja/public-api/user-access-key)を参照してください。
 
 ## Pipeline手動実行
 
-| Http Method | POST |
-| ----------- | ---- |
-| Request URL | https://kr1-pipeline.api.nhncloudservice.com/api/anchor/v1.0/pipelines/{pipeline-name}/execute |
+```text
+POST /api/anchor/v1.0/pipelines/{pipeline-name}/execute
+X-NHN-REGION: {Region}
+X-NHN-APPKEY: {appkey}
+X-TC-AUTHENTICATION-ID: {id}
+X-TC-AUTHENTICATION-SECRET: {secret}
+```
 
-### Header
-| Name | Description | Value |
-| ---- | ----------- | ----- |
-| X-NHN-REGION | Region | KR1 |
+### Request Header
+| Name | Description | Value    |
+| ---- | ----------- |----------|
+| X-NHN-REGION | Region | KR1, KR3 |
 | X-NHN-APPKEY | PipelineサービスのAppkey | {appkey} |
-| X-TC-AUTHENTICATION-ID | APIセキュリティ設定メニューのUser Access Key ID | {id} |
+| X-TC-AUTHENTICATION-ID | APIセキュリティ設定メニューのUser Access Key ID | {id}     |
 | X-TC-AUTHENTICATION-SECRET | APIセキュリティ設定メニューのSecret Access Key | {secret} |
 
-**会員情報 > APIセキュリティ設定**で作成できます。
+### Request Body
+```text
+なし
+```
+
+### Response Body
+```json
+{
+  "header":{
+    "resultCode":0,
+    "resultMessage":"success",
+    "isSuccessful":true
+  },
+  "paging":null,
+  "body": {
+    "appkey":"appkey",
+    "region":"KR1",
+    "pipelineName":"pipeline",
+    "reason":null,
+    "lastExecutionId":"executionId"
+  }
+}
+```
 
 ### Sample Request For cUrl
 
