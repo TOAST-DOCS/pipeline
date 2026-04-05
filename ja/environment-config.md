@@ -116,8 +116,9 @@ NHN Cloudセキュリティ設定情報を入力し、**API正常呼び出し確
 ![env-config-guide-22](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-22.png)
 
 ### Pipeline IP
-Pipelineと連動したシステムが正常に動作しない場合はACLを確認してください。Pipelineが使用するIPアドレスは**211.56.1.0/27**です。
+Pipelineと連動したシステムが正常に動作しない場合はACLを確認してください。
 
-| サービス | CIDR            |
-|---|-----------------|
-| Pipeline | 211.56.1.0/27<br/>101.79.92.0/24 |
+| リージョン | CIDR              |
+|---|-------------------|
+| 韓国(パンギョ)リージョン | 101.79.92.0/24    |
+|韓国(クァンジュ)リージョン| 114.110.138.0/24  |
