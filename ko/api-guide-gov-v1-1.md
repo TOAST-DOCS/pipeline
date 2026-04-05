@@ -26,7 +26,7 @@ X-NHN-Authorization: Bearer {token}
 | ---- | ----------- | ----- |
 | X-NHN-REGION | Region | KR1 |
 | X-NHN-APPKEY | Pipeline 서비스의 Appkey | {appkey} |
-| X-NHN-Authorization | 발급 받은 User Access Key 토큰 | {token}  |
+| X-NHN-Authorization | 발급받은 User Access Key 토큰 | {token}  |
 
 ### Request Body
 ```text
@@ -52,9 +52,9 @@ X-NHN-Authorization: Bearer {token}
 }
 ```
 
-### Sample Request For cUrl
+### Sample Request For cURL
 
-``` java
+``` bash
 curl -i -X POST \
    -H "Content-Type:application/json" \
    -H "X-NHN-REGION:KR1" \

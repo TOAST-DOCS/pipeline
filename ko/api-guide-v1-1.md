@@ -9,8 +9,8 @@
 | KR1 | https://kr1-pipeline.api.nhncloudservice.com |
 
 ### 인증 및 권한
-Pipeline은 API 호출 시 인증/인가를 위해 User Access Key 토큰을 사용합니다. 
-User Access Key 토큰은 User Access Key를 기반으로 발급되는 Bearer 타입의 일시적 액세스 토큰입니다. 
+Pipeline은 API 호출 시 인증/인가를 위해 User Access Key 토큰을 사용합니다.
+User Access Key 토큰은 User Access Key를 기반으로 발급되는 Bearer 타입의 일시적 액세스 토큰입니다.
 User Access Key 토큰 발급 및 사용에 대한 자세한 내용은 [User Access Key 토큰](/nhncloud/ko/public-api/user-access-key-token)을 참고하세요.
 
 ## Pipeline 수동 실행
@@ -26,7 +26,7 @@ X-NHN-Authorization: Bearer {token}
 | ---- |--------------------------|----------|
 | X-NHN-REGION | Region                   | KR1      |
 | X-NHN-APPKEY | Pipeline 서비스의 Appkey     | {appkey} |
-| X-NHN-Authorization | 발급 받은 User Access Key 토큰 | {token}  |
+| X-NHN-Authorization | 발급받은 User Access Key 토큰 | {token}  |
 
 ### Request Body
 ```text
@@ -52,9 +52,9 @@ X-NHN-Authorization: Bearer {token}
 }
 ```
 
-### Sample Request For cUrl
+### Sample Request For cURL
 
-``` java
+``` bash
 curl -i -X POST \
    -H "Content-Type:application/json" \
    -H "X-NHN-REGION:KR1" \
