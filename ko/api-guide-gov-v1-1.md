@@ -6,7 +6,7 @@
 
 | 리전 | 엔드포인트                                                                                              |
 | --- |----------------------------------------------------------------------------------------------------|
-| KR1 | https://kr1-pipeline.api.gov-nhncloudservice.com |
+| 한국(판교) 리전 | https://kr1-pipeline.api.gov-nhncloudservice.com |
 
 ### 인증 및 권한
 Pipeline은 API 호출 시 인증/인가를 위해 User Access Key 토큰을 사용합니다.

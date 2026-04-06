@@ -6,7 +6,7 @@
 
 | 리전 | 엔드포인트                                        |
 | --- |----------------------------------------------|
-| KR1 | https://kr1-pipeline.api.gov-nhncloudservice.com |
+| 한국(판교) 리전 | https://kr1-pipeline.api.gov-nhncloudservice.com |
 
 ### 인증 및 권한
 Pipeline API를 사용하려면 User Access Key가 필요합니다. User Access Key는 NHN Cloud 계정 또는 IAM 계정을 기반으로 발급되는 인증 키로, Secret Access Key와 함께 사용하여 API 요청에 대한 인증 수단으로 활용됩니다.

@@ -55,7 +55,7 @@ X-TC-AUTHENTICATION-SECRET: {secret}
 }
 ```
 
-### Sample Request For cUrl
+### Sample Request For cURL
 
 ``` java
 curl -i -X POST \
