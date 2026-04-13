@@ -1,6 +1,6 @@
-## Dev Tools > Pipeline > API Guide
+## Dev Tools > Pipeline > API Guide > API v1.0 Guide
 
-## Pipeline API General Information
+## Pipeline API v1.0 Common Information
 
 ### API Endpoint
 
@@ -55,7 +55,7 @@ None
 }
 ```
 
-### Sample Request For cUrl
+### Sample Request For cURL
 
 ``` java
 curl -i -X POST \
