@@ -2,7 +2,7 @@
 
 ### 2026. 04. 14.
 * User Access Key 토큰을 사용하는 API v1.1 가이드가 추가되었습니다.
-  * [API v1.1 가이드](/Dev%20Tools/Pipeline/ko/api-guide/api-guide-gov-v1-1)에서 사용 방법을 확인할 수 있습니다.
+  * [API v1.1 가이드](/Dev%20Tools/Pipeline/ko/api-guide-gov-v1-1)에서 사용 방법을 확인할 수 있습니다.
 
 ### 2025. 09. 23.
 * 신규 스테이지들이 추가되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/)에서 사용 방법을 확인할 수 있습니다.
