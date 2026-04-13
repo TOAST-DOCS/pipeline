@@ -157,7 +157,7 @@ You can select the [deployment target](/Dev%20Tools/Pipeline/en/environment-conf
 
 ![stage-guide-11](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-11_new.png)
 
-### Deployment - NHN Container Service
+### Deployment - NHN Container Service (NCS)
 The stage where you can replace the template of an NCS workload.  
 Entering the **NCS app key** retrieves a list of **NCS roles**, templates, and workloads.  
 You can select the template you want to change from the list.  
@@ -269,6 +269,58 @@ In **Deployment Note**, you can enter deployment execution information.
 For more information, see the [Deploy User Guide](/Dev%20Tools/Deploy/en/reference/#_1).
 
 ![stage-guide-21](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-21_new.png)
+
+### Features - Providing User Variables
+Define variables to be reused in subsequent stages within the pipeline. Variables created in this stage are available to all subsequent stages connected to it, and up to five variables can be created.
+
+**How to Use Variables**
+
+- Referenced by pipeline expression.
+- (example) If a variable name is myImage:
+
+```
+${myImage}
+```
+> In actual use, replace the variable name with the value specified in the stage. (example: `${buildTag}`, `${buildImage}`)
+
+**Description and Examples by Variable Type**
+
+| Variable Type                 | Description                                                                                                                         | Example                                                                                                                                                                                       |
+|-----------------------|----------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Autorun image info          | When a pipeline is auto-run with the **Image Registry** type, image information is available.<br/>You can set default values ​​to use as fallback values ​​when the pipeline is not auto-run (with the image registry type). | Full image name: `dd530b18-kr1-registry.container.nhncloud.com/pipeline-test/image-name:tag`<br/>Image name: `dd530b18-kr1-registry.container.nhncloud.com/pipeline-test/image-name`<br/>Image tag: `tag` |
+| Judgement (execution management) selection value | Create a variable based on the value selected in the connected **Features - Judgement (execution management)** stage.                                                                     | `Selection value` of Judgement (execution management)                                                                                                                                                                 | 
+| Generated date string            | Create a date string based on the point in time executing **Features - Providing User Variable** stage.<br/>For date format, use `java.text.SimpleDateFormat` rule.                    | Format: `yyyyMMddHHmmss` -> Variable value: `20250903113846`<br/>Format: `yyyy-MM-dd HH:mm:ss Z` -> Variable value: `2025-09-04 16:58:44 +0900`                                                                            |
+| Random UUID           | Generate a version 4 (UUID v4) with a standard string of 8-4-4-4-12 hyphenated characters (36 characters total).                                                                | `550e8400-e29b-41d4-a716-446655440000`                                                                                                                                                       |
+| User input value              | You can use values ​​you enter directly as variables.                                                                                                  | `Input value`                                                                                                                                                                                       |
+
+![stage-guide-22](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-22.png)
+
+### Features - Analyze Image Vulnerability
+A stage where vulnerability analysis is performed on images.
+
+- Image registry
+    - You can select the [Source Repository](/Dev%20Tools/Pipeline/ko/environment-config/#_3) you added in **Source Repository Settings** of **Preferences**.
+- Specify the image you want to analyze by entering the **Image Name** and **Tags**.
+
+![stage-guide-23](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-23.png)
+
+The results of the image vulnerability analysis can be viewed in the stage execution results. If a vulnerability is found, details are displayed in the analysis results.
+
+![stage-guide-24](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-24.png)
+
+### Features - Analyze Source Code Vulnerability
+
+A stage where vulnerability analysis is performed on the source code.
+
+- Source repository
+  - You can select the [Source Repository](/Dev%20Tools/Pipeline/ko/environment-config/#_2) you added in **Source Repository Settings** of **Preferences**.
+- Select **Branch** to specify the source code to analyze.
+
+![stage-guide-25](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-25.png)
+
+The results of the source code vulnerability analysis can be viewed in the stage execution results. If a vulnerability is found, details are displayed in the analysis results.
+
+![stage-guide-26](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-26.png)
 
 ## Stage Common Features
 ### On stage failure
