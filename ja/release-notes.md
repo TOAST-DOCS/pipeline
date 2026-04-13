@@ -2,7 +2,7 @@
 
 ### 2026. 04. 14.
 * User Access Keyトークンを使用するAPI v1.1ガイドが追加されました。
-* [API v1.1ガイド](/Dev%20Tools/Pipeline/ko/api-guide/api-guide-v1-1)で使用方法をご確認いただけます。
+* [API v1.1ガイド](/Dev%20Tools/Pipeline/ko/api-guide-v1-1)で使用方法をご確認いただけます。
 
 ### 2025. 09. 23.
 * 新規ステージが追加されました。[Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/)で利用方法を確認できます。

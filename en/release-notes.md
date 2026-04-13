@@ -2,7 +2,7 @@
 
 ### April 14, 2026
 * Added the API v1.1 guide for using User Access Key tokens.
-  * For more information, see the [API v1.1 Guide](/Dev%20Tools/Pipeline/ko/api-guide/api-guide-v1-1).
+  * For more information, see the [API v1.1 Guide](/Dev%20Tools/Pipeline/ko/api-guide-v1-1).
 
 ### September 23, 2025
 * Added new stages. For more information, see the [Pipeline Stage Guide](/Dev%20Tools/Pipeline/ko/stage-guide/).
