@@ -12,7 +12,7 @@
 ### 認証及び権限
 Pipeline APIを使用するには、User Access Keyが必要です。User Access Keyは、NHN CloudアカウントまたはIAMアカウントに紐づいて発行される認証キーであり、Secret Access Keyと併用してAPIリクエストの認証手段として活用されます。
 
-User Access KeyとSecret Access Keyは、コンソールのAPIセキュリティ設定で発行できます。User Access Keyの発行及び使用に関する詳細は、[User Access Key](docs.nhncloud.com/ja/nhncloud/ja/public-api/user-access-key)をご参照ください。
+User Access KeyとSecret Access Keyは、コンソールのAPIセキュリティ設定で発行できます。User Access Keyの発行及び使用に関する詳細は、[User Access Key](/nhncloud/ja/public-api/user-access-key)をご参照ください。
 
 ## Pipeline 手動実行
 ```text
