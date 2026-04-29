@@ -415,3 +415,25 @@ You can receive notifications of pipeline execution results by adding the pipeli
     ]
 }
 ```
+
+
+### 10. Scenario for Deployment after Image Vulnerability Analysis
+
+[Download the template file](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-10.json)
+
+![template-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/template-guide-15.png)
+
+This scenario involves analyzing vulnerabilities in an image and then deploying it.
+Image information from the automatic execution of the image registry can be used as variables.
+
+For how to create and use variables, see [Guide to Features - Providing User Variables](/Dev%20Tools/Pipeline/ko/stage-guide/#-_2).
+
+### 11. Scenario for Building an Image after Analyzing Source Code Vulnerabilities
+
+[Download the template file](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-11.json)
+
+![template-guide-16](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/template-guide-16.png)
+
+This scenario involves retrieving source code from Github, analyzing vulnerabilities, and building it using the NHN Cloud build tool. You can use variables to specify the target branch and build result image tags.
+
+For how to create and use variables, see [Guide to Features - Providing User Variables](/Dev%20Tools/Pipeline/ko/stage-guide/#-_2).
