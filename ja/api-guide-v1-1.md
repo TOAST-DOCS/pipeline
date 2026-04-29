@@ -12,7 +12,7 @@
 ### 認証及び権限
 Pipelineは、API呼び出し時の認証/認可にUser Access Keyトークンを使用します。
 User Access Keyトークンは、User Access Keyをもとに発行されるBearerタイプの一時的なアクセストークンです。
-User Access Keyトークンの発行手順や使用方法の詳細は、[User Access Keyトークン](/nhncloud/ko/public-api/user-access-key-token)をご参照ください。
+User Access Keyトークンの発行手順や使用方法の詳細は、[User Access Keyトークン](/nhncloud/ja/public-api/user-access-key-token)をご参照ください。
 
 ## Pipeline 手動実行
 ```text

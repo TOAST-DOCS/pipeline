@@ -12,7 +12,7 @@
 ### Authentication and Authorization
 User Access Key is required to use the Pipeline API. A User Access Key is an authentication key issued based on an NHN Cloud or IAM account. It is used in conjunction with a Secret Access Key to authenticate API requests.
 
-User Access Keys and Secret Access Keys can be issued in the console's API Security Setting. For more information on issuing and using User Access Key, please refer to the [User Access Key](docs.nhncloud.com/en/nhncloud/en/public-api/user-access-key).
+User Access Keys and Secret Access Keys can be issued in the console's API Security Setting. For more information on issuing and using User Access Key, please refer to the [User Access Key](/nhncloud/en/nhncloud/en/public-api/user-access-key).
 
 ## Pipeline Manual Run
 ```text
