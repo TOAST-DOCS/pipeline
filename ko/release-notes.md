@@ -26,7 +26,7 @@
 ### 2025. 03. 25.
 * **파이프라인 알림** 기능이 추가되었습니다.
   * 파이프라인 시작, 완료, 실패 시 Email, SMS 알림을 받을 수 있습니다.
-  * [파이프라인 알림 가이드](/Dev%20Tools/Pipeline/ko/pipeline-management/#_13)에서 사용 방법을 확인할 수 있습니다.
+  * [파이프라인 알림 가이드](/Dev%20Tools/Pipeline/ko/pipeline-management/#_11)에서 사용 방법을 확인할 수 있습니다.
 * **파이프라인 버전**에서 JSON 형식으로 파이프라인을 수정할 수 없도록 변경되었습니다.
 
 ### 2024. 11. 26.
@@ -126,7 +126,7 @@
 * 배포 대상 Kubernetes 연결 테스트 시간 초과 시에도 안내 메시지를 노출하도록 수정하였습니다.
 
 ### 2022. 08. 23.
-* 스테이지가 없는 Pipeline을 [API](/Dev%20Tools/Pipeline/ko/api-guide/api-guide-v1-0#pipeline)로 실행 시 실패 응답을 주도록 수정하였습니다.
+* 스테이지가 없는 Pipeline을 [API](/Dev%20Tools/Pipeline/ko/api-guide-v1-0/#pipeline)로 실행 시 실패 응답을 주도록 수정하였습니다.
 
 ### 2022. 07. 26.
 * 기능 - Webhook 스테이지가 추가되었습니다.
@@ -142,7 +142,7 @@
 * 소스 저장소에 GitLab이 추가되었습니다. [Pipeline 사용자 가이드](/Dev%20Tools/Pipeline/ko/environment-config/#_2)에서 사용 방법을 확인할 수 있습니다.
 
 ### 2022. 01. 25.
-* Pipeline 실행 API가 추가되었습니다. [Pipeline API 가이드](/Dev%20Tools/Pipeline/ko/api-guide/api-guide-v1-0)에서 사용 방법을 확인할 수 있습니다.
+* Pipeline 실행 API가 추가되었습니다. [Pipeline API 가이드](/Dev%20Tools/Pipeline/ko/api-guide-v1-0)에서 사용 방법을 확인할 수 있습니다.
 * 발견된 이슈(원인 분석 후 개선 예정입니다.)
   * 개발 환경 생성 시 개발 환경 제약 사항에 값을 지정하면 생성에 실패하는 현상이 있습니다.
 

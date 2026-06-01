@@ -299,7 +299,7 @@ ${myImage}
 A stage where vulnerability analysis is performed on images.
 
 - Image registry
-    - You can select the [Source Repository](/Dev%20Tools/Pipeline/ko/environment-config/#_3) you added in **Source Repository Settings** of **Preferences**.
+    - You can select the [Image Registry](/Dev%20Tools/Pipeline/en/environment-config/#image-registry) you added in **Image Registry Settings** of **Preferences**.
 - Specify the image you want to analyze by entering the **Image Name** and **Tags**.
 
 ![stage-guide-23](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-23.png)
@@ -313,7 +313,7 @@ The results of the image vulnerability analysis can be viewed in the stage execu
 A stage where vulnerability analysis is performed on the source code.
 
 - Source repository
-  - You can select the [Source Repository](/Dev%20Tools/Pipeline/ko/environment-config/#_2) you added in **Source Repository Settings** of **Preferences**.
+  - You can select the [Source Repository](/Dev%20Tools/Pipeline/en/environment-config/#source-repository) you added in **Source Repository Settings** of **Preferences**.
 - Select **Branch** to specify the source code to analyze.
 
 ![stage-guide-25](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-25.png)
