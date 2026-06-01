@@ -2,10 +2,10 @@
 
 ### April 14, 2026
 * Added the API v1.1 guide for using User Access Key tokens.
-  * For more information, see the [API v1.1 Guide](/Dev%20Tools/Pipeline/ko/api-guide-v1-1).
+  * For more information, see the [API v1.1 Guide](/Dev%20Tools/Pipeline/en/api-guide-v1-1).
 
 ### September 23, 2025
-* Added new stages. For more information, see the [Pipeline Stage Guide](/Dev%20Tools/Pipeline/ko/stage-guide/).
+* Added new stages. For more information, see the [Pipeline Stage Guide](/Dev%20Tools/Pipeline/en/stage-guide/).
   * **Feature - Provide User Variables**
   * **Feature - Image Vulnerability Analysis**
   * **Feature - Source Code Vulnerability Analysis**
@@ -26,7 +26,7 @@
 ### March 25, 2025
 * **Pipeline Notifications** feature has been added.
   * You can receive Email and SMS notifications when a pipeline starts, completes, or fails.
-  * You can find how to use from [Pipeline Notification Guide](/Dev%20Tools/Pipeline/ko/pipeline-management/#_13).
+  * You can find how to use from [Pipeline Notification Guide](/Dev%20Tools/Pipeline/en/pipeline-management/#manage-a-pipeline).
 * **Pipeline Version** has been modified so that pipelines can no longer be edited in JSON format.
 * **Build - NHN Cloud Build Tool** stage fades out.
 
@@ -127,7 +127,7 @@
 * Modified to display a guide message when the kubernetes integration test in deployment target times out.
 
 ### August 23, 2022
-* Made modifications so that, when running a pipeline without stages through the [API](/Dev%20Tools/Pipeline/en/api-guide/api-guide-v1-0#pipeline), a failure response is returned.
+* Made modifications so that, when running a pipeline without stages through the [API](/Dev%20Tools/Pipeline/en/api-guide-v1-0/#pipeline-manual-run), a failure response is returned.
 
 ### July 26, 2022
 * Added a webhook stage.
@@ -143,7 +143,7 @@
 * Added GitLab to the source repository. You can find how to use it in the [Pipeline User Guide](/Dev%20Tools/Pipeline/en/environment-config/#source-repository).
 
 ### January 25, 2022
-* Added an API to run Pipeline. You can find how to use it in the [Pipeline API Guide](/Dev%20Tools/Pipeline/en/api-guide/api-guide-v1-0).
+* Added an API to run Pipeline. You can find how to use it in the [Pipeline API Guide](/Dev%20Tools/Pipeline/en/api-guide-v1-0).
 * Known issues (to be improved after analyzing the cause)
   * When creating a development environment, if you specify a value for the development environment constraints, the development environment creation fails.
 
