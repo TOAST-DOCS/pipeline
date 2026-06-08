@@ -5,7 +5,7 @@
   * [API v1.1 가이드](/Dev%20Tools/Pipeline/ko/api-guide-gov-v1-1)에서 사용 방법을 확인할 수 있습니다.
 
 ### 2025. 09. 23.
-* 신규 스테이지들이 추가되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/)에서 사용 방법을 확인할 수 있습니다.
+* 신규 스테이지들이 추가되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide-gov/)에서 사용 방법을 확인할 수 있습니다.
   * **기능 - 사용자 변수 제공**
   * **기능 - 이미지 취약점 분석**
   * **기능 - 소스 코드 취약점 분석**
