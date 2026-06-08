@@ -2,7 +2,7 @@
 
 ### 2026. 04. 14.
 * User Access Keyトークンを使用するAPI v1.1ガイドが追加されました。
-* [API v1.1ガイド](/Dev%20Tools/Pipeline/ko/api-guide-v1-1)で使用方法をご確認いただけます。
+* [API v1.1ガイド](/Dev%20Tools/Pipeline/ja/api-guide-v1-1/)で使用方法をご確認いただけます。
 
 ### 2025. 09. 23.
 * 新規ステージが追加されました。[Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/)で利用方法を確認できます。
@@ -126,7 +126,7 @@
 * 配布対象Kubernetes接続テストの時間が超過した時にも案内メッセージを表示するように修正しました。
 
 ### 2022. 08. 23.
-* ステージがないPipelineを[API](/Dev%20Tools/Pipeline/ja/api-guide/api-guide-v1-0#pipeline)で実行したとき、失敗レスポンスを返すように修正しました。
+* ステージがないPipelineを[API](/Dev%20Tools/Pipeline/ja/api-guide-v1-0/#pipeline)で実行したとき、失敗レスポンスを返すように修正しました。
 
 ### 2022. 07. 26.
 * 機能 - Webhookステージが追加されました。
@@ -142,7 +142,7 @@
 * ソースリポジトリにGitLabが追加されました。 [Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ja/environment-config/#_2)で使い方を確認できます。
 
 ### 2022. 01. 25.
-* Pipeline実行APIが追加されました。 [Pipeline APIガイド](/Dev%20Tools/Pipeline/ja/api-guide/api-guide-v1-0)で使い方を確認できます。
+* Pipeline実行APIが追加されました。 [Pipeline APIガイド](/Dev%20Tools/Pipeline/ja/api-guide-v1-0/)で使い方を確認できます。
 * 発見されたイシュー(原因分析後に改善予定です。)
   * 開発環境の作成時に開発環境の制約事項に値を指定すると、作成に失敗する現象があります。
 

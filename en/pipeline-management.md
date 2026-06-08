@@ -216,7 +216,7 @@ You can manage recipients for notifications from **Project Setting** > **Notific
 
 For setting up for notification recipients and how to notify (Email, SMS), refer to [Notification Management Guide](https://docs.nhncloud.com/ko/nhncloud/ko/console-guide/#_33).
 
-### Pipeline Run History
+#### Pipeline Run History
 If you click on **Run History** in Pipeline Studio, you can view the last 10 runs.
 ![pipeline-management-guide-14](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-04-15/pipeline-management-guide-14.png)
 

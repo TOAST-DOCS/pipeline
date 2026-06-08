@@ -426,7 +426,7 @@ You can receive notifications of pipeline execution results by adding the pipeli
 This scenario involves analyzing vulnerabilities in an image and then deploying it.
 Image information from the automatic execution of the image registry can be used as variables.
 
-For how to create and use variables, see [Guide to Features - Providing User Variables](/Dev%20Tools/Pipeline/ko/stage-guide/#-_2).
+For how to create and use variables, see [Guide to Features - Providing User Variables](/Dev%20Tools/Pipeline/en/stage-guide/#features-providing-user-variables).
 
 ### 11. Scenario for Building an Image after Analyzing Source Code Vulnerabilities
 
@@ -436,4 +436,4 @@ For how to create and use variables, see [Guide to Features - Providing User Var
 
 This scenario involves retrieving source code from Github, analyzing vulnerabilities, and building it using the NHN Cloud build tool. You can use variables to specify the target branch and build result image tags.
 
-For how to create and use variables, see [Guide to Features - Providing User Variables](/Dev%20Tools/Pipeline/ko/stage-guide/#-_2).
+For how to create and use variables, see [Guide to Features - Providing User Variables](/Dev%20Tools/Pipeline/en/stage-guide/#features-providing-user-variables).
