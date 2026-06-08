@@ -31,7 +31,7 @@ Github에서 소스코드를 가져와 NHN Cloud 빌드 도구로 빌드 후 대
 등록되어 있는 JSON 파일을 다운로드 후 중괄호로 표시된 데이터에 대한 정보 입력이 필요합니다.
 
 #### 소스 스테이지
-소스 스테이지 중 Github을 기준으로 가이드가 작성되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#_1)에서 스테이지 상세 가이드는 확인 가능합니다.
+소스 스테이지 중 Github을 기준으로 가이드가 작성되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide-gov/#_1)에서 스테이지 상세 가이드는 확인 가능합니다.
 
 ``` json
 {
@@ -51,7 +51,7 @@ Github에서 소스코드를 가져와 NHN Cloud 빌드 도구로 빌드 후 대
 **이미지 저장소 설정**, **배포 대상 설정**도 동일하게 설정된 이름 확인 후 수정이 필요합니다.
 
 #### 빌드 스테이지
-빌드 스테이지 중 NHN Cloud 빌드 도구 v2를 기준으로 가이드가 작성되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#_2)에서 스테이지 상세 가이드를 확인할 수 있습니다.
+빌드 스테이지 중 NHN Cloud 빌드 도구 v2를 기준으로 가이드가 작성되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide-gov/#_2)에서 스테이지 상세 가이드를 확인할 수 있습니다.
 
 ``` json
 {
@@ -78,7 +78,7 @@ Github에서 소스코드를 가져와 NHN Cloud 빌드 도구로 빌드 후 대
 ```
 
 #### 배포 스테이지
-배포 스테이지는 Deploy 스테이지로 가이드가 작성되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#_3)에서 스테이지 상세 가이드는 확인 가능합니다.
+배포 스테이지는 Deploy 스테이지로 가이드가 작성되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide-gov/#_3)에서 스테이지 상세 가이드는 확인 가능합니다.
 
 ``` json
 {
@@ -155,7 +155,7 @@ YAML 파일을 JSON 형태로 변경이 필요합니다(스테이지 변경을 �
 
 ![template-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-05.png)
 
-[Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#_4)에서 Webhook 스테이지 상세 가이드는 확인 가능합니다.
+[Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide-gov/#_4)에서 Webhook 스테이지 상세 가이드는 확인 가능합니다.
 ``` json
 {
     "type": "webhook",
@@ -207,7 +207,7 @@ YAML 파일을 JSON 형태로 변경이 필요합니다(스테이지 변경을 �
 예시로 작성된 파이프라인처럼 `develop`, `real`을 선택하여 원하는 환경에 배포를 진행할 수 있습니다.
 다른 값으로 변경하여 사용 가능하며 이때 뒤에 있는 Precondition Stage의 값도 동일하게 수정이 필요합니다.
 
-[Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#_4)에서 Judgement(실행 관리), Precondition(실행 조건) 스테이지 상세 가이드는 확인 가능합니다.
+[Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide-gov/#_4)에서 Judgement(실행 관리), Precondition(실행 조건) 스테이지 상세 가이드는 확인 가능합니다.
 
 ```json
 [
@@ -282,7 +282,7 @@ YAML 파일을 JSON 형태로 변경이 필요합니다(스테이지 변경을 �
 
 4번 시나리오에서 리얼 환경에 배포하기 전 승인 단계를 추가하여 승인 후 배포가 되도록 구성할 수 있습니다.
 
-[Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#_4)에서 승인 관리 스테이지 상세 가이드는 확인 가능합니다.
+[Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide-gov/#_4)에서 승인 관리 스테이지 상세 가이드는 확인 가능합니다.
 
 ```json
 {
@@ -355,7 +355,7 @@ Blue/Green 배포를 위한 파이프라인을 구성할 수 있습니다. Blue/
 }
 ```
 
-[Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#_3)에서 **배포 - Disable 스테이지** 상세 가이드를 확인할 수 있습니다.
+[Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide-gov/#_3)에서 **배포 - Disable 스테이지** 상세 가이드를 확인할 수 있습니다.
 
 ---
 
@@ -424,7 +424,7 @@ Blue/Green 배포를 위한 파이프라인을 구성할 수 있습니다. Blue/
 이미지를 대상으로 취약점 분석 후 배포를 진행하는 시나리오입니다.
 이미지 저장소 유형으로 자동 실행되었을 때의 이미지 정보를 변수로 사용할 수 있습니다.
 
-변수를 생성하고 사용하는 방법은 [기능 - 사용자 변수 제공 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#-_2)에서 확인할 수 있습니다.
+변수를 생성하고 사용하는 방법은 [기능 - 사용자 변수 제공 가이드](/Dev%20Tools/Pipeline/ko/stage-guide-gov/#-_2)에서 확인할 수 있습니다.
 
 ### 11. 소스 코드 취약점 분석 후 이미지를 빌드하는 시나리오
 
@@ -435,4 +435,4 @@ Blue/Green 배포를 위한 파이프라인을 구성할 수 있습니다. Blue/
 Github에서 소스코드를 가져와 취약점 분석 후 NHN Cloud 빌드 도구로 빌드를 진행하는 시나리오입니다.
 빌드할 대상 브랜치와 빌드 결과 이미지 태그를 변수로 지정하여 사용할 수 있습니다.
 
-변수를 생성하고 사용하는 방법은 [기능 - 사용자 변수 제공 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#-_2)에서 확인할 수 있습니다.
+변수를 생성하고 사용하는 방법은 [기능 - 사용자 변수 제공 가이드](/Dev%20Tools/Pipeline/ko/stage-guide-gov/#-_2)에서 확인할 수 있습니다.
