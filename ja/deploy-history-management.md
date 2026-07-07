@@ -1,6 +1,10 @@
+<!-- pre-align:aligned sig=bda55a169d6c -->
+
 ## Dev Tools > Pipeline > コンソール使用ガイド > Deployment History Management
 
 Pipeline実行履歴と配布対象作業履歴を**配布履歴管理**タブで確認できます。
+
+<a id="pipeline-run-history"></a>
 
 ## パイプライン実行履歴
 ステージ実行日時を基準にパイプラインの実行履歴を確認できるページです。
@@ -14,6 +18,8 @@ Pipeline実行履歴と配布対象作業履歴を**配布履歴管理**タブ�
 
 **Excelダウンロード** ボタンから照会した結果をダウンロードできます。
 ![deploy-history-management-4](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-01-23/deploy-history-management-4.png)
+
+<a id="deployment-target-task-history"></a>
 
 ## 配布対象作業履歴
 ワークロード作業日時を基準に配布対象の作業履歴を確認できるページです。

@@ -1,6 +1,10 @@
+<!-- pre-align:aligned sig=087ab071fe73 -->
+
 ## Dev Tools > Pipeline > 콘솔 사용 가이드 > 배포 대상 관리
 
 Pipeline으로 배포하여 생성된 결과물을 **배포 대상 관리** 메뉴에서 확인할 수 있습니다.
+
+<a id="deployment-target"></a>
 
 ## 배포 대상
 
@@ -60,6 +64,8 @@ Pipeline으로 배포하여 생성된 결과물을 **배포 대상 관리** 메�
 | 배포 재시작   | 일시 중지된 배포를 재시작          | 디플로이먼트 |
 
 
+
+<a id="network"></a>
 
 ## 네트워크
 

@@ -1,4 +1,8 @@
+<!-- pre-align:aligned sig=71d660659393 -->
+
 ## Dev Tools > Pipeline > Console User Guide > Environment Configuration
+
+<a id="set-up-an-environment"></a>
 
 ### Set Up an Environment
 
@@ -10,6 +14,8 @@ External systems that can be added to Pipeline include:
 - Build tool
 - Deployment target
 - Chart repository
+
+<a id="source-repository"></a>
 
 ### Source Repository
 
@@ -27,6 +33,8 @@ Enter the source repository information. After checking the connection, click **
 
 ![env-config-guide-03](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-03.png)
 
+<a id="image-registry"></a>
+
 ### Image Registry
 
 If you add an image registry, you can use the information to access an image registry that requires credentials. You can use the image registry when creating a container to build source code in the NHN Cloud build tool, or when uploading a newly created container image. You can also use it to set the container image that executes autorun in your pipeline autorun settings. For image registry, you can add NHN Cloud Container Registry, Docker Hub, or private image registries. When using Docker Hub, image repository URLs can be omiited.
@@ -40,6 +48,8 @@ Click **Image Registry Settings** in **Environment Settings** to go to the scree
 Enter the image registry information, and click **Check** in **Image Registry Connection Check**. After checking the connection, click **Confirm**. If you don't enter the image registry URL, it works as Docker Hub.
 
 ![env-config-guide-06](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-06.png)
+
+<a id="build-tool"></a>
 
 ### Build Tool
 
@@ -55,6 +65,8 @@ Enter the build tool information, click **Check** in **Build Tool Connection Che
 
 ![env-config-guide-09](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-09.png)
 
+<a id="deployment-target"></a>
+
 ### Deployment Target
 
 Adding a deployment target allows you to manage the deployment target in your pipeline. You can deploy container images to deployment targets or change the running containers. For deployment targets, you can add NHN Cloud Container and Kubernetes.
@@ -68,6 +80,8 @@ Click **Deployment Target Settings** in **Environment Settings** to go to the sc
 Enter the deployment target name and deployment target description, select the Kubeconfig file, and click **Check** in **Deployment Target Connection Check**. After checking the connection, click **Confirm**.
 
 ![env-config-guide-12](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-12.png)
+
+<a id="chart-repository"></a>
 
 ### Chart Repository
 
@@ -83,7 +97,11 @@ Enter the chart repository information, click **Check** in **Chart Repository Co
 
 ![env-config-guide-15](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-15.png)
 
+<a id="nhn-cloud-security-settings"></a>
+
 ### NHN Cloud Security Settings
+
+<a id="create-user-access-key-id-secret-access-key"></a>
 
 #### Create User Access Key ID, Secret Access Key
 
@@ -103,6 +121,8 @@ After creating **User Access Key ID** and **Secret Access Key**, the **Secret ke
 
 **The User Access Key ID**, which is required to register security settings, can be found by closing the secret key successfully issued popup.
 
+<a id="register-nhn-cloud-security-settings"></a>
+
 #### Register NHN Cloud Security Settings
 Once you add the NHN Cloud security settings, you can deploy through the NHN Cloud Deploy service using the **Features - NHN Cloud Deploy service** stage.
 
@@ -115,6 +135,8 @@ You can add a new security setting by clicking **+Add security setting**on the *
 Enter the NHN Cloud security settings information, click **Confirm** in **Check API Calls**. After checking the connection, click **Confirm**.
 
 ![env-config-guide-22](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-22.png)
+
+<a id="pipeline-ip"></a>
 
 ### Pipeline IP
 If the system integrated with Pipeline does not work properly, check the ACL.

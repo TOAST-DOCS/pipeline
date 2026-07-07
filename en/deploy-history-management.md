@@ -1,6 +1,10 @@
+<!-- pre-align:aligned sig=bda55a169d6c -->
+
 ## Dev Tools > Pipeline > Console User Guide > Deployment History Management
 
 You can view the history of pipeline runs and deployment target tasks on the **Deployment History Management** tab.
+
+<a id="pipeline-run-history"></a>
 
 ## Pipeline Run History
 This page allows you to view the pipeline run history based on the date of stage running.
@@ -14,6 +18,8 @@ View results filtered by **name type** and **stage status**.
 
 Download the results of your query by clicking **Download Excel**.
 ![deploy-history-management-4](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-01-23/deploy-history-management-4.png)
+
+<a id="deployment-target-task-history"></a>
 
 ## Deployment Target Task History
 This page allows you to view the task history of a deployment target based on the date of the workload task.

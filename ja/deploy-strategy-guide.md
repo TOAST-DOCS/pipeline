@@ -1,6 +1,10 @@
+<!-- pre-align:aligned sig=efe15cecf7f7 -->
+
 ## Dev Tools > Pipeline > 配布戦略ガイド
 
 配布戦略ガイドでは、Pipelineのステージを組み合わせて様々な配布戦略を実行する方法を説明します。
+
+<a id="bluegreen-deployment"></a>
 
 ## Blue/Green配布
 
@@ -8,6 +12,8 @@
 
 Blue/Green配布は、二つの同一の環境を作成する配布戦略です。一つの環境(Blue)は現在のアプリケーションバージョンを実行し、もう一つの環境(Green)は新しいアプリケーションバージョンを実行します。
 Blue/Green配布戦略を使用すると、アプリケーションの可用性を高め、配布失敗時のロールバックプロセスを簡素化し、配布リスクを減らすことができます。Green環境でテストが完了すると、アプリケーショントラフィックはGreen環境に移動され、Blue環境は廃棄されます。
+
+<a id="use-replicasets"></a>
 
 ### ReplicaSets使用
 
@@ -17,10 +23,14 @@ Deployment Objectを修正するとロールアウトが実行されるため、
     - `strategy.spinnaker.io/max-version-history`: Pipelineが維持するReplicaSetsの最大数を指定します。 2以上の値を指定することでBlue/Green配布が可能です。
     - `traffic.spinnaker.io/load-balancers`: Service Objectを指定します。 PipelineがServiceのSelectorに合わせてPodのラベルを修正してアプリケーションへのトラフィックを伝達できます。指定するService ObjectはPipelineeを通じて作成されたものでなければなりません。
 
+<a id="how-to-configure-a-bluegreen-pipeline"></a>
+
 ### Blue/Greenパイプラインの構成方法
 
 Blue/Green配布ができるパイプラインを構成する方法は次のとおりです。
 [Pipelineテンプレートガイド](/Dev%20Tools/Pipeline/ja/template-guide/)を参考してパイプラインを構成できます。
+
+<a id="create-a-service"></a>
 
 #### 1. Service作成
 
@@ -46,6 +56,8 @@ spec:
 ```
 
 ![deploy-strategy-guide-02.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/deploy-strategy-guide/deploy-strategy-guide-02.png)
+
+<a id="configure-the-application-deployment-pipeline"></a>
 
 #### 2. アプリケーション配布パイプライン構成
 

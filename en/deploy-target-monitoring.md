@@ -1,6 +1,10 @@
+<!-- pre-align:aligned sig=087ab071fe73 -->
+
 ## Dev Tools > Pipeline > Console User Guide > Deployment Target Management
 
 You can identify output created by deploying with Pipeline in the **Deployment Target Management** menu.
+
+<a id="deployment-target"></a>
 
 ## Deployment Target
 
@@ -59,6 +63,8 @@ Management Task Types
 | Restart Pod   | Restart pods in workload          | Deployment |
 | Pause Deployment | Rollback, pause of pod restart    | Deployment |
 | Restart Deployment   | Restart a paused deployment          | Deployment |
+
+<a id="network"></a>
 
 ## Network
 

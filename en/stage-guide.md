@@ -1,3 +1,5 @@
+<!-- pre-align:aligned sig=106eab49677f -->
+
 ## Dev Tools > Pipeline > Stage Guide
 
 This guide explains the basics of stages in Pipeline.
@@ -16,27 +18,39 @@ Stages are divided into the following groups.
 - **Deployment**
 - **Feature**
 
+<a id="source"></a>
+
 ## Source
 This is a stage that gets the source code to build.
+
+<a id="source---github"></a>
 
 ### Source - GitHub
 You can select [a source repository](/Dev%20Tools/Pipeline/en/environment-config/#_2) that you added in **Source Repository Settings** of **Environment Settings**. 
 
 ![stage-guide-02](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-02_new.png)
 
+<a id="source---gitlab"></a>
+
 ### Source - GitLab
 You can select [a source repository](/Dev%20Tools/Pipeline/en/environment-config/#_2) that you added in **Source Repository Settings** of **Environment Settings**.
 
 ![stage-guide-03](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-03_new.png)
 
+<a id="build"></a>
+
 ## Build
 This is a stage to build
+
+<a id="build---jenkins"></a>
 
 ### Build - Jenkins
 You can build using Jenkins with your own configuration. You can select [Build Tool](/Dev%20Tools/Pipeline/en/environment-config/#_4) you added in the **Build Tool Settings** in **Preferences**. You can select a **build job**.
 You can set the **start condition** and **end condition****for the artifact**. You can set the **start condition** to determine whether the stage starts. You can set an **end condition** to set the stage's output as an artifact.
 
 ![stage-guide-04](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-04_new.png)
+
+<a id="build---bake-manifest"></a>
 
 ### Build - Bake (Manifest)
 You can build using a Helm package file or [Chart Repository](/Dev%20Tools/Pipeline/en/environment-config/#_6)that users configured themselves.
@@ -65,6 +79,8 @@ You can build using a Helm package file or [Chart Repository](/Dev%20Tools/Pipel
 
 ![stage-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-10-29/stage-guide-05-1.png)
 
+<a id="build---nhn-cloud-build-tool-v2"></a>
+
 ### Build - NHN Cloud Build Tool v2
 You can use the build tools provided by NHN Cloud.
 
@@ -91,8 +107,12 @@ You can use the build tools provided by NHN Cloud.
 
 ![stage-guide-06](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-06_new.png)
 
+<a id="deployment"></a>
+
 ## Deployment
 This is a stage to deploy to the Kubernetes environment.
+
+<a id="deployment---deploy"></a>
 
 ### Deployment - Deploy
 - You can select the [deployment target](/Dev%20Tools/Pipeline/en/environment-config/#_5) you added in **Deployment Target Settings** in **Environment Settings**. 
@@ -105,6 +125,8 @@ For more details on **Manifest**, see [Kubernetes documents](https://kubernetes.
 - You can set the **Start Condition** and **End Condition** of ** Artifact**. You can set a start condition to determine whether to start stages. You can set **End Condition** to set stage products as artifacts.
 
 ![stage-guide-07](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-07_new.png)
+
+<a id="deployment---patch"></a>
 
 ### Deployment - Patch
 - You can select the [deployment target\](/Dev%20Tools/Pipeline/en/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**.
@@ -122,6 +144,8 @@ For more details on **Manifest**, see [Kubernetes documents](https://kubernetes.
 
 ![stage-guide-08](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-08_new.png)
 
+<a id="deployment---scale"></a>
+
 ### Deployment - Scale
 - You can select the [deployment target\](/Dev%20Tools/Pipeline/en/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**.
 - Enter **Namespace**, **Resource Type**, Resource Name, and Replicas. Replicas can be modified with Scale.
@@ -137,10 +161,14 @@ For more details on **Manifest**, see [Kubernetes documents](https://kubernetes.
 
 ![stage-guide-09](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-09_new.png)
 
+<a id="deployment---rollout-undo"></a>
+
 ### Deployment - Rollout Undo
 You can select the [deployment target](/Dev%20Tools/Pipeline/en/environment-config/#_5) you added in **Deployment Target Settings** in **Environment Settings**. Enter **Namespace**, **Resource Type**, **Resource Name**, **Revision Back**. You can roll back to the specified Revision.
 
 ![stage-guide-10](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-10_new.png)
+
+<a id="deployment---delete"></a>
 
 ### Deployment - Delete
 - You can select the [deployment target](/Dev%20Tools/Pipeline/en/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**.
@@ -157,6 +185,8 @@ You can select the [deployment target](/Dev%20Tools/Pipeline/en/environment-conf
 
 ![stage-guide-11](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-11_new.png)
 
+<a id="deployment---nhn-container-service-ncs"></a>
+
 ### Deployment - NHN Container Service (NCS)
 The stage where you can replace the template of an NCS workload.  
 Entering the **NCS app key** retrieves a list of **NCS roles**, templates, and workloads.  
@@ -165,6 +195,8 @@ You can select a workload from the list for which you want to change the templat
 
 ![stage-guide-12](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-12_new.png)
 
+
+<a id="deployment---enable"></a>
 
 ### Deployment - Enable
 - You can select the [deployment target](/Dev%20Tools/Pipeline/en/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**.
@@ -182,6 +214,8 @@ You can select a workload from the list for which you want to change the templat
 
 ![stage-guide-13](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-13_new.png)
 
+<a id="deployment---disable"></a>
+
 ### Deployment - Disable
 - You can select the [deployment target](/Dev%20Tools/Pipeline/en/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**.
 - Enter the **Namespace**, **resource type**, **selection method**, and **resource name**. You can disable the resource.
@@ -198,8 +232,12 @@ You can select a workload from the list for which you want to change the templat
 
 ![stage-guide-14](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-14_new.png)
 
+<a id="feature"></a>
+
 ## Feature
 This is a stage to provide additional features.
+
+<a id="features---approval-management"></a>
 
 ### Features - Approval Management
 **Feature - Approval Management** Allows approvers to manage **execution management (run, stop)** for stages after the stage.
@@ -212,6 +250,8 @@ The **Pipeline APPROVAL ADMIN** role can be granted from Manage members, Manage 
 
 ![stage-guide-18](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-10-31/stage-guide-18.png)
 
+<a id="feature---judgement-run-management"></a>
+
 ### Feature - Judgement (Run Management)
 You can fill in **Description** and **Run Settings** for the Judgement stage when necessary.
 
@@ -220,11 +260,15 @@ If you add **Run Settings** and select run for the next stage, you can pass the 
 
 ![stage-guide-16](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-16_new.png)
 
+<a id="features---precondition-stage-status-condition"></a>
+
 ### Features - Precondition (Stage Status Condition)
 You can set conditions by selecting the stage name and execution result of the previous stage.
 The next stage runs only if all the conditions you specify are met.
 
 ![stage-guide-17](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-17_new.png)
+
+<a id="feature---precondition-run-condition"></a>
 
 ### Feature - Precondition (Run Condition)
 Decide whether to run subsequent stages based on the **Run Condition** of the values passed from the Judgment stage set as the previous stage.
@@ -232,10 +276,14 @@ Decide whether run subsequent stages by selecting either **Condition Matched or 
 
 ![stage-guide-18](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-18_new.png)
 
+<a id="feature---webhook"></a>
+
 ### Feature - Webhook
 Enter the HTTP method and URL in **URL**. You can add **Request Header** and **Request Data** as needed. If the response value of the webhook is one of the values entered in **Fail Fast HTTP Status Code**, close the stage immediately.
 
 ![stage-guide-19](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-19_new.png)
+
+<a id="feature---run-other-pipelines"></a>
 
 ### Feature - Run Other Pipelines
 You can run entire other pipelines on a stage.
@@ -244,6 +292,8 @@ Select the **pipeline name** you want to run.
 If you uncheck the **execution condition**, the next stage runs without waiting for the selected pipeline's execution status.
 
 ![stage-guide-20](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-20_new.png)
+
+<a id="feature---run-nhn-cloud-deploy-service-deployment"></a>
 
 ### Feature - Run NHN Cloud Deploy Service Deployment
 You can run the deployment using the NHN Cloud Deploy service on the stage.
@@ -270,6 +320,8 @@ For more information, see the [Deploy User Guide](/Dev%20Tools/Deploy/en/referen
 
 ![stage-guide-21](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-21_new.png)
 
+<a id="features---providing-user-variables"></a>
+
 ### Features - Providing User Variables
 Define variables to be reused in subsequent stages within the pipeline. Variables created in this stage are available to all subsequent stages connected to it, and up to five variables can be created.
 
@@ -295,6 +347,8 @@ ${myImage}
 
 ![stage-guide-22](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-22.png)
 
+<a id="features---analyze-image-vulnerability"></a>
+
 ### Features - Analyze Image Vulnerability
 A stage where vulnerability analysis is performed on images.
 
@@ -307,6 +361,8 @@ A stage where vulnerability analysis is performed on images.
 The results of the image vulnerability analysis can be viewed in the stage execution results. If a vulnerability is found, details are displayed in the analysis results.
 
 ![stage-guide-24](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-24.png)
+
+<a id="features---analyze-source-code-vulnerability"></a>
 
 ### Features - Analyze Source Code Vulnerability
 
@@ -322,7 +378,11 @@ The results of the source code vulnerability analysis can be viewed in the stage
 
 ![stage-guide-26](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-26.png)
 
+<a id="stage-common-features"></a>
+
 ## Stage Common Features
+<a id="on-stage-failure"></a>
+
 ### On stage failure
 
 You can select settings related to pipeline execution when a stage fails.

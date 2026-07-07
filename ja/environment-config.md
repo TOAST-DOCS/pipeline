@@ -1,4 +1,8 @@
+<!-- pre-align:aligned sig=71d660659393 -->
+
 ## Dev Tools > Pipeline > コンソール使用ガイド > Environment Configuration
+
+<a id="set-up-an-environment"></a>
 
 ### 環境設定
 
@@ -9,6 +13,8 @@ Pipelineに追加できる外部システムは次のとおりです。
 - イメージストア
 - ビルドツール
 - 配布対象
+
+<a id="source-repository"></a>
 
 ### ソースリポジトリ
 
@@ -26,6 +32,8 @@ Pipelineに追加できる外部システムは次のとおりです。
 
 ![env-config-guide-03](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-03.png)
 
+<a id="image-registry"></a>
+
 ### イメージストア
 
 イメージストアを追加すると、認証情報が必要なイメージストアにアクセスするときに使用できます。 NHN Cloudビルドツールでソースコードをビルドするコンテナを作成するときや、新たに作成したコンテナイメージをアップロードするときに使用できます。そしてパイプライン自動実行設定で自動実行を実行させるコンテナイメージを設定するときに使用できます。イメージストアにはNHN Cloud Container Registry、Docker Hubの他にプライベートイメージストアを追加できます。 Docker Hubを使用する場合はイメージストアURLを省略できます。
@@ -39,6 +47,8 @@ Pipelineに追加できる外部システムは次のとおりです。
 イメージストア情報を入力し、**イメージストア接続確認**の**確認**をクリックします。接続確認後に**確認**をクリックします。イメージストアURLを入力していない場合はDocker Hubとして動作します。
 
 ![env-config-guide-06](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-06.png)
+
+<a id="build-tool"></a>
 
 ### ビルドツール
 
@@ -54,6 +64,8 @@ Pipelineに追加できる外部システムは次のとおりです。
 
 ![env-config-guide-09](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-09.png)
 
+<a id="deployment-target"></a>
+
 ### 配布対象
 
 配布対象を追加すると、パイプラインで配布対象を管理できます。配布対象にコンテナイメージを配布したり、実行中のコンテナを変更できます。配布対象にはNHN Cloud Container、Kubernetesを追加できます。
@@ -67,6 +79,8 @@ Pipelineに追加できる外部システムは次のとおりです。
 配布対象の名前と説明を入力し、Kubeconfigファイルを選択して**配布対象接続確認**の **確認**をクリックします。接続確認後に**確認**をクリックします。
 
 ![env-config-guide-12](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-12.png)
+
+<a id="chart-repository"></a>
 
 ### チャートリポジトリ
 
@@ -82,7 +96,11 @@ Pipelineに追加できる外部システムは次のとおりです。
 
 ![env-config-guide-15](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-15.png)
 
+<a id="nhn-cloud-security-settings"></a>
+
 ### NHN Cloudセキュリティ設定
+
+<a id="create-user-access-key-id-secret-access-key"></a>
 
 #### User Access Key ID, Secret Access Key作成
 
@@ -102,6 +120,8 @@ Pipelineに追加できる外部システムは次のとおりです。
 
 セキュリティ設定を登録する際に必要な**User Access Key ID**は、秘密鍵発行完了ポップアップを閉じると確認できます。
 
+<a id="register-nhn-cloud-security-settings"></a>
+
 #### NHN Cloudセキュリティ設定登録
 NHN Cloudセキュリティ設定を追加すると**機能 - NHN Cloud Deployサービス**ステージを使用し、NHN Cloud Deployサービスを通じて配布できます。
 
@@ -114,6 +134,8 @@ NHN Cloudセキュリティ設定を追加すると**機能 - NHN Cloud Deploy�
 NHN Cloudセキュリティ設定情報を入力し、**API正常呼び出し確認**の**確認**をクリックします。接続確認後**確認**をクリックします。
 
 ![env-config-guide-22](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-22.png)
+
+<a id="pipeline-ip"></a>
 
 ### Pipeline IP
 Pipelineと連動したシステムが正常に動作しない場合はACLを確認してください。

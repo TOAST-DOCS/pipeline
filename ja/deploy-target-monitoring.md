@@ -1,6 +1,10 @@
+<!-- pre-align:aligned sig=087ab071fe73 -->
+
 ## Dev Tools > Pipeline > コンソール使用ガイド > Deployment Target Management
 
 Pipelineで配布して作成された結果物を**配布対象管理**メニューで確認できます。
+
+<a id="deployment-target"></a>
 
 ## 配布対象
 
@@ -60,6 +64,8 @@ Podの中でサービスと連結されたPodの場合、右側に見えるロ�
 | 配布の再起動 | 一時停止した配布を再起動        | デプロイメント |
 
 
+
+<a id="network"></a>
 
 ## ネットワーク
 

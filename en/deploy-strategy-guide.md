@@ -1,6 +1,10 @@
+<!-- pre-align:aligned sig=efe15cecf7f7 -->
+
 ## Dev Tools > Pipeline > Deployment Strategy Guide
 
 The Deployment strategy guide explains how to combine the stages in Pipeline to perform different deployment strategies.
+
+<a id="bluegreen-deployment"></a>
 
 ## Blue/Green Deployment
 
@@ -8,6 +12,8 @@ The Deployment strategy guide explains how to combine the stages in Pipeline to 
 
 A Blue/Green deployment is a deployment strategy that creates two identical environments. One environment (Blue) runs the current application version, and the other environment (Green) runs the new application version.
 You can use a Blue/Green deployment strategy to reduce deployment risk by increasing application availability and simplifying the rollback process in the event of a deployment failure. When testing is complete in the Green environment, application traffic is moved to the Green environment, and the Blue environment is decommissioned.
+
+<a id="use-replicasets"></a>
 
 ### Use ReplicaSets
 
@@ -17,10 +23,14 @@ Since modifying the Deployment Object triggers the rollout, the only way to do a
     - `strategy.spinnaker.io/max-version-history`: Specifies the maximum number of ReplicaSets that Pipeline maintains. You must give a value of 2 or higher to enable blue/green deployments.
     - `traffic.spinnaker.io/load-balancers`: Specify the Service Object. Pipeline will modify the Pod's label to match the Service's Selector, enabling traffic to be delivered to your application. The Service Object you specify must have been created through Pipeline.
 
+<a id="how-to-configure-a-bluegreen-pipeline"></a>
+
 ### How to configure a Blue/Green Pipeline
 
 Here's how to configure a pipeline that can do blue/green deployments.
 You can configure a pipeline by referring to the[Pipeline template guide](/Dev%20Tools/Pipeline/en/template-guide/).
+
+<a id="create-a-service"></a>
 
 #### 1. Create a Service
 
@@ -46,6 +56,8 @@ spec:
 ```
 
 ![deploy-strategy-guide-02.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/deploy-strategy-guide/deploy-strategy-guide-02.png)
+
+<a id="configure-the-application-deployment-pipeline"></a>
 
 #### 2. Configure the Application Deployment Pipeline
 

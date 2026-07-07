@@ -1,6 +1,10 @@
+<!-- pre-align:aligned sig=bda55a169d6c -->
+
 ## Dev Tools > Pipeline > 콘솔 사용 가이드 > 배포 이력 관리
 
 Pipeline 실행 이력과 배포 대상 작업 이력을 **배포 이력 관리** 탭에서 확인할 수 있습니다.
+
+<a id="pipeline-run-history"></a>
 
 ## 파이프라인 실행 이력
 스테이지 실행 일시를 기준으로 파이프라인의 실행 이력을 확인할 수 있는 페이지입니다.
@@ -14,6 +18,8 @@ Pipeline 실행 이력과 배포 대상 작업 이력을 **배포 이력 관리*
 
 **엑셀 다운로드**를 클릭해 조회한 결과를 다운로드할 수 있습니다.
 ![deploy-history-management-4](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-01-23/deploy-history-management-4.png)
+
+<a id="deployment-target-task-history"></a>
 
 ## 배포 대상 작업 이력
 워크로드 작업 일시를 기준으로 배포 대상의 작업 이력을 확인할 수 있는 페이지입니다.
