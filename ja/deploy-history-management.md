@@ -1,8 +1,12 @@
-## Dev Tools > Pipeline > コンソール使用ガイド > Deployment History Management
+<!-- pre-align:aligned sig=7c15c57a6d7c -->
+
+<a id="dev-tools-pipeline-console-user-guide-deployment-history-management"></a>
+## Dev Tools > Pipeline > コンソール使用ガイド > Deployment History Management { #dev-tools-pipeline-console-user-guide-deployment-history-management }
 
 Pipeline実行履歴と配布対象作業履歴を**配布履歴管理**タブで確認できます。
 
-## パイプライン実行履歴
+<a id="pipeline-run-history"></a>
+## パイプライン実行履歴 { #pipeline-run-history }
 ステージ実行日時を基準にパイプラインの実行履歴を確認できるページです。
 
 実行日時を設定して選択した期間のステージ実行履歴を照会し、期間は最大6か月まで照会できます。
@@ -15,7 +19,8 @@ Pipeline実行履歴と配布対象作業履歴を**配布履歴管理**タブ�
 **Excelダウンロード** ボタンから照会した結果をダウンロードできます。
 ![deploy-history-management-4](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-01-23/deploy-history-management-4.png)
 
-## 配布対象作業履歴
+<a id="deployment-target-task-history"></a>
+## 配布対象作業履歴 { #deployment-target-task-history }
 ワークロード作業日時を基準に配布対象の作業履歴を確認できるページです。
 
 作業日時を設定して選択した期間のワークロード作業履歴を照会し、期間は最大6か月まで照会できます。

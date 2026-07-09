@@ -1,6 +1,10 @@
-## Dev Tools > Pipeline > Console User Guide > Dev Env Configuration
+<!-- pre-align:aligned sig=3da2439ee26a -->
 
-### Set up a Development Environment
+<a id="dev-tools-pipeline-console-user-guide-dev-env-configuration"></a>
+## Dev Tools > Pipeline > Console User Guide > Dev Env Configuration { #dev-tools-pipeline-console-user-guide-dev-env-configuration }
+
+<a id="set-up-a-development-environment"></a>
+### Set up a Development Environment { #set-up-a-development-environment }
 
 The development environment settings allows users who do not know how to use Kubernetes to deploy container images on Kubernetes.
 

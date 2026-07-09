@@ -1,9 +1,14 @@
-## Dev Tools > Pipeline > Console User Guide > Pipeline Management
+<!-- pre-align:aligned sig=0631d922971a -->
+
+<a id="dev-tools-pipeline-console-user-guide-pipeline-management"></a>
+## Dev Tools > Pipeline > Console User Guide > Pipeline Management { #dev-tools-pipeline-console-user-guide-pipeline-management }
 
 A pipeline defines an application deployment flow consisting of one or more stages.
 
-### Configure a pipeline
+<a id="configure-a-pipeline"></a>
+### Configure a pipeline { #configure-a-pipeline }
 
+<a id="configure-a-pipeline-create-a-pipeline"></a>
 #### Create a pipeline
 
 You can create a pipeline by clicking **\+ Create Pipeline**, or you can create a pipeline by uploading a pipeline template file.
@@ -22,6 +27,7 @@ Alternatively, you can create a pipeline with a pipeline template file (pipeline
 
 After you upload the pipeline template file, click **Confirm**.
 
+<a id="configure-a-pipeline-pipeline-studio"></a>
 #### Pipeline Studio
 
 Pipeline Studio is the page where users can manage basic information about their pipelines, or add, change, or delete the stages that make up a pipeline.
@@ -32,11 +38,13 @@ At the top of Pipeline Studio, you'll see basic information about the pipeline: 
 
 In the Pipeline Studio panel, you can see the stages that make up that pipeline.
 
+<a id="configure-a-pipeline-edit-mode"></a>
 #### Edit mode
 ![pipeline-studio-guide-08](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-2.png)
 
 You can enter edit mode by clicking the **edit mode** toggle in the top right corner. In the edit mode, you can add, change, delete, and reposition stages.
 
+<a id="configure-a-pipeline-add-a-stage"></a>
 #### Add a stage
 ![pipeline-studio-guide-09](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-3.png)
 
@@ -56,6 +64,7 @@ Set the order of execution by concatenating the stages to run before and the sta
 
 You can click **Save pipeline**in the top right corner to finish adding stages.
 
+<a id="configure-a-pipeline-editing-stages"></a>
 #### Editing Stages
 ![pipeline-studio-guide-13](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-7.png)
 
@@ -65,6 +74,7 @@ You can edit a stage by enabling **edit mode**and then clicking the stage you wa
 
 After you've finished editing, you can click **Save Pipeline** in the top right corner to finalize your stage edits.
 
+<a id="configure-a-pipeline-delete-a-stage"></a>
 #### Delete a stage
 ![pipeline-studio-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-10.png)
 
@@ -76,10 +86,12 @@ You can delete a stage by activating **edit mode**and clicking **X** at the top 
 
 After deleting, you can click **Save Pipeline** in the upper right corner to finalize the stage deletion.
 
-### Run a pipeline
+<a id="run-a-pipeline"></a>
+### Run a pipeline { #run-a-pipeline }
 
 Pipelines can be run manually or automatically.
 
+<a id="run-a-pipeline-manual-run"></a>
 #### Manual run
 
 Manual run allows you to run your pipeline when you want.
@@ -88,6 +100,7 @@ Manual run allows you to run your pipeline when you want.
 
 In **Pipeline Management**, click **▶ Run︎**, and when the **Run Pipeline** modal window appears, check out the contents and click **Confirm**.
 
+<a id="run-a-pipeline-autorun"></a>
 #### Autorun
 
 Autorun lets you configure your pipeline to run automatically when an event occurs in your GitHub or GitLab repository or when a container image in your image registry is updated.
@@ -175,7 +188,8 @@ When finished, click **Confirm**.
 
 When you create a new pipeline, the toggle switch for **autorun** is off. To run the pipeline automatically, you must click the **Auto-run** toggle switch to enable it. 
 
-### Manage a pipeline
+<a id="manage-a-pipeline"></a>
+### Manage a pipeline { #manage-a-pipeline }
 
 Users can modify basic information in the pipeline.
 ![pipeline-studio-guide-02](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-13.png)
@@ -189,12 +203,14 @@ After you edit the information, you can click **Confirm** to finalize your edits
 You can click **▶ Manual Run** to run the pipeline, or **■ Stop Running** to stop a pipeline that is running.
 
 
+<a id="manage-a-pipeline-view-recent-execution-information"></a>
 #### View recent execution information
 
 To view basic information about the pipeline's most recent run and the status of the run for each stage, click **Recent Run Details**.
 
 ![pipeline-studio-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-16.png)
 
+<a id="manage-a-pipeline-download-pipeline-json"></a>
 #### Download Pipeline JSON
 
 ![pipeline-studio-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-03-25/guide-17.png)
@@ -205,6 +221,7 @@ You can view by modification date by clicking the drop-down button in the top le
 
 You can save it as a JSON file by clicking **Download Pipeline Template**in the top right corner.
 
+<a id="manage-a-pipeline-pipeline-notification"></a>
 #### Pipeline Notification
 A feature to manage email and SMS notifications for pipeline start, completion, and failure.
 
@@ -216,6 +233,7 @@ You can manage recipients for notifications from **Project Setting** > **Notific
 
 For setting up for notification recipients and how to notify (Email, SMS), refer to [Notification Management Guide](https://docs.nhncloud.com/ko/nhncloud/ko/console-guide/#_33).
 
+<a id="manage-a-pipeline-pipeline-run-history"></a>
 #### Pipeline Run History
 If you click on **Run History** in Pipeline Studio, you can view the last 10 runs.
 ![pipeline-management-guide-14](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-04-15/pipeline-management-guide-14.png)

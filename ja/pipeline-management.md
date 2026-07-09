@@ -1,9 +1,14 @@
-## Dev Tools > Pipeline > コンソール使用ガイド > Pipeline Management
+<!-- pre-align:aligned sig=0631d922971a -->
+
+<a id="dev-tools-pipeline-console-user-guide-pipeline-management"></a>
+## Dev Tools > Pipeline > コンソール使用ガイド > Pipeline Management { #dev-tools-pipeline-console-user-guide-pipeline-management }
 
 パイプラインは、1つ以上のステージで構成されたアプリケーション配布フローを定義します。
 
-### パイプラインの構成
+<a id="configure-a-pipeline"></a>
+### パイプラインの構成 { #configure-a-pipeline }
 
+<a id="configure-a-pipeline-create-a-pipeline"></a>
 #### パイプラインの作成
 
 **パイプラインの作成**をクリックしてパイプラインを作成することができ、パイプラインテンプレートファイルをアップロードしてパイプラインを作成することもできます。
@@ -22,6 +27,7 @@
 
 パイプラインテンプレートファイルをアップロードした後、**確認**をクリックします。
 
+<a id="configure-a-pipeline-pipeline-studio"></a>
 #### パイプラインスタジオ
 
 パイプラインスタジオは、ユーザーがパイプラインの基本情報を管理したり、パイプラインを構成するステージを追加、変更、削除することができるページです。
@@ -32,11 +38,13 @@
 
 パイプラインスタジオパネルでは、そのパイプラインを構成するステージを確認できます。
 
+<a id="configure-a-pipeline-edit-mode"></a>
 #### 編集モード
 ![pipeline-studio-guide-08](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-2.png)
 
 右上の**編集モード**トグルをクリックして編集モードに入ることができます。編集モードでは、ステージの追加、変更、削除、位置変更を行うことができます。
 
+<a id="configure-a-pipeline-add-a-stage"></a>
 #### ステージの追加
 ![pipeline-studio-guide-09](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-3.png)
 
@@ -56,6 +64,7 @@
 
 右上の**パイプライン保存**をクリックしてステージの追加を完了できます。
 
+<a id="configure-a-pipeline-editing-stages"></a>
 #### ステージの編集
 ![pipeline-studio-guide-13](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-7.png)
 
@@ -65,6 +74,7 @@
 
 編集を完了した後、右上の**パイプラインを保存**をクリックしてステージの編集を完了できます。
 
+<a id="configure-a-pipeline-delete-a-stage"></a>
 #### ステージの削除
 ![pipeline-studio-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-10.png)
 
@@ -76,10 +86,12 @@
 
 削除後、右上の**パイプライン保存**をクリックしてステージの削除を完了できます。
 
-### パイプラインの実行
+<a id="run-a-pipeline"></a>
+### パイプラインの実行 { #run-a-pipeline }
 
 パイプラインは手動または自動で実行できます。
 
+<a id="run-a-pipeline-manual-run"></a>
 #### 手動実行
 
 手動実行を使用すると、ユーザーが好きな時にパイプラインを実行できます。
@@ -88,6 +100,7 @@
 
 **パイプライン管理**で**▶︎実行**をクリックし、**パイプライン実行**モーダルウィンドウが表示されたら内容を確認し、**確認**をクリックします。
 
+<a id="run-a-pipeline-autorun"></a>
 #### 自動実行
 
 自動実行を使うと、GitHubまたはGitLabリポジトリにイベントが発生したり、イメージストアのコンテナイメージを更新すると、パイプラインを自動で実行するように設定できます。
@@ -175,7 +188,8 @@ Docker Hubの場合`Docker Hubアカウント/イメージ名`の形式で入力
 
 パイプラインを新規作成すると、**自動実行**のトグルスイッチがオフの状態で適用されます。パイプラインを自動で実行するには、**自動実行**のトグルスイッチをクリックして有効にする必要があります。
 
-### パイプライン管理
+<a id="manage-a-pipeline"></a>
+### パイプライン管理 { #manage-a-pipeline }
 
 ユーザーはパイプラインの基本情報を修正できます。
 ![pipeline-studio-guide-02](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-13.png)
@@ -189,12 +203,14 @@ Docker Hubの場合`Docker Hubアカウント/イメージ名`の形式で入力
 **▶手動実行**をクリックして該当パイプラインを実行することができ、**■実行停止**をクリックして実行中のパイプラインを停止できます。
 
 
+<a id="manage-a-pipeline-view-recent-execution-information"></a>
 #### 最近の実行情報を確認
 
 パイプラインの最近の実行に関する各ステージの基本情報と実行状態を確認するには、**最近の実行情報**をクリックします。
 
 ![pipeline-studio-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-16.png)
 
+<a id="manage-a-pipeline-download-pipeline-json"></a>
 #### パイプラインJSONダウンロード
 
 ![pipeline-studio-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-03-25/guide-17.png)
@@ -205,6 +221,7 @@ Docker Hubの場合`Docker Hubアカウント/イメージ名`の形式で入力
 
 右上の**パイプラインテンプレートのダウンロード**をクリックしてJSONファイルとして保存できます。
 
+<a id="manage-a-pipeline-pipeline-notification"></a>
 #### パイプライン通知
 パイプラインの開始、完了、失敗に対するEmail、SMS通知を管理する機能です。
 
@@ -216,6 +233,7 @@ Docker Hubの場合`Docker Hubアカウント/イメージ名`の形式で入力
 
 通知受信対象及び通知方法(Email, SMS)の設定は[通知管理ガイド](https://docs.nhncloud.com/ja/nhncloud/ja/console-guide/#_31)を参照してください。
 
+<a id="manage-a-pipeline-pipeline-run-history"></a>
 #### パイプライン実行履歴
 パイプラインスタジオで**実行履歴**をクリックすると、最近10個の履歴を確認できます。
 ![pipeline-management-guide-14](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-04-15/pipeline-management-guide-14.png)
