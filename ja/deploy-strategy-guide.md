@@ -1,15 +1,20 @@
-## Dev Tools > Pipeline > 配布戦略ガイド
+<!-- pre-align:aligned sig=e9aa155147ed -->
+
+<a id="dev-tools-pipeline-deployment-strategy-guide"></a>
+## Dev Tools > Pipeline > 配布戦略ガイド { #dev-tools-pipeline-deployment-strategy-guide }
 
 配布戦略ガイドでは、Pipelineのステージを組み合わせて様々な配布戦略を実行する方法を説明します。
 
-## Blue/Green配布
+<a id="bluegreen-deployment"></a>
+## Blue/Green配布 { #bluegreen-deployment }
 
 ![deploy-strategy-guide-11.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-11.png)
 
 Blue/Green配布は、二つの同一の環境を作成する配布戦略です。一つの環境(Blue)は現在のアプリケーションバージョンを実行し、もう一つの環境(Green)は新しいアプリケーションバージョンを実行します。
 Blue/Green配布戦略を使用すると、アプリケーションの可用性を高め、配布失敗時のロールバックプロセスを簡素化し、配布リスクを減らすことができます。Green環境でテストが完了すると、アプリケーショントラフィックはGreen環境に移動され、Blue環境は廃棄されます。
 
-### ReplicaSets使用
+<a id="use-replicasets"></a>
+### ReplicaSets使用 { #use-replicasets }
 
 - Pipelineはラベルを使用してトラフィックを管理するため、実行中のリソースのラベルを修正する必要があります。
 Deployment Objectを修正するとロールアウトが実行されるため、Service Objectを修正せずにBlue/Green配布を実行する方法は**ReplicaSets**を使うことです。
@@ -17,11 +22,13 @@ Deployment Objectを修正するとロールアウトが実行されるため、
     - `strategy.spinnaker.io/max-version-history`: Pipelineが維持するReplicaSetsの最大数を指定します。 2以上の値を指定することでBlue/Green配布が可能です。
     - `traffic.spinnaker.io/load-balancers`: Service Objectを指定します。 PipelineがServiceのSelectorに合わせてPodのラベルを修正してアプリケーションへのトラフィックを伝達できます。指定するService ObjectはPipelineeを通じて作成されたものでなければなりません。
 
-### Blue/Greenパイプラインの構成方法
+<a id="how-to-configure-a-bluegreen-pipeline"></a>
+### Blue/Greenパイプラインの構成方法 { #how-to-configure-a-bluegreen-pipeline }
 
 Blue/Green配布ができるパイプラインを構成する方法は次のとおりです。
 [Pipelineテンプレートガイド](/Dev%20Tools/Pipeline/ja/template-guide/)を参考してパイプラインを構成できます。
 
+<a id="how-to-configure-a-bluegreen-pipeline-create-a-service"></a>
 #### 1. Service作成
 
 **配布 - Deployステージ**を追加し、Pipelineを利用してServiceを作成します。一般的にアプリケーションを配布する時、Serviceを修正することはないので、アプリケーション配布パイプラインとは違うパイプラインを作成してServiceだけあらかじめ作成します。
@@ -47,6 +54,7 @@ spec:
 
 ![deploy-strategy-guide-02.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/deploy-strategy-guide/deploy-strategy-guide-02.png)
 
+<a id="how-to-configure-a-bluegreen-pipeline-configure-the-application-deployment-pipeline"></a>
 #### 2. アプリケーション配布パイプライン構成
 
 **配布 - Deployステージ** > **配布 - Disableステージ** 順序でパイプラインを構成します。 **配布 - Deployステージ**では新しいバージョンのアプリケーションを配布し、**配布 - Disableステージ**では旧バージョンのアプリケーションを選択できるように構成します。
