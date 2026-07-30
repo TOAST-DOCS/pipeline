@@ -1,6 +1,10 @@
-## Dev Tools > Pipeline > コンソール使用ガイド > Environment Configuration
+<!-- pre-align:aligned sig=71e694704fe5 -->
 
-### 環境設定
+<a id="dev-tools-pipeline-console-user-guide-environment-configuration"></a>
+## Dev Tools > Pipeline > コンソール使用ガイド > Environment Configuration { #dev-tools-pipeline-console-user-guide-environment-configuration }
+
+<a id="set-up-an-environment"></a>
+### 環境設定 { #set-up-an-environment }
 
 Pipelineは、アプリケーション配布フローを構成するとき、さまざまな外部システムを使用します。環境設定でPipelineが使用する外部システムを追加できます。
 
@@ -10,7 +14,8 @@ Pipelineに追加できる外部システムは次のとおりです。
 - ビルドツール
 - 配布対象
 
-### ソースリポジトリ
+<a id="source-repository"></a>
+### ソースリポジトリ { #source-repository }
 
 ソースリポジトリを追加すると、NHN Cloudビルドツールを使用してソースコードをビルドできます。 GitHub、GitLab、GitHub Enterpriseなどのgitコマンドを使用してアクセスできるリポジトリを追加できます。
 
@@ -26,7 +31,8 @@ Pipelineに追加できる外部システムは次のとおりです。
 
 ![env-config-guide-03](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-03.png)
 
-### イメージストア
+<a id="image-registry"></a>
+### イメージストア { #image-registry }
 
 イメージストアを追加すると、認証情報が必要なイメージストアにアクセスするときに使用できます。 NHN Cloudビルドツールでソースコードをビルドするコンテナを作成するときや、新たに作成したコンテナイメージをアップロードするときに使用できます。そしてパイプライン自動実行設定で自動実行を実行させるコンテナイメージを設定するときに使用できます。イメージストアにはNHN Cloud Container Registry、Docker Hubの他にプライベートイメージストアを追加できます。 Docker Hubを使用する場合はイメージストアURLを省略できます。
 
@@ -40,7 +46,8 @@ Pipelineに追加できる外部システムは次のとおりです。
 
 ![env-config-guide-06](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-06.png)
 
-### ビルドツール
+<a id="build-tool"></a>
+### ビルドツール { #build-tool }
 
 ビルドツールを追加すると、パイプラインでビルドツールに定義したさまざまなジョブを使用できます。ビルドツールにはJenkinsを追加できます。`NHN Cloudビルドツール`を使用する場合はビルドツールの追加作業を省略できます。
 
@@ -54,7 +61,8 @@ Pipelineに追加できる外部システムは次のとおりです。
 
 ![env-config-guide-09](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-09.png)
 
-### 配布対象
+<a id="deployment-target"></a>
+### 配布対象 { #deployment-target }
 
 配布対象を追加すると、パイプラインで配布対象を管理できます。配布対象にコンテナイメージを配布したり、実行中のコンテナを変更できます。配布対象にはNHN Cloud Container、Kubernetesを追加できます。
 
@@ -68,7 +76,8 @@ Pipelineに追加できる外部システムは次のとおりです。
 
 ![env-config-guide-12](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-12.png)
 
-### チャートリポジトリ
+<a id="chart-repository"></a>
+### チャートリポジトリ { #chart-repository }
 
 チャートリポジトリを追加すると、**ビルド - Bake (Manifest)**ステージを使用してHelmチャートをビルドできます。[チャートリポジトリガイド](https://helm.sh/docs/topics/chart_repository/)でチャートリポジトリの構成方法を確認できます。
 
@@ -82,8 +91,10 @@ Pipelineに追加できる外部システムは次のとおりです。
 
 ![env-config-guide-15](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-15.png)
 
-### NHN Cloudセキュリティ設定
+<a id="nhn-cloud-security-settings"></a>
+### NHN Cloudセキュリティ設定 { #nhn-cloud-security-settings }
 
+<a id="nhn-cloud-security-settings-create-user-access-key-id-secret-access-key"></a>
 #### User Access Key ID, Secret Access Key作成
 
 コンソール右上のID領域をクリックすると、次のような**APIセキュリティ設定**メニューを確認できます。
@@ -102,6 +113,7 @@ Pipelineに追加できる外部システムは次のとおりです。
 
 セキュリティ設定を登録する際に必要な**User Access Key ID**は、秘密鍵発行完了ポップアップを閉じると確認できます。
 
+<a id="nhn-cloud-security-settings-register-nhn-cloud-security-settings"></a>
 #### NHN Cloudセキュリティ設定登録
 NHN Cloudセキュリティ設定を追加すると**機能 - NHN Cloud Deployサービス**ステージを使用し、NHN Cloud Deployサービスを通じて配布できます。
 
@@ -115,7 +127,8 @@ NHN Cloudセキュリティ設定情報を入力し、**API正常呼び出し確
 
 ![env-config-guide-22](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-22.png)
 
-### Pipeline IP
+<a id="pipeline-ip"></a>
+### Pipeline IP { #pipeline-ip }
 Pipelineと連動したシステムが正常に動作しない場合はACLを確認してください。
 
 | リージョン | CIDR              |

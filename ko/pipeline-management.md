@@ -1,9 +1,14 @@
-## Dev Tools > Pipeline > 콘솔 사용 가이드 > 파이프라인 관리
+<!-- pre-align:aligned sig=0631d922971a -->
+
+<a id="dev-tools-pipeline-console-user-guide-pipeline-management"></a>
+## Dev Tools > Pipeline > 콘솔 사용 가이드 > 파이프라인 관리 { #dev-tools-pipeline-console-user-guide-pipeline-management }
 
 파이프라인은 한 개 이상의 스테이지로 구성된 애플리케이션 배포 흐름을 정의합니다.
 
-### 파이프라인 구성
+<a id="configure-a-pipeline"></a>
+### 파이프라인 구성 { #configure-a-pipeline }
 
+<a id="configure-a-pipeline-create-a-pipeline"></a>
 #### 파이프라인 생성
 
 **+ 파이프라인 생성**을 클릭하여 파이프라인을 생성할 수 있으며, 파이프라인 템플릿 파일을 업로드하여 파이프라인을 생성할 수도 있습니다.
@@ -22,6 +27,7 @@
 
 파이프라인 템플릿 파일을 업로드한 뒤 **확인**을 클릭합니다.
 
+<a id="configure-a-pipeline-pipeline-studio"></a>
 #### 파이프라인 스튜디오
 
 파이프라인 스튜디오는 사용자가 파이프라인의 기본 정보를 관리하거나 파이프라인을 구성하는 스테이지를 추가, 변경, 삭제할 수 있는 페이지입니다.
@@ -32,11 +38,13 @@
 
 파이프라인 스튜디오 패널에서는 해당 파이프라인을 구성하는 스테이지들을 확인할 수 있습니다.
 
+<a id="configure-a-pipeline-edit-mode"></a>
 #### 편집 모드
 ![pipeline-studio-guide-08](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-2.png)
 
 우측 상단의 **편집 모드** 토글을 클릭하여 편집 모드로 진입할 수 있습니다. 편집 모드에서는 스테이지 추가, 변경, 삭제 및 위치 변경을 수행할 수 있습니다.
 
+<a id="configure-a-pipeline-add-a-stage"></a>
 #### 스테이지 추가
 ![pipeline-studio-guide-09](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-3.png)
 
@@ -56,6 +64,7 @@
 
 우측 상단의 **파이프라인 저장**을 클릭해 스테이지 추가를 완료할 수 있습니다.
 
+<a id="configure-a-pipeline-editing-stages"></a>
 #### 스테이지 편집
 ![pipeline-studio-guide-13](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-7.png)
 
@@ -65,6 +74,7 @@
 
 편집을 완료한 뒤 우측 상단의 **파이프라인 저장**을 클릭해 스테이지 편집을 완료할 수 있습니다.
 
+<a id="configure-a-pipeline-delete-a-stage"></a>
 #### 스테이지 삭제
 ![pipeline-studio-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-10.png)
 
@@ -76,10 +86,12 @@
 
 삭제 후 우측 상단의 **파이프라인 저장**을 클릭해 스테이지 삭제를 완료할 수 있습니다.
 
-### 파이프라인 실행
+<a id="run-a-pipeline"></a>
+### 파이프라인 실행 { #run-a-pipeline }
 
 파이프라인은 수동 또는 자동으로 실행할 수 있습니다.
 
+<a id="run-a-pipeline-manual-run"></a>
 #### 수동 실행
 
 수동 실행을 사용하면 사용자가 원할 때 파이프라인을 실행할 수 있습니다.
@@ -88,6 +100,7 @@
 
 **파이프라인 관리**에서 **▶︎ 실행**을 클릭한 뒤 **파이프라인 실행** 모달 창이 나타나면 내용을 확인하고 **확인**을 클릭합니다.
 
+<a id="run-a-pipeline-autorun"></a>
 #### 자동 실행
 
 자동 실행을 사용하면 GitHub 또는 GitLab 저장소에 이벤트가 발생하거나 이미지 저장소의 컨테이너 이미지를 갱신하면 파이프라인을 자동으로 실행하게 설정할 수 있습니다.
@@ -175,7 +188,8 @@ Docker Hub의 경우 `Docker Hub 계정/이미지 이름` 형식으로 입력합
 
 파이프라인을 새로 만들면 **자동 실행**의 토글 스위치가 꺼진 상태로 적용됩니다. 파이프라인을 자동으로 실행하려면 **자동 실행** 토글 스위치를 클릭해 활성화해야 합니다. 
 
-### 파이프라인 관리
+<a id="manage-a-pipeline"></a>
+### 파이프라인 관리 { #manage-a-pipeline }
 
 사용자는 파이프라인의 기본 정보를 수정할 수 있습니다.
 ![pipeline-studio-guide-02](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-13.png)
@@ -189,12 +203,14 @@ Docker Hub의 경우 `Docker Hub 계정/이미지 이름` 형식으로 입력합
 **▶ 수동 실행**을 클릭해 해당 파이프라인을 실행할 수 있으며, **■ 실행 중지**를 클릭해 실행 중인 파이프라인을 중지할 수 있습니다.
 
 
+<a id="manage-a-pipeline-view-recent-execution-information"></a>
 #### 최근 실행 정보 확인
 
 파이프라인의 최근 실행에 대한 각 스테이지별 기본 정보와 실행 상태를 확인하려면 **최근 실행 정보**를 클릭합니다.
 
 ![pipeline-studio-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-studio-guide/guide-16.png)
 
+<a id="manage-a-pipeline-download-pipeline-json"></a>
 #### 파이프라인 JSON 다운로드
 
 ![pipeline-studio-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-03-25/guide-17.png)
@@ -205,6 +221,7 @@ Docker Hub의 경우 `Docker Hub 계정/이미지 이름` 형식으로 입력합
 
 우측 상단 **파이프라인 템플릿 다운로드**를 클릭해 JSON 파일로 저장할 수 있습니다.
 
+<a id="manage-a-pipeline-pipeline-notification"></a>
 #### 파이프라인 알림
 파이프라인 시작, 완료, 실패에 대한 Email, SMS 알림을 관리하는 기능입니다.
 
@@ -216,6 +233,7 @@ Docker Hub의 경우 `Docker Hub 계정/이미지 이름` 형식으로 입력합
 
 알림 수신 대상 및 알림 방법(Email, SMS)에 대한 설정은 [알림 관리 가이드](https://docs.nhncloud.com/ko/nhncloud/ko/console-guide/#_33)를 참고하세요.
 
+<a id="manage-a-pipeline-pipeline-run-history"></a>
 #### 파이프라인 실행 이력
 파이프라인 스튜디오에서 **실행 이력**을 클릭하면 최근 10개의 이력을 확인할 수 있습니다.
 ![pipeline-management-guide-14](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-04-15/pipeline-management-guide-14.png)

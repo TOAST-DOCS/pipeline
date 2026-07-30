@@ -1,8 +1,12 @@
-## Dev Tools > Pipeline > コンソール使用ガイド > Deployment Target Management
+<!-- pre-align:aligned sig=5bab74919df5 -->
+
+<a id="dev-tools-pipeline-console-user-guide-deployment-target-management"></a>
+## Dev Tools > Pipeline > コンソール使用ガイド > Deployment Target Management { #dev-tools-pipeline-console-user-guide-deployment-target-management }
 
 Pipelineで配布して作成された結果物を**配布対象管理**メニューで確認できます。
 
-## 配布対象
+<a id="deployment-target"></a>
+## 配布対象 { #deployment-target }
 
 **配布対象管理**で**配布対象**はPipelineでKubernetesに配布したワークロードを確認できるページです。
 ![deploy-target-monitoring-guide-01.png](..%2Fimages%2F2023-06-27%2Fdeploy-target-monitoring-guide-01.png)
@@ -61,7 +65,8 @@ Podの中でサービスと連結されたPodの場合、右側に見えるロ�
 
 
 
-## ネットワーク
+<a id="network"></a>
+## ネットワーク { #network }
 
 **配布対象管理**の**ネットワーク**はPipelineでKubernetesに配布したサービスを確認できるページです。
 
