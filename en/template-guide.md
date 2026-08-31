@@ -354,7 +354,7 @@ The pipeline ID can be found by clicking **Pipeline Studio > Pipeline Version > 
 
 ![template-guide-11](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-11.png)
 
-You can configure a pipeline for Blue/Green deployments. You can learn more about Blue/Green deployments in the [Deployment strategy guide](/Dev%20Tools/Pipeline/en/deploy-strategy-guide/).
+You can configure a pipeline for Blue/Green deployments. You can learn more about Blue/Green deployments in the [Deployment strategy guide](./deploy-strategy-guide/).
 ```json
 {
     "type": "disableManifest",
@@ -390,7 +390,7 @@ For a Blue/Green deployment, you must first create a Service through Pipeline.
 ![template-guide-13](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-13.png)
 
 
-You can configure a pipeline for Blue/Green deployments. You can learn more about Blue/Green deployments in the [Deployment strategy guide](/Dev%20Tools/Pipeline/en/deploy-strategy-guide/).
+You can configure a pipeline for Blue/Green deployments. You can learn more about Blue/Green deployments in the [Deployment strategy guide](./deploy-strategy-guide/).
 
 Almost the same as the scenario in #7, with the addition of a **Webhook stage**for service monitoring.
 ```json

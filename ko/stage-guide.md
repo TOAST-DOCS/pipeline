@@ -25,13 +25,13 @@
 
 <a id="source---github"></a>
 ### 소스 - GitHub { #source---github }
-**소스 저장소**는 **환경 설정**의 **소스 저장소 설정**에서 추가한 [소스 저장소](/Dev%20Tools/Pipeline/ko/environment-config/#_2)를 선택할 수 있습니다. **브랜치**에는 빌드할 대상의 소스 브랜치를 입력합니다. 
+**소스 저장소**는 **환경 설정**의 **소스 저장소 설정**에서 추가한 [소스 저장소](./environment-config/#source-repository)를 선택할 수 있습니다. **브랜치**에는 빌드할 대상의 소스 브랜치를 입력합니다. 
 
 ![stage-guide-02](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-02_new.png)
 
 <a id="source---gitlab"></a>
 ### 소스 - GitLab { #source---gitlab }
-**소스 저장소**는 **환경 설정**의 **소스 저장소 설정**에서 추가한 [소스 저장소](/Dev%20Tools/Pipeline/ko/environment-config/#_2)를 선택할 수 있습니다. **브랜치**에는 빌드할 대상의 소스 브랜치를 입력합니다.
+**소스 저장소**는 **환경 설정**의 **소스 저장소 설정**에서 추가한 [소스 저장소](./environment-config/#source-repository)를 선택할 수 있습니다. **브랜치**에는 빌드할 대상의 소스 브랜치를 입력합니다.
 
 ![stage-guide-03](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-03_new.png)
 
@@ -41,14 +41,14 @@
 
 <a id="build---jenkins"></a>
 ### 빌드 - Jenkins { #build---jenkins }
-사용자가 직접 구성한 Jenkins를 이용하여 빌드할 수 있습니다. **빌드 도구**는 **환경 설정**의 **빌드 도구 설정**에서 추가한 [빌드 도구](/Dev%20Tools/Pipeline/ko/environment-config/#_4)를 선택할 수 있습니다. **빌드 잡**을 선택할 수 있습니다.
+사용자가 직접 구성한 Jenkins를 이용하여 빌드할 수 있습니다. **빌드 도구**는 **환경 설정**의 **빌드 도구 설정**에서 추가한 [빌드 도구](./environment-config/#build-tool)를 선택할 수 있습니다. **빌드 잡**을 선택할 수 있습니다.
 **아티팩트**의 **시작 조건**과 **종료 조건**을 설정할 수 있습니다. **시작 조건**을 설정하여 스테이지 시작 여부를 결정할 수 있습니다. **종료 조건**을 설정하여 스테이지의 생성물을 아티팩트로 설정할 수 있습니다.
 
 ![stage-guide-04](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-04_new.png)
 
 <a id="build---bake-manifest"></a>
 ### 빌드 - Bake(Manifest) { #build---bake-manifest }
-사용자가 직접 구성한 Helm package file 또는 [차트 저장소](/Dev%20Tools/Pipeline/ko/environment-config/#_6)를 이용하여 빌드할 수 있습니다.
+사용자가 직접 구성한 Helm package file 또는 [차트 저장소](./environment-config/#chart-repository)를 이용하여 빌드할 수 있습니다.
 
 - 차트 이름은 Helm 엔진으로 구성한 결과물의 이름을 설정합니다.
 - Namespace는 Helm 엔진으로 구성한 결과물의 Namespace를 설정합니다.
@@ -81,7 +81,7 @@ NHN Cloud에서 제공하는 빌드 도구를 사용할 수 있습니다.
 - 빌드 환경 설정
     - 빌드 도구의 성능과 제한 시간을 설정할 수 있습니다.
 - 소스 빌드 설정
-    - **환경 설정**의 **이미지 저장소 설정**에서 추가한 [이미지 저장소](/Dev%20Tools/Pipeline/ko/environment-config/#_3)를 선택할 수 있습니다.
+    - **환경 설정**의 **이미지 저장소 설정**에서 추가한 [이미지 저장소](./environment-config/#image-registry)를 선택할 수 있습니다.
       - 빌드할 환경의 **이미지 이름** 및 **태그**를 입력하고, **빌드 명령어**를 설정합니다.
 
 - 도커 이미지 빌드 설정
@@ -107,7 +107,7 @@ Kubernetes 환경에 배포를 하는 스테이지입니다.
 
 <a id="deployment---deploy"></a>
 ### 배포 - Deploy { #deployment---deploy }
-- **환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](/Dev%20Tools/Pipeline/ko/environment-config/#_5)을 선택할 수 있습니다.
+- **환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](./environment-config/#deployment-target)을 선택할 수 있습니다.
 **스테이지 이름**, **배포 대상**, 배포에 사용할 **Manifest**를 입력합니다.
 빌드 스테이지에서 태그 포맷을 사용한 경우 **Manifest**의 도커 이미지 태그 부분을 `_{BUILD_NUMBER}`로 입력하면 태그 포맷으로 빌드된 이미지 중 가장 최근 번호의 이미지로 배포할 수 있습니다.
 **Manifest**를 작성하는 방법은 [Kubernetes 문서](https://kubernetes.io/docs/concepts/workloads/controllers/deployment )를 참고하십시오.
@@ -120,7 +120,7 @@ Kubernetes 환경에 배포를 하는 스테이지입니다.
 
 <a id="deployment---patch"></a>
 ### 배포 - Patch { #deployment---patch }
-- **환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](/Dev%20Tools/Pipeline/ko/environment-config/#_5)을 선택할 수 있습니다.
+- **환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](./environment-config/#deployment-target)을 선택할 수 있습니다.
 - **Namespace**, **리소스 유형**, **선택 방법**, **리소스 이름**, 배포에 사용할 **Manifest**를 입력합니다. Patch로 기존 리소스의 정보를 수정할 수 있습니다.
 - **Manifest**를 작성하는 방법은 [Kubernetes 문서](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#patching-resources)를 참고하십시오.
 - **선택 방법**을 **동적인 방법으로 선택**으로 설정할 경우 **클러스터**와 **선택 전략**을 입력합니다.
@@ -137,7 +137,7 @@ Kubernetes 환경에 배포를 하는 스테이지입니다.
 
 <a id="deployment---scale"></a>
 ### 배포 - Scale { #deployment---scale }
-- **환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](/Dev%20Tools/Pipeline/ko/environment-config/#_5)을 선택할 수 있습니다.
+- **환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](./environment-config/#deployment-target)을 선택할 수 있습니다.
 - **Namespace**, **리소스 유형**, **선택 방법**, **리소스 이름**, **Replicas**를 입력합니다. Scale로 Replicas를 수정할 수 있습니다.
 - **선택 방법**을 **동적인 방법으로 선택**으로 설정할 경우 **클러스터**와 **선택 전략**을 입력합니다.
 - 클러스터
@@ -153,14 +153,14 @@ Kubernetes 환경에 배포를 하는 스테이지입니다.
 
 <a id="deployment---rollout-undo"></a>
 ### 배포 - Rollout undo { #deployment---rollout-undo }
-**환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](/Dev%20Tools/Pipeline/ko/environment-config/#_5)을 선택할 수 있습니다.
+**환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](./environment-config/#deployment-target)을 선택할 수 있습니다.
 **Namespace**, **리소스 유형**, **리소스 이름**, **Revision Back**을 입력합니다. 지정한 Revision으로 롤백할 수 있습니다.
 
 ![stage-guide-10](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-10_new.png)
 
 <a id="deployment---delete"></a>
 ### 배포 - Delete { #deployment---delete }
-- **환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](/Dev%20Tools/Pipeline/ko/environment-config/#_5)을 선택할 수 있습니다.
+- **환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](./environment-config/#deployment-target)을 선택할 수 있습니다.
 - **Namespace**, **리소스 유형**, **선택 방법**, **리소스 이름**을 입력합니다. 해당 리소스를 삭제할 수 있습니다.
 - **선택 방법**을 **동적인 방법으로 선택**으로 설정할 경우 **클러스터**와 **선택 전략**을 입력합니다.
 - 클러스터
@@ -186,7 +186,7 @@ NCS 워크로드의 템플릿을 교체할 수 있는 스테이지입니다.
 
 <a id="deployment---enable"></a>
 ### 배포 - Enable { #deployment---enable }
-- **환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](/Dev%20Tools/Pipeline/ko/environment-config/#_5)을 선택할 수 있습니다.
+- **환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](./environment-config/#deployment-target)을 선택할 수 있습니다.
 - **Namespace**, **리소스 유형**, **선택 방법**, **리소스 이름**을 입력합니다. 해당 리소스를 활성화할 수 있습니다.
     - 활성화: 해당 리소스를 Pipeline에서 관리하며, 리소스에 트래픽을 보내도록 설정합니다.
 - **선택 방법**을 **동적인 방법으로 선택**으로 설정할 경우 **클러스터**와 **선택 전략**을 입력합니다.
@@ -203,7 +203,7 @@ NCS 워크로드의 템플릿을 교체할 수 있는 스테이지입니다.
 
 <a id="deployment---disable"></a>
 ### 배포 - Disable { #deployment---disable }
-- **환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](/Dev%20Tools/Pipeline/ko/environment-config/#_5)을 선택할 수 있습니다.
+- **환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](./environment-config/#deployment-target)을 선택할 수 있습니다.
 - **Namespace**, **리소스 유형**, **선택 방법**, **리소스 이름**을 입력합니다. 해당 리소스를 비활성화할 수 있습니다.
     - 비활성화: 리소스를 삭제하지는 않지만, 더 이상 해당 리소스에 트래픽을 보내지 않도록 설정합니다.
 - **선택 방법**을 **동적인 방법으로 선택**으로 설정할 경우 **클러스터**와 **선택 전략**을 입력합니다.
@@ -330,7 +330,7 @@ ${myImage}
 이미지를 대상으로 취약점 분석을 수행하는 스테이지입니다.
 
 - 이미지 저장소
-    - **환경 설정**의 **이미지 저장소 설정**에서 추가한 [이미지 저장소](/Dev%20Tools/Pipeline/ko/environment-config/#_3)를 선택할 수 있습니다.
+    - **환경 설정**의 **이미지 저장소 설정**에서 추가한 [이미지 저장소](./environment-config/#image-registry)를 선택할 수 있습니다.
 - **이미지 이름**과 **태그**를 입력하여 분석할 이미지를 지정합니다.
 
 ![stage-guide-23](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-23.png)
@@ -345,7 +345,7 @@ ${myImage}
 소스 코드를 대상으로 취약점 분석을 수행하는 스테이지입니다.
 
 - 소스 저장소
-    - **환경 설정**의 **소스 저장소 설정**에서 추가한 [소스 저장소](/Dev%20Tools/Pipeline/ko/environment-config/#_2)를 선택할 수 있습니다.
+    - **환경 설정**의 **소스 저장소 설정**에서 추가한 [소스 저장소](./environment-config/#source-repository)를 선택할 수 있습니다.
 - **브랜치**를 선택하여 분석할 소스 코드를 지정합니다.
 
 ![stage-guide-25](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-25.png)
