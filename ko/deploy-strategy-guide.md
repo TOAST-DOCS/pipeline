@@ -26,7 +26,7 @@ Deployment Object를 수정하면 롤아웃이 실행되기 때문에 Service Ob
 ### Blue/Green 파이프라인 구성 방법 { #how-to-configure-a-bluegreen-pipeline }
 
 Blue/Green 배포를 할 수 있는 파이프라인을 구성하는 방법은 아래와 같습니다.
-[Pipeline 템플릿 가이드](/Dev%20Tools/Pipeline/ko/template-guide/)를 참고하여 파이프라인을 구성할 수 있습니다.
+[Pipeline 템플릿 가이드](./template-guide.md)를 참고하여 파이프라인을 구성할 수 있습니다.
 
 <a id="how-to-configure-a-bluegreen-pipeline-create-a-service"></a>
 #### 1. Service 생성

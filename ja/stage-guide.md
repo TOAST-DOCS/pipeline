@@ -25,13 +25,13 @@
 
 <a id="source---github"></a>
 ### ソース - GitHub { #source---github }
-**ソースリポジトリ**は**環境設定**の**ソースリポジトリ設定**で追加した[ソースリポジトリ](/Dev%20Tools/Pipeline/ja/environment-config/#_2)を選択できます。**ブランチ**にはビルドする対象のソースブランチを入力します。
+**ソースリポジトリ**は**環境設定**の**ソースリポジトリ設定**で追加した[ソースリポジトリ](./environment-config.md#source-repository)を選択できます。**ブランチ**にはビルドする対象のソースブランチを入力します。
 
 ![stage-guide-02](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-02_new.png)
 
 <a id="source---gitlab"></a>
 ### ソース - GitLab { #source---gitlab }
-**ソースリポジトリ**は**環境設定**の**ソースリポジトリ設定**で追加した[ソースリポジトリ](/Dev%20Tools/Pipeline/ja/environment-config/#_2)を選択できます。**ブランチ**にはビルドする対象のソースブランチを入力します。
+**ソースリポジトリ**は**環境設定**の**ソースリポジトリ設定**で追加した[ソースリポジトリ](./environment-config.md#source-repository)を選択できます。**ブランチ**にはビルドする対象のソースブランチを入力します。
 
 ![stage-guide-03](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-03_new.png)
 
@@ -41,7 +41,7 @@
 
 <a id="build---jenkins"></a>
 ### ビルド - Jenkins { #build---jenkins }
-ユーザーが直接構成したJenkinsを利用してビルドできます。**ビルドツール**は**環境設定**の**ビルドツール設定**で追加した[ビルドツール](/Dev%20Tools/Pipeline/ja/environment-config/#_4)を選択できます。**ビルドジョブ**を選択できます。
+ユーザーが直接構成したJenkinsを利用してビルドできます。**ビルドツール**は**環境設定**の**ビルドツール設定**で追加した[ビルドツール](./environment-config.md#build-tool)を選択できます。**ビルドジョブ**を選択できます。
 **アーティファクト**の**開始条件**と**終了条件**を設定できます。**開始条件**を設定してステージを開始するかどうかを決定できます。 **終了条件**を設定してステージの作成物をアーティファクトに設定できます。
 
 ![stage-guide-04](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-04_new.png)
@@ -49,7 +49,7 @@
 
 <a id="build---bake-manifest"></a>
 ### ビルド - Bake (Manifest) { #build---bake-manifest }
-ユーザーが直接構成したHelm package fileまたは[チャートリポジトリ](/Dev%20Tools/Pipeline/ja/environment-config/#_6)を使ってビルドできます。
+ユーザーが直接構成したHelm package fileまたは[チャートリポジトリ](./environment-config.md#chart-repository)を使ってビルドできます。
 
 - チャート名はHelmエンジンで構成した結果物の名前を設定します。
 - NamespaceはHelmエンジンで構成した成果物のNamespaceを設定します。
@@ -82,7 +82,7 @@ NHN Cloudで提供するビルドツールを使用できます。
 - ビルド環境設定
     - ビルドツールの性能と制限時間を設定できます。
 - ソースビルド設定
-    - **環境設定**の**イメージストア設定**で追加した[イメージストア](/Dev%20Tools/Pipeline/ja/environment-config/#_3)を選択できます。
+    - **環境設定**の**イメージストア設定**で追加した[イメージストア](./environment-config.md#image-registry)を選択できます。
     - ビルドする環境の**イメージ名**及び**タグ**を入力し、**ビルドコマンド**を設定します。
 
 - ドッカーイメージビルド設定
@@ -108,7 +108,7 @@ Kubernetes環境に配布を行うステージです。
 
 <a id="deployment---deploy"></a>
 ### 配布 - Deploy { #deployment---deploy }
-- **環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
+- **環境設定**の**配布対象設定**で追加した[配布対象](./environment-config.md#deployment-target)を選択できます。
 **ステージ名**、**配布対象**、配布に使用する**Manifest**を入力します。
 ビルドステージでタグフォーマットを使用した場合、**Manifest**のドッカーイメージタグ部分を`_{BUILD_NUMBER}`と入力すると、タグフォーマットでビルドされたイメージのうち最新の番号のイメージで配布できます。
 **Manifest**を作成する方法は[Kubernetes文書](https://kubernetes.io/docs/concepts/workloads/controllers/deployment )を参照してください。
@@ -122,7 +122,7 @@ Kubernetes環境に配布を行うステージです。
 
 <a id="deployment---patch"></a>
 ### 配布 - Patch { #deployment---patch }
-- **環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
+- **環境設定**の**配布対象設定**で追加した[配布対象](./environment-config.md#deployment-target)を選択できます。
 - **Namespace**, **リソースタイプ**、**選択方法**、**リソース名**、配布に使用する**Manifest**を入力します。 Patchで既存リソースの情報を修正できます。
 - **Manifest**を作成する方法は[Kubernetes文書](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#patching-resources)を参考してください。
 - **選択方法**を**動的な方法で選択**に設定する場合、**クラスタ**と**選択戦略**を入力します。
@@ -139,7 +139,7 @@ Kubernetes環境に配布を行うステージです。
 
 <a id="deployment---scale"></a>
 ### 配布 - Scale { #deployment---scale }
-- **環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
+- **環境設定**の**配布対象設定**で追加した[配布対象](./environment-config.md#deployment-target)を選択できます。
 - **Namespace**, **リソースタイプ**、**選択方法**、**リソース名**、**Replicas**を入力します。 ScaleでReplicasを修正できます。
 - **選択方法**を**動的な方法で選択**に設定する場合、**クラスタ**と**選択戦略**を入力します。
 '- クラスタ
@@ -155,14 +155,14 @@ Kubernetes環境に配布を行うステージです。
 
 <a id="deployment---rollout-undo"></a>
 ### 配布 - Rollout undo { #deployment---rollout-undo }
-**環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
+**環境設定**の**配布対象設定**で追加した[配布対象](./environment-config.md#deployment-target)を選択できます。
 **Namespace**、**リソースタイプ**、**リソース名**、**Revision Back**を入力します。指定したRevisionにロールバックできます。
 
 ![stage-guide-10](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-10_new.png)
 
 <a id="deployment---delete"></a>
 ### 配布 - Delete { #deployment---delete }
-- **環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
+- **環境設定**の**配布対象設定**で追加した[配布対象](./environment-config.md#deployment-target)を選択できます。
 - **Namespace**, **リソースタイプ**、**選択方法**、***リソース名**を入力します。そのリソースを削除できます。
 - **選択方法**を**動的な方法で選択**に設定する場合、**クラスタ**と**選択戦略**を入力します。
 - クラスタ
@@ -188,7 +188,7 @@ NCSワークロードのテンプレートを交換できるステージです�
 
 <a id="deployment---enable"></a>
 ### 配布 - Enable { #deployment---enable }
-- **環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
+- **環境設定**の**配布対象設定**で追加した[配布対象](./environment-config.md#deployment-target)を選択できます。
 - **Namespace**、**リソースタイプ**、**選択方法**、**リソース名**を入力します。該当リソースを有効にできます。
     - 有効化：該当リソースをPipelineで管理し、リソースにトラフィックを送るように設定します。
 - **選択方法**を**動的な方法で選択**に設定する場合、**クラスタ**と**選択戦略**を入力します。
@@ -205,7 +205,7 @@ NCSワークロードのテンプレートを交換できるステージです�
 
 <a id="deployment---disable"></a>
 ### 配布 - Disable { #deployment---disable }
-- **環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
+- **環境設定**の**配布対象設定**で追加した[配布対象](./environment-config.md#deployment-target)を選択できます。
 - **Namespace**、**リソースタイプ**、**選択方法**、**リソース名**を入力します。該当リソースを無効にできます。
     - 無効化：リソースを削除するわけではありませんが、そのリソースにトラフィックを送らないように設定します。
 - **選択方法**を**動的な方法で選択**に設定する場合、**クラスタ**と**選択戦略**を入力します。
@@ -345,7 +345,7 @@ ${myImage}
 ソースコードを対象に脆弱性分析を実行するステージです。
 
 - ソースリポジトリ
-    - **環境設定**の**ソースリポジトリ設定**で追加した[ソースリポジトリ](/Dev%20Tools/Pipeline/ja/environment-config/#_2)を選択できます。
+    - **環境設定**の**ソースリポジトリ設定**で追加した[ソースリポジトリ](./environment-config.md#source-repository)を選択できます。
 - **ブランチ**を選択し、分析するソースコードを指定します。
 
 ![stage-guide-25](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-25.png)

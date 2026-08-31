@@ -195,7 +195,7 @@ YAMLファイルをJSON形式に変更する必要があります(ステージ�
 [Pipelineコンソール使用ガイド](http://static.toastoven.net/prod_pipeline/template/template-scenario-03.json)
 
 テンプレートのTrigger領域を設定すると、Github(GitLab、イメージストア)自動実行設定ができます。
-[コンソール使用ガイド](/Dev%20Tools/Pipeline/ja/pipeline-management/#_9)の自動実行部分に入力値に関する追加ガイドがあります。
+[コンソール使用ガイド](./pipeline-management.md#_9)の自動実行部分に入力値に関する追加ガイドがあります。
 
 ![template-guide-03](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-03.png)
 
@@ -358,7 +358,7 @@ triggers: [
 
 ![template-guide-11](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-11.png)
 
-Blue/Green配布のためのパイプラインを構成できます。Blue/Green配布は[配布戦略ガイド](/Dev%20Tools/Pipeline/ja/deploy-strategy-guide/)で詳細を確認できます。
+Blue/Green配布のためのパイプラインを構成できます。Blue/Green配布は[配布戦略ガイド](./deploy-strategy-guide.md)で詳細を確認できます。
 ```json
 {
     "type": "disableManifest",
@@ -392,7 +392,7 @@ Blue/Green配布のため、PipelineでServiceを先に作成する必要があ�
 
 ![template-guide-13](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-13.png)
 
-Blue/Green配布のためのパイプラインを構成できます。Blue/Green配布は[配布戦略ガイド](/Dev%20Tools/Pipeline/ja/deploy-strategy-guide/)で詳細を確認できます。
+Blue/Green配布のためのパイプラインを構成できます。Blue/Green配布は[配布戦略ガイド](./deploy-strategy-guide.md)で詳細を確認できます。
 
 7番のシナリオとほぼ同じで、サービスモニタリングのための**機能 - Webhookステージ**が追加されました。
 ```json

@@ -6,11 +6,11 @@
 <a id="april-14-2026"></a>
 ### 2026. 04. 14. { #april-14-2026 }
 * User Access Keyトークンを使用するAPI v1.1ガイドが追加されました。
-* [API v1.1ガイド](/Dev%20Tools/Pipeline/ja/api-guide-v1-1/)で使用方法をご確認いただけます。
+* [API v1.1ガイド](./api-guide-v1-1.md)で使用方法をご確認いただけます。
 
 <a id="september-23-2025"></a>
 ### 2025. 09. 23. { #september-23-2025 }
-* 新規ステージが追加されました。[Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/)で利用方法を確認できます。
+* 新規ステージが追加されました。[Pipelineステージガイド](./stage-guide.md)で利用方法を確認できます。
   * **機能 - ユーザー変数を提供**
   * **機能 - イメージの脆弱性分析**
   * **機能 - ソースコードの脆弱性分析**
@@ -52,11 +52,11 @@
 
 <a id="september-10-2024"></a>
 ### 2024. 09. 10. { #september-10-2024 }
-* **パイプライン管理**メニューのUIデザインが変更されました。 [パイプライン管理ガイド](/Dev%20Tools/Pipeline/ja/pipeline-management/)で使い方を確認できます。
+* **パイプライン管理**メニューのUIデザインが変更されました。 [パイプライン管理ガイド](./pipeline-management.md)で使い方を確認できます。
 
 <a id="may-28-2024"></a>
 ### 2024. 05. 28. { #may-28-2024 }
-* 新規ステージが追加されました。 [Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/)で使い方を確認できます。
+* 新規ステージが追加されました。 [Pipelineステージガイド](./stage-guide.md)で使い方を確認できます。
   * **配布 - Disable**
   * **配布 - Enable**
   * **機能 - Precondition(ステージ状態条件)**
@@ -67,8 +67,8 @@
       * **配布 - Enable**
       * **配布 - Patch**
       * **配布 - Scale**
-* 全てのステージに**ステージ失敗時**機能が追加されました。 [Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/)で使い方を確認できます。
-* Blue/Green配布を使用できます。 [配布戦略ガイド](/Dev%20Tools/Pipeline/ja/deploy-strategy-guide/)で使い方を確認できます。
+* 全てのステージに**ステージ失敗時**機能が追加されました。 [Pipelineステージガイド](./stage-guide.md)で使い方を確認できます。
+* Blue/Green配布を使用できます。 [配布戦略ガイド](./deploy-strategy-guide.md)で使い方を確認できます。
 
 <a id="april-23-2024"></a>
 ### 2024. 04. 23. { #april-23-2024 }
@@ -77,7 +77,7 @@
 
 <a id="march-26-2024"></a>
 ### 2024. 03. 26. { #march-26-2024 }
-* 新規配布ステージ **配布 - NHN Container Service**が追加されました。 [Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/)で使い方を確認できます。
+* 新規配布ステージ **配布 - NHN Container Service**が追加されました。 [Pipelineステージガイド](./stage-guide.md)で使い方を確認できます。
 
 <a id="february-27-2024"></a>
 ### 2024. 02. 27. { #february-27-2024 }
@@ -92,21 +92,21 @@
 ### 2024. 01. 23. { #january-23-2024 }
 * NHN Cloud Deploy Serviceステージでシナリオ選択時にシナリオ確認ボタンが追加されました。
   * **シナリオ確認**をクリックすると、該当シナリオのタスク情報を確認できます。
-* Pipeline実行履歴と配布対象作業履歴を確認できる**配布履歴管理**ページが追加されました。[配布履歴管理ガイド](/Dev%20Tools/Pipeline/ja/deploy-history-management)で使い方を確認できます。
+* Pipeline実行履歴と配布対象作業履歴を確認できる**配布履歴管理**ページが追加されました。[配布履歴管理ガイド](./deploy-history-management.md)で使い方を確認できます。
 
 <a id="december-19-2023"></a>
 ### 2023. 12. 19. { #december-19-2023 }
-* NHN Cloud Deployの配布シナリオを実行できる **機能 - NHN Cloud Deploy Service** ステージが追加されました。[Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/)で使い方を確認できます。
+* NHN Cloud Deployの配布シナリオを実行できる **機能 - NHN Cloud Deploy Service** ステージが追加されました。[Pipelineステージガイド](./stage-guide.md)で使い方を確認できます。
 * Github自動実行設定に**アーティファクト**項目が追加されました。 特定のファイルをアーティファクトとして設定し、Git push eventが発生すると、そのファイルが含まれているかどうかによってパイプラインを実行します。
 
 <a id="october-31-2023"></a>
 ### 2023. 10. 31. { #october-31-2023 }
-* 承認なしで以降のステージを実行できないように管理する**機能 - 承認管理**ステージが追加されました。[Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/)で詳細を確認できます。
-* パイプラインテンプレートガイド内にサンプルシナリオが追加されました。[Pipelineテンプレートガイド](/Dev%20Tools/Pipeline/ja/pipeline-management/#_2)から使用方法およびテンプレートファイルをダウンロードできます。
+* 承認なしで以降のステージを実行できないように管理する**機能 - 承認管理**ステージが追加されました。[Pipelineステージガイド](./stage-guide.md)で詳細を確認できます。
+* パイプラインテンプレートガイド内にサンプルシナリオが追加されました。[Pipelineテンプレートガイド](./pipeline-management.md#_2)から使用方法およびテンプレートファイルをダウンロードできます。
 
 <a id="september-26-2023"></a>
 ### 2023. 09. 26. { #september-26-2023 }
-* パイプラインテンプレート機能が追加されました。[Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ja/pipeline-management/#_1)で使い方を確認できます。
+* パイプラインテンプレート機能が追加されました。[Pipelineユーザーガイド](./pipeline-management.md#_1)で使い方を確認できます。
   * パイプライン作成時にテンプレートファイル(JSON形式)をアップロードして作成できます。
   * **JSON表示**>**パイプラインテンプレートをダウンロード**でパイプラインテンプレートファイルをダウンロードできます。
 * Github自動実行設定の**ブランチまたはタグ**項目でタグを使用できるようになりました。タグで自動実行するとタグを使用してビルドを実行します。
@@ -120,7 +120,7 @@
 
 <a id="june-27-2023"></a>
 ### 2023. 06. 27. { #june-27-2023 }
-* 配布 - Deployステージで配布した結果物を確認できる配布ターゲットモニタリング機能が追加されました。[Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ja/deploy-target-monitoring)で使用方法を確認できます。
+* 配布 - Deployステージで配布した結果物を確認できる配布ターゲットモニタリング機能が追加されました。[Pipelineユーザーガイド](./deploy-target-monitoring.md)で使用方法を確認できます。
   *配布対象モニタリングでは、Kubernetesのワークロードやサービスを確認できます。
 * Pipeline分岐処理ができる機能 - Judgement(実行管理)、機能 - Precondition(実行条件)ステージが追加されました。[Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/#_4)でステージの説明を[Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ja/pipeline-management/#_14)で使用方法を確認できます。
 
@@ -132,7 +132,7 @@
 
 <a id="february-28-2023"></a>
 ### 2023. 02. 28. { #february-28-2023 }
-* 外部リポジトリのリソースをパイプラインステージの開始または終了条件として使用できるアーティファクト機能が追加されました。 [Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ja/pipeline-management/#_1)で使い方を確認できます。
+* 外部リポジトリのリソースをパイプラインステージの開始または終了条件として使用できるアーティファクト機能が追加されました。 [Pipelineユーザーガイド](./pipeline-management.md#_1)で使い方を確認できます。
 
 <a id="january-31-2023"></a>
 ### 2023. 01. 31. { #january-31-2023 }
@@ -162,7 +162,7 @@
 
 <a id="may-24-2022"></a>
 ### 2022. 05. 24 { #may-24-2022 }
-* ソースリポジトリ、イメージストア、ビルドツール、配布対象に接続確認機能が追加されました。 [Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ja/environment-config)で使い方を確認できます。 
+* ソースリポジトリ、イメージストア、ビルドツール、配布対象に接続確認機能が追加されました。 [Pipelineユーザーガイド](./environment-config.md)で使い方を確認できます。 
 * CloudTrailに詳細内容が追加されました。
   * 設定の削除時に詳細内容を追加。
   * パイプライン実行関連の詳細内容を追加。
@@ -173,7 +173,7 @@
 
 <a id="january-25-2022"></a>
 ### 2022. 01. 25. { #january-25-2022 }
-* Pipeline実行APIが追加されました。 [Pipeline APIガイド](/Dev%20Tools/Pipeline/ja/api-guide-v1-0/)で使い方を確認できます。
+* Pipeline実行APIが追加されました。 [Pipeline APIガイド](./api-guide-v1-0.md)で使い方を確認できます。
 * 発見されたイシュー(原因分析後に改善予定です。)
   * 開発環境の作成時に開発環境の制約事項に値を指定すると、作成に失敗する現象があります。
 

@@ -32,4 +32,4 @@ Pipeline実行履歴と配布対象作業履歴を**配布履歴管理**タブ�
 **Excelダウンロード** ボタンから照会した結果をダウンロードできます。
 ![deploy-history-management-7](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-01-23/deploy-history-management-7.png)
 
-フィールドの詳しい説明は[配布対象管理](/Dev%20Tools/Pipeline/ja/deploy-target-monitoring/)ページで確認できます。
+フィールドの詳しい説明は[配布対象管理](./deploy-target-monitoring.md)ページで確認できます。

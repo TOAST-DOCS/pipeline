@@ -6,11 +6,11 @@
 <a id="april-14-2026"></a>
 ### 2026. 04. 14. { #april-14-2026 }
 * User Access Key 토큰을 사용하는 API v1.1 가이드가 추가되었습니다.
-  * [API v1.1 가이드](/Dev%20Tools/Pipeline/ko/api-guide-v1-1)에서 사용 방법을 확인할 수 있습니다.
+  * [API v1.1 가이드](./api-guide-v1-1.md)에서 사용 방법을 확인할 수 있습니다.
 
 <a id="september-23-2025"></a>
 ### 2025. 09. 23. { #september-23-2025 }
-* 신규 스테이지들이 추가되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/)에서 사용 방법을 확인할 수 있습니다.
+* 신규 스테이지들이 추가되었습니다. [Pipeline 스테이지 가이드](./stage-guide.md)에서 사용 방법을 확인할 수 있습니다.
   * **기능 - 사용자 변수 제공**
   * **기능 - 이미지 취약점 분석**
   * **기능 - 소스 코드 취약점 분석**
@@ -34,7 +34,7 @@
 ### 2025. 03. 25. { #march-25-2025 }
 * **파이프라인 알림** 기능이 추가되었습니다.
   * 파이프라인 시작, 완료, 실패 시 Email, SMS 알림을 받을 수 있습니다.
-  * [파이프라인 알림 가이드](/Dev%20Tools/Pipeline/ko/pipeline-management/#_11)에서 사용 방법을 확인할 수 있습니다.
+  * [파이프라인 알림 가이드](./pipeline-management.md#_11)에서 사용 방법을 확인할 수 있습니다.
 * **파이프라인 버전**에서 JSON 형식으로 파이프라인을 수정할 수 없도록 변경되었습니다.
 
 <a id="november-26-2024"></a>
@@ -52,11 +52,11 @@
 
 <a id="september-10-2024"></a>
 ### 2024. 09. 10. { #september-10-2024 }
-* **파이프라인 관리** 메뉴의 UI 디자인이 변경되었습니다. [파이프라인 관리 가이드](/Dev%20Tools/Pipeline/ko/pipeline-management/)에서 사용 방법을 확인할 수 있습니다.
+* **파이프라인 관리** 메뉴의 UI 디자인이 변경되었습니다. [파이프라인 관리 가이드](./pipeline-management.md)에서 사용 방법을 확인할 수 있습니다.
 
 <a id="may-28-2024"></a>
 ### 2024. 05. 28. { #may-28-2024 }
-* 신규 스테이지들이 추가되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/)에서 사용 방법을 확인할 수 있습니다.
+* 신규 스테이지들이 추가되었습니다. [Pipeline 스테이지 가이드](./stage-guide.md)에서 사용 방법을 확인할 수 있습니다.
   * **배포 - Disable**
   * **배포 - Enable**
   * **기능 - Precondition(스테이지 상태 조건)**
@@ -67,8 +67,8 @@
     * **배포 - Enable**
     * **배포 - Patch**
     * **배포 - Scale**
-* 모든 스테이지에 **스테이지 실패 시** 기능이 추가되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/)에서 사용 방법을 확인할 수 있습니다.
-* Blue/Green 배포를 사용할 수 있습니다. [배포 전략 가이드](/Dev%20Tools/Pipeline/ko/deploy-strategy-guide/)에서 사용 방법을 확인할 수 있습니다.
+* 모든 스테이지에 **스테이지 실패 시** 기능이 추가되었습니다. [Pipeline 스테이지 가이드](./stage-guide.md)에서 사용 방법을 확인할 수 있습니다.
+* Blue/Green 배포를 사용할 수 있습니다. [배포 전략 가이드](./deploy-strategy-guide.md)에서 사용 방법을 확인할 수 있습니다.
 
 <a id="april-23-2024"></a>
 ### 2024. 04. 23. { #april-23-2024 }
@@ -77,7 +77,7 @@
 
 <a id="march-26-2024"></a>
 ### 2024. 03. 26. { #march-26-2024 }
-* 신규 배포 스테이지 **배포 - NHN Container Service**가 추가되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/)에서 사용 방법을 확인할 수 있습니다.
+* 신규 배포 스테이지 **배포 - NHN Container Service**가 추가되었습니다. [Pipeline 스테이지 가이드](./stage-guide.md)에서 사용 방법을 확인할 수 있습니다.
 
 <a id="february-27-2024"></a>
 ### 2024. 02. 27. { #february-27-2024 }
@@ -92,21 +92,21 @@
 ### 2024. 01. 23. { #january-23-2024 }
 * NHN Cloud Deploy Service 스테이지에서 시나리오 선택 시 시나리오 확인 버튼이 추가되었습니다.
   * **시나리오 확인**을 클릭해 해당하는 시나리오의 태스크 정보를 확인할 수 있습니다.
-* Pipeline 실행 이력과 배포 대상 작업 이력을 확인할 수 있는 **배포 이력 관리** 페이지가 추가되었습니다. [배포 이력 관리 가이드](/Dev%20Tools/Pipeline/ko/deploy-history-management)에서 사용 방법을 확인할 수 있습니다.
+* Pipeline 실행 이력과 배포 대상 작업 이력을 확인할 수 있는 **배포 이력 관리** 페이지가 추가되었습니다. [배포 이력 관리 가이드](./deploy-history-management.md)에서 사용 방법을 확인할 수 있습니다.
 
 <a id="december-19-2023"></a>
 ### 2023. 12. 19. { #december-19-2023 }
-* NHN Cloud Deploy의 배포 시나리오를 실행할 수 있는 **기능 - NHN Cloud Deploy Service** 스테이지가 추가되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/)에서 사용 방법을 확인할 수 있습니다.
+* NHN Cloud Deploy의 배포 시나리오를 실행할 수 있는 **기능 - NHN Cloud Deploy Service** 스테이지가 추가되었습니다. [Pipeline 스테이지 가이드](./stage-guide.md)에서 사용 방법을 확인할 수 있습니다.
 * Github 자동 실행 설정에 **아티팩트** 항목이 추가되었습니다. 특정 파일을 아티팩트로 설정하여 Git push event가 발생하면 해당 파일의 포함 유무에 따라 파이프라인을 실행합니다.
 
 <a id="october-31-2023"></a>
 ### 2023. 10. 31. { #october-31-2023 }
-* 승인 없이 이후 스테이지를 실행하지 못하도록 관리하는 **기능 - 승인 관리** 스테이지가 추가되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/)에서 자세한 설명을 확인할 수 있습니다.
-* 파이프라인 템플릿 가이드 내 샘플 시나리오가 추가되었습니다. [Pipeline 템플릿 가이드](/Dev%20Tools/Pipeline/ko/template-guide/#_2)에서 사용 방법 및 템플릿 파일을 다운로드할 수 있습니다.
+* 승인 없이 이후 스테이지를 실행하지 못하도록 관리하는 **기능 - 승인 관리** 스테이지가 추가되었습니다. [Pipeline 스테이지 가이드](./stage-guide.md)에서 자세한 설명을 확인할 수 있습니다.
+* 파이프라인 템플릿 가이드 내 샘플 시나리오가 추가되었습니다. [Pipeline 템플릿 가이드](./template-guide.md#_2)에서 사용 방법 및 템플릿 파일을 다운로드할 수 있습니다.
 
 <a id="september-26-2023"></a>
 ### 2023. 09. 26. { #september-26-2023 }
-* 파이프라인 템플릿 기능이 추가되었습니다. [Pipeline 사용자 가이드](/Dev%20Tools/Pipeline/ko/template-guide/#_1)에서 사용 방법을 확인할 수 있습니다.
+* 파이프라인 템플릿 기능이 추가되었습니다. [Pipeline 사용자 가이드](./template-guide.md#_1)에서 사용 방법을 확인할 수 있습니다.
   * 파이프라인 생성 시 템플릿 파일(JSON 형식)을 업로드하여 생성할 수 있습니다.
   * **JSON 보기** > **파이프라인 템플릿 다운로드**로 파이프라인 템플릿 파일을 다운로드할 수 있습니다.
 * Github 자동 실행 설정의 **브랜치 또는 태그** 항목에서 태그를 사용할 수 있게 되었습니다. 태그로 자동 실행 시 태그를 사용하여 빌드를 수행합니다.
@@ -120,7 +120,7 @@
 
 <a id="june-27-2023"></a>
 ### 2023. 06. 27. { #june-27-2023 }
-* 배포 - Deploy 스테이지에서 배포한 결과물을 확인할 수 있는 배포 대상 모니터링 기능이 추가되었습니다. [Pipeline 사용자 가이드](/Dev%20Tools/Pipeline/ko/deploy-target-monitoring)에서 사용 방법을 확인할 수 있습니다.
+* 배포 - Deploy 스테이지에서 배포한 결과물을 확인할 수 있는 배포 대상 모니터링 기능이 추가되었습니다. [Pipeline 사용자 가이드](./deploy-target-monitoring.md)에서 사용 방법을 확인할 수 있습니다.
   * 배포 대상 모니터링에서는 Kubernetes의 워크로드 및 서비스를 확인할 수 있습니다.
 * 파이프라인 분기 처리를 할 수 있는 [기능 - Judgement(실행 관리)] 및 [기능 - Precondition(실행 조건)] 스테이지가 추가되었습니다. [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#-judgement)에서 스테이지 설명을, [Pipeline 사용자 가이드](/Dev%20Tools/Pipeline/ko/pipeline-management/#_15)에서 사용 방법을 확인할 수 있습니다.
 
@@ -132,7 +132,7 @@
 
 <a id="february-28-2023"></a>
 ### 2023. 02. 28. { #february-28-2023 }
-* 외부 저장소의 리소스를 파이프라인 스테이지의 시작 또는 종료 조건으로 사용할 수 있는 아티팩트 기능이 추가되었습니다. [Pipeline 사용자 가이드](/Dev%20Tools/Pipeline/ko/pipeline-management/#_1)에서 사용 방법을 확인할 수 있습니다.
+* 외부 저장소의 리소스를 파이프라인 스테이지의 시작 또는 종료 조건으로 사용할 수 있는 아티팩트 기능이 추가되었습니다. [Pipeline 사용자 가이드](./pipeline-management.md#_1)에서 사용 방법을 확인할 수 있습니다.
 
 <a id="january-31-2023"></a>
 ### 2023. 01. 31. { #january-31-2023 }
@@ -162,7 +162,7 @@
 
 <a id="may-24-2022"></a>
 ### 2022. 05. 24. { #may-24-2022 }
-* 소스 저장소, 이미지 저장소, 빌드 도구, 배포 대상에 연결 확인 기능이 추가되었습니다. [Pipeline 사용자 가이드](/Dev%20Tools/Pipeline/ko/environment-config)에서 사용 방법을 확인할 수 있습니다.
+* 소스 저장소, 이미지 저장소, 빌드 도구, 배포 대상에 연결 확인 기능이 추가되었습니다. [Pipeline 사용자 가이드](./environment-config.md)에서 사용 방법을 확인할 수 있습니다.
 * CloudTrail에 세부 내용이 추가되었습니다.
   * 설정 삭제 시 세부 내용 추가
   * 파이프라인 실행 관련 세부 내용 추가
@@ -173,7 +173,7 @@
 
 <a id="january-25-2022"></a>
 ### 2022. 01. 25. { #january-25-2022 }
-* Pipeline 실행 API가 추가되었습니다. [Pipeline API 가이드](/Dev%20Tools/Pipeline/ko/api-guide-v1-0)에서 사용 방법을 확인할 수 있습니다.
+* Pipeline 실행 API가 추가되었습니다. [Pipeline API 가이드](./api-guide-v1-0.md)에서 사용 방법을 확인할 수 있습니다.
 * 발견된 이슈(원인 분석 후 개선 예정입니다.)
   * 개발 환경 생성 시 개발 환경 제약 사항에 값을 지정하면 생성에 실패하는 현상이 있습니다.
 
