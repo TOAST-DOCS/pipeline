@@ -41,14 +41,14 @@ This is a stage to build
 
 <a id="build---jenkins"></a>
 ### Build - Jenkins { #build---jenkins }
-You can build using Jenkins with your own configuration. You can select [Build Tool](/Dev%20Tools/Pipeline/en/environment-config/#_4) you added in the **Build Tool Settings** in **Preferences**. You can select a **build job**.
+You can build using Jenkins with your own configuration. You can select [Build Tool](./environment-config/#build-tool) you added in the **Build Tool Settings** in **Preferences**. You can select a **build job**.
 You can set the **start condition** and **end condition****for the artifact**. You can set the **start condition** to determine whether the stage starts. You can set an **end condition** to set the stage's output as an artifact.
 
 ![stage-guide-04](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-04_new.png)
 
 <a id="build---bake-manifest"></a>
 ### Build - Bake (Manifest) { #build---bake-manifest }
-You can build using a Helm package file or [Chart Repository](/Dev%20Tools/Pipeline/en/environment-config/#_6)that users configured themselves.
+You can build using a Helm package file or [Chart Repository](./environment-config/#chart-repository)that users configured themselves.
 
 - Set the chart name as the name of the output configured with the Helm engine.
 - Set the namespace as the namespace of the output configured with the Helm engine.
@@ -81,7 +81,7 @@ You can use the build tools provided by NHN Cloud.
 - Build Environment Settings
     - You can set the performance and timeout of the build tools.
 - Source Build Settings
-    - You can select the [image registry](/Dev%20Tools/Pipeline/en/environment-config/#_3) you added in the **Image Registry Settings** in **Environment Settings**.
+    - You can select the [image registry](./environment-config/#image-registry) you added in the **Image Registry Settings** in **Environment Settings**.
       - Enter the **image name** and **tag**for the environment you want to build, and set the **build command**.
 
 - Docker Image Build Settings
@@ -107,7 +107,7 @@ This is a stage to deploy to the Kubernetes environment.
 
 <a id="deployment---deploy"></a>
 ### Deployment - Deploy { #deployment---deploy }
-- You can select the [deployment target](/Dev%20Tools/Pipeline/en/environment-config/#_5) you added in **Deployment Target Settings** in **Environment Settings**. 
+- You can select the [deployment target](./environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**. 
 Enter **Namespace**, **Resource Type**, **Resource Name**, and **Manifest** to use for deployment. 
 If the tag format is used in the build stage, entering the Docker image tag part of **Manifest** as `_{BUILD_NUMBER}` allows you to deploy to the image with the most recent number among the images built in the tag format.
 For more details on **Manifest**, see [Kubernetes documents](https://kubernetes.io/docs/concepts/workloads/controllers/deployment ).
@@ -153,13 +153,13 @@ For more details on **Manifest**, see [Kubernetes documents](https://kubernetes.
 
 <a id="deployment---rollout-undo"></a>
 ### Deployment - Rollout Undo { #deployment---rollout-undo }
-You can select the [deployment target](/Dev%20Tools/Pipeline/en/environment-config/#_5) you added in **Deployment Target Settings** in **Environment Settings**. Enter **Namespace**, **Resource Type**, **Resource Name**, **Revision Back**. You can roll back to the specified Revision.
+You can select the [deployment target](./environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**. Enter **Namespace**, **Resource Type**, **Resource Name**, **Revision Back**. You can roll back to the specified Revision.
 
 ![stage-guide-10](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-10_new.png)
 
 <a id="deployment---delete"></a>
 ### Deployment - Delete { #deployment---delete }
-- You can select the [deployment target](/Dev%20Tools/Pipeline/en/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**.
+- You can select the [deployment target](./environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**.
 - Enter the **Namespace**, **resource type**, **selection method**, and **resource name**. You can delete the resource.
 - If you set the selection method to **Select by dynamic method**, enter a **cluster** and **selection strategy**.
 - Cluster
@@ -185,7 +185,7 @@ You can select a workload from the list for which you want to change the templat
 
 <a id="deployment---enable"></a>
 ### Deployment - Enable { #deployment---enable }
-- You can select the [deployment target](/Dev%20Tools/Pipeline/en/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**.
+- You can select the [deployment target](./environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**.
 - Enter the **Namespace**, **resource type**, **selection method**, and **resource name**. You can enable the resource.
     - Enabled: The resource is managed by Pipeline and is enabled to send traffic to the resource.
 - If you set the selection method to **Select by dynamic method**, enter a **cluster** and **selection strategy**.
@@ -202,7 +202,7 @@ You can select a workload from the list for which you want to change the templat
 
 <a id="deployment---disable"></a>
 ### Deployment - Disable { #deployment---disable }
-- You can select the [deployment target](/Dev%20Tools/Pipeline/en/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**.
+- You can select the [deployment target](./environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**.
 - Enter the **Namespace**, **resource type**, **selection method**, and **resource name**. You can disable the resource.
     - Disable: Doesn't delete the resource, but no longer sends traffic to it.
 - If you set the selection method to **Select by dynamic method**, enter a **cluster** and **selection strategy**.
@@ -328,7 +328,7 @@ ${myImage}
 A stage where vulnerability analysis is performed on images.
 
 - Image registry
-    - You can select the [Image Registry](/Dev%20Tools/Pipeline/en/environment-config/#image-registry) you added in **Image Registry Settings** of **Preferences**.
+    - You can select the [Image Registry](./environment-config/#image-registry) you added in **Image Registry Settings** of **Preferences**.
 - Specify the image you want to analyze by entering the **Image Name** and **Tags**.
 
 ![stage-guide-23](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-23.png)
@@ -343,7 +343,7 @@ The results of the image vulnerability analysis can be viewed in the stage execu
 A stage where vulnerability analysis is performed on the source code.
 
 - Source repository
-  - You can select the [Source Repository](/Dev%20Tools/Pipeline/en/environment-config/#source-repository) you added in **Source Repository Settings** of **Preferences**.
+  - You can select the [Source Repository](./environment-config/#source-repository) you added in **Source Repository Settings** of **Preferences**.
 - Select **Branch** to specify the source code to analyze.
 
 ![stage-guide-25](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-25.png)

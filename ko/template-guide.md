@@ -191,7 +191,7 @@ YAML 파일을 JSON 형태로 변경이 필요합니다(스테이지 변경을 �
 [템플릿 파일 다운로드](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-03.json)
 
 템플릿의 Trigger 영역을 설정하면 Github(GitLab, 이미지 저장소) 자동 실행 설정을 할 수 있습니다.
-[Pipeline 콘솔 사용 가이드](/Dev%20Tools/Pipeline/ko/pipeline-management/#_9)의 자동 실행 부분에 입력값에 대한 추가 가이드가 있습니다.
+[Pipeline 콘솔 사용 가이드](./pipeline-management/#_9)의 자동 실행 부분에 입력값에 대한 추가 가이드가 있습니다.
 
 ![template-guide-03](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-03.png)
 
@@ -354,7 +354,7 @@ YAML 파일을 JSON 형태로 변경이 필요합니다(스테이지 변경을 �
 
 ![template-guide-11](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-11.png)
 
-Blue/Green 배포를 위한 파이프라인을 구성할 수 있습니다. Blue/Green 배포는 [배포 전략 가이드](/Dev%20Tools/Pipeline/ko/deploy-strategy-guide/)에서 자세한 내용을 확인할 수 있습니다.
+Blue/Green 배포를 위한 파이프라인을 구성할 수 있습니다. Blue/Green 배포는 [배포 전략 가이드](./deploy-strategy-guide/)에서 자세한 내용을 확인할 수 있습니다.
 ```json
 {
     "type": "disableManifest",
@@ -388,7 +388,7 @@ Blue/Green 배포를 위해서 Pipeline을 통해 Service를 먼저 생성해야
 
 ![template-guide-13](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-13.png)
 
-Blue/Green 배포를 위한 파이프라인을 구성할 수 있습니다. Blue/Green 배포는 [배포 전략 가이드](/Dev%20Tools/Pipeline/ko/deploy-strategy-guide/)에서 자세한 내용을 확인할 수 있습니다.
+Blue/Green 배포를 위한 파이프라인을 구성할 수 있습니다. Blue/Green 배포는 [배포 전략 가이드](./deploy-strategy-guide/)에서 자세한 내용을 확인할 수 있습니다.
 
 7번의 시나리오와 거의 동일하며 서비스 모니터링을 위한 **기능 - Webhook 스테이지**가 추가되었습니다.
 ```json

@@ -26,7 +26,7 @@ Since modifying the Deployment Object triggers the rollout, the only way to do a
 ### How to configure a Blue/Green Pipeline { #how-to-configure-a-bluegreen-pipeline }
 
 Here's how to configure a pipeline that can do blue/green deployments.
-You can configure a pipeline by referring to the[Pipeline template guide](/Dev%20Tools/Pipeline/en/template-guide/).
+You can configure a pipeline by referring to the[Pipeline template guide](./template-guide/).
 
 <a id="how-to-configure-a-bluegreen-pipeline-create-a-service"></a>
 #### 1. Create a Service
