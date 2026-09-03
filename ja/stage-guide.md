@@ -1,4 +1,7 @@
-## Dev Tools > Pipeline > ステージガイド
+<!-- pre-align:aligned sig=ec801840fa91 -->
+
+<a id="dev-tools-pipeline-stage-guide"></a>
+## Dev Tools > Pipeline > ステージガイド { #dev-tools-pipeline-stage-guide }
 
 ステージガイドではPipelineのステージについて基本的な内容を説明します。
 
@@ -16,31 +19,37 @@
 - **配布**
 - **機能**
 
-## ソース
+<a id="source"></a>
+## ソース { #source }
 ビルドするソースコードを取得するステージです。
 
-### ソース - GitHub
-**ソースリポジトリ**は**環境設定**の**ソースリポジトリ設定**で追加した[ソースリポジトリ](/Dev%20Tools/Pipeline/ja/environment-config/#_2)を選択できます。**ブランチ**にはビルドする対象のソースブランチを入力します。
+<a id="source---github"></a>
+### ソース - GitHub { #source---github }
+**ソースリポジトリ**は**環境設定**の**ソースリポジトリ設定**で追加した[ソースリポジトリ](./environment-config/#source-repository)を選択できます。**ブランチ**にはビルドする対象のソースブランチを入力します。
 
 ![stage-guide-02](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-02_new.png)
 
-### ソース - GitLab
-**ソースリポジトリ**は**環境設定**の**ソースリポジトリ設定**で追加した[ソースリポジトリ](/Dev%20Tools/Pipeline/ja/environment-config/#_2)を選択できます。**ブランチ**にはビルドする対象のソースブランチを入力します。
+<a id="source---gitlab"></a>
+### ソース - GitLab { #source---gitlab }
+**ソースリポジトリ**は**環境設定**の**ソースリポジトリ設定**で追加した[ソースリポジトリ](./environment-config/#source-repository)を選択できます。**ブランチ**にはビルドする対象のソースブランチを入力します。
 
 ![stage-guide-03](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-03_new.png)
 
-## ビルド
+<a id="build"></a>
+## ビルド { #build }
 ビルドを行うステージです。
 
-### ビルド - Jenkins
-ユーザーが直接構成したJenkinsを利用してビルドできます。**ビルドツール**は**環境設定**の**ビルドツール設定**で追加した[ビルドツール](/Dev%20Tools/Pipeline/ja/environment-config/#_4)を選択できます。**ビルドジョブ**を選択できます。
+<a id="build---jenkins"></a>
+### ビルド - Jenkins { #build---jenkins }
+ユーザーが直接構成したJenkinsを利用してビルドできます。**ビルドツール**は**環境設定**の**ビルドツール設定**で追加した[ビルドツール](./environment-config/#build-tool)を選択できます。**ビルドジョブ**を選択できます。
 **アーティファクト**の**開始条件**と**終了条件**を設定できます。**開始条件**を設定してステージを開始するかどうかを決定できます。 **終了条件**を設定してステージの作成物をアーティファクトに設定できます。
 
 ![stage-guide-04](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-04_new.png)
 
 
-### ビルド - Bake (Manifest)
-ユーザーが直接構成したHelm package fileまたは[チャートリポジトリ](/Dev%20Tools/Pipeline/ja/environment-config/#_6)を使ってビルドできます。
+<a id="build---bake-manifest"></a>
+### ビルド - Bake (Manifest) { #build---bake-manifest }
+ユーザーが直接構成したHelm package fileまたは[チャートリポジトリ](./environment-config/#chart-repository)を使ってビルドできます。
 
 - チャート名はHelmエンジンで構成した結果物の名前を設定します。
 - NamespaceはHelmエンジンで構成した成果物のNamespaceを設定します。
@@ -66,13 +75,14 @@
 
 ![stage-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-10-29/stage-guide-05-1.png)
 
-### ビルド - NHN Cloudビルドツールv2
+<a id="build---nhn-cloud-build-tool-v2"></a>
+### ビルド - NHN Cloudビルドツールv2 { #build---nhn-cloud-build-tool-v2 }
 NHN Cloudで提供するビルドツールを使用できます。
 
 - ビルド環境設定
     - ビルドツールの性能と制限時間を設定できます。
 - ソースビルド設定
-    - **環境設定**の**イメージストア設定**で追加した[イメージストア](/Dev%20Tools/Pipeline/ja/environment-config/#_3)を選択できます。
+    - **環境設定**の**イメージストア設定**で追加した[イメージストア](./environment-config/#image-registry)を選択できます。
     - ビルドする環境の**イメージ名**及び**タグ**を入力し、**ビルドコマンド**を設定します。
 
 - ドッカーイメージビルド設定
@@ -92,11 +102,13 @@ NHN Cloudで提供するビルドツールを使用できます。
 
 ![stage-guide-06](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-06_new.png)
 
-## 配布
+<a id="deployment"></a>
+## 配布 { #deployment }
 Kubernetes環境に配布を行うステージです。
 
-### 配布 - Deploy
-- **環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
+<a id="deployment---deploy"></a>
+### 配布 - Deploy { #deployment---deploy }
+- **環境設定**の**配布対象設定**で追加した[配布対象](./environment-config/#deployment-target)を選択できます。
 **ステージ名**、**配布対象**、配布に使用する**Manifest**を入力します。
 ビルドステージでタグフォーマットを使用した場合、**Manifest**のドッカーイメージタグ部分を`_{BUILD_NUMBER}`と入力すると、タグフォーマットでビルドされたイメージのうち最新の番号のイメージで配布できます。
 **Manifest**を作成する方法は[Kubernetes文書](https://kubernetes.io/docs/concepts/workloads/controllers/deployment )を参照してください。
@@ -108,8 +120,9 @@ Kubernetes環境に配布を行うステージです。
 
 ![stage-guide-07](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-07_new.png)
 
-### 配布 - Patch
-- **環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
+<a id="deployment---patch"></a>
+### 配布 - Patch { #deployment---patch }
+- **環境設定**の**配布対象設定**で追加した[配布対象](./environment-config/#deployment-target)を選択できます。
 - **Namespace**, **リソースタイプ**、**選択方法**、**リソース名**、配布に使用する**Manifest**を入力します。 Patchで既存リソースの情報を修正できます。
 - **Manifest**を作成する方法は[Kubernetes文書](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#patching-resources)を参考してください。
 - **選択方法**を**動的な方法で選択**に設定する場合、**クラスタ**と**選択戦略**を入力します。
@@ -124,8 +137,9 @@ Kubernetes環境に配布を行うステージです。
 
 ![stage-guide-08](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-08_new.png)
 
-### 配布 - Scale
-- **環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
+<a id="deployment---scale"></a>
+### 配布 - Scale { #deployment---scale }
+- **環境設定**の**配布対象設定**で追加した[配布対象](./environment-config/#deployment-target)を選択できます。
 - **Namespace**, **リソースタイプ**、**選択方法**、**リソース名**、**Replicas**を入力します。 ScaleでReplicasを修正できます。
 - **選択方法**を**動的な方法で選択**に設定する場合、**クラスタ**と**選択戦略**を入力します。
 '- クラスタ
@@ -139,14 +153,16 @@ Kubernetes環境に配布を行うステージです。
 
 ![stage-guide-09](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-09_new.png)
 
-### 配布 - Rollout undo
-**環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
+<a id="deployment---rollout-undo"></a>
+### 配布 - Rollout undo { #deployment---rollout-undo }
+**環境設定**の**配布対象設定**で追加した[配布対象](./environment-config/#deployment-target)を選択できます。
 **Namespace**、**リソースタイプ**、**リソース名**、**Revision Back**を入力します。指定したRevisionにロールバックできます。
 
 ![stage-guide-10](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-10_new.png)
 
-### 配布 - Delete
-- **環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
+<a id="deployment---delete"></a>
+### 配布 - Delete { #deployment---delete }
+- **環境設定**の**配布対象設定**で追加した[配布対象](./environment-config/#deployment-target)を選択できます。
 - **Namespace**, **リソースタイプ**、**選択方法**、***リソース名**を入力します。そのリソースを削除できます。
 - **選択方法**を**動的な方法で選択**に設定する場合、**クラスタ**と**選択戦略**を入力します。
 - クラスタ
@@ -160,7 +176,8 @@ Kubernetes環境に配布を行うステージです。
 
 ![stage-guide-11](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-11_new.png)
 
-### 配布 - NHN Container Service
+<a id="deployment---nhn-container-service-ncs"></a>
+### 配布 - NHN Container Service { #deployment---nhn-container-service-ncs }
 NCSワークロードのテンプレートを交換できるステージです。 
 **NCSアプリキー**を入力すると、**NCSロール**、テンプレートリスト、ワークロードのリストが表示されます。 
 変更するテンプレートをリストから選択できます。 
@@ -169,8 +186,9 @@ NCSワークロードのテンプレートを交換できるステージです�
 ![stage-guide-12](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-12_new.png)
 
 
-### 配布 - Enable
-- **環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
+<a id="deployment---enable"></a>
+### 配布 - Enable { #deployment---enable }
+- **環境設定**の**配布対象設定**で追加した[配布対象](./environment-config/#deployment-target)を選択できます。
 - **Namespace**、**リソースタイプ**、**選択方法**、**リソース名**を入力します。該当リソースを有効にできます。
     - 有効化：該当リソースをPipelineで管理し、リソースにトラフィックを送るように設定します。
 - **選択方法**を**動的な方法で選択**に設定する場合、**クラスタ**と**選択戦略**を入力します。
@@ -185,8 +203,9 @@ NCSワークロードのテンプレートを交換できるステージです�
 
 ![stage-guide-13](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-13_new.png)
 
-### 配布 - Disable
-- **環境設定**の**配布対象設定**で追加した[配布対象](/Dev%20Tools/Pipeline/ja/environment-config/#_5)を選択できます。
+<a id="deployment---disable"></a>
+### 配布 - Disable { #deployment---disable }
+- **環境設定**の**配布対象設定**で追加した[配布対象](./environment-config/#deployment-target)を選択できます。
 - **Namespace**、**リソースタイプ**、**選択方法**、**リソース名**を入力します。該当リソースを無効にできます。
     - 無効化：リソースを削除するわけではありませんが、そのリソースにトラフィックを送らないように設定します。
 - **選択方法**を**動的な方法で選択**に設定する場合、**クラスタ**と**選択戦略**を入力します。
@@ -201,10 +220,12 @@ NCSワークロードのテンプレートを交換できるステージです�
 
 ![stage-guide-14](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-14_new.png)
 
-## 機能
+<a id="feature"></a>
+## 機能 { #feature }
 追加機能を提供するステージです。
 
-### 機能 - 承認管理
+<a id="features---approval-management"></a>
+### 機能 - 承認管理 { #features---approval-management }
 **機能 - 承認管理** ステージ以降のステージに対する**実行管理(実行、実行停止)**を承認権者が管理できます。
 
 ステージにリクエスト内容について作成することができ、承認管理ステージの**実行管理(実行、実行停止)**機能は該当プロジェクトの **Pipeline APPROVAL ADMIN**ロールを持つユーザーだけが行うことができます。
@@ -216,32 +237,37 @@ NCSワークロードのテンプレートを交換できるステージです�
 ![stage-guide-18](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-10-31/stage-guide-18.png)
 
 
-### 機能 - Judgement(実行管理)
+<a id="feature---judgement-run-management"></a>
+### 機能 - Judgement(実行管理) { #feature---judgement-run-management }
 必要に応じて実行管理ステージの**説明**、**実行設定**の値を入力できます。
 
 **実行設定**の有無に関係なく、次のステージに対する**実行管理(実行、実行停止**)ができ、**実行設定**を追加して次のステージの実行を選択する場合、次に説明するステージであるPrecondition(実行条件)に設定値を渡して分岐処理を行うことができます。
 
 ![stage-guide-16](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-16_new.png)
 
-### 機能 - Precondition(ステージ状態条件)
+<a id="features---precondition-stage-status-condition"></a>
+### 機能 - Precondition(ステージ状態条件) { #features---precondition-stage-status-condition }
 前のステージのステージ名と実行結果を選択して条件を設定できます。
 指定した全ての条件が満たされなければ、次のステージが実行されます。
 
 ![stage-guide-17](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-17_new.png)
 
-### 機能 - Precondition(実行条件)
+<a id="feature---precondition-run-condition"></a>
+### 機能 - Precondition(実行条件) { #feature---precondition-run-condition }
 前の段階で設定されたJudgement(実行管理)ステージで渡された値を**実行条件**によって後のステージの実行を決定します。
 Judgement(実行管理)ステージで渡された設定値と**実行条件の条件値**に対して**実行条件一致/実行条件不一致**の中から選択して以降のステージの実行を決定します。
 
 ![stage-guide-18](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-18_new.png)
 
-### 機能 - Webフック
+<a id="feature---webhook"></a>
+### 機能 - Webフック { #feature---webhook }
 **URL**にHTTPメソッドとURLを入力します。必要に応じて**リクエストヘッダ** **リクエストデータ**を追加できます。
 Webフックのレスポンス値が**Fail Fast HTTPステータスコード**に入力した値のいずれかであれば、すぐに該当ステージを終了します。
 
 ![stage-guide-19](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-19_new.png)
 
-### 機能 - 他のパイプラインの実行
+<a id="feature---run-other-pipelines"></a>
+### 機能 - 他のパイプラインの実行 { #feature---run-other-pipelines }
 ステージで他のパイプライン全体を実行できます。
 実行したい**パイプライン名**を選択します。
 
@@ -249,7 +275,8 @@ Webフックのレスポンス値が**Fail Fast HTTPステータスコード**�
 
 ![stage-guide-20](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-20_new.png)
 
-### 機能 - NHN Cloud Deployサービス配布実行
+<a id="feature---run-nhn-cloud-deploy-service-deployment"></a>
+### 機能 - NHN Cloud Deployサービス配布実行 { #feature---run-nhn-cloud-deploy-service-deployment }
 ステージでNHN Cloud Deployサービスを使用して配布を実行できます。
 - 配布を実行するアーティファクトの**Command Type**が**SSH**である場合、**NHN Cloud Deployサービス配布実行**機能をサポートしておらず、**Cloud Agent**である場合にのみサポートします。関連する内容については[Deploy使用ガイド](/Dev%20Tools/Deploy/ja/console-guide/#_8)を参照してください。
 
@@ -273,7 +300,8 @@ Webフックのレスポンス値が**Fail Fast HTTPステータスコード**�
 
 ![stage-guide-21](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-21_new.png)
 
-### 機能 - ユーザー変数を提供
+<a id="features---providing-user-variables"></a>
+### 機能 - ユーザー変数を提供 { #features---providing-user-variables }
 パイプライン内で、後続のステージで再利用する変数を定義します。このステージで作成した変数は、接続されている全ての後続ステージで使用でき、最大5つまで作成できます。
 
 **変数の使用方法**
@@ -297,7 +325,8 @@ ${myImage}
 
 ![stage-guide-22](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-22.png)
 
-### 機能 - イメージの脆弱性分析
+<a id="features---analyze-image-vulnerability"></a>
+### 機能 - イメージの脆弱性分析 { #features---analyze-image-vulnerability }
 イメージを対象に脆弱性分析を実行するステージです。
 
 - イメージリポジトリ
@@ -310,12 +339,13 @@ ${myImage}
 
 ![stage-guide-24](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-24.png)
 
-### 機能 - ソースコードの脆弱性分析
+<a id="features---analyze-source-code-vulnerability"></a>
+### 機能 - ソースコードの脆弱性分析 { #features---analyze-source-code-vulnerability }
 
 ソースコードを対象に脆弱性分析を実行するステージです。
 
 - ソースリポジトリ
-    - **環境設定**の**ソースリポジトリ設定**で追加した[ソースリポジトリ](/Dev%20Tools/Pipeline/ja/environment-config/#_2)を選択できます。
+    - **環境設定**の**ソースリポジトリ設定**で追加した[ソースリポジトリ](./environment-config/#source-repository)を選択できます。
 - **ブランチ**を選択し、分析するソースコードを指定します。
 
 ![stage-guide-25](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-25.png)
@@ -324,8 +354,10 @@ ${myImage}
 
 ![stage-guide-26](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-26.png)
 
-## ステージ共通機能
-### ステージ失敗時
+<a id="stage-common-features"></a>
+## ステージ共通機能 { #stage-common-features }
+<a id="on-stage-failure"></a>
+### ステージ失敗時 { #on-stage-failure }
 
 ステージが失敗した時のパイプライン実行に関する設定を選択できます。
 

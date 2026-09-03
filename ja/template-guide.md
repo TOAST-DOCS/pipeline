@@ -1,15 +1,21 @@
-## Dev Tools > Pipeline > コンソール使用ガイド > テンプレートガイド
+<!-- pre-align:aligned sig=25beb33e6e9f -->
+
+<a id="dev-tools-pipeline-console-user-guide-template-guide"></a>
+## Dev Tools > Pipeline > コンソール使用ガイド > テンプレートガイド { #dev-tools-pipeline-console-user-guide-template-guide }
 テンプレートガイドでは、テンプレートファイルを利用してパイプラインを作成する方法を説明します。
 
-## 既存のパイプラインと同じパイプラインの作成
+<a id="create-a-pipeline-identical-to-an-existing-pipeline"></a>
+## 既存のパイプラインと同じパイプラインの作成 { #create-a-pipeline-identical-to-an-existing-pipeline }
 すでに構成されているパイプラインからJSONファイルをダウンロードした後、同じ形式の新規パイプラインを作成する方法です。
 
-### 1. 既存のパイプラインJSONファイルをダウンロード
+<a id="download-existing-pipeline-json-file"></a>
+### 1. 既存のパイプラインJSONファイルをダウンロード { #download-existing-pipeline-json-file }
 既存のパイプラインを選択した後、**パイプラインスタジオ** > **JSONの表示** > **パイプラインテンプレートのダウンロード**をクリックしてJSONファイルをダウンロードできます。
 
 ![template-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-03-25/template-guide-16.png)
 
-### 2. テンプレートファイルでパイプラインを作成
+<a id="create-a-pipeline-with-a-template-file"></a>
+### 2. テンプレートファイルでパイプラインを作成 { #create-a-pipeline-with-a-template-file }
 2.1 **パイプライン管理**で**パイプライン作成**をクリックします。ダウンロードしたJSONファイルをアップロードします。アップロード後、**次へ**をクリックすると、すぐに**最終検討**段階に進みます。
 ![template-guide-02](http://static.toastoven.net/prod_pipeline/2023-09-26/template-guide-02.png)
 2.1 **パイプライン管理**で**パイプライン作成**をクリックします。ダウンロードしたJSONファイルをアップロードした後、**確認**をクリックすると、JSONファイルの設定と同じパイプラインを作成します。
@@ -18,14 +24,16 @@
 ![template-guide-04](http://static.toastoven.net/prod_pipeline/2023-09-26/template-guide-04.png)
 ![template-guide-02](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-02.png)
 
-## サンプルシナリオテンプレートでパイプラインを作成
+<a id="create-a-pipeline-with-a-sample-scenario-template"></a>
+## サンプルシナリオテンプレートでパイプラインを作成 { #create-a-pipeline-with-a-sample-scenario-template }
 シナリオごとにサンプルテンプレートファイルを提供して、簡単にパイプラインを作成できます。
 
 希望するシナリオにあるJSONファイルをダウンロードすると、中括弧(`{}`)で要求するデータ全体を入力して使用できます。特に`[環境設定]`の接頭辞が付くデータの場合、**Pipeline > 環境設定**にあるデータを使用するため、データが登録されている必要があります。[Pipelineユーザーガイド](/Dev%20Tools/Pipeline/ja/environment-config/#_1)で登録方法を確認できます。
 
 Bake Stageの使用に関するサンプルシナリオテンプレートは、機能変更が必要であり、後日提供される予定です。
 
-### 1. ソース - ビルド - 配布段階の基本的なシナリオ
+<a id="basic-scenario-for-the-source---build---deploy"></a>
+### 1. ソース - ビルド - 配布段階の基本的なシナリオ { #basic-scenario-for-the-source---build---deploy }
 ![template-guide-03](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-03.png)
 
 Githubからソースコードを取得してNHN Cloudビルドツールでビルド後、対象サーバーにManifest情報で配布するシナリオです。
@@ -34,6 +42,7 @@ Githubからソースコードを取得してNHN Cloudビルドツールでビ�
 
 登録されているJSONファイルをダウンロード後、中括弧で表示されたデータに対する情報を入力する必要があります。
 
+<a id="basic-scenario-for-the-source---build---deploy-source-stage"></a>
 #### ソースステージ
 ソースステージのうちGithubを基準にガイドが作成されました。[Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/#_1)でステージの詳細ガイドが確認できます。
 
@@ -54,6 +63,7 @@ Githubからソースコードを取得してNHN Cloudビルドツールでビ�
 
 **イメージストア設定**、**配布対象設定**と同じように設定された名前の確認後、修正が必要です。
 
+<a id="basic-scenario-for-the-source---build---deploy-build-stage"></a>
 #### ビルドステージ
 ビルドステージのうちNHN Cloudビルドツールv2を基準にガイドが作成されました。[Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/#_2)でステージの詳細ガイドが確認できます。
 
@@ -81,6 +91,7 @@ Githubからソースコードを取得してNHN Cloudビルドツールでビ�
 },
 ```
 
+<a id="basic-scenario-for-the-source---build---deploy-deploy-stage"></a>
 #### 配布ステージ
 配布ステージはDeployステージでガイドが作成されました。[Pipelineステージガイド](/Dev%20Tools/Pipeline/ja/stage-guide/#_3)でステージの詳細ガイドが確認できます。
 
@@ -152,7 +163,8 @@ YAMLファイルをJSON形式に変更する必要があります(ステージ�
 
 以降のシナリオもこのシナリオを基に作成されています。
 
-### 2. パイプライン完了通知を追加するシナリオ
+<a id="scenario-for-adding-pipeline-completion-notification"></a>
+### 2. パイプライン完了通知を追加するシナリオ { #scenario-for-adding-pipeline-completion-notification }
 ![template-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-05.png)
 
 配布後、Webhookで通知を受け取るシナリオです。Webhookを受け取るURLとPayload、Methodに該当するデータを入力後、使用可能です。
@@ -178,11 +190,12 @@ YAMLファイルをJSON形式に変更する必要があります(ステージ�
 }
 ```
 
-### 3. Github(GitLab、イメージストア)イベント発生時のPipeline自動実行シナリオ
+<a id="scenario-for-auto-running-a-pipeline-when-a-github-gitlab-image-repository-event-occurs"></a>
+### 3. Github(GitLab、イメージストア)イベント発生時のPipeline自動実行シナリオ { #scenario-for-auto-running-a-pipeline-when-a-github-gitlab-image-repository-event-occurs }
 [Pipelineコンソール使用ガイド](http://static.toastoven.net/prod_pipeline/template/template-scenario-03.json)
 
 テンプレートのTrigger領域を設定すると、Github(GitLab、イメージストア)自動実行設定ができます。
-[コンソール使用ガイド](/Dev%20Tools/Pipeline/ja/pipeline-management/#_9)の自動実行部分に入力値に関する追加ガイドがあります。
+[コンソール使用ガイド](./pipeline-management/#_9)の自動実行部分に入力値に関する追加ガイドがあります。
 
 ![template-guide-03](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-03.png)
 
@@ -199,7 +212,8 @@ triggers: [
 ],
 ```
 
-### 4. 1つのパイプラインで開発環境とリアル環境を分けて配布するシナリオ
+<a id="scenario-for-deploying-separate-development-and-live-environments-with-one-pipeline"></a>
+### 4. 1つのパイプラインで開発環境とリアル環境を分けて配布するシナリオ { #scenario-for-deploying-separate-development-and-live-environments-with-one-pipeline }
 [テンプレートファイルダウンロード](http://static.toastoven.net/prod_pipeline/template/template-scenario-04.json)
 
 1つのパイプラインでユーザーの選択に応じて分岐処理を行うように配布できます。
@@ -279,7 +293,8 @@ triggers: [
 ]
 ```
 
-### 5. リアル環境への配布前に承認手続きを追加して配布するシナリオ
+<a id="scenario-for-adding-a-pre-deployment-approval-process-to-your-real-environment"></a>
+### 5. リアル環境への配布前に承認手続きを追加して配布するシナリオ { #scenario-for-adding-a-pre-deployment-approval-process-to-your-real-environment }
 [テンプレートファイルダウンロード](http://static.toastoven.net/prod_pipeline/template/template-scenario-05.json)
 
 ![template-guide-07](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-07.png)
@@ -302,7 +317,8 @@ triggers: [
 }
 ```
 
-### 6. 多数のパイプラインで開発環境、リアル環境を分けて配布するシナリオ
+<a id="scenario-where-multiple-pipelines-are-deployed-to-separate-development-and-real-environments"></a>
+### 6. 多数のパイプラインで開発環境、リアル環境を分けて配布するシナリオ { #scenario-where-multiple-pipelines-are-deployed-to-separate-development-and-real-environments }
 [テンプレートファイルダウンロード](http://static.toastoven.net/prod_pipeline/template/template-scenario-06.json)
 
 パイプラインが環境ごとに分離して構成されている場合、パイプライン自体を選択して配布できます。
@@ -336,12 +352,13 @@ triggers: [
 ![template-guide-09](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-09.png)
 ![template-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-03-25/template-guide-15.png)
 
-### 7. Blue/Green配布
+<a id="deploy-bluegreen"></a>
+### 7. Blue/Green配布 { #deploy-bluegreen }
 [テンプレートファイルダウンロード](http://static.toastoven.net/prod_pipeline/template/template-scenario-07.json)
 
 ![template-guide-11](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-11.png)
 
-Blue/Green配布のためのパイプラインを構成できます。Blue/Green配布は[配布戦略ガイド](/Dev%20Tools/Pipeline/ja/deploy-strategy-guide/)で詳細を確認できます。
+Blue/Green配布のためのパイプラインを構成できます。Blue/Green配布は[配布戦略ガイド](./deploy-strategy-guide/)で詳細を確認できます。
 ```json
 {
     "type": "disableManifest",
@@ -369,12 +386,13 @@ Blue/Green配布のため、PipelineでServiceを先に作成する必要があ�
 
 ![template-guide-12](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-12.png)
 
-### 8. Blue/Green配布(サービスモニタリング追加)
+<a id="bluegreen-deployment-service-monitoring-added"></a>
+### 8. Blue/Green配布(サービスモニタリング追加) { #bluegreen-deployment-service-monitoring-added }
 [テンプレートファイルダウンロード](http://static.toastoven.net/prod_pipeline/template/template-scenario-08.json)
 
 ![template-guide-13](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-template/template-guide-13.png)
 
-Blue/Green配布のためのパイプラインを構成できます。Blue/Green配布は[配布戦略ガイド](/Dev%20Tools/Pipeline/ja/deploy-strategy-guide/)で詳細を確認できます。
+Blue/Green配布のためのパイプラインを構成できます。Blue/Green配布は[配布戦略ガイド](./deploy-strategy-guide/)で詳細を確認できます。
 
 7番のシナリオとほぼ同じで、サービスモニタリングのための**機能 - Webhookステージ**が追加されました。
 ```json
@@ -397,7 +415,8 @@ Blue/Green配布のためのパイプラインを構成できます。Blue/Green
 ```
 
 
-### 9. パイプライン通知機能 
+<a id="pipeline-notification-feature"></a>
+### 9. パイプライン通知機能 { #pipeline-notification-feature }
 [テンプレートファイルダウンロード](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-09-1.json)
 
 パイプライン通知機能を追加してパイプライン実行結果を通知で受け取ることができます。
@@ -419,7 +438,8 @@ Blue/Green配布のためのパイプラインを構成できます。Blue/Green
 }
 ```
 
-### 10. イメージの脆弱性分析後にデプロイを行うシナリオ
+<a id="scenario-for-deployment-after-image-vulnerability-analysis"></a>
+### 10. イメージの脆弱性分析後にデプロイを行うシナリオ { #scenario-for-deployment-after-image-vulnerability-analysis }
 
 [テンプレートファイルのダウンロード](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-10.json)
 
@@ -430,7 +450,8 @@ Blue/Green配布のためのパイプラインを構成できます。Blue/Green
 
 変数の作成・使用方法は、[機能 - ユーザー変数を提供 ガイド](/Dev%20Tools/Pipeline/ja/stage-guide/#-_2)で確認できます。
 
-### 11. ソースコードの脆弱性分析後にイメージをビルドするシナリオ
+<a id="scenario-for-building-an-image-after-analyzing-source-code-vulnerabilities"></a>
+### 11. ソースコードの脆弱性分析後にイメージをビルドするシナリオ { #scenario-for-building-an-image-after-analyzing-source-code-vulnerabilities }
 
 [テンプレートファイルのダウンロード](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/template/template-scenario-11.json)
 

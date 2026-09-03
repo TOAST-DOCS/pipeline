@@ -1,6 +1,10 @@
-## Dev Tools > Pipeline > 콘솔 사용 가이드 > 환경 설정
+<!-- pre-align:aligned sig=71e694704fe5 -->
 
-### 환경 설정
+<a id="dev-tools-pipeline-console-user-guide-environment-configuration"></a>
+## Dev Tools > Pipeline > 콘솔 사용 가이드 > 환경 설정 { #dev-tools-pipeline-console-user-guide-environment-configuration }
+
+<a id="set-up-an-environment"></a>
+### 환경 설정 { #set-up-an-environment }
 
 Pipeline은 애플리케이션 배포 흐름을 구성할 때 다양한 외부 시스템을 사용합니다. 환경 설정에서 Pipeline이 사용하는 외부 시스템을 추가할 수 있습니다.
 
@@ -11,7 +15,8 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 - 배포 대상
 - 차트 저장소
 
-### 소스 저장소
+<a id="source-repository"></a>
+### 소스 저장소 { #source-repository }
 
 소스 저장소를 추가하면 NHN Cloud 빌드 도구를 사용해서 소스 코드를 빌드할 수 있습니다. GitHub, GitLab, GitHub Enterprise와 같이 git 명령어를 사용해서 접근할 수 있는 저장소를 추가할 수 있습니다.
 
@@ -27,7 +32,8 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 
 ![env-config-guide-03](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-03.png)
 
-### 이미지 저장소
+<a id="image-registry"></a>
+### 이미지 저장소 { #image-registry }
 
 이미지 저장소를 추가하면 자격 증명이 필요한 이미지 저장소에 접근할 때 사용할 수 있습니다. NHN Cloud 빌드 도구에서 소스 코드를 빌드하는 컨테이너를 생성할 때 사용하거나 새로 생성한 컨테이너 이미지를 업로드할 때 사용할 수 있습니다. 그리고 파이프라인 자동 실행 설정에서 자동 실행을 실행시키는 컨테이너 이미지를 설정할 때 사용할 수 있습니다. 이미지 저장소에는 NHN Cloud Container Registry, Docker Hub, 그 밖에 사설 이미지 저장소를 추가할 수 있습니다. Docker Hub를 사용하는 경우 이미지 저장소 URL을 생략할 수 있습니다.
 
@@ -41,7 +47,8 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 
 ![env-config-guide-06](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-06.png)
 
-### 빌드 도구
+<a id="build-tool"></a>
+### 빌드 도구 { #build-tool }
 
 빌드 도구를 추가하면 파이프라인에서 빌드 도구에 정의한 다양한 작업을 사용할 수 있습니다. 빌드 도구에는 Jenkins를 추가할 수 있습니다. `NHN Cloud 빌드 도구` 를 사용하는 경우 빌드 도구 추가 작업을 생략할 수 있습니다.
 
@@ -55,7 +62,8 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 
 ![env-config-guide-09](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-09.png)
 
-### 배포 대상
+<a id="deployment-target"></a>
+### 배포 대상 { #deployment-target }
 
 배포 대상을 추가하면 파이프라인에서 배포 대상을 관리할 수 있습니다. 배포 대상에 컨테이너 이미지를 배포하거나 실행 중인 컨테이너를 변경할 수 있습니다. 배포 대상에는 NHN Cloud Container, Kubernetes를 추가할 수 있습니다.
 
@@ -69,7 +77,8 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 
 ![env-config-guide-12](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-12.png)
 
-### 차트 저장소
+<a id="chart-repository"></a>
+### 차트 저장소 { #chart-repository }
 
 차트 저장소를 추가하면 **빌드 - Bake (Manifest)** 스테이지를 사용해서 Helm 차트를 빌드할 수 있습니다. [차트 저장소 가이드](https://helm.sh/docs/topics/chart_repository/)에서 차트 저장소의 구성 방법을 확인할 수 있습니다.
 
@@ -83,8 +92,10 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 
 ![env-config-guide-15](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-15.png)
 
-### NHN Cloud 보안 설정
+<a id="nhn-cloud-security-settings"></a>
+### NHN Cloud 보안 설정 { #nhn-cloud-security-settings }
 
+<a id="nhn-cloud-security-settings-create-user-access-key-id-secret-access-key"></a>
 #### User Access Key ID, Secret Access Key 생성
 
 콘솔 우측 상단의 ID 영역을 클릭하면 다음과 같은 **API 보안 설정** 메뉴를 확인할 수 있습니다.
@@ -103,6 +114,7 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 
 보안 설정 등록 시 필요한 **User Access Key ID**는 비밀 키 발급 완료 팝업을 닫으면 확인할 수 있습니다.
 
+<a id="nhn-cloud-security-settings-register-nhn-cloud-security-settings"></a>
 #### NHN Cloud 보안 설정 등록
 NHN Cloud 보안 설정을 추가하면 **기능 - NHN Cloud Deploy 서비스** 스테이지를 사용해 NHN Cloud Deploy 서비스를 통해 배포할 수 있습니다.
 
@@ -116,7 +128,8 @@ NHN Cloud 보안 설정 정보를 입력한 후, **API 정상 호출 확인**의
 
 ![env-config-guide-22](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-22.png)
 
-### Pipeline IP
+<a id="pipeline-ip"></a>
+### Pipeline IP { #pipeline-ip }
 파이프라인과 연동한 시스템이 정상적으로 동작하지 않으면 ACL을 확인하십시오.
 
 | 리전        | CIDR              |

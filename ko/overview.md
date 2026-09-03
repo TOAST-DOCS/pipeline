@@ -1,7 +1,11 @@
-## Dev Tools > Pipeline > 개요
+<!-- pre-align:aligned sig=188fdbf35804 -->
+
+<a id="dev-tools-pipeline-overview"></a>
+## Dev Tools > Pipeline > 개요 { #dev-tools-pipeline-overview }
 Pipeline은 소스 코드 빌드, 컨테이너 이미지 생성, 컨테이너 이미지 배포 등 애플리케이션 배포 흐름을 관리할 수 있는 지속적 배포(continuous deployment) 서비스입니다.
 
-### 주요 기능
+<a id="main-features"></a>
+### 주요 기능 { #main-features }
 * NHN Cloud 빌드 도구
 * Jenkins 연동
 * Kubernetes 연동
@@ -9,36 +13,45 @@ Pipeline은 소스 코드 빌드, 컨테이너 이미지 생성, 컨테이너 �
 * 애플리케이션 배포 자동화
 * 승인 기능
 
-### 기능 설명
+<a id="feature-description"></a>
+### 기능 설명 { #feature-description }
 Pipeline은 사용자가 애플리케이션 배포에 사용할 수 있는 다양한 기능을 제공합니다.
 
+<a id="feature-description-nhn-cloud-build-tool"></a>
 #### NHN Cloud 빌드 도구
 Pipeline은 소스 코드 빌드와 컨테이너 이미지 생성에 사용할 수 있는 NHN Cloud 빌드 도구를 제공합니다. NHN Cloud 빌드 도구를 사용하면 별도의 소프트웨어 설치 없이 소스 저장소에 저장한 애플리케이션 소스 코드를 빌드하고, 빌드한 애플리케이션으로 컨테이너 이미지를 생성하고, 생성한 컨테이너 이미지를 이미지 저장소에 업로드할 수 있습니다.
 
+<a id="feature-description-jenkins-integration"></a>
 #### Jenkins 연동
 
 Pipeline에 Jenkins를 연동하여 Jenkins 작업을 추가할 수 있습니다. 사용자가 정의한 다양한 Jenkins 잡을 애플리케이션 배포에 활용할 수 있습니다.
 
+<a id="feature-description-kubernetes-integration"></a>
 #### Kubernetes 연동
 
 Pipeline에 Kubernetes를 연동하여 Kubernetes 작업을 추가할 수 있습니다. 컨테이너 이미지 배포, 파드 복제본 개수 변경, Kubernetes 오브젝트 삭제 등 다양한 기능을 제공합니다.
 
+<a id="feature-description-application-deployment-flow-management"></a>
 #### 애플리케이션 배포 흐름 관리
 
 소스 코드 빌드, 컨테이너 이미지 생성, 컨테이너 이미지 업로드, 컨테이너 이미지 배포 등 애플리케이션 배포에 필요한 여러 스테이지(stage)를 이용하여 파이프라인을 구성하고 저장할 수 있습니다. 저장된 파이프라인은 언제든지 다시 실행할 수 있습니다.
 
+<a id="feature-description-application-deployment-automation"></a>
 #### 애플리케이션 배포 자동화
 
 파이프라인에 자동 실행을 설정할 수 있습니다. 소스 저장소의 소스 코드를 변경하거나 이미지 저장소의 컨테이너 이미지를 갱신하면 파이프라인을 자동으로 실행합니다.
 
+<a id="feature-description-approval-feature"></a>
 #### 승인 기능
 
 파이프라인의 승인 관리 스테이지를 통해 승인권자의 승인 없이 이후의 스테이지들이 실행되지 않도록 관리합니다.
 
+<a id="feature-description-artifact"></a>
 #### 아티팩트
 
 아티팩트(artifact)는 Docker 컨테이너 이미지, 설정 파일 등 외부의 리소스를 파이프라인 구성에서 다룰 때 사용하는 개념입니다. 파이프라인에서 사용할 외부 리소스들을 아티팩트로 지정하여 스테이지의 시작/종료 조건으로 사용할 수 있습니다.
 
+<a id="feature-description-artifact-type"></a>
 #### 아티팩트 종류
 | 종류        | 설명                |
 |-----------|-------------------|
@@ -48,7 +61,8 @@ Pipeline에 Kubernetes를 연동하여 Kubernetes 작업을 추가할 수 있습
 | Docker 이미지 | 이미지 저장소에 있는 이미지 |
 |Kubernetes 오브젝트| Kubernetes 클러스터에 생성된 오브젝트|
 
-### 용어 설명
+<a id="glossary"></a>
+### 용어 설명 { #glossary }
 | 용어 | 설명 |
 |---|---|
 | Pipeline | NHN Cloud의 지속적 배포 서비스 |
