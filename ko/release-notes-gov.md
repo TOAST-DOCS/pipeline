@@ -1,5 +1,10 @@
 ## Dev Tools > Pipeline > 릴리스 노트
 
+### 2026. 09. 15.
+* **배포 - Deploy** 스테이지에 **리소스 버전 관리 사용** 옵션이 추가되었습니다.
+  * 옵션을 해제하면 리소스가 매니페스트에 정의된 원본 이름 그대로 배포됩니다.
+  * [Pipeline 스테이지 가이드](/Dev%20Tools/Pipeline/ko/stage-guide-gov/)에서 자세한 내용을 확인할 수 있습니다.
+
 ### 2026. 04. 14.
 * User Access Key 토큰을 사용하는 API v1.1 가이드가 추가되었습니다.
   * [API v1.1 가이드](/Dev%20Tools/Pipeline/ko/api-guide-gov-v1-1)에서 사용 방법을 확인할 수 있습니다.

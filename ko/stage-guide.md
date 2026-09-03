@@ -103,8 +103,30 @@ Kubernetes 환경에 배포를 하는 스테이지입니다.
     - 파이프라인에서 생성한 아티팩트를 선택할 수 있습니다.
     - 저장소에서 특정 파일을 아티팩트로 선택할 수 있습니다. 
 - **아티팩트**의 **시작 조건** 및 **종료 조건**을 설정할 수 있습니다. **시작 조건**을 설정하여 스테이지 시작 여부를 결정할 수 있습니다. **종료 조건**을 설정하여 스테이지의 생성물을 아티팩트로 설정할 수 있습니다.
+- **리소스 버전 관리 사용**을 설정할 수 있습니다. Pipeline 서비스의 기본 동작으로, 활성화를 권장합니다. 자세한 내용은 아래 **리소스 버전 관리**를 참고하십시오.
 
-![stage-guide-07](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-07_new.png)
+![stage-guide-07](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-09-15/pipeline-stage-guide/deploy-stage-normal.png)
+
+#### 리소스 버전 관리
+Pipeline 서비스는 ConfigMap, Secret 리소스를 배포할 때 기본적으로 이름 뒤에 버전(-v000, -v001, ...)을 붙인 새 리소스를 생성하고, 
+같은 배포에 포함된 워크로드가 해당 리소스를 참조하는 부분(volume, env, envFrom 등)을 버전이 붙은 이름으로 자동 변경하는 리소스 버전 관리 기능을 제공합니다.
+이 기능을 통해 설정 변경 이력이 버전별로 보존되고, 롤백 시 워크로드와 함께 이전 설정으로 되돌릴 수 있습니다.
+
+**배포 - Deploy** 스테이지에서 **리소스 버전 관리 사용**을 해제하면 해당 스테이지가 배포하는 리소스가 매니페스트에 정의된 원본 이름 그대로 배포되며, Pipeline 서비스의 리소스 버전 관리 기능을 사용할 수 없습니다. 
+오퍼레이터, 컨트롤러 등 배포 매니페스트 밖에서 리소스를 원본 이름으로 직접 조회하는 경우에만 해제하는 것을 권장합니다.
+
+![stage-guide-07-1](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2026-09-15/pipeline-stage-guide/deploy-stage-version.png)
+
+리소스 버전 관리 옵션은 해당 스테이지가 배포하는 모든 리소스에 적용됩니다. 
+특정 리소스만 다르게 설정하려면 매니페스트의 metadata.annotations에 strategy.spinnaker.io/versioned 어노테이션을 "true" 또는 "false" 값으로 추가하여 리소스 단위로 설정할 수 있습니다. 
+리소스 버전 관리 적용 여부는 다음 우선순위로 결정됩니다.
+
+1. 리소스의 strategy.spinnaker.io/versioned 어노테이션
+2. Deploy 스테이지의 **리소스 버전 관리 사용** 설정
+
+**제약사항**
+* 버전 관리를 해제한 리소스는 버전 이력이 남지 않아 **배포 - Rollout undo** 스테이지와 **배포 대상 관리** 워크로드의 롤백 기능을 사용할 수 없으며, 롤백을 실행해도 이전 ConfigMap, Secret 설정이 복원되지 않습니다.
+* 이미 버전(-vNNN)이 붙은 이름으로 배포된 리소스는 자동으로 정리되지 않으므로 직접 삭제해야 합니다.
 
 ### 배포 - Patch
 - **환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](/Dev%20Tools/Pipeline/ko/environment-config/#_5)을 선택할 수 있습니다.
