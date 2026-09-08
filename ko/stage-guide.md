@@ -110,19 +110,19 @@ Kubernetes 환경에 배포를 하는 스테이지입니다.
 - **환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](./environment-config/#deployment-target)을 선택할 수 있습니다.
 **스테이지 이름**, **배포 대상**, 배포에 사용할 **Manifest**를 입력합니다.
 빌드 스테이지에서 태그 포맷을 사용한 경우 **Manifest**의 도커 이미지 태그 부분을 `_{BUILD_NUMBER}`로 입력하면 태그 포맷으로 빌드된 이미지 중 가장 최근 번호의 이미지로 배포할 수 있습니다.
-**Manifest**를 작성하는 방법은 [Kubernetes 문서](https://kubernetes.io/docs/concepts/workloads/controllers/deployment )를 참고하십시오.
+**Manifest**를 작성하는 방법은 [Kubernetes 문서](https://kubernetes.io/docs/concepts/workloads/controllers/deployment )를 참고하세요.
 - **Manifest 소스**를 아티팩트로 선택할 수 있습니다. 선택한 아티팩트는 Manifest 형태로 생성되어야 합니다.
     - 파이프라인에서 생성한 아티팩트를 선택할 수 있습니다.
     - 저장소에서 특정 파일을 아티팩트로 선택할 수 있습니다. 
 - **아티팩트**의 **시작 조건** 및 **종료 조건**을 설정할 수 있습니다. **시작 조건**을 설정하여 스테이지 시작 여부를 결정할 수 있습니다. **종료 조건**을 설정하여 스테이지의 생성물을 아티팩트로 설정할 수 있습니다.
-- **리소스 버전 관리 사용**을 설정할 수 있습니다. Pipeline 서비스의 기본 동작으로, 활성화를 권장합니다. 자세한 내용은 아래 **리소스 버전 관리**를 참고하십시오.
+- **리소스 버전 관리 사용**을 설정할 수 있습니다. Pipeline 서비스의 기본 동작으로, 활성화를 권장합니다. 자세한 내용은 아래 **리소스 버전 관리**를 참고하세요.
 
 ![stage-guide-07](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-09-15/pipeline-stage-guide/deploy-stage-normal.png)
 
 #### 리소스 버전 관리
-Pipeline 서비스는 ConfigMap, Secret 리소스를 배포할 때 기본적으로 이름 뒤에 버전(-v000, -v001, ...)을 붙인 새 리소스를 생성하고, 
-같은 배포에 포함된 워크로드가 해당 리소스를 참조하는 부분(volume, env, envFrom 등)을 버전이 붙은 이름으로 자동 변경하는 리소스 버전 관리 기능을 제공합니다.
-이 기능을 통해 설정 변경 이력이 버전별로 보존되고, 롤백 시 워크로드와 함께 이전 설정으로 되돌릴 수 있습니다.
+Pipeline 서비스는 ConfigMap, Secret 리소스를 배포할 때 기본적으로 이름 뒤에 버전(-v000, -v001, …)을 붙인 새 리소스를 생성하고, 
+같은 배포에 포함된 워크로드가 해당 리소스를 참조하는 부분(`volume`, `env`, `envFrom` 등)을 버전이 붙은 이름으로 자동 변경하는 리소스 버전 관리 기능을 제공합니다.
+이 기능으로 설정 변경 이력이 버전별로 보존되고, 롤백 시 워크로드와 함께 이전 설정으로 되돌릴 수 있습니다.
 
 **배포 - Deploy** 스테이지에서 **리소스 버전 관리 사용**을 해제하면 해당 스테이지가 배포하는 리소스가 매니페스트에 정의된 원본 이름 그대로 배포되며, Pipeline 서비스의 리소스 버전 관리 기능을 사용할 수 없습니다. 
 오퍼레이터, 컨트롤러 등 배포 매니페스트 밖에서 리소스를 원본 이름으로 직접 조회하는 경우에만 해제하는 것을 권장합니다.
@@ -130,10 +130,10 @@ Pipeline 서비스는 ConfigMap, Secret 리소스를 배포할 때 기본적으�
 ![stage-guide-07-1](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2026-09-15/pipeline-stage-guide/deploy-stage-version.png)
 
 리소스 버전 관리 옵션은 해당 스테이지가 배포하는 모든 리소스에 적용됩니다. 
-특정 리소스만 다르게 설정하려면 매니페스트의 metadata.annotations에 strategy.spinnaker.io/versioned 어노테이션을 "true" 또는 "false" 값으로 추가하여 리소스 단위로 설정할 수 있습니다. 
+특정 리소스만 다르게 설정하려면 매니페스트의 `metadata.annotations`에 `strategy.spinnaker.io/versioned` 애너테이션을 "`true`" 또는 "`false`" 값으로 추가하여 리소스 단위로 설정할 수 있습니다. 
 리소스 버전 관리 적용 여부는 다음 우선순위로 결정됩니다.
 
-1. 리소스의 strategy.spinnaker.io/versioned 어노테이션
+1. 리소스의 `strategy.spinnaker.io/versioned` 애너테이션
 2. Deploy 스테이지의 **리소스 버전 관리 사용** 설정
 
 **제약사항**
@@ -144,7 +144,7 @@ Pipeline 서비스는 ConfigMap, Secret 리소스를 배포할 때 기본적으�
 ### 배포 - Patch { #deployment---patch }
 - **환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](./environment-config/#deployment-target)을 선택할 수 있습니다.
 - **Namespace**, **리소스 유형**, **선택 방법**, **리소스 이름**, 배포에 사용할 **Manifest**를 입력합니다. Patch로 기존 리소스의 정보를 수정할 수 있습니다.
-- **Manifest**를 작성하는 방법은 [Kubernetes 문서](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#patching-resources)를 참고하십시오.
+- **Manifest**를 작성하는 방법은 [Kubernetes 문서](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#patching-resources)를 참고하세요.
 - **선택 방법**을 **동적인 방법으로 선택**으로 설정할 경우 **클러스터**와 **선택 전략**을 입력합니다.
 - 클러스터
     - replicaSet의 경우 Pipeline 내부적으로 버전을 지정하여 배포하며, **동적인 방법으로 선택**을 선택하면 특정 버전을 선택하는 것이 아니라 선택 전략에 따라 대상을 선택합니다.
@@ -298,7 +298,7 @@ Webhook의 응답값이 **Fail Fast HTTP 상태 코드**에 입력한 값 중 �
 <a id="feature---run-nhn-cloud-deploy-service-deployment"></a>
 ### 기능 - NHN Cloud Deploy 서비스 배포 실행 { #feature---run-nhn-cloud-deploy-service-deployment }
 스테이지에서 NHN Cloud Deploy 서비스를 사용하여 배포를 실행할 수 있습니다.
-- 배포를 실행하려는 아티팩트의 **Command Type**이 **SSH**인 경우 해당 **NHN Cloud Deploy 서비스 배포 실행** 기능을 지원하지 않으며, **Cloud Agent**인 경우에만 지원합니다. 관련된 내용은 [Deploy 사용 가이드](/Dev%20Tools/Deploy/ko/console-guide/#_8)를 참고하십시오.
+- 배포를 실행하려는 아티팩트의 **Command Type**이 **SSH**인 경우 해당 **NHN Cloud Deploy 서비스 배포 실행** 기능을 지원하지 않으며, **Cloud Agent**인 경우에만 지원합니다. 관련된 내용은 [Deploy 사용 가이드](/Dev%20Tools/Deploy/ko/console-guide/#_8)를 참고하세요.
 
 **환경 설정** > **NHN Cloud 보안 설정**에서 추가한 보안 설정을 선택하고, **AppKey**에는 NHN Cloud Deploy 서비스를 사용할 Appkey를 입력합니다.
 
@@ -317,7 +317,7 @@ Webhook의 응답값이 **Fail Fast HTTP 상태 코드**에 입력한 값 중 �
 
 **배포 노트**에는 배포 실행 정보를 입력할 수 있습니다.
 
-자세한 설명은 [Deploy 사용 가이드](/Dev%20Tools/Deploy/ko/reference/#_1)를 참고하십시오.
+자세한 설명은 [Deploy 사용 가이드](/Dev%20Tools/Deploy/ko/reference/#_1)를 참고하세요.
 
 ![stage-guide-21](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-21_new.png)
 
