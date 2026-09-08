@@ -1,4 +1,4 @@
-<!-- pre-align:aligned sig=ec801840fa91 -->
+<!-- pre-align:aligned sig=093d50d32d45 -->
 
 <a id="dev-tools-pipeline-stage-guide"></a>
 ## Dev Tools > Pipeline > 스테이지 가이드 { #dev-tools-pipeline-stage-guide }
