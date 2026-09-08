@@ -119,6 +119,7 @@ Kubernetes 환경에 배포를 하는 스테이지입니다.
 
 ![stage-guide-07](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-09-15/pipeline-stage-guide/deploy-stage-normal.png)
 
+<a id="deployment---deploy-resource-versioning"></a>
 #### 리소스 버전 관리
 Pipeline 서비스는 ConfigMap, Secret 리소스를 배포할 때 기본적으로 이름 뒤에 버전(-v000, -v001, …)을 붙인 새 리소스를 생성하고, 
 같은 배포에 포함된 워크로드가 해당 리소스를 참조하는 부분(`volume`, `env`, `envFrom` 등)을 버전이 붙은 이름으로 자동 변경하는 리소스 버전 관리 기능을 제공합니다.
