@@ -127,6 +127,7 @@ This is a stage to deploy to the Kubernetes environment.
 
 ![stage-guide-07](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-09-15/pipeline-stage-guide/deploy-stage-normal.png)
 
+<a id="deployment---deploy-resource-versioning"></a>
 #### Resource Versioning
 
 When deploying ConfigMap and Secret resources, the Pipeline service provides a resource versioning feature that creates new resources with a version suffix (-v000, -v001, ...) appended to the name and automatically updates the parts of workloads in the same deployment that reference those resources (`volume`, `env`, `envFrom`, etc.) to use the versioned name.
