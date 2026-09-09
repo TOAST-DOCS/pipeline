@@ -19,7 +19,7 @@ Pipeline으로 배포하여 생성된 결과물을 **배포 대상 관리** 메�
 검색어 입력 후 검색 버튼 클릭 시 입력한 문자열로 네임스페이스를 검색합니다.
 네임스페이스 선택 시 선택한 네임스페이스에 속한 워크로드 목록이 노출됩니다.
 
-![deploy-target-monitoring-guide-09.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-08-29/deploy-target-management-guide-09.png)
+![deploy-target-monitoring-guide-09.png](../static/images/2023-08-29/deploy-target-management-guide-09.png)
 워크로드에 속한 파드의 개수와 현재 동작 중인 파드가 %로 표시됩니다. 워크로드 선택 시 선택한 워크로드의 파드의 목록이 나타나며 동작 상태를 왼쪽의 점의 색으로 확인할 수 있습니다.
 선택한 워크로드 및 파드의 기본 정보가 오른쪽에 노출됩니다.
 
@@ -33,7 +33,7 @@ Pipeline으로 배포하여 생성된 결과물을 **배포 대상 관리** 메�
 
 
 
-![deploy-target-monitoring-guide-10.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-08-29/deploy-target-management-guide-10.png)
+![deploy-target-monitoring-guide-10.png](../static/images/2023-08-29/deploy-target-management-guide-10.png)
 파드를 선택한 경우 콘솔 로그 및 연결된 서비스의 정보도 확인할 수 있습니다.
 파드 중 서비스와 연결된 파드의 경우 우측에 보이는 로드 밸런서 아이콘이 생성됩니다. 로드 밸런서 아이콘 선택 시 **네트워크**탭으로 이동합니다.
 
@@ -42,12 +42,12 @@ Pipeline으로 배포하여 생성된 결과물을 **배포 대상 관리** 메�
 ![deploy-target-monitoring-guide-08.png](http://static.toastoven.net/prod_pipeline/2023-06-27/deploy-target-monitoring-guide-08.png)
 
 **워크로드 관리**를 클릭하면 선택한 워크로드에 따라 가능한 관리 작업의 리스트가 노출됩니다. 모든 작업은 워크로드가 실행 중인 클러스터에 실제로 적용됩니다. 
-![deploy-target-monitoring-guide-11.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-08-29/deploy-target-management-guide-11.png)
+![deploy-target-monitoring-guide-11.png](../static/images/2023-08-29/deploy-target-management-guide-11.png)
 
 실행한 작업은 **관리 이력** 탭에서 확인할 수 있습니다.
 **관리 이력**은 네임스페이스와 워크로드의 이름을 기준으로 저장되며 최근 10건만 노출됩니다. 삭제 작업의 경우 수행 후 워크로드도 삭제되므로 삭제한 이력은 확인할 수 없습니다.
 
-![deploy-target-monitoring-guide-12.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-08-29/deploy-target-management-guide-12.png)
+![deploy-target-monitoring-guide-12.png](../static/images/2023-08-29/deploy-target-management-guide-12.png)
 
 관리 작업의 종류
 

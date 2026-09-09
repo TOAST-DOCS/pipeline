@@ -1,0 +1,214 @@
+{
+    "name": "시나리오4",
+    "stages": [
+        {
+            "type": "githubSource",
+            "name": "source",
+            "refId": "1",
+            "requisiteStageRefIds": [],
+            "sourceRepo": "{환경설정/소스 저장소 설정에 저장된 소스 저장소 이름}",
+            "branch": "{배포 대상 브랜치}"
+        },
+        {
+            "type": "tektonImageBuild",
+            "name": "build",
+            "refId": "2",
+            "requisiteStageRefIds": [
+                "1"
+            ],
+            "buildImageRegistry": "{이미지 저장소 설정에 저장된 이미지 저장소 이름}",
+            "buildImageName": "{이미지 이름}",
+            "buildImageTag": "{이미지 태그}",
+            "buildCommand": "{빌드 명령어}",
+            "dockerfilePath": "{Dockerfile 경로}",
+            "buildWorkDir": "",
+            "pushImageRegistry": "{빌드 결과가 업로드 될 이미지 저장소 설정에 저장된 이미지 저장소 이름}",
+            "pushImageName": "{빌드 결과 이미지 이름}",
+            "pushImageTag": "{빌드 결과 이미지 태그}",
+            "buildFlavorName": "c2m4",
+            "buildTimeout": 30,
+            "startArtifacts": null,
+            "expectedArtifacts": null
+        },
+        {
+            "type": "deployManifest",
+            "name": "deploy-develop",
+            "refId": "3",
+            "requisiteStageRefIds": [
+                "5"
+            ],
+            "deployTarget": "{배포 대상 설정에 저장된 배포 대상 이름}",
+            "manifests": [
+                {
+                    "apiVersion": "apps/v1",
+                    "kind": "Deployment",
+                    "metadata": {
+                        "labels": {
+                            "app": "pipeline-test"
+                        },
+                        "name": "pipeline-test"
+                    },
+                    "spec": {
+                        "replicas": 2,
+                        "revisionHistoryLimit": 3,
+                        "selector": {
+                            "matchLabels": {
+                                "app": "pipeline-test-example"
+                            }
+                        },
+                        "template": {
+                            "metadata": {
+                                "labels": {
+                                    "app": "pipeline-test-example"
+                                },
+                                "name": "pipeline-test-example"
+                            },
+                            "spec": {
+                                "containers": [
+                                    {
+                                        "image": "example.registry.container.nhncloud.com/test/pipelineImage:latest",
+                                        "imagePullPolicy": "Always",
+                                        "name": "pipeline-test",
+                                        "ports": [
+                                            {
+                                                "containerPort": 8080
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            ],
+            "namespaceOverride": "",
+            "startArtifacts": null,
+            "expectedArtifacts": null,
+            "manifestArtifactId": null,
+            "manifestSource": "text",
+            "manifestArtifact": null
+        },
+        {
+            "type": "manualJudgment",
+            "name": "judgement",
+            "refId": "4",
+            "requisiteStageRefIds": [
+                "2"
+            ],
+            "failPipeline": false,
+            "completeOtherBranchesThenFail": false,
+            "continuePipeline": false,
+            "instructions": "개발환경, 리얼환경 분기 처리",
+            "judgmentInputs": [
+                {
+                    "value": "develop"
+                },
+                {
+                    "value": "real"
+                }
+            ],
+            "notifications": []
+        },
+        {
+            "type": "checkPreconditions",
+            "name": "precondition-develop",
+            "refId": "5",
+            "requisiteStageRefIds": [
+                "4"
+            ],
+            "preconditions": [
+                {
+                    "failPipeline": false,
+                    "type": "expression",
+                    "context": {
+                        "equals": true,
+                        "targetExecutionValue": "develop",
+                        "expression": null,
+                        "failureMessage": null
+                    }
+                }
+            ]
+        },
+        {
+            "type": "checkPreconditions",
+            "name": "precondition-real",
+            "refId": "6",
+            "requisiteStageRefIds": [
+                "4"
+            ],
+            "preconditions": [
+                {
+                    "failPipeline": false,
+                    "type": "expression",
+                    "context": {
+                        "equals": true,
+                        "targetExecutionValue": "real",
+                        "expression": null,
+                        "failureMessage": null
+                    }
+                }
+            ]
+        },
+        {
+            "type": "deployManifest",
+            "name": "deploy-real",
+            "refId": "7",
+            "requisiteStageRefIds": [
+                "6"
+            ],
+            "deployTarget": "{배포 대상 설정에 저장된 배포 대상 이름}",
+            "manifests": [
+                {
+                    "apiVersion": "apps/v1",
+                    "kind": "Deployment",
+                    "metadata": {
+                        "labels": {
+                            "app": "pipeline-test"
+                        },
+                        "name": "pipeline-test"
+                    },
+                    "spec": {
+                        "replicas": 2,
+                        "revisionHistoryLimit": 3,
+                        "selector": {
+                            "matchLabels": {
+                                "app": "pipeline-test"
+                            }
+                        },
+                        "template": {
+                            "metadata": {
+                                "labels": {
+                                    "app": "pipeline-test"
+                                },
+                                "name": "pipeline-test"
+                            },
+                            "spec": {
+                                "containers": [
+                                    {
+                                        "image": "example.registry.container.nhncloud.com/test/pipelineImage:latest",
+                                        "imagePullPolicy": "Always",
+                                        "name": "pipeline-test",
+                                        "ports": [
+                                            {
+                                                "containerPort": 8080
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            ],
+            "namespaceOverride": "",
+            "startArtifacts": null,
+            "expectedArtifacts": null,
+            "manifestArtifactId": null,
+            "manifestSource": "text",
+            "manifestArtifact": null
+        }
+    ],
+    "description": "하나의 Pipeline에서 개발환경, 리얼환경을 구분해서 배포하는 시나리오",
+    "triggers": null,
+    "triggerEnabled": false
+}

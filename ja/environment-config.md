@@ -19,11 +19,11 @@ Pipelineに追加できる外部システムは次のとおりです。
 
 ソースリポジトリを追加すると、NHN Cloudビルドツールを使用してソースコードをビルドできます。 GitHub、GitLab、GitHub Enterpriseなどのgitコマンドを使用してアクセスできるリポジトリを追加できます。
 
-![env-config-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-10-29/env-config-guide-02.png)
+![env-config-guide-01](../static/images/2024-10-29/env-config-guide-02.png)
 
 **環境設定**で**ソースリポジトリ設定**をクリックすると、ソースリポジトリを管理する画面に移動します。**ソースリポジトリ追加**をクリックして新規ソースリポジトリを追加できます。
 
-![env-config-guide-02](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-10-29/env-config-guide-02.png)
+![env-config-guide-02](../static/images/2024-10-29/env-config-guide-02.png)
 
 ソースリポジトリ情報を入力し、**ソースリポジトリ接続確認**の**確認**をクリックします。接続確認後に**確認**をクリックします。
 - GitHubソースリポジトリのトークン発行時、`repo`権限が必要です。
@@ -99,17 +99,17 @@ Pipelineに追加できる外部システムは次のとおりです。
 
 コンソール右上のID領域をクリックすると、次のような**APIセキュリティ設定**メニューを確認できます。
 
-![env-config-guide-16](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-16.png)
+![env-config-guide-16](../static/images/2023-12-19/env-config-guide-16.png)
 
 **APIセキュリティ設定**で**User Access Key ID**作成をクリックして、NHN Cloudセキュリティ設定を登録する際に入力が必要な**User Access Key ID**と**Secret Access Key**を作成できます。
 
-![env-config-guide-17](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-17.png)
+![env-config-guide-17](../static/images/2023-12-19/env-config-guide-17.png)
 
-![env-config-guide-18](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-18.png)
+![env-config-guide-18](../static/images/2023-12-19/env-config-guide-18.png)
 
 **User Access Key ID**、**Secret Access Key**を作成すると、次のような**秘密鍵発行完了**画面が表示されます。秘密鍵はポップアップ画面で1度しか表示されないため、忘れないよう記録して使用します。
 
-![env-config-guide-19](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-19.png)
+![env-config-guide-19](../static/images/2023-12-19/env-config-guide-19.png)
 
 セキュリティ設定を登録する際に必要な**User Access Key ID**は、秘密鍵発行完了ポップアップを閉じると確認できます。
 
@@ -117,15 +117,15 @@ Pipelineに追加できる外部システムは次のとおりです。
 #### NHN Cloudセキュリティ設定登録
 NHN Cloudセキュリティ設定を追加すると**機能 - NHN Cloud Deployサービス**ステージを使用し、NHN Cloud Deployサービスを通じて配布できます。
 
-![env-config-guide-20](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-20.png)
+![env-config-guide-20](../static/images/2023-12-19/env-config-guide-20.png)
 
 **環境設定** > **NHN Cloudセキュリティ設定**画面で**+セキュリティ設定追加**をクリックして新規セキュリティ設定を追加できます。
 
-![env-config-guide-21](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-21.png)
+![env-config-guide-21](../static/images/2023-12-19/env-config-guide-21.png)
 
 NHN Cloudセキュリティ設定情報を入力し、**API正常呼び出し確認**の**確認**をクリックします。接続確認後**確認**をクリックします。
 
-![env-config-guide-22](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-22.png)
+![env-config-guide-22](../static/images/2023-12-19/env-config-guide-22.png)
 
 <a id="pipeline-ip"></a>
 ### Pipeline IP { #pipeline-ip }
