@@ -20,7 +20,7 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 
 소스 저장소를 추가하면 NHN Cloud 빌드 도구를 사용해서 소스 코드를 빌드할 수 있습니다. GitHub, GitLab, GitHub Enterprise와 같이 git 명령어를 사용해서 접근할 수 있는 저장소를 추가할 수 있습니다.
 
-![env-config-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-10-29/env-config-guide-02.png)
+![env-config-guide-01](../static/images/2024-10-29/env-config-guide-02.png)
 
 **환경 설정**에서 **소스 저장소 설정**을 클릭하면 소스 저장소를 관리하는 화면으로 이동합니다. **소스 저장소 추가**를 클릭해서 신규 소스 저장소를 추가할 수 있습니다.
 
@@ -100,17 +100,17 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 
 콘솔 우측 상단의 ID 영역을 클릭하면 다음과 같은 **API 보안 설정** 메뉴를 확인할 수 있습니다.
 
-![env-config-guide-16](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-16.png)
+![env-config-guide-16](../static/images/2023-12-19/env-config-guide-16.png)
 
 **API 보안 설정**에서 **User Access Key ID** 생성을 클릭하여 NHN Cloud 보안 설정 등록 시 입력해야 하는 **User Access Key ID**와 **Secret Access Key**를 생성할 수 있습니다.
 
-![env-config-guide-17](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-17.png)
+![env-config-guide-17](../static/images/2023-12-19/env-config-guide-17.png)
 
-![env-config-guide-18](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-18.png)
+![env-config-guide-18](../static/images/2023-12-19/env-config-guide-18.png)
 
 **User Access Key ID**, **Secret Access Key**를 생성하면 아래와 같이 **비밀 키 발급 완료** 화면이 표시됩니다. 비밀 키는 해당 팝업 화면에서 한번만 알려주므로 이 값을 잘 기록하여 사용합니다.
 
-![env-config-guide-19](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-19.png)
+![env-config-guide-19](../static/images/2023-12-19/env-config-guide-19.png)
 
 보안 설정 등록 시 필요한 **User Access Key ID**는 비밀 키 발급 완료 팝업을 닫으면 확인할 수 있습니다.
 
@@ -118,15 +118,15 @@ Pipeline에 추가할 수 있는 외부 시스템은 아래와 같습니다.
 #### NHN Cloud 보안 설정 등록
 NHN Cloud 보안 설정을 추가하면 **기능 - NHN Cloud Deploy 서비스** 스테이지를 사용해 NHN Cloud Deploy 서비스를 통해 배포할 수 있습니다.
 
-![env-config-guide-20](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-20.png)
+![env-config-guide-20](../static/images/2023-12-19/env-config-guide-20.png)
 
 **환경 설정** > **NHN Cloud 보안 설정** 화면에서 **+보안 설정 추가**를 클릭해 신규 보안 설정을 추가할 수 있습니다.
 
-![env-config-guide-21](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-21.png)
+![env-config-guide-21](../static/images/2023-12-19/env-config-guide-21.png)
 
 NHN Cloud 보안 설정 정보를 입력한 후, **API 정상 호출 확인**의 **확인**을 클릭합니다. 연결 확인 후 **확인**을 클릭합니다.
 
-![env-config-guide-22](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-22.png)
+![env-config-guide-22](../static/images/2023-12-19/env-config-guide-22.png)
 
 <a id="pipeline-ip"></a>
 ### Pipeline IP { #pipeline-ip }

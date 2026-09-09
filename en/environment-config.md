@@ -20,11 +20,11 @@ External systems that can be added to Pipeline include:
 
 After adding the source repository, you can build the source code using the NHN Cloud build tool. You can add repositories that can be accessed using the git commands, such as GitHub, GitLab, or GitHub Enterprise.
 
-![env-config-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-10-29/env-config-guide-02.png)
+![env-config-guide-01](../static/images/2024-10-29/env-config-guide-02.png)
 
 Click **Source Repository Settings** in **Environment Settings** to go to the screen to manage source repositories. You can add a new source repository by clicking **Add Source Repository**.
 
-![env-config-guide-02](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-10-29/env-config-guide-02.png)
+![env-config-guide-02](../static/images/2024-10-29/env-config-guide-02.png)
 
 Enter the source repository information. After checking the connection, click **Confirm**.
 - When obtaining a token for a GitLab source repository, `repo` permissions are required.
@@ -100,17 +100,17 @@ Enter the chart repository information, click **Check** in **Chart Repository Co
 
 Click the ID area in the upper-right corner of the console to see the **API Security Settings** menu as follows.
 
-![env-config-guide-16](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-16.png)
+![env-config-guide-16](../static/images/2023-12-19/env-config-guide-16.png)
 
 Click Create **User Access Key ID** **in API Security Settings**to create a **User Access Key ID and** **Secret Access Key**that you need to enter when registering for NHN Cloud security settings.
 
-![env-config-guide-17](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-17.png)
+![env-config-guide-17](../static/images/2023-12-19/env-config-guide-17.png)
 
-![env-config-guide-18](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-18.png)
+![env-config-guide-18](../static/images/2023-12-19/env-config-guide-18.png)
 
 After creating **User Access Key ID** and **Secret Access Key**, the **Secret key successfully issued** screen is displayed as shown below. The secret key is only given to you once in that popup screen, so make sure to keep a good record of this value.
 
-![env-config-guide-19](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-19.png)
+![env-config-guide-19](../static/images/2023-12-19/env-config-guide-19.png)
 
 **The User Access Key ID**, which is required to register security settings, can be found by closing the secret key successfully issued popup.
 
@@ -118,15 +118,15 @@ After creating **User Access Key ID** and **Secret Access Key**, the **Secret ke
 #### Register NHN Cloud Security Settings
 Once you add the NHN Cloud security settings, you can deploy through the NHN Cloud Deploy service using the **Features - NHN Cloud Deploy service** stage.
 
-![env-config-guide-20](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-20.png)
+![env-config-guide-20](../static/images/2023-12-19/env-config-guide-20.png)
 
 You can add a new security setting by clicking **+Add security setting**on the **Environment Settings** > **NHN Cloud Security Settings** screen.
 
-![env-config-guide-21](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-21.png)
+![env-config-guide-21](../static/images/2023-12-19/env-config-guide-21.png)
 
 Enter the NHN Cloud security settings information, click **Confirm** in **Check API Calls**. After checking the connection, click **Confirm**.
 
-![env-config-guide-22](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-22.png)
+![env-config-guide-22](../static/images/2023-12-19/env-config-guide-22.png)
 
 <a id="pipeline-ip"></a>
 ### Pipeline IP { #pipeline-ip }

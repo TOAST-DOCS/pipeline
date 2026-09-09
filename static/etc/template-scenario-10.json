@@ -1,0 +1,114 @@
+{
+    "name": "시나리오10",
+    "stages": [
+        {
+            "type": "evaluateVariables",
+            "name": "var",
+            "refId": "1",
+            "requisiteStageRefIds": [],
+            "ifStageFailType": "HALT_ENTIRE_PIPELINE",
+            "nhnVariables": [
+                {
+                    "variableType": "IMAGE",
+                    "key": "image",
+                    "valueMap": {
+                        "defaultValue": "my-image",
+                        "imagePart": "name"
+                    }
+                },
+                {
+                    "variableType": "IMAGE",
+                    "key": "tag",
+                    "valueMap": {
+                        "defaultValue": "my-tag",
+                        "imagePart": "version"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "tektonImageScan",
+            "name": "image scan",
+            "refId": "2",
+            "requisiteStageRefIds": [
+                "1"
+            ],
+            "ifStageFailType": "HALT_ENTIRE_PIPELINE",
+            "imageRegistry": "이미지 저장소 - Private Container Registry",
+            "imageName": "${image}",
+            "imageTag": "${tag}"
+        },
+        {
+            "type": "manualJudgment",
+            "name": "approval",
+            "refId": "3",
+            "requisiteStageRefIds": [
+                "2"
+            ],
+            "ifStageFailType": "HALT_THIS_BRANCH",
+            "instructions": "취약점 분석 후 배포를 진행할 지 결정합니다.",
+            "judgmentInputs": [],
+            "approval": true
+        },
+        {
+            "type": "deployManifest",
+            "name": "deploy",
+            "refId": "4",
+            "requisiteStageRefIds": [
+                "3"
+            ],
+            "ifStageFailType": "HALT_ENTIRE_PIPELINE",
+            "deployTarget": "{배포 대상 설정에 저장된 배포 대상 이름}",
+            "manifests": [
+                {
+                    "apiVersion": "apps/v1",
+                    "kind": "Deployment",
+                    "metadata": {
+                        "labels": {
+                            "app": "my-image"
+                        },
+                        "name": "my-image-deployment"
+                    },
+                    "spec": {
+                        "replicas": 2,
+                        "selector": {
+                            "matchLabels": {
+                                "app": "my-image"
+                            }
+                        },
+                        "template": {
+                            "metadata": {
+                                "labels": {
+                                    "app": "my-image"
+                                }
+                            },
+                            "spec": {
+                                "containers": [
+                                    {
+                                        "image": "${image}:${tag}",
+                                        "name": "my-image",
+                                        "ports": [
+                                            {
+                                                "containerPort": 8080
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            ],
+            "namespaceOverride": null,
+            "startArtifacts": null,
+            "expectedArtifacts": null,
+            "manifestArtifactId": null,
+            "manifestSource": "text",
+            "manifestArtifact": null,
+            "useVariable": true
+        }
+    ],
+    "description": "빌드할 이미지에 대해 취약점 분석 후 배포를 진행하는 시나리오",
+    "triggers": null,
+    "triggerEnabled": false
+}

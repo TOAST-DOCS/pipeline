@@ -1,0 +1,30 @@
+{
+    "name": "notification-guide",
+    "stages": [
+        {
+            "type": "webhook",
+            "name": "webhook stage",
+            "refId": "1",
+            "requisiteStageRefIds": [],
+            "ifStageFailType": "HALT_ENTIRE_PIPELINE",
+            "url": "{webhook 보낼 URL}",
+            "payload": null,
+            "customHeaders": null,
+            "failFastStatusCodes": null,
+            "method": "GET"
+        }
+    ],
+    "description": "webhook stage를 이용한 파이프라인 구성 + 파이프라인 시작, 완료, 실패시 알림 발송",
+    "notifications": [
+        {
+            "level": "pipeline",
+            "type": "nhnPipeline",
+            "when": [
+                "pipeline.starting",
+                "pipeline.complete",
+                "pipeline.failed"
+            ]
+        }
+    ],
+    "triggerEnabled": false
+}

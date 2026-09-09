@@ -33,7 +33,7 @@ Blue/Green 배포를 할 수 있는 파이프라인을 구성하는 방법은 �
 
 **배포 - Deploy 스테이지**를 추가하고 Pipeline을 이용하여 Service를 생성합니다. 일반적으로 애플리케이션 배포 시 Service를 수정하지는 않으므로 애플리케이션 배포 파이프라인과 다른 파이프라인을 생성하여 Service만 미리 생성합니다.
 
-![deploy-strategy-guide-01.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/deploy-strategy-guide/deploy-strategy-guide-01.png)
+![deploy-strategy-guide-01.png](../static/images/2024-08-27/deploy-strategy-guide/deploy-strategy-guide-01.png)
 
 - 배포 - Deploy 스테이지
     - Service manifest의 예는 아래와 같습니다. metadata, spec 등은 환경에 맞게 수정하여 사용할 수 있습니다.
@@ -52,13 +52,13 @@ spec:
     port: 80
 ```
 
-![deploy-strategy-guide-02.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/deploy-strategy-guide/deploy-strategy-guide-02.png)
+![deploy-strategy-guide-02.png](../static/images/2024-08-27/deploy-strategy-guide/deploy-strategy-guide-02.png)
 
 <a id="how-to-configure-a-bluegreen-pipeline-configure-the-application-deployment-pipeline"></a>
 #### 2. 애플리케이션 배포 파이프라인 구성
 
 **배포 - Deploy 스테이지** > **배포 - Disable 스테이지** 순서로 파이프라인을 구성합니다. **배포 - Deploy 스테이지**에서는 새로운 버전의 애플리케이션을 배포하고, **배포 - Disable 스테이지**에서는 구버전 애플리케이션을 선택할 수 있도록 구성합니다.
-![deploy-strategy-guide-03.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/deploy-strategy-guide/deploy-strategy-guide-03.png)
+![deploy-strategy-guide-03.png](../static/images/2024-08-27/deploy-strategy-guide/deploy-strategy-guide-03.png)
 
 - 배포 - Deploy 스테이지
     - ReplicaSet manifest의 예는 아래와 같습니다. annotations의 `strategy.spinnaker.io/max-version-history`는 2 이상의 값을 지정해 줘야 하고, `traffic.spinnaker.io/load-balancers`는 위 과정에서 생성한 Service 이름을 지정합니다.
@@ -91,7 +91,7 @@ spec:
         name: frontend
 ```
     
-![deploy-strategy-guide-04.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/deploy-strategy-guide/deploy-strategy-guide-04.png)
+![deploy-strategy-guide-04.png](../static/images/2024-08-27/deploy-strategy-guide/deploy-strategy-guide-04.png)
 
 - 배포 - Disable 스테이지
     - 배포 후 구버전 애플리케이션을 선택합니다. **배포 - Disable 스테이지**는 리소스를 삭제하지는 않고, 더 이상 해당 리소스에 트래픽을 보내지 않도록 설정합니다.
@@ -103,5 +103,5 @@ spec:
         - Largest: 해당 스테이지가 시작됐을 때 클러스터에서 Pod 수가 가장 많은 리소스를 선택합니다.
         - Smallest: 해당 스테이지가 시작됐을 때 클러스터에서 Pod 수가 가장 적은 리소스를 선택합니다.
       
-![deploy-strategy-guide-05.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/deploy-strategy-guide/deploy-strategy-guide-05.png)
+![deploy-strategy-guide-05.png](../static/images/2024-08-27/deploy-strategy-guide/deploy-strategy-guide-05.png)
 

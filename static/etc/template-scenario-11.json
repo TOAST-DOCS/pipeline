@@ -1,0 +1,88 @@
+{
+    "name": "시나리오11",
+    "stages": [
+        {
+            "type": "evaluateVariables",
+            "name": "var",
+            "refId": "1",
+            "requisiteStageRefIds": [],
+            "ifStageFailType": "HALT_ENTIRE_PIPELINE",
+            "nhnVariables": [
+                {
+                    "variableType": "TEXT",
+                    "key": "targetBranch",
+                    "valueMap": {
+                        "text": "release"
+                    }
+                },
+                {
+                    "variableType": "DATE",
+                    "key": "buildImageTag",
+                    "valueMap": {
+                        "format": "yyyyMMddHHmmss"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "tektonSourceCodeScan",
+            "name": "source scan",
+            "refId": "2",
+            "requisiteStageRefIds": [
+                "1"
+            ],
+            "ifStageFailType": "HALT_ENTIRE_PIPELINE",
+            "sourceRepo": "{환경설정/소스 저장소 설정에 저장된 소스 저장소 이름}",
+            "branch": "${targetBranch}"
+        },
+        {
+            "type": "manualJudgment",
+            "name": "approval",
+            "refId": "3",
+            "requisiteStageRefIds": [
+                "2"
+            ],
+            "ifStageFailType": "HALT_THIS_BRANCH",
+            "instructions": "취약점 분석 후 빌드를 진행할 지 결정합니다.",
+            "judgmentInputs": [],
+            "approval": true
+        },
+        {
+            "type": "githubSource",
+            "name": "source - github",
+            "refId": "4",
+            "requisiteStageRefIds": [
+                "3"
+            ],
+            "ifStageFailType": "HALT_ENTIRE_PIPELINE",
+            "sourceRepo": "{환경설정/소스 저장소 설정에 저장된 소스 저장소 이름}",
+            "branch": "${targetBranch}"
+        },
+        {
+            "type": "tektonImageBuild",
+            "name": "build and push image",
+            "refId": "5",
+            "requisiteStageRefIds": [
+                "4"
+            ],
+            "ifStageFailType": "HALT_ENTIRE_PIPELINE",
+            "buildImageRegistry": "{이미지 저장소 설정에 저장된 이미지 저장소 이름}",
+            "buildImageName": "{이미지 이름}",
+            "buildImageTag": "{이미지 태그}",
+            "buildCommand": "{빌드 명령어}",
+            "dockerfilePath": "{Dockerfile 경로}",
+            "buildWorkDir": null,
+            "pushImageRegistry": "{빌드 결과가 업로드 될 이미지 저장소 설정에 저장된 이미지 저장소 이름}",
+            "pushImageName": "{빌드 결과 이미지 이름}",
+            "pushImageTag": "${buildImageTag}",
+            "buildFlavorName": "c2m4",
+            "buildTimeout": null,
+            "imageRegistriesInDockerfile": null,
+            "startArtifacts": null,
+            "expectedArtifacts": null
+        }
+    ],
+    "description": "빌드할 소스 코드에 대해 취약점 분석 후 NHN 빌드 도구를 통해 빌드를 진행하는 시나리오",
+    "triggers": null,
+    "triggerEnabled": false
+}

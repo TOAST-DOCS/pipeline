@@ -1,0 +1,104 @@
+{
+    "name": "시나리오3",
+    "stages": [
+        {
+            "type": "githubSource",
+            "name": "source",
+            "refId": "1",
+            "requisiteStageRefIds": [],
+            "sourceRepo": "{환경설정/소스 저장소 설정에 저장된 소스 저장소 이름}",
+            "branch": "{배포 대상 브랜치}"
+        },
+        {
+            "type": "tektonImageBuild",
+            "name": "build",
+            "refId": "2",
+            "requisiteStageRefIds": [
+                "1"
+            ],
+            "buildImageRegistry": "{이미지 저장소 설정에 저장된 이미지 저장소 이름}",
+            "buildImageName": "{이미지 이름}",
+            "buildImageTag": "{이미지 태그}",
+            "buildCommand": "{빌드 명령어}",
+            "dockerfilePath": "{Dockerfile 경로}",
+            "buildWorkDir": "",
+            "pushImageRegistry": "{빌드 결과가 업로드 될 이미지 저장소 설정에 저장된 이미지 저장소 이름}",
+            "pushImageName": "{빌드 결과 이미지 이름}",
+            "pushImageTag": "{빌드 결과 이미지 태그}",
+            "buildFlavorName": "c2m4",
+            "buildTimeout": 30,
+            "startArtifacts": null,
+            "expectedArtifacts": null
+        },
+        {
+            "type": "deployManifest",
+            "name": "deploy",
+            "refId": "3",
+            "requisiteStageRefIds": [
+                "2"
+            ],
+            "deployTarget": "{배포 대상 설정에 저장된 배포 대상 이름}",
+            "manifests": [
+                {
+                    "apiVersion": "apps/v1",
+                    "kind": "Deployment",
+                    "metadata": {
+                        "labels": {
+                            "app": "pipeline-test"
+                        },
+                        "name": "pipeline-test"
+                    },
+                    "spec": {
+                        "replicas": 2,
+                        "revisionHistoryLimit": 3,
+                        "selector": {
+                            "matchLabels": {
+                                "app": "pipeline-test-example"
+                            }
+                        },
+                        "template": {
+                            "metadata": {
+                                "labels": {
+                                    "app": "pipeline-test-example"
+                                },
+                                "name": "pipeline-test-example"
+                            },
+                            "spec": {
+                                "containers": [
+                                    {
+                                        "image": "example.registry.container.nhncloud.com/test/pipelineImage:latest",
+                                        "imagePullPolicy": "Always",
+                                        "name": "pipeline-test",
+                                        "ports": [
+                                            {
+                                                "containerPort": 8080
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            ],
+            "namespaceOverride": "",
+            "startArtifacts": null,
+            "expectedArtifacts": null,
+            "manifestArtifactId": null,
+            "manifestSource": "text",
+            "manifestArtifact": null
+        }
+    ],
+    "description": "pipeline 상품과 NHN build도구를 통해 build 후 대상 서버에 Manifest 정보로 배포 + Github 이벤트 발생 시 파이프라인 자동 실행",
+    "triggers": [
+        {
+            "type": "git",
+            "branch": "{브랜치}",
+            "organization": "{조직명 혹은 사용자 이름}",
+            "secret": "{시크릿 정보}",
+            "project": "{프로젝트 이름}",
+            "source": "github"
+        }
+    ],
+    "triggerEnabled": false
+}
