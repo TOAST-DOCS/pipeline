@@ -78,7 +78,7 @@ You can build using a Helm package file or [Chart Repository](./environment-conf
     - Replace Basic Type
         - If the option is checked, when adding the override value, --set is used instead of --set--string.
 - Artifact
-    - You can set the **Start Condition** and **End Condition** of ** Artifact**. You can set a start condition to determine whether to start stages. You can set **End Condition** to set stage products as artifacts.
+    - You can set the **Start Condition** and **End Condition** of **Artifact**. You can set a start condition to determine whether to start stages. You can set **End Condition** to set stage products as artifacts.
 
 ![stage-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-10-29/stage-guide-05-1.png)
 
@@ -170,7 +170,7 @@ Resource versioning is determined by the following order of precedence:
 <a id="deployment---scale"></a>
 ### Deployment - Scale { #deployment---scale }
 
-- You can select the [deployment target\](/Dev%20Tools/Pipeline/en/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**.
+- You can select the [deployment target](/Dev%20Tools/Pipeline/en/environment-config/#deployment-target) you added in **Deployment Target Settings** in **Environment Settings**.
 - Enter **Namespace**, **Resource Type**, Resource Name, and Replicas. Replicas can be modified with Scale.
 - If you set the selection method to **Select by dynamic method**, enter a **cluster** and **selection strategy**.
 - Cluster
