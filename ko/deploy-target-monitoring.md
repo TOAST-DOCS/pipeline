@@ -1,8 +1,12 @@
-## Dev Tools > Pipeline > 콘솔 사용 가이드 > 배포 대상 관리
+<!-- pre-align:aligned sig=5bab74919df5 -->
+
+<a id="dev-tools-pipeline-console-user-guide-deployment-target-management"></a>
+## Dev Tools > Pipeline > 콘솔 사용 가이드 > 배포 대상 관리 { #dev-tools-pipeline-console-user-guide-deployment-target-management }
 
 Pipeline으로 배포하여 생성된 결과물을 **배포 대상 관리** 메뉴에서 확인할 수 있습니다.
 
-## 배포 대상
+<a id="deployment-target"></a>
+## 배포 대상 { #deployment-target }
 
 **배포 대상 관리 > 배포 대상**은 Pipeline으로 Kubernetes에 배포한 워크로드를 확인할 수 있는 페이지입니다.
 ![deploy-target-monitoring-guide-01.png](http://static.toastoven.net/prod_pipeline/2023-06-27/deploy-target-monitoring-guide-01.png)
@@ -61,7 +65,8 @@ Pipeline으로 배포하여 생성된 결과물을 **배포 대상 관리** 메�
 
 
 
-## 네트워크
+<a id="network"></a>
+## 네트워크 { #network }
 
 **배포 대상 관리 > 네트워크**는 Pipeline으로 Kubernetes에 배포한 서비스를 확인할 수 있는 페이지입니다.
 

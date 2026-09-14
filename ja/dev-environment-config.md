@@ -1,6 +1,10 @@
-## Dev Tools > Pipeline > コンソール使用ガイド > Dev Env Configuration
+<!-- pre-align:aligned sig=3da2439ee26a -->
 
-### 開発環境設定
+<a id="dev-tools-pipeline-console-user-guide-dev-env-configuration"></a>
+## Dev Tools > Pipeline > コンソール使用ガイド > Dev Env Configuration { #dev-tools-pipeline-console-user-guide-dev-env-configuration }
+
+<a id="set-up-a-development-environment"></a>
+### 開発環境設定 { #set-up-a-development-environment }
 
 開発環境設定を使用すると、Kubernetesの使用方法を知らないユーザーもKubernetesにコンテナイメージを配布できます。
 
