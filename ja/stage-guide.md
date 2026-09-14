@@ -129,7 +129,7 @@ Kubernetes環境に配布を行うステージです。
 - **[アーティファクト]** の **[開始条件]** および **[終了条件]** を設定できます。**[開始条件]** を設定することで、ステージの開始可否を決定できます。**[終了条件]** を設定することで、ステージの生成物をアーティファクトとして設定できます。
 - **[リソースバージョン管理の使用]** を設定できます。Pipeline サービスのデフォルト動作であり、有効化することをお勧めします。詳細については、以下の **[リソースバージョン管理]** を参照してください。
 
-![stage-guide-07](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-09-15/pipeline-stage-guide/deploy-stage-normal.png)
+![stage-guide-07](https://static.toastoven.net/prod_pipeline/pipeline-stage-guide/2026-09-15/deploy-stage-normal.png)
 
 <a id="deployment---deploy-resource-versioning"></a>
 #### リソースのバージョン管理
@@ -140,7 +140,7 @@ Pipeline サービスは、ConfigMap および Secret リソースを配布す�
 **[配布 - Deploy]** ステージで **[リソースのバージョン管理を使用]** を無効にすると、そのステージが配布するリソースはマニフェストに定義された元の名前のまま配布され、Pipeline サービスのリソースのバージョン管理機能は使用できません。
 オペレーターやコントローラーなど、配布マニフェストの外部からリソースを元の名前で直接参照する場合にのみ無効にすることをお勧めします。
 
-![stage-guide-07-1](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2026-09-15/pipeline-stage-guide/deploy-stage-version.png)
+![stage-guide-07-1](https://static.toastoven.net/prod_pipeline/pipeline-stage-guide/2026-09-15/deploy-stage-version.png)
 
 リソースのバージョン管理オプションは、そのステージが配布するすべてのリソースに適用されます。
 特定のリソースのみ異なる設定にするには、マニフェストの `metadata.annotations` に `strategy.spinnaker.io/versioned` アノテーションを `"true"` または `"false"` の値で追加して、リソース単位で設定できます。

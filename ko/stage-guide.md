@@ -117,7 +117,7 @@ Kubernetes 환경에 배포를 하는 스테이지입니다.
 - **아티팩트**의 **시작 조건** 및 **종료 조건**을 설정할 수 있습니다. **시작 조건**을 설정하여 스테이지 시작 여부를 결정할 수 있습니다. **종료 조건**을 설정하여 스테이지의 생성물을 아티팩트로 설정할 수 있습니다.
 - **리소스 버전 관리 사용**을 설정할 수 있습니다. Pipeline 서비스의 기본 동작으로, 활성화를 권장합니다. 자세한 내용은 아래 **리소스 버전 관리**를 참고하세요.
 
-![stage-guide-07](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-09-15/pipeline-stage-guide/deploy-stage-normal.png)
+![stage-guide-07](https://static.toastoven.net/prod_pipeline/pipeline-stage-guide/2026-09-15/deploy-stage-normal.png)
 
 <a id="deployment---deploy-resource-versioning"></a>
 #### 리소스 버전 관리
@@ -128,7 +128,7 @@ Pipeline 서비스는 ConfigMap, Secret 리소스를 배포할 때 기본적으�
 **배포 - Deploy** 스테이지에서 **리소스 버전 관리 사용**을 해제하면 해당 스테이지가 배포하는 리소스가 매니페스트에 정의된 원본 이름 그대로 배포되며, Pipeline 서비스의 리소스 버전 관리 기능을 사용할 수 없습니다. 
 오퍼레이터, 컨트롤러 등 배포 매니페스트 밖에서 리소스를 원본 이름으로 직접 조회하는 경우에만 해제하는 것을 권장합니다.
 
-![stage-guide-07-1](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2026-09-15/pipeline-stage-guide/deploy-stage-version.png)
+![stage-guide-07-1](https://static.toastoven.net/prod_pipeline/pipeline-stage-guide/2026-09-15/deploy-stage-version.png)
 
 리소스 버전 관리 옵션은 해당 스테이지가 배포하는 모든 리소스에 적용됩니다. 
 특정 리소스만 다르게 설정하려면 매니페스트의 `metadata.annotations`에 `strategy.spinnaker.io/versioned` 애너테이션을 "`true`" 또는 "`false`" 값으로 추가하여 리소스 단위로 설정할 수 있습니다. 
