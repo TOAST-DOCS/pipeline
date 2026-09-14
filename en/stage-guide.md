@@ -125,7 +125,7 @@ This is a stage to deploy to the Kubernetes environment.
 - You can set the **start condition** and **end condition** of the **Artifact**. You can set the **start condition** to determine whether the stage starts. You can set an **end condition** to set the stage's output as an artifact.
 - You can configure **Use Resource Versioning**. This is the default behavior of the Pipeline service, and we recommend that you enable it. For more information, see **Resource Versioning** below.
 
-![stage-guide-07](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-09-15/pipeline-stage-guide/deploy-stage-normal.png)
+![stage-guide-07](https://static.toastoven.net/prod_pipeline/pipeline-stage-guide/2026-09-15/deploy-stage-normal.png)
 
 <a id="deployment---deploy-resource-versioning"></a>
 #### Resource Versioning
@@ -136,7 +136,7 @@ This feature preserves the configuration change history by version and allows yo
 If you disable **Use Resource Versioning** in the **Deployment - Deploy** stage, the resources deployed by that stage are deployed with their original names as defined in the manifest, and the resource versioning feature of the Pipeline service becomes unavailable.
 We recommend disabling it only when operators, controllers, or other components outside the deployment manifest need to look up resources directly by their original names.
 
-![stage-guide-07-1](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2026-09-15/pipeline-stage-guide/deploy-stage-version.png)
+![stage-guide-07-1](https://static.toastoven.net/prod_pipeline/pipeline-stage-guide/2026-09-15/deploy-stage-version.png)
 
 The resource versioning option applies to all resources deployed by that stage.
 To configure specific resources differently, you can add the `strategy.spinnaker.io/versioned` annotation with a value of "`true`" or "`false`" to `metadata.annotations` in the manifest to configure versioning on a per-resource basis.
