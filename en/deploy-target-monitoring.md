@@ -1,8 +1,12 @@
-## Dev Tools > Pipeline > Console User Guide > Deployment Target Management
+<!-- pre-align:aligned sig=5bab74919df5 -->
+
+<a id="dev-tools-pipeline-console-user-guide-deployment-target-management"></a>
+## Dev Tools > Pipeline > Console User Guide > Deployment Target Management { #dev-tools-pipeline-console-user-guide-deployment-target-management }
 
 You can identify output created by deploying with Pipeline in the **Deployment Target Management** menu.
 
-## Deployment Target
+<a id="deployment-target"></a>
+## Deployment Target { #deployment-target }
 
 Go to **Deployment Target Management > Deployment Target** to identify workloads deployed to Kubernetes by using Pipeline.
 ![deploy-target-monitoring-guide-01.png](http://static.toastoven.net/prod_pipeline/2023-06-27/deploy-target-monitoring-guide-01.png)
@@ -60,7 +64,8 @@ Management Task Types
 | Pause Deployment | Rollback, pause of pod restart    | Deployment |
 | Restart Deployment   | Restart a paused deployment          | Deployment |
 
-## Network
+<a id="network"></a>
+## Network { #network }
 
 You can identify a service deployed to Kubernetes by using Pipeline in **Deployment Target Management > Network**.
 

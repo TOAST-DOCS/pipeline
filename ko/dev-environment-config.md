@@ -1,6 +1,10 @@
-## Dev Tools > Pipeline > 콘솔 사용 가이드 > 개발 환경 설정
+<!-- pre-align:aligned sig=3da2439ee26a -->
 
-### 개발 환경 설정
+<a id="dev-tools-pipeline-console-user-guide-dev-env-configuration"></a>
+## Dev Tools > Pipeline > 콘솔 사용 가이드 > 개발 환경 설정 { #dev-tools-pipeline-console-user-guide-dev-env-configuration }
+
+<a id="set-up-a-development-environment"></a>
+### 개발 환경 설정 { #set-up-a-development-environment }
 
 개발 환경 설정을 사용하면 Kubernetes 사용법을 모르는 사용자도 Kubernetes에 컨테이너 이미지를 배포할 수 있습니다.
 

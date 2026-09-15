@@ -1,15 +1,20 @@
-## Dev Tools > Pipeline > Deployment Strategy Guide
+<!-- pre-align:aligned sig=e9aa155147ed -->
+
+<a id="dev-tools-pipeline-deployment-strategy-guide"></a>
+## Dev Tools > Pipeline > Deployment Strategy Guide { #dev-tools-pipeline-deployment-strategy-guide }
 
 The Deployment strategy guide explains how to combine the stages in Pipeline to perform different deployment strategies.
 
-## Blue/Green Deployment
+<a id="bluegreen-deployment"></a>
+## Blue/Green Deployment { #bluegreen-deployment }
 
 ![deploy-strategy-guide-11.png](http://static.toastoven.net/prod_pipeline/2024-05-28/deploy-strategy-guide-11.png)
 
 A Blue/Green deployment is a deployment strategy that creates two identical environments. One environment (Blue) runs the current application version, and the other environment (Green) runs the new application version.
 You can use a Blue/Green deployment strategy to reduce deployment risk by increasing application availability and simplifying the rollback process in the event of a deployment failure. When testing is complete in the Green environment, application traffic is moved to the Green environment, and the Blue environment is decommissioned.
 
-### Use ReplicaSets
+<a id="use-replicasets"></a>
+### Use ReplicaSets { #use-replicasets }
 
 - Pipeline uses labels to manage traffic, and you need to modify the labels of running resources.
 Since modifying the Deployment Object triggers the rollout, the only way to do a Blue/Green deployment without modifying the Service Object is to use **ReplicaSets**.
@@ -17,11 +22,13 @@ Since modifying the Deployment Object triggers the rollout, the only way to do a
     - `strategy.spinnaker.io/max-version-history`: Specifies the maximum number of ReplicaSets that Pipeline maintains. You must give a value of 2 or higher to enable blue/green deployments.
     - `traffic.spinnaker.io/load-balancers`: Specify the Service Object. Pipeline will modify the Pod's label to match the Service's Selector, enabling traffic to be delivered to your application. The Service Object you specify must have been created through Pipeline.
 
-### How to configure a Blue/Green Pipeline
+<a id="how-to-configure-a-bluegreen-pipeline"></a>
+### How to configure a Blue/Green Pipeline { #how-to-configure-a-bluegreen-pipeline }
 
 Here's how to configure a pipeline that can do blue/green deployments.
-You can configure a pipeline by referring to the[Pipeline template guide](/Dev%20Tools/Pipeline/en/template-guide/).
+You can configure a pipeline by referring to the[Pipeline template guide](./template-guide/).
 
+<a id="how-to-configure-a-bluegreen-pipeline-create-a-service"></a>
 #### 1. Create a Service
 
 Deploy **-**Add a **Deploy stage**and use the Pipeline to create the Service. Since you typically don't modify the Service when deploying an application, create a different pipeline than the application deployment pipeline to pre-create just the Service.
@@ -47,6 +54,7 @@ spec:
 
 ![deploy-strategy-guide-02.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/deploy-strategy-guide/deploy-strategy-guide-02.png)
 
+<a id="how-to-configure-a-bluegreen-pipeline-configure-the-application-deployment-pipeline"></a>
 #### 2. Configure the Application Deployment Pipeline
 
 Organize your pipeline in the following order: **Deploy - Deploy stage** **> Deploy - Disable Stage**. Configure the **Deploy - Deploy Stage** to deploy a new version of the application and the **Deploy - Disable stage** to select an older version of the application.

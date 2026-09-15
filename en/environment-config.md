@@ -1,6 +1,10 @@
-## Dev Tools > Pipeline > Console User Guide > Environment Configuration
+<!-- pre-align:aligned sig=71e694704fe5 -->
 
-### Set Up an Environment
+<a id="dev-tools-pipeline-console-user-guide-environment-configuration"></a>
+## Dev Tools > Pipeline > Console User Guide > Environment Configuration { #dev-tools-pipeline-console-user-guide-environment-configuration }
+
+<a id="set-up-an-environment"></a>
+### Set Up an Environment { #set-up-an-environment }
 
 Pipeline uses various external systems to configure the application deployment flow. You can add external systems used by Pipeline in environment settings.
 
@@ -11,7 +15,8 @@ External systems that can be added to Pipeline include:
 - Deployment target
 - Chart repository
 
-### Source Repository
+<a id="source-repository"></a>
+### Source Repository { #source-repository }
 
 After adding the source repository, you can build the source code using the NHN Cloud build tool. You can add repositories that can be accessed using the git commands, such as GitHub, GitLab, or GitHub Enterprise.
 
@@ -27,7 +32,8 @@ Enter the source repository information. After checking the connection, click **
 
 ![env-config-guide-03](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-03.png)
 
-### Image Registry
+<a id="image-registry"></a>
+### Image Registry { #image-registry }
 
 If you add an image registry, you can use the information to access an image registry that requires credentials. You can use the image registry when creating a container to build source code in the NHN Cloud build tool, or when uploading a newly created container image. You can also use it to set the container image that executes autorun in your pipeline autorun settings. For image registry, you can add NHN Cloud Container Registry, Docker Hub, or private image registries. When using Docker Hub, image repository URLs can be omiited.
 
@@ -41,7 +47,8 @@ Enter the image registry information, and click **Check** in **Image Registry Co
 
 ![env-config-guide-06](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-06.png)
 
-### Build Tool
+<a id="build-tool"></a>
+### Build Tool { #build-tool }
 
 By adding a build tool, your pipeline can use the various actions you define in the build tool. For the build tool, you can add Jenkins. If you use `NHN Cloud Build Tools`, you can skip adding build tools.
 
@@ -55,7 +62,8 @@ Enter the build tool information, click **Check** in **Build Tool Connection Che
 
 ![env-config-guide-09](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-09.png)
 
-### Deployment Target
+<a id="deployment-target"></a>
+### Deployment Target { #deployment-target }
 
 Adding a deployment target allows you to manage the deployment target in your pipeline. You can deploy container images to deployment targets or change the running containers. For deployment targets, you can add NHN Cloud Container and Kubernetes.
 
@@ -69,7 +77,8 @@ Enter the deployment target name and deployment target description, select the K
 
 ![env-config-guide-12](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-12.png)
 
-### Chart Repository
+<a id="chart-repository"></a>
+### Chart Repository { #chart-repository }
 
 If you add a chart repository, you can build Helm chart by using the **Build - Bake (Manifest)** stage. You can find how to configure a chart repository in [Chart Repository Guide](https://helm.sh/docs/topics/chart_repository/).
 
@@ -83,8 +92,10 @@ Enter the chart repository information, click **Check** in **Chart Repository Co
 
 ![env-config-guide-15](http://static.toastoven.net/prod_pipeline/2023-03-28/env-config-guide-15.png)
 
-### NHN Cloud Security Settings
+<a id="nhn-cloud-security-settings"></a>
+### NHN Cloud Security Settings { #nhn-cloud-security-settings }
 
+<a id="nhn-cloud-security-settings-create-user-access-key-id-secret-access-key"></a>
 #### Create User Access Key ID, Secret Access Key
 
 Click the ID area in the upper-right corner of the console to see the **API Security Settings** menu as follows.
@@ -103,6 +114,7 @@ After creating **User Access Key ID** and **Secret Access Key**, the **Secret ke
 
 **The User Access Key ID**, which is required to register security settings, can be found by closing the secret key successfully issued popup.
 
+<a id="nhn-cloud-security-settings-register-nhn-cloud-security-settings"></a>
 #### Register NHN Cloud Security Settings
 Once you add the NHN Cloud security settings, you can deploy through the NHN Cloud Deploy service using the **Features - NHN Cloud Deploy service** stage.
 
@@ -116,7 +128,8 @@ Enter the NHN Cloud security settings information, click **Confirm** in **Check 
 
 ![env-config-guide-22](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-12-19/env-config-guide-22.png)
 
-### Pipeline IP
+<a id="pipeline-ip"></a>
+### Pipeline IP { #pipeline-ip }
 If the system integrated with Pipeline does not work properly, check the ACL.
 
 | Region   | CIDR             |
